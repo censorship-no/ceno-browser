@@ -68,14 +68,14 @@
         app:autoSizeMaxTextSize="16sp"
         app:autoSizeMinTextSize="10sp"
         app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/btn_onboarding_public_pvt"
+        app:layout_constraintBottom_toTopOf="@+id/btn_onboarding_continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_onboarding_start_title"
         app:layout_constraintVertical_weight="4" />
 
     <Button
-        android:id="@+id/btn_onboarding_public_pvt"
+        android:id="@+id/btn_onboarding_continue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -84,12 +84,12 @@
         android:text="@string/onboarding_battery_button"
         android:textAllCaps="false"
         android:textColor="@color/photonWhite"
-        app:layout_constraintBottom_toTopOf="@+id/btn_onboarding_start_skip"
+        app:layout_constraintBottom_toTopOf="@+id/btn_onboarding_skip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_onboarding_start_skip"
+        android:id="@+id/btn_onboarding_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"

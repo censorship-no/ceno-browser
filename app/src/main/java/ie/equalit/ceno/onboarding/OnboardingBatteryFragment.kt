@@ -41,14 +41,14 @@ class OnboardingBatteryFragment : Fragment(), ActivityResultHandler {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             /* This is Android 13 or later, ask for permission POST_NOTIFICATIONS */
             binding.tvOnboardingPermissionText.text = getString(R.string.onboarding_battery_text_v33)
-            binding.button.setOnClickListener {
+            binding.btnOnboardingContinue.setOnClickListener {
                 allowPostNotifications()
             }
         }
         else {
             /* This is NOT Android 13, just ask to disable battery optimization */
             binding.tvOnboardingPermissionText.text = getString(R.string.onboarding_battery_text)
-            binding.button.setOnClickListener {
+            binding.btnOnboardingContinue.setOnClickListener {
                 disableBatteryOptimization()
             }
         }

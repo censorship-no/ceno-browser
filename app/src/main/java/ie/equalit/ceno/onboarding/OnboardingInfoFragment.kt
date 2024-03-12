@@ -35,14 +35,14 @@ class OnboardingInfoFragment : Fragment() {
                 requireComponents.permissionHandler.isIgnoringBatteryOptimizations()
             ) {
                 //set button text as Finish
-                binding.btnOnboardingCleanup.text = getString(R.string.onboarding_finish_button)
-                binding.btnOnboardingCleanupSkip.visibility = View.INVISIBLE
-                binding.btnOnboardingCleanup.setOnClickListener {
+                binding.btnOnboardingContinue.text = getString(R.string.onboarding_finish_button)
+                binding.btnOnboardingSkip.visibility = View.INVISIBLE
+                binding.btnOnboardingContinue.setOnClickListener {
                     findNavController().onboardingToHome(requireComponents)
                 }
             }
             else {
-                binding.btnOnboardingCleanup.setOnClickListener {
+                binding.btnOnboardingContinue.setOnClickListener {
                     findNavController().navigate(R.id.action_onboardingInfoFragment_to_onboardingBatteryFragment)
                 }
             }
@@ -50,19 +50,19 @@ class OnboardingInfoFragment : Fragment() {
         else {
             if (requireComponents.permissionHandler.isIgnoringBatteryOptimizations()) {
                 //set button text as Finish
-                binding.btnOnboardingCleanup.text = getString(R.string.onboarding_finish_button)
-                binding.btnOnboardingCleanupSkip.visibility = View.INVISIBLE
-                binding.btnOnboardingCleanup.setOnClickListener {
+                binding.btnOnboardingContinue.text = getString(R.string.onboarding_finish_button)
+                binding.btnOnboardingSkip.visibility = View.INVISIBLE
+                binding.btnOnboardingContinue.setOnClickListener {
                     findNavController().onboardingToHome(requireComponents)
                 }
             } else {
-                binding.btnOnboardingCleanup.setOnClickListener {
+                binding.btnOnboardingContinue.setOnClickListener {
                     findNavController().navigate(R.id.action_onboardingInfoFragment_to_onboardingBatteryFragment)
                 }
             }
         }
 
-        binding.btnOnboardingCleanupSkip.setOnClickListener {
+        binding.btnOnboardingSkip.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 /* Android 13 or later, always ask for permissions */
                 findNavController().navigate(R.id.action_onboardingInfoFragment_to_onboardingBatteryFragment)

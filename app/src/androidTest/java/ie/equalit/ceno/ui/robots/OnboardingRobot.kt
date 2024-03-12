@@ -13,6 +13,13 @@ class OnboardingRobot {
     class Transition {
         val mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
 
+        fun givePermissionsIfNeeded(){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                continueOnboardingButton().waitForExists(TestAssetHelper.waitingTime)
+                continueOnboardingButton().click()
+                givePermissions()
+            }
+        }
         fun skipOnboardingIfNeeded() {
             if (Settings.shouldShowOnboarding(TestHelper.appContext)) {
                 skipOnboardingButton().waitForExists(TestAssetHelper.waitingTime)
@@ -30,26 +37,52 @@ fun onboarding(interact: OnboardingRobot.() -> Unit): OnboardingRobot.Transition
     return OnboardingRobot.Transition()
 }
 
+fun clickContinue() {
+    continueOnboardingButton().click()
+}
+fun waitForContinueButton() {
+    continueOnboardingButton().waitForExists(TestAssetHelper.waitingTime)
+}
+
+private fun continueOnboardingButton() = mDevice.findObject(
+    UiSelector().resourceId("${TestHelper.packageName}:id/btn_onboarding_continue"),
+)
+
 private fun skipOnboardingButton() = mDevice.findObject(
-    UiSelector().resourceId("${TestHelper.packageName}:id/btn_onboarding_start_skip"),
+    UiSelector().resourceId("${TestHelper.packageName}:id/btn_onboarding_skip"),
 )
 
-private fun continuePermissionsButton() = mDevice.findObject(
-    UiSelector().resourceId("${TestHelper.packageName}:id/button"),
+private fun permissionAllowButton() = mDevice.findObject(
+    UiSelector().resourceId("com.android.permissioncontroller:id/permission_allow_button")
 )
 
-
-private fun allowButton() = mDevice.findObject(
-    UiSelector().text("Allow")
+private fun permissionDenyButton() = mDevice.findObject(
+    UiSelector().resourceId("com.android.permissioncontroller:id/permission_deny_button")
 )
+
+private fun backgroundAllowButton() = mDevice.findObject(
+UiSelector().resourceId("android:id/button1")
+)
+
+private fun backgroundDenyButton() = mDevice.findObject(
+    UiSelector().resourceId("android:id/button2")
+)
+
 
 fun givePermissions() {
-    continuePermissionsButton().waitForExists(TestAssetHelper.waitingTime)
-    continuePermissionsButton().click()
     //for allowing notifications
-    allowButton().waitForExists(TestAssetHelper.waitingTime)
-    allowButton().click()
+    permissionAllowButton().waitForExists(TestAssetHelper.waitingTime)
+    permissionAllowButton().click()
     //for battery optimizations
-    allowButton().waitForExists(TestAssetHelper.waitingTime)
-    allowButton().click()
+    backgroundAllowButton().waitForExists(TestAssetHelper.waitingTime)
+    backgroundAllowButton().click()
+}
+
+fun denyPermissions() {
+    //for allowing notifications
+    permissionDenyButton().waitForExists(TestAssetHelper.waitingTime)
+    permissionDenyButton().click()
+    //for battery optimizations
+    backgroundDenyButton().waitForExists(TestAssetHelper.waitingTime)
+    backgroundDenyButton().click()
 }

@@ -59,14 +59,14 @@
         app:autoSizeMaxTextSize="16sp"
         app:autoSizeMinTextSize="10sp"
         app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/btn_onboarding_cleanup"
+        app:layout_constraintBottom_toTopOf="@+id/btn_onboarding_continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/onboarding_cleanup_title"
         app:layout_constraintTop_toBottomOf="@+id/onboarding_cleanup_title"
         app:layout_constraintVertical_weight="3" />
 
     <Button
-        android:id="@+id/btn_onboarding_cleanup"
+        android:id="@+id/btn_onboarding_continue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -75,12 +75,12 @@
         android:text="@string/onboarding_battery_button"
         android:textAllCaps="false"
         android:textColor="@color/photonWhite"
-        app:layout_constraintBottom_toTopOf="@+id/btn_onboarding_cleanup_skip"
+        app:layout_constraintBottom_toTopOf="@+id/btn_onboarding_skip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_onboarding_cleanup_skip"
+        android:id="@+id/btn_onboarding_skip"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:background="@android:color/transparent"

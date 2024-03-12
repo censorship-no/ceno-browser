@@ -31,11 +31,11 @@ class OnboardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnOnboardingStart.setOnClickListener {
+        binding.btnOnboardingContinue.setOnClickListener {
             findNavController().navigate(R.id.action_onboardingFragment_to_onboardingPublicPvtFragment)
         }
 
-        binding.btnOnboardingStartSkip.setOnClickListener {
+        binding.btnOnboardingSkip.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 /* Android 13 or later, always ask for permissions
                 * go to home is permissions are granted */

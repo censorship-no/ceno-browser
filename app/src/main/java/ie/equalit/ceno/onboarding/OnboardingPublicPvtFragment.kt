@@ -35,10 +35,10 @@ class OnboardingPublicPvtFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnOnboardingPublicPvt.setOnClickListener {
+        binding.btnOnboardingContinue.setOnClickListener {
             findNavController().navigate(R.id.action_onboardingPublicPvtFragment_to_onboardingInfoFragment)
         }
-        binding.btnOnboardingStartSkip.setOnClickListener {
+        binding.btnOnboardingSkip.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 /* Android 13 or later, always ask for permissions */
                 if (requireComponents.permissionHandler.isAllowingPostNotifications() &&

@@ -1,0 +1,9 @@
+app_package_name('ie.equalit.ceno.debug')
+tests_package_name('ie.equalit.ceno.debug.test')
+use_tests_in_classes(['ie.equalit.ceno.ui.ScreenshotGenerator'])
+app_apk_path('./app/build/outputs/apk/debug/app-x86_64-debug.apk')
+tests_apk_path('./app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')
+locales(['en-US', 'fr-FR', 'es-ES'])
+reinstall_app(true)
+# clear all previously generated screenshots in your local output directory before creating new ones
+clear_previous_screenshots(true)

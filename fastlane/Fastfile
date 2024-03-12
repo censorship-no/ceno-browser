@@ -21,6 +21,37 @@ platform :android do
     gradle(task: "test")
   end
 
+  desc "Build debug and test APK for screenshots"
+  lane :cleanAssembleDebugTest do
+    gradle(
+      task: 'clean'
+    )
+    build_android_app(
+      task: 'assemble',
+      build_type: 'Debug'
+    )
+    build_android_app(
+      task: 'assemble',
+      build_type: 'AndroidTest'
+    )
+  end
+
+  desc "Build debug and test APK for screenshots"
+  lane :assembleDebugTest do
+    build_android_app(
+      task: 'assemble',
+      build_type: 'Debug'
+    )
+    build_android_app(
+      task: 'assemble',
+      build_type: 'AndroidTest'
+    )
+  end
+
+  lane :screenshots do
+    capture_android_screenshots()
+  end
+
   desc "Upload a build to Play Store internal testing track"
   lane :internal do
     gradle(task: "clean assembleRelease")

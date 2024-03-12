@@ -45,7 +45,7 @@ class OnboardingWarningFragment : Fragment() {
             else {
                 getString(R.string.onboarding_warning_text)
             }
-        binding.button.setOnClickListener {
+        binding.btnOnboardingContinue.setOnClickListener {
             findNavController().onboardingToHome(requireComponents)
         }
     }

@@ -23,6 +23,30 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Runs all the tests
 
+### android cleanAssembleDebugTest
+
+```sh
+[bundle exec] fastlane android cleanAssembleDebugTest
+```
+
+Build debug and test APK for screenshots
+
+### android assembleDebugTest
+
+```sh
+[bundle exec] fastlane android assembleDebugTest
+```
+
+Build debug and test APK for screenshots
+
+### android screenshots
+
+```sh
+[bundle exec] fastlane android screenshots
+```
+
+
+
 ### android internal
 
 ```sh
