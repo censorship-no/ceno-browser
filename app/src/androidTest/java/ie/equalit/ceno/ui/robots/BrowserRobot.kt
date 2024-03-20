@@ -75,17 +75,6 @@ class BrowserRobot {
         ).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)))
     }
 
-    fun verifyAboutBrowser() {
-        assertTrue(
-            mDevice.findObject(UiSelector().resourceId("$packageName:id/about_content"))
-                .waitForExists(waitingTime),
-        )
-        assertTrue(
-            mDevice.findObject(UiSelector().resourceId("$packageName:id/version_info"))
-                .waitForExists(waitingTime),
-        )
-    }
-
     fun longClickMatchingText(expectedText: String) {
         mDevice.waitForWindowUpdate(packageName, waitingTime)
         mDevice.findObject(UiSelector().resourceId("$packageName:id/engineView"))

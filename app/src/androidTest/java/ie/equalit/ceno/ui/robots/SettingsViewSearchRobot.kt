@@ -30,7 +30,7 @@ class SettingsViewSearchRobot {
         }
 
         fun goBack(interact: SettingsViewRobot.() -> Unit): SettingsViewRobot.Transition {
-            searchUpButton().click()
+            mDevice.pressBack()
             SettingsViewRobot().interact()
             return SettingsViewRobot.Transition()
         }

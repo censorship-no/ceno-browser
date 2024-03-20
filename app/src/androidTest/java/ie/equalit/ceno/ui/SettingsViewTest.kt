@@ -180,7 +180,7 @@ class SettingsViewTest {
             Thread.sleep(5000)
             clickDownRecyclerView(23)
             Thread.sleep(5000)
-        }.openAboutReferenceBrowser {
+        }.openSettingsViewAboutPage {
             verifyAboutBrowser()
         }
     }

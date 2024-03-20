@@ -68,7 +68,7 @@ class SettingsViewSourcesRobot {
         }
 
         fun goBack(interact: SettingsViewRobot.() -> Unit): SettingsViewRobot.Transition {
-            sourcesUpButton().click()
+            mDevice.pressBack()
             SettingsViewRobot().interact()
             return SettingsViewRobot.Transition()
         }
