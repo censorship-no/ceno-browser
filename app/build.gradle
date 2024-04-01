@@ -433,6 +433,8 @@ dependencies {
     implementation libs.mozilla.featuretopsites
     implementation libs.mozilla.uiwidgets
 
+    implementation Deps.thirdparty_tooltips
+
     if (gradle.hasProperty('localProperties.dependencySubstitutions.ouinetLocalLib')) {
         project.logger.lifecycle('Subtituting local AAR for Ouinet dependency')
         implementation(files(gradle."localProperties.dependencySubstitutions.ouinetLocalLib"))
