@@ -190,4 +190,6 @@ object Deps {
     const val ouinet_omni = "ie.equalit.ouinet:ouinet-omni:${Versions.ouinet_version}"
     const val relinker = "com.getkeepsafe.relinker:relinker:${Versions.relinker_version}"
     const val snakeyaml = "org.yaml:snakeyaml:${Versions.snakeyaml_version}"
+
+    const val thirdparty_tooltips = "uk.co.samuelwall:material-tap-target-prompt:3.3.2"
 }
