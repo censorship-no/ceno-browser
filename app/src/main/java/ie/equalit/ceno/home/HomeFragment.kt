@@ -31,6 +31,7 @@ import ie.equalit.ceno.home.sessioncontrol.SessionControlView
 import ie.equalit.ceno.home.topsites.DefaultTopSitesView
 import ie.equalit.ceno.settings.CenoSettings
 import ie.equalit.ceno.settings.Settings
+import ie.equalit.ceno.tooltip.ToolbarTooltip
 import ie.equalit.ceno.utils.CenoPreferences
 import ie.equalit.ceno.utils.XMLParser
 import ie.equalit.ouinet.Ouinet.RunningState
@@ -269,6 +270,7 @@ class HomeFragment : BaseHomeFragment() {
         binding.sessionControlRecyclerView.visibility = View.VISIBLE
 
         binding.sessionControlRecyclerView.itemAnimator = null
+        ToolbarTooltip(this, R.id.mozac_browser_toolbar_background).tooltip.show()
     }
 
     override fun onStart() {

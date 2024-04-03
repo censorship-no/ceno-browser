@@ -1,0 +1,37 @@
+package ie.equalit.ceno.tooltip
+
+import android.content.Context
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
+import androidx.fragment.app.Fragment
+import ie.equalit.ceno.BrowserActivity
+import ie.equalit.ceno.R
+import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt
+import uk.co.samuelwall.materialtaptargetprompt.extras.backgrounds.RectanglePromptBackground
+import uk.co.samuelwall.materialtaptargetprompt.extras.focals.RectanglePromptFocal
+
+class ToolbarTooltip (
+    var fragment: Fragment,
+    var target: Int
+) {
+    var rectanglePromptFocal = RectanglePromptFocal()
+        .setCornerRadius(25f, 25f)
+    val tooltip : MaterialTapTargetPrompt.Builder
+
+    init {
+
+        tooltip = MaterialTapTargetPrompt.Builder(fragment)
+            .setTarget(target)
+            .setPrimaryText("Let's get started!")
+            .setSecondaryText("Click here to enter a url")
+            .setPromptFocal(rectanglePromptFocal)
+            .setBackgroundColour(getColor(fragment.requireContext(), R.color.tooltip_prompt_color))
+            .setFocalColour(getColor(fragment.requireContext(), R.color.tooltip_focal_color))
+            .setPromptBackground(DimmedPromptBackground())
+            .setAutoDismiss(false)
+            .setPromptStateChangeListener { prompt, state ->
+
+            }
+    }
+
+}

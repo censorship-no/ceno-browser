@@ -39,12 +39,17 @@
     <color name="ceno_standby_background">@color/ceno_grey_800</color>
     <color name="ceno_standby_logo_color">@color/ceno_blue_300</color>
 
+    <color name="tooltip_focal_color">#E60C4A6E</color>
+    <color name="tooltip_prompt_color">#990C4A6E</color>
+
 
     <color name="ceno_blue_50">#F0F9FF</color>
     <color name="ceno_blue_100">#E0F2FE</color>
     <color name="ceno_blue_200">#BAE6FD</color>
     <color name="ceno_blue_300">#7DD3FC</color>
     <color name="ceno_blue_600">#0284C7</color>
+    <color name="ceno_blue_800">#075985</color>
+    <color name="ceno_blue_900">#0C4A6E</color>
 
     <color name="ceno_purple_100">#E1BEE7</color>
     <color name="ceno_purple_200">#D698E0</color>
