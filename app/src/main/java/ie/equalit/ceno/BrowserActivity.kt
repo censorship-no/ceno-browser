@@ -154,6 +154,7 @@ open class BrowserActivity : BaseActivity() {
         navHost.navController.popBackStack() // Remove startupFragment from backstack
         navHost.navController.navigate(
             when {
+                components.ouinet.background.getState() != RunningState.Started.toString() -> R.id.action_global_standbyFragment
                 Settings.shouldShowOnboarding(this) && savedInstanceState == null -> R.id.action_global_onboarding
                 components.core.store.state.selectedTab == null -> R.id.action_global_home
                 else -> R.id.action_global_browser
@@ -270,11 +271,13 @@ open class BrowserActivity : BaseActivity() {
     override fun onResume() {
         super.onResume()
         if (!Settings.shouldShowOnboarding(this) && (components.ouinet.background.getState() != RunningState.Started.toString())) {
-            navHost.navController.popBackStack()
-            val bundle = bundleOf(StandbyFragment.shutdownCeno to false)
-            navHost.navController.navigate(R.id.action_global_standbyFragment, bundle)
+            if (navHost.navController.currentDestination?.id  != R.id.standbyFragment) {
+                navHost.navController.popBackStack()
+                val bundle = bundleOf(StandbyFragment.shutdownCeno to false)
+                navHost.navController.navigate(R.id.action_global_standbyFragment, bundle)
+            }
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) && components.ouinet.background.getState() != RunningState.Started.toString()) {
             /* CENO: in Android 9 or later, it is possible that the
              * service may have stopped while app was in background
              * try sending an intent to restart the service
