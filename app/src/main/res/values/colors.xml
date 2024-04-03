@@ -41,6 +41,9 @@
 
     <color name="reader_view_floating_btn">@color/ceno_blue_800</color>
 
+    <color name="tooltip_focal_color">#E60C4A6E</color>
+    <color name="tooltip_prompt_color">#990C4A6E</color>
+
 
     <color name="ceno_blue_50">#F0F9FF</color>
     <color name="ceno_blue_100">#E0F2FE</color>

@@ -154,8 +154,8 @@ open class BrowserActivity : BaseActivity() {
         navHost.navController.popBackStack() // Remove startupFragment from backstack
         navHost.navController.navigate(
             when {
-                components.ouinet.background.getState() != RunningState.Started.toString() -> R.id.action_global_standbyFragment
                 Settings.shouldShowOnboarding(this) && savedInstanceState == null -> R.id.action_global_onboarding
+                components.ouinet.background.getState() != RunningState.Started.toString() -> R.id.action_global_standbyFragment
                 components.core.store.state.selectedTab == null -> R.id.action_global_home
                 else -> R.id.action_global_browser
             }
