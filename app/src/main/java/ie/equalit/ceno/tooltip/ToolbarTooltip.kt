@@ -23,7 +23,7 @@ class ToolbarTooltip (
         tooltip = MaterialTapTargetPrompt.Builder(fragment)
             .setTarget(target)
             .setPrimaryText("Let's get started!")
-            .setSecondaryText("Click here to enter a url")
+            .setSecondaryText("Type in a website address to start browsing.")
             .setPromptFocal(rectanglePromptFocal)
             .setBackgroundColour(getColor(fragment.requireContext(), R.color.tooltip_prompt_color))
             .setFocalColour(getColor(fragment.requireContext(), R.color.tooltip_focal_color))
