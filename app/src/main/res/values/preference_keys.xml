@@ -82,6 +82,7 @@
     <string name="pref_key_bridge_announcement" translatable="false">pref_key_bridge_announcement</string>
     <string name="pref_key_mode_card_expanded" translatable="false">pref_key_mode_card_expanded</string>
     <string name="pref_key_bridge_card_expanded" translatable="false">pref_key_bridge_card_expanded</string>
+    <string name="pref_key_ceno_tour" translatable="false">pref_key_ceno_tour</string>
 
     <string name="pref_last_known_browsing_mode_personal" translatable="false">pref_last_known_browsing_mode_personal</string>
 

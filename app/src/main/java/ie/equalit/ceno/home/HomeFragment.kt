@@ -1,6 +1,8 @@
 package ie.equalit.ceno.home
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -47,6 +49,7 @@ import mozilla.components.feature.top.sites.TopSitesFrecencyConfig
 import mozilla.components.feature.top.sites.TopSitesProviderConfig
 import mozilla.components.lib.state.ext.consumeFrom
 import mozilla.components.support.base.feature.ViewBoundFeatureWrapper
+import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt
 import java.util.Locale
 
 /**
@@ -54,6 +57,7 @@ import java.util.Locale
  */
 class HomeFragment : BaseHomeFragment() {
 
+    private lateinit var urlTooltip: MaterialTapTargetPrompt.Builder
     var adapter: SessionControlAdapter? = null
 
     private var _sessionControlInteractor: SessionControlInteractor? = null
@@ -270,11 +274,49 @@ class HomeFragment : BaseHomeFragment() {
         binding.sessionControlRecyclerView.visibility = View.VISIBLE
 
         binding.sessionControlRecyclerView.itemAnimator = null
-        ToolbarTooltip(this, R.id.mozac_browser_toolbar_background).tooltip.show()
+
+        urlTooltip = ToolbarTooltip(this, R.id.mozac_browser_toolbar_background) {
+            prompt: MaterialTapTargetPrompt, state: Int ->
+            when(state) {
+                MaterialTapTargetPrompt.STATE_DISMISSING -> {
+                    //Show dialog - do you want to skip the tour?
+                    getSkipTourDialog().show()
+                }
+                MaterialTapTargetPrompt.STATE_FOCAL_PRESSED -> {
+                    requireComponents.cenoPreferences.nextTooltip =+ 1
+                }
+            }
+
+        }.tooltip
+    }
+
+    private fun getSkipTourDialog(): AlertDialog {
+        return AlertDialog.Builder(requireContext())
+            .setTitle("Skip?")
+            .setMessage("Do you want to skip the Ceno tour?")
+            .setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+                requireComponents.cenoPreferences.nextTooltip =+ 1
+            }
+            .setNegativeButton("Cancel") { dialogInterface: DialogInterface, i: Int ->
+                //show tooltip again
+                urlTooltip.show()
+            }
+            .create()
+
     }
 
     override fun onStart() {
         super.onStart()
         updateSessionControlView()
+        if (requireComponents.cenoPreferences.nextTooltip == TOOLBAR_TOOLTIP) {
+            urlTooltip.show()
+        }
+    }
+
+    companion object {
+        const val PUBLIC_PERSONAL_TOOLTIP = 1
+        const val TOOLBAR_TOOLTIP = 2
+
+
     }
 }

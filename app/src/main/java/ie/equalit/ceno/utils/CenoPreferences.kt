@@ -122,6 +122,11 @@ class CenoPreferences(private val appContext: Context,) : PreferencesHolder {
         default = true
     )
 
+    var nextTooltip by intPreference(
+        appContext.getPreferenceKey(R.string.pref_key_ceno_tour),
+        default = 1
+    )
+
     /**
      * Save browsing mode in preferences
      * From Fenix
