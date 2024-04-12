@@ -275,7 +275,7 @@ class HomeFragment : BaseHomeFragment() {
 
         binding.sessionControlRecyclerView.itemAnimator = null
 
-        urlTooltip = ToolbarTooltip(this, R.id.mozac_browser_toolbar_background) {
+        urlTooltip = ToolbarTooltip(this, R.id.mozac_browser_toolbar_origin_view) {
             prompt: MaterialTapTargetPrompt, state: Int ->
             when(state) {
                 MaterialTapTargetPrompt.STATE_DISMISSING -> {
@@ -314,8 +314,8 @@ class HomeFragment : BaseHomeFragment() {
     }
 
     companion object {
-        const val PUBLIC_PERSONAL_TOOLTIP = 1
-        const val TOOLBAR_TOOLTIP = 2
+        const val PUBLIC_PERSONAL_TOOLTIP = 0
+        const val TOOLBAR_TOOLTIP = 1
 
 
     }
