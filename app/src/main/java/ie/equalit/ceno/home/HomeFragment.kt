@@ -33,7 +33,7 @@ import ie.equalit.ceno.home.sessioncontrol.SessionControlView
 import ie.equalit.ceno.home.topsites.DefaultTopSitesView
 import ie.equalit.ceno.settings.CenoSettings
 import ie.equalit.ceno.settings.Settings
-import ie.equalit.ceno.tooltip.ToolbarTooltip
+import ie.equalit.ceno.tooltip.CenoTooltip
 import ie.equalit.ceno.utils.CenoPreferences
 import ie.equalit.ceno.utils.XMLParser
 import ie.equalit.ouinet.Ouinet.RunningState
@@ -57,7 +57,7 @@ import java.util.Locale
  */
 class HomeFragment : BaseHomeFragment() {
 
-    private lateinit var urlTooltip: MaterialTapTargetPrompt.Builder
+    private lateinit var urlTooltip: CenoTooltip
     var adapter: SessionControlAdapter? = null
 
     private var _sessionControlInteractor: SessionControlInteractor? = null
@@ -275,19 +275,26 @@ class HomeFragment : BaseHomeFragment() {
 
         binding.sessionControlRecyclerView.itemAnimator = null
 
-        urlTooltip = ToolbarTooltip(this, R.id.mozac_browser_toolbar_origin_view) {
-            prompt: MaterialTapTargetPrompt, state: Int ->
+        urlTooltip = CenoTooltip(this, R.id.mozac_browser_toolbar_origin_view) {
+                prompt: MaterialTapTargetPrompt, state: Int ->
             when(state) {
                 MaterialTapTargetPrompt.STATE_DISMISSING -> {
                     //Show dialog - do you want to skip the tour?
-                    getSkipTourDialog().show()
+//                    getSkipTourDialog().show()
                 }
                 MaterialTapTargetPrompt.STATE_FOCAL_PRESSED -> {
                     requireComponents.cenoPreferences.nextTooltip =+ 1
+                    urlTooltip.dismiss()
+                }
+                MaterialTapTargetPrompt.STATE_REVEALED -> {
+                    urlTooltip.addSkipButton {
+                        //skip tour
+                        urlTooltip.tooltip?.dismiss()
+                        urlTooltip.dismiss()
+                    }
                 }
             }
-
-        }.tooltip
+        }
     }
 
     private fun getSkipTourDialog(): AlertDialog {
@@ -299,7 +306,7 @@ class HomeFragment : BaseHomeFragment() {
             }
             .setNegativeButton("Cancel") { dialogInterface: DialogInterface, i: Int ->
                 //show tooltip again
-                urlTooltip.show()
+                urlTooltip.tooltipBuilder.show()
             }
             .create()
 
@@ -309,14 +316,12 @@ class HomeFragment : BaseHomeFragment() {
         super.onStart()
         updateSessionControlView()
         if (requireComponents.cenoPreferences.nextTooltip == TOOLBAR_TOOLTIP) {
-            urlTooltip.show()
+            urlTooltip.tooltipBuilder.show()
         }
     }
 
     companion object {
         const val PUBLIC_PERSONAL_TOOLTIP = 0
         const val TOOLBAR_TOOLTIP = 1
-
-
     }
 }
