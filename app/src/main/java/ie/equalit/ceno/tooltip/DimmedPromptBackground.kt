@@ -32,12 +32,12 @@ class DimmedPromptBackground (
     ) {
         super.update(options, revealModifier, alphaModifier)
         // Allow for the dimmed background to fade in and out
-        this.dimPaint.setAlpha(((100 * alphaModifier).toInt()));
+        this.dimPaint.setAlpha(((170 * alphaModifier).toInt()));
     }
 
     override fun draw(canvas: Canvas) {
         // Draw the dimmed background
-        canvas.drawRect(this.dimBounds, this.dimPaint);
+        canvas.drawRect(this.dimBounds, this.dimPaint)
         // Draw the background
         super.draw(canvas)
     }
