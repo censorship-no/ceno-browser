@@ -34,6 +34,7 @@ import ie.equalit.ceno.home.topsites.DefaultTopSitesView
 import ie.equalit.ceno.settings.CenoSettings
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.tooltip.CenoTooltip
+import ie.equalit.ceno.tooltip.CenoTourStartOverlay
 import ie.equalit.ceno.utils.CenoPreferences
 import ie.equalit.ceno.utils.XMLParser
 import ie.equalit.ouinet.Ouinet.RunningState
@@ -50,6 +51,7 @@ import mozilla.components.feature.top.sites.TopSitesProviderConfig
 import mozilla.components.lib.state.ext.consumeFrom
 import mozilla.components.support.base.feature.ViewBoundFeatureWrapper
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt
+import uk.co.samuelwall.materialtaptargetprompt.extras.focals.RectanglePromptFocal
 import java.util.Locale
 
 /**
@@ -275,22 +277,27 @@ class HomeFragment : BaseHomeFragment() {
 
         binding.sessionControlRecyclerView.itemAnimator = null
 
-        urlTooltip = CenoTooltip(this, R.id.mozac_browser_toolbar_origin_view) {
+        urlTooltip = CenoTooltip(this,
+            R.id.mozac_browser_toolbar_origin_view,
+            primaryText = "Let's get started!",
+            secondaryText = "Type in a website address to start browsing.",
+            promptFocal = RectanglePromptFocal().setCornerRadius(25f, 25f)
+        ) {
                 prompt: MaterialTapTargetPrompt, state: Int ->
             when(state) {
                 MaterialTapTargetPrompt.STATE_DISMISSING -> {
-                    //Show dialog - do you want to skip the tour?
-//                    getSkipTourDialog().show()
+
                 }
-                MaterialTapTargetPrompt.STATE_FOCAL_PRESSED -> {
-                    requireComponents.cenoPreferences.nextTooltip =+ 1
-                    urlTooltip.dismiss()
+                MaterialTapTargetPrompt.STATE_FINISHED -> {
+                    requireComponents.cenoPreferences.nextTooltip += 1
+                    urlTooltip.hideButtons()
                 }
                 MaterialTapTargetPrompt.STATE_REVEALED -> {
                     urlTooltip.addSkipButton {
                         //skip tour
                         urlTooltip.tooltip?.dismiss()
                         urlTooltip.dismiss()
+                        requireComponents.cenoPreferences.nextTooltip += 1
                     }
                 }
             }
@@ -302,7 +309,7 @@ class HomeFragment : BaseHomeFragment() {
             .setTitle("Skip?")
             .setMessage("Do you want to skip the Ceno tour?")
             .setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
-                requireComponents.cenoPreferences.nextTooltip =+ 1
+                requireComponents.cenoPreferences.nextTooltip += 1
             }
             .setNegativeButton("Cancel") { dialogInterface: DialogInterface, i: Int ->
                 //show tooltip again
@@ -315,13 +322,26 @@ class HomeFragment : BaseHomeFragment() {
     override fun onStart() {
         super.onStart()
         updateSessionControlView()
-        if (requireComponents.cenoPreferences.nextTooltip == TOOLBAR_TOOLTIP) {
-            urlTooltip.tooltipBuilder.show()
+        showTooltip()
+    }
+
+    fun showTooltip() {
+        when(requireComponents.cenoPreferences.nextTooltip) {
+            TOOLBAR_TOOLTIP -> urlTooltip.tooltipBuilder.show()
+            BEGIN_TOUR_TOOLTIP -> {
+                CenoTourStartOverlay(this, {
+                    requireComponents.cenoPreferences.nextTooltip = -1
+                }, {
+                    requireComponents.cenoPreferences.nextTooltip += 1
+                    showTooltip()
+                }).show()
+            }
         }
     }
 
     companion object {
-        const val PUBLIC_PERSONAL_TOOLTIP = 0
-        const val TOOLBAR_TOOLTIP = 1
+        const val PUBLIC_PERSONAL_TOOLTIP = 3
+        const val TOOLBAR_TOOLTIP = 2
+        const val BEGIN_TOUR_TOOLTIP = 1
     }
 }

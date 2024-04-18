@@ -8,24 +8,27 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import ie.equalit.ceno.R
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt
+import uk.co.samuelwall.materialtaptargetprompt.extras.PromptFocal
+import uk.co.samuelwall.materialtaptargetprompt.extras.focals.CirclePromptFocal
 import uk.co.samuelwall.materialtaptargetprompt.extras.focals.RectanglePromptFocal
 
 class CenoTooltip(
     var fragment: Fragment,
     var target: Int,
+    var primaryText: String,
+    var secondaryText: String,
+    var promptFocal: PromptFocal,
     listener: ( prompt:MaterialTapTargetPrompt, state:Int) -> Unit
 ) {
     var tooltip: MaterialTapTargetPrompt?
-    var rectanglePromptFocal = RectanglePromptFocal()
-        .setCornerRadius(25f, 25f)
     val tooltipBuilder : MaterialTapTargetPrompt.Builder
 
     init {
         tooltipBuilder = MaterialTapTargetPrompt.Builder(fragment)
             .setTarget(target)
-            .setPrimaryText("Let's get started!")
-            .setSecondaryText("Type in a website address to start browsing.")
-            .setPromptFocal(rectanglePromptFocal)
+            .setPrimaryText(primaryText)
+            .setSecondaryText(secondaryText)
+            .setPromptFocal(promptFocal)
             .setBackgroundColour(getColor(fragment.requireContext(), R.color.tooltip_prompt_color))
             .setFocalColour(getColor(fragment.requireContext(), R.color.tooltip_focal_color))
             .setPromptBackground(DimmedPromptBackground())
@@ -47,5 +50,10 @@ class CenoTooltip(
     fun dismiss() {
         val container = fragment.activity?.findViewById<FrameLayout>(R.id.container)
         container?.removeView(container.findViewById(R.id.tooltip_overlay_layout))
+    }
+
+    fun hideButtons() {
+        val overlay = fragment.activity?.findViewById<ConstraintLayout>(R.id.tooltip_overlay_layout)
+        overlay?.visibility = View.GONE
     }
 }
