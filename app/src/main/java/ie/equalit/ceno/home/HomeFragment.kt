@@ -279,7 +279,7 @@ class HomeFragment : BaseHomeFragment() {
 
         urlTooltip = CenoTooltip(this,
             R.id.mozac_browser_toolbar_origin_view,
-            primaryText = "Let's get started!",
+            primaryText = "Let's get browsing!",
             secondaryText = "Type in a website address to start browsing.",
             promptFocal = RectanglePromptFocal().setCornerRadius(25f, 25f)
         ) {
@@ -304,21 +304,6 @@ class HomeFragment : BaseHomeFragment() {
         }
     }
 
-    private fun getSkipTourDialog(): AlertDialog {
-        return AlertDialog.Builder(requireContext())
-            .setTitle("Skip?")
-            .setMessage("Do you want to skip the Ceno tour?")
-            .setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
-                requireComponents.cenoPreferences.nextTooltip += 1
-            }
-            .setNegativeButton("Cancel") { dialogInterface: DialogInterface, i: Int ->
-                //show tooltip again
-                urlTooltip.tooltipBuilder.show()
-            }
-            .create()
-
-    }
-
     override fun onStart() {
         super.onStart()
         updateSessionControlView()
@@ -340,7 +325,7 @@ class HomeFragment : BaseHomeFragment() {
     }
 
     companion object {
-        const val PUBLIC_PERSONAL_TOOLTIP = 3
+        const val PUBLIC_PERSONAL_TOOLTIP = 8
         const val TOOLBAR_TOOLTIP = 2
         const val BEGIN_TOUR_TOOLTIP = 1
     }

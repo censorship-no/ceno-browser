@@ -18,6 +18,9 @@ import mozilla.components.support.base.feature.ViewBoundFeatureWrapper
 //import ie.equalit.ceno.getComponents
 import ie.equalit.ceno.ext.requireComponents
 import ie.equalit.ceno.settings.Settings
+import ie.equalit.ceno.tooltip.CenoTooltip
+import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt
+import uk.co.samuelwall.materialtaptargetprompt.extras.focals.CirclePromptFocal
 
 /**
  * Fragment used for browsing the web within the main app.
@@ -73,9 +76,34 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
         */
         binding.sessionControlRecyclerView.visibility = View.GONE
         binding.swipeRefresh.visibility = View.VISIBLE
+
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (requireComponents.cenoPreferences.nextTooltip == TOOLTIP_CENO_SOURCES) {
+            val tooltip = CenoTooltip(
+                this,
+                R.id.mozac_browser_toolbar_tracking_protection_indicator,
+                "Sources",
+                "See where the webpage gets data from",
+                CirclePromptFocal()
+            )
+            { prompt, state ->
+                if (state == MaterialTapTargetPrompt.STATE_FINISHED) {
+                    requireComponents.cenoPreferences.nextTooltip += 1
+                }
+            }
+            tooltip.tooltip?.show()
+        }
     }
 
     private fun onHomeButtonClicked() {
         findNavController().navigate(R.id.action_global_home)
+    }
+
+    companion object {
+        const val TOOLTIP_CENO_SOURCES = 3
     }
 }
