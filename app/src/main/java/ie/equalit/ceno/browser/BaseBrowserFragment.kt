@@ -705,6 +705,11 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             if (context == null)
                 return
             requireContext().components.core.store.state.selectedTab?.let { tab ->
+
+                if(message.toString() == "{\"unknown\":1}") {
+                    // 500 has happened; display views
+                }
+
                 // the percentage progress for the webpage
                 val webPageLoadProgress = tab.content.progress ?: 0
 
