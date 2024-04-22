@@ -13,7 +13,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import android.widget.Toast
 import androidx.annotation.CallSuper
@@ -21,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Gravity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
+import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -466,6 +466,12 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             swipeRefresh.layoutParams = params
         }
         */
+
+        binding.resourceRetrievalFailed.btnRetry.setOnClickListener {
+            requireContext().components.core.store.state.selectedTab?.content?.url?.let { tabUrl ->
+                (activity as BrowserActivity).openToBrowser(tabUrl)
+            }
+        }
     }
 
     override fun onStart() {
@@ -706,8 +712,12 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
                 return
             requireContext().components.core.store.state.selectedTab?.let { tab ->
 
-                if(message.toString() == "{\"unknown\":1}") {
-                    // 500 has happened; display views
+                if (message.toString() == "{\"unknown\":1}" && binding.resourceRetrievalFailed.root.visibility == View.GONE) {
+                    // Can't retrieve resource, display error view
+                    binding.resourceRetrievalFailed.root.isGone = false
+                } else if (message.toString() != "{\"unknown\":1}") {
+                    // can retrieve resource || currently fetching resource
+                    binding.resourceRetrievalFailed.root.isGone = true
                 }
 
                 // the percentage progress for the webpage

@@ -296,4 +296,6 @@
     <string name="confirm_clear_cached_content">Clear cached content?</string>
     <string name="confirm_clear_cached_content_desc">Your cached content will be removed immediately</string>
 
+    <string name="failed_to_retrieve_resource">Oops! Failed to retrieve resource.\nThe following mechanisms were attempted:</string>
+
 </resources>
