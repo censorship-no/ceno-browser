@@ -6,16 +6,15 @@ package ie.equalit.ceno.browser
 
 import android.os.Bundle
 import android.view.View
+import android.widget.FrameLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ie.equalit.ceno.R
 import mozilla.components.browser.toolbar.BrowserToolbar
 import mozilla.components.feature.readerview.view.ReaderViewControlsBar
-//import mozilla.components.feature.toolbar.WebExtensionToolbarFeature
 import mozilla.components.support.base.feature.UserInteractionHandler
 import mozilla.components.support.base.feature.ViewBoundFeatureWrapper
-//import ie.equalit.ceno.getComponents
 import ie.equalit.ceno.ext.requireComponents
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.tooltip.CenoTooltip
@@ -77,11 +76,10 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
         binding.sessionControlRecyclerView.visibility = View.GONE
         binding.swipeRefresh.visibility = View.VISIBLE
 
-
+        showSourcesTooltip()
     }
 
-    override fun onStart() {
-        super.onStart()
+    private fun showSourcesTooltip() {
         if (requireComponents.cenoPreferences.nextTooltip == TOOLTIP_CENO_SOURCES) {
             val tooltip = CenoTooltip(
                 this,
@@ -93,6 +91,11 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
             { prompt, state ->
                 if (state == MaterialTapTargetPrompt.STATE_FINISHED) {
                     requireComponents.cenoPreferences.nextTooltip += 1
+                }
+                if (state == MaterialTapTargetPrompt.STATE_REVEALED) {
+                    val container = activity?.findViewById<FrameLayout>(R.id.container)
+                    val promptView = container?.findViewById<View>(R.id.material_target_prompt_view)
+                    promptView?.layoutParams = container?.layoutParams
                 }
             }
             tooltip.tooltip?.show()
