@@ -30,7 +30,7 @@
             android:id="@+id/explainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="270dp"
+            android:layout_marginTop="250dp"
             android:text="@string/failed_to_retrieve_resource"
             app:layout_constraintStart_toStartOf="@id/wordmark"
             app:layout_constraintTop_toBottomOf="@id/wordmark" />
@@ -81,12 +81,25 @@
             app:layout_constraintStart_toStartOf="@id/wordmark"
             app:layout_constraintTop_toBottomOf="@+id/tv_via_ceno_network" />
 
+
+        <TextView
+            android:id="@+id/tv_personal_browsing_learn_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:paddingVertical="8dp"
+            android:text="@string/personal_home_learn_more"
+            android:textColor="@color/ceno_sources_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_via_ceno_cache" />
+
         <Button
             android:id="@+id/btn_retry"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="65dp"
+            android:layout_marginBottom="70dp"
             android:backgroundTint="@color/ceno_blue_600"
             android:text="@string/standby_try_again"
             android:textColor="@color/photonWhite"
