@@ -466,12 +466,6 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             swipeRefresh.layoutParams = params
         }
         */
-
-        binding.resourceRetrievalFailed.btnRetry.setOnClickListener {
-            requireContext().components.core.store.state.selectedTab?.content?.url?.let { tabUrl ->
-                (activity as BrowserActivity).openToBrowser(tabUrl)
-            }
-        }
     }
 
     override fun onStart() {

@@ -296,6 +296,12 @@
     <string name="confirm_clear_cached_content">Clear cached content?</string>
     <string name="confirm_clear_cached_content_desc">Your cached content will be removed immediately</string>
 
-    <string name="failed_to_retrieve_resource">Oops! Failed to retrieve resource.\nThe following mechanisms were attempted:</string>
+    <string name="failed_to_retrieve_resource_title">Oops! Failed to load webpage.</string>
+    <string name="failed_to_retrieve_resource_mechanisms_attempted">The following mechanisms were attempted:</string>
+
+    <string name="learn_more_text_1">First lesson about this lorem ipsum.</string>
+    <string name="learn_more_text_2">Second lesson about this lorem ipsum.</string>
+
+    <string name="learn_more_extra_text">Additional stuff the user might nor care about.</string>
 
 </resources>
