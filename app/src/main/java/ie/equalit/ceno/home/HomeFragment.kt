@@ -290,7 +290,7 @@ class HomeFragment : BaseHomeFragment() {
                 }
                 MaterialTapTargetPrompt.STATE_FINISHED -> {
                     requireComponents.cenoPreferences.nextTooltip += 1
-                    urlTooltip.hideButtons()
+                    urlTooltip.dismiss()
                 }
                 MaterialTapTargetPrompt.STATE_REVEALED -> {
                     urlTooltip.addSkipButton {

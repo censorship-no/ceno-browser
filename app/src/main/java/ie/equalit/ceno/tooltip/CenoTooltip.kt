@@ -34,6 +34,7 @@ class CenoTooltip(
             .setPromptBackground(DimmedPromptBackground())
             .setPromptStateChangeListener(listener)
         tooltip = tooltipBuilder.create()
+
     }
 
     fun addSkipButton(listener: View.OnClickListener) {
