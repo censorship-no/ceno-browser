@@ -25,6 +25,7 @@ import uk.co.samuelwall.materialtaptargetprompt.extras.focals.CirclePromptFocal
  * Fragment used for browsing the web within the main app.
  */
 class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
+    private lateinit var tooltip: CenoTooltip
     /* Removing WebExtension toolbar feature, see below for more details
     private val webExtToolbarFeature = ViewBoundFeatureWrapper<WebExtensionToolbarFeature>()
      */
@@ -75,13 +76,11 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
         */
         binding.sessionControlRecyclerView.visibility = View.GONE
         binding.swipeRefresh.visibility = View.VISIBLE
-
-        showSourcesTooltip()
     }
 
     private fun showSourcesTooltip() {
         if (requireComponents.cenoPreferences.nextTooltip == TOOLTIP_CENO_SOURCES) {
-            val tooltip = CenoTooltip(
+            tooltip = CenoTooltip(
                 this,
                 R.id.mozac_browser_toolbar_tracking_protection_indicator,
                 "Sources",
@@ -91,16 +90,22 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
             { prompt, state ->
                 if (state == MaterialTapTargetPrompt.STATE_FINISHED) {
                     requireComponents.cenoPreferences.nextTooltip += 1
-                }
-                if (state == MaterialTapTargetPrompt.STATE_REVEALED) {
-                    val container = activity?.findViewById<FrameLayout>(R.id.container)
-                    val promptView = container?.findViewById<View>(R.id.material_target_prompt_view)
-                    promptView?.layoutParams = container?.layoutParams
+                    tooltip.dismiss()
                 }
             }
             tooltip.tooltip?.show()
+            tooltip.addSkipButton {
+                requireComponents.cenoPreferences.nextTooltip += 1
+                tooltip.dismiss()
+            }
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        showSourcesTooltip()
+    }
+
 
     private fun onHomeButtonClicked() {
         findNavController().navigate(R.id.action_global_home)

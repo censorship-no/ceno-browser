@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tooltip_overlay_start_layout"
-    android:background="@color/photonBlack"
     android:alpha="0.78">
 
     <ImageView
