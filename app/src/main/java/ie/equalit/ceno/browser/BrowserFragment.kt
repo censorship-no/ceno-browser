@@ -6,18 +6,17 @@ package ie.equalit.ceno.browser
 
 import android.os.Bundle
 import android.view.View
-import android.widget.FrameLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ie.equalit.ceno.R
+import ie.equalit.ceno.ext.requireComponents
+import ie.equalit.ceno.settings.Settings
+import ie.equalit.ceno.tooltip.CenoTooltip
 import mozilla.components.browser.toolbar.BrowserToolbar
 import mozilla.components.feature.readerview.view.ReaderViewControlsBar
 import mozilla.components.support.base.feature.UserInteractionHandler
 import mozilla.components.support.base.feature.ViewBoundFeatureWrapper
-import ie.equalit.ceno.ext.requireComponents
-import ie.equalit.ceno.settings.Settings
-import ie.equalit.ceno.tooltip.CenoTooltip
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt
 import uk.co.samuelwall.materialtaptargetprompt.extras.focals.CirclePromptFocal
 
@@ -87,7 +86,7 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
                 "See where the webpage gets data from",
                 CirclePromptFocal()
             )
-            { prompt, state ->
+            { _, state ->
                 if (state == MaterialTapTargetPrompt.STATE_FINISHED) {
                     requireComponents.cenoPreferences.nextTooltip += 1
                     tooltip.dismiss()
@@ -99,6 +98,30 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
                 tooltip.dismiss()
             }
         }
+        if (requireComponents.cenoPreferences.nextTooltip == TOOLTIP_CLEAR_CENO) {
+            tooltip = CenoTooltip(
+                this,
+                R.id.clear_counter_root,
+                "Clear Ceno",
+                "See how to clear Ceno cache",
+                CirclePromptFocal()
+            )
+            { _, state ->
+                if (state == MaterialTapTargetPrompt.STATE_FINISHED) {
+                    requireComponents.cenoPreferences.nextTooltip += 1
+                    tooltip.dismiss()
+                }
+            }
+            tooltip.tooltip?.show()
+            tooltip.addSkipButton {
+                requireComponents.cenoPreferences.nextTooltip += 1
+                tooltip.dismiss()
+            }
+        }
+    }
+
+     override fun onCancelSourcesPopup() {
+        showSourcesTooltip()
     }
 
     override fun onResume() {
@@ -113,5 +136,6 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
 
     companion object {
         const val TOOLTIP_CENO_SOURCES = 3
+        const val TOOLTIP_CLEAR_CENO = 4
     }
 }

@@ -44,7 +44,9 @@
             android:id="@+id/tv_start_tooltip_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:gravity="center"
             android:text="@string/start_tooltip_description"
             android:textColor="@color/fx_mobile_text_color_primary" />
@@ -56,8 +58,12 @@
             android:layout_gravity="center_horizontal"
             android:paddingStart="32dp"
             android:paddingEnd="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/get_started_button"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="@color/photonWhite"
+            android:textColor="@color/ceno_blue_900" />
 
         <Button
             android:id="@+id/btn_skip_all_ceno_tour"

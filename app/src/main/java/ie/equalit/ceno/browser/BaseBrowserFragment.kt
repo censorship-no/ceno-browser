@@ -4,25 +4,24 @@
 
 package ie.equalit.ceno.browser
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.annotation.SuppressLint
+import android.os.Handler
+import android.os.Looper
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
-import androidx.lifecycle.lifecycleScope
 import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Gravity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
@@ -51,11 +50,11 @@ import ie.equalit.ceno.search.AwesomeBarWrapper
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.tabs.TabCounterView
 import ie.equalit.ceno.ui.theme.ThemeManager
+import ie.equalit.ouinet.Ouinet
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlinx.coroutines.Dispatchers
-import ie.equalit.ouinet.Ouinet
-import kotlinx.coroutines.flow.mapNotNull
 import mozilla.components.browser.state.selector.selectedTab
 import mozilla.components.browser.state.state.TabSessionState
 import mozilla.components.browser.state.store.BrowserStore
@@ -88,6 +87,7 @@ import mozilla.components.support.base.log.logger.Logger
 import mozilla.components.support.ktx.android.content.res.resolveAttribute
 import mozilla.components.support.ktx.android.view.enterImmersiveMode
 import mozilla.components.support.ktx.android.view.exitImmersiveMode
+import mozilla.components.support.ktx.kotlin.tryGetHostFromUrl
 import mozilla.components.support.ktx.kotlinx.coroutines.flow.ifAnyChanged
 import org.json.JSONObject
 import org.mozilla.geckoview.WebExtension
@@ -117,7 +117,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
     private val swipeRefreshFeature = ViewBoundFeatureWrapper<SwipeRefreshFeature>()
     private val windowFeature = ViewBoundFeatureWrapper<WindowFeature>()
     private val webAuthnFeature = ViewBoundFeatureWrapper<WebAuthnFeature>()
-    private var webExtensionActionPopupPanel: WebExtensionActionPopupPanel? = null
+    protected var webExtensionActionPopupPanel: WebExtensionActionPopupPanel? = null
     private lateinit var runnable: Runnable
     private lateinit var progressBarTrackerRunnable: Runnable
     private var handler = Handler(Looper.getMainLooper())
@@ -602,7 +602,13 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             isConnectionSecure = tab.content.securityInfo.secure,
             requireComponents.appStore.state.sourceCounts[tab.content.url]
         ).also { currentEtp -> currentEtp.show() }
+
+        webExtensionActionPopupPanel?.setOnCancelListener {
+            onCancelSourcesPopup()
+        }
     }
+
+    open fun onCancelSourcesPopup() = Unit
 
     private fun showTabs() {
         (activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).apply {
