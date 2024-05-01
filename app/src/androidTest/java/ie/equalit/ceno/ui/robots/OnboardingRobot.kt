@@ -15,8 +15,8 @@ class OnboardingRobot {
 
         fun skipOnboardingIfNeeded() {
             if (Settings.shouldShowOnboarding(TestHelper.appContext)) {
-                skipOnboardingButton().waitForExists(TestAssetHelper.waitingTime)
-                skipOnboardingButton().click()
+                skipCenoTourButton().waitForExists(TestAssetHelper.waitingTime)
+                skipCenoTourButton().click()
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                     givePermissions()
                 }
@@ -30,8 +30,8 @@ fun onboarding(interact: OnboardingRobot.() -> Unit): OnboardingRobot.Transition
     return OnboardingRobot.Transition()
 }
 
-private fun skipOnboardingButton() = mDevice.findObject(
-    UiSelector().resourceId("${TestHelper.packageName}:id/btn_onboarding_start_skip"),
+private fun skipCenoTourButton() = mDevice.findObject(
+    UiSelector().resourceId("${TestHelper.packageName}:id/btn_skip_all_ceno_tour"),
 )
 
 private fun continuePermissionsButton() = mDevice.findObject(
@@ -44,12 +44,11 @@ private fun allowButton() = mDevice.findObject(
 )
 
 fun givePermissions() {
-    continuePermissionsButton().waitForExists(TestAssetHelper.waitingTime)
-    continuePermissionsButton().click()
     //for allowing notifications
     allowButton().waitForExists(TestAssetHelper.waitingTime)
     allowButton().click()
     //for battery optimizations
-    allowButton().waitForExists(TestAssetHelper.waitingTime)
-    allowButton().click()
+    if (allowButton().waitForExists(TestAssetHelper.waitingTime)) {
+        allowButton().click()
+    }
 }
