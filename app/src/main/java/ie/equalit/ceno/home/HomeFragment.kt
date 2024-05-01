@@ -3,17 +3,23 @@ package ie.equalit.ceno.home
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
+import ie.equalit.ceno.AppPermissionCodes
 import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BaseBrowserFragment
@@ -316,17 +322,62 @@ class HomeFragment : BaseHomeFragment() {
             BEGIN_TOUR_TOOLTIP -> {
                 CenoTourStartOverlay(this, {
                     requireComponents.cenoPreferences.nextTooltip = -1
+                    askForPermissions()
                 }, {
                     requireComponents.cenoPreferences.nextTooltip += 1
-                    showTooltip()
+                    askForPermissions()
+//                    showTooltip()
                 }).show()
             }
         }
+    }
+
+    private fun askForPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            /* This is Android 13 or later, ask for permission POST_NOTIFICATIONS */
+            allowPostNotifications()
+        }
+        else {
+            /* This is NOT Android 13, just ask to disable battery optimization */
+            disableBatteryOptimization()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, data: Intent?, resultCode: Int): Boolean {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requireComponents.permissionHandler.onActivityResult(requestCode, data, resultCode)) {
+            Log.i(TAG, "Permission - Success")
+        } else {
+            Log.w(TAG, "Permission denied")
+        }
+        showTooltip()
+        return true
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        if (requestCode == AppPermissionCodes.REQUEST_CODE_NOTIFICATION_PERMISSIONS) {
+            requireComponents.ouinet.background.start()
+            disableBatteryOptimization()
+        }
+        else {
+            Log.e(TAG, "Unknown request code received: $requestCode")
+        }
+    }
+
+    private fun disableBatteryOptimization() {
+        requireComponents.permissionHandler.requestBatteryOptimizationsOff(requireActivity())
+    }
+
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private fun allowPostNotifications() {
+        requireComponents.permissionHandler.requestPostNotificationsPermission(this)
     }
 
     companion object {
         const val PUBLIC_PERSONAL_TOOLTIP = 8
         const val TOOLBAR_TOOLTIP = 2
         const val BEGIN_TOUR_TOOLTIP = 1
+
+        const val TAG = "HOMEPAGE"
     }
 }

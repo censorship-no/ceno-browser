@@ -226,7 +226,7 @@
     <string name="mozac_feature_contextmenu_open_link_in_private_tab" tools:ignore="UnusedResources">Open link in personal tab</string>
     <string name="bridge_mode_category">Bridge Announcements</string>
     <string name="start_tooltip_title">Welcome to Ceno Tour</string>
-    <string name="start_tooltip_description">Get to know how to use Ceno with a quick tour of its features</string>
+    <string name="start_tooltip_description">Unlock Ceno\'s full potential - Take a guided tour to discover key features, and allow permissions to help share the web even when the app is in the background.</string>
     <string name="get_started_button">Get Started</string>
     <string name="skip_the_tour_button">Skip the tour</string>
 </resources>
