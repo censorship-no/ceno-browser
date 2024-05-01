@@ -11,7 +11,6 @@
     <string name="ceno_notification_channel_name">&brandShortName; hizmeti</string>
     <string name="ceno_on_mobile_data_dialog_continue" tools:ignore="UnusedResources">İlerle</string>
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">Bir daha gösterme</string>
-    <string name="onboarding_info_title">Bildiğiniz tarayıcılara benzemez</string>
     <string name="onboarding_button">Başlayalım</string>
     <string name="onboarding_skip_button">Geç</string>
     <string name="preferences_toolbar_hide">Kaydırılınca gizlensin</string>
@@ -24,7 +23,6 @@
     <string name="ceno_clear_dialog_clear_cache_only">Yalnızca &brandShortName; ön belleğini temizle</string>
     <string name="ceno_clear_dialog_title">&brandShortName; uygulamasını temizle</string>
     <string name="onboarding_warning_button">Tamam</string>
-    <string name="onboarding_thanks_title">Ağın büyümesine yardımcı olduğunuz için teşekkürler!</string>
     <string name="preferences_toolbar_position">Ekranın en üstüne yerleştir</string>
     <string name="preferences_clear_in_toolbar">Araç çubuğunda görüntülensin</string>
     <string name="preferences_theme">Uygulama temasını değiştir</string>
@@ -44,9 +42,7 @@
     <string name="preferences_change_app_icon">Uygulama simgesini değiştir</string>
     <string name="ceno_notification_description">Durdurmak için dokunun</string>
     <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">&brandShortName; ayarları</string>
-    <string name="onboarding_warning_title">İzin verilmedi</string>
     <string name="onboarding_battery_button">İlerle</string>
-    <string name="onboarding_thanks_button">Haydi başlayalım!</string>
     <string name="preferences_show_onboarding">Bir sonraki açılışta tanıtım görüntülensin</string>
     <string name="preferences_customization">Özelleştirme</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;Kişisel gezinme&lt;/h1&gt; &lt;p&gt;Ceno, Kişisel sekmelerdeki içeriği diğer kullanıcılarla paylaşmaz. Oturum açılması gereken siteleri güvenle ziyaret edebilirsiniz. Yine de İnternet bağlantısı gereklidir.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Ayrıntılı bilgi almak ister misiniz?&lt;/p&gt;</string>
@@ -76,7 +72,6 @@
     <string name="donate_button_text">Bağış yapın</string>
     <string name="onboarding_info_button">Güzel!</string>
     <string name="clear_cache_fail">Ön bellek temizlenemedi. Bir süre sonra yeniden deneyin</string>
-    <string name="onboarding_battery_title">İzin gerekli</string>
     <string name="preferences_clear_in_menu">Menüde görüntülensin</string>
     <string name="preferences_ceno_sources_origin_summary">İçeriği doğrudan siteden yükler</string>
     <string name="preferences_ceno_network_config_summary">Ouinet durumu, UDP uç noktaları, BitTorrent ön yükleyicileri</string>
@@ -85,50 +80,22 @@
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">&brandShortName; Browser bildirimi</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Beklediğinizden daha fazla veri kullanabileceği için &brandShortName; ile kablosuz ağ bağlantısını kullanmanız önerilir. Mobil veri kullanırken &brandShortName; uygulamasını kapatmak isteyebilirsiniz.</string>
     <string name="shutdown_stop_title">&brandShortName; Browser durduruluyor</string>
-    <string name="onboarding_battery_text">Birazdan, işletim sisteminiz sizden şu izinleri isteyecek:
-\n
-\n• Pil iyileştirmelerini kapatma
-\n
-\nBu izin, uygulama arka planda çalışırken siteleri paylaşmayı sürdürmek için gereklidir.</string>
     <string name="preferences_clear_ceno_cache_summary">Yerel ön bellekteki İnternet içeriğini temizle</string>
     <string name="ouinet_client_fetch_fail">&brandShortName; ayarı değiştirilemedi</string>
     <string name="about_content"><p>%1$s - İnternet içeriklerini paylaşın!</p> <p>Ceno (censorship.no!\'nun kısaltması), güncel İnternet sansür yöntemlerinin etrafından dolaşan dünyanın ilk mobil tarayıcısıdır. Eşler arası omurgası, insanların bağlantının kesildiği veya tehlikeye girdiği bölgelerde ve bölgeler arasında site bilgilerine erişmesini ve bunları paylaşmasını sağlar. </p> <p>%1$s, hedefi çevrim içi serbest bilgi akışı ile birlikte temel özgürlükleri ve insan haklarını desteklemek ve savunmak olan Kanadalı eQualitie kuruluşunun bir projesidir. Erişilebilir teknolojiler oluşturmayı ve dijital çağda insan hakları ve özgürlüklerini savunmak için gereken becerileri geliştirmeyi hedefliyoruz.</p></string>
     <string name="shutdown_clear_title">Uygulama verileri siliniyor ve 
 \n&brandShortName; Browser durduruluyor</string>
-    <string name="onboarding_warning_text">Pil iyileştirmesi hala açık.
-\n
-\nİzni daha sonra \"Ayarlar &gt; Pil iyileştirmesini kapat\" bölümünden verebilirsiniz</string>
     <string name="preferences_ceno_sources_peers_summary">İçerik paylaşan diğer kullanıcılardan yüklenir</string>
     <string name="preferences_ceno_sources_peers">Paylaşılmış</string>
-    <string name="onboarding_info_text">&brandShortName; eşler arası ağ teknolojisini kullanarak İnternet içeriğini diğer &brandShortName; kullanıcıları ile paylaşır</string>
-    <string name="onboarding_thanks_text">&brandShortName; kullanıcısı olarak, sansürlenmiş içeriğe erişimin sağlayan köprüler ağının büyümesini sağlıyorsunuz.</string>
     <string name="preferences_ceno_sources_public_summary">İçerik herkese açık Ceno ağından yüklenir</string>
     <string name="preferences_clear_behavior_summary">Temizle tuşuna dokunma davranışını ayarlayın</string>
     <string name="preference_show_search_suggestions_summary">&brandShortName; adres çubuğuna yazdıklarınızı arama hizmetinize gönderir</string>
     <string name="crash_report_non_fatal_action">&vendorShortName; bildirimi için dokunun</string>
-    <string name="onboarding_battery_text_v33">Birazdan işletim sisteminiz sizden şu izinleri isteyecek:
-\n
-\n• Bildirim izni
-\n• Pil iyileştirmelerini kapatma
-\n
-\nBu izin uygulama arka planda çalışırken siteleri paylaşmayı sürdürmek için gereklidir</string>
-    <string name="onboarding_warning_text_v33_1">Bildirimlere izin verilmiyor.
-\n
-\nDaha sonra izin vermek için \"Ayarlar &gt; Bildirimlere izin ver\" bölümüne gidin</string>
-    <string name="onboarding_warning_text_v33_2">Bildirimlere izin verilmiyor ve hala pil optimizasyonu uygulanıyor.
-\n
-\nDaha sonra izin vermek için \"Ayarlar \" bölümüne gidin</string>
     <string name="preferences_allow_notifications">Bildirimlere izin ver</string>
     <string name="onboarding_public_personal_text">Herkese açık sekmeleri haberleri okumak, videolar seyretmek ya da genel İnternet gezinmesi için kullanın. İnternet içeriğini diğer Ceno kullanıcıları ile paylaşın.
 \n
 \nKişisel sekmeler, sosyal ağ hesapları, çevrim içi alışveriş ve başkalarıyla paylaşmak istemediğiniz siteler için daha uygundur.</string>
-    <string name="onboarding_cleanup_text">Tarayıcı geçmişinizi, kimlik doğrulama bilgilerinizi ve &brandShortName; üzerinde bıraktığınız izleri tek bir düğme ile temizleyin.</string>
     <string name="onboarding_public_or_personal_title">Herkese açık ya da Kişisel?</string>
-    <string name="ceno_onboarding_start_title">İnternet içeriklerini paylaşın,
-\neşler arasında</string>
-    <string name="ceno_onboarding_start_text">&brandShortName;’s eşler arası bağlantısı, insanların site içeriklerine erişmesini ve bağlantıların engellendiği ya da denetlendiği yerlerle paylaşmasını sağlar.</string>
-    <string name="onboarding_cleanup_title">Her şeyi temizleyin,
-\nher yerde ve bir kerede</string>
     <string name="preferences_ceno_sources_reachability">Erişilebilirlik durumu</string>
     <string name="preferences_ceno_sources_local_udp">Yerel UDP uç noktaları</string>
     <string name="preferences_ceno_sources_external_udp">Dış UDP uç noktaları</string>

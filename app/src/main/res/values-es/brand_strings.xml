@@ -56,32 +56,17 @@
     <!-- Snackbar action button when a non fatal crash happen-->
     <string name="crash_report_non_fatal_action">Selecciona para informar a &vendorShortName;</string>
     <string name="onboarding_fragment">Bienvenida(o) a &brandShortName;</string>
-    <string name="onboarding_battery_title">Permiso necesario</string>
-    <string name="onboarding_battery_text">En breve el sistema operativo te pedirá permiso para
-\n
-\n- Desactivar la optimización de la batería.
-\n
-\nEsto es necesario para seguir compartiendo páginas web mientras la aplicación está en segundo plano.</string>
     <string name="onboarding_battery_button">Continuar</string>
-    <string name="onboarding_warning_text">La optimización de la batería sigue activada.
-\n
-\nVe a \"Ajustes &gt; Desactivar Optimización de Batería\" para dar permiso más tarde</string>
     <string name="onboarding_warning_button">Ok</string>
     <string name="onboarding_button">Comenzar</string>
-    <string name="onboarding_thanks_button">¡Vamos!</string>
     <string name="onboarding_skip_button">Saltar</string>
-    <string name="onboarding_info_title">No es tu navegador normal</string>
     <string name="onboarding_info_button">¡Genial!</string>
-    <string name="onboarding_warning_title">Permiso denegado</string>
-    <string name="onboarding_thanks_title">¡Gracias por hacer crecer la red!</string>
     <string name="preferences_toolbar_position">Colocar en la parte superior de la pantalla</string>
     <string name="preferences_toolbar_hide">Desplácese para ocultar</string>
     <string name="preferences_show_onboarding">Mostrar la incorporación en el próximo lanzamiento</string>
     <string name="preferences_disable_battery_opt">Desactivar la Optimización de Batería</string>
     <string name="preferences_customization">Personalización</string>
     <string name="about_content"><p>%1$s - ¡Comparte la Red!</p> <p>Ceno (abreviatura de Censorship.no!) es el primer navegador móvil del mundo que evade los actuales métodos de censura en Internet. Su red troncal peer-to-peer (red de pares o P2P) permite a la gente acceder y compartir información en la web y a través de regiones donde la conectividad ha sido interrumpida o comprometida. </p> <p>%1$s Es un proyecto de eQualitie, una organización canadiense cuya misión es promover y defender las libertades fundamentales y los derechos humanos, incluida la libre circulación de información en línea. Nuestro objetivo es crear tecnología accesible y mejorar el conjunto de habilidades necesarias para defender los derechos humanos y las libertades en la era digital.</p></string>
-    <string name="onboarding_info_text">&brandShortName; utiliza tecnología punto a punto para compartir contenido web que puede ser accedido por otra(o)s &brandShortName; usuaria(o)s</string>
-    <string name="onboarding_thanks_text">Como usuaria(o) de &brandShortName;, ayudas a hacer crecer la red de puentes disponibles que permiten acceder a contenidos censurados.</string>
     <string name="browser_menu_ceno_ext">&brandShortName; Ajustes</string>
     <string name="ceno_clear_dialog_cancel">Cancelar</string>
     <string name="ceno_clear_dialog_clear_cache_only">Borrar sólo caché &brandShortName;</string>
@@ -138,29 +123,11 @@
     <string name="preferences_show_home_button">Mostrar el botón de inicio</string>
     <string name="preferences_ceno_network_config">Detalles de la Red</string>
     <string name="ouinet_client_fetch_fail">Falló al cambiar la configuración de &brandShortName;</string>
-    <string name="onboarding_warning_text_v33_1">Las notificaciones no están permitidas.
-\n
-\nVe a \"Ajustes &gt; Permitir Notificaciones\" para dar permiso más tarde</string>
-    <string name="onboarding_warning_text_v33_2">Notificaciones no están permitidas y la optimización de la batería sigue activada.
-\n
-\nVe a la \"Configuración\" para dar permiso más tarde</string>
     <string name="preferences_allow_notifications">Permitir Notificaciones</string>
-    <string name="onboarding_battery_text_v33">En breve, el sistema operativo te pedirá permiso para
-\n
-\n• Permitir las notificaciones
-\n• Desactivar la optimización de la batería
-\n
-\nEsto es necesario para seguir compartiendo páginas web mientras la aplicación está en segundo plano</string>
-    <string name="ceno_onboarding_start_title">Comparte la web,
-\npeer-to-peer</string>
-    <string name="ceno_onboarding_start_text">La red troncal peer-to-peer de &brandShortName; permite a las personas acceder y compartir el contenido de las páginas web en y entre regiones donde la conectividad se ha visto interrumpida o comprometida.</string>
     <string name="onboarding_public_or_personal_title">¿Pública o personal\?</string>
     <string name="onboarding_public_personal_text">Utilice las pestañas públicas para leer noticias, ver vídeos y navegar por Internet en general. Comparte contenidos web con otros usuarios de Ceno.
 \n
 \nLas pestañas personales son más adecuadas para las sociales, compras en línea y navegación por páginas web que no desea compartir con otros.</string>
-    <string name="onboarding_cleanup_title">Limpiar todo,
-\nen todas partes, todo a la vez</string>
-    <string name="onboarding_cleanup_text">Borra el historial del navegador, las credenciales y cualquier rastro que hayas dejado en &brandShortName; con un solo botón.</string>
     <string name="ceno_home_card_public_text">La mejor conectividad, menos privacidad. Para leer noticias, ver vídeos y compartir con los demás</string>
     <string name="ceno_home_card_personal_title">PERSONAL</string>
     <string name="ceno_home_card_public_title">PÚBLICA</string>

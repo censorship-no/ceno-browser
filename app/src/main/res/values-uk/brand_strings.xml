@@ -67,21 +67,10 @@
     <string name="ceno_clear_dialog_title">Очистити &brandShortName;</string>
     <string name="onboarding_skip_button">Пропустити</string>
     <string name="onboarding_info_button">Чудово!</string>
-    <string name="onboarding_info_text">&brandShortName; використовує однорангову технологію для обміну веб-контентом, до якого можуть отримати доступ інші користувачі &brandShortName;</string>
     <string name="onboarding_battery_button">Продовжити</string>
-    <string name="onboarding_warning_title">У дозволі відмовлено</string>
     <string name="browser_menu_ceno_ext">&brandShortName; Налаштування</string>
     <string name="onboarding_button">Почати роботу</string>
-    <string name="onboarding_info_title">Не ваш звичайний браузер</string>
-    <string name="onboarding_battery_title">Необхідний дозвіл</string>
-    <string name="onboarding_battery_text">Незабаром операційна система запитає у вас дозвіл
-\n
-\n• Вимкнути оптимізацію батареї
-\n
-\nЦе потрібно аби ділитися веб-сайтами, поки програма працює у фоновому режимі.</string>
     <string name="onboarding_warning_button">Гаразд</string>
-    <string name="onboarding_thanks_title">Дякуємо за розширення мережі!</string>
-    <string name="onboarding_thanks_button">Почнімо!</string>
     <string name="preferences_toolbar_position">Розмістіть у верхній частині екрана</string>
     <string name="preferences_toolbar_hide">Прогорніть, щоб приховати</string>
     <string name="preferences_show_onboarding">Показати вхід під час наступного запуску</string>
@@ -90,10 +79,6 @@
     <string name="ceno_clear_dialog_clear_cache_only">Очистити &brandShortName; тільки кеш</string>
     <string name="ceno_clear_dialog_description">ПОПЕРЕДЖЕННЯ: Очищення кешу та даних застосунку поверне налаштування &brandShortName; застосунку до початкових – так, ніби ним ніколи не користувалися.</string>
     <string name="ceno_clear_action_description">Очистити</string>
-    <string name="onboarding_warning_text">Оптимізація акумулятора все ще увімкнена.
-\n
-\nПерейдіть до «Hалаштування &gt; Вимкнути оптимізацію акумулятора», щоб надати дозвіл пізніше</string>
-    <string name="onboarding_thanks_text">Як користувач &brandShortName;, ви допомагаєте розширити мережу доступних мостів, що забезпечують доступ до цензурованого контенту.</string>
     <string name="preferences_disable_battery_opt">Вимкнути оптимізацію батареї</string>
     <string name="about_content"><p>%1$s - Поділіться інтернетом!</p> <p>Ceno (скорочення від censorship.no!) - перший у світі мобільний браузер, який обходить наявні методи цензури в інтернеті. Його пірингова основа дозволяє людям отримувати доступ до інформації в мережі та обмінюватися нею у місцевості, де зв\'язок був перерваний або скомпрометований. </p> <p>%1$s є проектом канадської організації eQualitie, місія якої полягає у просуванні та захисті фундаментальних свобод і прав людини, включаючи вільний обмін інформацією в Інтернеті. Наша мета – створити доступні технології та вдосконалити набір навичок, необхідних для захисту прав і свобод людини в цифрову епоху.</p></string>
     <string name="ceno_clear_dialog_clear_entire_app">Очистити &brandShortName; кеш і дані застосунку</string>
@@ -121,18 +106,6 @@
     <string name="source_code_button_text">Вихідний код</string>
     <string name="website_button_text">Вебсайт</string>
     <string name="donate_button_text">Задонатьте</string>
-    <string name="onboarding_battery_text_v33">Незабаром операційна система запитає у вас дозвіл
-\n
-\n• Дозволити сповіщення
-\n• Вимкнути оптимізацію батареї
-\n
-\nЦе потрібно аби ділитися веб-сайтами, поки програма працює у фоновому режимі.</string>
-    <string name="onboarding_warning_text_v33_1">Сповіщення заборонені.
-\n
-\nПерейдіть до «Налаштування &gt; Дозволити сповіщення», щоб надати дозвіл пізніше</string>
-    <string name="onboarding_warning_text_v33_2">Сповіщення заборонені, оптимізація заряду батареї все ще ввімкнена.
-\n
-\nПерейдіть у «Налаштування», щоб надати дозвіл пізніше</string>
     <string name="shutdown_stop_title">Зупинити &brandShortName; браузер</string>
     <string name="shutdown_clear_title">Очистити дані застосунку та 
 \nзупинити &brandShortName; Браузер</string>
@@ -158,16 +131,10 @@
     <string name="ouinet_client_fetch_fail">Не вдалося змінити &brandShortName; налаштування</string>
     <string name="addon_placeholder">Доповнення (Add-ons) недоступні</string>
     <string name="ceno_home_card_public_title">ПУБЛІЧНІ</string>
-    <string name="ceno_onboarding_start_title">Поширюйте веб
-\nвід користувача до користувача</string>
     <string name="onboarding_public_or_personal_title">Публічний чи персональний\?</string>
     <string name="onboarding_public_personal_text">Використовуйте Публічні вкладки аби читати новини, дивитися відео чи загальний серфінг в інтернеті. Поширюйте цей контент з іншими користувачами Ceno.
 \n
 \nПерсональні вкладки краще підходять для акаунтів у соцмережах, магазинів онлайн-покупок і перегляду веб-сайтів, інформацією про які ви не хочете ділитися з іншими.</string>
-    <string name="onboarding_cleanup_title">Очистити все,
-\nусюди, все й відразу</string>
-    <string name="onboarding_cleanup_text">Очистіть історію браузера, облікові дані та будь-які сліди, які ви залишили в &brandShortName; за допомогою однієї кнопки.</string>
-    <string name="ceno_onboarding_start_text">&brandShortName;’s одноранговий (піринговий) протокол дозволяє людям отримувати доступ до вмісту веб-сайту та обмінюватися ним у регіонах, де з’єднання було перервано або порушено.</string>
     <string name="ceno_home_card_personal_text">Менш швидкий зв\'язок, однак більше конфіденційності. Аби логінитися в акаунти, не залишаючи слідів</string>
     <string name="ceno_home_card_public_text">Хороша якість зв\'язку, однак менше конфіденційності. Для читання новин, перегляду відео та обміну контентом з іншими</string>
     <string name="ceno_home_card_personal_title">ПЕРСОНАЛЬНІ</string>

@@ -20,16 +20,8 @@
     <string name="ceno_on_mobile_data_dialog_stop_now" tools:ignore="UnusedResources">Hentikan &amp;brandNameShortName; sekarang</string>
     <string name="default_top_site_1_title">&amp;brandNameShortName; Panduan</string>
     <string name="onboarding_skip_button">Lewati</string>
-    <string name="onboarding_info_title">Bukan browser biasa</string>
     <string name="onboarding_info_button">Keren!</string>
-    <string name="onboarding_battery_text">Tak lama kemudian, OS akan meminta izin kepada Anda untuk
-\n
-\n• Menonaktifkan pengoptimalan baterai.
-\n
-\nHal ini diperlukan untuk tetap berbagi situs web saat aplikasi berada di latar belakang</string>
     <string name="onboarding_battery_button">Lanjutkan</string>
-    <string name="onboarding_warning_title">Izin ditolak</string>
-    <string name="onboarding_thanks_title">Terima kasih karena telah mengembangkan jaringan Ceno!</string>
     <string name="ceno_clear_dialog_description">PERINGATAN: Menghapus cache dan data aplikasi akan mengatur ulang aplikasi &brandShortName; seolah-olah aplikasi tersebut tidak pernah digunakan.</string>
     <string name="ceno_clear_action_description">Bersihkan</string>
     <string name="ceno_clear_dialog_cancel">Batal</string>
@@ -39,12 +31,6 @@
     <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
     <string name="ceno_notification_title">&amp;brandNamaPendek; Layanan Browser</string>
     <string name="onboarding_button">Memulai</string>
-    <string name="onboarding_warning_text_v33_1">Notifikasi tidak diizinkan.
-\n
-\nBuka \"Pengaturan &gt; Izinkan Notifikasi\" untuk memberikan izin nanti</string>
-    <string name="onboarding_warning_text_v33_2">Notifikasi tidak diizinkan dan pengoptimalan baterai masih diaktifkan.
-\n
-\nBuka \"Pengaturan\" untuk memberikan izin nanti</string>
     <string name="preferences_about_page">Tentang &vendorShortName;</string>
     <string name="about_category">Tentang</string>
     <string name="about_content">&lt;p&gt;%1$s - Share the Web!&lt;/p&gt; &lt;p&gt;Ceno (singkatan dari censorship.no!) adalah peramban seluler pertama di dunia yang melangkahi metode penyensoran Internet saat ini. Backbone peer-to-peer-nya memungkinkan orang untuk mengakses dan berbagi informasi web di dalam dan di seluruh wilayah di mana konektivitasnya terganggu atau terganggu. &lt;/p&gt; &lt;p&gt;%1$s adalah proyek dari eQualitie, sebuah organisasi Kanada yang memiliki misi untuk mempromosikan dan membela kebebasan fundamental dan hak asasi manusia, termasuk aliran informasi online yang bebas. Tujuan kami adalah menciptakan teknologi yang mudah diakses dan meningkatkan keahlian yang dibutuhkan untuk membela hak asasi manusia dan kebebasan di era digital.</string>
@@ -54,17 +40,6 @@
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">Jangan tampilkan lagi</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">&amp;brandNameShortName; Pemberitahuan browser</string>
     <string name="ceno_clear_dialog_clear_entire_app">Hapus &brandShortName; cache dan data aplikasi</string>
-    <string name="onboarding_info_text">&brandShortName; menggunakan teknologi peer-to-peer untuk berbagi konten web yang dapat diakses oleh pengguna &brandShortName; lainnya</string>
-    <string name="onboarding_battery_title">Izin diperlukan</string>
-    <string name="onboarding_battery_text_v33">Sistem operasi akan meminta izin kepada Anda untuk
-\n
-\n• Menampilkan notifikasi
-\n• Menonaktifkan pengoptimalan baterai
-\n
-\nIni diperlukan untuk terus berbagi situs web saat aplikasi berada di latar belakang</string>
-    <string name="onboarding_warning_text">Pengoptimalan baterai masih diaktifkan.
-\n
-\nBuka \"Pengaturan &gt; Nonaktifkan Pengoptimalan Baterai\" untuk memberikan izin nanti</string>
     <string name="preferences_customization">Kustomisasi</string>
     <string name="preferences_theme_default">2</string>
     <string name="preferences_disable_battery_opt">Nonaktifkan Pengoptimalan Baterai</string>
@@ -95,7 +70,6 @@
     <string name="shutdown_stop_title">Menghentikan Peramban &brandShortName;</string>
     <string name="preferences_ceno_enable_log">Aktifkan berkas log</string>
     <string name="website_button_text">Situs Web</string>
-    <string name="onboarding_thanks_text">Sebagai pengguna &brandShortName;, Anda sudah membantu untuk mengembangkan jaringan jembatan yang memungkinkan akses ke konten yang disensor.</string>
     <string name="preferences_toolbar_hide">Gulir untuk menyembunyikan</string>
     <string name="preferences_show_home_button">Tampilkan tombol beranda</string>
     <string name="preferences_show_onboarding">Tampilkan panduan cepat pada peluncuran berikutnya</string>
@@ -116,17 +90,10 @@
     <string name="addon_placeholder">Tidak Ada Pengaya yang Tersedia</string>
     <string name="source_code_button_text">Kode Sumber</string>
     <string name="donate_button_text">Donasi</string>
-    <string name="onboarding_thanks_button">Ayo!</string>
-    <string name="ceno_onboarding_start_title">Berbagi web,
-\nklien ke klien</string>
-    <string name="ceno_onboarding_start_text">Tulang punggung klien ke klien &brandShortName; memungkinkan orang untuk mengakses dan berbagi konten situs web di dalam dan di seluruh wilayah di mana konektivitas sedang terganggu atau disusupi.</string>
     <string name="onboarding_public_or_personal_title">Publik atau Privat\?</string>
     <string name="onboarding_public_personal_text">Gunakan tab Publik untuk membaca berita, menonton video, dan berselancar di web secara umum. Berbagi konten web dengan pengguna Ceno lainnya.
 \n
 \nTab pribadi lebih cocok untuk akun media sosial, belanja online, dan menjelajahi situs web yang tidak ingin Anda bagikan dengan orang lain.</string>
-    <string name="onboarding_cleanup_title">Bersihkan semuanya,
-\ndi mana pun, sekaligus</string>
-    <string name="onboarding_cleanup_text">Hapus riwayat peramban, kredensial, dan jejak apa pun yang Anda tinggalkan di &brandShortName; dengan satu tombol.</string>
     <string name="preferences_ceno_sources_reachability">Status keterjangkauan</string>
     <string name="preferences_ceno_sources_upnp">Status UPnP</string>
     <string name="ceno_home_card_public_title">TAB PUBLIK</string>

@@ -67,30 +67,15 @@
     <string name="ceno_clear_action_description">Effacer</string>
     <string name="preferences_toolbar_position">Placer en haut de l’écran</string>
     <string name="onboarding_button">Commencer</string>
-    <string name="onboarding_thanks_button">Allons-y !</string>
     <string name="preferences_show_onboarding">Afficher l’intégration lors du prochain lancement</string>
     <string name="preferences_disable_battery_opt">Désactiver l’optimisation de la batterie</string>
-    <string name="onboarding_info_title">Un navigateur pas comme les autres</string>
-    <string name="onboarding_info_text">&brandShortName; utilise la technologie pair à pair pour partager le contenu Web auquel d’autres utilisateurs de &brandShortName; peuvent accéder</string>
-    <string name="onboarding_warning_text">L’optimisation de la batterie est encore activée.
-\n
-\nAccédez à « Paramètres &gt; Désactiver l’optimisation de la batterie » pour donner l’autorisation ultérieurement</string>
     <string name="about_content"><p>%1$s - Partagez le Web.</p> <p>Ceno (abréviation de censure.no !) est le premier navigateur mobile au monde qui contourne les méthodes actuelles de censure d’internet. Sa dorsale pair à pair permet aux utilisateurs et aux utilisatrices d’accéder et de partager des informations Web dans des régions où la connectivité a été interrompue ou compromise. </p> <p>%1$s est un projet d’eQualitie, un organisme canadien dont la mission est de promouvoir et de défendre les libertés fondamentales et les droits de la personne, dont la libre circulation de l’information en ligne. Notre objectif est de créer une technologie accessible et d’améliorer les compétences nécessaires pour défendre les droits de la personne et les libertés à l’ère numérique.</p></string>
     <string name="ceno_clear_dialog_description">AVERTISSEMENT : Effacer le cache et les données de l’appli réinitialisera l’appli &brandShortName; comme si elle n’avait jamais été utilisée.</string>
     <string name="browser_menu_ceno_ext">Paramètres de &brandShortName;</string>
     <string name="onboarding_skip_button">Ignorer</string>
-    <string name="onboarding_battery_text">Sous peu, le système d’exploitation vous demandera la permission de
-\n
-\n• Désactiver l’optimisation de la batterie.
-\n
-\nCela est nécessaire pour continuer à partager des sites Web alors que l’appli est en arrière-plan</string>
-    <string name="onboarding_thanks_title">Merci de développer le réseau.</string>
-    <string name="onboarding_thanks_text">En tant qu’utilisateur et utilisatrice de &brandShortName;, vous contribuez à développer le réseau de ponts accessibles qui permettent l’accès aux contenus censurés.</string>
     <string name="preferences_customization">Personnalisation</string>
     <string name="onboarding_info_button">Super !</string>
-    <string name="onboarding_battery_title">Une autorisation est nécessaire</string>
     <string name="onboarding_battery_button">Poursuivre</string>
-    <string name="onboarding_warning_title">L’autorisation a été refusée</string>
     <string name="onboarding_warning_button">D’accord</string>
     <string name="preferences_toolbar_hide">Faire défiler pour cacher</string>
     <string name="preferences_clear_in_toolbar">Afficher dans la barre d’outils</string>
@@ -143,20 +128,7 @@
     <string name="clear_cache_success">Le cache a été effacé</string>
     <string name="clear_cache_fail">Échec d’effacement du cache. Réessayez bientôt</string>
     <string name="preferences_allow_notifications">Autoriser les notifications</string>
-    <string name="onboarding_warning_text_v33_2">Les notifications ne sont pas autorisées et l’optimisation de la batterie est toujours activée.
-\n
-\nAccédez aux « Paramètres » pour donner l’autorisation ultérieurement</string>
-    <string name="onboarding_battery_text_v33">Bientôt, le système d\'exploitation vous demandera bientôt l\'autorisation de
-\n
-\n- Autoriser les notifications
-\n- Désactiver l\'optimisation de la batterie
-\n
-\nCette autorisation est nécessaire pour continuer à partager des sites web lorsque l\'application est en arrière-plan</string>
-    <string name="onboarding_warning_text_v33_1">Les notifications ne sont pas autorisées.
-\n
-\nAccédez à « Paramètres &gt; Autoriser les notifications » pour les autoriser</string>
     <string name="onboarding_public_or_personal_title">Public ou Personnel \?</string>
-    <string name="onboarding_cleanup_text">Effacez l\'historique de votre navigateur, vos identifiants et toute trace que vous avez laissée sur &brandShortName; avec un seul bouton.</string>
     <string name="crash_reporting_dialog_description">Aidez-nous à améliorer &amp;brandShortName ; en nous envoyant les rapports d\'incident.</string>
     <string name="crash_reporting_never_send">Ne jamais envoyez</string>
     <string name="crash_reporting_dont_send_this_time">Ne pas envoyez cette fois-ci</string>
@@ -170,14 +142,9 @@
     <string name="ceno_home_card_public_text">Meilleure connectivité, moins d\'intimité. Pour lire des nouvelles, regarder des vidéos, et partager avec les autres</string>
     <string name="ceno_home_card_personal_title">PERSONNEL</string>
     <string name="ceno_home_card_public_title">PUBLIQUE</string>
-    <string name="onboarding_cleanup_title">Effacez tout,
-\npartout, tout à la fois</string>
     <string name="preferences_allow_crash_reporting">Rapport d\'accident</string>
-    <string name="ceno_onboarding_start_text">L\'infrastructure peer-to-peer de &brandShortName; permet aux utilisateurs d\'accéder et de partager du contenu de sites Web dans et entre les régions où la connectivité a été interrompue ou compromise.</string>
     <string name="preferences_ceno_sources_reachability">Statut d\'accessibilité</string>
     <string name="preferences_ceno_sources_local_udp">Points de terminaison UDP locaux</string>
-    <string name="ceno_onboarding_start_title">Partager le web,
-\npeer-to-peer</string>
     <string name="ceno_home_card_personal_text">Bonne connectivité, plus d\'intimité. Pour se connecter à des comptes, ne pas laisser de traces, pas de partage</string>
     <string name="onboarding_finish_button">Finition</string>
     <string name="preferences_ceno_sources_external_udp">Points de terminaison UDP externes</string>

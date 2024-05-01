@@ -57,27 +57,14 @@
     <string name="crash_report_non_fatal_action">برای گزارش به &vendorShortName; ضربه بزنید</string>
     <string name="ceno_home_mode_link_text">این‌جا بیشتر بخوانید.</string>
     <string name="preferences_clear_behavior_default">0</string>
-    <string name="onboarding_battery_title">مجوز لازم دارد</string>
     <string name="onboarding_fragment">خوش آمدید به &brandShortName;</string>
-    <string name="onboarding_thanks_text">به عنوان یک کاربر &brandShortName; شما به رشد شبکه پل‌های موجود کمک می‌کنید که امکان دسترسی به محتوای سانسور شده را فراهم می‌کند.</string>
-    <string name="onboarding_info_title">مرورگر معمولی شما نیست</string>
     <string name="onboarding_skip_button">نادیده بگیرید</string>
-    <string name="onboarding_info_text">&brandShortName; از فناوری همتا‌به‌همتا برای به اشتراک گذاشتن محتوای وب که برای دیگر کاربران &brandShortName; قابل دسترسی است، استفاده می‌کند</string>
     <string name="onboarding_info_button">جالب!</string>
     <string name="onboarding_warning_button">اوکی</string>
     <string name="preferences_show_onboarding">در راه‌اندازی بعدی ادغام را نشان دهید</string>
     <string name="preferences_disable_battery_opt">بهینه‌سازی باتری را غیرفعال کنید</string>
     <string name="onboarding_button">شروع کنید</string>
-    <string name="onboarding_battery_text">به زودی سیستم‌عامل از شما اجازه می خواهد تا
-\n
-\nسیستم بهینه‌سازی باتری را غیرفعال کنید.
-\n
-\nاین برای ادامه اشتراک‌گذاری وب‌سایت‌ها در حالی که برنامه در پس‌زمینه است، لازم است.</string>
     <string name="onboarding_battery_button">ادامه</string>
-    <string name="onboarding_warning_title">مجوز رد شد</string>
-    <string name="onboarding_warning_text">بهینه‌سازی باتری همچنان فعال است.
-\n
-\nبه بخش تنظیمات بروید. گزینه بهینه‌سازی باتری را برای دادن مجوز تا بعد، غیر فعال کنید</string>
     <string name="ceno_clear_dialog_cancel">لغو</string>
     <string name="ceno_clear_dialog_description">هشدار: پاک کردن حافظه پنهان و داده‌های برنامه، &amp;brandShortName؛ برنامه را تنظیم مجدد خواهد کرد به گونه‌ای که گویی هرگز استفاده نشده است.</string>
     <string name="ceno_clear_dialog_title">پاک کردن &brandShortName;</string>
@@ -91,8 +78,6 @@
     <string name="browser_menu_ceno_ext">تنظیمات &brandShortName;</string>
     <string name="preferences_toolbar_hide">برای پنهان‌سازی اسکرول کنید</string>
     <string name="ceno_clear_dialog_clear_entire_app">پاک کردن&brandShortName; کش و داده‌های برنامه</string>
-    <string name="onboarding_thanks_title">ممنون که به گسترش شبکه کمک می‌کنید!</string>
-    <string name="onboarding_thanks_button">رها کنید!</string>
     <string name="preferences_toolbar_position">در بالای صفحه قرار دهید</string>
     <string name="preferences_customization">سفارشی‌سازی</string>
     <string name="preferences_about_ceno">مرورگر &brandShortName;</string>
@@ -113,15 +98,6 @@
     <string name="preferences_ceno_sources_origin_summary">محتوا را مستقیماً از وب‌سایت بارگیری کنید</string>
     <string name="preferences_theme">تنظیم زمینه برنامه</string>
     <string name="preferences_theme_summary">تاریک، روشن، صرفه‌جویی در باتری</string>
-    <string name="onboarding_battery_text_v33">به زودی سیستم‌عامل از شما مجوز می‌خواهد تا
-\n
-\nاجازه ارسال اعلان‌ها
-\nغیرفعال کردن سیستم بهینه‌سازی باتری
-\n
-\nاین برای ادامه اشتراک‌گذاری وب‌سایت‌ها در حالی که برنامه در پس‌زمینه است، لازم است.</string>
-    <string name="onboarding_warning_text_v33_1">اطلاع‌رسانی مجاز نیست.
-\n
-\nبرای دادن مجوز بعداً به «تنظیمات &gt; «اجازه‌دادن به اعلان‌ها» بروید</string>
     <string name="crash_reporting_dont_ask_again">دوباره سوال نکنید</string>
     <string name="crash_reporting_opt_out">شما از اشتراک‌گذاری گزارش‌ اشکالات انصراف داده‌اید. همیشه می‌توانید با رفتن به تنظیمات &gt; گزارش اشکالات، این بخش را فعال کنید.</string>
     <string name="bt_sources_none">هیچ‌کدام</string>
@@ -129,9 +105,6 @@
     <string name="bt_invalid_ip_error">آی‌پی نامعتبر</string>
     <string name="crash_reporting_dialog_title">متأسفیم، به نظر می‌رسد&brandShortName;به مشکل برخورد!</string>
     <string name="crash_reporting_opt_in">ممنون که برای کمک به بهبود ;brandShortName&amp; گزارش‌ اشکالات را با ما اشتراک گذاشتید! همیشه می توانید با رفتن به بخش تنظیمات &amp;gt; گزارش اشکالات، این را غیرفعال کنید.</string>
-    <string name="onboarding_warning_text_v33_2">اطلاع‌رسانی مجاز نیست و سیستم بهینه‌سازی باتری همچنان فعال است.
-\n
-\nبرای دادن مجوز بعداً به «تنظیمات» بروید</string>
     <string name="preferences_change_app_icon">تغییر نماد برنامه</string>
     <string name="shutdown_clear_title">پاک کردن داده های برنامه و
 \nتوقف مرورگر &amp;brandShortName&amp;</string>
@@ -144,8 +117,6 @@
     <string name="clear_cache_fail">حافظه کش پاک نشد، به زودی دوباره امتحان کنید</string>
     <string name="preferences_ceno_network_config_summary">وضعیت وی‌نت، نقاط پایانی UDP، بوت استرپ‌های بیت‌تورنت</string>
     <string name="donate_button_text">اهدای کمک</string>
-    <string name="onboarding_cleanup_title">همه چیز را پاک کنید،
-\nهمه‌جا، همه را به یک‌باره</string>
     <string name="preferences_ceno_sources_peers_summary">محتوای به اشتراک گذاشته شده توسط سایر کاربران را بارگیری کنید</string>
     <string name="enable_bridge_card_text">شبکه Ceno را با تبدیل شدن به یک پل قدرتمند‌تر سازید! می‌توانید با رفتن به تنظیمات -&gt; حالت پل را فعال کنید.</string>
     <string name="learn_more_title">بیشتر بدانید</string>
@@ -155,9 +126,6 @@
     <string name="addon_placeholder">هیچ افزونه ای موجود نیست</string>
     <string name="preferences_ceno_website_sources">منابع وب‌سایت</string>
     <string name="preference_show_search_suggestions_summary">&brandShortName; آنچه را که در نوار آدرس تایپ می‌کنید به موتور جستجوی شما ارسال می‌کند</string>
-    <string name="ceno_onboarding_start_text">ساختار همتا‌به‌همتای Ceno به افراد امکان می‌دهد به محتوای وب‌سایت در مناطقی که اتصال اینترنت قطع شده یا به خطر افتاده است، دسترسی داشته باشند و محتوا به اشتراک بگذارند.</string>
-    <string name="ceno_onboarding_start_title">وب را به‌اشتراک بگذارید
-\nهمتا‌به‌همتا</string>
     <string name="onboarding_public_personal_text">از برگه‌های عمومی برای خواندن اخبار، تماشای فیلم و به‌طور کلی وب‌گردی استفاده کنید. محتوای وب را با سایر کاربران Ceno به اشتراک بگذارید.
 \n
 \nبرگه‌های شخصی برای حساب‌های شبکه‌های اجتماعی، خرید آنلاین و مرور وب‌سایت‌هایی که نمی‌خواهید با دیگران به اشتراک بگذارید، مناسب‌تر است.</string>
@@ -199,7 +167,6 @@
     <string name="preferences_ceno_groups_count">محتوای به اشتراک گذاشته شده توسط شما</string>
     <string name="preferences_clear_ceno_cache">محتوای حافظه کش را پاک کنید</string>
     <string name="onboarding_public_or_personal_title">عمومی یا شخصی؟</string>
-    <string name="onboarding_cleanup_text">تاریخچه مرورگر، اطلاعات کاربری و هر اثری را که در Ceno باقی گذاشته‌اید، با یک دکمه پاک کنید.</string>
     <string name="ceno_home_card_public_title">عمومی</string>
     <string name="ceno_home_card_public_text">بهترین اتصال، حریم خصوصی کمتر. برای خواندن اخبار، تماشای ویدئو و اشتراک‌گذاری با دیگران</string>
     <string name="ceno_home_card_personal_title">شخصی</string>

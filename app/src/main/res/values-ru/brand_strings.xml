@@ -64,34 +64,19 @@
     <string name="ceno_clear_dialog_clear_entire_app">Очистить &brandShortName; кэш и данные приложения</string>
     <string name="browser_menu_ceno_ext">&brandShortName; Настройки</string>
     <string name="preferences_toolbar_hide">Прокрутите, чтобы скрыть</string>
-    <string name="onboarding_thanks_button">Оставить!</string>
     <string name="preferences_toolbar_position">Разместите в верхней части экрана</string>
     <string name="ceno_clear_action_description">Очистить</string>
     <string name="ceno_clear_dialog_title">Очистить &brandShortName;</string>
     <string name="onboarding_button">Начать</string>
     <string name="onboarding_skip_button">Пропустить</string>
-    <string name="onboarding_info_title">Это не обычный браузер</string>
     <string name="onboarding_battery_button">Продолжить</string>
-    <string name="onboarding_warning_title">Отказ в доступе</string>
     <string name="preferences_show_onboarding">Показать включение при следующем запуске</string>
     <string name="preferences_disable_battery_opt">Отключить оптимизацию батареи</string>
     <string name="preferences_customization">Индивидуальная настройка</string>
     <string name="ceno_clear_dialog_clear_cache_only">Очистить &brandShortName; только кэш</string>
     <string name="ceno_clear_dialog_description">ВНИМАНИЕ: Очистка кэша и данных приложения приведет к сбросу приложения &brandShortName;, как будто оно никогда не использовалось.</string>
-    <string name="onboarding_battery_title">Требуется разрешение</string>
-    <string name="onboarding_thanks_text">Как пользователь &brandShortName;, вы помогаете развивать сеть доступных мостов, обеспечивающих доступ к цензурированному контенту.</string>
-    <string name="onboarding_thanks_title">Спасибо за рост сети!</string>
     <string name="onboarding_info_button">Супер!</string>
-    <string name="onboarding_info_text">&brandShortName; использует технологию peer-to-peer для обмена веб-контентом, доступ к которому могут получить другие пользователи &brandShortName;</string>
     <string name="about_content"><p>%1$s - Делитесь Интернетом!</p> <p>Ceno (сокращение от censorship.no!) - это первый в мире мобильный браузер, который обходит существующие методы цензуры в Интернете. Его одноранговая магистраль позволяет людям получать доступ к веб-информации и обмениваться ею в регионах, где связь прервана или нарушена. </p> <p>%1$s - это проект eQualitie, канадской организации, чья миссия заключается в продвижении и защите основных свобод и прав человека, включая свободное распространение информации в Интернете. Наша цель - создание доступных технологий и совершенствование навыков, необходимых для защиты прав и свобод человека в цифровую эпоху.</p></string>
-    <string name="onboarding_battery_text">Вскоре ваша ОС попросит разрешение на
-\n
-\n• Отключение оптимизации батареи.
-\n
-\nЭто необходимо для продолжения обмена веб-сайтами, пока приложение находится в фоновом режиме</string>
-    <string name="onboarding_warning_text">Оптимизация батареи все еще включена.
-\n
-\nПерейдите в \"настройки &gt; Отключить оптимизацию батареи\", чтобы дать разрешение позже</string>
     <string name="ceno_clear_dialog_cancel">Отмена</string>
     <string name="preferences_clear_in_toolbar">показать на панели инструментов</string>
     <string name="preferences_clear_in_menu">показать в меню</string>
@@ -134,37 +119,19 @@
     <string name="preferences_clear_ceno_cache_summary">Очистка локально кэшированного веб-содержимого</string>
     <string name="preferences_ceno_network_config">Сведения о сети</string>
     <string name="preferences_allow_notifications">Разрешить уведомления</string>
-    <string name="onboarding_warning_text_v33_2">Уведомления не разрешены, и оптимизация батареи все еще включена.
-\n
-\nПерейдите в \"Настройки\", чтобы предоставить разрешение позже</string>
-    <string name="onboarding_battery_text_v33">Вскоре ваша ОС попросит разрешение на
-\n
-\n• Отправку уведомлений
-\n• Отключение оптимизации батареи
-\n
-\nЭто необходимо для поддержки обмена веб-сайтами, когда приложение находится в фоновом режиме</string>
     <string name="preferences_ceno_sources_peers">Поделиться</string>
     <string name="preferences_ceno_sources_peers_summary">Содержание загрузки, поделенное другими пользователями</string>
     <string name="ceno_data_category">Данные</string>
     <string name="preferences_ceno_cache_size">Локальный кэш</string>
     <string name="preferences_ceno_groups_count">Контент, которым вы поделились</string>
     <string name="preferences_clear_ceno_cache">Очистить кэшированное содержимое</string>
-    <string name="onboarding_warning_text_v33_1">Уведомления не разрешены.
-\n
-\nПерейдите в \"Настройки &gt; Разрешить уведомления\", чтобы предоставить разрешение позже</string>
     <string name="preferences_ceno_download_log">Экспортировать лог</string>
     <string name="preferences_ceno_network_config_summary">Состояние Ouinet, конечные точки UDP, бутстрапы BitTorrent</string>
     <string name="preferences_ceno_enable_log">Включить файл журнала</string>
     <string name="onboarding_public_or_personal_title">Публичный или личный?</string>
-    <string name="ceno_onboarding_start_text">Одноранговая сеть &brandShortName; позволяет получать доступ к содержимому сайтов и обмениваться им в регионах, где обычное подключение невозможно или скомпрометировано.</string>
-    <string name="ceno_onboarding_start_title">Делитесь сайтами
-\nдруг с другом</string>
-    <string name="onboarding_cleanup_title">Очищайте всё,
-\nвезде и сразу</string>
     <string name="onboarding_public_personal_text">Используйте Публичные вкладки для чтения новостей, просмотра видео и обычного веб-сёрфинга. Делитесь содержанием страниц с другими пользователями Ceno.
 \n
 \nЛичные вкладки подойдут под аккаунты в соцсетях, онлайн-покупки и посещения сайтов с которыми вы не хотите делиться.</string>
-    <string name="onboarding_cleanup_text">Очищайте историю браузера, учётные данные и все следы, которые вы оставили, в &brandShortName; по нажатии одной кнопки.</string>
     <string name="ceno_home_card_public_title">ПУБЛИЧНОЕ</string>
     <string name="ceno_home_card_public_text">Лучше соединяемость, хуже приватность. Для чтения новостей, просмотра видео и обменом с другими</string>
     <string name="ceno_home_card_personal_title">ЛИЧНОЕ</string>

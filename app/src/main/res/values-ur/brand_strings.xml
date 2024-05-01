@@ -8,16 +8,11 @@
     <string name="ceno_home_mode_link_text">مزید جاننے کے لیے یہاں دبائیں۔</string>
     <string name="ceno_notification_clear_do_description">جی ہاں</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">&brandShortName;؛ استعمال کرنے کی سفارش کی جاتی ہے جب آپ کے پاس Wi-Fi کنکشن ہو، کیونکہ یہ آپ کی توقع سے زیادہ ڈیٹا استعمال کر سکتا ہے۔ آپ موبائل ڈیٹا استعمال کرتے وقت &brandShortName; کو روکنا چاہیں گے۔</string>
-    <string name="onboarding_info_title">آپ کا اوسط براؤزر نہیں ہے</string>
-    <string name="onboarding_info_text">&brandShortName; ویب مواد کا اشتراک کرنے کے لیے پیئر ٹو پیئر ٹیکنالوجی کا استعمال کرتا ہے جس تک دوسرے &brandShortName; صارفین رسائی حاصل کرسکتے ہیں</string>
     <string name="onboarding_fragment">&brandShortName; میں خوش آمدید</string>
     <string name="ceno_notification_home_description">ہوم</string>
-    <string name="onboarding_thanks_title">نیٹ ورک کو بڑھانے کا شکریہ!</string>
-    <string name="onboarding_thanks_button">آئیں چليں!</string>
     <string name="default_top_site_1_title">&brandShortName; مینوئل</string>
     <string name="onboarding_button">شروع کریں</string>
     <string name="preferences_about_page">&vendorShortName; کے بارے میں</string>
-    <string name="onboarding_battery_title">اجازت درکار ہے</string>
     <string name="changeIconDialogTitle">نیا آئیکن کا اطلاق کریں؟</string>
     <string name="changeIconDialogMessage">تبدیلیوں کا اطلاق کرنے کے لیے ایپ بند ہو سکتی ہے۔ اپنے خوبصورت نئے آئیکن کی تعریف کرنے کے بعد واپس آجائیں۔</string>
     <string name="preferences_about_ceno">&brandShortName; براؤزر</string>
@@ -25,9 +20,6 @@
     <string name="preferences_about_ouinet">Ouinet</string>
     <string name="about_category">کے بارے میں</string>
     <string name="ceno_notification_title">&brandShortName; براؤزر سروس</string>
-    <string name="onboarding_battery_text">جلد ہی OS آپ سے بیٹری کی اصلاح کو غیر فعال کرنے کی اجازت طلب کرے گا۔
-\n
-\nایپ کے پس منظر میں ہونے کے دوران ویب سائٹس کا اشتراک جاری رکھنے کے لیے یہ ضروری ہے</string>
     <string name="preferences_toolbar_position">اسکرین کے اوپری حصے میں رکھیں</string>
     <string name="preferences_toolbar_hide">چھپانے کے لیے اسکرول کریں</string>
     <string name="ceno_data_category">ڈیٹا</string>
@@ -61,9 +53,6 @@
     <string name="preferences_change_app_icon">ایپ آئیکن کو تبدیل کریں</string>
     <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">&brandShortName; ترتیبات</string>
     <string name="onboarding_skip_button">چھوڑ دیں</string>
-    <string name="onboarding_warning_text">بیٹری کی اصلاح ابھی بھی فعال ہے۔
-\n
-\nبعد میں اجازت دینے کے لیے \"عام ترتیبات &gt; بیٹری کی اصلاح کو غیر فعال کریں\" پر جائیں</string>
     <string name="onboarding_warning_button">ٹھیک ہے</string>
     <string name="preferences_customization">حسب ضرورت</string>
     <string name="ceno_clear_dialog_cancel">منسوخ کریں</string>
@@ -91,8 +80,6 @@
     <string name="shutdown_clear_title">ایپ ڈیٹا کو صاف کرنا اور
 \n&brandShortName; براؤزر روکنا</string>
     <string name="shutdown_stop_title">&brandShortName; براؤزر روکنا</string>
-    <string name="onboarding_warning_title">اجازت دینے سے انکار</string>
-    <string name="onboarding_thanks_text">بطور &amp;brandShortname; صارف، آپ دستیاب پلوں کے نیٹ ورک کو بڑھانے میں مدد کر رہے ہیں جس سے سنسر شدہ مواد تک رسائی ممکن ہو گی۔</string>
     <string name="clear_cache_success">کیش کامیابی سے صاف ہو گیا</string>
     <string name="addon_placeholder">کوئی ایڈ آن دستیاب نہیں ہے</string>
     <string name="ceno_notification_description">روکنے کے لئے دبائیں</string>
@@ -105,15 +92,6 @@
     <string name="onboarding_battery_button">جاری رکھیں</string>
     <string name="preferences_ceno_sources_private_summary">نجی Ceno نیٹ ورک کے ذریعے مواد لوڈ کریں</string>
     <string name="preferences_allow_notifications">اطلاعات کی اجازت دیں۔</string>
-    <string name="onboarding_battery_text_v33">جلد ہی OS آپ سے اطلاعات کی اجازت دینے اور بیٹری کی اصلاح کو غیر فعال کرنے کی اجازت طلب کرے گا۔
-\n
-\nایپ کے پس منظر میں ہونے کے دوران ویب سائٹس کا اشتراک جاری رکھنے کے لیے یہ ضروری ہے</string>
-    <string name="onboarding_warning_text_v33_1">اطلاعات کی اجازت نہیں ہے۔
-\n
-\nبعد میں اجازت دینے کے لئے \"ترتیبات &gt; اطلاعات کی اجازت دیں\" پر جائیں</string>
-    <string name="onboarding_warning_text_v33_2">اطلاعات کی اجازت نہیں ہے اور بیٹری کی اصلاح ابھی بھی فعال ہے۔
-\n
-\nبعد میں اجازت دینے کے لیے \"ترتیبات\" پر جائیں</string>
     <string name="crash_reporting_dialog_description">معاف کریں، لگتا ہے کہ &brandShortName; کریش کر گیا ہے! &brandShortName; کو بہتر بنانے میں ہماری مدد کریں، کریش رپورٹ ہمیں بھیج دیں۔</string>
     <string name="crash_reporting_never_send">نہیں بھیجیں</string>
     <string name="crash_reporting_dont_send_this_time">اس بار نہیں بھیجیں</string>

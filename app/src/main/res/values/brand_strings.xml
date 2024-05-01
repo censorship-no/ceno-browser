@@ -83,36 +83,9 @@
     <string name="onboarding_fragment">Welcome to &brandShortName;</string>
     <string name="onboarding_button">Get Started</string>
     <string name="onboarding_skip_button">Skip</string>
-    <string name="onboarding_info_title">Not your average browser</string>
-    <string name="onboarding_info_text">&brandShortName; uses peer-to-peer technology to share web content that can be accessed by other &brandShortName; users</string>
     <string name="onboarding_info_button">Cool!</string>
-    <string name="onboarding_battery_title">Permission needed</string>
-    <string name="onboarding_battery_text">Shortly the OS will ask you for permission to
-\n
-\n• Disable battery optimization.
-\n
-\nThis is required to keep sharing websites while the app is in the background</string>
-    <string name="onboarding_battery_text_v33">Shortly the OS will ask you for permission to
-\n
-\n• Allow notifications
-\n• Disable battery optimization
-\n
-\nThis is required to keep sharing websites while the app is in the background</string>
     <string name="onboarding_battery_button">Continue</string>
-    <string name="onboarding_warning_title">Permission denied</string>
-    <string name="onboarding_warning_text">Battery optimization is still enabled.
-\n
-\nGo to \"Settings &gt; Disable Battery Optimization\" to give permission later</string>
-    <string name="onboarding_warning_text_v33_1">Notifications are not allowed.
-\n
-\nGo to \"Settings &gt; Allow Notifications\" to give permission later</string>
-    <string name="onboarding_warning_text_v33_2">Notifications are not allowed and battery optimization is still enabled.
-\n
-\nGo to \"Settings\" to give permission later</string>
     <string name="onboarding_warning_button">Okay</string>
-    <string name="onboarding_thanks_title">Thanks for growing the network!</string>
-    <string name="onboarding_thanks_text">As a &brandShortName; user, you\'re helping to grow the network of available bridges enabling access to censored content.</string>
-    <string name="onboarding_thanks_button">Let\'s go!</string>
     <string name="shutdown_clear_title">Clearing app data and
 \nstopping &brandShortName; Browser</string>
     <string name="shutdown_stop_title">Stopping &brandShortName; Browser</string>
@@ -204,16 +177,10 @@
     <string name="source_code_button_link" translatable="false">https://gitlab.com/censorship-no/</string>
     <string name="donate_button_text">Donate</string>
     <string name="donate_button_link" translatable="false">https://censorship.no/en/donate</string>
-    <string name="ceno_onboarding_start_title">Share the web,
-\npeer-to-peer</string>
-    <string name="ceno_onboarding_start_text">&brandShortName;’s peer-to-peer backbone allows people to access and share website content in and across regions where connectivity has been interrupted or compromised.</string>
     <string name="onboarding_public_or_personal_title">Public or Personal?</string>
     <string name="onboarding_public_personal_text">Use Public tabs for reading news, watching videos and general web-surfing. Share web content with other Ceno users.
 \n
 \nPersonal tabs are better suited for social media accounts, online shopping, and browsing websites you don’t want to share with others.</string>
-    <string name="onboarding_cleanup_title">Clear everything,
-\neverywhere, all at once</string>
-    <string name="onboarding_cleanup_text">Clear your browser history, credentials and any trace you left on &brandShortName; with one single button.</string>
     <string name="ceno_home_card_public_title">PUBLIC</string>
     <string name="ceno_home_card_public_text">Best connectivity, less privacy. For reading news, watching videos, and sharing with others</string>
     <string name="ceno_home_card_personal_title">PERSONAL</string>
