@@ -9,12 +9,6 @@
     app:startDestination="@id/startupFragment">
 
     <action
-        android:id="@+id/action_global_onboarding"
-        app:destination="@id/onboardingFragment"
-        app:popUpTo="@id/startupFragment"
-        app:popUpToInclusive="true" />
-
-    <action
         android:id="@+id/action_global_home"
         app:destination="@id/homeFragment"
         app:popUpTo="@id/homeFragment"
@@ -51,14 +45,6 @@
         app:popExitAnim="@anim/fade_out" />
 
     <action
-        android:id="@+id/action_global_onboardingWarningFragment"
-        app:destination="@id/onboardingWarningFragment"
-        app:enterAnim="@anim/slide_in"
-        app:exitAnim="@anim/slide_out"
-        app:popEnterAnim="@anim/slide_back_in"
-        app:popExitAnim="@anim/slide_back_out" />
-
-    <action
         android:id="@+id/action_global_shareFragment"
         app:destination="@id/shareFragment" />
 
@@ -67,85 +53,6 @@
         android:name="ie.equalit.ceno.StartupFragment"
         app:popUpTo="@id/startupFragment"
         app:popUpToInclusive="true" />
-
-    <fragment
-        android:id="@+id/onboardingFragment"
-        android:name="ie.equalit.ceno.onboarding.OnboardingFragment"
-        android:label="@string/onboarding_fragment"
-        tools:layout="@layout/fragment_onboarding">
-
-        <action
-            android:id="@+id/action_onboardingFragment_to_onboardingBatteryFragment"
-            app:destination="@id/onboardingBatteryFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popEnterAnim="@anim/slide_back_in"
-            app:popExitAnim="@anim/slide_back_out" />
-        <action
-            android:id="@+id/action_onboardingFragment_to_onboardingPublicPvtFragment"
-            app:destination="@id/onboardingPublicPvtFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popEnterAnim="@anim/slide_back_in"
-            app:popExitAnim="@anim/slide_back_out" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/onboardingInfoFragment"
-        android:name="ie.equalit.ceno.onboarding.OnboardingInfoFragment"
-        android:label="@string/onboarding_info_title"
-        tools:layout="@layout/fragment_onboarding_info">
-        <action
-            android:id="@+id/action_onboardingInfoFragment_to_onboardingBatteryFragment"
-            app:destination="@id/onboardingBatteryFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popEnterAnim="@anim/slide_back_in"
-            app:popExitAnim="@anim/slide_back_out" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/onboardingBatteryFragment"
-        android:name="ie.equalit.ceno.onboarding.OnboardingBatteryFragment"
-        android:label="@string/onboarding_battery_title"
-        tools:layout="@layout/fragment_onboarding_battery">
-        <action
-            android:id="@+id/action_onboardingBatteryFragment_to_onboardingWarningFragment"
-            app:destination="@id/onboardingWarningFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popEnterAnim="@anim/slide_back_in"
-            app:popExitAnim="@anim/slide_back_out" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/onboardingWarningFragment"
-        android:name="ie.equalit.ceno.onboarding.OnboardingWarningFragment"
-        android:label="@string/onboarding_warning_title"
-        tools:layout="@layout/fragment_onboarding_warning"/>
-
-    <fragment
-        android:id="@+id/onboardingPublicPvtFragment"
-        android:name="ie.equalit.ceno.onboarding.OnboardingPublicPvtFragment"
-        tools:layout="@layout/fragment_onboarding_public_pvt">
-
-        <action
-            android:id="@+id/action_onboardingPublicPvtFragment_to_onboardingInfoFragment"
-            app:destination="@id/onboardingInfoFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popEnterAnim="@anim/slide_back_in"
-            app:popExitAnim="@anim/slide_back_out" />
-
-        <action
-            android:id="@+id/action_onboardingPublicPvtFragment_to_onboardingBatteryFragment"
-            app:destination="@id/onboardingBatteryFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popEnterAnim="@anim/slide_back_in"
-            app:popExitAnim="@anim/slide_back_out" />
-
-    </fragment>
 
     <fragment
         android:id="@+id/homeFragment"

@@ -34,13 +34,12 @@ import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.browser.BrowsingModeManager
 import ie.equalit.ceno.browser.DefaultBrowsingManager
 import ie.equalit.ceno.browser.ExternalAppBrowserFragment
-import ie.equalit.ceno.components.PermissionHandler
 import ie.equalit.ceno.components.ceno.TopSitesStorageObserver
 import ie.equalit.ceno.components.ceno.appstate.AppAction
-import ie.equalit.ceno.ext.ceno.onboardingToHome
 import ie.equalit.ceno.ext.ceno.sort
 import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.ext.components
+import ie.equalit.ceno.ext.isCrashReportActive
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.SettingsFragment
 import ie.equalit.ceno.standby.StandbyFragment
@@ -154,7 +153,7 @@ open class BrowserActivity : BaseActivity() {
         navHost.navController.popBackStack() // Remove startupFragment from backstack
         navHost.navController.navigate(
             when {
-                Settings.shouldShowOnboarding(this) && savedInstanceState == null -> R.id.action_global_onboarding
+//                Settings.shouldShowOnboarding(this) && savedInstanceState == null -> R.id.action_global_onboarding
                 components.ouinet.background.getState() != RunningState.Started.toString() -> R.id.action_global_standbyFragment
                 components.core.store.state.selectedTab == null -> R.id.action_global_home
                 else -> R.id.action_global_browser
@@ -270,7 +269,7 @@ open class BrowserActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (!Settings.shouldShowOnboarding(this) && (components.ouinet.background.getState() != RunningState.Started.toString())) {
+        if (components.ouinet.background.getState() != RunningState.Started.toString()) {
             if (navHost.navController.currentDestination?.id  != R.id.standbyFragment) {
                 navHost.navController.popBackStack()
                 val bundle = bundleOf(StandbyFragment.shutdownCeno to false)
@@ -355,16 +354,6 @@ open class BrowserActivity : BaseActivity() {
         val fragment = navHost.childFragmentManager.findFragmentById(R.id.nav_host_fragment)
         if (fragment is ActivityResultHandler && fragment.onActivityResult(requestCode, data, resultCode)) {
             return
-        }
-
-        if (requestCode == PermissionHandler.PERMISSION_CODE_IGNORE_BATTERY_OPTIMIZATIONS) {
-            if (components.permissionHandler.onActivityResult(requestCode, data, resultCode)) {
-                navHost.navController.onboardingToHome(components)
-            } else {
-                updateView {
-                    navHost.navController.navigate(R.id.action_global_onboardingWarningFragment)
-                }
-            }
         }
 
         super.onActivityResult(requestCode, resultCode, data)

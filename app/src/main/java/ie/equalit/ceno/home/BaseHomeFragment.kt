@@ -350,7 +350,7 @@ abstract class BaseHomeFragment : Fragment(), UserInteractionHandler, ActivityRe
         return backButtonHandler.any { it.onBackPressed() }
     }
 
-    final override fun onRequestPermissionsResult(
+    override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
         grantResults: IntArray,
