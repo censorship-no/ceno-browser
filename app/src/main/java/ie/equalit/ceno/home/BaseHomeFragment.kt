@@ -208,7 +208,6 @@ abstract class BaseHomeFragment : Fragment(), UserInteractionHandler, ActivityRe
         if (prefs.getBoolean(requireContext().getPreferenceKey(R.string.pref_key_toolbar_hide), false)) {
             binding.toolbar.enableDynamicBehavior(
                 requireContext(),
-                binding.swipeRefresh,
                 binding.engineView,
                 prefs.getBoolean(
                     requireContext().getPreferenceKey(R.string.pref_key_toolbar_position),

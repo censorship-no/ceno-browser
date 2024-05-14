@@ -218,7 +218,7 @@
     <string name="ceno_ouinet_connected">به شبکه Ceno متصل شد</string>
     <string name="ceno_ouinet_disconnected">از شبکه Ceno قطع شد</string>
     <string name="ceno_sources_direct_from_website">مستقیم از وب‌سایت</string>
-    <string name="ceno_sources_via_ceno_network">از طریق Ceno; شبکه</string>
+    <string name="ceno_sources_via_ceno_network">با استفاده از شبکه Ceno</string>
     <string name="ceno_sources_shared_by_others">به اشتراک گذاشته شده توسط دیگران</string>
     <string name="personal_browsing_mode_selected">حالت مرور شخصی انتخاب شده است</string>
     <string name="personal_mode_icon">نماد حالت شخصی</string>
@@ -247,5 +247,6 @@
     <string name="bridge_announcement_dialog_title">در حال به‌روزرسانی تنظیمات حالت پل…</string>
     <string name="home_go_to_settings">به قسمت تنظیمات بروید</string>
     <string name="enable_bridge_card_title">حالت پل را فعال کنید</string>
+    <string name="ceno_sources_shared_by_ceno_cache">از حافظه کش Ceno</string>
     <string name="bridge_mode_faq_url">https://censorship.no/fa/support.html#bridgemode</string>
 </resources>

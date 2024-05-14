@@ -68,9 +68,7 @@ class ExternalAppBrowserFragment : BaseBrowserFragment(), UserInteractionHandler
                 requireActivity(),
                 requireComponents.core.store,
                 sessionId,
-            ) { uri ->
-                requireComponents.analytics.crashReporter.submitCaughtException(Exception("Unknown scheme error $uri"))
-            },
+            ),
             owner = this,
             view = view,
         )

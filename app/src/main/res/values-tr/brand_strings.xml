@@ -215,6 +215,6 @@
     <string name="bridge_mode_ip_warning_text">Bu durumda herkese açık IP adresinizin diğer Ceno kullanıcıları tarafından görülebileceğini unutmayın.</string>
     <string name="learn_more_title">Ayrıntılı bilgi alın</string>
     <string name="standby_restarting_text">Yeniden başlatılıyor…</string>
-    <string name="ceno_sources_shared_by_ceno_cache">&brandShortName; cache tarafından</string>
+    <string name="ceno_sources_shared_by_ceno_cache">&brandShortName; ön belleğinden</string>
     <string name="bridge_mode_faq_url">https://censorship.no/tr/support.html#bridgemode</string>
 </resources>

@@ -27,14 +27,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.NavHostFragment
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.snackbar.Snackbar.LENGTH_LONG
 import ie.equalit.ceno.addons.WebExtensionActionPopupActivity
 import ie.equalit.ceno.base.BaseActivity
 import ie.equalit.ceno.browser.BrowserFragment
 import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.browser.BrowsingModeManager
-import ie.equalit.ceno.browser.CrashIntegration
 import ie.equalit.ceno.browser.DefaultBrowsingManager
 import ie.equalit.ceno.browser.ExternalAppBrowserFragment
 import ie.equalit.ceno.components.PermissionHandler
@@ -44,8 +41,6 @@ import ie.equalit.ceno.ext.ceno.onboardingToHome
 import ie.equalit.ceno.ext.ceno.sort
 import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.ext.components
-import ie.equalit.ceno.ext.isCrashReportActive
-import ie.equalit.ceno.settings.NetworkSettingsFragment
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.SettingsFragment
 import ie.equalit.ceno.standby.StandbyFragment
@@ -71,7 +66,6 @@ import mozilla.components.concept.engine.EngineView
 import mozilla.components.concept.engine.manifest.WebAppManifest
 import mozilla.components.feature.intent.ext.EXTRA_SESSION_ID
 import mozilla.components.feature.pwa.ext.putWebAppManifest
-import mozilla.components.lib.crash.Crash
 import mozilla.components.support.base.feature.ActivityResultHandler
 import mozilla.components.support.base.feature.UserInteractionHandler
 import mozilla.components.support.base.log.logger.Logger
@@ -84,7 +78,6 @@ import kotlin.system.exitProcess
  */
 open class BrowserActivity : BaseActivity() {
 
-    private lateinit var crashIntegration: CrashIntegration
     lateinit var themeManager: ThemeManager
     lateinit var browsingModeManager: BrowsingModeManager
 
@@ -173,13 +166,6 @@ open class BrowserActivity : BaseActivity() {
         initializeSearchEngines()
 
         components.webExtensionPort.createPort()
-
-        if (isCrashReportActive) {
-            crashIntegration = CrashIntegration(this, components.analytics.crashReporter) { crash ->
-                onNonFatalCrash(crash)
-            }
-            lifecycle.addObserver(crashIntegration)
-        }
 
         /* Do not notify user of data policy because we are not collecting telemetry data
         *  and we already have a notification for stopping/pausing/purging local CENO data
@@ -435,14 +421,6 @@ open class BrowserActivity : BaseActivity() {
             EngineView::class.java.name -> components.core.engine.createView(context, attrs).asView()
             else -> super.onCreateView(parent, name, context, attrs)
         }
-
-    private fun onNonFatalCrash(crash: Crash) {
-        Snackbar.make(findViewById(android.R.id.content),
-            R.string.crash_report_non_fatal_message, LENGTH_LONG)
-            .setAction(R.string.crash_report_non_fatal_action) {
-                crashIntegration.sendCrashReport(crash)
-            }.show()
-    }
 
     private fun openPopup(webExtensionState: WebExtensionState) {
         val intent = Intent(this, WebExtensionActionPopupActivity::class.java)

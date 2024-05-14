@@ -56,7 +56,7 @@
     <!-- Menu option on the toolbar that takes you to privacy settings page-->
     <string name="customization_settings">Customization</string>
     <!-- Snackbar message when a non fatal crash happen-->
-    <string name="crash_report_non_fatal_message">Sorry. We crashed</string>
+    <string name="crash_report_non_fatal_message" tools:ignore="UnusedResources">Sorry. We crashed</string>
     <!-- Private Browsing -->
     <string name="private_browsing_title">Personal Browsing</string>
     <!-- <string name="default_notification_channel">Browser</string> -->

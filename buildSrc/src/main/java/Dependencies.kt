@@ -54,7 +54,7 @@ object Versions {
     }
 
     /* CENO: Versions for additional dependencies */
-    const val ouinet_version = "0.23.0"
+    const val ouinet_version = "0.24.0"
     const val relinker_version = "1.4.4"
     const val snakeyaml_version = "2.0"
 
@@ -139,10 +139,6 @@ object Deps {
     const val mozilla_support_rusthttp = "org.mozilla.components:support-rusthttp:${AndroidComponents.VERSION}"
     const val mozilla_support_webextensions = "org.mozilla.components:support-webextensions:${AndroidComponents.VERSION}"
 
-    const val mozilla_lib_crash = "org.mozilla.components:lib-crash:${AndroidComponents.VERSION}"
-    const val mozilla_lib_crash_sentry = "org.mozilla.components:lib-crash-sentry:${AndroidComponents.VERSION}"
-    /* CENO F-Droid: Remove firebase */
-    //const val mozilla_lib_push_firebase = "org.mozilla.components:lib-push-firebase:${AndroidComponents.VERSION}"
     const val mozilla_lib_dataprotect = "org.mozilla.components:lib-dataprotect:${AndroidComponents.VERSION}"
     const val mozilla_lib_publicsuffixlist = "org.mozilla.components:lib-publicsuffixlist:${AndroidComponents.VERSION}"
 
@@ -184,9 +180,6 @@ object Deps {
     /* CENO: Additional dependencies required */
     const val mozilla_feature_top_sites = "org.mozilla.components:feature-top-sites:${AndroidComponents.VERSION}"
     const val mozilla_ui_widgets = "org.mozilla.components:ui-widgets:${AndroidComponents.VERSION}"
-    const val ouinet_arm64_v8a = "ie.equalit.ouinet:ouinet-arm64-v8a:${Versions.ouinet_version}"
-    const val ouinet_armeabi_v7a = "ie.equalit.ouinet:ouinet-armeabi-v7a:${Versions.ouinet_version}"
-    const val ouinet_x86_64 = "ie.equalit.ouinet:ouinet-x86_64:${Versions.ouinet_version}"
     const val ouinet_omni = "ie.equalit.ouinet:ouinet-omni:${Versions.ouinet_version}"
     const val relinker = "com.getkeepsafe.relinker:relinker:${Versions.relinker_version}"
     const val snakeyaml = "org.yaml:snakeyaml:${Versions.snakeyaml_version}"

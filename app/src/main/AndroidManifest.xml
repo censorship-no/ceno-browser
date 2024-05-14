@@ -46,6 +46,10 @@
         android:theme="@style/NormalTheme"
         android:name="ie.equalit.ceno.BrowserApplication">
 
+        <meta-data
+            android:name="io.sentry.auto-init"
+            android:value="false" />
+
         <activity android:name="ie.equalit.ceno.BrowserActivity"
             android:launchMode="singleTask"
             android:icon="@mipmap/ic_launcher_blue"
@@ -271,10 +275,6 @@
         </service>
 
         <service android:name="ie.equalit.ceno.downloads.DownloadService" />
-
-        <activity
-            android:name="ie.equalit.ceno.CrashListActivity"
-            android:exported="false" />
 
         <activity android:name="ie.equalit.ceno.autofill.AutofillUnlockActivity"
             android:exported="false"
