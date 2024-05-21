@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import android.widget.Toast
 import androidx.annotation.CallSuper
@@ -20,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Gravity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
-import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -687,7 +687,6 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
 //        const val LOCAL_CACHE = "local-cache"
 
         const val URL = "url"
-        const val FAILED_TO_RETRIEVE_RESOURCE = "{\"unknown\":1}"
     }
 
     override fun onActivityResult(requestCode: Int, data: Intent?, resultCode: Int): Boolean {
@@ -706,15 +705,6 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             if (context == null)
                 return
             requireContext().components.core.store.state.selectedTab?.let { tab ->
-
-                if (message.toString() == FAILED_TO_RETRIEVE_RESOURCE && binding.resourceRetrievalFailed.root.visibility == View.GONE) {
-                    // Can't retrieve resource, display error view
-                    binding.resourceRetrievalFailed.root.isGone = false
-                } else if (message.toString() != FAILED_TO_RETRIEVE_RESOURCE) {
-                    // can retrieve resource || currently fetching resource
-                    binding.resourceRetrievalFailed.root.isGone = true
-                }
-
                 // the percentage progress for the webpage
                 val webPageLoadProgress = tab.content.progress ?: 0
 
