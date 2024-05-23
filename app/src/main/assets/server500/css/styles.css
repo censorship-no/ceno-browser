@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #fff;
+  color: #000;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 0;
+}
+
+.logo, .error-icon, .error-message, .learn-more, p, ul {
+  text-align: left;
+}
+
+.logo img, .error-icon img {
+  width: 50px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.error-icon img {
+  display: inline-block;
+  width: 140px;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 30px;
+}
+
+.learn-more {
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin-top: 40px;
+}
+
+ul {
+  list-style-position: inside;
+  padding: 0;
+}
+
+li {
+  line-height: 1.6;
+}
+
+hr {
+  border-width: 0.3px;
+}
