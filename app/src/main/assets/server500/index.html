@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error Page</title>
+    <title>%pageTitle%</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -12,24 +12,24 @@
         <div class="error-icon">
             <img src="images/web page fail.png" alt="Error Icon">
         </div>
-        <h2 class="error-message">Oops! Failed to load webpage.</h2>
-        <p>This means that Ceno tried all available mechanisms to access the content, but none of them succeeded:</p>
+        <h2 class="error-message">%error_page_header%</h2>
+        <p>%error_page_sub_header%:</p>
         <ul>
-            <li>Direct from website<span class="exclamation">!</span></li>
-            <li>Using Ceno network<span class="exclamation">!</span></li>
-            <li>From Ceno cache<span class="exclamation">!</span></li>
+            <li>%direct_from_website%<span class="exclamation">!</span></li>
+            <li>%using_ceno_network%<span class="exclamation">!</span></li>
+            <li>%from_ceno_cache%<span class="exclamation">!</span></li>
         </ul>
         <div class="learn-more-container" onclick="toggleVisibility()">
-            <div class="learn-more">Learn more:</div>
+            <div class="learn-more">%learn_more%:</div>
             <img id="arrow" src="images/arrow_down.svg" alt="Arrow" class="arrow">
         </div>
         <hr />
         <div id="details" style="display:none;">
-            <p>You should make sure that the following requirements are fulfilled for Ceno to work:</p>
+            <p>%error_page_learn_more_header%:</p>
             <ul>
-                <li>You are running a recent version of Ceno Browser. Obsolete versions may not be able to communicate with newer injectors or other clients. Check the <a href="#">Download page</a> to know where to get new versions.</li>
-                <li>All access mechanisms in the Settings are enabled. Otherwise Ceno will not be able to circumvent some connectivity issues when accessing content.</li>
-                <li>Your device has a working connection to the network, i.e. your normal Web browser is able to open some Web sites. Ceno and Ouinet cannot work when all network connectivity is shut down.</li>
+                <li>error_page_learn_more_1</li>
+                <li>error_page_learn_more_2</li>
+                <li>%error_page_learn_more_3%</li>
             </ul>
         </div>
     </div>
@@ -39,10 +39,10 @@
             var arrow = document.getElementById('arrow');
             if (details.style.display === 'none') {
                 details.style.display = 'block';
-                arrow.src = 'images/arrow_up.svg'; // Change to the up arrow image
+                arrow.src = 'images/arrow_up.svg';
             } else {
                 details.style.display = 'none';
-                arrow.src = 'images/arrow_down.svg'; // Change back to the down arrow image
+                arrow.src = 'images/arrow_down.svg';
             }
         }
     </script>

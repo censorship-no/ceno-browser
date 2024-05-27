@@ -227,4 +227,13 @@
     <string name="bridge_mode_category">Bridge Announcements</string>
     <string name="shutdown_message_one">Clearing app data</string>
     <string name="shutdown_message_two">Shutting down Ceno</string>
+    <!--  Failed to retrieve resource HTML strings  -->
+    <string name="error_page_title">Error Page</string>
+    <string name="error_page_header">Oops! Failed to load webpage.</string>
+    <string name="error_page_sub_header">This means that Ceno tried all available mechanisms to access the content, but none of them succeeded:</string>
+    <string name="error_page_learn_more">Learn more</string>
+    <string name="error_page_learn_more_header">You should make sure that the following requirements are fulfilled for Ceno to work</string>
+    <string name="error_page_learn_more_1">You are running a recent version of Ceno Browser. Obsolete versions may not be able to communicate with newer injectors or other clients. Check the <a href="#">Download page</a> to know where to get new versions.</string>
+    <string name="error_page_learn_more_2">All access mechanisms in the Settings are enabled. Otherwise Ceno will not be able to circumvent some connectivity issues when accessing content.</string>
+    <string name="error_page_learn_more_3">Your device has a working connection to the network, i.e. your normal Web browser is able to open some Web sites. Ceno and Ouinet cannot work when all network connectivity is shut down.</string>
 </resources>
