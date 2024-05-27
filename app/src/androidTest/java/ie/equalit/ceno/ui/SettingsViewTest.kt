@@ -332,6 +332,7 @@ class SettingsViewTest {
             waitForBridgeModeDialog()
             Thread.sleep(5000)
             assert(LogHelper.findInLogs("[DEBUG] Bep5Client: Got pong from injectors, announcing as helper (bridge)"))
+            waitForThankYouDialog()
         }
     }
 

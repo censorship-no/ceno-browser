@@ -227,6 +227,9 @@
     <string name="bridge_mode_category">Bridge Announcements</string>
     <string name="shutdown_message_one">Clearing app data</string>
     <string name="shutdown_message_two">Shutting down Ceno</string>
+    <string name="title_success">Success</string>
+    <string name="thank_you_bridge_mode_enabled">Thank you for becoming a bridge and growing the Ceno network!</string>
+    <string name="dialog_btn_positive_ok">OK</string>
     <!--  Failed to retrieve resource HTML strings  -->
     <string name="error_page_title">Error Page</string>
     <string name="error_page_header">Oops! Failed to load webpage.</string>
