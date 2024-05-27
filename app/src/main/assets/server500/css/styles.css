@@ -12,7 +12,7 @@ body {
   padding: 0;
 }
 
-.logo, .error-icon, .error-message, .learn-more, p, ul {
+.logo, .error-icon, .error-message, .learn-more-container, p, ul {
   text-align: left;
 }
 
@@ -34,11 +34,21 @@ body {
   margin-top: 30px;
 }
 
+.learn-more-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
 .learn-more {
   font-weight: bold;
-  cursor: pointer;
-  display: block;
-  margin-top: 40px;
+}
+
+.arrow {
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
 }
 
 ul {
@@ -48,6 +58,12 @@ ul {
 
 li {
   line-height: 1.6;
+  position: relative;
+}
+
+li .exclamation {
+  position: absolute;
+  right: 0;
 }
 
 hr {

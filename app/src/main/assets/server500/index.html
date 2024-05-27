@@ -15,11 +15,14 @@
         <h2 class="error-message">Oops! Failed to load webpage.</h2>
         <p>This means that Ceno tried all available mechanisms to access the content, but none of them succeeded:</p>
         <ul>
-            <li>Direct from website</li>
-            <li>Using Ceno network</li>
-            <li>From Ceno cache</li>
+            <li>Direct from website<span class="exclamation">!</span></li>
+            <li>Using Ceno network<span class="exclamation">!</span></li>
+            <li>From Ceno cache<span class="exclamation">!</span></li>
         </ul>
-        <div onclick="toggleVisibility()" class="learn-more">Learn more:</div>
+        <div class="learn-more-container" onclick="toggleVisibility()">
+            <div class="learn-more">Learn more:</div>
+            <img id="arrow" src="images/arrow_down.svg" alt="Arrow" class="arrow">
+        </div>
         <hr />
         <div id="details" style="display:none;">
             <p>You should make sure that the following requirements are fulfilled for Ceno to work:</p>
@@ -33,10 +36,13 @@
     <script>
         function toggleVisibility() {
             var details = document.getElementById('details');
+            var arrow = document.getElementById('arrow');
             if (details.style.display === 'none') {
                 details.style.display = 'block';
+                arrow.src = 'images/arrow_up.svg'; // Change to the up arrow image
             } else {
                 details.style.display = 'none';
+                arrow.src = 'images/arrow_down.svg'; // Change back to the down arrow image
             }
         }
     </script>
