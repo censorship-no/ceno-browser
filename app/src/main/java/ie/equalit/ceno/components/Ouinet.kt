@@ -11,6 +11,11 @@ import ie.equalit.ouinet.NotificationConfig
 import ie.equalit.ouinet.OuinetBackground
 import ie.equalit.ouinet.OuinetNotification.Companion.MILLISECOND
 import mozilla.components.support.base.log.logger.Logger
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
+
 
 class Ouinet (
         private val context : Context
@@ -19,6 +24,14 @@ class Ouinet (
     lateinit var config: Config
 
     fun setConfig() {
+
+        val errorPageFilePath = try {
+            copyFileFromAssetsToInternalStorage("error_page.html", context)
+            File(context.filesDir, "error_page.html").absolutePath
+        } catch (e: Exception) {
+            ""
+        }
+
         config = Config.ConfigBuilder(context)
             .setCacheHttpPubKey(BuildConfig.CACHE_PUB_KEY)
             .setInjectorCredentials(BuildConfig.INJECTOR_CREDENTIALS)
@@ -28,6 +41,7 @@ class Ouinet (
             .setBtBootstrapExtras(getBtBootstrapExtras())
             .setListenOnTcp(context.resources.getString(R.string.loopback_ip) + ":" + BuildConfig.PROXY_PORT)
             .setFrontEndEp(context.resources.getString(R.string.loopback_ip) + ":" + BuildConfig.FRONTEND_PORT)
+            .setErrorPagePath(errorPageFilePath)
             .setDisableBridgeAnnouncement(!CenoSettings.isBridgeAnnouncementEnabled(context))
             .build()
     }
@@ -105,5 +119,22 @@ class Ouinet (
         // else no bootstrap extras included, leave null
         Logger.debug("No extra BT bootstraps required")
         return null
+    }
+
+    @Throws(IOException::class)
+    private fun copyFileFromAssetsToInternalStorage(fileName: String, context: Context) {
+        val inputStream: InputStream = context.assets.open(fileName)
+        val outFile = File(context.filesDir, fileName)
+        val outputStream = FileOutputStream(outFile)
+
+        val buffer = ByteArray(1024)
+        var length: Int
+        while (inputStream.read(buffer).also { length = it } > 0) {
+            outputStream.write(buffer, 0, length)
+        }
+
+        outputStream.flush()
+        outputStream.close()
+        inputStream.close()
     }
 }
