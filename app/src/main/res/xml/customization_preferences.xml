@@ -41,7 +41,8 @@
         <androidx.preference.SwitchPreferenceCompat
             app:iconSpaceReserved="false"
             android:key="@string/pref_key_toolbar_hide"
-            android:defaultValue="true"
+            android:defaultValue="false"
+            android:enabled="false"
             android:title="@string/preferences_toolbar_hide"/>
 
         <androidx.preference.SwitchPreferenceCompat

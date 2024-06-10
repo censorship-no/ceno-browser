@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+<!ENTITY brandShortName "Ceno">
+<!ENTITY brandFullName "eQualitie Ceno">
+<!ENTITY vendorShortName "eQualitie">
+]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="customize_addon_collection_user_hint">مالك المجموعة (معرًف المستخدم)</string>
     <string name="bookmark_menu_open_in_private_tab_button">افتح في علامة تبويب شخصية</string>
@@ -109,4 +114,148 @@
     <string name="preferences_website_sources_summary">حدد المكان الذي تريد تحميل محتوى موقع الويب منه</string>
     <string name="select_extra_bt_source">حدد التمهيد الإضافي لـ BitTorrent</string>
     <string name="set_default_search_engine">تعيين محرك البحث الافتراضي</string>
+    <string name="preferences_about_ceno">&brandShortName; متصفح</string>
+    <string name="preferences_make_default_browser">اجعل &brandShortName; متصفحك الافتراضي</string>
+    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">إعدادات &brandShortName;</string>
+    <string name="default_top_site_1_title">دليل استخدام &brandShortName;</string>
+    <string name="onboarding_skip_button">تخطي</string>
+    <string name="onboarding_battery_button">تابع</string>
+    <string name="about_category">حول المتصفح</string>
+    <string name="ceno_notification_description">انقر للتوقف</string>
+    <string name="ceno_notification_home_description">الرئيسية</string>
+    <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">يوصى باستخدام &brandShortName; عندما يكون لديك اتصال Wi-Fi، فقد يستهلك بيانات أكثر مما تتوقع. قد ترغب في التوقف عن استخدام &brandShortName; عند استخدام بيانات الجوال.</string>
+    <string name="ceno_on_mobile_data_dialog_stop_now" tools:ignore="UnusedResources">إيقاف &brandShortName; الآن</string>
+    <string name="ceno_on_mobile_data_dialog_continue" tools:ignore="UnusedResources">تابع</string>
+    <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">لا تُظهِر مرة أخرى</string>
+    <string name="onboarding_fragment">مرحباً بكم في &brandShortName;</string>
+    <string name="onboarding_button">ابدأ الآن</string>
+    <string name="onboarding_info_title">ليس متصفحك العادي</string>
+    <string name="preferences_theme_default">2</string>
+    <string name="ceno_sources_category">المصادر</string>
+    <string name="preferences_ceno_sources_origin">موقع إلكتروني</string>
+    <string name="preference_show_search_suggestions_summary">&brandShortName; سيرسل ما تكتبه في شريط العناوين إلى محرك البحث الخاص بك</string>
+    <string name="ouinet_client_fetch_fail">فشل تغيير إعداد &brandShortName;</string>
+    <string name="website_button_text">الموقع الإلكتروني</string>
+    <string name="addon_placeholder">لا توجد إضافات متاحة</string>
+    <string name="preferences_show_home_button">اعرض زر الصفحة الرئيسية</string>
+    <string name="preferences_clear_in_toolbar">إظهار على شريط الأدوات</string>
+    <string name="preferences_clear_in_menu">إظهار الموقع في القائمة</string>
+    <string name="preferences_theme">تعيين ثيمة التطبيق</string>
+    <string name="preferences_theme_summary">داكن، فاتح، توفير البطارية</string>
+    <string name="preferences_ceno_sources_origin_summary">تحميل المحتوى مباشرة من الموقع الإلكتروني</string>
+    <string name="preferences_ceno_sources_private">بشكل خصوصي</string>
+    <string name="preferences_ceno_sources_public_summary">تحميل المحتوى عبر شبكة Ceno العامة</string>
+    <string name="onboarding_warning_title">تم رفض الإذن</string>
+    <string name="onboarding_warning_button">موافق</string>
+    <string name="onboarding_thanks_title">شكراً على تنمية الشبكة!</string>
+    <string name="onboarding_thanks_text">بصفتك مستخدماً لـ &brandShortName; فإنك تساعد في تنمية شبكة الجسور المتاحة التي تتيح الوصول إلى المحتوى الخاضع للرقابة.</string>
+    <string name="onboarding_battery_text">سيطلب منك نظام التشغيل قريباً الإذن لـ
+\n
+\n• تعطيل تحسين البطارية.
+\n
+\nهذا الإذن ضروري كي يستمر التطبيق في مشاركة مواقع الويب أثناء عمله في الخلفية</string>
+    <string name="preferences_show_onboarding">إظهار التضمين عند الإطلاق التالي</string>
+    <string name="preferences_customization">التخصيص</string>
+    <string name="ceno_clear_dialog_title">مسح &brandShortName;</string>
+    <string name="ceno_clear_action_description">مسح</string>
+    <string name="preferences_toolbar_position">ضع في الجزء العلوي من الشاشة</string>
+    <string name="ceno_onboarding_start_title">شارك الويب،
+\nنظير-لنظير</string>
+    <string name="onboarding_public_or_personal_title">عام أم شخصي؟</string>
+    <string name="onboarding_public_personal_text">"استخدم علامات التبويب العامة لقراءة الأخبار ومشاهدة مقاطع الفيديو وتصفح الويب بشكل عام.  مشاركة محتوى الويب مع مستخدمي Ceno الآخرين.
+\n
+\n تعد علامات التبويب الشخصية أكثر ملاءمة لحسابات الوسائط الاجتماعية والتسوق عبر الإنترنت وتصفح مواقع الويب التي لا ترغب في مشاركتها مع الآخرين."</string>
+    <string name="onboarding_cleanup_title">امسح كل شيء،
+\nفي كل مكان، دفعة واحدة</string>
+    <string name="ceno_notification_channel_name">خدمة &brandShortName;</string>
+    <string name="preferences_about_ouinet_protocol">بروتوكول Ouinet</string>
+    <string name="preferences_about_page">‬حول &vendorShortName;</string>
+    <string name="about_content"><p>%1$s - شارك الويب!</p><p>Ceno (اختصارا لـ censorship.no!) هو أول متصفح جوال في العالم يتخطى أساليب الرقابة الحالية على الإنترنت. اعتماده على بنية نظير لنظير يسمح للأشخاص بالوصول إلى معلومات الويب ومشاركتها في وعبر المناطق التي تم فيها قطع الاتصال أو العبث به.</p><p>%1$s مشروع تابع لـ eQualitie، وهي منظمة كندية تتمثل مهمتها في تعزيز الحريات الأساسية وحقوق الإنسان والدفاع عنها، بما في ذلك حق التدفق الحر للمعلومات عبر الإنترنت. هدفنا هو إنشاء تكنولوجيا سهلة الاستخدام، وتحسين المهارات اللازمة للدفاع عن حقوق الإنسان والحريات في العصر الرقمي.</p></string>
+    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/ar/concepts/public-private.html</string>
+    <string name="ceno_private_browsing_body">&lt;h1&gt;التصفح الشخصي&lt;/h1&gt; &lt;p&gt;لن يشارك Ceno المحتوى في علامات التبويب الشخصية مع مستخدمين آخرين. يمكنك زيارة المواقع التي تتطلب تسجيل الدخول بأمان. ولكن، هناك حاجة إلى طريق إلى الإنترنت.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;هل تريد معرفة المزيد؟&lt;/p&gt;</string>
+    <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">إشعار المتصفح &brandShortName;</string>
+    <string name="ceno_notification_title">خدمة المتصفح &brandShortName;</string>
+    <string name="preferences_disable_battery_opt">تعطيل تحسين البطارية</string>
+    <string name="ceno_clear_dialog_cancel">إلغاء</string>
+    <string name="ceno_clear_dialog_clear_cache_only">مسح ذاكرة التخزين المؤقت لـ &brandShortName; فقط</string>
+    <string name="ceno_clear_dialog_description">تحذير: سيؤدي مسح ذاكرة التخزين المؤقت وبيانات التطبيق إلى إعادة ضبط تطبيق &brandShortName; كما لو لم يتم استخدامه أبدًا.</string>
+    <string name="onboarding_warning_text_v33_2">الإشعارات غير مسموح بها وما يزال تحسين البطارية مُمَكَّنًا.
+\n
+\nانتقل إلى \"الإعدادات\" لمنح الإذن لاحقاً</string>
+    <string name="onboarding_battery_title">الإذن مطلوب</string>
+    <string name="onboarding_battery_text_v33">سيطلب منك نظام التشغيل قريباً الإذن لِـ
+\n
+\n• السماح بالإشعارات
+\n• تعطيل تحسين البطارية
+\n
+\nهذا ضروري للاستمرار في مشاركة مواقع الويب أثناء وجود التطبيق في الخلفية</string>
+    <string name="preferences_toolbar_hide">قم بالتمرير للإخفاء</string>
+    <string name="onboarding_warning_text">ما يزال تحسين البطارية مُمَكَّنًا.
+\n
+\nانتقل إلى \"الإعدادات &gt; تعطيل تحسين البطارية\" لمنح الإذن لاحقاً</string>
+    <string name="onboarding_warning_text_v33_1">الإشعارات غير مسموح بها.
+\n
+\nانتقل إلى \"الإعدادات &gt; السماح بالإشعارات\" لمنح الإذن لاحقاً</string>
+    <string name="preferences_clear_behavior_default">0</string>
+    <string name="preferences_ceno_sources_private_summary">تحميل المحتوى عبر شبكة Ceno الخاصة</string>
+    <string name="preferences_ceno_sources_peers">تَمَّت مُشارَكَتُه</string>
+    <string name="preferences_ceno_groups_count">المحتوى الذي تمت مشاركته من قبلك</string>
+    <string name="preferences_ceno_network_config">تفاصيل شبكة &brandShortName;</string>
+    <string name="ceno_onboarding_start_text">اعتماد &brandShortName; بشكل أساسي على بنية نظير-لنظير يسمح للأشخاص بالوصول إلى محتوى المواقع الإلكترونية ومشاركتها ضمن وعبر المناطق التي تم فيها قطع الاتصال أو اختراقه.</string>
+    <string name="onboarding_cleanup_text">امسح سجل تاريخ المتصفح، بيانات تسجيل الدخول وأي أثر تركته على &brandShortName; بزر واحد.</string>
+    <string name="preferences_clear_behavior">السلوك الافتراضي</string>
+    <string name="preferences_clear_behavior_summary">ضبط السلوك عند النقر على زر المسح</string>
+    <string name="changeIconCtaCancel">إلغاء</string>
+    <string name="preferences_ceno_network_config_summary">حالة Ouinet، نقاط نهاية UDP، تمهيدات بيت تورنت BitTorrent</string>
+    <string name="preferences_ceno_enable_log">تمكين ملف السجل</string>
+    <string name="preferences_ceno_download_log">تصدير ملف سجل Ouinet</string>
+    <string name="changeIconCtaAccept">طبِّق</string>
+    <string name="ceno_clear_dialog_clear_entire_app">مسح ذاكرة التخزين المؤقت وبيانات تطبيق &brandShortName;</string>
+    <string name="ceno_notification_clear_description">محو⚠</string>
+    <string name="ceno_notification_clear_do_description">نعم</string>
+    <string name="preferences_allow_notifications">السماح بالإشعارات</string>
+    <string name="preferences_change_app_icon">تغيير أيقونة التطبيق</string>
+    <string name="preferences_ceno_sources_public">بشكل علني</string>
+    <string name="preferences_ceno_sources_peers_summary">تحميل المحتوى الذي شاركه مستخدمون آخرون</string>
+    <string name="ceno_data_category">بيانات</string>
+    <string name="preferences_ceno_cache_size">ذاكرة التخزين المؤقت المحلية</string>
+    <string name="preferences_clear_ceno_cache">مسح المحتوى المخزن مؤقتاً</string>
+    <string name="preferences_clear_ceno_cache_summary">مسح محتوى الويب المخزن مؤقتاً محلياً</string>
+    <string name="changeIconDialogTitle">استخدم الأيقونة الجديدة؟</string>
+    <string name="changeIconDialogMessage">قد يتم إغلاق التطبيق لتفعيل التغييرات. عُد هنا بعد أن تعجَبَ بأيقونتك الجديدة الرائعة.</string>
+    <string name="clear_cache_success">تم مسح ذاكرة التخزين المؤقت بنجاح</string>
+    <string name="clear_cache_fail">فشل مسح ذاكرة التخزين المؤقت، حاول مرة أخرى لاحقاً</string>
+    <string name="source_code_button_text">شفرة المصدر</string>
+    <string name="donate_button_text">تبرّع</string>
+    <string name="ceno_home_card_public_title">علامات التبويب العامة</string>
+    <string name="ceno_home_card_public_text">أفضل اتصال، خصوصية أقل لقراءة الأخبار ومشاهدة مقاطع الفيديو ومشاركتها مع الآخرين</string>
+    <string name="ceno_home_card_personal_title">علامات التبويب الشخصية</string>
+    <string name="ceno_home_card_personal_text">اتصال جيد، المزيد من الخصوصية لتسجيل الدخول إلى الحسابات، وعدم ترك آثار ، وعدم المشاركة</string>
+    <string name="onboarding_finish_button">إنهاء</string>
+    <string name="preferences_ceno_sources_upnp">حالة UPnP</string>
+    <string name="crash_reporting_dialog_description">المعذرة، يبدو أن &brandShortName; تعطّل!
+\nنرجو المساعدة لجعل &brandShortName; أفضل عبر إرسال تقرير العطل إلينا.</string>
+    <string name="crash_reporting_never_send">لا ترسل أبداً</string>
+    <string name="crash_reporting_always_send">قم دائمًا بإرسال وتحسين &amp;brandShortName</string>
+    <string name="preferences_allow_crash_reporting">الإبلاغ عن الأعطال</string>
+    <string name="preferences_ceno_sources_reachability">حالة إمكانية الوصول</string>
+    <string name="preferences_ceno_sources_extra_bitTorrent_bootstraps">تمهيدات BitTorrent إضافية</string>
+    <string name="crash_reporting_opt_out">اخترت عدم مشاركة تقارير الأعطال. يمكنك دائما اختيار إرسالها عبر التوجه إلى إعدادات ثم الإبلاع عن الأعطال.</string>
+    <string name="crash_reporting_opt_in">شكرا لمشاركة تقرير العطل والمساعدة في جعل &brandShortName; منتجاً أفضل! يمكنك إيقاف هذه الميزة بالتوجه إلى إدادات ثم الإبلاغ عن الأعطال.</string>
+    <string name="preferences_ceno_sources_local_udp">نقاط نهاية UDP محلية</string>
+    <string name="preferences_ceno_sources_external_udp">نقاط نهاية UDP خارجية</string>
+    <string name="preferences_ceno_sources_public_udp">نقاط نهاية UDP عامة</string>
+    <string name="ceno_support_link_url">https://censorship.no/ar/support.html</string>
+    <string name="crash_reporting_dialog_title">عذراً, يبدو أنَّ &brandShortName; قد حدث فيه عطلٌ تسبب في اغلاقه</string>
+    <string name="personal_home_learn_more">تريدُ معرفة المزيد؟</string>
+    <string name="ouinet_client_fetch_success">تم تحديث الإعدادات</string>
+    <string name="bt_sources_none">لا أحد</string>
+    <string name="bt_invalid_ip_error">عنوان IP غير صالح</string>
+    <string name="preferences_ceno_website_sources">مصادر الموقع</string>
+    <string name="ceno_personal_browsing_description">لن يقوم Ceno بمشاركة المحتوى من علامات التبويب الشخصية مع مستخدمين آخرين ، يمكنك زيارة المواقع التي تتطلب تسجيل الدخول.</string>
+    <string name="preferences_ceno_export_android_logs">تصدير سجل التطبيق بالكامل</string>
+    <string name="ceno_sources_header">مصادر المحتوى</string>
+    <string name="preferences_ceno_bridge_announcement">تفعيل وضع bridge</string>
+    <string name="ouinet_taking_too_long_title">يأخذ كثيراً من الوقت؟</string>
+    <string name="bridge_mode_faq_url">https://censorship.no/ar/support.html#bridgemode</string>
 </resources>

@@ -350,7 +350,8 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
                 feature = WebAuthnFeature(
                     requireComponents.core.engine,
                     requireActivity(),
-                ),
+                    requireComponents.useCases.sessionUseCases.exitFullscreen::invoke,
+                ) { requireComponents.core.store.state.selectedTabId },
                 owner = this,
                 view = view,
             )
@@ -374,6 +375,8 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             )
         }
 
+        /*
+        // Disable scroll-to-hide until it is fixed, https://gitlab.com/censorship-no/ceno-browser/-/issues/144
         if (prefs.getBoolean(requireContext().getPreferenceKey(R.string.pref_key_toolbar_hide), false)) {
             binding.toolbar.enableDynamicBehavior(
                 requireContext(),
@@ -385,14 +388,15 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             )
         }
         else {
-            binding.toolbar.disableDynamicBehavior(
-                binding.engineView,
-                prefs.getBoolean(
-                    requireContext().getPreferenceKey(R.string.pref_key_toolbar_position),
-                    false
-                )
+        */
+        binding.toolbar.disableDynamicBehavior(
+            binding.engineView,
+            prefs.getBoolean(
+                requireContext().getPreferenceKey(R.string.pref_key_toolbar_position),
+                false
             )
-        }
+        )
+        //}
 
 
         AwesomeBarFeature(awesomeBar, toolbar, engineView).let {
