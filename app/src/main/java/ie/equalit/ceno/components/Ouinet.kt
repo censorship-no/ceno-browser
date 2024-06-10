@@ -25,13 +25,6 @@ class Ouinet (
 
     fun setConfig() {
 
-        val errorPageFilePath = try {
-            copyFileFromAssetsToInternalStorage("error_page.html", context)
-            File(context.filesDir, "error_page.html").absolutePath
-        } catch (e: Exception) {
-            ""
-        }
-
         config = Config.ConfigBuilder(context)
             .setCacheHttpPubKey(BuildConfig.CACHE_PUB_KEY)
             .setInjectorCredentials(BuildConfig.INJECTOR_CREDENTIALS)
@@ -41,7 +34,8 @@ class Ouinet (
             .setBtBootstrapExtras(getBtBootstrapExtras())
             .setListenOnTcp(context.resources.getString(R.string.loopback_ip) + ":" + BuildConfig.PROXY_PORT)
             .setFrontEndEp(context.resources.getString(R.string.loopback_ip) + ":" + BuildConfig.FRONTEND_PORT)
-            .setErrorPagePath(errorPageFilePath)
+            .setErrorPagePath("file:///android_asset/server500.html")
+//            .setErrorPagePath(getErrorPagePath())
             .setDisableBridgeAnnouncement(!CenoSettings.isBridgeAnnouncementEnabled(context))
             .build()
     }
@@ -119,6 +113,15 @@ class Ouinet (
         // else no bootstrap extras included, leave null
         Logger.debug("No extra BT bootstraps required")
         return null
+    }
+
+    private fun getErrorPagePath(): String {
+        return try {
+            copyFileFromAssetsToInternalStorage("server500.html", context)
+            "file://${File(context.filesDir, "server500.html").absolutePath}"
+        } catch (e: Exception) {
+            ""
+        }
     }
 
     @Throws(IOException::class)
