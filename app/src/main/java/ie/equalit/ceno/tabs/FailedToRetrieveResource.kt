@@ -7,24 +7,17 @@
 package ie.equalit.ceno.tabs
 
 import android.content.Context
-import androidx.annotation.RawRes
 import ie.equalit.ceno.R
 
 object FailedToRetrieveResource {
     /**
-     * Load and generate a private browsing page for the given url and html/css resources
+     * Load and generate a localized error page
      */
-    fun createPrivateBrowsingPage(
-        context: Context,
-        url: String,
-        @RawRes htmlRes: Int = R.raw.private_mode, // to change
-        @RawRes cssRes: Int = R.raw.private_style, // to change
+    fun createErrorPage(
+        context: Context
     ): String {
-        val css = context.resources.openRawResource(cssRes).bufferedReader().use {
-            it.readText()
-        }
 
-        return context.resources.openRawResource(htmlRes)
+        return context.resources.openRawResource(R.raw.server500)
             .bufferedReader()
             .use { it.readText() }
             .replace("%pageTitle%", context.getString(R.string.error_page_title))

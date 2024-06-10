@@ -6,6 +6,7 @@ import ie.equalit.ceno.R
 import ie.equalit.ceno.components.ceno.CenoLocationUtils
 import ie.equalit.ceno.ext.application
 import ie.equalit.ceno.settings.CenoSettings
+import ie.equalit.ceno.tabs.FailedToRetrieveResource
 import ie.equalit.ouinet.Config
 import ie.equalit.ouinet.NotificationConfig
 import ie.equalit.ouinet.OuinetBackground
@@ -14,7 +15,6 @@ import mozilla.components.support.base.log.logger.Logger
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import java.io.InputStream
 
 
 class Ouinet (
@@ -117,27 +117,21 @@ class Ouinet (
 
     private fun getErrorPagePath(): String {
         return try {
-            copyFileFromAssetsToInternalStorage("server500.html", context)
+            writeToFile("server500.html", FailedToRetrieveResource.createErrorPage(context), context)
             "file://${File(context.filesDir, "server500.html").absolutePath}"
         } catch (e: Exception) {
             ""
         }
     }
 
-    @Throws(IOException::class)
-    private fun copyFileFromAssetsToInternalStorage(fileName: String, context: Context) {
-        val inputStream: InputStream = context.assets.open(fileName)
-        val outFile = File(context.filesDir, fileName)
-        val outputStream = FileOutputStream(outFile)
-
-        val buffer = ByteArray(1024)
-        var length: Int
-        while (inputStream.read(buffer).also { length = it } > 0) {
-            outputStream.write(buffer, 0, length)
+    private fun writeToFile(fileName: String, fileContent: String, context: Context) {
+        val file = File(context.filesDir, fileName)
+        try {
+            val outputStream = FileOutputStream(file)
+            outputStream.write(fileContent.toByteArray())
+            outputStream.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
-
-        outputStream.flush()
-        outputStream.close()
-        inputStream.close()
     }
 }
