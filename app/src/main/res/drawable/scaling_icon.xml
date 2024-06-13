@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <scale
+            android:drawable="@drawable/ouinet_progress"
+            android:scaleGravity="center"
+            android:scaleWidth="100%"
+            android:scaleHeight="100%" />
+    </item>
+</layer-list>
