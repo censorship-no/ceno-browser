@@ -34,8 +34,7 @@ class Ouinet (
             .setBtBootstrapExtras(getBtBootstrapExtras())
             .setListenOnTcp(context.resources.getString(R.string.loopback_ip) + ":" + BuildConfig.PROXY_PORT)
             .setFrontEndEp(context.resources.getString(R.string.loopback_ip) + ":" + BuildConfig.FRONTEND_PORT)
-            .setErrorPagePath("file:///android_asset/server500.html")
-//            .setErrorPagePath(getErrorPagePath())
+            .setErrorPagePath(getErrorPagePath())
             .setDisableBridgeAnnouncement(!CenoSettings.isBridgeAnnouncementEnabled(context))
             .build()
     }
