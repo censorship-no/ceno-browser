@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>%pageTitle%</title>
+    <title>%page_title%</title>
     <style>
         body {
           font-family: Arial, sans-serif;
           padding: 20px;
-          background-color: #fff;
-          color: #000;
+          padding-top: 30px;
+          background-color: %body_theme%;
+          color: %text_theme%;
         }
 
         .container {
           max-width: 600px;
           margin: 0 auto;
-          background-color: #fff;
+          background-color: %body_theme%;
           padding: 0;
         }
 
@@ -39,6 +40,7 @@
         .error-message {
           color: red;
           margin-top: 30px;
+          font-weight: normal;
         }
 
         .learn-more-container {
@@ -93,7 +95,7 @@
         </ul>
         <div class="learn-more-container" onclick="toggleVisibility()">
             <div class="learn-more">%learn_more%</div>
-            <svg id="arrow" class="arrow" viewBox="0 0 1024 1024" alt="Arrow" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000" /></svg>
+            <svg id="arrow" class="arrow" viewBox="0 0 1024 1024" alt="Arrow" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="%text_theme%" /></svg>
         </div>
         <hr />
         <div id="details" style="display:none;">
@@ -111,10 +113,10 @@
             var arrow = document.getElementById('arrow');
             if (details.style.display === 'none') {
                 details.style.display = 'block';
-                arrow.innerHTML = '<svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g><g><path d="M505.752,358.248L271.085,123.582c-8.331-8.331-21.839-8.331-30.17,0L6.248,358.248c-8.331,8.331-8.331,21.839,0,30.17s21.839,8.331,30.17,0L256,168.837l219.582,219.582c8.331,8.331,21.839,8.331,30.17,0S514.083,366.58,505.752,358.248z"/></g></g></svg>'
+                arrow.innerHTML = '<svg fill="%text_theme%" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g><g><path d="M505.752,358.248L271.085,123.582c-8.331-8.331-21.839-8.331-30.17,0L6.248,358.248c-8.331,8.331-8.331,21.839,0,30.17s21.839,8.331,30.17,0L256,168.837l219.582,219.582c8.331,8.331,21.839,8.331,30.17,0S514.083,366.58,505.752,358.248z"/></g></g></svg>'
             } else {
                 details.style.display = 'none';
-                arrow.innerHTML = '<svg id="arrow" class="arrow" viewBox="0 0 1024 1024" alt="Arrow" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000" /></svg>';
+                arrow.innerHTML = '<svg id="arrow" class="arrow" viewBox="0 0 1024 1024" alt="Arrow" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="%text_theme%" /></svg>';
             }
         }
     </script>
