@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+<!ENTITY brandShortName "Ceno">
+<!ENTITY brandFullName "eQualitie Ceno">
+<!ENTITY vendorShortName "eQualitie">
+]>
 <resources>
     <string name="shortcut_max_limit_content">Για να προσθέσετε νέα συντόμευση, αφαιρέστε μια. Πατήστε παρατεταμένα στη σελίδα και επιλέξτε κατάργηση.</string>
     <string name="top_sites_max_limit_confirmation_button">Εντάξει το κατάλαβα</string>
@@ -88,4 +93,15 @@
     <string name="secure_connection">Η σύνδεση είναι ασφαλής</string>
     <string name="browser_toolbar_home">Αρχική</string>
     <string name="browser_menu_back">Πίσω</string>
+    <string name="ceno_on_mobile_data_dialog_continue">Συνέχεια</string>
+    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
+    <string name="ceno_notification_description">Πατήστε για διακοπή</string>
+    <string name="ceno_notification_clear_do_description">Ναί</string>
+    <string name="ceno_notification_home_description">Αρχική</string>
+    <string name="ceno_notification_channel_name">Υπηρεσία &brandShortName;</string>
+    <string name="ceno_notification_title">Υπηρεσία φυλλομετρητή &brandShortName;</string>
+    <string name="ceno_notification_clear_description">Διαγραφή⚠</string>
+    <string name="ceno_on_mobile_data_dialog_stop_now">Διακοπή &brandShortName; τώρα</string>
+    <string name="ceno_on_mobile_data_dialog_stop_showing">Να μην εμφανιστεί ξανά</string>
+    <string name="bridge_mode_faq_url">https://censorship.no/en/support.html#bridgemode</string>
 </resources>

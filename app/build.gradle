@@ -392,10 +392,6 @@ dependencies {
     implementation Deps.mozilla_support_rusthttp
     implementation Deps.mozilla_support_webextensions
 
-    implementation Deps.mozilla_lib_crash
-    implementation Deps.mozilla_lib_crash_sentry
-    /* CENO F-Droid: Remove firebase */
-    //implementation Deps.mozilla_lib_push_firebase
     implementation Deps.mozilla_lib_publicsuffixlist
     implementation Deps.mozilla_lib_dataprotect
 

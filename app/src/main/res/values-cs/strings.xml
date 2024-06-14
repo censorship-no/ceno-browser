@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+<!ENTITY brandShortName "Ceno">
+<!ENTITY brandFullName "eQualitie Ceno">
+<!ENTITY vendorShortName "eQualitie">
+]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="private_browsing_title">Osobní prohlížení</string>
     <string name="menu_share_with">Sdílet s…</string>

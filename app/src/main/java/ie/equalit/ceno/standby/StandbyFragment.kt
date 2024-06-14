@@ -8,6 +8,8 @@ import android.net.NetworkCapabilities
 import android.net.NetworkInfo
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.provider.Settings.ACTION_WIRELESS_SETTINGS
 import android.util.Log
 import android.view.LayoutInflater
@@ -27,7 +29,6 @@ import ie.equalit.ceno.settings.ExtraBTBootstrapsDialog
 import ie.equalit.ouinet.Ouinet.RunningState
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import mozilla.components.browser.state.selector.selectedTab
 import mozilla.components.lib.state.ext.consumeFrom
@@ -41,7 +42,11 @@ class StandbyFragment : Fragment() {
 
     private val refreshIntervalMS: Long = 1000
 
-    private var status: Flow<String>? = null
+    protected var isCenoStopping : Boolean? = false
+        get() = arguments?.getBoolean(shutdownCeno)
+
+    protected val doClear: Boolean?
+        get() = arguments?.getBoolean(DO_CLEAR)
 
     private var currentStatus = RunningState.Starting
 
@@ -62,15 +67,16 @@ class StandbyFragment : Fragment() {
         R.string.standby_message_three
     )
 
+    private var displayTextStopping: MutableList<Int> = mutableListOf(
+        R.string.shutdown_message_two,
+        R.string.shutdown_message_two,
+        R.string.shutdown_message_two,
+    )
+
     private var dialog: AlertDialog? = null
 
     private var _binding : FragmentStandbyBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-//        initiateStatusUpdate()
-    }
 
     private fun isNetworkAvailable(): Boolean {
         val cm : ConnectivityManager = requireContext().getSystemService() ?: return false
@@ -95,24 +101,44 @@ class StandbyFragment : Fragment() {
         _binding = FragmentStandbyBinding.inflate(inflater, container, false)
         container?.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.ceno_standby_background))
 
+        repeat(3){
+            displayTextStopping.add (0,
+                if (doClear == true) {
+                    R.string.shutdown_message_one
+                } else {
+                    R.string.shutdown_message_two
+                }
+            )
+        }
         return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.root.consumeFrom(requireComponents.appStore, viewLifecycleOwner) {
-            if (getView() == null)
-                return@consumeFrom
-            currentStatus = it.ouinetStatus
-            updateDisplayText()
-            Log.d("STANDBY", currentStatus.name)
-            if (currentStatus == RunningState.Stopped) {
-                tryAgain()
+        if (isCenoStopping == true) {
+            binding.llNoInternet.visibility = View.GONE
+            lifecycleScope.launch {
+                while (index < displayTextStopping.size) {
+                    binding.tvStatus.text =
+                        ContextCompat.getString(requireContext(), displayTextStopping[index])
+                    index += 1
+                    delay(refreshIntervalMS)
+                }
+            }
+        } else {
+            binding.root.consumeFrom(requireComponents.appStore, viewLifecycleOwner) {
+                if (getView() == null)
+                    return@consumeFrom
+                currentStatus = it.ouinetStatus
+                updateDisplayText()
+                if (currentStatus == RunningState.Stopped) {
+                    if(isCenoStopping == false) {
+                        tryAgain()
+                    }
+                }
             }
         }
-
     }
 
     private fun displayTimeoutDialog() {
@@ -166,22 +192,20 @@ class StandbyFragment : Fragment() {
 
     private fun updateDisplayText() {
         viewLifecycleOwner.lifecycleScope.launch{
-            if (currentStatus == RunningState.Starting) {
-                while (currentStatus == RunningState.Starting) {
-                    if (isNetworkAvailable()) {
-                        binding.llNoInternet.visibility = View.INVISIBLE
-                    } else
-                        binding.llNoInternet.visibility = View.VISIBLE
-                    if (index < displayText.size)
-                    {
-                        binding.tvStatus.text = getString(displayText[index])
-                        index += 1
-                    } else {
-                        displayTimeoutDialog()
-                        break
-                    }
-                    delay(refreshIntervalMS)
+            while (currentStatus == RunningState.Starting) {
+                if (isNetworkAvailable()) {
+                    binding.llNoInternet.visibility = View.INVISIBLE
+                } else
+                    binding.llNoInternet.visibility = View.VISIBLE
+                if (index < displayText.size)
+                {
+                    binding.tvStatus.text = getString(displayText[index])
+                    index += 1
+                } else {
+                    displayTimeoutDialog()
+                    break
                 }
+                delay(refreshIntervalMS)
             }
             if (currentStatus == RunningState.Started) {
                 //Navigate away
@@ -194,11 +218,21 @@ class StandbyFragment : Fragment() {
                     findNavController().navigate((R.id.action_global_browser))
             }
             if (currentStatus == RunningState.Stopping) {
-                binding.tvStatus.text = getString(R.string.standby_restarting_text)
-                binding.llNoInternet.visibility = View.INVISIBLE
+                if (isCenoStopping == true) {
+                    binding.tvStatus.text = getString(R.string.shutdown_message_two)
+                    binding.llNoInternet.visibility = View.INVISIBLE
+                } else {
+                    binding.tvStatus.text = getString(R.string.standby_restarting_text)
+                    binding.llNoInternet.visibility = View.INVISIBLE
+                }
             }
             cancel()
         }
+    }
+
+    companion object {
+        const val shutdownCeno = "shutdownCeno"
+        const val DO_CLEAR = "do_clear"
     }
 
 }

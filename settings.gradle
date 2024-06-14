@@ -1,5 +1,4 @@
 include ':app'
-include ':app_branded'
 
 def log(message) {
     logger.lifecycle("[settings] ${message}")

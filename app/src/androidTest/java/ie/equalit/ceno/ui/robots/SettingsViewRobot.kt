@@ -16,6 +16,7 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.isDescendantOfA
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
@@ -98,6 +99,11 @@ class SettingsViewRobot {
             UiSelector()
                 .textContains("Updating Bridge Mode settings"),
         ).waitUntilGone(waitingTime)
+    }
+
+    fun waitForThankYouDialog() {
+        onView(withText(R.string.title_success)).check(matches(isDisplayed()))
+        onView(withText(R.string.dialog_btn_positive_ok)).click()
     }
 
     fun clickDownRecyclerView(count: Int) {

@@ -7,18 +7,15 @@ package ie.equalit.ceno
 import android.content.Context
 import mozilla.components.browser.engine.gecko.GeckoEngine
 import mozilla.components.browser.engine.gecko.fetch.GeckoViewFetchClient
-//import mozilla.components.browser.engine.gecko.glean.GeckoAdapter
 import mozilla.components.concept.engine.DefaultSettings
 import mozilla.components.concept.engine.Engine
 import mozilla.components.concept.fetch.Client
 import mozilla.components.feature.webcompat.WebCompatFeature
-import mozilla.components.lib.crash.handler.CrashHandlerService
 import org.mozilla.geckoview.GeckoRuntime
 import org.mozilla.geckoview.GeckoRuntimeSettings
 import ie.equalit.ceno.components.ceno.CenoWebExt
 import ie.equalit.ceno.components.ceno.HttpsByDefaultWebExt
 import ie.equalit.ceno.components.ceno.UblockOriginWebExt
-import ie.equalit.ceno.ext.isCrashReportActive
 
 object EngineProvider {
 
@@ -29,14 +26,6 @@ object EngineProvider {
     fun getOrCreateRuntime(context: Context): GeckoRuntime {
         if (runtime == null) {
             val builder = GeckoRuntimeSettings.Builder()
-
-            if (isCrashReportActive) {
-                builder.crashHandler(CrashHandlerService::class.java)
-            }
-
-            /* Don't allow telemetry data to be reported
-             * builder.telemetryDelegate(GeckoAdapter())
-             */
 
             // About config it's no longer enabled by default
             builder.aboutConfigEnabled(true)

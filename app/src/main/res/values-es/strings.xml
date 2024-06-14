@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+<!ENTITY brandShortName "Ceno">
+<!ENTITY brandFullName "eQualitie Ceno">
+<!ENTITY vendorShortName "eQualitie">
+]>
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
-   - file, You can obtain one at http://mozilla.org/MPL/2.0/. --><resources xmlns:tools="http://schemas.android.com/tools">
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Text shown in the toolbar if it is empty -->
     <string name="toolbar_hint">Buscar o introducir dirección</string>
     <!-- Menu option on the toolbar to open a new tab-->
@@ -173,4 +179,225 @@
     <string name="setting_item_selected">%s seleccionado</string>
     <string name="set_default_search_engine">Establecer motor de búsqueda predeterminado</string>
     <string name="bridge_mode_category">Anuncios de puentes</string>
+    <!-- Preference for settings related to changing the default browser -->
+    <string name="preferences_make_default_browser">Haz &brandShortName; tu navegador predeterminado</string>
+    <!-- Preference about page -->
+    <string name="preferences_about_page">Acerca de &vendorShortName;</string>
+    <!-- TRANSLATORS: Keep the URL as is unless the section has been translated. -->
+    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/es/concepts/public-private.html</string>
+    <!-- Extra paragraph in private tab panel. -->
+    <!-- <string name="ceno_private_tab_panel_description">&brandShortName; no compartirá contenido de pestañas privadas con otros usuarios. Puedes visitar sitios con contraseña sin riesgo, pero es necesaria una vía hacia Internet.</string> -->
+    <string name="ceno_private_browsing_body">&lt;h1&gt;Navegación personal&lt;/h1&gt; &lt;p&gt;Ceno no compartirá el contenido de las pestañas personales con otros usuarios. Puedes visitar con seguridad los sitios que requieran inicio de sesión. Sin embargo, se necesita una ruta a Internet.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;¿Quieres saber más\?&lt;/p&gt; &lt;p&gt;</string>
+    <!-- Service notification and actions -->
+    <string name="ceno_notification_title">Servicio del Navegador &brandShortName;</string>
+    <string name="ceno_notification_description">Toca para detener</string>
+    <string name="ceno_notification_home_description">Inicio</string>
+    <string name="ceno_notification_clear_description">Borrar⚠</string>
+    <string name="ceno_notification_clear_do_description">Sí</string>
+    <string name="ceno_notification_channel_name">Servicio &brandShortName;</string>
+    <!-- "On mobile data" dialog -->
+    <string name="ceno_on_mobile_data_dialog_title">Aviso del Navegador &brandShortName;</string>
+    <string name="ceno_on_mobile_data_dialog_description">Se recomienda usar &brandShortName; cuando tengas una conexión de Wi-Fi, ya que puedes consumir más datos de los que esperas. Tal vez prefiera detener &brandShortName; cuando use datos móviles.</string>
+    <string name="ceno_on_mobile_data_dialog_stop_now">Detener &brandShortName; ahora</string>
+    <string name="ceno_on_mobile_data_dialog_continue">Continuar</string>
+    <string name="ceno_on_mobile_data_dialog_stop_showing">No volver a mostrar</string>
+    <!-- Default suggested site title and urls -->
+    <string name="default_top_site_1_title">Manual &brandShortName;</string>
+    <string name="default_top_site_1_url" tools:ignore="Untranslatable">@string/suggestedsites_ceno_es_url</string>
+    <string name="default_top_site_2_title" tools:ignore="Untranslatable">Wikipedia</string>
+    <string name="default_top_site_2_url" tools:ignore="Untranslatable">@string/suggestedsites_wikipedia_url</string>
+    <string name="default_top_site_3_title" tools:ignore="Untranslatable">El País</string>
+    <string name="default_top_site_3_url" tools:ignore="Untranslatable">@string/suggestedsites_elpais_url</string>
+    <string name="default_top_site_4_title" tools:ignore="Untranslatable">Infobae</string>
+    <string name="default_top_site_4_url" tools:ignore="Untranslatable">@string/suggestedsites_infobae_url</string>
+    <!-- Snackbar action button when a non fatal crash happen-->
+    <string name="onboarding_fragment">Bienvenida(o) a &brandShortName;</string>
+    <string name="onboarding_battery_title">Permiso necesario</string>
+    <string name="onboarding_battery_text">En breve el sistema operativo te pedirá permiso para
+\n
+\n- Desactivar la optimización de la batería.
+\n
+\nEsto es necesario para seguir compartiendo páginas web mientras la aplicación está en segundo plano.</string>
+    <string name="onboarding_battery_button">Continuar</string>
+    <string name="onboarding_warning_text">La optimización de la batería sigue activada.
+\n
+\nVe a \"Ajustes &gt; Desactivar Optimización de Batería\" para dar permiso más tarde</string>
+    <string name="onboarding_warning_button">Ok</string>
+    <string name="onboarding_button">Comenzar</string>
+    <string name="onboarding_skip_button">Saltar</string>
+    <string name="onboarding_info_title">No es tu navegador normal</string>
+    <string name="onboarding_warning_title">Permiso denegado</string>
+    <string name="onboarding_thanks_title">¡Gracias por hacer crecer la red!</string>
+    <string name="preferences_toolbar_position">Colocar en la parte superior de la pantalla</string>
+    <string name="preferences_toolbar_hide">Desplácese para ocultar</string>
+    <string name="preferences_show_onboarding">Mostrar la incorporación en el próximo lanzamiento</string>
+    <string name="preferences_disable_battery_opt">Desactivar la Optimización de Batería</string>
+    <string name="preferences_customization">Personalización</string>
+    <string name="about_content"><p>%1$s - ¡Comparte la Red!</p> <p>Ceno (abreviatura de Censorship.no!) es el primer navegador móvil del mundo que evade los actuales métodos de censura en Internet. Su red troncal peer-to-peer (red de pares o P2P) permite a la gente acceder y compartir información en la web y a través de regiones donde la conectividad ha sido interrumpida o comprometida. </p> <p>%1$s Es un proyecto de eQualitie, una organización canadiense cuya misión es promover y defender las libertades fundamentales y los derechos humanos, incluida la libre circulación de información en línea. Nuestro objetivo es crear tecnología accesible y mejorar el conjunto de habilidades necesarias para defender los derechos humanos y las libertades en la era digital.</p></string>
+    <string name="onboarding_thanks_text">Como usuaria(o) de &brandShortName;, ayudas a hacer crecer la red de puentes disponibles que permiten acceder a contenidos censurados.</string>
+    <string name="browser_menu_ceno_ext">&brandShortName; Ajustes</string>
+    <string name="ceno_clear_dialog_cancel">Cancelar</string>
+    <string name="ceno_clear_dialog_clear_cache_only">Borrar sólo caché &brandShortName;</string>
+    <string name="ceno_clear_dialog_title">Borrar &brandShortName;</string>
+    <string name="ceno_clear_action_description">Limpiar</string>
+    <string name="preferences_clear_in_toolbar">Mostrar en la barra de herramientas</string>
+    <string name="preferences_clear_in_menu">Ver en el menú</string>
+    <string name="preferences_clear_behavior">Comportamiento Predeterminado</string>
+    <string name="preferences_clear_behavior_summary">Establecer comportamiento al pulsar el botón de borrar</string>
+    <string name="preferences_clear_behavior_default">0</string>
+    <string name="ceno_clear_dialog_clear_entire_app">Borrar caché y datos de app &brandShortName;</string>
+    <string name="ceno_clear_dialog_description">ADVERTENCIA: Borrar la caché y los datos de la app restablecerá la aplicación &brandShortName; como si nunca se hubiera utilizado.</string>
+    <string name="changeIconCtaCancel">Cancelar</string>
+    <string name="changeIconCtaAccept">Aceptar</string>
+    <string name="changeIconDialogTitle">¿Aplicar el nuevo icono\?</string>
+    <string name="changeIconDialogMessage">La app puede cerrarse para aplicar los cambios. Vuelve después de que hayas admirado tu atractivo nuevo icono.</string>
+    <string name="preferences_change_app_icon">Cambiar el icono de la app</string>
+    <string name="preference_show_search_suggestions_summary">&brandShortName; enviará lo que escribas en la barra de direcciones a su motor de búsqueda</string>
+    <string name="preferences_theme">Establecer el tema de la app</string>
+    <string name="clear_cache_success">Caché borrada exitosamente</string>
+    <string name="clear_cache_fail">Limpieza de cache fallida, inténtalo de nuevo pronto</string>
+    <string name="preferences_theme_summary">Oscuro, Claro, Ahorro de Batería</string>
+    <string name="preferences_theme_default">2</string>
+    <string name="addon_placeholder">No hay Complementos Disponibles</string>
+    <string name="preferences_about_ceno">Navegador &brandShortName;</string>
+    <string name="preferences_about_geckoview">GeckoView</string>
+    <string name="preferences_ceno_sources_origin">Sitio web</string>
+    <string name="preferences_ceno_sources_private">De forma privada</string>
+    <string name="preferences_ceno_sources_peers">Compartido</string>
+    <string name="ceno_data_category">Datos</string>
+    <string name="preferences_ceno_cache_size">Caché local</string>
+    <string name="preferences_ceno_enable_log">Habilitar el archivo del registro</string>
+    <string name="preferences_ceno_network_config_summary">Estado de Ouinet, puntos finales de UDP, arranque de BitTorrent</string>
+    <string name="website_button_text">Sitio web</string>
+    <string name="source_code_button_text">Código Fuente</string>
+    <string name="donate_button_text">Donar</string>
+    <string name="preferences_ceno_download_log">Exportar el registro de Ouinet</string>
+    <string name="ceno_sources_category">Fuentes</string>
+    <string name="preferences_about_ouinet_protocol">Protocolo Ouinet</string>
+    <string name="about_category">Acerca de</string>
+    <string name="preferences_ceno_sources_private_summary">Carga los contenidos a través de la red privada Ceno</string>
+    <string name="preferences_ceno_groups_count">Contenido compartido por ti</string>
+    <string name="preferences_ceno_sources_public">Públicamente</string>
+    <string name="preferences_clear_ceno_cache">Borrar el contenido en caché</string>
+    <string name="preferences_about_ouinet">Ouinet</string>
+    <string name="preferences_ceno_sources_origin_summary">Cargar contenidos directamente desde el sitio web</string>
+    <string name="preferences_ceno_sources_public_summary">Carga los contenidos a través de la red pública Ceno</string>
+    <string name="preferences_ceno_sources_peers_summary">Cargar contenido compartido por otra(o)s usuaria(o)s</string>
+    <string name="preferences_clear_ceno_cache_summary">Borrar el contenido web almacenado en la caché local</string>
+    <string name="preferences_show_home_button">Mostrar el botón de inicio</string>
+    <string name="preferences_ceno_network_config">Detalles de la Red</string>
+    <string name="ouinet_client_fetch_fail">Falló al cambiar la configuración de &brandShortName;</string>
+    <string name="onboarding_warning_text_v33_1">Las notificaciones no están permitidas.
+\n
+\nVe a \"Ajustes &gt; Permitir Notificaciones\" para dar permiso más tarde</string>
+    <string name="onboarding_warning_text_v33_2">Notificaciones no están permitidas y la optimización de la batería sigue activada.
+\n
+\nVe a la \"Configuración\" para dar permiso más tarde</string>
+    <string name="preferences_allow_notifications">Permitir Notificaciones</string>
+    <string name="onboarding_battery_text_v33">En breve, el sistema operativo te pedirá permiso para
+\n
+\n• Permitir las notificaciones
+\n• Desactivar la optimización de la batería
+\n
+\nEsto es necesario para seguir compartiendo páginas web mientras la aplicación está en segundo plano</string>
+    <string name="ceno_onboarding_start_title">Comparte la web,
+\npeer-to-peer</string>
+    <string name="ceno_onboarding_start_text">La red troncal peer-to-peer de &brandShortName; permite a las personas acceder y compartir el contenido de las páginas web en y entre regiones donde la conectividad se ha visto interrumpida o comprometida.</string>
+    <string name="onboarding_public_or_personal_title">¿Pública o personal\?</string>
+    <string name="onboarding_public_personal_text">Utilice las pestañas públicas para leer noticias, ver vídeos y navegar por Internet en general. Comparte contenidos web con otros usuarios de Ceno.
+\n
+\nLas pestañas personales son más adecuadas para las sociales, compras en línea y navegación por páginas web que no desea compartir con otros.</string>
+    <string name="onboarding_cleanup_title">Limpiar todo,
+\nen todas partes, todo a la vez</string>
+    <string name="onboarding_cleanup_text">Borra el historial del navegador, las credenciales y cualquier rastro que hayas dejado en &brandShortName; con un solo botón.</string>
+    <string name="ceno_home_card_public_text">La mejor conectividad, menos privacidad. Para leer noticias, ver vídeos y compartir con los demás</string>
+    <string name="ceno_home_card_personal_title">PERSONAL</string>
+    <string name="ceno_home_card_public_title">PÚBLICA</string>
+    <string name="ceno_home_card_personal_text">Buena conectividad, más privacidad. Para entrar en las cuentas, no dejar rastros y no compartir</string>
+    <string name="preferences_ceno_sources_upnp">Estado del UPnP</string>
+    <string name="preferences_ceno_sources_local_udp">Terminales UDP locales</string>
+    <string name="preferences_ceno_sources_external_udp">Terminales UDP externos</string>
+    <string name="preferences_ceno_sources_public_udp">Terminales UDP públicos</string>
+    <string name="preferences_ceno_sources_extra_bitTorrent_bootstraps">Bootstraps adicionales de BitTorrent</string>
+    <string name="preferences_ceno_sources_reachability">Estado de la accesibilidad</string>
+    <string name="onboarding_finish_button">Terminar</string>
+    <string name="crash_reporting_dialog_description">Ayúdanos a mejorar &brandShortName; enviándonos el informe del error.</string>
+    <string name="crash_reporting_never_send">Nunca enviar</string>
+    <string name="crash_reporting_always_send">Enviar siempre, mejorar &brandShortName;</string>
+    <string name="preferences_allow_crash_reporting">Informe de fallos</string>
+    <string name="crash_reporting_opt_out">Has optado por no compartir los informes de los errores. Siempre puedes optar por hacerlo yendo a Ajustes &gt; Informes de errores.</string>
+    <string name="crash_reporting_opt_in">¡Gracias por compartir los informes de los fallos para ayudar a mejorar &brandShortName;! Siempre se puede desactivar esto yendo a Configuración &gt; Informes de errores.</string>
+    <string name="ouinet_client_fetch_success">&brandShortName; configuración actualizada</string>
+    <string name="crash_reporting_dialog_title">¡Lo sentimos, parece que &brandShortName; ha fallado!</string>
+    <string name="ceno_support_link_url">https://censorship.no/es/support.html</string>
+    <string name="personal_home_learn_more">¿Quiere saber más?</string>
+    <string name="ceno_personal_browsing_description">Ceno no compartirá el contenido de las etiquetas personales con otros usuarios. Puede visitar páginas que requieran un inicio de sesión.</string>
+    <string name="bt_invalid_ip_error">IP no válida</string>
+    <string name="preferences_ceno_website_sources">Fuentes de la página web</string>
+    <string name="bt_sources_none">Ninguno</string>
+    <string name="ceno_sources_header">Fuentes del contenido</string>
+    <string name="preferences_ceno_bridge_announcement">Activar el modo puente</string>
+    <string name="ouinet_taking_too_long_title">¿Tardando demasiado?</string>
+    <string name="network_settings">Configuración de la red</string>
+    <string name="standby_no_internet_text">Sin conexión a Internet.
+\n
+\nEl rendimiento de Ceno puede ser limitado.
+\nCompruebe sus conexiones de red e intente recargar Ceno.</string>
+    <string name="standby_message_one">Conectando a la red Ceno</string>
+    <string name="standby_message_two">Inicializar la caché</string>
+    <string name="standby_try_again">Inténtalo de nuevo</string>
+    <string name="standby_message_three">Encontrando nodos de arranque</string>
+    <string name="ceno_ouinet_connecting">Conectando a la red Ceno</string>
+    <string name="ceno_ouinet_connected">Conectado a la red Ceno</string>
+    <string name="ceno_sources_direct_from_website">Directamente de la página web</string>
+    <string name="ceno_sources_via_ceno_network">Usando &brandShortName; red</string>
+    <string name="change_bt_bootstrap_server">Cambiar el servidor BT Bootstrap</string>
+    <string name="browsing_mode_card_title">Modo de navegación</string>
+    <string name="public_mode_icon">icono de modo público</string>
+    <string name="personal_browsing_mode_selected">modo de navegación privada seleccionada</string>
+    <string name="personal_mode_icon">icono del modo privado</string>
+    <string name="ceno_log_file_saved">Archivo de registro guardado correctamente</string>
+    <string name="ceno_android_logs_file_name">&brandShortName; Registros</string>
+    <string name="ouinet_log_file_prompt_desc">Tenga en cuenta que este registro puede contener información personal. Ten cuidado al compartirlo.</string>
+    <string name="view_logs">Ver</string>
+    <string name="share_logs">Compartir</string>
+    <string name="download_logs">Descargar</string>
+    <string name="empty_log_text">Parece que su registro está vacío</string>
+    <string name="progress_dialog_log_export_header">Espere, por favor…</string>
+    <string name="last_5_minutes">Últimos 5 minutos</string>
+    <string name="home_go_to_settings">Ir a la configuración</string>
+    <string name="enable_bridge_card_title">Activar el modo puente</string>
+    <string name="bridge_mode_ip_warning_text">Tenga en cuenta que esto hará que su IP sea visible públicamente para los otros usuarios de Ceno.</string>
+    <string name="ouinet_timeout_dialog_text">Ceno requiere una conexión a Internet para funcionar. Comprueba la configuración de tu red.</string>
+    <string name="ceno_ouinet_disconnected">Desconexión de la red Ceno</string>
+    <string name="public_browsing_mode_selected">modo de navegación pública seleccionado</string>
+    <string name="ceno_log_file_saved_desc">Para dar prioridad a su privacidad, toda la información personal identificable ha sido cuidadosamente eliminada de este registro.</string>
+    <string name="all_logs">Todos los registros</string>
+    <string name="progress_dialog_log_export_message">Computando sus registros…</string>
+    <string name="select_log_scope_header">Seleccione su alcance preferido</string>
+    <string name="last_10_minutes">Últimos 10 minutos</string>
+    <string name="select_log_scope_message">Seleccionar franjas horarias más largas puede suponer una espera más larga</string>
+    <string name="preferences_ceno_export_android_logs">Exportar el registro completo de la aplicación</string>
+    <string name="bridge_announcement_dialog_text">Por favor, espere mientras el servicio del navegador &brandShortName; se reinicie para que sus cambios surtan efecto.</string>
+    <string name="bridge_announcement_dialog_title">Actualizando la configuración del modo puente…</string>
+    <string name="enable_bridge_card_text">Haga que la red &brandShortName; se fortalezca convirtiéndola en un puente! Puede habilitar el Modo Puente yendo a Configuración -&gt; Detalles de la red -&gt; Habilite el modo puente. Tenga en cuenta que esto también hará que su IP sea públicamente visible.</string>
+    <string name="standby_restarting_text">Reiniciando…</string>
+    <string name="learn_more_title">Más información</string>
+    <string name="ceno_sources_shared_by_ceno_cache">Desde &brandShortName; cache</string>
+    <string name="bridge_mode_faq_url">https://censorship.no/es/support.html#bridgemode</string>
+    <string name="no_content_shared">Actualmente, no estás compartiendo ningún contenido</string>
+    <string name="shutdown_message_one">Borrar datos de la aplicación</string>
+    <string name="shutdown_message_two">Cerrando Ceno</string>
+    <string name="title_success">Éxito</string>
+    <string name="thank_you_bridge_mode_enabled">¡Gracias por convertirte en un puente y hacer crecer la red Ceno!</string>
+    <string name="dialog_btn_positive_ok">De acuerdo</string>
+    <string name="ceno_log_content_group_file_saved">Contenido compartido guardado exitosamente</string>
+    <string name="download_site_content">Descargar contenido de la página</string>
+    <string name="confirm_groups_file_download_desc">Se guardará un archivo txt en tu almacenamiento local.</string>
+    <string name="confirm_groups_file_download">¿Exportar lista de contenido compartido?</string>
+    <string name="ceno_android_content_group_file_name">&amp;brandShortName; contenido compartido</string>
+    <string name="canceled">Cancelado</string>
+    <string name="dismiss">Desechar</string>
+    <string name="confirm_clear_cached_content">¿Borrar contenido de la caché?</string>
+    <string name="confirm_clear_cached_content_desc">El contenido almacenado en la caché se eliminará inmediatamente</string>
 </resources>

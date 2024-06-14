@@ -37,10 +37,6 @@
         app:destination="@id/tabsTrayFragment" />
 
     <action
-        android:id="@+id/action_global_shutDown"
-        app:destination="@id/shutdownFragment" />
-
-    <action
         android:id="@+id/action_global_external_browser"
         app:destination="@id/externalAppBrowserFragment"
         app:enterAnim="@anim/fade_in"
@@ -247,10 +243,6 @@
         android:label="@string/preferences_change_app_icon"
         tools:layout="@layout/fragment_change_icon" />
 
-    <fragment
-        android:id="@+id/shutdownFragment"
-        android:name="ie.equalit.ceno.browser.ShutdownFragment"
-        tools:layout="@layout/fragment_shutdown" />
     <fragment
         android:id="@+id/networkSettingsFragment"
         android:name="ie.equalit.ceno.settings.NetworkSettingsFragment"

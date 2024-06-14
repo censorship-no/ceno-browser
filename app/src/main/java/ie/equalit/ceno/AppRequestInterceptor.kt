@@ -5,8 +5,6 @@
 package ie.equalit.ceno
 
 import android.content.Context
-import android.content.Intent
-import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import mozilla.components.browser.errorpages.ErrorPages
 import mozilla.components.browser.errorpages.ErrorType
 import mozilla.components.concept.engine.EngineSession
@@ -34,14 +32,6 @@ class AppRequestInterceptor(private val context: Context) : RequestInterceptor {
             "about:privatebrowsing" -> {
                 val page = PrivatePage.createPrivateBrowsingPage(context, uri)
                 RequestInterceptor.InterceptionResponse.Content(page, encoding = "base64")
-            }
-
-            "about:crashes" -> {
-                val intent = Intent(context, CrashListActivity::class.java)
-                intent.addFlags(FLAG_ACTIVITY_NEW_TASK)
-                context.startActivity(intent)
-
-                RequestInterceptor.InterceptionResponse.Url("about:blank")
             }
 
             else -> {

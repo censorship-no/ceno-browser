@@ -5,7 +5,5 @@
 <resources>
     <!-- Font weights -->
     <integer name="font_weight_medium">500</integer>
-    <integer name="shutdown_fragment_fade_in_duration">2000</integer>
-    <integer name="shutdown_fragment_timeout_duration">5000</integer>
     <integer name="shutdown_fragment_stalled_duration">15000</integer>
 </resources>

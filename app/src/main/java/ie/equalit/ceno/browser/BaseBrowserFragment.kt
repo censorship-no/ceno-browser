@@ -265,6 +265,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
                 store = requireComponents.core.store,
                 tabsUseCases = requireComponents.useCases.tabsUseCases,
                 customTabId = sessionId,
+                fileUploadsDirCleaner = requireComponents.core.fileUploadsDirCleaner,
                 fragmentManager = parentFragmentManager,
                 onNeedToRequestPermissions = { permissions ->
                     // The Fragment class wants us to use registerForActivityResult
@@ -348,7 +349,8 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
                 feature = WebAuthnFeature(
                     requireComponents.core.engine,
                     requireActivity(),
-                ),
+                    requireComponents.useCases.sessionUseCases.exitFullscreen::invoke,
+                ) { requireComponents.core.store.state.selectedTabId },
                 owner = this,
                 view = view,
             )
@@ -372,10 +374,11 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             )
         }
 
+        /*
+        // Disable scroll-to-hide until it is fixed, https://gitlab.com/censorship-no/ceno-browser/-/issues/144
         if (prefs.getBoolean(requireContext().getPreferenceKey(R.string.pref_key_toolbar_hide), false)) {
             binding.toolbar.enableDynamicBehavior(
                 requireContext(),
-                binding.swipeRefresh,
                 binding.engineView,
                 prefs.getBoolean(
                     requireContext().getPreferenceKey(R.string.pref_key_toolbar_position),
@@ -384,14 +387,15 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             )
         }
         else {
-            binding.toolbar.disableDynamicBehavior(
-                binding.engineView,
-                prefs.getBoolean(
-                    requireContext().getPreferenceKey(R.string.pref_key_toolbar_position),
-                    false
-                )
+        */
+        binding.toolbar.disableDynamicBehavior(
+            binding.engineView,
+            prefs.getBoolean(
+                requireContext().getPreferenceKey(R.string.pref_key_toolbar_position),
+                false
             )
-        }
+        )
+        //}
 
 
         AwesomeBarFeature(awesomeBar, toolbar, engineView).let {

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<!DOCTYPE resources [
+<!ENTITY brandShortName "Ceno">
+<!ENTITY brandFullName "eQualitie Ceno">
+<!ENTITY vendorShortName "eQualitie">
+]>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="menu_share_with">Dela med…</string>
     <string name="toast_copied">Kopierad!</string>
     <string name="customize_addon_collection_ok">OK</string>
@@ -88,4 +93,41 @@
     <string name="browser_menu_add_to_shortcuts">Lägg till i genvägar</string>
     <string name="preferences_delete_browsing_data_button">Ta bort bläddringsdata</string>
     <string name="button_content_readerview">Läsarvy</string>
+    <string name="ceno_notification_home_description">Hem</string>
+    <string name="ceno_on_mobile_data_dialog_stop_showing">Visa inte igen</string>
+    <string name="ceno_notification_description">Tryck för att stoppa</string>
+    <string name="ceno_on_mobile_data_dialog_stop_now" tools:ignore="UnusedResources">Stoppa &brandShortName; nu</string>
+    <string name="preferences_about_ceno">&brandShortName; Bläddrare</string>
+    <string name="preferences_about_ouinet_protocol">Ouinet-protokoll</string>
+    <string name="ceno_notification_clear_description">Ta bort⚠</string>
+    <string name="ceno_notification_clear_do_description">Ja</string>
+    <string name="ceno_on_mobile_data_dialog_continue" tools:ignore="UnusedResources">Fortsätt</string>
+    <string name="ceno_clear_dialog_cancel">Avbryt</string>
+    <string name="ceno_clear_dialog_clear_cache_only">Rensa &brandShortName; endast cache</string>
+    <string name="preferences_make_default_browser">Gör &brandShortName; till din standard-webbläsare</string>
+    <string name="preferences_about_page">Om &vendorShortName;</string>
+    <string name="about_category">Om</string>
+    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
+    <string name="ceno_private_browsing_body">&lt;h1&gt;Privat surfning&lt;/h1&gt; &lt;p&gt;Ceno kommer inte att dela innehåll från privata flikar med andra användare. Du kan säkert besöka webbplatser som kräver inloggning. En väg till Internet behövs dock.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Vill du lära dig mer\?&lt;/p&gt;</string>
+    <string name="ceno_notification_title">&brandShortName; Webbläsartjänst</string>
+    <string name="ceno_notification_channel_name">&brandShortName; Tjänst</string>
+    <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Det är rekommenderat att använda &brandShortName; när du har en WiFi-anslutning eftersom att den kan använda mer data än vad du förväntar dig. Du kanske vill stoppa &brandShortName; när du använder mobildata.</string>
+    <string name="ceno_clear_dialog_title">Rensa &brandShortName;</string>
+    <string name="ceno_clear_dialog_clear_entire_app">Rensa &brandShortName; cache och app-data</string>
+    <string name="about_content"><p>%1$s - Dela webben!</p> <p>Ceno (kort för censorship.no!) är världens första mobila webbläsare som kringgår nuvarande censurmetoder för Internet. Dess peer-to-peer backbone gör det möjligt för människor att få tillgång till och dela webbinformation i och över regioner där uppkopplingen har avbrutits eller äventyrats. </p> <p>%1$s är ett projekt av eQualitie, en kanadensisk organisation vars uppdrag är att främja och försvara grundläggande friheter och mänskliga rättigheter, inklusive det fria flödet av information online. Vårt mål är att skapa tillgänglig teknik och förbättra den kompetens som behövs för att försvara mänskliga rättigheter och friheter i den digitala tidsåldern.</p></string>
+    <string name="crash_reporting_dialog_description">Hjälp oss att göra &brandShortName; bättre genom att skicka kraschrapporter till oss.</string>
+    <string name="ceno_clear_dialog_description">VARNING: Om du rensar cache och appdata återställs &brandShortName; -applikationen som om den aldrig hade använts</string>
+    <string name="ceno_clear_action_description">Klart</string>
+    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">&brandShortName; Inställningar</string>
+    <string name="crash_reporting_opt_in">Tack för att du delar med dig av kraschrapporter för att förbättra &brandShortName;! Du kan alltid inaktivera detta genom att gå till Inställningar &gt; Kraschrapportering.</string>
+    <string name="onboarding_skip_button">Hoppa över</string>
+    <string name="crash_reporting_opt_out">Du har valt att inte dela kraschrapporter. Du kan alltid anmäla dig genom att gå till Inställningar &gt; Kraschrapportering.</string>
+    <string name="bt_sources_none">Ingen</string>
+    <string name="bt_invalid_ip_error">Ogiltig IP</string>
+    <string name="default_top_site_1_title">&brandShortName; Manual</string>
+    <string name="crash_reporting_dialog_title">Tyvärr, det verkar som om &brandShortName; har kraschat!</string>
+    <string name="crash_reporting_always_send">Skicka alltid, förbättra &brandShortName;</string>
+    <string name="crash_reporting_never_send">Skicka aldrig</string>
+    <string name="onboarding_info_title">Inte en vanlig webbläsare</string>
+    <string name="bridge_mode_faq_url">https://censorship.no/en/support.html#bridgemode</string>
 </resources>

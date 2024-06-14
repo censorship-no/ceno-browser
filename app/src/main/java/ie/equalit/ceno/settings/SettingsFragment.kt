@@ -165,6 +165,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         (activity as BrowserActivity).themeManager.applyStatusBarThemeTabsTray()
         bridgeAnnouncementDialog = UpdateBridgeAnnouncementDialog(requireContext()).getDialog()
+        bridgeAnnouncementDialog.setOnDismissListener {
+            showThankyouDialog()
+        }
 
 
         view.consumeFrom(requireComponents.appStore, viewLifecycleOwner) {
@@ -174,15 +177,30 @@ class SettingsFragment : PreferenceFragmentCompat() {
             }
             if (it.ouinetStatus == Ouinet.RunningState.Started) {
                 bridgeAnnouncementDialog.dismiss()
+                bridgeModeChanged = false
+                getPreference(pref_key_bridge_announcement)?.onPreferenceChangeListener = getChangeListenerForBridgeAnnouncement()
             }
         }
         if (arguments?.getBoolean(scrollToBridge) == true) {
-            getPreference(R.string.pref_key_bridge_announcement)?.let {
+            getPreference(pref_key_bridge_announcement)?.let {
                 scrollToPreference(it)
             }
         }
 
 
+    }
+
+    private fun showThankyouDialog() {
+        if (CenoSettings.isBridgeAnnouncementEnabled(requireContext())) {
+            AlertDialog.Builder(requireContext()).apply {
+                setTitle(getString(R.string.title_success))
+                setMessage(getString(R.string.thank_you_bridge_mode_enabled))
+                setPositiveButton(getString(R.string.dialog_btn_positive_ok)) { _, _ ->
+
+                }
+                show()
+            }
+        }
     }
 
     override fun onRequestPermissionsResult(
@@ -679,25 +697,28 @@ class SettingsFragment : PreferenceFragmentCompat() {
             * https://gitlab.com/censorship-no/ceno-browser/-/merge_requests/127#note_1795759444
             * TODO: identify root cause of this behavior and remove workaround
             * */
-            wasLogEnabled = CenoSettings.isCenoLogEnabled(requireContext())
-            if (wasLogEnabled) {
-                CenoSettings.setCenoEnableLog(requireContext(), false)
-                setLogFileAndLevel(false)
-            }
-            monitorOuinet()
-            lifecycleScope.launch {
+            if (!bridgeModeChanged) {
+                bridgeModeChanged = true
+                getPreference(pref_key_bridge_announcement)?.onPreferenceChangeListener = null
+                wasLogEnabled = CenoSettings.isCenoLogEnabled(requireContext())
                 if (wasLogEnabled) {
-                    while (!(logFileReset && logLevelReset)) {
-                        delay(DELAY_ONE_SECOND)
-                        println("logFileReset && logLevelReset = $logFileReset && $logLevelReset")
+                    CenoSettings.setCenoEnableLog(requireContext(), false)
+                    setLogFileAndLevel(false)
+                }
+                monitorOuinet()
+                lifecycleScope.launch {
+                    if (wasLogEnabled) {
+                        while (!(logFileReset && logLevelReset)) {
+                            delay(DELAY_ONE_SECOND)
+                            println("logFileReset && logLevelReset = $logFileReset && $logLevelReset")
+                        }
+                    }
+                    requireComponents.ouinet.background.shutdown(false) {
+                        hasOuinetStopped = true
                     }
                 }
-                requireComponents.ouinet.background.shutdown(false) {
-                    hasOuinetStopped = true
-                }
+                bridgeAnnouncementDialog.show()
             }
-            bridgeModeChanged = true
-            bridgeAnnouncementDialog.show()
             true
         }
     }
