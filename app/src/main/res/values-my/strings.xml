@@ -151,9 +151,9 @@
 \nOS က battery optimization ကို ပိတ်ထားဖို့ ခွင့်ပြုချက်တောင်းပါလိမ့်မည်။
 \n
 \n၎င်းသည် အက်ပ်ကို နောက်ကွယ်မှ အလုပ်လုပ်စေနိုင်ပြီး ဝဘ်ဆိုက်များကို ဆက်တိုက် မျှဝေနိုင်ရန်အတွက် လိုအပ်သောကြောင့် ဖြစ်ပါသည်။</string>
-    <string name="onboarding_fragment">&brandShortName; မှ ကြိုဆိုပါတယ်</string>
+    <string name="onboarding_welcome_title">&brandShortName; မှ ကြိုဆိုပါတယ်</string>
     <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">&brandShortName; ဆက်တင်များ</string>
-    <string name="onboarding_button">စတင်ပါ</string>
+    <string name="onboarding_btn_get_started">စတင်ပါ</string>
     <string name="onboarding_skip_button">ကျော်မည်</string>
     <string name="ceno_clear_action_description">ရှင်းပါ/ ဖျက်ပါ</string>
     <string name="ceno_clear_dialog_description">အသိပေးချက်၊ ယာယီမှတ်ဉာဏ်သိမ်းဆည်းမှုနှင့် အက်ပ် ဒေတာများကို ဖျက်ခြင်းသည် &brandShortName; အက်ပလီကေးရှင်းအား တစ်ခါမှ အသုံးမပြုရသေးသကဲ့သို့ ဖြစ်သွားပါမည်။</string>

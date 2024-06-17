@@ -235,7 +235,7 @@
     <string name="ceno_home_card_personal_text">اتصال جيد، المزيد من الخصوصية لتسجيل الدخول إلى الحسابات، وعدم ترك آثار ، وعدم المشاركة</string>
     <string name="onboarding_finish_button">إنهاء</string>
     <string name="preferences_ceno_sources_upnp">حالة UPnP</string>
-    <string name="crash_reporting_dialog_description">المعذرة، يبدو أن &brandShortName; تعطّل! 
+    <string name="crash_reporting_dialog_description">المعذرة، يبدو أن &brandShortName; تعطّل!
 \nنرجو المساعدة لجعل &brandShortName; أفضل عبر إرسال تقرير العطل إلينا.</string>
     <string name="crash_reporting_never_send">لا ترسل أبداً</string>
     <string name="crash_reporting_always_send">قم دائمًا بإرسال وتحسين &amp;brandShortName</string>

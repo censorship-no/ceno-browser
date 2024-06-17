@@ -140,7 +140,7 @@
     <string name="onboarding_battery_button">Продовжити</string>
     <string name="onboarding_warning_title">У дозволі відмовлено</string>
     <string name="browser_menu_ceno_ext">&brandShortName; Налаштування</string>
-    <string name="onboarding_button">Почати роботу</string>
+    <string name="onboarding_btn_get_started">Почати роботу</string>
     <string name="onboarding_info_title">Не ваш звичайний браузер</string>
     <string name="onboarding_battery_title">Необхідний дозвіл</string>
     <string name="onboarding_battery_text">Незабаром операційна система запитає у вас дозвіл

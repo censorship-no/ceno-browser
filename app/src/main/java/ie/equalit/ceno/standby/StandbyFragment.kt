@@ -73,6 +73,11 @@ class StandbyFragment : Fragment() {
         R.string.shutdown_message_two,
     )
 
+    private var extraInfoList: List<Pair<Int, Int>> = listOf(
+        Pair(R.string.onboarding_public_or_personal_title, R.string.onboarding_public_personal_text),
+        Pair(R.string.onboarding_cleanup_title, R.string.onboarding_cleanup_text)
+    )
+
     private var dialog: AlertDialog? = null
 
     private var _binding : FragmentStandbyBinding? = null
@@ -116,8 +121,9 @@ class StandbyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var infoIndex = (System.currentTimeMillis() % 2).toInt()
         if (isCenoStopping == true) {
-            binding.llNoInternet.visibility = View.GONE
+            binding.llStandbyExtraInfo.visibility = View.GONE
             lifecycleScope.launch {
                 while (index < displayTextStopping.size) {
                     binding.tvStatus.text =
@@ -131,7 +137,7 @@ class StandbyFragment : Fragment() {
                 if (getView() == null)
                     return@consumeFrom
                 currentStatus = it.ouinetStatus
-                updateDisplayText()
+                updateDisplayText(infoIndex)
                 if (currentStatus == RunningState.Stopped) {
                     if(isCenoStopping == false) {
                         tryAgain()
@@ -186,17 +192,28 @@ class StandbyFragment : Fragment() {
         view?.let {
             binding.progressBar.isActivated = true
             index = 0
-            updateDisplayText()
+            updateDisplayText((System.currentTimeMillis() % 2).toInt())
         }
     }
 
-    private fun updateDisplayText() {
+    private fun updateDisplayText(infoIndex:Int) {
         viewLifecycleOwner.lifecycleScope.launch{
             while (currentStatus == RunningState.Starting) {
                 if (isNetworkAvailable()) {
-                    binding.llNoInternet.visibility = View.INVISIBLE
-                } else
-                    binding.llNoInternet.visibility = View.VISIBLE
+                    binding.ivExtraInfo.setImageDrawable(ContextCompat
+                        .getDrawable(requireContext(), R.drawable.lightbulb_icon))
+                    binding.ivExtraInfo.drawable.setTint(ContextCompat.getColor(requireContext(), R.color.ceno_standby_logo_color))
+                    binding.tvExtraInfoTitle.visibility = View.VISIBLE
+                    //randomly select text
+                    binding.tvExtraInfoTitle.text = getString(extraInfoList[infoIndex].first)
+                    binding.tvExtraInfoText.text = getString(extraInfoList[infoIndex].second)
+                } else {
+                    binding.ivExtraInfo.setImageDrawable(ContextCompat
+                        .getDrawable(requireContext(), R.drawable.ic_no_internet))
+                    binding.ivExtraInfo.drawable.setTint(ContextCompat.getColor(requireContext(), R.color.fx_mobile_icon_color_warning))
+                    binding.tvExtraInfoTitle.visibility = View.GONE
+                    binding.tvExtraInfoText.text = getString(R.string.standby_no_internet_text)
+                }
                 if (index < displayText.size)
                 {
                     binding.tvStatus.text = getString(displayText[index])
@@ -220,10 +237,10 @@ class StandbyFragment : Fragment() {
             if (currentStatus == RunningState.Stopping) {
                 if (isCenoStopping == true) {
                     binding.tvStatus.text = getString(R.string.shutdown_message_two)
-                    binding.llNoInternet.visibility = View.INVISIBLE
+                    binding.llStandbyExtraInfo.visibility = View.INVISIBLE
                 } else {
                     binding.tvStatus.text = getString(R.string.standby_restarting_text)
-                    binding.llNoInternet.visibility = View.INVISIBLE
+                    binding.llStandbyExtraInfo.visibility = View.INVISIBLE
                 }
             }
             cancel()

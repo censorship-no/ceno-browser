@@ -142,7 +142,7 @@
     <string name="preferences_toolbar_position">Разместите в верхней части экрана</string>
     <string name="ceno_clear_action_description">Очистить</string>
     <string name="ceno_clear_dialog_title">Очистить &brandShortName;</string>
-    <string name="onboarding_button">Начать</string>
+    <string name="onboarding_btn_get_started">Начать</string>
     <string name="onboarding_skip_button">Пропустить</string>
     <string name="onboarding_info_title">Это не обычный браузер</string>
     <string name="onboarding_battery_button">Продолжить</string>

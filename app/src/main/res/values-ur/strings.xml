@@ -96,11 +96,11 @@
     <string name="ceno_notification_clear_do_description">جی ہاں</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">&brandShortName;؛ استعمال کرنے کی سفارش کی جاتی ہے جب آپ کے پاس Wi-Fi کنکشن ہو، کیونکہ یہ آپ کی توقع سے زیادہ ڈیٹا استعمال کر سکتا ہے۔ آپ موبائل ڈیٹا استعمال کرتے وقت &brandShortName; کو روکنا چاہیں گے۔</string>
     <string name="onboarding_info_title">آپ کا اوسط براؤزر نہیں ہے</string>
-    <string name="onboarding_fragment">&brandShortName; میں خوش آمدید</string>
+    <string name="onboarding_welcome_title">&brandShortName; میں خوش آمدید</string>
     <string name="ceno_notification_home_description">ہوم</string>
     <string name="onboarding_thanks_title">نیٹ ورک کو بڑھانے کا شکریہ!</string>
     <string name="default_top_site_1_title">&brandShortName; مینوئل</string>
-    <string name="onboarding_button">شروع کریں</string>
+    <string name="onboarding_btn_get_started">شروع کریں</string>
     <string name="preferences_about_page">&vendorShortName; کے بارے میں</string>
     <string name="onboarding_battery_title">اجازت درکار ہے</string>
     <string name="changeIconDialogTitle">نیا آئیکن کا اطلاق کریں؟</string>

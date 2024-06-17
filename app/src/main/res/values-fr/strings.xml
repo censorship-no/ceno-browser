@@ -132,14 +132,14 @@
     <string name="default_top_site_3_url" tools:ignore="Untranslatable">@string/suggestedsites_courier_url</string>
     <string name="default_top_site_4_title" tools:ignore="Untranslatable">La Presse</string>
     <string name="default_top_site_4_url" tools:ignore="Untranslatable">@string/suggestedsites_lapresse_url</string>
-    <string name="onboarding_fragment">Bienvenue dans &brandShortName;</string>
+    <string name="onboarding_welcome_title">Bienvenue dans &brandShortName;</string>
     <string name="ceno_clear_dialog_clear_entire_app">Effacer le cache et les données d’appli de &brandShortName;</string>
     <string name="ceno_clear_dialog_cancel">Annuler</string>
     <string name="ceno_clear_dialog_title">Effacer &brandShortName;</string>
     <string name="ceno_clear_dialog_clear_cache_only">Effacer seulement le cache de &brandShortName;</string>
     <string name="ceno_clear_action_description">Effacer</string>
     <string name="preferences_toolbar_position">Placer en haut de l’écran</string>
-    <string name="onboarding_button">Commencer</string>
+    <string name="onboarding_btn_get_started">Commencer</string>
     <string name="preferences_show_onboarding">Afficher l’intégration lors du prochain lancement</string>
     <string name="preferences_disable_battery_opt">Désactiver l’optimisation de la batterie</string>
     <string name="onboarding_info_title">Un navigateur pas comme les autres</string>
