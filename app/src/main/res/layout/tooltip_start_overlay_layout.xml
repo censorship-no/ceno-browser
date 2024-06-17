@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:gravity="center"
-            android:text="@string/start_tooltip_title"
+            android:text="@string/onboarding_welcome_title"
             android:textColor="@color/fx_mobile_text_color_primary"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -60,7 +60,7 @@
             android:paddingEnd="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
-            android:text="@string/get_started_button"
+            android:text="@string/onboarding_btn_get_started"
             android:textAllCaps="false"
             android:background="@color/photonWhite"
             android:textColor="@color/ceno_blue_900" />

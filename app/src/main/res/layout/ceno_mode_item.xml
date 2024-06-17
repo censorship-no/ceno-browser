@@ -19,11 +19,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="@string/browsing_mode_card_title"
-            android:textSize="18sp"
+            android:textSize="@dimen/ceno_mode_text_size"
             app:drawableEndCompat="@drawable/ic_arrow_expanded"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/public_mode_card"

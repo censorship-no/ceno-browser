@@ -107,14 +107,14 @@
     <string name="setting_item_selected">%s seçilmiş</string>
     <string name="set_default_search_engine">Varsayılan arama motorunu ayarla</string>
     <string name="bridge_mode_category">Köprü duyuruları</string>
-    <string name="onboarding_fragment">&brandShortName; uygulamasına hoş geldiniz</string>
+    <string name="onboarding_welcome_title">&brandShortName; uygulamasına hoş geldiniz</string>
     <string name="ceno_notification_title">&brandShortName; Browser hizmeti</string>
     <string name="ceno_notification_home_description">Giriş</string>
     <string name="ceno_notification_channel_name">&brandShortName; hizmeti</string>
     <string name="ceno_on_mobile_data_dialog_continue" tools:ignore="UnusedResources">İlerle</string>
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">Bir daha gösterme</string>
     <string name="onboarding_info_title">Bildiğiniz tarayıcılara benzemez</string>
-    <string name="onboarding_button">Başlayalım</string>
+    <string name="onboarding_btn_get_started">Başlayalım</string>
     <string name="onboarding_skip_button">Geç</string>
     <string name="preferences_toolbar_hide">Kaydırılınca gizlensin</string>
     <string name="ceno_on_mobile_data_dialog_stop_now" tools:ignore="UnusedResources">&brandShortName; uygulamasını durdur</string>

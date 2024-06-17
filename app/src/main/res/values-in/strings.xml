@@ -5,7 +5,7 @@
 <!ENTITY vendorShortName "eQualitie">
 ]>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="onboarding_fragment">Selamat datang di &brandShortName;</string>
+    <string name="onboarding_welcome_title">Selamat datang di &brandShortName;</string>
     <string name="ceno_on_mobile_data_dialog_continue" tools:ignore="UnusedResources">Lanjutkan</string>
     <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">&amp;brandNameShortName; Pengaturan</string>
     <string name="onboarding_warning_button">Oke</string>
@@ -36,7 +36,7 @@
     <string name="preferences_make_default_browser">Jadikan &amp;brandNamaPendek; sebagai browser default Anda</string>
     <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
     <string name="ceno_notification_title">&amp;brandNamaPendek; Layanan Browser</string>
-    <string name="onboarding_button">Memulai</string>
+    <string name="onboarding_btn_get_started">Memulai</string>
     <string name="onboarding_warning_text_v33_1">Notifikasi tidak diizinkan.
 \n
 \nBuka \"Pengaturan &gt; Izinkan Notifikasi\" untuk memberikan izin nanti</string>

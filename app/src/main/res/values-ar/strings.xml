@@ -127,8 +127,8 @@
     <string name="ceno_on_mobile_data_dialog_stop_now" tools:ignore="UnusedResources">إيقاف &brandShortName; الآن</string>
     <string name="ceno_on_mobile_data_dialog_continue" tools:ignore="UnusedResources">تابع</string>
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">لا تُظهِر مرة أخرى</string>
-    <string name="onboarding_fragment">مرحباً بكم في &brandShortName;</string>
-    <string name="onboarding_button">ابدأ الآن</string>
+    <string name="onboarding_welcome_title">مرحباً بكم في &brandShortName;</string>
+    <string name="onboarding_btn_get_started">ابدأ الآن</string>
     <string name="onboarding_info_title">ليس متصفحك العادي</string>
     <string name="preferences_theme_default">2</string>
     <string name="ceno_sources_category">المصادر</string>

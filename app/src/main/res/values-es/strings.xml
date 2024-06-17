@@ -211,7 +211,7 @@
     <string name="default_top_site_4_title" tools:ignore="Untranslatable">Infobae</string>
     <string name="default_top_site_4_url" tools:ignore="Untranslatable">@string/suggestedsites_infobae_url</string>
     <!-- Snackbar action button when a non fatal crash happen-->
-    <string name="onboarding_fragment">Bienvenida(o) a &brandShortName;</string>
+    <string name="onboarding_welcome_title">Bienvenida(o) a &brandShortName;</string>
     <string name="onboarding_battery_title">Permiso necesario</string>
     <string name="onboarding_battery_text">En breve el sistema operativo te pedirá permiso para
 \n
@@ -223,7 +223,7 @@
 \n
 \nVe a \"Ajustes &gt; Desactivar Optimización de Batería\" para dar permiso más tarde</string>
     <string name="onboarding_warning_button">Ok</string>
-    <string name="onboarding_button">Comenzar</string>
+    <string name="onboarding_btn_get_started">Comenzar</string>
     <string name="onboarding_skip_button">Saltar</string>
     <string name="onboarding_info_title">No es tu navegador normal</string>
     <string name="onboarding_warning_title">Permiso denegado</string>

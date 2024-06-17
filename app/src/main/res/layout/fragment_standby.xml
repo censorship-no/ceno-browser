@@ -10,7 +10,9 @@
         android:id="@+id/iv_standby_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
         android:contentDescription="@null"
         android:src="@drawable/ceno_logo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +23,8 @@
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
         android:background="@drawable/ouinet_progress"
@@ -34,20 +36,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/tv_slogan"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
-        android:text="Share the Web"
+        android:text="@string/ceno_onboarding_start_title"
         android:textAlignment="center"
         android:textColor="@color/fx_mobile_text_color_secondary"
-        android:textSize="22sp"
-        android:textStyle="bold"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_status"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +59,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:textAlignment="center"
         android:textColor="@color/fx_mobile_text_color_secondary"
@@ -67,37 +68,48 @@
         app:layout_constraintTop_toBottomOf="@id/tv_slogan" />
 
     <LinearLayout
-        android:id="@+id/ll_no_internet"
+        android:id="@+id/ll_standby_extra_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="@dimen/ceno_onboarding_text_margin_start"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/ceno_onboarding_text_margin_end"
         android:layout_marginBottom="16dp"
         android:orientation="vertical"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_status">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/iv_extra_info"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:contentDescription="@null"
-            app:srcCompat="@drawable/ic_no_internet"
-            app:tint="@color/fx_mobile_text_color_warning" />
+            app:srcCompat="@drawable/lightbulb_icon"
+            app:tint="@color/ceno_standby_logo_color" />
 
         <TextView
-            android:id="@+id/tv_no_internet"
+            android:id="@+id/tv_extra_info_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="@string/onboarding_public_or_personal_title"
+            android:textAlignment="center"
+            android:textColor="@color/fx_mobile_text_color_secondary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_extra_info_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:text="@string/standby_no_internet_text"
+            android:text="@string/onboarding_public_personal_text"
             android:textAlignment="center"
             android:textColor="@color/fx_mobile_text_color_secondary" />
     </LinearLayout>

@@ -109,7 +109,7 @@
     <string name="bit_torrent_bootstraps_category">BitTorrent Bootstraps</string>
     <string name="select_extra_bt_source">Selecionar bootstrap extra do BitTorrent</string>
     <string name="bridge_mode_category">Ponte de Anúncios</string>
-    <string name="onboarding_fragment">Boas-vindas ao &brandShortName;</string>
+    <string name="onboarding_welcome_title">Boas-vindas ao &brandShortName;</string>
     <string name="onboarding_battery_button">Continuar</string>
     <string name="onboarding_warning_title">Autorização negada</string>
     <string name="ceno_notification_title">Serviço do Navegador &brandShortName;</string>
@@ -147,7 +147,7 @@
     <string name="ceno_clear_dialog_description">AVISO: Limpar o cache e dados do aplicativo irá reiniciar a &brandShortName; aplicação como se nunca houvesse sido utilizada.</string>
     <string name="preferences_change_app_icon">Mudar ícone do aplicativo</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">É recomendado usar &brandShortName; quando você tem uma conexão Wi-Fi, pois ele pode usar mais dados que o esperado. Você pode querer interromper &brandShortName; quando estiver usando dados móveis.</string>
-    <string name="onboarding_button">Começar</string>
+    <string name="onboarding_btn_get_started">Começar</string>
     <string name="onboarding_battery_text">Em breve, o S.O.(Sistema Operacional) irá pedir a você permissão para:
 \n
 \n• Desativar a otimização de bateria.

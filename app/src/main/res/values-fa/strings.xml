@@ -208,14 +208,14 @@
     <string name="default_top_site_4_url" tools:ignore="Untranslatable">@string/suggestedsites_factnameh_url</string>
     <string name="preferences_clear_behavior_default">0</string>
     <string name="onboarding_battery_title">مجوز لازم دارد</string>
-    <string name="onboarding_fragment">خوش آمدید به &brandShortName;</string>
+    <string name="onboarding_welcome_title">خوش آمدید به &brandShortName;</string>
     <string name="onboarding_thanks_text">به عنوان یک کاربر &brandShortName; شما به رشد شبکه پل‌های موجود کمک می‌کنید که امکان دسترسی به محتوای سانسور شده را فراهم می‌کند.</string>
     <string name="onboarding_info_title">مرورگر معمولی شما نیست</string>
     <string name="onboarding_skip_button">نادیده بگیرید</string>
     <string name="onboarding_warning_button">اوکی</string>
     <string name="preferences_show_onboarding">در راه‌اندازی بعدی ادغام را نشان دهید</string>
     <string name="preferences_disable_battery_opt">بهینه‌سازی باتری را غیرفعال کنید</string>
-    <string name="onboarding_button">شروع کنید</string>
+    <string name="onboarding_btn_get_started">شروع کنید</string>
     <string name="onboarding_battery_text">به زودی سیستم‌عامل از شما اجازه می خواهد تا
 \n
 \nسیستم بهینه‌سازی باتری را غیرفعال کنید.
