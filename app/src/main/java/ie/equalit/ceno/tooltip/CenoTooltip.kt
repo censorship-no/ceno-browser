@@ -9,8 +9,7 @@ import androidx.fragment.app.Fragment
 import ie.equalit.ceno.R
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt
 import uk.co.samuelwall.materialtaptargetprompt.extras.PromptFocal
-import uk.co.samuelwall.materialtaptargetprompt.extras.focals.CirclePromptFocal
-import uk.co.samuelwall.materialtaptargetprompt.extras.focals.RectanglePromptFocal
+import uk.co.samuelwall.materialtaptargetprompt.extras.PromptTextWithBtn
 
 class CenoTooltip(
     var fragment: Fragment,
@@ -29,6 +28,7 @@ class CenoTooltip(
             .setPrimaryText(primaryText)
             .setSecondaryText(secondaryText)
             .setPromptFocal(promptFocal)
+            .setPromptText(PromptTextWithBtn())
             .setBackgroundColour(getColor(fragment.requireContext(), R.color.tooltip_prompt_color))
             .setFocalColour(getColor(fragment.requireContext(), R.color.tooltip_focal_color))
             .setPromptBackground(DimmedPromptBackground())
