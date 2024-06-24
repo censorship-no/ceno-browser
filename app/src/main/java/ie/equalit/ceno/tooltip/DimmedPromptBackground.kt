@@ -10,9 +10,10 @@ import uk.co.samuelwall.materialtaptargetprompt.extras.PromptOptions
 import uk.co.samuelwall.materialtaptargetprompt.extras.backgrounds.CirclePromptBackground
 
 
-class DimmedPromptBackground (
+class DimmedPromptBackground(
     var dimBounds:RectF = RectF(),
-    var dimPaint: Paint = Paint(Color.GRAY)
+    var dimPaint: Paint = Paint(Color.GRAY),
+    var promptButtonCallback: (x:Float, y:Float) -> Unit
 ): CirclePromptBackground() {
     override fun prepare(
         options: PromptOptions<out PromptOptions<*>>,
@@ -40,5 +41,10 @@ class DimmedPromptBackground (
         canvas.drawRect(this.dimBounds, this.dimPaint)
         // Draw the background
         super.draw(canvas)
+    }
+
+    override fun contains(x: Float, y: Float): Boolean {
+        promptButtonCallback.invoke(x,y)
+        return super.contains(x, y)
     }
 }

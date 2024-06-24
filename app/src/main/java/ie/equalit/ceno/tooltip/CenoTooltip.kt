@@ -21,6 +21,8 @@ class CenoTooltip(
 ) {
     var tooltip: MaterialTapTargetPrompt?
     val tooltipBuilder : MaterialTapTargetPrompt.Builder
+    val promptTextWithBtn = PromptTextWithBtn(fragment.getString(R.string.btn_next))
+    var isButtonPressed:Boolean = false
 
     init {
         tooltipBuilder = MaterialTapTargetPrompt.Builder(fragment)
@@ -28,12 +30,22 @@ class CenoTooltip(
             .setPrimaryText(primaryText)
             .setSecondaryText(secondaryText)
             .setPromptFocal(promptFocal)
-            .setPromptText(PromptTextWithBtn())
+            .setPromptText(promptTextWithBtn)
+            .setAutoDismiss(false)
             .setBackgroundColour(getColor(fragment.requireContext(), R.color.tooltip_prompt_color))
             .setFocalColour(getColor(fragment.requireContext(), R.color.tooltip_focal_color))
-            .setPromptBackground(DimmedPromptBackground())
+            .setPromptBackground(DimmedPromptBackground(promptButtonCallback = ::promptButtonCallback))
             .setPromptStateChangeListener(listener)
         tooltip = tooltipBuilder.create()
+
+    }
+
+    fun promptButtonCallback(x:Float, y:Float) {
+        if (promptTextWithBtn.isButtonPressed(x, y) && !isButtonPressed) {
+            isButtonPressed = true
+            //dismiss tooltip
+            dismiss()
+        }
 
     }
 

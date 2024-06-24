@@ -1,15 +1,26 @@
 package uk.co.samuelwall.materialtaptargetprompt.extras
 
 import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.RectF
 import android.text.Layout
+import android.text.TextPaint
 
-class PromptTextWithBtn:PromptText() {
+class PromptTextWithBtn(
+    val buttonText: String
+):PromptText() {
 
     lateinit var btnTextLayout : Layout
     var textSeparation : Float = 0.0f
     lateinit var btnRect: RectF
+    var btnBounds = RectF()
+
+    var mPaintButtonText : TextPaint = TextPaint()
+
+    val buttonPaddingHorizontal = 25f
+    val buttonPaddingVertical = 15f
 
     override fun prepare(
         options: PromptOptions<out PromptOptions<*>>,
@@ -17,14 +28,24 @@ class PromptTextWithBtn:PromptText() {
         clipBounds: Rect
     ) {
         super.prepare(options, clipToBounds, clipBounds)
+
+        mPaintButtonText.setColor(Color.BLACK)
+        mPaintButtonText.setTextSize(options.secondaryTextSize)
+
         btnTextLayout = PromptUtils.createStaticTextLayout(
-            "Next",
-            mPaintPrimaryText, 150, mPrimaryTextAlignment, 1f
+            buttonText,
+            mPaintButtonText, mPaintButtonText.measureText(buttonText).toInt(), mPrimaryTextAlignment, 1f
         )
         textSeparation = options.textSeparation
         mPrimaryTextTop -= (btnTextLayout.height * 2)
         mTextBounds.top -= (btnTextLayout.height * 2)
-        btnRect = RectF(0f, 0f, btnTextLayout.width.toFloat(), btnTextLayout.height.toFloat())
+        btnRect = RectF(0f, 0f, btnTextLayout.width.toFloat() + (buttonPaddingHorizontal * 2), btnTextLayout.height.toFloat() + (buttonPaddingVertical * 2))
+
+        btnBounds.left = mPrimaryTextLeft
+        btnBounds.top = mTextBounds.top + mPrimaryTextLayout.height + textSeparation + mSecondaryTextLayout.height + textSeparation
+        btnBounds.right = btnBounds.left + btnRect.width()
+        btnBounds.bottom = btnBounds.top + btnRect.height()
+
     }
 
     override fun draw(canvas: Canvas) {
@@ -34,7 +55,19 @@ class PromptTextWithBtn:PromptText() {
                     + mSecondaryTextLeft - mSecondaryTextLeftChange,
             mSecondaryTextLayout.height + textSeparation
         )
+        // draw a rectangle for button
         canvas.drawRoundRect(btnRect, 10f, 10f, mPaintSecondaryText)
+        canvas.translate(
+            buttonPaddingHorizontal,
+            buttonPaddingVertical
+        )
         btnTextLayout.draw(canvas)
+    }
+
+    /*
+    * Checks if the touch event is withing the button rectangle
+     */
+    fun isButtonPressed(x: Float, y:Float) : Boolean {
+        return btnBounds.contains(x, y)
     }
 }
