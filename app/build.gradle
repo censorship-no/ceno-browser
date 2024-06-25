@@ -407,6 +407,7 @@ dependencies {
 
     implementation libs.thirdparty.sentry
     implementation libs.thirdparty.gson
+    implementation libs.thirdparty.tooltips
 
     implementation libs.kotlin.coroutines
     implementation libs.kotlin.serialization
@@ -432,8 +433,6 @@ dependencies {
     /* CENO: Begin implement additional dependencies */
     implementation libs.mozilla.featuretopsites
     implementation libs.mozilla.uiwidgets
-
-    implementation Deps.thirdparty_tooltips
 
     if (gradle.hasProperty('localProperties.dependencySubstitutions.ouinetLocalLib')) {
         project.logger.lifecycle('Subtituting local AAR for Ouinet dependency')

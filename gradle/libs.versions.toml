@@ -41,6 +41,7 @@ testing_mockwebserver = "4.10.0"
 # Third Party
 sentry = "7.3.0"
 gson = "2.10.1"
+tooltips = "3.3.2"
 
 # CENO: Versions for additional dependencies */
 ouinet_version = "0.27.0"
@@ -123,6 +124,7 @@ mozilla-libpublicsuffixlist = { group = "org.mozilla.components", name = "lib-pu
 
 thirdparty_sentry = { group = "io.sentry", name = "sentry-android", version.ref = "sentry" }
 thirdparty_gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+thirdparty_tooltips = { group = "uk.co.samuelwall", name = "material-tap-target-prompt", version.ref = "tooltips" }
 
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx_appcompat" }
 androidx-corektx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx_core" }

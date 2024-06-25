@@ -35,6 +35,10 @@
     <dimen name="top_bar_no_icon_alignment_margin_start">16dp</dimen>
     <dimen name="section_header_height">48dp</dimen>
 
+    <!-- Bottom Sheet Fragment card -->
+    <dimen name="bottom_sheet_corner_radius">8dp</dimen>
+    <dimen name="bottom_sheet_handle_height">3dp</dimen>
+    <dimen name="bottom_sheet_handle_top_margin">8dp</dimen>
 
     <!-- Browser Toolbar -->
     <dimen name="browser_toolbar_height">56dp</dimen>
