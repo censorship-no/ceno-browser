@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval">
-    <solid
-        android:color="@color/ceno_blue_900"/>
-</shape>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="170dp"
+    android:viewportWidth="360"
+    android:viewportHeight="498">
+  <path
+      android:pathData="M179,249m-249,0a249,249 0,1 1,498 0a249,249 0,1 1,-498 0"
+      android:fillColor="@color/ceno_blue_800" />
+</vector>

@@ -84,40 +84,63 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
                 R.id.mozac_browser_toolbar_tracking_protection_indicator,
                 "Sources",
                 "See where the webpage gets data from",
-                CirclePromptFocal()
-            )
-            { _, state ->
-                if (state == MaterialTapTargetPrompt.STATE_FINISHED) {
-                    requireComponents.cenoPreferences.nextTooltip += 1
-                    tooltip.dismiss()
+                CirclePromptFocal(),
+                isAutoFinish = true,
+                listener = { _, state ->
+                    when (state) {
+                        MaterialTapTargetPrompt.STATE_FINISHED-> {
+                            requireComponents.cenoPreferences.nextTooltip += 1
+                            tooltip.dismiss()
+                            showSourcesTooltip()
+                        }
+                        MaterialTapTargetPrompt.STATE_REVEALED -> {
+                            tooltip.addExitButton() {
+                                requireComponents.cenoPreferences.nextTooltip = -1
+                                tooltip.dismiss()
+                            }
+                        }
+                    }
+                },
+                onButtonPressListener = {
+                    goToNextTooltip()
                 }
-            }
+            )
             tooltip.tooltip?.show()
-            tooltip.addSkipButton {
-                requireComponents.cenoPreferences.nextTooltip += 1
-                tooltip.dismiss()
-            }
         }
         if (requireComponents.cenoPreferences.nextTooltip == TOOLTIP_CLEAR_CENO) {
             tooltip = CenoTooltip(
                 this,
-                R.id.clear_counter_root,
+                R.id.action_image,
                 "Clear Ceno",
                 "See how to clear Ceno cache",
-                CirclePromptFocal()
-            )
-            { _, state ->
-                if (state == MaterialTapTargetPrompt.STATE_FINISHED) {
-                    requireComponents.cenoPreferences.nextTooltip += 1
-                    tooltip.dismiss()
+                CirclePromptFocal(),
+                stopCaptureTouchOnFocal = true,
+                listener = { _, state ->
+                    when (state) {
+                        MaterialTapTargetPrompt.STATE_FINISHED-> {
+                            requireComponents.cenoPreferences.nextTooltip += 1
+                            tooltip.dismiss()
+                        }
+                        MaterialTapTargetPrompt.STATE_REVEALED -> {
+                            tooltip.addExitButton() {
+                                requireComponents.cenoPreferences.nextTooltip = -1
+                                tooltip.dismiss()
+                            }
+                        }
+                    }
+                },
+                onButtonPressListener = {
+                    goToNextTooltip()
                 }
-            }
+            )
             tooltip.tooltip?.show()
-            tooltip.addSkipButton {
-                requireComponents.cenoPreferences.nextTooltip += 1
-                tooltip.dismiss()
-            }
         }
+    }
+
+    private fun goToNextTooltip() {
+        requireComponents.cenoPreferences.nextTooltip += 1
+        tooltip.dismiss()
+        showSourcesTooltip()
     }
 
      override fun onCancelSourcesPopup() {
@@ -135,7 +158,7 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
     }
 
     companion object {
-        const val TOOLTIP_CENO_SOURCES = 3
-        const val TOOLTIP_CLEAR_CENO = 4
+        const val TOOLTIP_CENO_SOURCES = 5
+        const val TOOLTIP_CLEAR_CENO = 6
     }
 }

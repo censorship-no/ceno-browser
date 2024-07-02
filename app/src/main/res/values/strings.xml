@@ -57,6 +57,7 @@
     <string name="top_sites_rename_dialog_ok">OK</string>
     <string name="top_sites_rename_dialog_cancel">Cancel</string>
     <string name="top_sites_sponsored_label">Sponsored</string>
+    <string name="top_sites_title">Shortcuts</string>
     <string name="browser_menu_back">Back</string>
     <string name="browser_menu_forward">Forward</string>
     <string name="browser_menu_refresh">Refresh</string>

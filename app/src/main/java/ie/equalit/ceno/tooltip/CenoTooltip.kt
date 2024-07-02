@@ -17,7 +17,10 @@ class CenoTooltip(
     var primaryText: String,
     var secondaryText: String,
     var promptFocal: PromptFocal,
-    listener: ( prompt:MaterialTapTargetPrompt, state:Int) -> Unit
+    isAutoFinish: Boolean = false,
+    stopCaptureTouchOnFocal: Boolean = false,
+    listener: ( prompt:MaterialTapTargetPrompt, state:Int) -> Unit,
+    var onButtonPressListener: () -> Unit
 ) {
     var tooltip: MaterialTapTargetPrompt?
     val tooltipBuilder : MaterialTapTargetPrompt.Builder
@@ -36,6 +39,8 @@ class CenoTooltip(
             .setFocalColour(getColor(fragment.requireContext(), R.color.tooltip_focal_color))
             .setPromptBackground(DimmedPromptBackground(promptButtonCallback = ::promptButtonCallback))
             .setPromptStateChangeListener(listener)
+            .setAutoFinish(isAutoFinish)
+            .setCaptureTouchEventOnFocal(stopCaptureTouchOnFocal)
         tooltip = tooltipBuilder.create()
 
     }
@@ -43,13 +48,14 @@ class CenoTooltip(
     fun promptButtonCallback(x:Float, y:Float) {
         if (promptTextWithBtn.isButtonPressed(x, y) && !isButtonPressed) {
             isButtonPressed = true
+            onButtonPressListener.invoke()
             //dismiss tooltip
             dismiss()
         }
 
     }
 
-    fun addSkipButton(listener: View.OnClickListener) {
+    fun addExitButton(listener: View.OnClickListener) {
         val container = fragment.activity?.findViewById<FrameLayout>(R.id.container)
         val prompt = container?.findViewById<View>(R.id.material_target_prompt_view)
         container?.removeView(prompt)

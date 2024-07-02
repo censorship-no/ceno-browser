@@ -65,7 +65,7 @@ import java.util.Locale
  */
 class HomeFragment : BaseHomeFragment() {
 
-    private lateinit var urlTooltip: CenoTooltip
+    private lateinit var tooltip: CenoTooltip
     var adapter: SessionControlAdapter? = null
 
     private var _sessionControlInteractor: SessionControlInteractor? = null
@@ -124,7 +124,7 @@ class HomeFragment : BaseHomeFragment() {
                 preferences = components.cenoPreferences,
                 appStore = components.appStore,
                 viewLifecycleScope = viewLifecycleOwner.lifecycleScope,
-                object: RSSAnnouncementViewHolder.RssAnnouncementSwipeListener {
+                object : RSSAnnouncementViewHolder.RssAnnouncementSwipeListener {
                     override fun onSwipeCard(index: Int) {
                         /**
                          * Using minus(1) below because CenoAnnouncementItem is the second item in SessionControlView.kt
@@ -135,7 +135,9 @@ class HomeFragment : BaseHomeFragment() {
                         // Using minus() below because CenoAnnouncementItem is the second item in SessionControlView.kt.
                         // AdapterItem.TopPlaceholderItem is the first item in SessionControlView.kt
                         // This should be updated if/when there's any change to the ordering in SessionControlView
-                        val guid = Settings.getAnnouncementData(binding.root.context)?.items?.get(index.minus(1))?.guid
+                        val guid = Settings.getAnnouncementData(binding.root.context)?.items?.get(
+                            index.minus(1)
+                        )?.guid
                         guid?.let { Settings.addSwipedAnnouncementGuid(binding.root.context, it) }
 
                         updateSessionControlView()
@@ -152,12 +154,15 @@ class HomeFragment : BaseHomeFragment() {
 
 
         (binding.homeAppBar.layoutParams as? CoordinatorLayout.LayoutParams)?.apply {
-            topMargin = if(prefs.getBoolean(requireContext().getPreferenceKey(R.string.pref_key_toolbar_position), false)) {
-                    resources.getDimensionPixelSize(R.dimen.browser_toolbar_height)
-                }
-                else {
-                    0
-                }
+            topMargin = if (prefs.getBoolean(
+                    requireContext().getPreferenceKey(R.string.pref_key_toolbar_position),
+                    false
+                )
+            ) {
+                resources.getDimensionPixelSize(R.dimen.browser_toolbar_height)
+            } else {
+                0
+            }
         }
 
         container?.background =
@@ -220,7 +225,7 @@ class HomeFragment : BaseHomeFragment() {
                     )
 
                     // if the network call fails, try to load 'en' locale
-                    if(response == null) {
+                    if (response == null) {
                         response = CenoSettings.webClientRequest(
                             context,
                             Request(CenoSettings.getRSSAnnouncementUrl("en"))
@@ -235,10 +240,13 @@ class HomeFragment : BaseHomeFragment() {
 
                         // check for null and refresh homepage adapter if necessary
                         // Set announcement data from local since filtering happens there (i.e Settings.getAnnouncementData())
-                        if(Settings.getAnnouncementData(context) != null) {
+                        if (Settings.getAnnouncementData(context) != null) {
                             withContext(Dispatchers.Main) {
                                 val state = context.components.appStore.state
-                                sessionControlView?.update(state, Settings.getAnnouncementData(context)?.items)
+                                sessionControlView?.update(
+                                    state,
+                                    Settings.getAnnouncementData(context)?.items
+                                )
                             }
                         }
                     }
@@ -251,7 +259,7 @@ class HomeFragment : BaseHomeFragment() {
         ouinetStatus = status
         val message = if (ouinetStatus == RunningState.Started) {
             getString(R.string.ceno_ouinet_connected)
-        } else if (ouinetStatus == RunningState.Stopped){
+        } else if (ouinetStatus == RunningState.Stopped) {
             getString(R.string.ceno_ouinet_disconnected)
         } else {
             getString(R.string.ceno_ouinet_connecting)
@@ -262,13 +270,22 @@ class HomeFragment : BaseHomeFragment() {
     private fun updateUI(mode: BrowsingMode) {
         context?.let {
             if (mode == BrowsingMode.Personal) {
-                binding.homeAppBar.background = ContextCompat.getDrawable(it, R.color.fx_mobile_private_layer_color_3)
-                binding.sessionControlRecyclerView.background = ContextCompat.getDrawable(it, R.color.fx_mobile_private_layer_color_3)
+                binding.homeAppBar.background =
+                    ContextCompat.getDrawable(it, R.color.fx_mobile_private_layer_color_3)
+                binding.sessionControlRecyclerView.background =
+                    ContextCompat.getDrawable(it, R.color.fx_mobile_private_layer_color_3)
                 binding.wordmark.drawable.setTint(ContextCompat.getColor(it, R.color.photonWhite))
             } else {
-                binding.homeAppBar.background = ContextCompat.getDrawable(it, R.color.ceno_home_background)
-                binding.sessionControlRecyclerView.background = ContextCompat.getDrawable(it, R.color.ceno_home_background)
-                binding.wordmark.drawable.setTint(ContextCompat.getColor(it, R.color.ceno_home_card_public_text))
+                binding.homeAppBar.background =
+                    ContextCompat.getDrawable(it, R.color.ceno_home_background)
+                binding.sessionControlRecyclerView.background =
+                    ContextCompat.getDrawable(it, R.color.ceno_home_background)
+                binding.wordmark.drawable.setTint(
+                    ContextCompat.getColor(
+                        it,
+                        R.color.ceno_home_card_public_text
+                    )
+                )
             }
         }
         applyTheme()
@@ -282,32 +299,6 @@ class HomeFragment : BaseHomeFragment() {
         binding.sessionControlRecyclerView.visibility = View.VISIBLE
 
         binding.sessionControlRecyclerView.itemAnimator = null
-
-        urlTooltip = CenoTooltip(this,
-            R.id.mozac_browser_toolbar_origin_view,
-            primaryText = "Let's get browsing!",
-            secondaryText = "Type in a website address to start browsing.",
-            promptFocal = RectanglePromptFocal().setCornerRadius(25f, 25f)
-        ) {
-                prompt: MaterialTapTargetPrompt, state: Int ->
-            when(state) {
-                MaterialTapTargetPrompt.STATE_DISMISSING -> {
-
-                }
-                MaterialTapTargetPrompt.STATE_FINISHED -> {
-                    requireComponents.cenoPreferences.nextTooltip += 1
-                    urlTooltip.dismiss()
-                }
-                MaterialTapTargetPrompt.STATE_REVEALED -> {
-                    urlTooltip.addSkipButton {
-                        //skip tour
-                        urlTooltip.tooltip?.dismiss()
-                        urlTooltip.dismiss()
-                        requireComponents.cenoPreferences.nextTooltip += 1
-                    }
-                }
-            }
-        }
     }
 
     override fun onStart() {
@@ -317,27 +308,112 @@ class HomeFragment : BaseHomeFragment() {
     }
 
     fun showTooltip() {
-        when(requireComponents.cenoPreferences.nextTooltip) {
-            TOOLBAR_TOOLTIP -> urlTooltip.tooltipBuilder.show()
+        when (requireComponents.cenoPreferences.nextTooltip) {
             BEGIN_TOUR_TOOLTIP -> {
                 CenoTourStartOverlay(this, {
                     requireComponents.cenoPreferences.nextTooltip = -1
                     askForPermissions()
                 }, {
                     requireComponents.cenoPreferences.nextTooltip += 1
-                    askForPermissions()
-//                    showTooltip()
+                    showTooltip()
                 }).show()
             }
+            PUBLIC_PERSONAL_TOOLTIP -> {
+                tooltip = CenoTooltip(this,
+                    R.id.ceno_mode_item,
+                    primaryText = "Public/Personal Mode",
+                    secondaryText = "Use public mode to share and best connectivity",
+                    promptFocal = RectanglePromptFocal().setCornerRadius(25f, 25f),
+                    listener = { prompt: MaterialTapTargetPrompt, state: Int ->
+                        if (state == MaterialTapTargetPrompt.STATE_NON_FOCAL_PRESSED && tooltip.isButtonPressed) {
+                            requireComponents.cenoPreferences.nextTooltip += 1
+                            tooltip.dismiss()
+                        }
+                    },
+                    onButtonPressListener = ::goToNextTooltip
+                )
+                tooltip.tooltip?.show()
+                tooltip.addExitButton() {
+                    exitCenoTour()
+                }
+            }
+            SHORTCUTS_TOOLTIP -> {
+                tooltip = CenoTooltip(this,
+                    R.id.shortcuts_layout,
+                    primaryText = "Shortcuts",
+                    secondaryText = "Save your most visited sites to shortcuts",
+                    promptFocal = RectanglePromptFocal().setCornerRadius(25f, 25f),
+                    listener = { _: MaterialTapTargetPrompt, state: Int ->
+                        when(state) {
+                            MaterialTapTargetPrompt.STATE_REVEALED -> {
+                                tooltip.addExitButton {
+                                    exitCenoTour()
+                                }
+                            }
+                            MaterialTapTargetPrompt.STATE_FOCAL_PRESSED -> {
+                                requireComponents.cenoPreferences.nextTooltip += 1
+                                tooltip.dismiss()
+                            }
+                        }
+                    },
+                    onButtonPressListener = ::goToNextTooltip
+
+                )
+                tooltip.tooltip?.show()
+            }
+            TOOLBAR_TOOLTIP -> {
+                tooltip = CenoTooltip(this,
+                    R.id.mozac_browser_toolbar_origin_view,
+                    primaryText = "Let's get browsing!",
+                    secondaryText = "Type in a website address to start browsing.",
+                    promptFocal = RectanglePromptFocal().setCornerRadius(25f, 25f),
+                    isAutoFinish = true,
+                    listener = { prompt: MaterialTapTargetPrompt, state: Int ->
+                        when (state) {
+                            MaterialTapTargetPrompt.STATE_DISMISSING -> {
+
+                            }
+
+                            MaterialTapTargetPrompt.STATE_FINISHED -> {
+                                requireComponents.cenoPreferences.nextTooltip += 1
+                                tooltip.dismiss()
+                            }
+
+                            MaterialTapTargetPrompt.STATE_REVEALED -> {
+                                tooltip.addExitButton() {
+                                    exitCenoTour()
+                                }
+                            }
+                        }
+                    },
+                    onButtonPressListener = {
+                        requireComponents.cenoPreferences.nextTooltip += 1
+                        tooltip.dismiss()
+                        (activity as BrowserActivity).openToBrowser(getString(R.string.ceno_support_link_url), newTab = true)
+                    }
+                )
+
+                tooltip.tooltip?.show()
+            }
         }
+    }
+
+    private fun goToNextTooltip() {
+        requireComponents.cenoPreferences.nextTooltip += 1
+        tooltip.dismiss()
+        showTooltip()
+    }
+    private fun exitCenoTour() {
+        //exit tour
+        tooltip.dismiss()
+        requireComponents.cenoPreferences.nextTooltip = -1
     }
 
     private fun askForPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             /* This is Android 13 or later, ask for permission POST_NOTIFICATIONS */
             allowPostNotifications()
-        }
-        else {
+        } else {
             /* This is NOT Android 13, just ask to disable battery optimization */
             disableBatteryOptimization()
         }
@@ -354,12 +430,15 @@ class HomeFragment : BaseHomeFragment() {
         return true
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         if (requestCode == AppPermissionCodes.REQUEST_CODE_NOTIFICATION_PERMISSIONS) {
             requireComponents.ouinet.background.start()
             disableBatteryOptimization()
-        }
-        else {
+        } else {
             Log.e(TAG, "Unknown request code received: $requestCode")
         }
     }
@@ -374,8 +453,9 @@ class HomeFragment : BaseHomeFragment() {
     }
 
     companion object {
-        const val PUBLIC_PERSONAL_TOOLTIP = 8
-        const val TOOLBAR_TOOLTIP = 2
+        const val PUBLIC_PERSONAL_TOOLTIP = 2
+        const val SHORTCUTS_TOOLTIP = 3
+        const val TOOLBAR_TOOLTIP = 4
         const val BEGIN_TOUR_TOOLTIP = 1
 
         const val TAG = "HOMEPAGE"

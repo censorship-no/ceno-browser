@@ -2,7 +2,6 @@ package uk.co.samuelwall.materialtaptargetprompt.extras
 
 import android.graphics.Canvas
 import android.graphics.Color
-import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.RectF
 import android.text.Layout
@@ -28,7 +27,6 @@ class PromptTextWithBtn(
         clipBounds: Rect
     ) {
         super.prepare(options, clipToBounds, clipBounds)
-
         mPaintButtonText.setColor(Color.BLACK)
         mPaintButtonText.setTextSize(options.secondaryTextSize)
 
@@ -37,9 +35,15 @@ class PromptTextWithBtn(
             mPaintButtonText, mPaintButtonText.measureText(buttonText).toInt(), mPrimaryTextAlignment, 1f
         )
         textSeparation = options.textSeparation
-        mPrimaryTextTop -= (btnTextLayout.height * 2)
-        mTextBounds.top -= (btnTextLayout.height * 2)
         btnRect = RectF(0f, 0f, btnTextLayout.width.toFloat() + (buttonPaddingHorizontal * 2), btnTextLayout.height.toFloat() + (buttonPaddingVertical * 2))
+
+        val verticalTextPositionAbove = options.promptFocal.bounds.centerY() > clipBounds.centerY()
+        if (verticalTextPositionAbove) {
+            mPrimaryTextTop -= (btnRect.height() + textSeparation)
+            mTextBounds.top -= (btnRect.height() + textSeparation)
+        } else {
+            mTextBounds.bottom += (btnRect.height() + textSeparation)
+        }
 
         btnBounds.left = mPrimaryTextLeft
         btnBounds.top = mTextBounds.top + mPrimaryTextLayout.height + textSeparation + mSecondaryTextLayout.height + textSeparation

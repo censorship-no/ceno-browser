@@ -20,9 +20,9 @@ class CenoTourStartOverlay(
     private var btnSkipTour: Button
 
     init {
-        containerView = fragment.activity?.findViewById<FrameLayout>(R.id.container)
+        containerView = fragment.activity?.findViewById(R.id.container)
         tooltipOverlay = View.inflate(fragment.requireContext(), R.layout.tooltip_start_overlay_layout, null) as ConstraintLayout
-        tooltipOverlay.setBackgroundColor(ContextCompat.getColor(fragment.requireContext(), R.color.photonBlack))
+        tooltipOverlay.setBackgroundColor(ContextCompat.getColor(fragment.requireContext(), R.color.tooltip_background))
         btnSkipTour = tooltipOverlay.findViewById(R.id.btn_skip_all_ceno_tour)
         btnStartTour = tooltipOverlay.findViewById(R.id.btn_start_ceno_tour)
         btnSkipTour.setOnClickListener {
