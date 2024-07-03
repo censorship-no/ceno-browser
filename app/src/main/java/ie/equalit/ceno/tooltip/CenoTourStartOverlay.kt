@@ -3,6 +3,7 @@ package ie.equalit.ceno.tooltip
 import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import ie.equalit.ceno.R
 
 class CenoTourStartOverlay(
     val fragment: Fragment,
+    isPermission: Boolean,
     skipListener:  () -> Unit,
     startListener:  () -> Unit
 ) {
@@ -32,6 +34,16 @@ class CenoTourStartOverlay(
         btnStartTour.setOnClickListener {
             remove()
             startListener.invoke()
+        }
+        if (isPermission) {
+            //change text
+            val title = tooltipOverlay.findViewById<TextView>(R.id.tv_start_tooltip_title)
+            val description = tooltipOverlay.findViewById<TextView>(R.id.tv_start_tooltip_description)
+            title.text = fragment.getString(R.string.onboarding_permissions_title)
+            description.text = fragment.getString(R.string.onboarding_battery_text_v33)
+            btnStartTour.text = fragment.getString(R.string.onboarding_battery_button)
+            //hide skip button
+            btnSkipTour.visibility = View.GONE
         }
     }
 

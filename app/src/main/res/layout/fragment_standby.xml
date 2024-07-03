@@ -30,7 +30,7 @@
         android:background="@drawable/ouinet_progress"
         android:backgroundTint="@color/ceno_standby_logo_color"
         android:indeterminate="true"
-        android:indeterminateBehavior="cycle"
+        android:indeterminateBehavior="repeat"
         android:indeterminateDrawable="@drawable/scaling_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

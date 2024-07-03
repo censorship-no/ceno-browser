@@ -212,7 +212,7 @@
     <string name="crash_reporting_never_send">Nigdy nie wysyłaj</string>
     <string name="onboarding_welcome_title">Witaj w &brandShortName;</string>
     <string name="preferences_ceno_sources_upnp">Status UPnP</string>
-    <string name="onboarding_battery_title">Potrzebne uprawnienia</string>
+    <string name="onboarding_permissions_title">Potrzebne uprawnienia</string>
     <string name="preferences_toolbar_hide">Przewiń by ukryć</string>
     <string name="preferences_ceno_sources_local_udp">Lokalne punkty końcowe UDP</string>
     <string name="ceno_home_card_public_title">PUBLICZNE</string>

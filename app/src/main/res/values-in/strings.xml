@@ -51,7 +51,7 @@
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">Jangan tampilkan lagi</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">&amp;brandNameShortName; Pemberitahuan browser</string>
     <string name="ceno_clear_dialog_clear_entire_app">Hapus &brandShortName; cache dan data aplikasi</string>
-    <string name="onboarding_battery_title">Izin diperlukan</string>
+    <string name="onboarding_permissions_title">Izin diperlukan</string>
     <string name="onboarding_battery_text_v33">Sistem operasi akan meminta izin kepada Anda untuk
 \n
 \n• Menampilkan notifikasi

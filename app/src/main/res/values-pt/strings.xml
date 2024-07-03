@@ -145,7 +145,7 @@
     <string name="preferences_clear_behavior_summary">Definir comportamento ao tocar o botão Limpar</string>
     <string name="preferences_change_app_icon">Mudar ícone do app</string>
     <string name="onboarding_battery_button">Continuar</string>
-    <string name="onboarding_battery_title">Autorização necessária</string>
+    <string name="onboarding_permissions_title">Autorização necessária</string>
     <string name="onboarding_thanks_title">Agradecemos por ajudar a rede a crescer!</string>
     <string name="onboarding_thanks_text">Como utilizador do &brandShortName;, ajuda a fazer crescer a rede de pontes disponíveis que possibilitam o acesso a conteúdo censurado.</string>
     <string name="ceno_clear_dialog_cancel">Cancelar</string>

@@ -4,15 +4,22 @@
 
 package ie.equalit.ceno.browser
 
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import ie.equalit.ceno.AppPermissionCodes
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.requireComponents
+import ie.equalit.ceno.home.HomeFragment.Companion.TAG
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.tooltip.CenoTooltip
+import ie.equalit.ceno.tooltip.CenoTourStartOverlay
 import mozilla.components.browser.toolbar.BrowserToolbar
 import mozilla.components.feature.readerview.view.ReaderViewControlsBar
 import mozilla.components.support.base.feature.UserInteractionHandler
@@ -78,62 +85,75 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
     }
 
     private fun showSourcesTooltip() {
-        if (requireComponents.cenoPreferences.nextTooltip == TOOLTIP_CENO_SOURCES) {
-            tooltip = CenoTooltip(
-                this,
-                R.id.mozac_browser_toolbar_tracking_protection_indicator,
-                "Sources",
-                "See where the webpage gets data from",
-                CirclePromptFocal(),
-                isAutoFinish = true,
-                listener = { _, state ->
-                    when (state) {
-                        MaterialTapTargetPrompt.STATE_FINISHED-> {
-                            requireComponents.cenoPreferences.nextTooltip += 1
-                            tooltip.dismiss()
-                            showSourcesTooltip()
-                        }
-                        MaterialTapTargetPrompt.STATE_REVEALED -> {
-                            tooltip.addExitButton() {
-                                requireComponents.cenoPreferences.nextTooltip = -1
+        when (requireComponents.cenoPreferences.nextTooltip) {
+            TOOLTIP_CENO_SOURCES -> {
+                tooltip = CenoTooltip(
+                    this,
+                    R.id.mozac_browser_toolbar_tracking_protection_indicator,
+                    "Sources",
+                    "See where the webpage gets data from",
+                    CirclePromptFocal(),
+                    isAutoFinish = true,
+                    listener = { _, state ->
+                        when (state) {
+                            MaterialTapTargetPrompt.STATE_FINISHED-> {
+                                requireComponents.cenoPreferences.nextTooltip += 1
                                 tooltip.dismiss()
+                                showSourcesTooltip()
+                            }
+                            MaterialTapTargetPrompt.STATE_REVEALED -> {
+                                tooltip.addExitButton() {
+                                    requireComponents.cenoPreferences.nextTooltip = -1
+                                    tooltip.dismiss()
+                                }
                             }
                         }
+                    },
+                    onButtonPressListener = {
+                        goToNextTooltip()
                     }
-                },
-                onButtonPressListener = {
-                    goToNextTooltip()
-                }
-            )
-            tooltip.tooltip?.show()
-        }
-        if (requireComponents.cenoPreferences.nextTooltip == TOOLTIP_CLEAR_CENO) {
-            tooltip = CenoTooltip(
-                this,
-                R.id.action_image,
-                "Clear Ceno",
-                "See how to clear Ceno cache",
-                CirclePromptFocal(),
-                stopCaptureTouchOnFocal = true,
-                listener = { _, state ->
-                    when (state) {
-                        MaterialTapTargetPrompt.STATE_FINISHED-> {
-                            requireComponents.cenoPreferences.nextTooltip += 1
-                            tooltip.dismiss()
-                        }
-                        MaterialTapTargetPrompt.STATE_REVEALED -> {
-                            tooltip.addExitButton() {
-                                requireComponents.cenoPreferences.nextTooltip = -1
+                )
+                tooltip.tooltip?.show()
+            }
+            TOOLTIP_CLEAR_CENO -> {
+                tooltip = CenoTooltip(
+                    this,
+                    R.id.action_image,
+                    "Clear Ceno",
+                    "See how to clear Ceno cache",
+                    CirclePromptFocal(),
+                    stopCaptureTouchOnFocal = true,
+                    listener = { _, state ->
+                        when (state) {
+                            MaterialTapTargetPrompt.STATE_FINISHED-> {
+                                requireComponents.cenoPreferences.nextTooltip += 1
                                 tooltip.dismiss()
                             }
+                            MaterialTapTargetPrompt.STATE_REVEALED -> {
+                                tooltip.addExitButton() {
+                                    requireComponents.cenoPreferences.nextTooltip = -1
+                                    tooltip.dismiss()
+                                }
+                            }
                         }
+                    },
+                    onButtonPressListener = {
+                        goToNextTooltip()
                     }
-                },
-                onButtonPressListener = {
-                    goToNextTooltip()
-                }
-            )
-            tooltip.tooltip?.show()
+                )
+                tooltip.tooltip?.show()
+            }
+            TOOLTIP_PERMISSION -> {
+                CenoTourStartOverlay(
+                    this,
+                    true,
+                    startListener = {
+                        requireComponents.cenoPreferences.nextTooltip = -1
+                        askForPermissions()
+                    },
+                    skipListener = {}
+                ).show()
+            }
         }
     }
 
@@ -157,8 +177,52 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
         findNavController().navigate(R.id.action_global_home)
     }
 
+    private fun askForPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            /* This is Android 13 or later, ask for permission POST_NOTIFICATIONS */
+            allowPostNotifications()
+        } else {
+            /* This is NOT Android 13, just ask to disable battery optimization */
+            disableBatteryOptimization()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, data: Intent?, resultCode: Int): Boolean {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requireComponents.permissionHandler.onActivityResult(requestCode, data, resultCode)) {
+            Log.i(TAG, "Permission - Success")
+        } else {
+            Log.w(TAG, "Permission denied")
+        }
+        return true
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == AppPermissionCodes.REQUEST_CODE_NOTIFICATION_PERMISSIONS) {
+            requireComponents.ouinet.background.start()
+            disableBatteryOptimization()
+        } else {
+            Log.e(TAG, "Unknown request code received: $requestCode")
+        }
+    }
+
+    private fun disableBatteryOptimization() {
+        requireComponents.permissionHandler.requestBatteryOptimizationsOff(requireActivity())
+    }
+
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private fun allowPostNotifications() {
+        requireComponents.permissionHandler.requestPostNotificationsPermission(this)
+    }
+
     companion object {
         const val TOOLTIP_CENO_SOURCES = 5
         const val TOOLTIP_CLEAR_CENO = 6
+        const val TOOLTIP_PERMISSION = 7
     }
 }

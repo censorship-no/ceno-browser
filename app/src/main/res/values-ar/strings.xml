@@ -184,7 +184,7 @@
     <string name="onboarding_warning_text_v33_2">الإشعارات غير مسموح بها وما يزال تحسين البطارية مُمَكَّنًا.
 \n
 \nانتقل إلى \"الإعدادات\" لمنح الإذن لاحقاً</string>
-    <string name="onboarding_battery_title">الإذن مطلوب</string>
+    <string name="onboarding_permissions_title">الإذن مطلوب</string>
     <string name="onboarding_battery_text_v33">سيطلب منك نظام التشغيل قريباً الإذن لِـ
 \n
 \n• السماح بالإشعارات

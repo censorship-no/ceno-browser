@@ -23,6 +23,7 @@ import ie.equalit.ceno.AppPermissionCodes
 import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BaseBrowserFragment
+import ie.equalit.ceno.browser.BrowserFragment
 import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.components.ceno.appstate.AppAction
 import ie.equalit.ceno.databinding.FragmentHomeBinding
@@ -310,7 +311,8 @@ class HomeFragment : BaseHomeFragment() {
     fun showTooltip() {
         when (requireComponents.cenoPreferences.nextTooltip) {
             BEGIN_TOUR_TOOLTIP -> {
-                CenoTourStartOverlay(this, {
+                CenoTourStartOverlay(this, false,
+                    {
                     requireComponents.cenoPreferences.nextTooltip = -1
                     askForPermissions()
                 }, {
@@ -389,11 +391,22 @@ class HomeFragment : BaseHomeFragment() {
                     onButtonPressListener = {
                         requireComponents.cenoPreferences.nextTooltip += 1
                         tooltip.dismiss()
-                        (activity as BrowserActivity).openToBrowser(getString(R.string.ceno_support_link_url), newTab = true)
+                        (activity as BrowserActivity).openToBrowser("https://ceno.app/en/index.html", newTab = true)
                     }
                 )
 
                 tooltip.tooltip?.show()
+            }
+            BrowserFragment.TOOLTIP_PERMISSION -> {
+                CenoTourStartOverlay(
+                    this,
+                    true,
+                    startListener = {
+                        requireComponents.cenoPreferences.nextTooltip = -1
+                        askForPermissions()
+                    },
+                    skipListener = {}
+                ).show()
             }
         }
     }
@@ -406,7 +419,8 @@ class HomeFragment : BaseHomeFragment() {
     private fun exitCenoTour() {
         //exit tour
         tooltip.dismiss()
-        requireComponents.cenoPreferences.nextTooltip = -1
+        requireComponents.cenoPreferences.nextTooltip = BrowserFragment.TOOLTIP_PERMISSION
+        showTooltip()
     }
 
     private fun askForPermissions() {

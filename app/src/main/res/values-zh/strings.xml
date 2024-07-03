@@ -173,7 +173,7 @@
     <string name="bt_sources_none">无</string>
     <string name="bt_invalid_ip_error">无效 IP</string>
     <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">&brandShortName; 设置</string>
-    <string name="onboarding_battery_title">需要许可</string>
+    <string name="onboarding_permissions_title">需要许可</string>
     <string name="onboarding_battery_button">继续</string>
     <string name="preferences_toolbar_hide">滚动以隐藏</string>
     <string name="preferences_allow_crash_reporting">崩溃报告</string>

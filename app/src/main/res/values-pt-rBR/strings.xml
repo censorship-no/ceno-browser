@@ -170,7 +170,7 @@
     <string name="changeIconDialogMessage">O aplicativo pode fechar para adotar as mudanças. Volte depois de admirar seu novo e belo ícone.</string>
     <string name="preferences_theme_summary">Escuro, Claro, Economia de Bateria</string>
     <string name="ouinet_client_fetch_fail">Falha em modificar a configuração &brandShortName;</string>
-    <string name="onboarding_battery_title">Autorização necessária</string>
+    <string name="onboarding_permissions_title">Autorização necessária</string>
     <string name="onboarding_warning_text">A otimização de bateria ainda está habilitada.
 \n
 \nVá em \"Configurações &gt; Desabilitar Otimização de Bateria\" para dar autorização mais tarde</string>

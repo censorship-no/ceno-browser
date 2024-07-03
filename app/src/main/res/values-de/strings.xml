@@ -94,7 +94,7 @@
     <string name="preference_search_summary">Standard festlegen</string>
     <string name="browser_toolbar_home">Startseite</string>
     <string name="onboarding_welcome_title">Willkommen bei &brandShortName;</string>
-    <string name="onboarding_battery_title">Berechtigung erforderlich</string>
+    <string name="onboarding_permissions_title">Berechtigung erforderlich</string>
     <string name="onboarding_battery_text">In Kürze wird das Betriebssystem Sie um eine Berechtigung bitten,
 \n
 \n• die Batterieoptimierung deaktivieren zu können.

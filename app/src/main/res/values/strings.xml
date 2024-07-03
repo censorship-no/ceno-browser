@@ -180,7 +180,7 @@
     <string name="onboarding_skip_button">Skip</string>
     <!-- Ignoring these string resources for now to see if they can be reused-->
     <string name="onboarding_info_title" tools:ignore="UnusedResources">Not your average browser</string>
-    <string name="onboarding_battery_title" tools:ignore="UnusedResources">Permission needed</string>
+    <string name="onboarding_permissions_title">Permission needed</string>
     <string name="onboarding_battery_text" tools:ignore="UnusedResources">Shortly the OS will ask you for permission to
 \n
 \n• Disable battery optimization.

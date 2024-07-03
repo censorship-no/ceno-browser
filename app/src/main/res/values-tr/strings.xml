@@ -174,7 +174,7 @@
     <string name="ceno_data_category">Veriler</string>
     <string name="donate_button_text">Bağış yapın</string>
     <string name="clear_cache_fail">Ön bellek temizlenemedi. Bir süre sonra yeniden deneyin</string>
-    <string name="onboarding_battery_title">İzin gerekli</string>
+    <string name="onboarding_permissions_title">İzin gerekli</string>
     <string name="preferences_clear_in_menu">Menüde görüntülensin</string>
     <string name="preferences_ceno_sources_origin_summary">İçeriği doğrudan siteden yükler</string>
     <string name="preferences_ceno_network_config_summary">Ouinet durumu, UDP uç noktaları, BitTorrent ön yükleyicileri</string>

@@ -102,7 +102,7 @@
     <string name="default_top_site_1_title">&brandShortName; مینوئل</string>
     <string name="onboarding_btn_get_started">شروع کریں</string>
     <string name="preferences_about_page">&vendorShortName; کے بارے میں</string>
-    <string name="onboarding_battery_title">اجازت درکار ہے</string>
+    <string name="onboarding_permissions_title">اجازت درکار ہے</string>
     <string name="changeIconDialogTitle">نیا آئیکن کا اطلاق کریں؟</string>
     <string name="changeIconDialogMessage">تبدیلیوں کا اطلاق کرنے کے لیے ایپ بند ہو سکتی ہے۔ اپنے خوبصورت نئے آئیکن کی تعریف کرنے کے بعد واپس آجائیں۔</string>
     <string name="preferences_about_ceno">&brandShortName; براؤزر</string>

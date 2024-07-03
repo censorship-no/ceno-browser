@@ -133,7 +133,7 @@
     <string name="default_top_site_4_title" tools:ignore="Untranslatable">Infobae</string>
     <string name="default_top_site_4_url" tools:ignore="Untranslatable">@string/suggestedsites_infobae_url</string>
     <string name="onboarding_fragment">Bienvenida(o) a &brandShortName;</string>
-    <string name="onboarding_battery_title">Permiso necesario</string>
+    <string name="onboarding_permissions_title">Permiso necesario</string>
     <string name="onboarding_battery_text">En breve el sistema operativo te pedirá permiso para
 \n
 \n- Desactivar la optimización de la batería.

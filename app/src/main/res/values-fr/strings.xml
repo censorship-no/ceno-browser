@@ -158,7 +158,7 @@
     <string name="onboarding_thanks_title">Merci de développer le réseau.</string>
     <string name="onboarding_thanks_text">En tant qu’utilisateur et utilisatrice de &brandShortName;, vous contribuez à développer le réseau de ponts accessibles qui permettent l’accès aux contenus censurés.</string>
     <string name="preferences_customization">Personnalisation</string>
-    <string name="onboarding_battery_title">Une autorisation est nécessaire</string>
+    <string name="onboarding_permissions_title">Une autorisation est nécessaire</string>
     <string name="onboarding_battery_button">Poursuivre</string>
     <string name="onboarding_warning_title">L’autorisation a été refusée</string>
     <string name="onboarding_warning_button">D’accord</string>
