@@ -381,4 +381,5 @@
     <string name="start_tooltip_description">Unlock Ceno\'s full potential - Take a guided tour to discover key features, and allow permissions to help share the web even when the app is in the background.</string>
     <string name="skip_the_tour_button">Skip the tour</string>
     <string name="btn_next">Next</string>
+    <string name="btn_exit">Exit</string>
 </resources>

@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import ie.equalit.ceno.R
@@ -24,7 +25,10 @@ class CenoTooltip(
 ) {
     var tooltip: MaterialTapTargetPrompt?
     val tooltipBuilder : MaterialTapTargetPrompt.Builder
-    val promptTextWithBtn = PromptTextWithBtn(fragment.getString(R.string.btn_next))
+    val promptTextWithBtn = PromptTextWithBtn(
+        fragment.getString(R.string.btn_next),
+        getColor(fragment.requireContext(), R.color.ceno_blue_100)
+    )
     var isButtonPressed:Boolean = false
 
     init {

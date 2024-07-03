@@ -60,7 +60,8 @@
             android:layout_marginBottom="16dp"
             android:text="@string/onboarding_btn_get_started"
             android:textAllCaps="false"
-            android:background="@color/photonWhite"
+            android:background="@drawable/recent_apps_background"
+            android:backgroundTint="@color/ceno_blue_100"
             android:textColor="@color/ceno_blue_900" />
 
         <Button

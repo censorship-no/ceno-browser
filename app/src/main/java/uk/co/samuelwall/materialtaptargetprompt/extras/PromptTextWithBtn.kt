@@ -8,7 +8,8 @@ import android.text.Layout
 import android.text.TextPaint
 
 class PromptTextWithBtn(
-    val buttonText: String
+    val buttonText: String,
+    val buttonColor: Int
 ):PromptText() {
 
     lateinit var btnTextLayout : Layout
@@ -60,7 +61,9 @@ class PromptTextWithBtn(
             mSecondaryTextLayout.height + textSeparation
         )
         // draw a rectangle for button
-        canvas.drawRoundRect(btnRect, 10f, 10f, mPaintSecondaryText)
+        val btn_color = TextPaint()
+        btn_color.setColor(buttonColor)
+        canvas.drawRoundRect(btnRect, 10f, 10f, btn_color)
         canvas.translate(
             buttonPaddingHorizontal,
             buttonPaddingVertical
