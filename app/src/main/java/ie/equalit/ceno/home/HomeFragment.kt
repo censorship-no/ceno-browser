@@ -312,19 +312,22 @@ class HomeFragment : BaseHomeFragment() {
         when (requireComponents.cenoPreferences.nextTooltip) {
             BEGIN_TOUR_TOOLTIP -> {
                 CenoTourStartOverlay(this, false,
+                    skipListener =
                     {
-                    requireComponents.cenoPreferences.nextTooltip = -1
-                    askForPermissions()
-                }, {
-                    requireComponents.cenoPreferences.nextTooltip += 1
-                    showTooltip()
-                }).show()
+                        requireComponents.cenoPreferences.nextTooltip = BrowserFragment.TOOLTIP_PERMISSION
+                        showTooltip()
+                    },
+                    startListener = {
+                        requireComponents.cenoPreferences.nextTooltip += 1
+                        showTooltip()
+                    }
+                ).show()
             }
             PUBLIC_PERSONAL_TOOLTIP -> {
                 tooltip = CenoTooltip(this,
                     R.id.ceno_mode_item,
-                    primaryText = "Public/Personal Mode",
-                    secondaryText = "Use public mode to share and best connectivity",
+                    primaryText = getString(R.string.onboarding_public_or_personal_title),
+                    secondaryText = getString(R.string.onboarding_public_personal_text),
                     promptFocal = RectanglePromptFocal().setCornerRadius(25f, 25f),
                     listener = { prompt: MaterialTapTargetPrompt, state: Int ->
                         if (state == MaterialTapTargetPrompt.STATE_NON_FOCAL_PRESSED && tooltip.isButtonPressed) {
@@ -342,9 +345,10 @@ class HomeFragment : BaseHomeFragment() {
             SHORTCUTS_TOOLTIP -> {
                 tooltip = CenoTooltip(this,
                     R.id.shortcuts_layout,
-                    primaryText = "Shortcuts",
-                    secondaryText = "Save your most visited sites to shortcuts",
+                    primaryText = getString(R.string.top_sites_title),
+                    secondaryText = getString(R.string.tooltip_shortcuts_description),
                     promptFocal = RectanglePromptFocal().setCornerRadius(25f, 25f),
+                    stopCaptureTouchOnFocal = true,
                     listener = { _: MaterialTapTargetPrompt, state: Int ->
                         when(state) {
                             MaterialTapTargetPrompt.STATE_REVEALED -> {
@@ -366,8 +370,8 @@ class HomeFragment : BaseHomeFragment() {
             TOOLBAR_TOOLTIP -> {
                 tooltip = CenoTooltip(this,
                     R.id.mozac_browser_toolbar_origin_view,
-                    primaryText = "Let's get browsing!",
-                    secondaryText = "Type in a website address to start browsing.",
+                    primaryText = getString(R.string.tooltip_toolbar_title),
+                    secondaryText = getString(R.string.tooltip_toolbar_description),
                     promptFocal = RectanglePromptFocal().setCornerRadius(25f, 25f),
                     isAutoFinish = true,
                     listener = { prompt: MaterialTapTargetPrompt, state: Int ->
@@ -391,7 +395,7 @@ class HomeFragment : BaseHomeFragment() {
                     onButtonPressListener = {
                         requireComponents.cenoPreferences.nextTooltip += 1
                         tooltip.dismiss()
-                        (activity as BrowserActivity).openToBrowser("https://ceno.app/en/index.html", newTab = true)
+                        (activity as BrowserActivity).openToBrowser("https://wikipedia.org", newTab = true)
                     }
                 )
 

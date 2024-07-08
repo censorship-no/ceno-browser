@@ -90,8 +90,8 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
                 tooltip = CenoTooltip(
                     this,
                     R.id.mozac_browser_toolbar_tracking_protection_indicator,
-                    "Sources",
-                    "See where the webpage gets data from",
+                    getString(R.string.tooltip_sources_title),
+                    getString(R.string.tooltip_sources_description),
                     CirclePromptFocal(),
                     isAutoFinish = true,
                     listener = { _, state ->
@@ -119,8 +119,8 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
                 tooltip = CenoTooltip(
                     this,
                     R.id.action_image,
-                    "Clear Ceno",
-                    "See how to clear Ceno cache",
+                    getString(R.string.onboarding_cleanup_title),
+                    getString(R.string.onboarding_cleanup_text),
                     CirclePromptFocal(),
                     stopCaptureTouchOnFocal = true,
                     listener = { _, state ->
