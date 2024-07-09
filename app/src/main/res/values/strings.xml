@@ -177,7 +177,7 @@
     <string name="horizontal_ellipsis" translatable="false">…</string>
     <string name="onboarding_welcome_title">Welcome to &brandShortName;</string>
     <string name="onboarding_btn_get_started">Get Started</string>
-    <string name="onboarding_skip_button">Skip</string>
+    <string name="onboarding_skip_button" tools:ignore="UnusedResources">Skip</string>
     <!-- Ignoring these string resources for now to see if they can be reused-->
     <string name="onboarding_info_title" tools:ignore="UnusedResources">Not your average browser</string>
     <string name="onboarding_permissions_title">Permission needed</string>
