@@ -91,6 +91,13 @@
             android:title="@string/preferences_delete_browsing_data"
             android:layout="@layout/ceno_clickable_preference" />
 
+        <androidx.preference.Preference
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_key_change_language"
+            android:defaultValue="false"
+            android:enabled="true"
+            android:title="@string/preferences_change_language" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

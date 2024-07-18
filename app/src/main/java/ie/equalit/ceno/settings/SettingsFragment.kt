@@ -24,8 +24,10 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import androidx.core.os.LocaleListCompat
 import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -42,6 +44,7 @@ import ie.equalit.ceno.downloads.DownloadService
 import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.ext.getAutofillPreference
 import ie.equalit.ceno.ext.getPreference
+import ie.equalit.ceno.ext.getPreferenceKey
 import ie.equalit.ceno.ext.getSizeInMB
 import ie.equalit.ceno.ext.getSwitchPreferenceCompat
 import ie.equalit.ceno.ext.requireComponents
@@ -58,6 +61,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import mozilla.components.browser.state.action.ContentAction
 import mozilla.components.browser.state.action.TabListAction
+import mozilla.components.browser.state.selector.selectedTab
 import mozilla.components.browser.state.state.content.DownloadState
 import mozilla.components.browser.state.state.createTab
 import mozilla.components.browser.state.state.selectedOrDefaultSearchEngine
@@ -70,6 +74,7 @@ import mozilla.components.support.base.log.logger.Logger
 import mozilla.components.support.ktx.android.view.showKeyboard
 import org.mozilla.geckoview.BuildConfig
 import java.io.File
+import java.util.Locale
 import kotlin.system.exitProcess
 
 
@@ -265,6 +270,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         getPreference(pref_key_add_ons)?.onPreferenceClickListener = getClickListenerForAddOns()
         getPreference(pref_key_ceno_website_sources)?.onPreferenceClickListener = getClickListenerForWebsiteSources()
         getPreference(pref_key_bridge_announcement)?.onPreferenceChangeListener = getChangeListenerForBridgeAnnouncement()
+        findPreference<Preference>(requireContext().getPreferenceKey(pref_key_change_language))?.onPreferenceClickListener = getClickListenerForLanguageChange()
         getPreference(pref_key_search_engine)?.summary = getString(setting_item_selected, requireContext().components.core.store.state.search.selectedOrDefaultSearchEngine?.name)
 
         getPreference(pref_key_bridge_announcement)?.summary = getString(bridge_mode_ip_warning_text)
@@ -722,6 +728,26 @@ class SettingsFragment : PreferenceFragmentCompat() {
                     }
                 }
                 bridgeAnnouncementDialog.show()
+            }
+            true
+        }
+    }
+
+    private fun getClickListenerForLanguageChange(): OnPreferenceClickListener {
+        return OnPreferenceClickListener {
+
+            // todo: remove "ru" and display a list of supported locales that the user can choose from
+            AppCompatDelegate.setApplicationLocales(
+                LocaleListCompat.create(Locale.forLanguageTag("ru"))
+            )
+
+            // Restart the activity to apply the new locale
+            activity?.recreate()
+
+            // reload the current tab
+            requireComponents.core.store.state.selectedTab?.let {
+                requireComponents.useCases.tabsUseCases.selectTab(requireComponents.core.store.state.selectedTab!!.id)
+                requireComponents.useCases.sessionUseCases.reload.invoke()
             }
             true
         }

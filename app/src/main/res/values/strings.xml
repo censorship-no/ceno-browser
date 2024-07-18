@@ -265,6 +265,7 @@
     <string name="preferences_ceno_sources_public_udp">Public UDP endpoints</string>
     <string name="preferences_ceno_sources_extra_bitTorrent_bootstraps">Extra BitTorrent Bootstraps</string>
     <string name="preferences_ceno_enable_log">Enable log file</string>
+    <string name="preferences_change_language">Change language</string>
     <string name="preferences_ceno_download_log">Export Ouinet log</string>
     <string name="preferences_ceno_export_android_logs">Export full application log</string>
     <string name="preferences_ceno_website_sources">Website sources</string>
