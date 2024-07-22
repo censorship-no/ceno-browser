@@ -56,10 +56,10 @@
     <string name="crash_reporting_opt_out">செயலிழப்பு அறிக்கைகளைப் பகிர்வதில் இருந்து நீங்கள் விலகிவிட்டீர்கள். அமைப்புகள்&gt; செயலிழப்பு அறிக்கையிடலுக்குச் செல்வதன் மூலம் நீங்கள் எப்போதும் தேர்வு செய்யலாம்.</string>
     <string name="bt_sources_none">எதுவுமில்லை</string>
     <string name="bt_invalid_ip_error">தவறான ஐபி</string>
-    <string name="onboarding_fragment">&amp; பிராண்ட்சார்ட் பெயர்;</string>
+    <string name="onboarding_welcome_title">&amp; பிராண்ட்சார்ட் பெயர்;</string>
     <string name="onboarding_skip_button">தவிர்</string>
     <string name="onboarding_info_title">உங்கள் சராசரி உலாவி அல்ல</string>
-    <string name="onboarding_battery_title">இசைவு தேவை</string>
+    <string name="onboarding_permissions_title">இசைவு தேவை</string>
     <string name="onboarding_battery_text">விரைவில் OS உங்களிடம் இசைவு கேட்கும்
 \n
 \n Pattery பேட்டரி தேர்வுமுறை முடக்கு.
@@ -157,7 +157,7 @@
     <string name="ceno_clear_dialog_title">தெளிவான &amp; பிராண்ட்சார்ட் பெயர்;</string>
     <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">&amp; பிராண்ட்சார்ட் பெயர்; அமைப்புகள்</string>
     <string name="default_top_site_1_title">&amp; பிராண்ட்சார்ட் பெயர்; கையேடு</string>
-    <string name="onboarding_button">தொடங்கவும்</string>
+    <string name="onboarding_btn_get_started">தொடங்கவும்</string>
     <string name="onboarding_warning_text">பேட்டரி உகப்பாக்கம் இன்னும் இயக்கப்பட்டது.
 \n
 \n பின்னர் இசைவு வழங்க \"அமைப்புகள்&gt; பேட்டரி தேர்வுமுறை முடக்கு\" என்பதற்குச் செல்லவும்</string>

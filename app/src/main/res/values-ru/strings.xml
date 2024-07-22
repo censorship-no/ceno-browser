@@ -134,7 +134,7 @@
     <string name="default_top_site_3_url" tools:ignore="Untranslatable">@string/suggestedsites_meduza_url</string>
     <string name="default_top_site_4_title" tools:ignore="Untranslatable">The True Story</string>
     <string name="default_top_site_4_url" tools:ignore="Untranslatable">@string/suggestedsites_truestory_url</string>
-    <string name="onboarding_fragment">Добро пожаловать в &brandShortName;</string>
+    <string name="onboarding_welcome_title">Добро пожаловать в &brandShortName;</string>
     <string name="onboarding_warning_button">Хорошо</string>
     <string name="ceno_clear_dialog_clear_entire_app">Очистить &brandShortName; кэш и данные приложения</string>
     <string name="browser_menu_ceno_ext">&brandShortName; Настройки</string>

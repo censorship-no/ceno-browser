@@ -27,38 +27,38 @@
         android:id="@+id/button1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/transparent"
         android:textAlignment="center"
         android:textSize="@dimen/ceno_about_fragment_text_size"
-        android:backgroundTint="@android:color/transparent"
-        app:layout_constraintTop_toBottomOf="@+id/about_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_content" />
 
     <TextView
         android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="@dimen/ceno_about_fragment_text_size"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@android:color/transparent"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/about_content"
-        app:layout_constraintStart_toEndOf="@+id/button1"
+        android:textAlignment="center"
+        android:textSize="@dimen/ceno_about_fragment_text_size"
         app:layout_constraintEnd_toStartOf="@+id/button3"
-        />
+        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintTop_toBottomOf="@+id/about_content" />
 
     <TextView
         android:id="@+id/button3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/transparent"
         android:textAlignment="center"
         android:textSize="@dimen/ceno_about_fragment_text_size"
-        android:backgroundTint="@android:color/transparent"
-        app:layout_constraintTop_toBottomOf="@+id/about_content"
-        app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/about_content" />
 
     <TextView
         android:id="@+id/version_info"

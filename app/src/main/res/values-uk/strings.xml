@@ -134,7 +134,7 @@
     <string name="default_top_site_3_url" tools:ignore="Untranslatable">@string/suggestedsites_pravda_url</string>
     <string name="default_top_site_4_title" tools:ignore="Untranslatable">Громадське</string>
     <string name="default_top_site_4_url" tools:ignore="Untranslatable">@string/suggestedsites_hromadske_url</string>
-    <string name="onboarding_fragment">Ласкаво просимо до &brandShortName;</string>
+    <string name="onboarding_welcome_title">Ласкаво просимо до &brandShortName;</string>
     <string name="ceno_clear_dialog_title">Очистити &brandShortName;</string>
     <string name="onboarding_skip_button">Пропустити</string>
     <string name="onboarding_battery_button">Продовжити</string>

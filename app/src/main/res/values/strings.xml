@@ -377,7 +377,6 @@
     <string name="error_page_learn_more_1">You are running a recent version of Ceno Browser. Obsolete versions may not be able to communicate with newer injectors or other clients. Check the &lt;a href="https://play.google.com/store/apps/details?id=ie.equalit.ceno&amp;pcampaignid=web_share">Download page&lt;/a&gt; to find the latest version.</string>
     <string name="error_page_learn_more_2">All access mechanisms in the Settings are enabled. Otherwise Ceno will not be able to circumvent some connectivity issues when accessing content.</string>
     <string name="error_page_learn_more_3">Your device has a working connection to the network, i.e. your normal Web browser is able to open some websites. Ceno and Ouinet cannot work when all network connectivity is shut down.</string>
-    <string name="start_tooltip_title">Welcome to Ceno Tour</string>
     <string name="start_tooltip_description">Unlock &brandShortName;\'s full potential - Take a guided tour to discover key features, and allow permissions to help share the web even when the app is in the background.</string>
     <string name="skip_the_tour_button">Skip the tour</string>
     <string name="btn_next">Next</string>
