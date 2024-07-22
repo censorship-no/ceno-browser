@@ -103,8 +103,7 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
                             }
                             MaterialTapTargetPrompt.STATE_REVEALED -> {
                                 tooltip.addExitButton() {
-                                    requireComponents.cenoPreferences.nextTooltip = -1
-                                    tooltip.dismiss()
+                                    exitCenoTour()
                                 }
                             }
                         }
@@ -131,8 +130,7 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
                             }
                             MaterialTapTargetPrompt.STATE_REVEALED -> {
                                 tooltip.addExitButton() {
-                                    requireComponents.cenoPreferences.nextTooltip = -1
-                                    tooltip.dismiss()
+                                    exitCenoTour()
                                 }
                             }
                         }
@@ -149,12 +147,19 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
                     true,
                     startListener = {
                         requireComponents.cenoPreferences.nextTooltip = -1
+                        Settings.setShowOnboarding(requireContext(), false)
                         askForPermissions()
                     },
                     skipListener = {}
                 ).show()
             }
         }
+    }
+
+    private fun exitCenoTour() {
+        requireComponents.cenoPreferences.nextTooltip = -1
+        tooltip.dismiss()
+        Settings.setShowOnboarding(requireContext(), false)
     }
 
     private fun goToNextTooltip() {

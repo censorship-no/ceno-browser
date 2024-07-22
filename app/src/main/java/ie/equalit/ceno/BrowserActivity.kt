@@ -40,6 +40,8 @@ import ie.equalit.ceno.ext.ceno.sort
 import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.ext.isCrashReportActive
+import ie.equalit.ceno.ext.requireComponents
+import ie.equalit.ceno.home.HomeFragment.Companion.BEGIN_TOUR_TOOLTIP
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.SettingsFragment
 import ie.equalit.ceno.standby.StandbyFragment
@@ -148,7 +150,9 @@ open class BrowserActivity : BaseActivity() {
             setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this@BrowserActivity, R.color.ceno_action_bar)))
         }
 
-        val safeIntent = SafeIntent(intent)
+        if (Settings.shouldShowOnboarding(this)) {
+            components.cenoPreferences.nextTooltip = BEGIN_TOUR_TOOLTIP
+        }
 
         navHost.navController.popBackStack() // Remove startupFragment from backstack
         navHost.navController.navigate(

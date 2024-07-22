@@ -424,7 +424,9 @@ class HomeFragment : BaseHomeFragment() {
         //exit tour
         tooltip.dismiss()
         requireComponents.cenoPreferences.nextTooltip = BrowserFragment.TOOLTIP_PERMISSION
+        //show permission tooltip
         showTooltip()
+        Settings.setShowOnboarding(requireContext(), false)
     }
 
     private fun askForPermissions() {
