@@ -26,11 +26,18 @@ class CustomizationSettingsFragment : PreferenceFragmentCompat() {
     override fun onResume() {
         super.onResume()
         setupPreferences()
-        getActionBar().apply{
+        getActionBar().apply {
             show()
             setTitle(R.string.customization_settings)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.ceno_action_bar
+                    )
+                )
+            )
         }
     }
 

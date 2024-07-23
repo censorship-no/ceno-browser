@@ -36,7 +36,11 @@ import org.mozilla.geckoview.BuildConfig.MOZ_APP_VERSION
 
 
 class AboutFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_about, container, false)
     }
 
@@ -49,9 +53,11 @@ class AboutFragment : Fragment() {
         (activity as AppCompatActivity).title = getString(R.string.preferences_about_page)
 
         val aboutText = try {
-            val packageInfo = requireContext().packageManager.getPackageInfo(requireContext().packageName, 0)
-            val geckoVersion = PackageInfoCompat.getLongVersionCode(packageInfo).toString() + " GV: " +
-                MOZ_APP_VERSION + "-" + MOZ_APP_BUILDID
+            val packageInfo =
+                requireContext().packageManager.getPackageInfo(requireContext().packageName, 0)
+            val geckoVersion =
+                PackageInfoCompat.getLongVersionCode(packageInfo).toString() + " GV: " +
+                    MOZ_APP_VERSION + "-" + MOZ_APP_BUILDID
             String.format(
                 "%s (Build #%s)\n",
                 packageInfo.versionName,
@@ -98,17 +104,19 @@ class AboutFragment : Fragment() {
         versionInfoView.text = versionInfo
 
         versionInfoView.setOnTouchListener { v, _ ->
-            val clipBoard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipBoard =
+                requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             clipBoard.setPrimaryClip(ClipData.newPlainText(versionInfo, versionInfo))
 
-            Toast.makeText(requireContext(), getString(R.string.toast_copied), Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.toast_copied), Toast.LENGTH_SHORT)
+                .show()
 
             v.performClick()
         }
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    private fun setLinkTextView (textView : TextView, text : String) {
+    private fun setLinkTextView(textView: TextView, text: String) {
         val notClickedString = SpannableString(text)
         notClickedString.setSpan(
             URLSpan(""),
@@ -119,7 +127,12 @@ class AboutFragment : Fragment() {
         textView.setText(notClickedString, TextView.BufferType.SPANNABLE)
         val clickedString = SpannableString(notClickedString)
         clickedString.setSpan(
-            BackgroundColorSpan(ContextCompat.getColor(requireContext(), R.color.fx_mobile_text_color_secondary)), 0, notClickedString.length,
+            BackgroundColorSpan(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.fx_mobile_text_color_secondary
+                )
+            ), 0, notClickedString.length,
             Spanned.SPAN_INCLUSIVE_EXCLUSIVE
         )
         textView.setOnTouchListener { v, event ->
@@ -129,6 +142,7 @@ class AboutFragment : Fragment() {
                     textView.setText(notClickedString, TextView.BufferType.SPANNABLE)
                     v.performClick()
                 }
+
                 MotionEvent.ACTION_CANCEL -> textView.setText(
                     notClickedString,
                     TextView.BufferType.SPANNABLE
@@ -138,7 +152,7 @@ class AboutFragment : Fragment() {
         }
     }
 
-    private fun getOnClickListenerForLink (url : String) : View.OnClickListener {
+    private fun getOnClickListenerForLink(url: String): View.OnClickListener {
         return View.OnClickListener {
             val browserActivity = activity as BrowserActivity
             browserActivity.openToBrowser(url, newTab = true)

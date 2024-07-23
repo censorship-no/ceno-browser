@@ -22,29 +22,32 @@ class OnboardingWarningFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentOnboardingWarningBinding.inflate(inflater, container,false);
-        container?.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.ceno_onboarding_background))
+        _binding = FragmentOnboardingWarningBinding.inflate(inflater, container, false);
+        container?.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.ceno_onboarding_background
+            )
+        )
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.text.text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                /* Choose which text is displayed based on permissions allowed */
-                if (!requireComponents.permissionHandler.isAllowingPostNotifications() &&
-                    !requireComponents.permissionHandler.isIgnoringBatteryOptimizations()) {
-                    getString(R.string.onboarding_warning_text_v33_2)
-                }
-                else if(!requireComponents.permissionHandler.isAllowingPostNotifications()) {
-                    getString(R.string.onboarding_warning_text_v33_1)
-                }
-                else {
-                    getString(R.string.onboarding_warning_text)
-                }
-            }
-            else {
+            /* Choose which text is displayed based on permissions allowed */
+            if (!requireComponents.permissionHandler.isAllowingPostNotifications() &&
+                !requireComponents.permissionHandler.isIgnoringBatteryOptimizations()
+            ) {
+                getString(R.string.onboarding_warning_text_v33_2)
+            } else if (!requireComponents.permissionHandler.isAllowingPostNotifications()) {
+                getString(R.string.onboarding_warning_text_v33_1)
+            } else {
                 getString(R.string.onboarding_warning_text)
             }
+        } else {
+            getString(R.string.onboarding_warning_text)
+        }
         binding.button.setOnClickListener {
             findNavController().onboardingToHome(requireComponents)
         }

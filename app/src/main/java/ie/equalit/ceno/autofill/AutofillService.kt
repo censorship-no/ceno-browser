@@ -6,9 +6,9 @@ package ie.equalit.ceno.autofill
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import ie.equalit.ceno.ext.components
 import mozilla.components.feature.autofill.AbstractAutofillService
 import mozilla.components.feature.autofill.AutofillConfiguration
-import ie.equalit.ceno.ext.components
 
 @RequiresApi(Build.VERSION_CODES.O)
 class AutofillService : AbstractAutofillService() {

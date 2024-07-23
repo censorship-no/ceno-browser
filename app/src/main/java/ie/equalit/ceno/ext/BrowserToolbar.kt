@@ -4,9 +4,9 @@ import android.content.Context
 import android.view.Gravity
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import ie.equalit.ceno.R
 import mozilla.components.browser.toolbar.BrowserToolbar
 import mozilla.components.concept.engine.EngineView
-import ie.equalit.ceno.R
 import mozilla.components.ui.widgets.behavior.EngineViewClippingBehavior
 import mozilla.components.ui.widgets.behavior.EngineViewScrollingBehavior
 import mozilla.components.ui.widgets.behavior.ToolbarPosition as engineToolbarPosition
@@ -26,16 +26,14 @@ fun BrowserToolbar.disableDynamicBehavior(engineView: EngineView, shouldUseTopTo
     (layoutParams as? CoordinatorLayout.LayoutParams)?.behavior = null
     (layoutParams as? CoordinatorLayout.LayoutParams)?.gravity = if (shouldUseTopToolbar) {
         Gravity.TOP
-    }
-    else {
+    } else {
         Gravity.BOTTOM
     }
 
     engineView.setDynamicToolbarMaxHeight(0)
     engineView.asView().translationY = if (shouldUseTopToolbar) {
         context.resources.getDimension(R.dimen.browser_toolbar_height)
-    }
-    else {
+    } else {
         0f
     }
     (engineView.asView().layoutParams as? CoordinatorLayout.LayoutParams)?.behavior = null
@@ -48,7 +46,11 @@ fun BrowserToolbar.disableDynamicBehavior(engineView: EngineView, shouldUseTopTo
  * @param context [Context] used in setting up the dynamic behavior.
  * @param engineView [EngineView] that should react to toolbar's dynamic behavior.
  */
-fun BrowserToolbar.enableDynamicBehavior(context: Context, engineView: EngineView, shouldUseTopToolbar  : Boolean) {
+fun BrowserToolbar.enableDynamicBehavior(
+    context: Context,
+    engineView: EngineView,
+    shouldUseTopToolbar: Boolean
+) {
     (layoutParams as? CoordinatorLayout.LayoutParams)?.behavior = EngineViewScrollingBehavior(
         context,
         null,
@@ -56,8 +58,7 @@ fun BrowserToolbar.enableDynamicBehavior(context: Context, engineView: EngineVie
     )
     (layoutParams as? CoordinatorLayout.LayoutParams)?.gravity = if (shouldUseTopToolbar) {
         Gravity.TOP
-    }
-    else {
+    } else {
         Gravity.BOTTOM
     }
 

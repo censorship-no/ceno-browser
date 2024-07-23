@@ -4,11 +4,11 @@
 
 package ie.equalit.ceno.components.ceno
 
-import mozilla.components.lib.state.Middleware
-import mozilla.components.lib.state.Store
 import ie.equalit.ceno.components.ceno.appstate.AppAction
 import ie.equalit.ceno.components.ceno.appstate.AppState
 import ie.equalit.ceno.components.ceno.appstate.AppStoreReducer
+import mozilla.components.lib.state.Middleware
+import mozilla.components.lib.state.Store
 
 /** CENO: Copied from Fenix
  *

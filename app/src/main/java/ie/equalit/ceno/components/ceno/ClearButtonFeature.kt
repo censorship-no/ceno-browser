@@ -11,19 +11,21 @@ import mozilla.components.support.base.log.logger.Logger
 
 class ClearButtonFeature(
     private val context: Context,
-    private val behavior: Int)
-{
+    private val behavior: Int
+) {
     /* CENO: Function to create popup opened by purge toolbar button */
-    private fun createClearDialog() : AlertDialog {
+    private fun createClearDialog(): AlertDialog {
         val dialogClickListener = DialogInterface.OnClickListener { _, which ->
             when (which) {
                 DialogInterface.BUTTON_POSITIVE -> {
                     Logger.debug("Clear CENO cache and app data selected")
                     (context as BrowserActivity).beginShutdown(true)
                 }
+
                 DialogInterface.BUTTON_NEUTRAL -> {
                     Logger.debug("Dismissing purge dialog")
                 }
+
                 DialogInterface.BUTTON_NEGATIVE -> {
                     Logger.debug("Clear CENO cache only selected")
                     CenoSettings.ouinetClientRequest(context, OuinetKey.PURGE_CACHE)
@@ -40,7 +42,7 @@ class ClearButtonFeature(
     }
 
     fun onClick() {
-        return when (behavior){
+        return when (behavior) {
             CLEAR_PROMPT -> createClearDialog().show()
             CLEAR_CACHE -> CenoSettings.ouinetClientRequest(context, OuinetKey.PURGE_CACHE)
             CLEAR_APP -> (context as BrowserActivity).beginShutdown(true)

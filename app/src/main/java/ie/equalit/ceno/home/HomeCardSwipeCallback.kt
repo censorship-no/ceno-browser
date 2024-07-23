@@ -15,7 +15,8 @@ class HomeCardSwipeCallback(
         viewHolder: RecyclerView.ViewHolder
     ): Int {
         if (viewHolder.itemViewType == HomepageCardType.BASIC_MESSAGE_CARD.value
-            || viewHolder.itemViewType == HomepageCardType.ANNOUNCEMENTS_CARD.value)
+            || viewHolder.itemViewType == HomepageCardType.ANNOUNCEMENTS_CARD.value
+        )
             return makeMovementFlags(
                 0,
                 ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
@@ -34,7 +35,10 @@ class HomeCardSwipeCallback(
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
         when (viewHolder.itemViewType) {
             HomepageCardType.BASIC_MESSAGE_CARD.value -> interactor.onCardSwipe(HomepageCardType.BASIC_MESSAGE_CARD)
-            HomepageCardType.ANNOUNCEMENTS_CARD.value -> interactor.onAnnouncementCardSwiped(viewHolder.absoluteAdapterPosition)
+            HomepageCardType.ANNOUNCEMENTS_CARD.value -> interactor.onAnnouncementCardSwiped(
+                viewHolder.absoluteAdapterPosition
+            )
+
             else -> interactor.onCardSwipe(HomepageCardType.MODE_MESSAGE_CARD)
         }
     }

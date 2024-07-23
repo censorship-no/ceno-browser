@@ -15,14 +15,14 @@ import android.widget.RadioGroup
 import androidx.preference.Preference
 import androidx.preference.PreferenceViewHolder
 import androidx.recyclerview.widget.RecyclerView
+import ie.equalit.ceno.R
+import ie.equalit.ceno.ext.components
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import mozilla.components.browser.state.search.SearchEngine
 import mozilla.components.browser.state.state.searchEngines
 import mozilla.components.browser.state.state.selectedOrDefaultSearchEngine
-import ie.equalit.ceno.R
-import ie.equalit.ceno.ext.components
 import kotlin.coroutines.CoroutineContext
 
 abstract class SearchEngineListPreference @JvmOverloads constructor(

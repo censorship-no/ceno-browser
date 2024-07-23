@@ -8,7 +8,12 @@ import androidx.fragment.app.Fragment
 import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.databinding.FragmentChangeIconBinding
 import ie.equalit.ceno.settings.Settings
-import ie.equalit.ceno.settings.changeicon.appicons.*
+import ie.equalit.ceno.settings.changeicon.appicons.AppIcon
+import ie.equalit.ceno.settings.changeicon.appicons.AppIconModifier
+import ie.equalit.ceno.settings.changeicon.appicons.AppIconsAdapter
+import ie.equalit.ceno.settings.changeicon.appicons.AppIconsInteractor
+import ie.equalit.ceno.settings.changeicon.appicons.AppIconsView
+import ie.equalit.ceno.settings.changeicon.appicons.DefaultAppIconsController
 
 class ChangeIconFragment : Fragment() {
 
@@ -45,8 +50,8 @@ class ChangeIconFragment : Fragment() {
         )
 
         // Check that app icon is setting matches the launcher enabled in the manifest
-        for (icon in AppIcon.values()){
-            if (appIconModifier.isEnabled(icon)){
+        for (icon in AppIcon.values()) {
+            if (appIconModifier.isEnabled(icon)) {
                 Settings.setAppIcon(requireContext(), icon.componentName)
             }
         }

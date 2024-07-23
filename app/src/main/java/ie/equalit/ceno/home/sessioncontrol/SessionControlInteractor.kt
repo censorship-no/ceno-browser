@@ -142,59 +142,58 @@ interface TopSiteInteractor {
 class SessionControlInteractor(
     private val controller: SessionControlController,
 ) :
-    //OnboardingInteractor,
+//OnboardingInteractor,
     TopSiteInteractor,
-    HomePageInteractor
-    {
-        override fun onOpenInPrivateTabClicked(topSite: TopSite) {
-            controller.handleOpenInPrivateTabClicked(topSite)
-        }
-
-        override fun onRenameTopSiteClicked(topSite: TopSite) {
-            controller.handleRenameTopSiteClicked(topSite)
-        }
-
-        override fun onRemoveTopSiteClicked(topSite: TopSite) {
-            controller.handleRemoveTopSiteClicked(topSite)
-        }
-
-        override fun onSettingsClicked() {
-            TODO("Not yet implemented")
-        }
-
-        override fun onSponsorPrivacyClicked() {
-            TODO("Not yet implemented")
-        }
-
-        override fun onSelectTopSite(topSite: TopSite, position: Int) {
-            controller.handleSelectTopSite(topSite, position)
-        }
-
-        override fun onTopSiteMenuOpened() {
-            controller.handleMenuOpened()
-        }
-
-        override fun onRemoveCard(homepageCardType: HomepageCardType) {
-            controller.handleRemoveCard(homepageCardType)
-        }
-
-        override fun onCardSwipe(homepageCardType: HomepageCardType) {
-            controller.handleRemoveCard(homepageCardType)
-        }
-
-        override fun onAnnouncementCardSwiped(index: Int) {
-            controller.handleRemoveAnnouncementCard(index)
-        }
-
-        override fun onClicked(homepageCardType: HomepageCardType, mode: BrowsingMode) {
-            controller.handleCardClicked(homepageCardType, mode)
-        }
-
-        override fun onMenuItemClicked(homepageCardType: HomepageCardType) {
-            controller.handleMenuItemClicked(homepageCardType)
-        }
-
-        override fun onUrlClicked(homepageCardType: HomepageCardType, url: String) {
-            controller.handleUrlClicked(homepageCardType, url)
-        }
+    HomePageInteractor {
+    override fun onOpenInPrivateTabClicked(topSite: TopSite) {
+        controller.handleOpenInPrivateTabClicked(topSite)
     }
+
+    override fun onRenameTopSiteClicked(topSite: TopSite) {
+        controller.handleRenameTopSiteClicked(topSite)
+    }
+
+    override fun onRemoveTopSiteClicked(topSite: TopSite) {
+        controller.handleRemoveTopSiteClicked(topSite)
+    }
+
+    override fun onSettingsClicked() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onSponsorPrivacyClicked() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onSelectTopSite(topSite: TopSite, position: Int) {
+        controller.handleSelectTopSite(topSite, position)
+    }
+
+    override fun onTopSiteMenuOpened() {
+        controller.handleMenuOpened()
+    }
+
+    override fun onRemoveCard(homepageCardType: HomepageCardType) {
+        controller.handleRemoveCard(homepageCardType)
+    }
+
+    override fun onCardSwipe(homepageCardType: HomepageCardType) {
+        controller.handleRemoveCard(homepageCardType)
+    }
+
+    override fun onAnnouncementCardSwiped(index: Int) {
+        controller.handleRemoveAnnouncementCard(index)
+    }
+
+    override fun onClicked(homepageCardType: HomepageCardType, mode: BrowsingMode) {
+        controller.handleCardClicked(homepageCardType, mode)
+    }
+
+    override fun onMenuItemClicked(homepageCardType: HomepageCardType) {
+        controller.handleMenuItemClicked(homepageCardType)
+    }
+
+    override fun onUrlClicked(homepageCardType: HomepageCardType, url: String) {
+        controller.handleUrlClicked(homepageCardType, url)
+    }
+}

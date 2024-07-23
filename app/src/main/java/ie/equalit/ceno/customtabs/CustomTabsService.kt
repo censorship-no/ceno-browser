@@ -6,10 +6,10 @@
 
 package ie.equalit.ceno.customtabs
 
+import ie.equalit.ceno.ext.components
 import mozilla.components.concept.engine.Engine
 import mozilla.components.feature.customtabs.AbstractCustomTabsService
 import mozilla.components.feature.customtabs.store.CustomTabsServiceStore
-import ie.equalit.ceno.ext.components
 
 class CustomTabsService : AbstractCustomTabsService() {
     override val customTabsServiceStore: CustomTabsServiceStore by lazy { components.core.customTabsStore }

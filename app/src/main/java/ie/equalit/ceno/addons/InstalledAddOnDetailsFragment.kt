@@ -36,8 +36,10 @@ class InstalledAddOnDetailsFragment : Fragment() {
 
     private val scope = CoroutineScope(Dispatchers.IO)
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_installed_add_on_details, container, false)
     }
@@ -80,7 +82,14 @@ class InstalledAddOnDetailsFragment : Fragment() {
             show()
             title = addon.translateName(requireContext())
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.ceno_action_bar
+                    )
+                )
+            )
         }
 
         bindEnableSwitch(addon, rootView)
@@ -112,14 +121,20 @@ class InstalledAddOnDetailsFragment : Fragment() {
                         switch.setState(true)
                         Toast.makeText(
                             requireContext(),
-                            getString(R.string.mozac_feature_addons_successfully_enabled, addon.translateName(requireContext())),
+                            getString(
+                                R.string.mozac_feature_addons_successfully_enabled,
+                                addon.translateName(requireContext())
+                            ),
                             Toast.LENGTH_SHORT,
                         ).show()
                     },
                     onError = {
                         Toast.makeText(
                             requireContext(),
-                            getString(R.string.mozac_feature_addons_failed_to_enable, addon.translateName(requireContext())),
+                            getString(
+                                R.string.mozac_feature_addons_failed_to_enable,
+                                addon.translateName(requireContext())
+                            ),
                             Toast.LENGTH_SHORT,
                         ).show()
                     },
@@ -131,14 +146,20 @@ class InstalledAddOnDetailsFragment : Fragment() {
                         switch.setState(false)
                         Toast.makeText(
                             requireContext(),
-                            getString(R.string.mozac_feature_addons_successfully_disabled, addon.translateName(requireContext())),
+                            getString(
+                                R.string.mozac_feature_addons_successfully_disabled,
+                                addon.translateName(requireContext())
+                            ),
                             Toast.LENGTH_SHORT,
                         ).show()
                     },
                     onError = {
                         Toast.makeText(
                             requireContext(),
-                            getString(R.string.mozac_feature_addons_failed_to_disable, addon.translateName(requireContext())),
+                            getString(
+                                R.string.mozac_feature_addons_failed_to_disable,
+                                addon.translateName(requireContext())
+                            ),
                             Toast.LENGTH_SHORT,
                         ).show()
                     },
@@ -198,7 +219,10 @@ class InstalledAddOnDetailsFragment : Fragment() {
                 onSuccess = {
                     Toast.makeText(
                         requireContext(),
-                        getString(R.string.mozac_feature_addons_successfully_uninstalled, addon.translateName(requireContext())),
+                        getString(
+                            R.string.mozac_feature_addons_successfully_uninstalled,
+                            addon.translateName(requireContext())
+                        ),
                         Toast.LENGTH_SHORT,
                     ).show()
                     findNavController().popBackStack()
@@ -206,7 +230,10 @@ class InstalledAddOnDetailsFragment : Fragment() {
                 onError = { _, _ ->
                     Toast.makeText(
                         requireContext(),
-                        getString(R.string.mozac_feature_addons_failed_to_uninstall, addon.translateName(requireContext())),
+                        getString(
+                            R.string.mozac_feature_addons_failed_to_uninstall,
+                            addon.translateName(requireContext())
+                        ),
                         Toast.LENGTH_SHORT,
                     ).show()
                 },
@@ -224,6 +251,7 @@ class InstalledAddOnDetailsFragment : Fragment() {
         isChecked = checked
     }
 
-    private fun shouldSettingsBeVisible(addon: Addon) = !addon.installedState?.optionsPageUrl.isNullOrEmpty()
+    private fun shouldSettingsBeVisible(addon: Addon) =
+        !addon.installedState?.optionsPageUrl.isNullOrEmpty()
 
 }

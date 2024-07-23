@@ -5,10 +5,10 @@
 package ie.equalit.ceno.home.topsites
 
 import android.content.Context
+import ie.equalit.ceno.R
 import mozilla.components.browser.menu.BrowserMenuBuilder
 import mozilla.components.browser.menu.item.SimpleBrowserMenuItem
 import mozilla.components.feature.top.sites.TopSite
-import ie.equalit.ceno.R
 
 /**
  * Helper class for building a context menu for a top site item.

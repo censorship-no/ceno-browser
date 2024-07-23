@@ -1,22 +1,13 @@
 package ie.equalit.ceno.share
 
 import android.content.Context
-import androidx.annotation.VisibleForTesting
-import ie.equalit.ceno.R
-import ie.equalit.ceno.components.ceno.appstate.AppAction
-import ie.equalit.ceno.ext.components
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import mozilla.components.browser.state.action.BrowserAction
 import mozilla.components.browser.state.action.EngineAction
-import mozilla.components.browser.state.selector.findTab
 import mozilla.components.browser.state.state.BrowserState
-import mozilla.components.browser.state.state.TabSessionState
 import mozilla.components.lib.state.Middleware
 import mozilla.components.lib.state.MiddlewareContext
-import org.mozilla.geckoview.GeckoSession
-import java.io.IOException
 
 /**
  * [BrowserAction] middleware reacting in response to Save to PDF related [Action]s.
@@ -62,9 +53,11 @@ class SaveToPDFMiddleware(
                 // Continue to print, passing through here to add telemetry
                 next(action)
             }
+
             is EngineAction.PrintContentCompletedAction -> {
 //                postTelemetryCompleted(ctx.state.findTab(action.tabId), isPrint = true)
             }
+
             is EngineAction.PrintContentExceptionAction -> {
 //                context.components.appStore.dispatch(
 //                    AppAction.UpdateStandardSnackbarErrorAction(
@@ -75,6 +68,7 @@ class SaveToPDFMiddleware(
 //                )
 //                postTelemetryFailed(ctx.state.findTab(action.tabId), action.throwable, isPrint = true)
             }
+
             else -> {
                 next(action)
             }

@@ -11,7 +11,8 @@ import ie.equalit.ceno.databinding.ShareToAppsBinding
 interface ShareToAppsInteractor {
     fun onShareToApp(appToShareTo: AppShareOption)
 }
-class ShareToAppsView (
+
+class ShareToAppsView(
     containerView: ViewGroup,
     interactor: ShareToAppsInteractor,
 ) {

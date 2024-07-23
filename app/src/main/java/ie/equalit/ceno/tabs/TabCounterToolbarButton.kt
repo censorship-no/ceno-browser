@@ -27,7 +27,7 @@ class TabCounterToolbarButton(
     private val browsingModeManager: BrowsingModeManager,
     private val countBasedOnSelectedTabType: Boolean,
     private val themeManager: ThemeManager
-): Toolbar.Action {
+) : Toolbar.Action {
 
     private var reference = WeakReference<TabCounter>(null)
 
@@ -39,8 +39,7 @@ class TabCounterToolbarButton(
         store.flowScoped(lifecycleOwner) { flow ->
             flow.map { state -> getTabCount(state) }
                 .distinctUntilChanged()
-                .collect {
-                        tabs ->
+                .collect { tabs ->
                     updateCount(tabs)
                 }
         }
@@ -65,10 +64,12 @@ class TabCounterToolbarButton(
                         setCount(getTabCount(store.state))
                     }
 
-                    override fun onViewDetachedFromWindow(v: View) { /* no-op */ }
+                    override fun onViewDetachedFromWindow(v: View) { /* no-op */
+                    }
                 },
             )
-            contentDescription = parent.context.getString(R.string.mozac_feature_tabs_toolbar_tabs_button)
+            contentDescription =
+                parent.context.getString(R.string.mozac_feature_tabs_toolbar_tabs_button)
         }
 
         // Set selectableItemBackgroundBorderless

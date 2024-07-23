@@ -23,7 +23,10 @@ import java.util.Locale
 
 object LogReader {
 
-    fun getLogEntries(timeWindowInMilliseconds: Long? = null, progressCallback: (Int) -> Unit): List<String> {
+    fun getLogEntries(
+        timeWindowInMilliseconds: Long? = null,
+        progressCallback: (Int) -> Unit
+    ): List<String> {
         val logs = mutableListOf<String>()
         var logsRead = 0
 
@@ -46,17 +49,24 @@ object LogReader {
             val handler = Handler(Looper.getMainLooper())
 
             while (reader.readLine().also { line = it } != null
-                && logs.joinToString("\n").getSizeInMB() < SettingsFragment.LOG_FILE_SIZE_LIMIT_MB) {
+                && logs.joinToString("\n")
+                    .getSizeInMB() < SettingsFragment.LOG_FILE_SIZE_LIMIT_MB) {
 
                 // filter out chatty logs as well as logs outside time bound
                 if (line?.contains("chatty", ignoreCase = true) == false
-                    && isWithinTimeRange(timestampRegex.find(line!!)?.value, timeWindowInMilliseconds)) {
+                    && isWithinTimeRange(
+                        timestampRegex.find(line!!)?.value,
+                        timeWindowInMilliseconds
+                    )
+                ) {
                     logs.add(scrubLogs(line!!))
                     logsRead++
 
                     // Update progress callback on the main thread via handler post
                     handler.post {
-                        val progress = (logsRead.toFloat() / SettingsFragment.AVERAGE_TOTAL_LOGS).times(100).coerceAtMost(96F)
+                        val progress =
+                            (logsRead.toFloat() / SettingsFragment.AVERAGE_TOTAL_LOGS).times(100)
+                                .coerceAtMost(96F)
                         progressCallback(progress.toInt())
                     }
 
@@ -109,7 +119,8 @@ object LogReader {
             val handler = Handler(Looper.getMainLooper())
 
             while (reader.readLine().also { line = it } != null
-                && allLogs.joinToString("\n").getSizeInMB() < SettingsFragment.LOG_FILE_SIZE_LIMIT_MB) {
+                && allLogs.joinToString("\n")
+                    .getSizeInMB() < SettingsFragment.LOG_FILE_SIZE_LIMIT_MB) {
 
                 // filter out chatty logs
                 if (line?.contains("chatty", ignoreCase = true) == false) {
@@ -119,7 +130,9 @@ object LogReader {
 
                 // Update progress callback on the main thread via handler post
                 handler.post {
-                    val progress = (logsRead.toFloat() / SettingsFragment.AVERAGE_TOTAL_LOGS).times(100).coerceAtMost(96F)
+                    val progress =
+                        (logsRead.toFloat() / SettingsFragment.AVERAGE_TOTAL_LOGS).times(100)
+                            .coerceAtMost(96F)
                     progressCallback(progress.toInt())
                 }
             }
@@ -159,10 +172,12 @@ object LogReader {
         }
 
         // scrub ipv4 address from logs; preserve local addresses
-        originalLogs.extractIpv4Addresses().forEach { formattedLogs = formattedLogs.replace(it, scrubInetAddress(it)) }
+        originalLogs.extractIpv4Addresses()
+            .forEach { formattedLogs = formattedLogs.replace(it, scrubInetAddress(it)) }
 
         // scrub ipv6 address from logs
-        originalLogs.extractIpv6Addresses().forEach { formattedLogs = formattedLogs.replace(it, scrubInetAddress(it)) }
+        originalLogs.extractIpv6Addresses()
+            .forEach { formattedLogs = formattedLogs.replace(it, scrubInetAddress(it)) }
 
 
         // Replace sensitive information with placeholders
@@ -181,7 +196,8 @@ object LogReader {
             return if (inetAddress is Inet4Address) {
                 // Don't scrub local IPv4 addresses
                 if (inetAddress.isLoopbackAddress() || inetAddress.isLinkLocalAddress() ||
-                    inetAddress.isSiteLocalAddress()) {
+                    inetAddress.isSiteLocalAddress()
+                ) {
                     inetAddress.getHostAddress()
                 } else {
                     // Keep first and last octet of non-local IPv4 addresses

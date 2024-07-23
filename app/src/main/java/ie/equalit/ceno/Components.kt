@@ -7,7 +7,6 @@ package ie.equalit.ceno
 import android.content.Context
 import android.os.Build
 import androidx.core.app.NotificationManagerCompat
-import mozilla.components.feature.autofill.AutofillConfiguration
 import ie.equalit.ceno.autofill.AutofillConfirmActivity
 import ie.equalit.ceno.autofill.AutofillSearchActivity
 import ie.equalit.ceno.autofill.AutofillUnlockActivity
@@ -23,6 +22,7 @@ import ie.equalit.ceno.components.ceno.AppStore
 import ie.equalit.ceno.components.ceno.appstate.AppState
 import ie.equalit.ceno.ext.ceno.sort
 import ie.equalit.ceno.utils.CenoPreferences
+import mozilla.components.feature.autofill.AutofillConfiguration
 import mozilla.components.support.base.android.NotificationsDelegate
 
 /**

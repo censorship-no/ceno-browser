@@ -5,6 +5,9 @@
 package ie.equalit.ceno
 
 import android.content.Context
+import ie.equalit.ceno.components.ceno.CenoWebExt
+import ie.equalit.ceno.components.ceno.HttpsByDefaultWebExt
+import ie.equalit.ceno.components.ceno.UblockOriginWebExt
 import mozilla.components.browser.engine.gecko.GeckoEngine
 import mozilla.components.browser.engine.gecko.fetch.GeckoViewFetchClient
 import mozilla.components.concept.engine.DefaultSettings
@@ -13,14 +16,11 @@ import mozilla.components.concept.fetch.Client
 import mozilla.components.feature.webcompat.WebCompatFeature
 import org.mozilla.geckoview.GeckoRuntime
 import org.mozilla.geckoview.GeckoRuntimeSettings
-import ie.equalit.ceno.components.ceno.CenoWebExt
-import ie.equalit.ceno.components.ceno.HttpsByDefaultWebExt
-import ie.equalit.ceno.components.ceno.UblockOriginWebExt
 
 object EngineProvider {
 
     private var runtime: GeckoRuntime? = null
-    var rootCertificate : String = ""
+    var rootCertificate: String = ""
 
     @Synchronized
     fun getOrCreateRuntime(context: Context): GeckoRuntime {

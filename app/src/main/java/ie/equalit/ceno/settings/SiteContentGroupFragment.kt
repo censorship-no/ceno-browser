@@ -56,7 +56,14 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
             show()
             setTitle(R.string.preferences_ceno_groups_count)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.ceno_action_bar
+                    )
+                )
+            )
         }
     }
 
@@ -103,7 +110,9 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
             parts.drop(1).forEach { subUrls.add("$baseUrl/$it") }
             if (subUrls.isEmpty()) subUrls.add(baseUrl)
 
-            map[baseUrl] = if (map[baseUrl].isNullOrEmpty()) subUrls else map[baseUrl].apply { this!!.addAll(subUrls) }!!
+            map[baseUrl] = if (map[baseUrl].isNullOrEmpty()) subUrls else map[baseUrl].apply {
+                this!!.addAll(subUrls)
+            }!!
         }
 
         val result = mutableListOf<CachedGroupAdapter.GroupItem>()
@@ -123,11 +132,16 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
             .create()
             .apply {
                 setOnDismissListener {
-                    Toast.makeText(requireContext(), getString(R.string.canceled), Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.canceled),
+                        Toast.LENGTH_LONG
+                    ).show()
                     job?.cancel()
                     dismiss()
                 }
-                progressDialogView.findViewById<ImageButton>(R.id.cancel).setOnClickListener { dismiss() }
+                progressDialogView.findViewById<ImageButton>(R.id.cancel)
+                    .setOnClickListener { dismiss() }
             }
 
         progressDialog.show()
@@ -137,7 +151,11 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
             withContext(Dispatchers.IO) {
 
                 // save file to external storage
-                file = File(requireContext().getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)?.path + "/${getString(R.string.ceno_android_content_group_file_name)}.txt")
+                file = File(
+                    requireContext().getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)?.path + "/${
+                        getString(R.string.ceno_android_content_group_file_name)
+                    }.txt"
+                )
                 file?.writeText(arguments?.getString("groups")!!)
 
                 withContext(Dispatchers.Main) {

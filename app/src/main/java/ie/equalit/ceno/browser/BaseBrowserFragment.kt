@@ -4,25 +4,24 @@
 
 package ie.equalit.ceno.browser
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.annotation.SuppressLint
+import android.os.Handler
+import android.os.Looper
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
-import androidx.lifecycle.lifecycleScope
 import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Gravity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
@@ -51,11 +50,11 @@ import ie.equalit.ceno.search.AwesomeBarWrapper
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.tabs.TabCounterView
 import ie.equalit.ceno.ui.theme.ThemeManager
+import ie.equalit.ouinet.Ouinet
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlinx.coroutines.Dispatchers
-import ie.equalit.ouinet.Ouinet
-import kotlinx.coroutines.flow.mapNotNull
 import mozilla.components.browser.state.selector.selectedTab
 import mozilla.components.browser.state.state.TabSessionState
 import mozilla.components.browser.state.store.BrowserStore
@@ -166,7 +165,8 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentBrowserBinding.inflate(inflater, container, false)
-        container?.background = ContextCompat.getDrawable(requireContext(), R.drawable.blank_background)
+        container?.background =
+            ContextCompat.getDrawable(requireContext(), R.drawable.blank_background)
         (activity as AppCompatActivity).supportActionBar!!.hide()
         return binding.root
     }
@@ -280,7 +280,10 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
                 sessionId = sessionId,
                 fragmentManager = parentFragmentManager,
                 launchInApp = {
-                    prefs.getBoolean(requireContext().getPreferenceKey(R.string.pref_key_launch_external_app), false)
+                    prefs.getBoolean(
+                        requireContext().getPreferenceKey(R.string.pref_key_launch_external_app),
+                        false
+                    )
                 },
             ),
             owner = this,
@@ -306,7 +309,10 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
         )
 
         windowFeature.set(
-            feature = WindowFeature(requireComponents.core.store, requireComponents.useCases.tabsUseCases),
+            feature = WindowFeature(
+                requireComponents.core.store,
+                requireComponents.useCases.tabsUseCases
+            ),
             owner = this,
             view = view,
         )
@@ -385,11 +391,16 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
         }
 
         /* CENO: Add purge button to toolbar */
-        if (prefs.getBoolean(requireContext().getPreferenceKey(R.string.pref_key_clear_in_toolbar), true)) {
+        if (prefs.getBoolean(
+                requireContext().getPreferenceKey(R.string.pref_key_clear_in_toolbar),
+                true
+            )
+        ) {
             val clearButtonFeature = ClearButtonFeature(
                 requireContext(),
                 prefs.getString(
-                    requireContext().getPreferenceKey(R.string.pref_key_clear_behavior), "0")!!
+                    requireContext().getPreferenceKey(R.string.pref_key_clear_behavior), "0"
+                )!!
                     .toInt()
             )
             binding.toolbar.addBrowserAction(
@@ -448,7 +459,10 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
                 requireComponents.core.historyStorage,
                 requireComponents.useCases.sessionUseCases.loadUrl
             )
-            it.addClipboardProvider(requireContext(), requireComponents.useCases.sessionUseCases.loadUrl)
+            it.addClipboardProvider(
+                requireContext(),
+                requireComponents.useCases.sessionUseCases.loadUrl
+            )
         }
 
         TabCounterView(
@@ -532,14 +546,17 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             false
         )
 
-        val toolBarCoordinatorLayoutParams = binding.toolbar.layoutParams as CoordinatorLayout.LayoutParams
+        val toolBarCoordinatorLayoutParams =
+            binding.toolbar.layoutParams as CoordinatorLayout.LayoutParams
 
-        val progressBarShieldLayoutParams = binding.progressBarShield.layoutParams as CoordinatorLayout.LayoutParams
+        val progressBarShieldLayoutParams =
+            binding.progressBarShield.layoutParams as CoordinatorLayout.LayoutParams
 
-        val sourcesProgressCoordinatorLayoutParams = binding.sourcesProgressBar.layoutParams as CoordinatorLayout.LayoutParams
+        val sourcesProgressCoordinatorLayoutParams =
+            binding.sourcesProgressBar.layoutParams as CoordinatorLayout.LayoutParams
         sourcesProgressCoordinatorLayoutParams.anchorId = binding.toolbar.id
 
-        binding.toolbar.display.progressGravity = if(isToolbarPositionTop) {
+        binding.toolbar.display.progressGravity = if (isToolbarPositionTop) {
             // reset layout_gravity of toolbar layout
             toolBarCoordinatorLayoutParams.gravity = Gravity.TOP
 
@@ -550,8 +567,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             progressBarShieldLayoutParams.anchorGravity = Gravity.TOP
 
             DisplayToolbar.Gravity.TOP
-        }
-        else {
+        } else {
             // reset layout_gravity of toolbar layout
             toolBarCoordinatorLayoutParams.gravity = Gravity.BOTTOM
 
@@ -579,9 +595,11 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
                         Ouinet.RunningState.Started -> {
                             ctx.getString(R.string.ceno_ouinet_connected)
                         }
+
                         Ouinet.RunningState.Stopped -> {
                             ctx.getString(R.string.ceno_ouinet_disconnected)
                         }
+
                         else -> {
                             ctx.getString(R.string.ceno_ouinet_connecting)
                         }
@@ -618,7 +636,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
                 arrayOf(it.selectedTabId)
             }
                 .mapNotNull {
-                it.selectedTab
+                    it.selectedTab
                 }
                 .collect {
                     handleTabSelected(it)
@@ -627,7 +645,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
     }
 
     private fun handleTabSelected(selectedTab: TabSessionState) {
-        if (!this.isRemoving ) {
+        if (!this.isRemoving) {
             updateThemeForSession(selectedTab)
         }
     }
@@ -638,7 +656,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             browsingModeManager.mode = sessionMode
             //reload fragment
             val fragmentId = findNavController().currentDestination?.id
-            findNavController().popBackStack(fragmentId!!,true)
+            findNavController().popBackStack(fragmentId!!, true)
             findNavController().navigate(fragmentId)
         }
     }
@@ -699,6 +717,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
         }
         feature?.onPermissionsResult(permissions, grantResults)
     }
+
     /**
      * Initializes themeManager and browsingModeManager
      */
@@ -748,24 +767,35 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
                 var isFullyLoaded = false
 
                 // `message` returns as undefined sometimes. This check handles that
-                if (!(message as String?).isNullOrEmpty() && message != "undefined" && JSONObject(message).length() != 0) {
+                if (!(message as String?).isNullOrEmpty() && message != "undefined" && JSONObject(
+                        message
+                    ).length() != 0
+                ) {
                     // set sources progress bar
                     val response = JSONObject(message)
 
-                    val extTabUrl = if(response.has(URL)) response.getString(URL).withoutScheme() else "0"
+                    val extTabUrl =
+                        if (response.has(URL)) response.getString(URL).withoutScheme() else "0"
                     if (url == extTabUrl) {
                         // Only update counts if the url included in the response matches the current tab url
                         sourceCounts[url] = response
-                        requireContext().components.appStore.dispatch(AppAction.SourceCountsChange(sourceCounts))
+                        requireContext().components.appStore.dispatch(
+                            AppAction.SourceCountsChange(
+                                sourceCounts
+                            )
+                        )
                     }
                     sourceCounts[url]?.let { counts ->
                         // update sources BottomSheet if the reference is not null
                         webExtensionActionPopupPanel?.onCountsFetched(counts)
 
-                        val origin = if(counts.has(ORIGIN)) counts.getString(ORIGIN).toFloat() else 0F
-                        val injector = if(counts.has(INJECTOR)) counts.getString(INJECTOR).toFloat() else 0F
-                        val proxy = if(counts.has(PROXY)) counts.getString(PROXY).toFloat() else 0F
-                        val distCache = if(counts.has(DIST_CACHE)) counts.getString(DIST_CACHE).toFloat() else 0F
+                        val origin =
+                            if (counts.has(ORIGIN)) counts.getString(ORIGIN).toFloat() else 0F
+                        val injector =
+                            if (counts.has(INJECTOR)) counts.getString(INJECTOR).toFloat() else 0F
+                        val proxy = if (counts.has(PROXY)) counts.getString(PROXY).toFloat() else 0F
+                        val distCache = if (counts.has(DIST_CACHE)) counts.getString(DIST_CACHE)
+                            .toFloat() else 0F
 //                val localCache = if(currentCounts?.has(LOCAL_CACHE) == true) currentCounts.getString(LOCAL_CACHE).toFloat() else 0F
 
                         if ((webPageLoadProgress == 100 && !isFullyLoaded) || tab.content.fullScreen) {
@@ -786,37 +816,49 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
                         binding.sourcesProgressBar.removeAllViews()
 
                         // Add direct-from-website source
-                        if(origin > 0) binding.sourcesProgressBar.addView(
+                        if (origin > 0) binding.sourcesProgressBar.addView(
                             requireContext().createSegment(
                                 origin.div(sum).times(100).run {
-                                    if(webPageLoadProgress == 100) this else this.times((100 - webPageLoadProgress).div(100.0F))
+                                    if (webPageLoadProgress == 100) this else this.times(
+                                        (100 - webPageLoadProgress).div(
+                                            100.0F
+                                        )
+                                    )
                                 },
                                 R.color.ceno_sources_green
                             )
                         )
 
                         // Add via-ceno-network source
-                        if((proxy + injector) > 0) binding.sourcesProgressBar.addView(
+                        if ((proxy + injector) > 0) binding.sourcesProgressBar.addView(
                             requireContext().createSegment(
                                 (proxy + injector).div(sum).times(100).run {
-                                    if(webPageLoadProgress == 100) this else this.times((100 - webPageLoadProgress).div(100.0F))
+                                    if (webPageLoadProgress == 100) this else this.times(
+                                        (100 - webPageLoadProgress).div(
+                                            100.0F
+                                        )
+                                    )
                                 },
                                 R.color.ceno_sources_orange
                             )
                         )
 
                         // Add via Ceno cache
-                        if(distCache > 0) binding.sourcesProgressBar.addView(
+                        if (distCache > 0) binding.sourcesProgressBar.addView(
                             requireContext().createSegment(
                                 distCache.div(sum).times(100).run {
-                                    if(webPageLoadProgress == 100) this else this.times((100 - webPageLoadProgress).div(100.0F))
+                                    if (webPageLoadProgress == 100) this else this.times(
+                                        (100 - webPageLoadProgress).div(
+                                            100.0F
+                                        )
+                                    )
                                 },
                                 R.color.ceno_sources_blue
                             )
                         )
 
                         // Add progressbar if the webpage hasn't loaded completely
-                        if(webPageLoadProgress < 100) binding.sourcesProgressBar.addView(
+                        if (webPageLoadProgress < 100) binding.sourcesProgressBar.addView(
                             requireContext().createSegment(
                                 (100 - webPageLoadProgress).toFloat(),
                                 R.color.ceno_grey_300
@@ -857,9 +899,13 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
         }
     }
 
-    private fun determineToolbarIcon(directCount: Float, cenoNetwork: Float, cenoCache: Float): Int {
+    private fun determineToolbarIcon(
+        directCount: Float,
+        cenoNetwork: Float,
+        cenoCache: Float
+    ): Int {
         // if they all all zeroes, return the default icon
-        if(directCount + cenoNetwork + cenoCache == 0F) return R.drawable.ic_status
+        if (directCount + cenoNetwork + cenoCache == 0F) return R.drawable.ic_status
 
         // check for highest count
         return when {
@@ -885,12 +931,16 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             trackingProtectionTrackersBlocked = statusIcon,
             trackingProtectionNothingBlocked = statusIcon,
             trackingProtectionException = statusIcon,
-            highlight = ContextCompat.getDrawable(requireContext(), R.drawable.mozac_dot_notification)!!,
+            highlight = ContextCompat.getDrawable(
+                requireContext(),
+                R.drawable.mozac_dot_notification
+            )!!,
         )
     }
 
     private fun setStatusIconFromCachedData() {
-        val url = context?.components?.core?.store?.state?.selectedTab?.content?.url?.withoutScheme()
+        val url =
+            context?.components?.core?.store?.state?.selectedTab?.content?.url?.withoutScheme()
         context?.components?.appStore?.state?.sourceCounts?.let { counts ->
             counts[url]?.let {
                 val distCache = if (it.has(DIST_CACHE)) it.getString(DIST_CACHE).toFloat() else 0F

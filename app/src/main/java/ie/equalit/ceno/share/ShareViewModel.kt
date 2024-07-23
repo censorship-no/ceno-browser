@@ -5,8 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ResolveInfo
 import android.net.ConnectivityManager
-import android.net.Network
-import android.net.NetworkRequest
 import androidx.annotation.VisibleForTesting
 import androidx.annotation.WorkerThread
 import androidx.appcompat.content.res.AppCompatResources

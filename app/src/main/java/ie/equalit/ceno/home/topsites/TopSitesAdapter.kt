@@ -10,8 +10,8 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import ie.equalit.ceno.R
-import mozilla.components.feature.top.sites.TopSite
 import ie.equalit.ceno.home.sessioncontrol.TopSiteInteractor
+import mozilla.components.feature.top.sites.TopSite
 
 class TopSitesAdapter(
     private val viewLifecycleOwner: LifecycleOwner,

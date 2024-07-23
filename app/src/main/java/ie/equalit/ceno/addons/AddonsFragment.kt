@@ -18,6 +18,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import ie.equalit.ceno.R
+import ie.equalit.ceno.ext.components
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,8 +30,6 @@ import mozilla.components.feature.addons.ui.AddonsManagerAdapter
 import mozilla.components.feature.addons.ui.AddonsManagerAdapterDelegate
 import mozilla.components.feature.addons.ui.PermissionsDialogFragment
 import mozilla.components.feature.addons.ui.translateName
-import ie.equalit.ceno.R
-import ie.equalit.ceno.ext.components
 
 /**
  * Fragment use for managing add-ons.
@@ -82,13 +82,12 @@ class AddonsFragment : Fragment(), AddonsManagerAdapterDelegate {
                 scope.launch(Dispatchers.Main) {
                     try {
                         val adapter = AddonsManagerAdapter(
-                                this@AddonsFragment,
-                                addons,
-                                store = requireContext().components.core.store,
+                            this@AddonsFragment,
+                            addons,
+                            store = requireContext().components.core.store,
                         )
                         recyclerView.adapter = adapter
-                    }
-                    catch(e : AddonManagerException) {
+                    } catch (e: AddonManagerException) {
                         Log.d(TAG, "Failed to get AddonsManagerAdapter $e")
                     }
                 }
@@ -187,7 +186,10 @@ class AddonsFragment : Fragment(), AddonsManagerAdapterDelegate {
                     context?.let {
                         Toast.makeText(
                             requireContext(),
-                            getString(R.string.mozac_feature_addons_failed_to_install, addon.translateName(it)),
+                            getString(
+                                R.string.mozac_feature_addons_failed_to_install,
+                                addon.translateName(it)
+                            ),
                             Toast.LENGTH_SHORT,
                         ).show()
                     }
@@ -205,7 +207,14 @@ class AddonsFragment : Fragment(), AddonsManagerAdapterDelegate {
             show()
             setTitle(R.string.preferences_add_ons)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.ceno_action_bar
+                    )
+                )
+            )
         }
     }
 

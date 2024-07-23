@@ -8,7 +8,7 @@ import org.json.JSONObject
 import org.mozilla.geckoview.GeckoRuntime
 import org.mozilla.geckoview.WebExtension
 
-class WebExtensionPort (private val context : Context) {
+class WebExtensionPort(private val context: Context) {
 
     var mPort: WebExtension.Port? = null
 
@@ -54,7 +54,10 @@ class WebExtensionPort (private val context : Context) {
             ) { e -> Log.e("MessageDelegate", "Error registering WebExtension", e) }
     }
 
-    private fun setMessageDelegate(extension: WebExtension?, messageDelegate: WebExtension.MessageDelegate) {
+    private fun setMessageDelegate(
+        extension: WebExtension?,
+        messageDelegate: WebExtension.MessageDelegate
+    ) {
         extension!!.setMessageDelegate(messageDelegate, "browser")
     }
 

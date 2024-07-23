@@ -17,9 +17,9 @@ import java.io.FileOutputStream
 import java.io.IOException
 
 
-class Ouinet (
-        private val context : Context
-    ) {
+class Ouinet(
+    private val context: Context
+) {
 
     lateinit var config: Config
 
@@ -48,7 +48,7 @@ class Ouinet (
                 clearIcon = R.drawable.ic_cancel_pm
             )
             .setChannelName(context.resources.getString(R.string.ceno_notification_channel_name))
-            .setNotificationText (
+            .setNotificationText(
                 title = context.resources.getString(R.string.ceno_notification_title),
                 description = context.resources.getString(R.string.ceno_notification_description),
                 homeText = context.resources.getString(R.string.ceno_notification_home_description),
@@ -59,34 +59,34 @@ class Ouinet (
             .build()
     }
 
-    private lateinit var onNotificationTapped : () -> Unit
-    fun setOnNotificationTapped (listener : () -> Unit) {
-       onNotificationTapped = listener
+    private lateinit var onNotificationTapped: () -> Unit
+    fun setOnNotificationTapped(listener: () -> Unit) {
+        onNotificationTapped = listener
     }
 
-    private lateinit var onConfirmTapped : () -> Unit
-    fun setOnConfirmTapped (listener : () -> Unit) {
+    private lateinit var onConfirmTapped: () -> Unit
+    fun setOnConfirmTapped(listener: () -> Unit) {
         onConfirmTapped = listener
     }
 
-    lateinit var background : OuinetBackground
-    fun setBackground (ctx: Context) {
+    lateinit var background: OuinetBackground
+    fun setBackground(ctx: Context) {
         background = OuinetBackground.Builder(ctx)
             .setOuinetConfig(config)
             .setNotificationConfig(notificationConfig)
             .setOnNotifiactionTappedListener { onNotificationTapped.invoke() }
-            .setOnConfirmTappedListener{ onConfirmTapped.invoke() }
+            .setOnConfirmTappedListener { onConfirmTapped.invoke() }
             .build()
     }
 
-    private fun getBtBootstrapExtras() : Set<String>? {
+    private fun getBtBootstrapExtras(): Set<String>? {
         var countryIsoCode = ""
         val locationUtils = CenoLocationUtils(context.application)
         countryIsoCode = locationUtils.currentCountry
 
         // Attempt getting country-specific `BT_BOOTSTRAP_EXTRAS` entry from BuildConfig,
         // fall back to empty BT bootstrap extras otherwise.
-        var btbsxsStr= ""
+        var btbsxsStr = ""
         if (countryIsoCode.isNotEmpty()) {
             // Country code found, try getting bootstrap extras resource for this country
             for (entry in BuildConfig.BT_BOOTSTRAP_EXTRAS) {
@@ -116,7 +116,11 @@ class Ouinet (
 
     private fun getErrorPagePath(): String {
         return try {
-            writeToFile("server500.html", FailedToRetrieveResource.createErrorPage(context), context)
+            writeToFile(
+                "server500.html",
+                FailedToRetrieveResource.createErrorPage(context),
+                context
+            )
             "file://${File(context.filesDir, "server500.html").absolutePath}"
         } catch (e: Exception) {
             ""

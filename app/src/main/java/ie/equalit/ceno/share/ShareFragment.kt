@@ -2,11 +2,9 @@ package ie.equalit.ceno.share
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.fragment.app.clearFragmentResult
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
@@ -15,9 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import ie.equalit.ceno.R
 import ie.equalit.ceno.databinding.FragmentShareBinding
-import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.ext.requireComponents
 import mozilla.components.browser.state.action.ContentAction
 import mozilla.components.browser.state.selector.findTabOrCustomTab
@@ -38,6 +34,7 @@ class ShareFragment : BottomSheetDialogFragment() {
         super.onAttach(context)
         viewModel.loadDevicesAndApps(requireContext())
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setStyle(STYLE_NO_TITLE, R.style.ShareDialogStyle)
@@ -48,6 +45,7 @@ class ShareFragment : BottomSheetDialogFragment() {
         consumePrompt { onDismiss() }
         dismiss()
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -113,6 +111,7 @@ class ShareFragment : BottomSheetDialogFragment() {
             shareToAppsView.setRecentShareTargets(appsToShareTo)
         }
     }
+
     override fun onDestroy() {
         setFragmentResult(RESULT_KEY, Bundle())
         // Clear the stored result in case there is no listener with the same key set.
@@ -120,6 +119,7 @@ class ShareFragment : BottomSheetDialogFragment() {
 
         super.onDestroy()
     }
+
     /**
      * If [ShareFragmentArgs.sessionId] is set and the session has a pending Web Share
      * prompt request, call [consume] then clean up the prompt.
@@ -131,10 +131,16 @@ class ShareFragment : BottomSheetDialogFragment() {
         args.sessionId
             ?.let { sessionId -> browserStore.state.findTabOrCustomTab(sessionId) }
             ?.let { tab ->
-                val promptRequest = tab.content.promptRequests.lastOrNull { it is PromptRequest.Share }
+                val promptRequest =
+                    tab.content.promptRequests.lastOrNull { it is PromptRequest.Share }
                 if (promptRequest is PromptRequest.Share) {
                     consume(promptRequest)
-                    browserStore.dispatch(ContentAction.ConsumePromptRequestAction(tab.id, promptRequest))
+                    browserStore.dispatch(
+                        ContentAction.ConsumePromptRequestAction(
+                            tab.id,
+                            promptRequest
+                        )
+                    )
                 }
             }
     }

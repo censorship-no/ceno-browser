@@ -22,8 +22,13 @@ class OnboardingInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentOnboardingInfoBinding.inflate(inflater, container,false);
-        container?.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.ceno_onboarding_background))
+        _binding = FragmentOnboardingInfoBinding.inflate(inflater, container, false);
+        container?.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.ceno_onboarding_background
+            )
+        )
         return binding.root
     }
 
@@ -40,14 +45,12 @@ class OnboardingInfoFragment : Fragment() {
                 binding.btnOnboardingCleanup.setOnClickListener {
                     findNavController().onboardingToHome(requireComponents)
                 }
-            }
-            else {
+            } else {
                 binding.btnOnboardingCleanup.setOnClickListener {
                     findNavController().navigate(R.id.action_onboardingInfoFragment_to_onboardingBatteryFragment)
                 }
             }
-        }
-        else {
+        } else {
             if (requireComponents.permissionHandler.isIgnoringBatteryOptimizations()) {
                 //set button text as Finish
                 binding.btnOnboardingCleanup.text = getString(R.string.onboarding_finish_button)
@@ -66,8 +69,7 @@ class OnboardingInfoFragment : Fragment() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 /* Android 13 or later, always ask for permissions */
                 findNavController().navigate(R.id.action_onboardingInfoFragment_to_onboardingBatteryFragment)
-            }
-            else {
+            } else {
                 findNavController().onboardingToHome(requireComponents)
             }
         }

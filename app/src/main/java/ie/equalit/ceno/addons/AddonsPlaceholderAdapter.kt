@@ -23,13 +23,14 @@ sealed class AdapterItem(@LayoutRes val viewType: Int) {
 
     open fun contentsSameAs(other: AdapterItem) = this::class == other::class
 }
+
 class AdapterItemDiffCallback : DiffUtil.ItemCallback<AdapterItem>() {
     override fun areItemsTheSame(oldItem: AdapterItem, newItem: AdapterItem) =
-            oldItem.sameAs(newItem)
+        oldItem.sameAs(newItem)
 
     @Suppress("DiffUtilEquals")
     override fun areContentsTheSame(oldItem: AdapterItem, newItem: AdapterItem) =
-            oldItem.contentsSameAs(newItem)
+        oldItem.contentsSameAs(newItem)
 
     override fun getChangePayload(oldItem: AdapterItem, newItem: AdapterItem): Any? {
         return oldItem.getChangePayload(newItem) ?: return super.getChangePayload(oldItem, newItem)
@@ -37,13 +38,13 @@ class AdapterItemDiffCallback : DiffUtil.ItemCallback<AdapterItem>() {
 }
 
 class AddonPlaceholderAdapter internal constructor() :
-        ListAdapter<AdapterItem, RecyclerView.ViewHolder>(AdapterItemDiffCallback())
-{
+    ListAdapter<AdapterItem, RecyclerView.ViewHolder>(AdapterItemDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
-                R.layout.addon_placeholder_item,
-                parent,
-                false)
+            R.layout.addon_placeholder_item,
+            parent,
+            false
+        )
         return AddonPlaceholderViewHolder(view)
     }
 

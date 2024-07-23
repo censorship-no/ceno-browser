@@ -7,7 +7,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.annotation.VisibleForTesting
-import androidx.compose.material.Snackbar
 import androidx.navigation.NavController
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
@@ -27,10 +26,12 @@ import mozilla.components.support.ktx.kotlin.isExtensionUrl
 interface ShareController {
     fun handleShareClosed()
     fun handleShareToApp(app: AppShareOption)
+
     /**
      * Handles when a save to PDF action was requested.
      */
     fun handleSaveToPDF(tabId: String?)
+
     /**
      * Handles when a print action was requested.
      */
@@ -58,7 +59,7 @@ interface ShareController {
  * @param dismiss Callback signalling sharing can be closed.
  */
 @Suppress("TooManyFunctions", "LongParameterList")
-class DefaultShareController (
+class DefaultShareController(
     private val context: Context,
     private val shareSubject: String?,
     private val shareData: List<ShareData>,
@@ -106,6 +107,7 @@ class DefaultShareController (
 //                    snackbar.show()
                     ShareController.Result.SHARE_ERROR
                 }
+
                 else -> throw e
             }
         }
@@ -156,7 +158,8 @@ class DefaultShareController (
     }
 
     private fun copyClipboard() {
-        val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clipboardManager =
+            context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clipData = ClipData.newPlainText(getShareSubject(), getShareText())
 
         clipboardManager.setPrimaryClip(clipData)

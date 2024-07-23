@@ -11,10 +11,10 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import ie.equalit.ceno.R
-import mozilla.components.feature.top.sites.TopSite
 import ie.equalit.ceno.home.sessioncontrol.AdapterItem.TopSitePagerPayload
 import ie.equalit.ceno.home.sessioncontrol.TopSiteInteractor
 import ie.equalit.ceno.home.topsites.TopSitePagerViewHolder.Companion.TOP_SITES_PER_PAGE
+import mozilla.components.feature.top.sites.TopSite
 
 class TopSitesPagerAdapter(
     private val viewLifecycleOwner: LifecycleOwner,
@@ -97,7 +97,8 @@ class TopSitesPagerAdapter(
 
         override fun areContentsTheSame(oldItem: List<TopSite>, newItem: List<TopSite>): Boolean {
             return newItem.zip(oldItem).all { (new, old) ->
-                (new.id == old.id) && (new.url == old.url) && (new.title == old.title) && (new.type == old.type)}
+                (new.id == old.id) && (new.url == old.url) && (new.title == old.title) && (new.type == old.type)
+            }
         }
 
         override fun getChangePayload(oldItem: List<TopSite>, newItem: List<TopSite>): Any? {

@@ -4,7 +4,7 @@
 
 package ie.equalit.ceno.settings.deletebrowsingdata
 
-import android.annotation.SuppressLint
+//import androidx.navigation.fragment.findNavController
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
@@ -12,7 +12,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-//import androidx.navigation.fragment.findNavController
+import ie.equalit.ceno.R
+import ie.equalit.ceno.databinding.FragmentDeleteBrowsingDataBinding
+import ie.equalit.ceno.ext.requireComponents
+import ie.equalit.ceno.settings.Settings
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
@@ -22,10 +25,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import mozilla.components.lib.state.ext.flowScoped
-import ie.equalit.ceno.R
-import ie.equalit.ceno.databinding.FragmentDeleteBrowsingDataBinding
-import ie.equalit.ceno.ext.requireComponents
-import ie.equalit.ceno.settings.Settings
 
 @SuppressWarnings("TooManyFunctions", "LargeClass")
 class DeleteBrowsingDataFragment : Fragment(R.layout.fragment_delete_browsing_data) {
@@ -82,10 +81,17 @@ class DeleteBrowsingDataFragment : Fragment(R.layout.fragment_delete_browsing_da
     private fun updatePreference(it: DeleteBrowsingDataItem) {
         when (it.id) {
             R.id.open_tabs_item -> Settings.setDeleteOpenTabs(requireContext(), it.isChecked)
-            R.id.browsing_data_item -> Settings.setDeleteBrowsingHistory(requireContext(), it.isChecked)
+            R.id.browsing_data_item -> Settings.setDeleteBrowsingHistory(
+                requireContext(),
+                it.isChecked
+            )
+
             R.id.cookies_item -> Settings.setDeleteCookies(requireContext(), it.isChecked)
             R.id.cached_files_item -> Settings.setDeleteCache(requireContext(), it.isChecked)
-            R.id.site_permissions_item -> Settings.setDeleteSitePermissions(requireContext(), it.isChecked)
+            R.id.site_permissions_item -> Settings.setDeleteSitePermissions(
+                requireContext(),
+                it.isChecked
+            )
             //R.id.downloads_item -> settings.deleteDownloads = it.isChecked
             else -> return
         }
@@ -169,7 +175,11 @@ class DeleteBrowsingDataFragment : Fragment(R.layout.fragment_delete_browsing_da
         binding.deleteBrowsingDataWrapper.isEnabled = false
         binding.deleteBrowsingDataWrapper.isClickable = false
         binding.deleteBrowsingDataWrapper.alpha = DISABLED_ALPHA
-        Toast.makeText(context, resources.getString(R.string.deleting_browsing_data_in_progress), Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            context,
+            resources.getString(R.string.deleting_browsing_data_in_progress),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     private fun finishDeletion() {
@@ -181,7 +191,11 @@ class DeleteBrowsingDataFragment : Fragment(R.layout.fragment_delete_browsing_da
 
         updateItemCounts()
 
-        Toast.makeText(context, resources.getString(R.string.preferences_delete_browsing_data_snackbar), Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            context,
+            resources.getString(R.string.preferences_delete_browsing_data_snackbar),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     override fun onPause() {

@@ -4,20 +4,16 @@
 
 package ie.equalit.ceno.browser
 
+//import mozilla.components.feature.toolbar.WebExtensionToolbarFeature
+//import ie.equalit.ceno.getComponents
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ie.equalit.ceno.R
-import mozilla.components.browser.toolbar.BrowserToolbar
-import mozilla.components.feature.readerview.view.ReaderViewControlsBar
-//import mozilla.components.feature.toolbar.WebExtensionToolbarFeature
-import mozilla.components.support.base.feature.UserInteractionHandler
-import mozilla.components.support.base.feature.ViewBoundFeatureWrapper
-//import ie.equalit.ceno.getComponents
-import ie.equalit.ceno.ext.requireComponents
 import ie.equalit.ceno.settings.Settings
+import mozilla.components.browser.toolbar.BrowserToolbar
+import mozilla.components.support.base.feature.UserInteractionHandler
 
 /**
  * Fragment used for browsing the web within the main app.

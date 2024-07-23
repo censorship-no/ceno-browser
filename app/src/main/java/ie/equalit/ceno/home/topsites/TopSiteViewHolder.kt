@@ -7,11 +7,10 @@ package ie.equalit.ceno.home.topsites
 import android.view.View
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
-import mozilla.components.feature.top.sites.TopSite
-import ie.equalit.ceno.R
 import ie.equalit.ceno.databinding.ComponentTopSitesBinding
 import ie.equalit.ceno.home.sessioncontrol.TopSiteInteractor
 import ie.equalit.ceno.utils.CenoGridLayoutManager
+import mozilla.components.feature.top.sites.TopSite
 
 class TopSiteViewHolder(
     view: View,

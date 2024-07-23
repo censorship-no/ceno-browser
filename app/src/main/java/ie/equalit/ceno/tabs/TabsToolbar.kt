@@ -6,11 +6,11 @@ package ie.equalit.ceno.tabs
 
 import android.content.Context
 import android.util.AttributeSet
-import mozilla.components.feature.tabs.tabstray.TabsFeature
 import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.browser.BrowsingModeManager
 import ie.equalit.ceno.ext.components
+import mozilla.components.feature.tabs.tabstray.TabsFeature
 
 /* CENO: Modify closeTabsTray function to take booleans for determining
  * how to close the TabsTrayFragment, i.e. to open the Home or Browser Fragment,
@@ -49,6 +49,7 @@ class TabsToolbar @JvmOverloads constructor(
 //                        }
 //                    }
                 }
+
                 R.id.closeTab -> {
                     when (isPrivateTray) {
                         true -> tabsUseCases.removePrivateTabs.invoke()

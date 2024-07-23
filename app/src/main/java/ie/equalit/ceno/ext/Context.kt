@@ -14,13 +14,13 @@ import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.view.View
 import android.widget.LinearLayout
 import androidx.annotation.ColorRes
-import androidx.core.content.ContextCompat
 import androidx.annotation.StringRes
-import mozilla.components.support.base.log.Log
-import mozilla.components.support.base.log.Log.Priority.WARN
+import androidx.core.content.ContextCompat
 import ie.equalit.ceno.BrowserApplication
 import ie.equalit.ceno.Components
 import ie.equalit.ceno.R
+import mozilla.components.support.base.log.Log
+import mozilla.components.support.base.log.Log.Priority.WARN
 
 /**
  * Get the BrowserApplication object from a context.
@@ -62,7 +62,12 @@ fun Context.share(text: String, subject: String = ""): Boolean {
         startActivity(shareIntent)
         true
     } catch (e: ActivityNotFoundException) {
-        Log.log(WARN, message = "No activity to share to found", throwable = e, tag = "Reference-Browser")
+        Log.log(
+            WARN,
+            message = "No activity to share to found",
+            throwable = e,
+            tag = "Reference-Browser"
+        )
         false
     }
 }

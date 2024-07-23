@@ -7,6 +7,20 @@ package ie.equalit.ceno.components
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
+import ie.equalit.ceno.AppRequestInterceptor
+import ie.equalit.ceno.BrowserActivity
+import ie.equalit.ceno.EngineProvider
+import ie.equalit.ceno.R
+import ie.equalit.ceno.R.string.pref_key_remote_debugging
+import ie.equalit.ceno.R.string.pref_key_tracking_protection_normal
+import ie.equalit.ceno.R.string.pref_key_tracking_protection_private
+import ie.equalit.ceno.downloads.DownloadService
+import ie.equalit.ceno.ext.cenoPreferences
+import ie.equalit.ceno.ext.components
+import ie.equalit.ceno.ext.getPreferenceKey
+import ie.equalit.ceno.media.MediaSessionService
+import ie.equalit.ceno.settings.Settings
+import ie.equalit.ceno.share.SaveToPDFMiddleware
 import mozilla.components.browser.engine.gecko.permission.GeckoSitePermissionsStorage
 import mozilla.components.browser.icons.BrowserIcons
 import mozilla.components.browser.session.storage.SessionStorage
@@ -44,20 +58,6 @@ import mozilla.components.lib.dataprotect.SecureAbove22Preferences
 import mozilla.components.service.location.LocationService
 import mozilla.components.service.sync.logins.SyncableLoginsStorage
 import mozilla.components.support.base.worker.Frequency
-import ie.equalit.ceno.AppRequestInterceptor
-import ie.equalit.ceno.BrowserActivity
-import ie.equalit.ceno.EngineProvider
-import ie.equalit.ceno.R
-import ie.equalit.ceno.R.string.pref_key_remote_debugging
-import ie.equalit.ceno.R.string.pref_key_tracking_protection_normal
-import ie.equalit.ceno.R.string.pref_key_tracking_protection_private
-import ie.equalit.ceno.downloads.DownloadService
-import ie.equalit.ceno.ext.getPreferenceKey
-import ie.equalit.ceno.ext.cenoPreferences
-import ie.equalit.ceno.ext.components
-import ie.equalit.ceno.media.MediaSessionService
-import ie.equalit.ceno.settings.Settings
-import ie.equalit.ceno.share.SaveToPDFMiddleware
 import java.util.concurrent.TimeUnit
 
 private const val DAY_IN_MINUTES = 24 * 60L
@@ -76,8 +76,15 @@ class Core(private val context: Context) {
 
         val defaultSettings = DefaultSettings(
             requestInterceptor = AppRequestInterceptor(context),
-            remoteDebuggingEnabled = prefs.getBoolean(context.getPreferenceKey(pref_key_remote_debugging), false),
-            testingModeEnabled = prefs.getBoolean(context.getPreferenceKey(R.string.pref_key_testing_mode), false),
+            remoteDebuggingEnabled = prefs.getBoolean(
+                context.getPreferenceKey(
+                    pref_key_remote_debugging
+                ), false
+            ),
+            testingModeEnabled = prefs.getBoolean(
+                context.getPreferenceKey(R.string.pref_key_testing_mode),
+                false
+            ),
             trackingProtectionPolicy = createTrackingProtectionPolicy(prefs),
             historyTrackingDelegate = HistoryDelegate(lazyHistoryStorage),
         )
@@ -172,7 +179,14 @@ class Core(private val context: Context) {
      * Component for managing shortcuts (both regular and PWA).
      */
     /* CENO: supportWebApps was breaking AddToHomescreen for some websites, set to false */
-    val shortcutManager by lazy { WebAppShortcutManager(context, client, ManifestStorage(context), false) }
+    val shortcutManager by lazy {
+        WebAppShortcutManager(
+            context,
+            client,
+            ManifestStorage(context),
+            false
+        )
+    }
 
     /**
      * A storage component for site permissions.
@@ -239,7 +253,7 @@ class Core(private val context: Context) {
                     context.getString(R.string.default_top_site_4_url)
                 )
             )
-        context.cenoPreferences().defaultTopSitesAdded = true
+            context.cenoPreferences().defaultTopSitesAdded = true
         }
 
         DefaultTopSitesStorage(
@@ -293,8 +307,16 @@ class Core(private val context: Context) {
      */
     fun createTrackingProtectionPolicy(
         prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context),
-        normalMode: Boolean = prefs.getBoolean(context.getPreferenceKey(pref_key_tracking_protection_normal), true),
-        privateMode: Boolean = prefs.getBoolean(context.getPreferenceKey(pref_key_tracking_protection_private), true),
+        normalMode: Boolean = prefs.getBoolean(
+            context.getPreferenceKey(
+                pref_key_tracking_protection_normal
+            ), true
+        ),
+        privateMode: Boolean = prefs.getBoolean(
+            context.getPreferenceKey(
+                pref_key_tracking_protection_private
+            ), true
+        ),
     ): TrackingProtectionPolicy {
         val trackingPolicy = TrackingProtectionPolicy.recommended()
         return when {
@@ -305,7 +327,7 @@ class Core(private val context: Context) {
         }
     }
 
-    fun  setRootCertificate( rootCertificate: String) {
+    fun setRootCertificate(rootCertificate: String) {
         EngineProvider.rootCertificate = rootCertificate
     }
 

@@ -38,12 +38,19 @@ class AddonSettingsActivity : AppCompatActivity() {
         engineSession.loadUrl(optionsPageUrl)
     }
 
-    override fun onCreateView(parent: View?, name: String, context: Context, attrs: AttributeSet): View? {
+    override fun onCreateView(
+        parent: View?,
+        name: String,
+        context: Context,
+        attrs: AttributeSet
+    ): View? {
 
         engineSession = components.core.engine.createSession()
 
         return when (name) {
-            EngineView::class.java.name -> components.core.engine.createView(context, attrs).asView()
+            EngineView::class.java.name -> components.core.engine.createView(context, attrs)
+                .asView()
+
             else -> super.onCreateView(parent, name, context, attrs)
         }
     }

@@ -20,7 +20,6 @@ import mozilla.components.feature.tabs.CustomTabsUseCases
 import mozilla.components.feature.tabs.TabsUseCases
 import mozilla.components.feature.top.sites.TopSitesStorage
 import mozilla.components.feature.top.sites.TopSitesUseCases
-import mozilla.components.support.ktx.util.URLStringUtils
 
 /**
  * Component group for all use cases. Use cases are provided by feature
@@ -74,7 +73,12 @@ class UseCases(
     /**
      * Use cases related to Custom Tabs.
      */
-    val customTabsUseCases: CustomTabsUseCases by lazy { CustomTabsUseCases(store, sessionUseCases.loadUrl) }
+    val customTabsUseCases: CustomTabsUseCases by lazy {
+        CustomTabsUseCases(
+            store,
+            sessionUseCases.loadUrl
+        )
+    }
 
     /* CENO: copied from Fenix for CenoHomeFragment */
     /**
@@ -82,7 +86,8 @@ class UseCases(
      */
     val cenoTopSitesUseCase by lazy { TopSitesUseCases(topSitesStorage) }
 
-    val customLoadUrlUseCase by lazy { CustomLoadUrlUseCase(store) { url ->
+    val customLoadUrlUseCase by lazy {
+        CustomLoadUrlUseCase(store) { url ->
             createTab(url).apply { store.dispatch(TabListAction.AddTabAction(this)) }
         }
     }

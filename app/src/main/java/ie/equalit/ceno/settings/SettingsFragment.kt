@@ -36,7 +36,61 @@ import androidx.preference.PreferenceFragmentCompat
 import ie.equalit.ceno.AppPermissionCodes
 import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.R
-import ie.equalit.ceno.R.string.*
+import ie.equalit.ceno.R.string.bridge_mode_ip_warning_text
+import ie.equalit.ceno.R.string.canceled
+import ie.equalit.ceno.R.string.ceno_android_logs_file_name
+import ie.equalit.ceno.R.string.ceno_clear_dialog_cancel
+import ie.equalit.ceno.R.string.ceno_log_file_saved
+import ie.equalit.ceno.R.string.ceno_log_file_saved_desc
+import ie.equalit.ceno.R.string.confirm_clear_cached_content
+import ie.equalit.ceno.R.string.confirm_clear_cached_content_desc
+import ie.equalit.ceno.R.string.customize_addon_collection_cancel
+import ie.equalit.ceno.R.string.customize_addon_collection_ok
+import ie.equalit.ceno.R.string.download_logs
+import ie.equalit.ceno.R.string.onboarding_battery_button
+import ie.equalit.ceno.R.string.ouinet_client_fetch_fail
+import ie.equalit.ceno.R.string.ouinet_log_file_prompt_desc
+import ie.equalit.ceno.R.string.pref_key_about_ceno
+import ie.equalit.ceno.R.string.pref_key_about_geckoview
+import ie.equalit.ceno.R.string.pref_key_about_ouinet
+import ie.equalit.ceno.R.string.pref_key_about_page
+import ie.equalit.ceno.R.string.pref_key_add_ons
+import ie.equalit.ceno.R.string.pref_key_allow_crash_reporting
+import ie.equalit.ceno.R.string.pref_key_allow_notifications
+import ie.equalit.ceno.R.string.pref_key_autofill
+import ie.equalit.ceno.R.string.pref_key_bridge_announcement
+import ie.equalit.ceno.R.string.pref_key_ceno_cache_size
+import ie.equalit.ceno.R.string.pref_key_ceno_download_android_log
+import ie.equalit.ceno.R.string.pref_key_ceno_download_log
+import ie.equalit.ceno.R.string.pref_key_ceno_enable_log
+import ie.equalit.ceno.R.string.pref_key_ceno_groups_count
+import ie.equalit.ceno.R.string.pref_key_ceno_network_config
+import ie.equalit.ceno.R.string.pref_key_ceno_website_sources
+import ie.equalit.ceno.R.string.pref_key_clear_ceno_cache
+import ie.equalit.ceno.R.string.pref_key_customization
+import ie.equalit.ceno.R.string.pref_key_delete_browsing_data
+import ie.equalit.ceno.R.string.pref_key_disable_battery_opt
+import ie.equalit.ceno.R.string.pref_key_make_default_browser
+import ie.equalit.ceno.R.string.pref_key_ouinet_state
+import ie.equalit.ceno.R.string.pref_key_override_amo_collection
+import ie.equalit.ceno.R.string.pref_key_privacy
+import ie.equalit.ceno.R.string.pref_key_remote_debugging
+import ie.equalit.ceno.R.string.pref_key_search_engine
+import ie.equalit.ceno.R.string.pref_key_shared_prefs_reload
+import ie.equalit.ceno.R.string.pref_key_shared_prefs_update
+import ie.equalit.ceno.R.string.preference_choose_search_engine
+import ie.equalit.ceno.R.string.preferences_about_page
+import ie.equalit.ceno.R.string.preferences_ceno_download_log
+import ie.equalit.ceno.R.string.preferences_customize_amo_collection
+import ie.equalit.ceno.R.string.preferences_delete_browsing_data
+import ie.equalit.ceno.R.string.select_log_scope_header
+import ie.equalit.ceno.R.string.select_log_scope_message
+import ie.equalit.ceno.R.string.setting_item_selected
+import ie.equalit.ceno.R.string.settings
+import ie.equalit.ceno.R.string.share_logs
+import ie.equalit.ceno.R.string.toast_customize_addon_collection_done
+import ie.equalit.ceno.R.string.tracker_category
+import ie.equalit.ceno.R.string.view_logs
 import ie.equalit.ceno.autofill.AutofillPreference
 import ie.equalit.ceno.downloads.DownloadService
 import ie.equalit.ceno.ext.components
@@ -84,53 +138,54 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private var wasLogEnabled: Boolean = false
     private var bridgeModeChanged: Boolean = false
     private lateinit var bridgeAnnouncementDialog: AlertDialog
-    private var logFileReset:Boolean = false
-    private var logLevelReset:Boolean = false
+    private var logFileReset: Boolean = false
+    private var logLevelReset: Boolean = false
 
     private val defaultClickListener = OnPreferenceClickListener { preference ->
         Toast.makeText(context, "${preference.title} Clicked", LENGTH_SHORT).show()
         true
     }
 
-    private val sharedPreferencesChangeListener = OnSharedPreferenceChangeListener { sharedPrefs, key ->
-        val newValue = sharedPrefs.getBoolean(key, false)
-        if (key == getString(pref_key_shared_prefs_reload)) {
-            Logger.debug("Got change listener for $key = $newValue")
-            if (newValue) {
-                Logger.debug("Reloading Settings fragment")
-                CenoSettings.setStatusUpdateRequired(requireContext(), false)
-                findNavController().popBackStack() // Pop before relaunching the fragment to preserve backstack
-                findNavController().navigate(R.id.action_global_settings)
-            }
-        } else if (key == getString(pref_key_shared_prefs_update)) {
-            if (newValue) {
-                /* toggle preferences to refresh value */
-                getPreference(pref_key_ouinet_state)?.let {
-                    it.isEnabled = !(it.isEnabled)
-                    it.isEnabled = !(it.isEnabled)
+    private val sharedPreferencesChangeListener =
+        OnSharedPreferenceChangeListener { sharedPrefs, key ->
+            val newValue = sharedPrefs.getBoolean(key, false)
+            if (key == getString(pref_key_shared_prefs_reload)) {
+                Logger.debug("Got change listener for $key = $newValue")
+                if (newValue) {
+                    Logger.debug("Reloading Settings fragment")
+                    CenoSettings.setStatusUpdateRequired(requireContext(), false)
+                    findNavController().popBackStack() // Pop before relaunching the fragment to preserve backstack
+                    findNavController().navigate(R.id.action_global_settings)
                 }
-                getPreference(pref_key_ceno_cache_size)?.let {
-                    it.isEnabled = !(it.isEnabled)
-                    it.isEnabled = !(it.isEnabled)
+            } else if (key == getString(pref_key_shared_prefs_update)) {
+                if (newValue) {
+                    /* toggle preferences to refresh value */
+                    getPreference(pref_key_ouinet_state)?.let {
+                        it.isEnabled = !(it.isEnabled)
+                        it.isEnabled = !(it.isEnabled)
+                    }
+                    getPreference(pref_key_ceno_cache_size)?.let {
+                        it.isEnabled = !(it.isEnabled)
+                        it.isEnabled = !(it.isEnabled)
+                    }
+                    getPreference(pref_key_ceno_groups_count)?.let {
+                        it.isEnabled = !(it.isEnabled)
+                        it.isEnabled = !(it.isEnabled)
+                    }
+                    getPreference(pref_key_ceno_download_log)?.let {
+                        it.isVisible = CenoSettings.isCenoLogEnabled(requireContext())
+                        it.isEnabled = !(it.isEnabled)
+                        it.isEnabled = !(it.isEnabled)
+                    }
+                    getPreference(pref_key_ceno_download_android_log)?.let {
+                        it.isVisible = CenoSettings.isCenoLogEnabled(requireContext())
+                        it.isEnabled = !(it.isEnabled)
+                        it.isEnabled = !(it.isEnabled)
+                    }
+                    cenoPrefs.sharedPrefsUpdate = false
                 }
-                getPreference(pref_key_ceno_groups_count)?.let {
-                    it.isEnabled = !(it.isEnabled)
-                    it.isEnabled = !(it.isEnabled)
-                }
-                getPreference(pref_key_ceno_download_log)?.let {
-                    it.isVisible = CenoSettings.isCenoLogEnabled(requireContext())
-                    it.isEnabled = !(it.isEnabled)
-                    it.isEnabled = !(it.isEnabled)
-                }
-                getPreference(pref_key_ceno_download_android_log)?.let {
-                    it.isVisible = CenoSettings.isCenoLogEnabled(requireContext())
-                    it.isEnabled = !(it.isEnabled)
-                    it.isEnabled = !(it.isEnabled)
-                }
-                cenoPrefs.sharedPrefsUpdate = false
             }
         }
-    }
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         cenoPrefs = requireComponents.cenoPreferences
@@ -156,7 +211,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 onNeedToRequestPermissions = { permissions ->
                     // The Fragment class wants us to use registerForActivityResult
                     @Suppress("DEPRECATION")
-                    requestPermissions(permissions, AppPermissionCodes.REQUEST_CODE_DOWNLOAD_PERMISSIONS)
+                    requestPermissions(
+                        permissions,
+                        AppPermissionCodes.REQUEST_CODE_DOWNLOAD_PERMISSIONS
+                    )
                 },
             ),
             owner = this,
@@ -172,13 +230,15 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         view.consumeFrom(requireComponents.appStore, viewLifecycleOwner) {
             CenoSettings.setOuinetState(requireContext(), it.ouinetStatus.name)
-            getPreference(pref_key_ouinet_state)?.summaryProvider = Preference.SummaryProvider<Preference> {
-                CenoSettings.getOuinetState(requireContext())
-            }
+            getPreference(pref_key_ouinet_state)?.summaryProvider =
+                Preference.SummaryProvider<Preference> {
+                    CenoSettings.getOuinetState(requireContext())
+                }
             if (it.ouinetStatus == Ouinet.RunningState.Started) {
                 bridgeAnnouncementDialog.dismiss()
                 bridgeModeChanged = false
-                getPreference(pref_key_bridge_announcement)?.onPreferenceChangeListener = getChangeListenerForBridgeAnnouncement()
+                getPreference(pref_key_bridge_announcement)?.onPreferenceChangeListener =
+                    getChangeListenerForBridgeAnnouncement()
             }
         }
         if (arguments?.getBoolean(scrollToBridge) == true) {
@@ -241,7 +301,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onPause() {
         super.onPause()
-        cenoPrefs.preferences.unregisterOnSharedPreferenceChangeListener(sharedPreferencesChangeListener)
+        cenoPrefs.preferences.unregisterOnSharedPreferenceChangeListener(
+            sharedPreferencesChangeListener
+        )
         cenoPrefs.sharedPrefsReload = false
     }
 
@@ -253,28 +315,42 @@ class SettingsFragment : PreferenceFragmentCompat() {
             (getAutofillPreference(pref_key_autofill) as AutofillPreference).updateSwitch()
         }
 
-        getPreference(pref_key_make_default_browser)?.onPreferenceClickListener = getClickListenerForMakeDefaultBrowser()
-        getSwitchPreferenceCompat(pref_key_remote_debugging)?.onPreferenceChangeListener = getChangeListenerForRemoteDebugging()
+        getPreference(pref_key_make_default_browser)?.onPreferenceClickListener =
+            getClickListenerForMakeDefaultBrowser()
+        getSwitchPreferenceCompat(pref_key_remote_debugging)?.onPreferenceChangeListener =
+            getChangeListenerForRemoteDebugging()
         getPreference(pref_key_about_page)?.onPreferenceClickListener = getAboutPageListener()
         getPreference(pref_key_privacy)?.onPreferenceClickListener = getClickListenerForPrivacy()
-        getPreference(pref_key_override_amo_collection)?.onPreferenceClickListener = getClickListenerForCustomAddons()
-        getPreference(pref_key_customization)?.onPreferenceClickListener = getClickListenerForCustomization()
-        getPreference(pref_key_delete_browsing_data)?.onPreferenceClickListener = getClickListenerForDeleteBrowsingData()
-        getSwitchPreferenceCompat(pref_key_allow_crash_reporting)?.onPreferenceChangeListener = getClickListenerForCrashReporting()
-        getPreference(pref_key_search_engine)?.onPreferenceClickListener = getClickListenerForSearch()
+        getPreference(pref_key_override_amo_collection)?.onPreferenceClickListener =
+            getClickListenerForCustomAddons()
+        getPreference(pref_key_customization)?.onPreferenceClickListener =
+            getClickListenerForCustomization()
+        getPreference(pref_key_delete_browsing_data)?.onPreferenceClickListener =
+            getClickListenerForDeleteBrowsingData()
+        getSwitchPreferenceCompat(pref_key_allow_crash_reporting)?.onPreferenceChangeListener =
+            getClickListenerForCrashReporting()
+        getPreference(pref_key_search_engine)?.onPreferenceClickListener =
+            getClickListenerForSearch()
         getPreference(pref_key_add_ons)?.onPreferenceClickListener = getClickListenerForAddOns()
-        getPreference(pref_key_ceno_website_sources)?.onPreferenceClickListener = getClickListenerForWebsiteSources()
-        getPreference(pref_key_bridge_announcement)?.onPreferenceChangeListener = getChangeListenerForBridgeAnnouncement()
-        getPreference(pref_key_search_engine)?.summary = getString(setting_item_selected, requireContext().components.core.store.state.search.selectedOrDefaultSearchEngine?.name)
+        getPreference(pref_key_ceno_website_sources)?.onPreferenceClickListener =
+            getClickListenerForWebsiteSources()
+        getPreference(pref_key_bridge_announcement)?.onPreferenceChangeListener =
+            getChangeListenerForBridgeAnnouncement()
+        getPreference(pref_key_search_engine)?.summary = getString(
+            setting_item_selected,
+            requireContext().components.core.store.state.search.selectedOrDefaultSearchEngine?.name
+        )
 
-        getPreference(pref_key_bridge_announcement)?.summary = getString(bridge_mode_ip_warning_text)
+        getPreference(pref_key_bridge_announcement)?.summary =
+            getString(bridge_mode_ip_warning_text)
 
 
         // Update notifications
         when {
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !requireComponents.permissionHandler.isAllowingPostNotifications() -> {
                 getPreference(pref_key_allow_notifications)?.isVisible = true
-                getPreference(pref_key_allow_notifications)?.onPreferenceClickListener = getClickListenerForAllowNotifications()
+                getPreference(pref_key_allow_notifications)?.onPreferenceClickListener =
+                    getClickListenerForAllowNotifications()
             }
 
             else -> {
@@ -290,7 +366,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
             else -> {
                 getPreference(pref_key_disable_battery_opt)?.isVisible = true
-                getPreference(pref_key_disable_battery_opt)?.onPreferenceClickListener = getClickListenerForDisableBatteryOpt()
+                getPreference(pref_key_disable_battery_opt)?.onPreferenceClickListener =
+                    getClickListenerForDisableBatteryOpt()
             }
         }
 
@@ -311,10 +388,14 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun setupCenoSettings() {
-        getPreference(pref_key_ceno_download_log)?.isVisible = CenoSettings.isCenoLogEnabled(requireContext())
-        getPreference(pref_key_ceno_download_android_log)?.isVisible = CenoSettings.isCenoLogEnabled(requireContext())
-        getPreference(pref_key_about_ceno)?.summary = CenoSettings.getCenoVersionString(requireContext())
-        getPreference(pref_key_about_geckoview)?.summary = BuildConfig.MOZ_APP_VERSION + "-" + BuildConfig.MOZ_APP_BUILDID
+        getPreference(pref_key_ceno_download_log)?.isVisible =
+            CenoSettings.isCenoLogEnabled(requireContext())
+        getPreference(pref_key_ceno_download_android_log)?.isVisible =
+            CenoSettings.isCenoLogEnabled(requireContext())
+        getPreference(pref_key_about_ceno)?.summary =
+            CenoSettings.getCenoVersionString(requireContext())
+        getPreference(pref_key_about_geckoview)?.summary =
+            BuildConfig.MOZ_APP_VERSION + "-" + BuildConfig.MOZ_APP_BUILDID
 
         if (CenoSettings.isStatusUpdateRequired(requireContext())) {
             /* Ouinet status not yet updated */
@@ -329,20 +410,23 @@ class SettingsFragment : PreferenceFragmentCompat() {
             CenoSettings.ouinetClientRequest(requireContext(), OuinetKey.API_STATUS)
         } else {
             /* Enable Ceno related options */
-            getPreference(pref_key_ouinet_state)?.summaryProvider = Preference.SummaryProvider<Preference> {
-                CenoSettings.getOuinetState(requireContext())
-            }
-            getPreference(pref_key_ceno_cache_size)?.summaryProvider = Preference.SummaryProvider<Preference> {
-                CenoSettings.getCenoCacheSize(requireContext())
-            }
+            getPreference(pref_key_ouinet_state)?.summaryProvider =
+                Preference.SummaryProvider<Preference> {
+                    CenoSettings.getOuinetState(requireContext())
+                }
+            getPreference(pref_key_ceno_cache_size)?.summaryProvider =
+                Preference.SummaryProvider<Preference> {
+                    CenoSettings.getCenoCacheSize(requireContext())
+                }
             CenoSettings.ouinetClientRequest(requireContext(), OuinetKey.GROUPS_TXT)
-            getPreference(pref_key_ceno_groups_count)?.summaryProvider = Preference.SummaryProvider<Preference> {
-                resources.getQuantityString(
-                    R.plurals.preferences_ceno_groups_count_subtitle,
-                    CenoSettings.getCenoGroupsCount(requireContext()),
-                    CenoSettings.getCenoGroupsCount(requireContext())
-                )
-            }
+            getPreference(pref_key_ceno_groups_count)?.summaryProvider =
+                Preference.SummaryProvider<Preference> {
+                    resources.getQuantityString(
+                        R.plurals.preferences_ceno_groups_count_subtitle,
+                        CenoSettings.getCenoGroupsCount(requireContext()),
+                        CenoSettings.getCenoGroupsCount(requireContext())
+                    )
+                }
             setPreference(
                 getPreference(pref_key_ceno_groups_count),
                 true,
@@ -373,8 +457,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 true,
                 clickListener = getClickListenerForAndroidLogExport()
             )
-            getPreference(pref_key_about_ouinet)?.summary = CenoSettings.getOuinetVersion(requireContext()) + " " +
-                CenoSettings.getOuinetBuildId(requireContext())
+            getPreference(pref_key_about_ouinet)?.summary =
+                CenoSettings.getOuinetVersion(requireContext()) + " " +
+                    CenoSettings.getOuinetBuildId(requireContext())
         }
     }
 
@@ -456,7 +541,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
 //            Re-allow post-crash permissions nudge
 //            This should ALWAYS be turned on when this permission state is toggled
-            ie.equalit.ceno.settings.Settings.toggleCrashReportingPermissionNudge(requireContext(), true)
+            ie.equalit.ceno.settings.Settings.toggleCrashReportingPermissionNudge(
+                requireContext(),
+                true
+            )
             true
         }
     }
@@ -587,12 +675,13 @@ class SettingsFragment : PreferenceFragmentCompat() {
             CenoSettings.ouinetClientRequest(
                 context = requireContext(),
                 key = OuinetKey.LOGFILE,
-                newValue = if(newValue == true) OuinetValue.ENABLED else OuinetValue.DISABLED,
+                newValue = if (newValue == true) OuinetValue.ENABLED else OuinetValue.DISABLED,
                 stringValue = null,
                 object : OuinetResponseListener {
                     override fun onSuccess(message: String, data: Any?) {
                         requireComponents.cenoPreferences.sharedPrefsUpdate = true
                     }
+
                     override fun onError() {
                         Log.e(TAG, "Failed to set log file to newValue: $newValue")
                     }
@@ -603,7 +692,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             CenoSettings.ouinetClientRequest(
                 context = requireContext(),
                 key = OuinetKey.LOG_LEVEL,
-                stringValue = if(newValue == true) Config.LogLevel.DEBUG.toString() else Config.LogLevel.INFO.toString()
+                stringValue = if (newValue == true) Config.LogLevel.DEBUG.toString() else Config.LogLevel.INFO.toString()
             )
 
             true
@@ -634,7 +723,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 ouinetResponseListener = object : OuinetResponseListener {
                     override fun onSuccess(message: String, data: Any?) {
                         if (message.trim().isEmpty()) {
-                            Toast.makeText(requireContext(), getString(R.string.no_content_shared), Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                requireContext(),
+                                getString(R.string.no_content_shared),
+                                Toast.LENGTH_LONG
+                            ).show()
                         } else {
                             findNavController().navigate(
                                 R.id.action_settingsFragment_to_siteContentGroupFragment,
@@ -727,17 +820,18 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
-    private fun setLogFileAndLevel (newValue : Boolean) {
+    private fun setLogFileAndLevel(newValue: Boolean) {
         // network request to update preference value
         CenoSettings.ouinetClientRequest(
             context = requireContext(),
             key = OuinetKey.LOGFILE,
-            newValue = if(newValue) OuinetValue.ENABLED else OuinetValue.DISABLED,
+            newValue = if (newValue) OuinetValue.ENABLED else OuinetValue.DISABLED,
             null,
             object : OuinetResponseListener {
                 override fun onSuccess(message: String, data: Any?) {
                     logFileReset = !newValue
                 }
+
                 override fun onError() {
                     /* Still flag reset complete on error, since not flagging will cause dialog to hang */
                     logFileReset = !newValue
@@ -749,11 +843,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
             context = requireContext(),
             key = OuinetKey.LOG_LEVEL,
             newValue = null,
-            stringValue = if(newValue) Config.LogLevel.DEBUG.toString() else Config.LogLevel.INFO.toString(),
+            stringValue = if (newValue) Config.LogLevel.DEBUG.toString() else Config.LogLevel.INFO.toString(),
             object : OuinetResponseListener {
                 override fun onSuccess(message: String, data: Any?) {
                     logLevelReset = !newValue
                 }
+
                 override fun onError() {
                     /* Still flag reset complete on error, since not flagging will cause dialog to hang */
                     logLevelReset = !newValue
@@ -821,11 +916,13 @@ class SettingsFragment : PreferenceFragmentCompat() {
                     .create()
                     .apply {
                         setOnDismissListener {
-                            Toast.makeText(requireContext(), getString(canceled), Toast.LENGTH_LONG).show()
+                            Toast.makeText(requireContext(), getString(canceled), Toast.LENGTH_LONG)
+                                .show()
                             job?.cancel()
                             dismiss()
                         }
-                        progressDialogView.findViewById<ImageButton>(R.id.cancel).setOnClickListener { dismiss() }
+                        progressDialogView.findViewById<ImageButton>(R.id.cancel)
+                            .setOnClickListener { dismiss() }
                     }
 
                 job = viewLifecycleOwner.lifecycleScope.launch {
@@ -855,13 +952,17 @@ class SettingsFragment : PreferenceFragmentCompat() {
                             Log.d(TAG, "Log content size: ${logString.getSizeInMB()} MB")
 
                             // save file to external storage
-                            file = File(requireContext().getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)?.path +"/${getString(ceno_android_logs_file_name)}.txt")
+                            file = File(
+                                requireContext().getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)?.path + "/${
+                                    getString(ceno_android_logs_file_name)
+                                }.txt"
+                            )
 
                             file?.writeText(logString)
 
                             withContext(Dispatchers.Main) {
 
-                                progressDialog.setOnDismissListener {  } // reset dismissListener
+                                progressDialog.setOnDismissListener { } // reset dismissListener
 
                                 progressView.progress = 100
                                 delay(200)

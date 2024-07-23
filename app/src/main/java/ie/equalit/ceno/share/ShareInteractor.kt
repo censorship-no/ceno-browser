@@ -1,7 +1,5 @@
 package ie.equalit.ceno.share
 
-import mozilla.components.concept.sync.Device
-
 /**
  * Interactor for the share screen.
  */
@@ -21,6 +19,7 @@ class ShareInteractor(
     override fun onSaveToPDF(tabId: String?) {
         controller.handleSaveToPDF(tabId)
     }
+
     override fun onPrint(tabId: String?) {
         controller.handlePrint(tabId)
     }

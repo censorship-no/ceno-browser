@@ -14,7 +14,7 @@ class CustomLoadUrlUseCase internal constructor(
     private val onNoTab: (String) -> TabSessionState,
 ) : SessionUseCases.LoadUrlUseCase {
 
-    var onNoSelectedTab : (String) -> Unit = {}
+    var onNoSelectedTab: (String) -> Unit = {}
 
     /**
      * Loads the provided URL using the currently selected session. If
@@ -36,13 +36,12 @@ class CustomLoadUrlUseCase internal constructor(
             *  open a website via p2p mechanism from the home page without forcing HTTPS
             *  should find better solution that doesn't rewrite url or force HTTPS */
             val httpsUrl = if (url.contains("localhost"))
-                /* Don't rewrite if fetching local resource */
+            /* Don't rewrite if fetching local resource */
                 url
             else
                 "https://${URLStringUtils.toDisplayUrl(url)}"
             onNoSelectedTab.invoke(httpsUrl)
-        }
-        else {
+        } else {
             this.invoke(url, sessionId, flags, additionalHeaders)
         }
     }

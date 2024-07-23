@@ -28,9 +28,12 @@ object PrivatePage {
             .bufferedReader()
             .use { it.readText() }
             .replace("%pageTitle%", context.getString(R.string.private_browsing_title))
-             /* CENO: Change the text being displayed on the about:privatebrowsing page */
+            /* CENO: Change the text being displayed on the about:privatebrowsing page */
             .replace("%pageBody%", context.getString(R.string.ceno_private_browsing_body))
-            .replace("%privateBrowsingSupportUrl%", context.getString(R.string.ceno_mode_manual_link))
+            .replace(
+                "%privateBrowsingSupportUrl%",
+                context.getString(R.string.ceno_mode_manual_link)
+            )
             .replace("%css%", css)
     }
 }

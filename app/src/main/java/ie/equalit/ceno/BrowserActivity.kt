@@ -116,7 +116,10 @@ open class BrowserActivity : BaseActivity() {
         navHost.navController.navigate(R.id.action_global_external_browser, Bundle().apply {
             "session_id" to sessionId
             putWebAppManifest(manifest)
-            putParcelableArrayList("org.mozilla.samples.browser.TRUSTED_SCOPES", ArrayList(trustedScopes))
+            putParcelableArrayList(
+                "org.mozilla.samples.browser.TRUSTED_SCOPES",
+                ArrayList(trustedScopes)
+            )
         })
     }
 
@@ -146,7 +149,14 @@ open class BrowserActivity : BaseActivity() {
         supportActionBar!!.apply {
             hide()
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this@BrowserActivity, R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this@BrowserActivity,
+                        R.color.ceno_action_bar
+                    )
+                )
+            )
         }
 
         val safeIntent = SafeIntent(intent)
@@ -174,22 +184,28 @@ open class BrowserActivity : BaseActivity() {
         lifecycle.addObserver(webExtensionPopupObserver)
 
         // check if a crash happened in the last session
-        if(Settings.wasCrashSuccessfullyLogged(this@BrowserActivity)) {
+        if (Settings.wasCrashSuccessfullyLogged(this@BrowserActivity)) {
             Settings.logSuccessfulCrashEvent(this@BrowserActivity, false)
-            Toast.makeText(this@BrowserActivity, getString(R.string.crash_report_sent), Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this@BrowserActivity,
+                getString(R.string.crash_report_sent),
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
         // Check for previous crashes
-        if(Settings.showCrashReportingPermissionNudge(this)) {
+        if (Settings.showCrashReportingPermissionNudge(this)) {
 
             // launch Sentry activation dialog
             val dialogView = View.inflate(this, R.layout.crash_reporting_nudge_dialog, null)
             val radio0 = dialogView.findViewById<RadioButton>(R.id.radio0)
             val radio1 = dialogView.findViewById<RadioButton>(R.id.radio1)
 
-            val sentryActionDialog by lazy { AlertDialog.Builder(this).apply {
-                setPositiveButton(getString(R.string.onboarding_warning_button)) { _, _ -> }
-            } }
+            val sentryActionDialog by lazy {
+                AlertDialog.Builder(this).apply {
+                    setPositiveButton(getString(R.string.onboarding_warning_button)) { _, _ -> }
+                }
+            }
 
             AlertDialog.Builder(this@BrowserActivity).apply {
                 setView(dialogView)
@@ -197,21 +213,33 @@ open class BrowserActivity : BaseActivity() {
                     when {
                         radio0.isChecked -> {
                             Settings.alwaysAllowCrashReporting(this@BrowserActivity)
-                            SentryAndroid.init(this@BrowserActivity, SentryOptionsConfiguration.getConfig(this@BrowserActivity))
+                            SentryAndroid.init(
+                                this@BrowserActivity,
+                                SentryOptionsConfiguration.getConfig(this@BrowserActivity)
+                            )
 
-                            sentryActionDialog.setMessage(getString(R.string.crash_reporting_opt_in)).show()
+                            sentryActionDialog.setMessage(getString(R.string.crash_reporting_opt_in))
+                                .show()
                         }
+
                         radio1.isChecked -> {
                             Settings.neverAllowCrashReporting(this@BrowserActivity)
-                            sentryActionDialog.setMessage(getString(R.string.crash_reporting_opt_out)).show()
+                            sentryActionDialog.setMessage(getString(R.string.crash_reporting_opt_out))
+                                .show()
                         }
                     }
                 }
                 setOnDismissListener {
-                    Settings.setCrashHappened(this@BrowserActivity, false) // reset the value of lastCrash
+                    Settings.setCrashHappened(
+                        this@BrowserActivity,
+                        false
+                    ) // reset the value of lastCrash
                 }
                 setNegativeButton(getString(R.string.mozac_feature_prompt_not_now)) { _, _ ->
-                    Settings.setCrashHappened(this@BrowserActivity, false) // reset the value of lastCrash
+                    Settings.setCrashHappened(
+                        this@BrowserActivity,
+                        false
+                    ) // reset the value of lastCrash
                 }
                 create()
             }.show()
@@ -231,7 +259,7 @@ open class BrowserActivity : BaseActivity() {
     private fun setupThemeAndBrowsingMode(mode: BrowsingMode) {
         cenoPreferences().lastKnownBrowsingMode = mode
         themeManager = DefaultThemeManager(mode, this)
-        browsingModeManager = DefaultBrowsingManager(mode, cenoPreferences()) {newMode ->
+        browsingModeManager = DefaultBrowsingManager(mode, cenoPreferences()) { newMode ->
             themeManager.currentMode = newMode
             components.appStore.dispatch(AppAction.ModeChange(newMode))
         }
@@ -284,7 +312,7 @@ open class BrowserActivity : BaseActivity() {
         }
         isActivityResumed = true
         //If we have some fragment to show do it now then clear the queue
-        if(lastCall != null){
+        if (lastCall != null) {
             updateView(lastCall!!)
             lastCall = null
         }
@@ -294,14 +322,22 @@ open class BrowserActivity : BaseActivity() {
         This needs to be optimized to reduce the need to update this part of the codebase when a new fragment is created
         */
         supportActionBar!!.apply {
-            when(navHost.navController.currentDestination?.id) {
+            when (navHost.navController.currentDestination?.id) {
                 R.id.settingsFragment, R.id.networkSettingsFragment, R.id.privacySettingsFragment,
                 R.id.customizationSettingsFragment, R.id.installedSearchEnginesSettingsFragment,
                 R.id.deleteBrowsingDataFragment, R.id.aboutFragment, R.id.websiteSourceSettingsFragment -> show()
+
                 else -> hide()
             }
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this@BrowserActivity, R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this@BrowserActivity,
+                        R.color.ceno_action_bar
+                    )
+                )
+            )
         }
     }
 
@@ -310,6 +346,7 @@ open class BrowserActivity : BaseActivity() {
             onBackPressed()
             true
         }
+
         else -> super.onOptionsItemSelected(item)
     }
 
@@ -321,8 +358,7 @@ open class BrowserActivity : BaseActivity() {
             ) {
                 navHost.navController.popBackStack(R.id.homeFragment, true)
                 navHost.navController.navigate(R.id.action_global_home)
-            }
-            else {
+            } else {
                 navHost.navController.navigate(R.id.action_global_browser)
             }
             return
@@ -332,7 +368,8 @@ open class BrowserActivity : BaseActivity() {
             return
         }
 
-        val fragment: Fragment? = navHost.childFragmentManager.findFragmentById(R.id.nav_host_fragment)
+        val fragment: Fragment? =
+            navHost.childFragmentManager.findFragmentById(R.id.nav_host_fragment)
         if ((fragment is UserInteractionHandler) && fragment.onBackPressed()) {
             return
         }
@@ -350,7 +387,12 @@ open class BrowserActivity : BaseActivity() {
         )
 
         val fragment = navHost.childFragmentManager.findFragmentById(R.id.nav_host_fragment)
-        if (fragment is ActivityResultHandler && fragment.onActivityResult(requestCode, data, resultCode)) {
+        if (fragment is ActivityResultHandler && fragment.onActivityResult(
+                requestCode,
+                data,
+                resultCode
+            )
+        ) {
             return
         }
 
@@ -371,12 +413,12 @@ open class BrowserActivity : BaseActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         val safeIntent = SafeIntent(intent)
-        if(safeIntent.action == Intent.ACTION_MAIN &&
+        if (safeIntent.action == Intent.ACTION_MAIN &&
             safeIntent.hasExtra(OuinetNotification.FROM_NOTIFICATION_EXTRA)
-        ){
+        ) {
             navHost.navController.navigate(R.id.action_global_home)
         }
-        if(safeIntent.action == Intent.ACTION_VIEW) {
+        if (safeIntent.action == Intent.ACTION_VIEW) {
             navHost.navController.navigate(R.id.action_global_browser)
         }
     }
@@ -408,7 +450,8 @@ open class BrowserActivity : BaseActivity() {
     }
 
     override fun onUserLeaveHint() {
-        val fragment: Fragment? = navHost.childFragmentManager.findFragmentById(R.id.nav_host_fragment)
+        val fragment: Fragment? =
+            navHost.childFragmentManager.findFragmentById(R.id.nav_host_fragment)
         if (fragment is UserInteractionHandler && fragment.onHomePressed()) {
             return
         }
@@ -416,9 +459,16 @@ open class BrowserActivity : BaseActivity() {
         super.onUserLeaveHint()
     }
 
-    override fun onCreateView(parent: View?, name: String, context: Context, attrs: AttributeSet): View? =
+    override fun onCreateView(
+        parent: View?,
+        name: String,
+        context: Context,
+        attrs: AttributeSet
+    ): View? =
         when (name) {
-            EngineView::class.java.name -> components.core.engine.createView(context, attrs).asView()
+            EngineView::class.java.name -> components.core.engine.createView(context, attrs)
+                .asView()
+
             else -> super.onCreateView(parent, name, context, attrs)
         }
 
@@ -431,7 +481,7 @@ open class BrowserActivity : BaseActivity() {
     }
 
     /* CENO: Add function to open requested site in BrowserFragment */
-    fun openToBrowser(url : String? = null, newTab : Boolean = false, private: Boolean = false){
+    fun openToBrowser(url: String? = null, newTab: Boolean = false, private: Boolean = false) {
         if (url != null) {
             if (newTab) {
                 //set browsingMode
@@ -452,21 +502,22 @@ open class BrowserActivity : BaseActivity() {
 
     private fun showBrowser() {
 
-        if(navHost.navController.currentDestination?.id == R.id.browserFragment) {
+        if (navHost.navController.currentDestination?.id == R.id.browserFragment) {
             return
         }
 
         navHost.navController.navigate(R.id.action_global_browser)
     }
+
     fun switchBrowsingModeHome(currentMode: BrowsingMode) {
         browsingModeManager.mode = BrowsingMode.fromBoolean(!currentMode.isPersonal)
 
         components.appStore.dispatch(AppAction.ModeChange(browsingModeManager.mode))
     }
 
-    fun updateView(action: () -> Unit){
+    fun updateView(action: () -> Unit) {
         //If the activity is in background we register the transaction
-        if(!isActivityResumed){
+        if (!isActivityResumed) {
             lastCall = action
         } else {
             //Else we just invoke it
@@ -474,7 +525,7 @@ open class BrowserActivity : BaseActivity() {
         }
     }
 
-    private fun shutdownCallback(doClear: Boolean) : Runnable {
+    private fun shutdownCallback(doClear: Boolean): Runnable {
         return Runnable {
             if (doClear) {
                 val am = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
@@ -485,7 +536,7 @@ open class BrowserActivity : BaseActivity() {
         }
     }
 
-    fun beginShutdown(doClear : Boolean) {
+    fun beginShutdown(doClear: Boolean) {
         val handler = Handler(Looper.myLooper()!!)
         val callback = shutdownCallback(doClear)
         handler.postDelayed(
@@ -497,10 +548,12 @@ open class BrowserActivity : BaseActivity() {
             callback.run()
         }
         updateView {
-            navHost.navController.navigate(R.id.action_global_standbyFragment, bundleOf(
-                StandbyFragment.DO_CLEAR to doClear,
-                StandbyFragment.shutdownCeno to true
-            ))
+            navHost.navController.navigate(
+                R.id.action_global_standbyFragment, bundleOf(
+                    StandbyFragment.DO_CLEAR to doClear,
+                    StandbyFragment.shutdownCeno to true
+                )
+            )
         }
     }
 
@@ -508,7 +561,7 @@ open class BrowserActivity : BaseActivity() {
         getSystemService(Context.ACTIVITY_SERVICE).let { am ->
             (am as ActivityManager).runningAppProcesses?.let { processes ->
                 for (process in processes) {
-                    if (process.processName.contains("ouinetService")){
+                    if (process.processName.contains("ouinetService")) {
                         Process.killProcess(process.pid)
                     }
                 }
@@ -532,12 +585,13 @@ open class BrowserActivity : BaseActivity() {
         }
 
         /* Register TopSitesStorageObserver, which will update AppStore when top sites are changed/added/removed */
-        components.core.cenoTopSitesStorage.apply{
+        components.core.cenoTopSitesStorage.apply {
             register(
                 observer = TopSitesStorageObserver(
                     this,
                     components.cenoPreferences,
-                    components.appStore)
+                    components.appStore
+                )
             )
         }
     }
@@ -546,8 +600,9 @@ open class BrowserActivity : BaseActivity() {
         if (Settings.shouldUpdateSearchEngines(this)) {
             components.core.store.state.search.searchEngines.filter { searchEngine ->
                 searchEngine.id in listOf(
-                        getString(R.string.remove_search_engine_id_1),
-                        getString(R.string.remove_search_engine_id_2))
+                    getString(R.string.remove_search_engine_id_1),
+                    getString(R.string.remove_search_engine_id_2)
+                )
             }.forEach { searchEngine ->
                 components.useCases.searchUseCases.removeSearchEngine(searchEngine)
             }

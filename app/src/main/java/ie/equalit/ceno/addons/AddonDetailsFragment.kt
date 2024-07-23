@@ -31,8 +31,10 @@ import java.util.Locale
  */
 class AddonDetailsFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_addon_details, container, false)
     }
@@ -48,7 +50,14 @@ class AddonDetailsFragment : Fragment() {
             show()
             title = addon.translateName(requireContext())
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.ceno_action_bar
+                    )
+                )
+            )
 
         }
 
@@ -70,7 +79,8 @@ class AddonDetailsFragment : Fragment() {
             val ratingView = rootView.findViewById<RatingBar>(R.id.rating_view)
             val userCountView = rootView.findViewById<TextView>(R.id.users_count)
 
-            val ratingContentDescription = getString(R.string.mozac_feature_addons_rating_content_description_2)
+            val ratingContentDescription =
+                getString(R.string.mozac_feature_addons_rating_content_description_2)
             ratingView.contentDescription = String.format(ratingContentDescription, it.average)
             ratingView.rating = it.average
 

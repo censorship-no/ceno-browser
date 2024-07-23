@@ -16,7 +16,9 @@ object XMLParser {
         // Replace all a-tags in the description string with a placeholder string
         var formattedXML: String? = xmlString
         val descriptionUrls = xmlString.extractATags()
-        descriptionUrls.forEach { formattedXML = formattedXML?.replace(it, CENO_CUSTOM_PLACEHOLDER) }
+        descriptionUrls.forEach {
+            formattedXML = formattedXML?.replace(it, CENO_CUSTOM_PLACEHOLDER)
+        }
 
         // Initialize parser objects for processing the XML String
         val factory: XmlPullParserFactory = XmlPullParserFactory.newInstance()
@@ -76,8 +78,11 @@ object XMLParser {
                             } else {
                                 val occurrences = text.split(CENO_CUSTOM_PLACEHOLDER).size - 1
                                 var result = text
-                                for(i in 0 until occurrences) {
-                                    result = result.replaceFirst(CENO_CUSTOM_PLACEHOLDER, descriptionUrls[index])
+                                for (i in 0 until occurrences) {
+                                    result = result.replaceFirst(
+                                        CENO_CUSTOM_PLACEHOLDER,
+                                        descriptionUrls[index]
+                                    )
                                     index++
                                 }
                                 currentRssItem.description = result

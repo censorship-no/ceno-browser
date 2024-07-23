@@ -10,8 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
-import mozilla.components.concept.toolbar.Toolbar
 import ie.equalit.ceno.R
+import mozilla.components.concept.toolbar.Toolbar
 import mozilla.components.support.base.android.Padding
 import mozilla.components.support.ktx.android.content.res.resolveAttribute
 import mozilla.components.support.ktx.android.view.setPadding
@@ -20,13 +20,13 @@ import mozilla.components.support.ktx.android.view.setPadding
  * A [Toolbar.Action] implementation for CENO purge toolbar button.
  */
 @Suppress("LongParameterList")
-open class ClearToolbarAction (
+open class ClearToolbarAction(
     internal val padding: Padding? = null,
     private val listener: () -> Unit,
     private var context: Context
 ) : Toolbar.Action {
 
-    private lateinit var clearImageView:ImageView
+    private lateinit var clearImageView: ImageView
     override fun createView(parent: ViewGroup): View {
         val inflater = LayoutInflater.from(context)
         val rootView = inflater.inflate(R.layout.clear_toolbar_action, parent, false)
@@ -49,6 +49,11 @@ open class ClearToolbarAction (
     }
 
     fun updateIconColor(context: Context) {
-        clearImageView.drawable.setTint(ContextCompat.getColor(context, context.theme.resolveAttribute(R.attr.iconPrimary)))
+        clearImageView.drawable.setTint(
+            ContextCompat.getColor(
+                context,
+                context.theme.resolveAttribute(R.attr.iconPrimary)
+            )
+        )
     }
 }

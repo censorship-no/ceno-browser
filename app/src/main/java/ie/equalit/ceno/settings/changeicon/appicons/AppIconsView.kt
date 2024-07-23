@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ie.equalit.ceno.R
 import ie.equalit.ceno.settings.Settings
 
-class AppIconsView (
+class AppIconsView(
     val containerView: View,
     internal val interactor: AppIconsInteractor
 ) {

@@ -8,7 +8,7 @@ import mozilla.components.browser.state.store.BrowserStore
 import mozilla.components.concept.toolbar.Toolbar
 import mozilla.components.ui.tabcounter.TabCounterMenu
 
-class TabCounterView (
+class TabCounterView(
     var toolbar: Toolbar,
     store: BrowserStore,
     sessionId: String? = null,
@@ -18,7 +18,7 @@ class TabCounterView (
     countBasedOnSelectedTabType: Boolean = true,
     browsingModeManager: BrowsingModeManager,
     themeManager: ThemeManager
-){
+) {
     private lateinit var tabsAction: TabCounterToolbarButton
 
     init {

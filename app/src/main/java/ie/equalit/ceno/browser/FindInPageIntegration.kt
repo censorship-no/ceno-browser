@@ -72,7 +72,11 @@ class FindInPageBarBehavior(
     context: Context,
     attrs: AttributeSet,
 ) : CoordinatorLayout.Behavior<FindInPageBar>(context, attrs) {
-    override fun layoutDependsOn(parent: CoordinatorLayout, child: FindInPageBar, dependency: View): Boolean {
+    override fun layoutDependsOn(
+        parent: CoordinatorLayout,
+        child: FindInPageBar,
+        dependency: View
+    ): Boolean {
         if (dependency is BrowserToolbar) {
             return true
         }
@@ -80,7 +84,11 @@ class FindInPageBarBehavior(
         return super.layoutDependsOn(parent, child, dependency)
     }
 
-    override fun onDependentViewChanged(parent: CoordinatorLayout, child: FindInPageBar, dependency: View): Boolean {
+    override fun onDependentViewChanged(
+        parent: CoordinatorLayout,
+        child: FindInPageBar,
+        dependency: View
+    ): Boolean {
         return if (dependency is BrowserToolbar) {
             repositionFindInPageBar(child, dependency)
             true

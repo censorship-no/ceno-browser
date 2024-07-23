@@ -3,7 +3,6 @@ package ie.equalit.ceno.settings
 import android.content.Context
 import android.content.DialogInterface
 import android.view.View
-import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -13,21 +12,17 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getString
 import androidx.core.view.iterator
-import androidx.preference.Preference
 import ie.equalit.ceno.R
-import ie.equalit.ceno.ext.cenoPreferences
-import ie.equalit.ceno.ext.getPreferenceKey
 import mozilla.components.support.ktx.android.view.hideKeyboard
 import mozilla.components.support.ktx.android.view.showKeyboard
 import java.net.URLEncoder
 import java.util.Locale
-import java.util.prefs.Preferences
 import java.util.regex.Pattern
 
 class ExtraBTBootstrapsDialog(
     val context: Context,
-    val btSourcesMap:MutableMap<String, String>,
-    val updatePrefs : () -> Unit = {}
+    val btSourcesMap: MutableMap<String, String>,
+    val updatePrefs: () -> Unit = {}
 ) {
 
     private val builder: AlertDialog.Builder = AlertDialog.Builder(context)
@@ -51,7 +46,8 @@ class ExtraBTBootstrapsDialog(
                         allSelectedIPs.add(
                             btSourcesMap.entries.find { e ->
                                 e.key.lowercase() == child.text.toString().trim().lowercase()
-                            }?.value ?: child.text.toString().trim())
+                            }?.value ?: child.text.toString().trim()
+                        )
                     }
                 }
 
@@ -62,13 +58,24 @@ class ExtraBTBootstrapsDialog(
                     URLEncoder.encode(allSelectedIPs.joinToString(" "), "UTF-8"),
                     object : OuinetResponseListener {
                         override fun onSuccess(message: String, data: Any?) {
-                            CenoSettings.setExtraBitTorrentBootstrap(context, message.split("+").toTypedArray())
+                            CenoSettings.setExtraBitTorrentBootstrap(
+                                context,
+                                message.split("+").toTypedArray()
+                            )
                             updatePrefs()
-                            Toast.makeText(context, getString(context, R.string.ouinet_client_fetch_success), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                context,
+                                getString(context, R.string.ouinet_client_fetch_success),
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
 
                         override fun onError() {
-                            Toast.makeText(context, getString(context, R.string.ouinet_client_fetch_fail), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                context,
+                                getString(context, R.string.ouinet_client_fetch_fail),
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
                 )
@@ -78,9 +85,15 @@ class ExtraBTBootstrapsDialog(
                 linearLayout.addView(
                     CheckBox(context).apply {
                         text = Locale("", it.key).displayCountry
-                        isChecked = CenoSettings.getLocalBTSources(context)?.contains(it.value) == true
+                        isChecked =
+                            CenoSettings.getLocalBTSources(context)?.contains(it.value) == true
                         isAllCaps = false
-                        setTextColor(ContextCompat.getColor(context, R.color.fx_mobile_text_color_primary))
+                        setTextColor(
+                            ContextCompat.getColor(
+                                context,
+                                R.color.fx_mobile_text_color_primary
+                            )
+                        )
                     }
                 )
             }
@@ -120,7 +133,11 @@ class ExtraBTBootstrapsDialog(
                                 """^(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)$"""
                             )
                             if (!ipPattern.matcher(ipAddress.trim()).matches()) {
-                                Toast.makeText(context, getString(context, R.string.bt_invalid_ip_error), Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    context,
+                                    getString(context, R.string.bt_invalid_ip_error),
+                                    Toast.LENGTH_SHORT
+                                ).show()
                                 customBTSourcesView.hideKeyboard()
                                 return@setPositiveButton
                             }

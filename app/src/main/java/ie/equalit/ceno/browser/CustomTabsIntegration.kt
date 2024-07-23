@@ -8,6 +8,9 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat
+import ie.equalit.ceno.BrowserActivity
+import ie.equalit.ceno.R
+import ie.equalit.ceno.ext.share
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import mozilla.components.browser.menu2.BrowserMenuController
@@ -32,9 +35,6 @@ import mozilla.components.lib.state.ext.flowScoped
 import mozilla.components.support.base.feature.LifecycleAwareFeature
 import mozilla.components.support.base.feature.UserInteractionHandler
 import mozilla.components.support.base.log.logger.Logger
-import ie.equalit.ceno.BrowserActivity
-import ie.equalit.ceno.R
-import ie.equalit.ceno.ext.share
 
 @Suppress("LongParameterList")
 class CustomTabsIntegration(

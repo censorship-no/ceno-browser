@@ -12,7 +12,8 @@ import androidx.preference.PreferenceViewHolder
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.components
 
-class RadioSearchEngineListPreference : SearchEngineListPreference, RadioGroup.OnCheckedChangeListener {
+class RadioSearchEngineListPreference : SearchEngineListPreference,
+    RadioGroup.OnCheckedChangeListener {
 
     override val itemResId: Int
         get() = R.layout.search_engine_radio_button
@@ -21,7 +22,11 @@ class RadioSearchEngineListPreference : SearchEngineListPreference, RadioGroup.O
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
     @Suppress("unused")
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    )
 
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)

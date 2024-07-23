@@ -30,7 +30,11 @@ class AndroidLogFragment : Fragment() {
     private var adapter = LogTextAdapter()
     private var isLoading = true
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         _binding = FragmentAndroidLogBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -42,7 +46,14 @@ class AndroidLogFragment : Fragment() {
             show()
             title = getString(R.string.ceno_android_logs_file_name)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.ceno_action_bar
+                    )
+                )
+            )
         }
 
         // get logs from arguments
@@ -60,7 +71,8 @@ class AndroidLogFragment : Fragment() {
 
                 if (!isLoading
                     && loadedItemCount < allItems.size
-                    && (layoutManager.childCount + layoutManager.findFirstVisibleItemPosition()) >= layoutManager.itemCount) {
+                    && (layoutManager.childCount + layoutManager.findFirstVisibleItemPosition()) >= layoutManager.itemCount
+                ) {
                     loadMoreData()
                 }
             }
@@ -69,7 +81,10 @@ class AndroidLogFragment : Fragment() {
 
     private fun loadInitialData() {
 
-        Log.d(TAG, "Loading first ${if (allItems.size < itemsPerBatch) allItems.size else itemsPerBatch} logs")
+        Log.d(
+            TAG,
+            "Loading first ${if (allItems.size < itemsPerBatch) allItems.size else itemsPerBatch} logs"
+        )
 
         // Load the initial set of data
         val initialData = loadBatchOfItems(0)

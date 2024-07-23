@@ -13,7 +13,11 @@ import ie.equalit.ceno.databinding.ExpandableListChildItemBinding
 import ie.equalit.ceno.databinding.ExpandableListGroupItemBinding
 
 
-class CachedGroupAdapter(private val context: Context, private val groupList: List<GroupItem>, private val clickListener: GroupClickListener?) :
+class CachedGroupAdapter(
+    private val context: Context,
+    private val groupList: List<GroupItem>,
+    private val clickListener: GroupClickListener?
+) :
     BaseExpandableListAdapter() {
 
     override fun getGroupCount(): Int {
@@ -54,7 +58,8 @@ class CachedGroupAdapter(private val context: Context, private val groupList: Li
         convertView: View?,
         parent: ViewGroup?
     ): View {
-        val binding = ExpandableListGroupItemBinding.inflate(LayoutInflater.from(context), parent, false)
+        val binding =
+            ExpandableListGroupItemBinding.inflate(LayoutInflater.from(context), parent, false)
         binding.groupNameTextView.text = groupList[groupPosition].name
         return binding.root
     }
@@ -66,7 +71,8 @@ class CachedGroupAdapter(private val context: Context, private val groupList: Li
         convertView: View?,
         parent: ViewGroup?
     ): View {
-        val binding = ExpandableListChildItemBinding.inflate(LayoutInflater.from(context), parent, false)
+        val binding =
+            ExpandableListChildItemBinding.inflate(LayoutInflater.from(context), parent, false)
         binding.childNameTextView.text = groupList[groupPosition].children[childPosition]
         binding.root.setOnClickListener {
             clickListener?.onLinkClicked(groupList[groupPosition].children[childPosition])

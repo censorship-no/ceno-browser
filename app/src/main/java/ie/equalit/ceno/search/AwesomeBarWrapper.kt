@@ -10,13 +10,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.AbstractComposeView
+import ie.equalit.ceno.ext.components
 import mozilla.components.compose.browser.awesomebar.AwesomeBar
 import mozilla.components.compose.browser.awesomebar.AwesomeBarDefaults
 import mozilla.components.compose.browser.awesomebar.AwesomeBarOrientation
 import mozilla.components.concept.awesomebar.AwesomeBar
-import mozilla.components.support.ktx.android.view.hideKeyboard
-import ie.equalit.ceno.ext.components
 import mozilla.components.feature.awesomebar.provider.SearchSuggestionProvider
+import mozilla.components.support.ktx.android.view.hideKeyboard
 
 /**
  * This wrapper wraps the `AwesomeBar()` composable and exposes it as a `View` and `concept-awesomebar`
@@ -64,7 +64,7 @@ class AwesomeBarWrapper @JvmOverloads constructor(
     }
 
     override fun addProviders(vararg providers: AwesomeBar.SuggestionProvider) {
-        if(providers.first() is SearchSuggestionProvider) {
+        if (providers.first() is SearchSuggestionProvider) {
             searchSuggestionProvider = providers.first() as SearchSuggestionProvider
         }
         val newProviders = this.providers.value.toMutableList()

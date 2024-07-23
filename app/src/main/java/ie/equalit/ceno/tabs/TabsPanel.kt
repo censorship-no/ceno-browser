@@ -14,10 +14,9 @@ import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.tabs.TabLayout
-import mozilla.components.feature.tabs.tabstray.TabsFeature
 import ie.equalit.ceno.R
-import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.browser.BrowsingModeManager
+import mozilla.components.feature.tabs.tabstray.TabsFeature
 
 class TabsPanel @JvmOverloads constructor(
     context: Context,
@@ -79,7 +78,7 @@ class TabsPanel @JvmOverloads constructor(
 
     /* CENO: Needed method to select normal/private tab during init of TabsTray */
     fun selectTab(isPrivate: Boolean) {
-        if (isPrivate)  {
+        if (isPrivate) {
             privateTab.select()
         } else {
             normalTab.select()

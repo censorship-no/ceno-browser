@@ -1,6 +1,5 @@
 package ie.equalit.ceno.home
 
-import android.util.Log
 import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
@@ -41,6 +40,7 @@ open class BaseHomeCardViewHolder(
             LEARN_MORE -> {
                 interactor.onMenuItemClicked(cardType)
             }
+
             CLOSE -> {
                 interactor.onRemoveCard(cardType)
             }

@@ -3,7 +3,6 @@ package ie.equalit.ceno.components.ceno
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import mozilla.components.concept.engine.webextension.InstallationMethod
 import mozilla.components.concept.engine.webextension.WebExtensionRuntime
 import mozilla.components.support.base.log.logger.Logger
 import org.mozilla.geckoview.GeckoResult
@@ -25,14 +24,17 @@ object UblockOriginWebExt {
     fun installFromXpi(runtime: GeckoRuntime) {
         runtime.webExtensionController.install(UBLOCK_ORIGIN_EXTENSION_URL).apply {
             then(
-                    {
-                        logger.debug("Installed uBlock Origin WebExtension from xpi: ")
-                        GeckoResult<Void>()
-                    },
-                    { throwable ->
-                        logger.error("Failed to install uBlock Origin WebExtension from xpi:", throwable)
-                        GeckoResult<Void>()
-                    }
+                {
+                    logger.debug("Installed uBlock Origin WebExtension from xpi: ")
+                    GeckoResult<Void>()
+                },
+                { throwable ->
+                    logger.error(
+                        "Failed to install uBlock Origin WebExtension from xpi:",
+                        throwable
+                    )
+                    GeckoResult<Void>()
+                }
             )
         }
     }

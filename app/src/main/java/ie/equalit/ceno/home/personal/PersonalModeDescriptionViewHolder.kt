@@ -19,13 +19,21 @@ import ie.equalit.ceno.utils.view.CenoViewHolder
 class PersonalModeDescriptionViewHolder(
     view: View,
     interactor: HomePageInteractor
-): CenoViewHolder(view) {
+) : CenoViewHolder(view) {
 
     private val binding = PersonalModeDescriptionBinding.bind(view)
 
     init {
-        binding.root.setBackgroundColor(ContextCompat.getColor(view.context ,R.color.fx_mobile_private_layer_color_3))
-        setLinkTextView(binding.tvPersonalBrowsingLearnMore, view.context.getString(R.string.personal_home_learn_more))
+        binding.root.setBackgroundColor(
+            ContextCompat.getColor(
+                view.context,
+                R.color.fx_mobile_private_layer_color_3
+            )
+        )
+        setLinkTextView(
+            binding.tvPersonalBrowsingLearnMore,
+            view.context.getString(R.string.personal_home_learn_more)
+        )
         binding.tvPersonalBrowsingLearnMore.setOnClickListener {
             interactor.onClicked(homepageCardType, BrowsingMode.Personal)
 
@@ -33,12 +41,13 @@ class PersonalModeDescriptionViewHolder(
     }
 
     fun bind() = Unit
+
     companion object {
         val homepageCardType = HomepageCardType.PERSONAL_MODE_CARD
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    private fun setLinkTextView (textView : TextView, text : String) {
+    private fun setLinkTextView(textView: TextView, text: String) {
         val notClickedString = SpannableString(text)
         notClickedString.setSpan(
             URLSpan(""),
@@ -49,7 +58,12 @@ class PersonalModeDescriptionViewHolder(
         textView.setText(notClickedString, TextView.BufferType.SPANNABLE)
         val clickedString = SpannableString(notClickedString)
         clickedString.setSpan(
-            BackgroundColorSpan(ContextCompat.getColor(textView.context, R.color.fx_mobile_text_color_secondary)), 0, notClickedString.length,
+            BackgroundColorSpan(
+                ContextCompat.getColor(
+                    textView.context,
+                    R.color.fx_mobile_text_color_secondary
+                )
+            ), 0, notClickedString.length,
             Spanned.SPAN_INCLUSIVE_EXCLUSIVE
         )
         textView.setOnTouchListener { v, event ->
@@ -59,6 +73,7 @@ class PersonalModeDescriptionViewHolder(
                     textView.setText(notClickedString, TextView.BufferType.SPANNABLE)
                     v.performClick()
                 }
+
                 MotionEvent.ACTION_CANCEL -> textView.setText(
                     notClickedString,
                     TextView.BufferType.SPANNABLE

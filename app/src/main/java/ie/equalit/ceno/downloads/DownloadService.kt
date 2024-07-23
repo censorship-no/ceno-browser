@@ -4,9 +4,9 @@
 
 package ie.equalit.ceno.downloads
 
+import ie.equalit.ceno.ext.components
 import mozilla.components.browser.state.store.BrowserStore
 import mozilla.components.feature.downloads.AbstractFetchDownloadService
-import ie.equalit.ceno.ext.components
 import mozilla.components.support.base.android.NotificationsDelegate
 
 class DownloadService : AbstractFetchDownloadService() {

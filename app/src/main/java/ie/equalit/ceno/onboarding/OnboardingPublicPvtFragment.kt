@@ -28,8 +28,13 @@ class OnboardingPublicPvtFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentOnboardingPublicPvtBinding.inflate(inflater, container,false)
-        container?.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.ceno_onboarding_background))
+        _binding = FragmentOnboardingPublicPvtBinding.inflate(inflater, container, false)
+        container?.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.ceno_onboarding_background
+            )
+        )
         return binding.root
     }
 
@@ -43,13 +48,12 @@ class OnboardingPublicPvtFragment : Fragment() {
                 /* Android 13 or later, always ask for permissions */
                 if (requireComponents.permissionHandler.isAllowingPostNotifications() &&
                     requireComponents.permissionHandler.isIgnoringBatteryOptimizations()
-                ){
+                ) {
                     findNavController().onboardingToHome(requireComponents)
                 } else {
                     findNavController().navigate(R.id.action_onboardingPublicPvtFragment_to_onboardingBatteryFragment)
                 }
-            }
-            else {
+            } else {
                 findNavController().onboardingToHome(requireComponents)
             }
         }

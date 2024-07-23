@@ -9,10 +9,10 @@ import ie.equalit.ceno.databinding.HomeMessageCardItemBinding
 import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.home.sessioncontrol.HomePageInteractor
 
-class CenoMessageViewHolder (
+class CenoMessageViewHolder(
     itemView: View,
     interactor: HomePageInteractor
-) : BaseHomeCardViewHolder(itemView, interactor){
+) : BaseHomeCardViewHolder(itemView, interactor) {
 
     private val binding = HomeMessageCardItemBinding.bind(itemView)
 
@@ -33,19 +33,32 @@ class CenoMessageViewHolder (
             interactor.onClicked(cardType, BrowsingMode.Normal)
         }
         binding.btnLearnMore.setOnClickListener {
-            interactor.onUrlClicked(cardType, ContextCompat.getString(itemView.context, R.string.bridge_mode_faq_url))
+            interactor.onUrlClicked(
+                cardType,
+                ContextCompat.getString(itemView.context, R.string.bridge_mode_faq_url)
+            )
         }
 
         if (itemView.context.cenoPreferences().isBridgeCardExpanded) {
             binding.btnGoToSetting.visibility = View.VISIBLE
             binding.btnLearnMore.visibility = View.VISIBLE
             binding.tvCardText.visibility = View.VISIBLE
-            binding.tvCardTitle.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(itemView.context, R.drawable.ic_arrow_expanded), null)
+            binding.tvCardTitle.setCompoundDrawablesWithIntrinsicBounds(
+                null,
+                null,
+                ContextCompat.getDrawable(itemView.context, R.drawable.ic_arrow_expanded),
+                null
+            )
         } else {
             binding.btnGoToSetting.visibility = View.GONE
             binding.btnLearnMore.visibility = View.GONE
             binding.tvCardText.visibility = View.GONE
-            binding.tvCardTitle.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(itemView.context, R.drawable.ic_arrow_collapsed), null)
+            binding.tvCardTitle.setCompoundDrawablesWithIntrinsicBounds(
+                null,
+                null,
+                ContextCompat.getDrawable(itemView.context, R.drawable.ic_arrow_collapsed),
+                null
+            )
         }
     }
 
@@ -55,14 +68,24 @@ class CenoMessageViewHolder (
             binding.btnGoToSetting.visibility = View.GONE
             binding.btnLearnMore.visibility = View.GONE
             binding.tvCardText.visibility = View.GONE
-            binding.tvCardTitle.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(itemView.context, R.drawable.ic_arrow_collapsed), null)
+            binding.tvCardTitle.setCompoundDrawablesWithIntrinsicBounds(
+                null,
+                null,
+                ContextCompat.getDrawable(itemView.context, R.drawable.ic_arrow_collapsed),
+                null
+            )
             itemView.context.cenoPreferences().isBridgeCardExpanded = false
         } else {
             //expand
             binding.btnGoToSetting.visibility = View.VISIBLE
             binding.btnLearnMore.visibility = View.VISIBLE
             binding.tvCardText.visibility = View.VISIBLE
-            binding.tvCardTitle.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(itemView.context, R.drawable.ic_arrow_expanded), null)
+            binding.tvCardTitle.setCompoundDrawablesWithIntrinsicBounds(
+                null,
+                null,
+                ContextCompat.getDrawable(itemView.context, R.drawable.ic_arrow_expanded),
+                null
+            )
             itemView.context.cenoPreferences().isBridgeCardExpanded = true
         }
     }

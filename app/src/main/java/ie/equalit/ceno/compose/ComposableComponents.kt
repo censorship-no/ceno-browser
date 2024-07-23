@@ -6,9 +6,9 @@ package ie.equalit.ceno.compose
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import ie.equalit.ceno.ext.components
 import mozilla.components.browser.state.store.BrowserStore
 import mozilla.components.feature.session.SessionUseCases
-import ie.equalit.ceno.ext.components
 
 /**
  * Composable helper for providing the [BrowserStore] instance of this application.

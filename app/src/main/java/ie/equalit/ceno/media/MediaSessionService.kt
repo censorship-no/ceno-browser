@@ -4,9 +4,9 @@
 
 package ie.equalit.ceno.media
 
+import ie.equalit.ceno.ext.components
 import mozilla.components.browser.state.store.BrowserStore
 import mozilla.components.feature.media.service.AbstractMediaSessionService
-import ie.equalit.ceno.ext.components
 import mozilla.components.support.base.android.NotificationsDelegate
 
 /**

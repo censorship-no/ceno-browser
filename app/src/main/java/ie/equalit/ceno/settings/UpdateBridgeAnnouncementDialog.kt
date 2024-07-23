@@ -6,7 +6,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import ie.equalit.ceno.R
 
-class UpdateBridgeAnnouncementDialog (
+class UpdateBridgeAnnouncementDialog(
     context: Context
 ) {
     private val builder: AlertDialog.Builder = AlertDialog.Builder(context)
@@ -20,7 +20,7 @@ class UpdateBridgeAnnouncementDialog (
         }
     }
 
-    fun getDialog (): AlertDialog {
+    fun getDialog(): AlertDialog {
         return builder.create().apply {
             setCanceledOnTouchOutside(false)
         }

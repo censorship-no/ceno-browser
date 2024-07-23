@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ie.equalit.ceno.databinding.LogTextItemBinding
 
-class LogTextAdapter() : ListAdapter<String, LogTextAdapter.LogTextViewHolder>(StringItemDiffCallback) {
+class LogTextAdapter() :
+    ListAdapter<String, LogTextAdapter.LogTextViewHolder>(StringItemDiffCallback) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,

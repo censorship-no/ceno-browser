@@ -14,9 +14,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import ie.equalit.ceno.R
 import mozilla.components.feature.addons.Addon
 import mozilla.components.feature.addons.ui.translateName
-import ie.equalit.ceno.R
 
 private const val LEARN_MORE_URL =
     "https://support.mozilla.org/kb/permission-request-messages-firefox-extensions"

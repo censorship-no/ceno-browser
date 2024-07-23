@@ -4,20 +4,15 @@
 
 package ie.equalit.ceno.home.sessioncontrol
 
-import android.annotation.SuppressLint
-import android.view.LayoutInflater
-import android.widget.EditText
-import androidx.appcompat.app.AlertDialog
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 /*
 import mozilla.components.browser.state.store.BrowserStore
 import mozilla.components.concept.engine.Engine
 import mozilla.components.feature.tabs.TabsUseCases
  */
-import mozilla.components.feature.top.sites.TopSite
-import mozilla.components.support.ktx.android.view.showKeyboard
+import android.annotation.SuppressLint
+import android.view.LayoutInflater
+import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BrowsingMode
@@ -27,6 +22,11 @@ import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.home.HomepageCardType
 import ie.equalit.ceno.home.announcements.RSSAnnouncementViewHolder
 import ie.equalit.ceno.utils.CenoPreferences
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import mozilla.components.feature.top.sites.TopSite
+import mozilla.components.support.ktx.android.view.showKeyboard
 
 /**
  * [HomeFragment] controller. An interface that handles the view manipulation of the Tabs triggered
@@ -195,15 +195,19 @@ class DefaultSessionControlController(
 
     override fun handleCardClicked(homepageCardType: HomepageCardType, mode: BrowsingMode) {
         if (homepageCardType == HomepageCardType.PERSONAL_MODE_CARD) {
-            activity.apply{
-                openToBrowser(getString(R.string.ceno_support_link_url), newTab = true, private = true)
+            activity.apply {
+                openToBrowser(
+                    getString(R.string.ceno_support_link_url),
+                    newTab = true,
+                    private = true
+                )
             }
         }
         if (homepageCardType == HomepageCardType.MODE_MESSAGE_CARD) {
             activity.switchBrowsingModeHome(mode)
         }
         if (homepageCardType == HomepageCardType.BASIC_MESSAGE_CARD) {
-            activity.apply{
+            activity.apply {
                 openSettings()
             }
         }
@@ -211,12 +215,12 @@ class DefaultSessionControlController(
 
     override fun handleMenuItemClicked(homepageCardType: HomepageCardType) {
         if (homepageCardType == HomepageCardType.MODE_MESSAGE_CARD) {
-            activity.apply{
+            activity.apply {
                 browsingModeManager.mode = BrowsingMode.Personal
             }
         }
         if (homepageCardType == HomepageCardType.BASIC_MESSAGE_CARD) {
-            activity.apply{
+            activity.apply {
                 openToBrowser(getString(R.string.website_button_link), newTab = true)
             }
         }

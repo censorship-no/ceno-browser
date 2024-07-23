@@ -31,8 +31,13 @@ class OnboardingBatteryFragment : Fragment(), ActivityResultHandler {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentOnboardingBatteryBinding.inflate(inflater, container,false);
-        container?.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.ceno_onboarding_background))
+        _binding = FragmentOnboardingBatteryBinding.inflate(inflater, container, false);
+        container?.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.ceno_onboarding_background
+            )
+        )
         return binding.root
     }
 
@@ -40,12 +45,12 @@ class OnboardingBatteryFragment : Fragment(), ActivityResultHandler {
         super.onViewCreated(view, savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             /* This is Android 13 or later, ask for permission POST_NOTIFICATIONS */
-            binding.tvOnboardingPermissionText.text = getString(R.string.onboarding_battery_text_v33)
+            binding.tvOnboardingPermissionText.text =
+                getString(R.string.onboarding_battery_text_v33)
             binding.button.setOnClickListener {
                 allowPostNotifications()
             }
-        }
-        else {
+        } else {
             /* This is NOT Android 13, just ask to disable battery optimization */
             binding.tvOnboardingPermissionText.text = getString(R.string.onboarding_battery_text)
             binding.button.setOnClickListener {
@@ -80,12 +85,15 @@ class OnboardingBatteryFragment : Fragment(), ActivityResultHandler {
     }
 
     @Deprecated("Deprecated in Java")
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         if (requestCode == REQUEST_CODE_NOTIFICATION_PERMISSIONS) {
             requireComponents.ouinet.background.start()
             disableBatteryOptimization()
-        }
-        else {
+        } else {
             Log.e(TAG, "Unknown request code received: $requestCode")
             findNavController().onboardingToHome(requireComponents)
         }

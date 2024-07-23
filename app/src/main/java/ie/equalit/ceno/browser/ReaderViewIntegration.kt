@@ -13,7 +13,6 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ie.equalit.ceno.R
-import mozilla.components.browser.state.selector.findCustomTabOrSelectedTab
 import mozilla.components.browser.state.selector.selectedTab
 import mozilla.components.browser.state.store.BrowserStore
 import mozilla.components.browser.toolbar.BrowserToolbar
@@ -39,8 +38,8 @@ class ReaderViewIntegration(
         image = ContextCompat.getDrawable(context, R.drawable.mozac_ic_reader_mode)!!,
         imageSelected = ContextCompat.getDrawable(context, R.drawable.mozac_ic_reader_mode)!!
             .mutate().apply {
-            setTint(ContextCompat.getColor(context, R.color.photonBlue40))
-        },
+                setTint(ContextCompat.getColor(context, R.color.photonBlue40))
+            },
         contentDescription = "Enable Reader View",
         contentDescriptionSelected = "Disable Reader View",
         selected = store.state.selectedTab?.readerState?.active ?: false,
@@ -80,7 +79,7 @@ class ReaderViewIntegration(
         return feature.onBackPressed()
     }
 
-    fun showReaderView(){
+    fun showReaderView() {
         return feature.showReaderView()
     }
 
@@ -120,7 +119,11 @@ class ReaderViewAppearanceButtonBehavior(
     context: Context,
     attrs: AttributeSet,
 ) : CoordinatorLayout.Behavior<FloatingActionButton>(context, attrs) {
-    override fun layoutDependsOn(parent: CoordinatorLayout, child: FloatingActionButton, dependency: View): Boolean {
+    override fun layoutDependsOn(
+        parent: CoordinatorLayout,
+        child: FloatingActionButton,
+        dependency: View
+    ): Boolean {
         if (dependency is FindInPageBar || dependency is BrowserToolbar) {
             return true
         }

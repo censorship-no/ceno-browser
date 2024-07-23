@@ -7,7 +7,7 @@ import ie.equalit.ceno.R
 import ie.equalit.ceno.settings.Settings
 
 interface AppIconsController {
-    fun handleAppIconClicked(icon : AppIcon)
+    fun handleAppIconClicked(icon: AppIcon)
 }
 
 class DefaultAppIconsController(
@@ -25,7 +25,7 @@ class DefaultAppIconsController(
     }
 
     @SuppressLint("InflateParams")
-    override fun handleAppIconClicked(icon : AppIcon) {
+    override fun handleAppIconClicked(icon: AppIcon) {
         AlertDialog.Builder(activity)
             .setTitle(R.string.changeIconDialogTitle)
             .setMessage(activity.getString(R.string.changeIconDialogMessage))

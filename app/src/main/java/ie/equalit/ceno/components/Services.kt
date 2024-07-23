@@ -6,9 +6,9 @@ package ie.equalit.ceno.components
 
 import android.content.Context
 import androidx.preference.PreferenceManager
-import mozilla.components.feature.app.links.AppLinksInterceptor
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.getPreferenceKey
+import mozilla.components.feature.app.links.AppLinksInterceptor
 
 /**
  * Component group which encapsulates foreground-friendly services.
@@ -23,7 +23,10 @@ class Services(
             context,
             interceptLinkClicks = true,
             launchInApp = {
-                prefs.getBoolean(context.getPreferenceKey(R.string.pref_key_launch_external_app), false)
+                prefs.getBoolean(
+                    context.getPreferenceKey(R.string.pref_key_launch_external_app),
+                    false
+                )
             },
         )
     }

@@ -8,9 +8,9 @@ import android.os.Build
 import android.os.Bundle
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import ie.equalit.ceno.ext.components
 import mozilla.components.feature.autofill.AutofillConfiguration
 import mozilla.components.feature.autofill.ui.AbstractAutofillSearchActivity
-import ie.equalit.ceno.ext.components
 
 @RequiresApi(Build.VERSION_CODES.O)
 class AutofillSearchActivity : AbstractAutofillSearchActivity() {

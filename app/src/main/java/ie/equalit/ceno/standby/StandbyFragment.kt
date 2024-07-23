@@ -8,10 +8,7 @@ import android.net.NetworkCapabilities
 import android.net.NetworkInfo
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.provider.Settings.ACTION_WIRELESS_SETTINGS
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,7 +39,7 @@ class StandbyFragment : Fragment() {
 
     private val refreshIntervalMS: Long = 1000
 
-    protected var isCenoStopping : Boolean? = false
+    protected var isCenoStopping: Boolean? = false
         get() = arguments?.getBoolean(shutdownCeno)
 
     protected val doClear: Boolean?
@@ -75,11 +72,11 @@ class StandbyFragment : Fragment() {
 
     private var dialog: AlertDialog? = null
 
-    private var _binding : FragmentStandbyBinding? = null
+    private var _binding: FragmentStandbyBinding? = null
     private val binding get() = _binding!!
 
     private fun isNetworkAvailable(): Boolean {
-        val cm : ConnectivityManager = requireContext().getSystemService() ?: return false
+        val cm: ConnectivityManager = requireContext().getSystemService() ?: return false
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             val cap = cm.getNetworkCapabilities(cm.activeNetwork) ?: return false
             return cap.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
@@ -99,10 +96,16 @@ class StandbyFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentStandbyBinding.inflate(inflater, container, false)
-        container?.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.ceno_standby_background))
+        container?.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.ceno_standby_background
+            )
+        )
 
-        repeat(3){
-            displayTextStopping.add (0,
+        repeat(3) {
+            displayTextStopping.add(
+                0,
                 if (doClear == true) {
                     R.string.shutdown_message_one
                 } else {
@@ -133,7 +136,7 @@ class StandbyFragment : Fragment() {
                 currentStatus = it.ouinetStatus
                 updateDisplayText()
                 if (currentStatus == RunningState.Stopped) {
-                    if(isCenoStopping == false) {
+                    if (isCenoStopping == false) {
                         tryAgain()
                     }
                 }
@@ -144,7 +147,8 @@ class StandbyFragment : Fragment() {
     private fun displayTimeoutDialog() {
 
         val timeoutDialogBuilder = AlertDialog.Builder(requireContext())
-        val timeoutDialogView = View.inflate(requireContext(), R.layout.layout_standby_timeout, null)
+        val timeoutDialogView =
+            View.inflate(requireContext(), R.layout.layout_standby_timeout, null)
 
         timeoutDialogBuilder.apply {
             setView(timeoutDialogView)
@@ -153,7 +157,7 @@ class StandbyFragment : Fragment() {
             }
         }
 
-        timeoutDialogBuilder.setOnCancelListener{
+        timeoutDialogBuilder.setOnCancelListener {
             tryAgain()
         }
 
@@ -165,11 +169,15 @@ class StandbyFragment : Fragment() {
             val intent = Intent(ACTION_WIRELESS_SETTINGS)
             startActivity(intent)
         }
-        val btnExtraBTBootstraps = timeoutDialogView.findViewById<Button>(R.id.btn_extra_bt_bootstraps)
-        btnExtraBTBootstraps.setOnClickListener{
+        val btnExtraBTBootstraps =
+            timeoutDialogView.findViewById<Button>(R.id.btn_extra_bt_bootstraps)
+        btnExtraBTBootstraps.setOnClickListener {
             dialog?.dismiss()
             val btSourcesMap = mutableMapOf<String, String>()
-            for (entry in BuildConfig.BT_BOOTSTRAP_EXTRAS) btSourcesMap[Locale("", entry[0]).displayCountry] = entry[1]
+            for (entry in BuildConfig.BT_BOOTSTRAP_EXTRAS) btSourcesMap[Locale(
+                "",
+                entry[0]
+            ).displayCountry] = entry[1]
             val extraBTDialog = ExtraBTBootstrapsDialog(requireContext(), btSourcesMap).getDialog()
             extraBTDialog.setOnDismissListener {
                 tryAgain()
@@ -191,14 +199,13 @@ class StandbyFragment : Fragment() {
     }
 
     private fun updateDisplayText() {
-        viewLifecycleOwner.lifecycleScope.launch{
+        viewLifecycleOwner.lifecycleScope.launch {
             while (currentStatus == RunningState.Starting) {
                 if (isNetworkAvailable()) {
                     binding.llNoInternet.visibility = View.INVISIBLE
                 } else
                     binding.llNoInternet.visibility = View.VISIBLE
-                if (index < displayText.size)
-                {
+                if (index < displayText.size) {
                     binding.tvStatus.text = getString(displayText[index])
                     index += 1
                 } else {

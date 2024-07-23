@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
 import ie.equalit.ceno.R
+import ie.equalit.ceno.ext.requireComponents
 import mozilla.components.browser.toolbar.BrowserToolbar
 import mozilla.components.concept.engine.EngineView
 import mozilla.components.concept.engine.manifest.WebAppManifest
@@ -20,7 +21,6 @@ import mozilla.components.feature.pwa.feature.WebAppSiteControlsFeature
 import mozilla.components.support.base.feature.UserInteractionHandler
 import mozilla.components.support.base.feature.ViewBoundFeatureWrapper
 import mozilla.components.support.ktx.android.arch.lifecycle.addObservers
-import ie.equalit.ceno.ext.requireComponents
 
 /**
  * Fragment used for browsing within an external app, such as for custom tabs and PWAs.
@@ -82,7 +82,9 @@ class ExternalAppBrowserFragment : BaseBrowserFragment(), UserInteractionHandler
             ) { toolbarVisible ->
                 toolbar.isVisible = toolbarVisible
                 webAppToolbarShouldBeVisible = toolbarVisible
-                if (!toolbarVisible) { engineView.setDynamicToolbarMaxHeight(0) }
+                if (!toolbarVisible) {
+                    engineView.setDynamicToolbarMaxHeight(0)
+                }
             },
             owner = this,
             view = toolbar,

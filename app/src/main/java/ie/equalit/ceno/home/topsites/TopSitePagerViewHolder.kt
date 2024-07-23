@@ -9,11 +9,11 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import mozilla.components.feature.top.sites.TopSite
 import ie.equalit.ceno.databinding.ComponentTopSitesPagerBinding
 import ie.equalit.ceno.home.HomepageCardType
 import ie.equalit.ceno.home.sessioncontrol.AdapterItem
 import ie.equalit.ceno.home.sessioncontrol.TopSiteInteractor
+import mozilla.components.feature.top.sites.TopSite
 
 class TopSitePagerViewHolder(
     view: View,

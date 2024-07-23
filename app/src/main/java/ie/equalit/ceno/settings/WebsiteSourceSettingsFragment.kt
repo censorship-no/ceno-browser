@@ -26,7 +26,14 @@ class WebsiteSourceSettingsFragment : PreferenceFragmentCompat() {
             show()
             setTitle(R.string.preferences_ceno_website_sources)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.ceno_action_bar
+                    )
+                )
+            )
         }
 
         setupSettings()

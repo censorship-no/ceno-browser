@@ -4,10 +4,10 @@
 
 package ie.equalit.ceno.home.topsites
 
-import mozilla.components.feature.top.sites.TopSite
-import mozilla.components.feature.top.sites.view.TopSitesView
 import ie.equalit.ceno.ext.ceno.sort
 import ie.equalit.ceno.utils.CenoPreferences
+import mozilla.components.feature.top.sites.TopSite
+import mozilla.components.feature.top.sites.view.TopSitesView
 
 class DefaultTopSitesView(
     val settings: CenoPreferences

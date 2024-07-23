@@ -2,12 +2,12 @@ package ie.equalit.ceno.onboarding
 
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ie.equalit.ceno.R
 import ie.equalit.ceno.databinding.FragmentOnboardingBinding
@@ -23,8 +23,13 @@ class OnboardingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentOnboardingBinding.inflate(inflater, container,false)
-        container?.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.ceno_onboarding_background))
+        _binding = FragmentOnboardingBinding.inflate(inflater, container, false)
+        container?.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.ceno_onboarding_background
+            )
+        )
         (activity as AppCompatActivity).supportActionBar!!.hide()
         return binding.root
     }
@@ -41,7 +46,7 @@ class OnboardingFragment : Fragment() {
                 * go to home is permissions are granted */
                 if (requireComponents.permissionHandler.isAllowingPostNotifications() &&
                     requireComponents.permissionHandler.isIgnoringBatteryOptimizations()
-                ){
+                ) {
                     findNavController().onboardingToHome(requireComponents)
                 } else {
                     findNavController().navigate(R.id.action_onboardingFragment_to_onboardingBatteryFragment)

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ie.equalit.ceno.R
 import ie.equalit.ceno.databinding.AppShareListItemBinding
 
-class AppViewHolder (
+class AppViewHolder(
     itemView: View,
     @get:VisibleForTesting val interactor: ShareToAppsInteractor,
 ) : RecyclerView.ViewHolder(itemView) {

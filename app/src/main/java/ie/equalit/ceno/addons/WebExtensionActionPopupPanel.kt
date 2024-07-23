@@ -6,7 +6,6 @@ import android.widget.FrameLayout
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
-import ie.equalit.ceno.ext.createSegment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.setViewTreeLifecycleOwner
 import androidx.savedstate.SavedStateRegistryOwner
@@ -17,6 +16,7 @@ import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BaseBrowserFragment
 import ie.equalit.ceno.databinding.DialogWebExtensionPopupSheetBinding
 import ie.equalit.ceno.ext.components
+import ie.equalit.ceno.ext.createSegment
 import mozilla.components.browser.icons.IconRequest
 import mozilla.components.browser.state.selector.selectedTab
 import mozilla.components.concept.engine.EngineSession
@@ -92,13 +92,22 @@ class WebExtensionActionPopupPanel(
         )
     }
 
-    fun onCountsFetched(counts : JSONObject) {
-        binding.progressBar.isGone = context.components.core.store.state.selectedTab?.content?.loading == false
+    fun onCountsFetched(counts: JSONObject) {
+        binding.progressBar.isGone =
+            context.components.core.store.state.selectedTab?.content?.loading == false
 
-        val distCache = if (counts.has(BaseBrowserFragment.DIST_CACHE)) counts.getString(BaseBrowserFragment.DIST_CACHE).toFloat() else 0F
-        val proxy = if (counts.has(BaseBrowserFragment.PROXY)) counts.getString(BaseBrowserFragment.PROXY).toFloat() else 0F
-        val injector = if (counts.has(BaseBrowserFragment.INJECTOR)) counts.getString(BaseBrowserFragment.INJECTOR).toFloat() else 0F
-        val origin = if (counts.has(BaseBrowserFragment.ORIGIN)) counts.getString(BaseBrowserFragment.ORIGIN).toFloat() else 0F
+        val distCache =
+            if (counts.has(BaseBrowserFragment.DIST_CACHE)) counts.getString(BaseBrowserFragment.DIST_CACHE)
+                .toFloat() else 0F
+        val proxy =
+            if (counts.has(BaseBrowserFragment.PROXY)) counts.getString(BaseBrowserFragment.PROXY)
+                .toFloat() else 0F
+        val injector =
+            if (counts.has(BaseBrowserFragment.INJECTOR)) counts.getString(BaseBrowserFragment.INJECTOR)
+                .toFloat() else 0F
+        val origin =
+            if (counts.has(BaseBrowserFragment.ORIGIN)) counts.getString(BaseBrowserFragment.ORIGIN)
+                .toFloat() else 0F
 
         binding.tvViaCenoNetworkCount.text = (proxy.plus(injector)).toInt().toString()
         binding.tvViaCenoCacheCount.text = distCache.toInt().toString()
@@ -110,9 +119,24 @@ class WebExtensionActionPopupPanel(
 
         binding.sourcesProgressBar.removeAllViews()
 
-        if(origin > 0) binding.sourcesProgressBar.addView(context.createSegment(((origin / sum) * 100), R.color.ceno_sources_green))
-        if((proxy + injector) > 0) binding.sourcesProgressBar.addView(context.createSegment((((proxy + injector) / sum) * 100), R.color.ceno_sources_orange))
-        if(distCache > 0) binding.sourcesProgressBar.addView(context.createSegment(((distCache / sum) * 100), R.color.ceno_sources_blue))
+        if (origin > 0) binding.sourcesProgressBar.addView(
+            context.createSegment(
+                ((origin / sum) * 100),
+                R.color.ceno_sources_green
+            )
+        )
+        if ((proxy + injector) > 0) binding.sourcesProgressBar.addView(
+            context.createSegment(
+                (((proxy + injector) / sum) * 100),
+                R.color.ceno_sources_orange
+            )
+        )
+        if (distCache > 0) binding.sourcesProgressBar.addView(
+            context.createSegment(
+                ((distCache / sum) * 100),
+                R.color.ceno_sources_blue
+            )
+        )
 //                if(localCache > 0) binding.sourcesProgressBar.addView(createSegment((localCache / sum) * 100, R.color.ceno_sources_yellow))
         //}
     }

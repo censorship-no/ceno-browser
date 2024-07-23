@@ -4,18 +4,18 @@
 
 package ie.equalit.ceno.utils
 
+//import mozilla.components.service.contile.ContileTopSitesProvider
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
-import mozilla.components.feature.sitepermissions.SitePermissionsRules.Action
-import mozilla.components.feature.sitepermissions.SitePermissionsRules.AutoplayAction
-//import mozilla.components.service.contile.ContileTopSitesProvider
-import mozilla.components.support.ktx.android.content.PreferencesHolder
-import mozilla.components.support.ktx.android.content.booleanPreference
-import mozilla.components.support.ktx.android.content.intPreference
 import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.ext.getPreferenceKey
+import mozilla.components.feature.sitepermissions.SitePermissionsRules.Action
+import mozilla.components.feature.sitepermissions.SitePermissionsRules.AutoplayAction
+import mozilla.components.support.ktx.android.content.PreferencesHolder
+import mozilla.components.support.ktx.android.content.booleanPreference
+import mozilla.components.support.ktx.android.content.intPreference
 import java.security.InvalidParameterException
 
 /**
@@ -23,7 +23,7 @@ import java.security.InvalidParameterException
  * @param appContext Reference to application context.
  */
 @Suppress("LargeClass", "TooManyFunctions")
-class CenoPreferences(private val appContext: Context,) : PreferencesHolder {
+class CenoPreferences(private val appContext: Context) : PreferencesHolder {
 
     companion object {
         const val CENO_PREFERENCES = "ceno_preferences"

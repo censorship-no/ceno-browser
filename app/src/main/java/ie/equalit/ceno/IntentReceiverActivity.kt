@@ -7,9 +7,9 @@ package ie.equalit.ceno
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import ie.equalit.ceno.ext.components
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
-import ie.equalit.ceno.ext.components
 
 class IntentReceiverActivity : Activity() {
 

@@ -111,7 +111,7 @@ class HomeFragment : BaseHomeFragment() {
                 preferences = components.cenoPreferences,
                 appStore = components.appStore,
                 viewLifecycleScope = viewLifecycleOwner.lifecycleScope,
-                object: RSSAnnouncementViewHolder.RssAnnouncementSwipeListener {
+                object : RSSAnnouncementViewHolder.RssAnnouncementSwipeListener {
                     override fun onSwipeCard(index: Int) {
                         /**
                          * Using minus(1) below because CenoAnnouncementItem is the second item in SessionControlView.kt
@@ -122,7 +122,9 @@ class HomeFragment : BaseHomeFragment() {
                         // Using minus() below because CenoAnnouncementItem is the second item in SessionControlView.kt.
                         // AdapterItem.TopPlaceholderItem is the first item in SessionControlView.kt
                         // This should be updated if/when there's any change to the ordering in SessionControlView
-                        val guid = Settings.getAnnouncementData(binding.root.context)?.items?.get(index.minus(1))?.guid
+                        val guid = Settings.getAnnouncementData(binding.root.context)?.items?.get(
+                            index.minus(1)
+                        )?.guid
                         guid?.let { Settings.addSwipedAnnouncementGuid(binding.root.context, it) }
 
                         updateSessionControlView()
@@ -139,12 +141,15 @@ class HomeFragment : BaseHomeFragment() {
 
 
         (binding.homeAppBar.layoutParams as? CoordinatorLayout.LayoutParams)?.apply {
-            topMargin = if(prefs.getBoolean(requireContext().getPreferenceKey(R.string.pref_key_toolbar_position), false)) {
-                    resources.getDimensionPixelSize(R.dimen.browser_toolbar_height)
-                }
-                else {
-                    0
-                }
+            topMargin = if (prefs.getBoolean(
+                    requireContext().getPreferenceKey(R.string.pref_key_toolbar_position),
+                    false
+                )
+            ) {
+                resources.getDimensionPixelSize(R.dimen.browser_toolbar_height)
+            } else {
+                0
+            }
         }
 
         container?.background =
@@ -207,7 +212,7 @@ class HomeFragment : BaseHomeFragment() {
                     )
 
                     // if the network call fails, try to load 'en' locale
-                    if(response == null) {
+                    if (response == null) {
                         response = CenoSettings.webClientRequest(
                             context,
                             Request(CenoSettings.getRSSAnnouncementUrl("en"))
@@ -222,10 +227,13 @@ class HomeFragment : BaseHomeFragment() {
 
                         // check for null and refresh homepage adapter if necessary
                         // Set announcement data from local since filtering happens there (i.e Settings.getAnnouncementData())
-                        if(Settings.getAnnouncementData(context) != null) {
+                        if (Settings.getAnnouncementData(context) != null) {
                             withContext(Dispatchers.Main) {
                                 val state = context.components.appStore.state
-                                sessionControlView?.update(state, Settings.getAnnouncementData(context)?.items)
+                                sessionControlView?.update(
+                                    state,
+                                    Settings.getAnnouncementData(context)?.items
+                                )
                             }
                         }
                     }
@@ -238,7 +246,7 @@ class HomeFragment : BaseHomeFragment() {
         ouinetStatus = status
         val message = if (ouinetStatus == RunningState.Started) {
             getString(R.string.ceno_ouinet_connected)
-        } else if (ouinetStatus == RunningState.Stopped){
+        } else if (ouinetStatus == RunningState.Stopped) {
             getString(R.string.ceno_ouinet_disconnected)
         } else {
             getString(R.string.ceno_ouinet_connecting)
@@ -249,13 +257,22 @@ class HomeFragment : BaseHomeFragment() {
     private fun updateUI(mode: BrowsingMode) {
         context?.let {
             if (mode == BrowsingMode.Personal) {
-                binding.homeAppBar.background = ContextCompat.getDrawable(it, R.color.fx_mobile_private_layer_color_3)
-                binding.sessionControlRecyclerView.background = ContextCompat.getDrawable(it, R.color.fx_mobile_private_layer_color_3)
+                binding.homeAppBar.background =
+                    ContextCompat.getDrawable(it, R.color.fx_mobile_private_layer_color_3)
+                binding.sessionControlRecyclerView.background =
+                    ContextCompat.getDrawable(it, R.color.fx_mobile_private_layer_color_3)
                 binding.wordmark.drawable.setTint(ContextCompat.getColor(it, R.color.photonWhite))
             } else {
-                binding.homeAppBar.background = ContextCompat.getDrawable(it, R.color.ceno_home_background)
-                binding.sessionControlRecyclerView.background = ContextCompat.getDrawable(it, R.color.ceno_home_background)
-                binding.wordmark.drawable.setTint(ContextCompat.getColor(it, R.color.ceno_home_card_public_text))
+                binding.homeAppBar.background =
+                    ContextCompat.getDrawable(it, R.color.ceno_home_background)
+                binding.sessionControlRecyclerView.background =
+                    ContextCompat.getDrawable(it, R.color.ceno_home_background)
+                binding.wordmark.drawable.setTint(
+                    ContextCompat.getColor(
+                        it,
+                        R.color.ceno_home_card_public_text
+                    )
+                )
             }
         }
         applyTheme()

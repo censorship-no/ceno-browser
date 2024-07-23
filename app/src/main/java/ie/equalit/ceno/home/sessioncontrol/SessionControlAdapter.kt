@@ -9,22 +9,22 @@ import androidx.recyclerview.widget.RecyclerView
 import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.home.CenoMessageCard
-import mozilla.components.feature.top.sites.TopSite
-import ie.equalit.ceno.home.CenoModeViewHolder
-import ie.equalit.ceno.home.TopPlaceholderViewHolder
 import ie.equalit.ceno.home.CenoMessageViewHolder
+import ie.equalit.ceno.home.CenoModeViewHolder
 import ie.equalit.ceno.home.HomepageCardType
 import ie.equalit.ceno.home.RssItem
+import ie.equalit.ceno.home.TopPlaceholderViewHolder
 import ie.equalit.ceno.home.announcements.RSSAnnouncementViewHolder
 import ie.equalit.ceno.home.personal.PersonalModeDescriptionViewHolder
 import ie.equalit.ceno.home.topsites.TopSitePagerViewHolder
+import mozilla.components.feature.top.sites.TopSite
 
 sealed class AdapterItem(val type: HomepageCardType) {
 
     object TopPlaceholderItem : AdapterItem(TopPlaceholderViewHolder.homepageCardType)
 
-    data class CenoModeItem(val mode: BrowsingMode) : AdapterItem(CenoModeViewHolder.homepageCardType)
-    {
+    data class CenoModeItem(val mode: BrowsingMode) :
+        AdapterItem(CenoModeViewHolder.homepageCardType) {
         override fun contentsSameAs(other: AdapterItem): Boolean {
             val newCenoMode = (other as? CenoModeItem) ?: return false
             if (newCenoMode.mode != this.mode) return false
@@ -32,9 +32,11 @@ sealed class AdapterItem(val type: HomepageCardType) {
         }
     }
 
-    data class CenoMessageItem(val message: CenoMessageCard) : AdapterItem(CenoMessageViewHolder.homepageCardType)
+    data class CenoMessageItem(val message: CenoMessageCard) :
+        AdapterItem(CenoMessageViewHolder.homepageCardType)
 
-    data class CenoAnnouncementItem(val response: RssItem, var mode:BrowsingMode) : AdapterItem(RSSAnnouncementViewHolder.homepageCardType) {
+    data class CenoAnnouncementItem(val response: RssItem, var mode: BrowsingMode) :
+        AdapterItem(RSSAnnouncementViewHolder.homepageCardType) {
         override fun contentsSameAs(other: AdapterItem): Boolean {
             val newItem = (other as? CenoAnnouncementItem) ?: return false
             if (newItem.mode != this.mode) return false
@@ -43,7 +45,8 @@ sealed class AdapterItem(val type: HomepageCardType) {
         }
     }
 
-    object PersonalModeDescriptionItem : AdapterItem(PersonalModeDescriptionViewHolder.homepageCardType)
+    object PersonalModeDescriptionItem :
+        AdapterItem(PersonalModeDescriptionViewHolder.homepageCardType)
 
     /**
      * Contains a set of [Pair]s where [Pair.first] is the index of the changed [TopSite] and
@@ -112,6 +115,7 @@ sealed class AdapterItem(val type: HomepageCardType) {
 
     open fun contentsSameAs(other: AdapterItem) = this::class == other::class
 }
+
 class AdapterItemDiffCallback : DiffUtil.ItemCallback<AdapterItem>() {
     override fun areItemsTheSame(oldItem: AdapterItem, newItem: AdapterItem) =
         oldItem.sameAs(newItem)
@@ -128,9 +132,8 @@ class AdapterItemDiffCallback : DiffUtil.ItemCallback<AdapterItem>() {
 class SessionControlAdapter internal constructor(
     private val interactor: SessionControlInteractor,
     private val viewLifecycleOwner: LifecycleOwner
-    ) :
-    ListAdapter<AdapterItem, RecyclerView.ViewHolder>(AdapterItemDiffCallback())
-    {
+) :
+    ListAdapter<AdapterItem, RecyclerView.ViewHolder>(AdapterItemDiffCallback()) {
     // inflates the row layout from xml when needed
     // This method triggers the ComplexMethod lint error when in fact it's quite simple.
     @SuppressWarnings("ComplexMethod", "LongMethod", "ReturnCount")
@@ -156,12 +159,17 @@ class SessionControlAdapter internal constructor(
                 viewLifecycleOwner = viewLifecycleOwner,
                 interactor = interactor
             )
-            RSSAnnouncementViewHolder.homepageCardType.value -> RSSAnnouncementViewHolder(view, interactor)
+
+            RSSAnnouncementViewHolder.homepageCardType.value -> RSSAnnouncementViewHolder(
+                view,
+                interactor
+            )
 
             PersonalModeDescriptionViewHolder.homepageCardType.value -> PersonalModeDescriptionViewHolder(
                 view,
                 interactor
             )
+
             else -> throw IllegalStateException()
         }
     }
@@ -175,12 +183,15 @@ class SessionControlAdapter internal constructor(
             is TopPlaceholderViewHolder -> {
                 holder.bind()
             }
+
             is CenoModeViewHolder -> {
                 holder.bind((item as AdapterItem.CenoModeItem).mode)
             }
+
             is TopSitePagerViewHolder -> {
                 holder.bind((item as AdapterItem.TopSitePager).topSites)
             }
+
             is CenoMessageViewHolder -> {
                 holder.bind((item as AdapterItem.CenoMessageItem).message)
             }

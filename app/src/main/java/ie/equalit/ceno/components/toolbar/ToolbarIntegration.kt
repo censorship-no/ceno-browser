@@ -96,12 +96,14 @@ class ToolbarIntegration(
 
     private fun menuToolbar(session: SessionState?): RowMenuCandidate {
         val tintEnabled = ContextCompat.getColor(context, R.color.fx_mobile_icon_color_primary)
-        val tintDisabled = ContextCompat.getColor(context, R.color.fx_mobile_icon_color_primary_inactive)
+        val tintDisabled =
+            ContextCompat.getColor(context, R.color.fx_mobile_icon_color_primary_inactive)
         val canGoBack = session?.content?.canGoBack!!
         val canGoForward = session.content.canGoForward
 
         /* CENO: Disable forward and stop row menu items when they are not relevant */
-        val rowMenuItems : MutableList<SmallMenuCandidate>  = emptyList<SmallMenuCandidate>().toMutableList()
+        val rowMenuItems: MutableList<SmallMenuCandidate> =
+            emptyList<SmallMenuCandidate>().toMutableList()
         rowMenuItems += SmallMenuCandidate(
             contentDescription = context.getString(R.string.browser_menu_back),
             icon = DrawableMenuIcon(
@@ -145,8 +147,7 @@ class ToolbarIntegration(
             ) {
                 sessionUseCases.stopLoading.invoke()
             }
-        }
-        else {
+        } else {
             rowMenuItems += SmallMenuCandidate(
                 contentDescription = context.getString(R.string.browser_menu_refresh),
                 icon = DrawableMenuIcon(
@@ -179,8 +180,7 @@ class ToolbarIntegration(
                     }
                 }
             }
-        }
-        else {
+        } else {
             TextMenuCandidate(
                 text = context.getString(R.string.browser_menu_add_to_shortcuts),
             ) {
@@ -227,7 +227,8 @@ class ToolbarIntegration(
         val clearButtonFeature = ClearButtonFeature(
             context,
             prefs.getString(
-                context.getPreferenceKey(R.string.pref_key_clear_behavior), "0")!!
+                context.getPreferenceKey(R.string.pref_key_clear_behavior), "0"
+            )!!
                 .toInt()
         )
 
@@ -241,7 +242,8 @@ class ToolbarIntegration(
         }
 
         if (context.components.core.store.state.selectedTab?.readerState?.readerable == true) {
-            val readerViewActive = context.components.core.store.state.selectedTab?.readerState?.active
+            val readerViewActive =
+                context.components.core.store.state.selectedTab?.readerState?.active
             menuItemsList += if (readerViewActive == true) {
                 TextMenuCandidate(
                     text = context.getString(R.string.browser_menu_disable_reader_view)
@@ -267,7 +269,7 @@ class ToolbarIntegration(
                     context.components.core.store.state.findTab(it)?.getUrl()
                 }
                 val directions = NavGraphDirections.actionGlobalShareFragment(
-                     arrayOf(
+                    arrayOf(
                         ShareData(
                             url = url,
                             title = sessionState?.content?.title,
@@ -300,14 +302,14 @@ class ToolbarIntegration(
             }
 
             /* CENO: Only add extension menu items to list if there is a session and browserActions are not null */
-            cenoToolbarFeature.getBrowserAction(HTTPS_BY_DEFAULT_EXTENSION_ID)?.let{
+            cenoToolbarFeature.getBrowserAction(HTTPS_BY_DEFAULT_EXTENSION_ID)?.let {
                 menuItemsList += TextMenuCandidate(
                     text = context.getString(R.string.browser_menu_https_by_default),
                     onClick = it
                 )
             }
 
-            cenoToolbarFeature.getBrowserAction(UBLOCK_ORIGIN_EXTENSION_ID)?.let{
+            cenoToolbarFeature.getBrowserAction(UBLOCK_ORIGIN_EXTENSION_ID)?.let {
                 menuItemsList += TextMenuCandidate(
                     text = context.getString(R.string.browser_menu_ublock_origin),
                     onClick = it
@@ -344,10 +346,18 @@ class ToolbarIntegration(
         toolbar.display.hint = context.getString(R.string.toolbar_hint)
         toolbar.edit.hint = context.getString(R.string.toolbar_hint)
         toolbar.edit.setOnEditFocusChangeListener {
-            if(it) {
-                toolbar.edit.updateUrl(context.components.core.store.state.selectedTab?.content?.url ?: "")
+            if (it) {
+                toolbar.edit.updateUrl(
+                    context.components.core.store.state.selectedTab?.content?.url ?: ""
+                )
                 //show keyboard
-                getSystemService(context, InputMethodManager::class.java)?.showSoftInput(toolbar.findViewById(R.id.mozac_browser_toolbar_edit_url_view), InputMethodManager.SHOW_IMPLICIT)
+                getSystemService(
+                    context,
+                    InputMethodManager::class.java
+                )?.showSoftInput(
+                    toolbar.findViewById(R.id.mozac_browser_toolbar_edit_url_view),
+                    InputMethodManager.SHOW_IMPLICIT
+                )
             }
         }
 
@@ -363,7 +373,7 @@ class ToolbarIntegration(
             context.components.appStore.flow()
                 .map { state -> state.topSites }
                 .distinctUntilChanged()
-                .collect(){ topSites ->
+                .collect() { topSites ->
                     isCurrentUrlPinned = topSites
                         .find { it.url == store.state.selectedTab?.content?.url } != null
                     /* Resubmit menu items in case state of pinned sites changed */
@@ -392,7 +402,8 @@ class ToolbarIntegration(
                 .collect { state ->
                     menuController.submitList(menuItems(state.selectedTab))
                     toolbar.display.setOnTrackingProtectionClickedListener {
-                        val fragment = navHost.childFragmentManager.findFragmentById(R.id.nav_host_fragment) as BaseBrowserFragment?
+                        val fragment =
+                            navHost.childFragmentManager.findFragmentById(R.id.nav_host_fragment) as BaseBrowserFragment?
                         fragment?.showWebExtensionPopupPanel()
                     }
                 }

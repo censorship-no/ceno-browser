@@ -24,9 +24,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ie.equalit.ceno.databinding.ItemAppIconBinding
 
-class AppIconsAdapter(private val interactor: AppIconsInteractor) : ListAdapter<AppIcon, AppIconsAdapter.IconViewHolder>(
-    AppIconsDiffCallback
-) {
+class AppIconsAdapter(private val interactor: AppIconsInteractor) :
+    ListAdapter<AppIcon, AppIconsAdapter.IconViewHolder>(
+        AppIconsDiffCallback
+    ) {
 
     private val iconViewData: MutableList<AppIcon> = enumValues<AppIcon>().toMutableList()
     private var selectedIcon: String? = null
@@ -63,13 +64,14 @@ class AppIconsAdapter(private val interactor: AppIconsInteractor) : ListAdapter<
     }
 
     internal object AppIconsDiffCallback : DiffUtil.ItemCallback<AppIcon>() {
-        override fun areItemsTheSame(oldItem: AppIcon, newItem: AppIcon) = oldItem.componentName == newItem.componentName
+        override fun areItemsTheSame(oldItem: AppIcon, newItem: AppIcon) =
+            oldItem.componentName == newItem.componentName
 
         override fun areContentsTheSame(oldItem: AppIcon, newItem: AppIcon) =
             oldItem.icon == newItem.icon && oldItem.componentName == newItem.componentName
 
         override fun getChangePayload(oldItem: AppIcon, newItem: AppIcon): Any? {
-            return if (oldItem.icon  == newItem.icon && oldItem.componentName == newItem.componentName) {
+            return if (oldItem.icon == newItem.icon && oldItem.componentName == newItem.componentName) {
                 newItem
             } else null
         }
