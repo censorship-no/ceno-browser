@@ -271,6 +271,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         getPreference(pref_key_ceno_website_sources)?.onPreferenceClickListener = getClickListenerForWebsiteSources()
         getPreference(pref_key_bridge_announcement)?.onPreferenceChangeListener = getChangeListenerForBridgeAnnouncement()
         findPreference<Preference>(requireContext().getPreferenceKey(pref_key_change_language))?.onPreferenceClickListener = getClickListenerForLanguageChange()
+        findPreference<Preference>(requireContext().getPreferenceKey(pref_key_change_language))?.summary = getCurrentLocale().displayLanguage
         getPreference(pref_key_search_engine)?.summary = getString(setting_item_selected, requireContext().components.core.store.state.search.selectedOrDefaultSearchEngine?.name)
 
         getPreference(pref_key_bridge_announcement)?.summary = getString(bridge_mode_ip_warning_text)
@@ -736,9 +737,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private fun getClickListenerForLanguageChange(): OnPreferenceClickListener {
         return OnPreferenceClickListener {
 
-            // todo: remove "ru" and display a list of supported locales that the user can choose from
+            // experiment: toggle between en and ru depending on the currentLocale
             AppCompatDelegate.setApplicationLocales(
-                LocaleListCompat.create(Locale.forLanguageTag("ru"))
+                LocaleListCompat.create(Locale.forLanguageTag(if(getCurrentLocale().toLanguageTag() == "en") "ru" else "en"))
             )
 
             // Restart the activity to apply the new locale
@@ -933,6 +934,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
             show()
         }
     }
+
+    private fun getCurrentLocale() = (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        AppCompatDelegate.getApplicationLocales().get(0) ?: Locale.getDefault()
+    } else {
+        Locale.getDefault()
+    })
 
     companion object {
         private const val AMO_COLLECTION_OVERRIDE_EXIT_DELAY = 3000L
