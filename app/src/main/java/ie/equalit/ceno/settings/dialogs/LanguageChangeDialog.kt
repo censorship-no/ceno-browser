@@ -74,23 +74,25 @@ class LanguageChangeDialog(
             }
 
             // Add subsequent locales
-            SupportedLanguageProvider.getSupportedLocales().forEach {
-                if (it.displayLanguage != currentLocale?.displayLanguage && !it.toLanguageTag()
-                        .contains("-")
-                ) {
-                    val radioButton = LayoutInflater.from(context).inflate(
-                        R.layout.item_langauge,
-                        radioGroup,
-                        false
-                    ) as RadioButton
-                    radioButton.apply {
-                        isClickable = true
-                        text = it.displayLanguage
+            SupportedLanguageProvider.getSupportedLocales()
+                .sortedBy { locale -> locale.displayLanguage }
+                .forEach {
+                    if (it.displayLanguage != currentLocale?.displayLanguage && !it.toLanguageTag()
+                            .contains("-")
+                    ) {
+                        val radioButton = LayoutInflater.from(context).inflate(
+                            R.layout.item_langauge,
+                            radioGroup,
+                            false
+                        ) as RadioButton
+                        radioButton.apply {
+                            isClickable = true
+                            text = it.displayLanguage
+                        }
+                        radioGroup.addView(radioButton)
+                        allSupportedLocales.add(it)
                     }
-                    radioGroup.addView(radioButton)
-                    allSupportedLocales.add(it)
                 }
-            }
         }
     }
 
