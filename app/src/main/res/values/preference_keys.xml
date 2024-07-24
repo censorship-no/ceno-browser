@@ -43,6 +43,7 @@
     <string name="pref_key_show_search_suggestions" translatable="false">pref_key_show_search_suggestions</string>
     <string name="pref_key_update_search_engines" translatable="false">pref_key_update_search_engines</string>
     <string name="pref_key_theme" translatable="false">pref_key_theme</string>
+    <string name="pref_key_change_language" translatable="false">pref_key_change_language</string>
 
     <string name="pref_key_shared_prefs_reload" translatable="false">pref_key_shared_prefs_reload</string>
     <string name="pref_key_shared_prefs_update" translatable="false">pref_key_shared_prefs_update</string>
