@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat.getString
 import androidx.core.view.children
 import ie.equalit.ceno.R
+import ie.equalit.ceno.utils.language.SupportedLanguageProvider
 import java.util.Locale
 
 
@@ -73,9 +74,7 @@ class LanguageChangeDialog(
             }
 
             // Add subsequent locales
-            Locale.getAvailableLocales().apply {
-                sortBy { it.displayLanguage }
-            }.forEach {
+            SupportedLanguageProvider.getSupportedLocales().forEach {
                 if (it.displayLanguage != currentLocale?.displayLanguage && !it.toLanguageTag()
                         .contains("-")
                 ) {
