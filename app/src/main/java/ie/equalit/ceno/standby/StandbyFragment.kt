@@ -8,10 +8,7 @@ import android.net.NetworkCapabilities
 import android.net.NetworkInfo
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.provider.Settings.ACTION_WIRELESS_SETTINGS
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +22,7 @@ import ie.equalit.ceno.BuildConfig
 import ie.equalit.ceno.R
 import ie.equalit.ceno.databinding.FragmentStandbyBinding
 import ie.equalit.ceno.ext.requireComponents
-import ie.equalit.ceno.settings.ExtraBTBootstrapsDialog
+import ie.equalit.ceno.settings.dialogs.ExtraBTBootstrapsDialog
 import ie.equalit.ouinet.Ouinet.RunningState
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay

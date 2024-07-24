@@ -563,7 +563,7 @@ open class BrowserActivity : BaseActivity() {
     }
 
     fun openSettings() {
-        val bundle = bundleOf(SettingsFragment.scrollToBridge to true)
+        val bundle = bundleOf(SettingsFragment.SCROLL_TO_BRIDGE to true)
         navHost.navController.navigate(R.id.action_global_settings, bundle)
     }
 

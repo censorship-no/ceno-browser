@@ -1,4 +1,4 @@
-package ie.equalit.ceno.settings
+package ie.equalit.ceno.settings.dialogs
 
 import android.content.Context
 import android.view.View

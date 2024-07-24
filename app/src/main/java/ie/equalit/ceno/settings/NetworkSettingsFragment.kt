@@ -6,22 +6,14 @@ package ie.equalit.ceno.settings
 
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import ie.equalit.ceno.BuildConfig
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.getPreferenceKey
-import ie.equalit.ceno.ext.requireComponents
-import ie.equalit.ouinet.Config
-import ie.equalit.ouinet.Ouinet.RunningState
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import mozilla.components.lib.state.ext.consumeFrom
+import ie.equalit.ceno.settings.dialogs.ExtraBTBootstrapsDialog
 import mozilla.components.support.ktx.kotlin.ifNullOrEmpty
 import java.util.Locale
 

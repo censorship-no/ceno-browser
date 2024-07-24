@@ -36,6 +36,7 @@
     <string name="preferences_customize_amo_collection">Custom Add-on collection</string>
     <string name="customize_addon_collection_ok">OK</string>
     <string name="customize_add_bootstrap_save">Save</string>
+    <string name="update">Update</string>
     <string name="customize_addon_collection_cancel">Cancel</string>
     <string name="customize_addon_collection_hint">Collection name</string>
     <string name="customize_addon_collection_user_hint">Collection owner (User ID)</string>
@@ -43,6 +44,7 @@
     <string name="customize_bittorrent_bootstrap_add_custom_bootstraps">Add custom bootstraps</string>
     <string name="customize_custom_extra_bittorrent_bootstrap">Separate IPs with commas</string>
     <string name="select_extra_bt_source">Select extra BitTorrent bootstrap</string>
+    <string name="change_language">Change Language</string>
     <string name="toast_customize_addon_collection_done">Add-on collection modified. Quitting the application to apply changes…</string>
     <string name="content_description_private_browsing_button" tools:ignore="UnusedResources">Enable Personal browsing</string>
     <string name="bookmark_menu_open_in_private_tab_button">Open in personal tab</string>

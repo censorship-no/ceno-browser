@@ -1,9 +1,8 @@
-package ie.equalit.ceno.settings
+package ie.equalit.ceno.settings.dialogs
 
 import android.content.Context
 import android.content.DialogInterface
 import android.view.View
-import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -13,15 +12,15 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getString
 import androidx.core.view.iterator
-import androidx.preference.Preference
 import ie.equalit.ceno.R
-import ie.equalit.ceno.ext.cenoPreferences
-import ie.equalit.ceno.ext.getPreferenceKey
+import ie.equalit.ceno.settings.CenoSettings
+import ie.equalit.ceno.settings.OuinetKey
+import ie.equalit.ceno.settings.OuinetResponseListener
+import ie.equalit.ceno.settings.OuinetValue
 import mozilla.components.support.ktx.android.view.hideKeyboard
 import mozilla.components.support.ktx.android.view.showKeyboard
 import java.net.URLEncoder
 import java.util.Locale
-import java.util.prefs.Preferences
 import java.util.regex.Pattern
 
 class ExtraBTBootstrapsDialog(
@@ -62,13 +61,24 @@ class ExtraBTBootstrapsDialog(
                     URLEncoder.encode(allSelectedIPs.joinToString(" "), "UTF-8"),
                     object : OuinetResponseListener {
                         override fun onSuccess(message: String, data: Any?) {
-                            CenoSettings.setExtraBitTorrentBootstrap(context, message.split("+").toTypedArray())
+                            CenoSettings.setExtraBitTorrentBootstrap(
+                                context,
+                                message.split("+").toTypedArray()
+                            )
                             updatePrefs()
-                            Toast.makeText(context, getString(context, R.string.ouinet_client_fetch_success), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                context,
+                                getString(context, R.string.ouinet_client_fetch_success),
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
 
                         override fun onError() {
-                            Toast.makeText(context, getString(context, R.string.ouinet_client_fetch_fail), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                context,
+                                getString(context, R.string.ouinet_client_fetch_fail),
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
                 )
