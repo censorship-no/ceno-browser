@@ -468,7 +468,7 @@ dependencies {
     androidTestImplementation libs.espresso.core, {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-    androidTestImplementation 'tools.fastlane:screengrab:2.1.1'
+    androidTestImplementation libs.fastlane.screengrab
 }
 
 task renameUblockXpi (type: Copy) {

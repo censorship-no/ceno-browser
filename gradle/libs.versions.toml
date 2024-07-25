@@ -41,6 +41,7 @@ testing_mockwebserver = "4.10.0"
 # Third Party
 sentry = "7.3.0"
 gson = "2.10.1"
+fastlane_version = "2.1.1"
 
 # CENO: Versions for additional dependencies */
 ouinet_version = "0.27.0"
@@ -162,6 +163,7 @@ mozilla-uiwidgets = { group = "org.mozilla.components", name = "ui-widgets", ver
 ouinet-omni = { group = "ie.equalit.ouinet", name = "ouinet-omni", version.ref = "ouinet_version" }
 relinker = { group = "com.getkeepsafe.relinker", name = "relinker", version.ref = "relinker_version" }
 snakeyaml = { group = "org.yaml", name = "snakeyaml", version.ref = "snakeyaml_version" }
+fastlane-screengrab = { group = "tools.fastlane", name = "screengrab", version.ref = "fastlane_version" }
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
