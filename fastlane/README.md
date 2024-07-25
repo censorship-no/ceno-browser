@@ -15,21 +15,13 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## Android
 
-### android test
-
-```sh
-[bundle exec] fastlane android test
-```
-
-Runs all the tests
-
 ### android cleanAssembleDebugTest
 
 ```sh
 [bundle exec] fastlane android cleanAssembleDebugTest
 ```
 
-Build debug and test APK for screenshots
+Clean build directory and re-build debug and test apks
 
 ### android assembleDebugTest
 
@@ -37,7 +29,7 @@ Build debug and test APK for screenshots
 [bundle exec] fastlane android assembleDebugTest
 ```
 
-Build debug and test APK for screenshots
+Build debug and test apks
 
 ### android screenshots
 
@@ -47,21 +39,13 @@ Build debug and test APK for screenshots
 
 
 
-### android internal
+### android nightly
 
 ```sh
-[bundle exec] fastlane android internal
+[bundle exec] fastlane android nightly
 ```
 
-Upload a build to Play Store internal testing track
-
-### android deploy
-
-```sh
-[bundle exec] fastlane android deploy
-```
-
-Deploy a new version to the Google Play
+Run tasks if new commits have been made to develop
 
 ----
 

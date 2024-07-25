@@ -3,6 +3,7 @@
 set -e
 set -x
 
+SCRIPT_DIR=$(dirname "$0")
 UPLOAD_APKS=0
 while getopts u option; do
     case "$option" in
@@ -14,12 +15,12 @@ done
 if [ $UPLOAD_APKS -eq 1 ]; then
   curl -u "${BROWSERSTACK_USERNAME}:${BROWSERSTACK_ACCESS_KEY}" \
   -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
-  -F "file=@./app/build/outputs/apk/debug/app-arm64-v8a-debug.apk" \
+  -F "file=@${SCRIPT_DIR}/app/build/outputs/apk/debug/app-arm64-v8a-debug.apk" \
   -F "custom_id=ouinet-debug-latest"
 
   curl -u "${BROWSERSTACK_USERNAME}:${BROWSERSTACK_ACCESS_KEY}" \
   -X POST "https://api-cloud.browserstack.com/app-automate/espresso/test-suite" \
-  -F "file=@./app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" \
+  -F "file=@${SCRIPT_DIR}/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" \
   -F "custom_id=ouinet-debug-androidTest-latest"
 fi
 

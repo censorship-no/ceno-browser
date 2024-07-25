@@ -16,33 +16,29 @@
 default_platform(:android)
 
 platform :android do
-  desc "Runs all the tests"
-  lane :test do
-    gradle(task: "test")
-  end
 
-  desc "Build debug and test APK for screenshots"
+  desc "Clean build directory and re-build debug and test apks"
   lane :cleanAssembleDebugTest do
     gradle(
       task: 'clean'
     )
-    build_android_app(
+    gradle(
       task: 'assemble',
       build_type: 'Debug'
     )
-    build_android_app(
+    gradle(
       task: 'assemble',
       build_type: 'AndroidTest'
     )
   end
 
-  desc "Build debug and test APK for screenshots"
+  desc "Build debug and test apks"
   lane :assembleDebugTest do
-    build_android_app(
+    gradle(
       task: 'assemble',
       build_type: 'Debug'
     )
-    build_android_app(
+    gradle(
       task: 'assemble',
       build_type: 'AndroidTest'
     )
@@ -52,26 +48,61 @@ platform :android do
     capture_android_screenshots()
   end
 
-  desc "Upload a build to Play Store internal testing track"
-  lane :internal do
-    gradle(task: "clean assembleRelease")
-    upload_to_play_store(
+  desc "Run tasks if new commits have been made to develop"
+  lane :nightly do
+    previous_commit = last_git_commit[:commit_hash]
+    sh "git pull origin feature/nightly-builds"
+    current_commit = last_git_commit[:commit_hash]
+    if current_commit != previous_commit then
+      gradle(
+        task: 'clean'
+      )
+      gradle(
+        task: 'assemble',
+        build_type: 'Debug'
+      )
+      gradle(
+        task: 'assemble',
+        build_type: 'AndroidTest'
+      )
+      gradle(
+        task: 'lint',
+        build_type: 'Debug'
+      )
+
+      # Uploads debug apk to BrowserStack and starts tests
+      sh "../start_testsuite.sh -u"
+
+      # Make nightly builds and upload to Play Store internal test track
+      gradle(
+        task: 'assemble',
+        build_type: 'Nightly'
+      )
+      gradle(
+        task: 'bundle',
+        build_type: 'Nightly'
+      )
+      upload_to_play_store(
         track: 'internal',
         release_status: 'draft',
-        skip_upload_aab: 'true',
+        aab: '../app/build/outputs/bundle/nightly/app_nightly.aab',
+        skip_upload_apk: 'true',
         skip_upload_metadata: 'true',
         skip_upload_changelogs: 'true',
         skip_upload_images: 'true',
         skip_upload_screenshots: 'true',
-    )
-  
-    # sh "your_script.sh"
-    # You can also use other beta testing services here
-  end
+      )
 
-  desc "Deploy a new version to the Google Play"
-  lane :deploy do
-    gradle(task: "clean assembleRelease")
-    upload_to_play_store
+      # Run localTests on all connected devices
+      adb_devices.each do |device|
+        model = adb(command: "shell getprop ro.product.model",
+          serial: device.serial).strip
+        puts "Running test on #{model}"
+        ENV['ANDROID_SERIAL'] = device.serial
+        gradle(
+          task: 'connectedDebugAndroidTest'
+        )
+      end
+    end
   end
 end

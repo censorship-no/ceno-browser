@@ -18,6 +18,8 @@ localProperties.load(rootProject.file('local.properties').newDataInputStream())
 def scenarioFile = new File(project.hasProperty("testConfig") ? project.getProperty("testConfig") : "scenario.yaml")
 def scenarioYaml = scenarioFile.exists() ? new Yaml().load(scenarioFile.newInputStream()) : null
 
+def baseBuildDate = generatedBuildDate
+
 android {
     namespace 'ie.equalit.ceno'
 
@@ -104,6 +106,7 @@ android {
         }
         nightly {
             signingConfig signingConfigs.release
+            versionNameSuffix "-${baseBuildDate}"
             buildConfigField "boolean", "IS_RELEASED", "true"
         }
     }
@@ -160,13 +163,13 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 tasks.whenTaskAdded { task ->
     if (task.name == 'mergeDebugAssets' ||
             task.name == 'mergeBetaAssets' ||
+            task.name == 'mergeNightlyAssets' ||
             task.name == 'mergeReleaseAssets') {
         task.dependsOn renameUblockXpi
         task.dependsOn unzipUblockOrigin
     }
 }
 
-def baseBuildDate = generatedBuildDate
 def apkDate = generatedApkDate
 def appId = android.defaultConfig.applicationId.tokenize('.')
 
@@ -261,12 +264,6 @@ if (project.hasProperty("telemetry") && project.property("telemetry") == "true")
 
             println("versionCode for $abi = $versionCodeOverride")
 
-            if (variant.name == "nightly") {
-                output.versionNameOverride  = versionName + "-" + baseBuildDate
-            }
-            else {
-                output.versionNameOverride = versionName
-            }
             output.versionCodeOverride = versionCodeOverride
         }
 
@@ -314,11 +311,10 @@ if (project.hasProperty("telemetry") && project.property("telemetry") == "true")
 // -------------------------------------------------------------------------------------------------
 // Set the name of the output apks and copy to project directory
 // -------------------------------------------------------------------------------------------------
-    if (variant.name != 'debug') {
+    if (variant.name != 'debug' && variant.name != 'nightly') {
         variant.outputs.all { output ->
             def abi = output.getFilter(OutputFile.ABI)
-            def version = output.versionNameOverride
-            outputFileName = "${appId[2]}-${abi}-${variant.name}-${version}-${apkDate}.apk"
+            outputFileName = "${appId[2]}-${abi}-${variant.name}-${versionName}-${apkDate}.apk"
         }
     }
 
@@ -583,5 +579,8 @@ if (gradle.hasProperty('localProperties.autoPublish.application-services.dir')) 
 }
 
 clean {
-  delete 'build', 'target', fileTree("$project.rootDir/output/") { include '**/*.apk' }
+  delete 'build', 'target', fileTree("$project.rootDir/output/") {
+      include '**/*.aab'
+      include '**/*.apk'
+  }
 }

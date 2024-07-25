@@ -402,7 +402,8 @@
     <color name="ic_launcher_white_background">#FDFDFD</color>
     <color name="ic_launcher_blue_background">#0EA5E9</color>
     <color name="ic_launcher_red_background">#F0412F</color>
-    
+    <color name="ic_launcher_purple_background">#AD4BBE</color>
+
     <!--  Ceno sources count label colors  -->
     <color name="ceno_sources_green">#18CA08</color>
 <!--    <color name="ceno_sources_yellow">#FFEB3B</color>-->
