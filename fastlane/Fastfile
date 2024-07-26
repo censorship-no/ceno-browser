@@ -43,6 +43,20 @@ platform :android do
       build_type: 'AndroidTest'
     )
   end
+  desc "Clean build directory and re-build nightly apks and bundle"
+  lane :cleanAssembleNightly do
+    gradle(
+      task: 'clean'
+    )
+    gradle(
+      task: 'assemble',
+      build_type: 'Nightly'
+    )
+    gradle(
+      task: 'bundle',
+      build_type: 'Nightly'
+    )
+  end
 
   lane :screenshots do
     capture_android_screenshots()

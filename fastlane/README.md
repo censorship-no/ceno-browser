@@ -31,6 +31,14 @@ Clean build directory and re-build debug and test apks
 
 Build debug and test apks
 
+### android cleanAssembleNightly
+
+```sh
+[bundle exec] fastlane android cleanAssembleNightly
+```
+
+Clean build directory and re-build nightly apks and bundle
+
 ### android screenshots
 
 ```sh
