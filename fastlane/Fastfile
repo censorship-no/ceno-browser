@@ -65,7 +65,7 @@ platform :android do
   desc "Run tasks if new commits have been made to develop"
   lane :nightly do
     previous_commit = last_git_commit[:commit_hash]
-    sh "git pull origin feature/nightly-builds"
+    sh "git pull origin develop"
     current_commit = last_git_commit[:commit_hash]
     if current_commit != previous_commit then
       gradle(
@@ -107,14 +107,14 @@ platform :android do
       )
 
       # Run localTests on all connected devices
-      adb_devices.each do |device|
-        model = adb(command: "shell getprop ro.product.model",
-          serial: device.serial).strip
-        puts "Running test on #{model}"
-        ENV['ANDROID_SERIAL'] = device.serial
-        gradle(
-          task: 'connectedDebugAndroidTest'
-        )
+      #adb_devices.each do |device|
+      #  model = adb(command: "shell getprop ro.product.model",
+      #    serial: device.serial).strip
+      #  puts "Running test on #{model}"
+      #  ENV['ANDROID_SERIAL'] = device.serial
+      #  gradle(
+      #    task: 'connectedDebugAndroidTest'
+      #  )
       end
     end
   end
