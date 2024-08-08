@@ -78,7 +78,7 @@
     <string name="preferences_delete_browsing_data_site_permissions">Permissões de sites</string>
     <string name="preferences_delete_browsing_data_button">Apagar dados de navegação</string>
     <string name="preferences_delete_browsing_data_tabs_title_2">Separadores abertos</string>
-    <string name="delete_browsing_data_prompt_message_3">%s apagará os dados de navegação selecionados.</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno apagará os dados de navegação selecionados.</string>
     <string name="button_content_readerview">Visualização de leitor</string>
     <string name="close_mode_item">Fechar notificação</string>
     <string name="preference_category_search">Pesquisar</string>

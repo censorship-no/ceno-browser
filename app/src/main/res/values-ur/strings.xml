@@ -92,7 +92,7 @@
         <item quantity="one">%d پتہ</item>
         <item quantity="other">%d پتے</item>
     </plurals>
-    <string name="delete_browsing_data_prompt_message_3">%s منتخب کردہ براؤزنگ ڈیٹا کو حذف کردے گا۔</string>
+    <string name="delete_browsing_data_prompt_message_3"> منتخب کردہ براؤزنگ ڈیٹا کو حذف کردے گا۔</string>
     <string name="ceno_notification_clear_do_description">جی ہاں</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">&brandShortName;؛ استعمال کرنے کی سفارش کی جاتی ہے جب آپ کے پاس Wi-Fi کنکشن ہو، کیونکہ یہ آپ کی توقع سے زیادہ ڈیٹا استعمال کر سکتا ہے۔ آپ موبائل ڈیٹا استعمال کرتے وقت &brandShortName; کو روکنا چاہیں گے۔</string>
     <string name="onboarding_info_title">آپ کا اوسط براؤزر نہیں ہے</string>

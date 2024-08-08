@@ -91,7 +91,7 @@
     <string name="preference_select_preferred_engine">Sélectionnez votre moteur préféré :</string>
     <string name="browser_menu_library">Bibliothèque</string>
     <string name="customization_settings">Personnalisation</string>
-    <string name="delete_browsing_data_prompt_message_3">%s supprimera les données de navigation sélectionnées.</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno supprimera les données de navigation sélectionnées.</string>
     <string name="preferences_delete_browsing_data_cookies_subtitle">Vous serez déconnecté.e de la plupart des sites</string>
     <string name="preference_category_search">Recherche</string>
     <string name="preference_search_summary">Valeur par défaut</string>

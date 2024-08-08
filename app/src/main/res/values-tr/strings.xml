@@ -49,7 +49,7 @@
     <string name="delete_browsing_data_prompt_allow">Sil</string>
     <string name="preferences_delete_browsing_data_snackbar">Gezinme verileri silindi</string>
     <string name="preferences_delete_browsing_data_browsing_data_title">Gezinme geçmişi ve site verileri</string>
-    <string name="delete_browsing_data_prompt_message_3">%s seçilmiş gezinme verileri silecek.</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno seçilmiş gezinme verileri silecek.</string>
     <string name="button_content_readerview">Okuyucu görünümü</string>
     <string name="tracker_category">İzlenme koruması</string>
     <string name="shortcut_max_limit_title">Kısayol sınırına ulaşıldı</string>

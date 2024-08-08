@@ -82,7 +82,7 @@
     <string name="preferences_delete_browsing_data_cached_files_subtitle">သိမ်းဆည်းရန် နေရာများကို ရှင်းလင်းပေးသည်</string>
     <string name="preferences_delete_browsing_data_site_permissions">ဆိုက် ခွင့်ပြုချက်များ</string>
     <string name="preferences_delete_browsing_data_tabs_title_2">ဖွင့်ထားသည့် တပ်ဗ်များ</string>
-    <string name="delete_browsing_data_prompt_message_3">ရွေးချယ်ထားသည့် ရှာဖွေထားသည့် အချက်အလက်များကို %s က ဖျက်ပစ်ပါမည်။</string>
+    <string name="delete_browsing_data_prompt_message_3">ရွေးချယ်ထားသည့် ရှာဖွေထားသည့် အချက်အလက်များကို Ceno က ဖျက်ပစ်ပါမည်။</string>
     <string name="close_mode_item">အသိပေးချက်ကို ပိတ်မည်</string>
     <string name="preference_show_search_suggestions">ရှာဖွေရာ၌ အကြံပြုချက်များကို ရယူမည်</string>
     <string name="preferences_delete_browsing_data_cookies_subtitle">ဆိုက်အများစုမှ သင် ထွက်သွားလိမ့်မည်</string>

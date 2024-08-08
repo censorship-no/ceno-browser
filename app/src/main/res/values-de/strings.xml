@@ -43,7 +43,7 @@
     <string name="preferences_delete_browsing_data_browsing_data_title">Browserverlauf und Seitendaten</string>
     <string name="preferences_delete_browsing_data_cookies">Cookies</string>
     <string name="preferences_delete_browsing_data_site_permissions">Website-Berechtigungen</string>
-    <string name="delete_browsing_data_prompt_message_3">%s wird die ausgewählten Browsing-Daten löschen.</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno wird die ausgewählten Browsing-Daten löschen.</string>
     <string name="toolbar_hint">Suchen oder Adresse eingeben</string>
     <string name="menu_action_add_tab">Neue Registerkarte hinzufügen</string>
     <string name="menu_action_close_tabs">Alle Tabs schließen</string>

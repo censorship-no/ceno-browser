@@ -81,7 +81,7 @@
     <string name="preferences_delete_browsing_data_button">Eliminar los datos de navegación</string>
     <string name="preferences_delete_browsing_data_tabs_title_2">Abrir pestañas</string>
     <string name="clear_button_category">Botón de Borrar</string>
-    <string name="delete_browsing_data_prompt_message_3">%s borrará los datos de navegación seleccionados.</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno borrará los datos de navegación seleccionados.</string>
     <string name="crash_report_non_fatal_message">Lo sentimos. Algo ha fallado</string>
     <string name="close_mode_item">Cerrar la notificación</string>
     <string name="preference_category_search">Buscar</string>

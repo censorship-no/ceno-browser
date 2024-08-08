@@ -254,7 +254,7 @@
     <string name="preferences_delete_browsing_data_site_permissions">தள அனுமதிகள்</string>
     <string name="preferences_delete_browsing_data_button">உலாவல் தரவை நீக்கு</string>
     <string name="preferences_delete_browsing_data_tabs_title_2">தாவல்களைத் திறக்கவும்</string>
-    <string name="delete_browsing_data_prompt_message_3">தேர்ந்தெடுக்கப்பட்ட உலாவல் தரவை %s நீக்கும்.</string>
+    <string name="delete_browsing_data_prompt_message_3">தேர்ந்தெடுக்கப்பட்ட உலாவல் தரவை Ceno நீக்கும்.</string>
     <string name="close_mode_item" tools:ignore="UnusedResources">அறிவிப்பை மூடு</string>
     <string name="set_default_search_engine">இயல்புநிலை தேடுபொறியை அமைக்கவும்</string>
     <string name="preference_show_search_suggestions">தேடல் பரிந்துரைகளைப் பெறுங்கள்</string>

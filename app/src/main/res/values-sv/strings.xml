@@ -87,7 +87,7 @@
     <string name="deleting_browsing_data_in_progress">Tar bort bläddringsdata</string>
     <string name="preferences_delete_browsing_data">Ta bort bläddringsdata</string>
     <string name="preferences_delete_browsing_data_tabs_title_2">Öppna flikar</string>
-    <string name="delete_browsing_data_prompt_message_3">%s kommer att ta bort vald bläddringsdata.</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno kommer att ta bort vald bläddringsdata.</string>
     <string name="top_sites_rename_dialog_cancel">Avbryt</string>
     <string name="preferences_add_ons">Tillägg</string>
     <string name="browser_menu_add_to_shortcuts">Lägg till i genvägar</string>

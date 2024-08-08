@@ -81,7 +81,7 @@
     <string name="preferences_delete_browsing_data_cached_files_subtitle">释放存储空间</string>
     <string name="preference_category_search">搜索</string>
     <string name="preference_show_search_suggestions">获取搜索建议</string>
-    <string name="delete_browsing_data_prompt_message_3">%s 将删除选定的浏览数据。</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno 将删除选定的浏览数据。</string>
     <string name="preference_search_summary">设置默认值</string>
     <string name="preference_choose_search_engine">选择搜索引擎</string>
     <string name="preference_select_preferred_engine">选择你的首选引擎:</string>

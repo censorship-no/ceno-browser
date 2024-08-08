@@ -29,7 +29,7 @@
     </plurals>
     <string name="preferences_delete_browsing_data_cached_files">الصور والملفات المخزنة مؤقتًا</string>
     <string name="preferences_delete_browsing_data_button">احذف بيانات التصفح</string>
-    <string name="delete_browsing_data_prompt_message_3">%s سيحذف بيانات التصفح المحددة.</string>
+    <string name="delete_browsing_data_prompt_message_3"> سيحذف بيانات التصفح المحددة.</string>
     <string name="customize_addon_collection_ok">موافق</string>
     <string name="preference_choose_search_engine">اختر محرك البحث</string>
     <string name="shortcut_max_limit_content">لإضافة اختصار جديد، أزل اختصاراً قديماً. المس اسم الموقع واستمر ثم حدد إزالة.</string>

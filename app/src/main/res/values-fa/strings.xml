@@ -76,7 +76,7 @@
     <string name="preferences_delete_browsing_data_site_permissions">مجوزهای سایت</string>
     <string name="preferences_delete_browsing_data_button">داده‌های مرورگری را حذف کنید</string>
     <string name="preferences_delete_browsing_data_tabs_title_2">بازکردن برگه‌ها</string>
-    <string name="delete_browsing_data_prompt_message_3">%s داده‌های مرورگری که انتخاب شده‌اند حذف خواهند شد.</string>
+    <string name="delete_browsing_data_prompt_message_3"> داده‌های مرورگری که انتخاب شده‌اند حذف خواهند شد.</string>
     <string name="preferences_autofill">اپ‌های با قابلیت تکمیل فرم خودکار</string>
     <string name="preferences_autofill_summary">در اپلیکیشن‌های دیگر اطلاعات حساب‌های کاربری و رمزهای عبور به‌طور خودکار پر می‌شوند</string>
     <string name="preferences_tracking_protection_normal">فعال در حالت مرور عادی</string>

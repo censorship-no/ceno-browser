@@ -59,7 +59,7 @@
     <string name="browser_menu_library">Библиотека</string>
     <string name="delete_browsing_data_prompt_cancel">Отмена</string>
     <string name="delete_browsing_data_prompt_allow">Удалить</string>
-    <string name="delete_browsing_data_prompt_message_3">%s удалит выбранные данные о просмотре.</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno удалит выбранные данные о просмотре.</string>
     <string name="close_mode_item">Закрыть уведомление</string>
     <string name="clear_button_category">Кнопка Стереть</string>
     <string name="crash_report_non_fatal_message">Извините. Мы упали</string>

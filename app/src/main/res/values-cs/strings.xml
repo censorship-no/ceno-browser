@@ -50,7 +50,7 @@
         <item quantity="few">%d karet</item>
         <item quantity="other">%d karet</item>
     </plurals>
-    <string name="delete_browsing_data_prompt_message_3">%s smaže zvolená data prohlížení.</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno smaže zvolená data prohlížení.</string>
     <string name="preference_show_search_suggestions">Našeptávat při vyhledávání</string>
     <string name="preference_search_summary">Nastavit výchozí</string>
     <string name="preferences_add_ons">Doplňky</string>
