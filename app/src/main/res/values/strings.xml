@@ -91,7 +91,7 @@
     <string name="preferences_delete_browsing_data_site_permissions">Site permissions</string>
     <string name="preferences_delete_browsing_data_button">Delete browsing data</string>
     <string name="preferences_delete_browsing_data_tabs_title_2">Open tabs</string>
-    <string name="delete_browsing_data_prompt_message_3">%s will delete the selected browsing data.</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno will delete the selected browsing data.</string>
     <string name="content_description_close_button">Close</string>
     <string name="share_header_2">Share</string>
     <string name="share_copy_link_to_clipboard">Copy to clipboard</string>
