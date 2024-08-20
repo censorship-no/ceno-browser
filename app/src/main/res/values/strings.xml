@@ -489,4 +489,6 @@
     <string name="bookmark_folder_label">FOLDER</string>
     <string name="add_or_remove_bookmark">add or remove Bookmark</string>
     <string name="bookmark_delete_folder_confirmation_dialog">Are you sure you want to delete this folder?</string>
+    <string name="preferences_personal_mode_only">Privacy features for public tabs</string>
+    <string name="preferences_personal_mode_only_summary">EXPERIMENTAL: Enabling this allows for authentication in public mode tabs</string>
 </resources>

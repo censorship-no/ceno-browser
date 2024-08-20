@@ -922,6 +922,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler {
             it.setDelegate(portDelegate)
             val message = JSONObject()
             message.put("requestSources", "true")
+            message.put("personalModeOnly", Settings.isPersonalModeOnlyEnabled(requireContext()).toString())
             it.postMessage(message)
         }
     }
