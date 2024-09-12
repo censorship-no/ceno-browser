@@ -18,6 +18,7 @@ import androidx.test.espresso.matcher.ViewMatchers.isClickable
 import androidx.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.isDescendantOfA
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withChild
 import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
@@ -271,7 +272,7 @@ private fun cenoBrowserServiceDisplay() = onView(withText(R.string.ceno_notifica
 private fun geckoviewVersionDisplay() = onView(withText(R.string.preferences_about_geckoview))
 private fun ouinetVersionDisplay() = onView(withText(R.string.preferences_about_ouinet))
 
-private fun aboutEqualitieButton() = onView(withText(R.string.preferences_about_page))
+private fun aboutEqualitieButton() = onView(allOf(isClickable(), withChild(withText(R.string.preferences_about_page))))
 
 private fun assertGeneralHeading() = generalHeading()
     .check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)))
