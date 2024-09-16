@@ -7,6 +7,7 @@ import ie.equalit.ceno.ui.robots.clickNext
 import ie.equalit.ceno.ui.robots.clickPermissions
 import ie.equalit.ceno.ui.robots.denyPermissions
 import ie.equalit.ceno.ui.robots.givePermissions
+import ie.equalit.ceno.ui.robots.homepage
 import ie.equalit.ceno.ui.robots.navigationToolbar
 import ie.equalit.ceno.ui.robots.onboarding
 import ie.equalit.ceno.ui.robots.standby
@@ -156,7 +157,8 @@ class ScreenshotGenerator {
                 Thread.sleep(1000)
             }.openSettingsViewNetworkDetails {
                 Thread.sleep(1000)
-                Screengrab.screenshot("018_network_detail_preference")
+                // TODO: hide public IP address info in this screenshot
+                //Screengrab.screenshot("018_network_detail_preference")
             }.goBack {
             }.goBack {
             }.openThreeDotMenu {
@@ -175,6 +177,15 @@ class ScreenshotGenerator {
             }.openSettingsViewAboutPage {
                 Thread.sleep(1000)
                 Screengrab.screenshot("020_fragment_about")
+            }.goBack{
+            }.goBack {
+            }.openTabTrayMenu {
+            }.openNewTab {
+            }
+            homepage {
+            }.openPersonalHomepage {
+                Thread.sleep(1000)
+                Screengrab.screenshot("021_fragment_personal_home")
             }
         }
     }
