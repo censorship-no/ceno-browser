@@ -12,5 +12,7 @@ data class RssItem(
     var link: String,
     var guid: String,
     var pubDate: String,
+    var minVer: String,
+    var maxVer: String,
     var description: String
 )

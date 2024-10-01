@@ -34,7 +34,7 @@
             android:textColor="@color/ceno_home_card_announcement_title_color"
             tools:text="Announcements" />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/rssAnnouncementsContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,7 +54,9 @@
                 android:layout_marginTop="6dp"
                 android:textColor="@color/ceno_home_card_announcement_timestamp_color"
                 android:textStyle="italic"
-                tools:text="Wed, 6 Nov 2023" />
+                tools:text="Wed, 6 Nov 2023"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_message"
@@ -65,9 +67,25 @@
                 android:alpha="0.7"
                 android:fontFamily="sans-serif"
                 android:textColor="@color/ceno_home_card_announcement_message"
-                tools:text="Sample looooong text that will definitely span waaaaay more than a single lineee." />
+                tools:text="Sample looooong text that will definitely span waaaaay more than a single lineee."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/item_date" />
 
-        </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_dismiss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dismiss"
+                android:textAllCaps="false"
+                android:textColor="@color/ceno_home_announcement_icon_fill"
+                android:textStyle="bold"
+                android:layout_margin="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tv_message"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

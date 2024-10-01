@@ -128,10 +128,6 @@ class HomeFragment : BaseHomeFragment() {
                          * AdapterItem.TopPlaceholderItem is the first item
                          * This should be updated if/when there's any change to the ordering in SessionControlView
                          */
-
-                        // Using minus() below because CenoAnnouncementItem is the second item in SessionControlView.kt.
-                        // AdapterItem.TopPlaceholderItem is the first item in SessionControlView.kt
-                        // This should be updated if/when there's any change to the ordering in SessionControlView
                         val guid = Settings.getAnnouncementData(binding.root.context)?.items?.get(
                             index.minus(1)
                         )?.guid

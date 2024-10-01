@@ -8,6 +8,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import androidx.preference.PreferenceManager
 import com.google.gson.Gson
+import ie.equalit.ceno.BuildConfig
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.isDateMoreThanXDaysAway
 import ie.equalit.ceno.home.RssAnnouncementResponse
@@ -372,7 +373,11 @@ object Settings {
                     rssAnnouncementResponse.items.forEach {
                         val pubDate : String = it.guid.split("/")[1]
                         val isExpired = pubDate.isDateMoreThanXDaysAway(30) && !isAnnouncementExpirationDisabled(context)
-                        if((swipedGuids == null || !swipedGuids.contains(it.guid)) && !isExpired) {
+                        if((swipedGuids == null || !swipedGuids.contains(it.guid))
+                            && !isExpired
+                            && it.minVer >= BuildConfig.VERSION_NAME
+                            && it.maxVer <= BuildConfig.VERSION_NAME
+                            ) {
                             add(it)
                         }
                     }

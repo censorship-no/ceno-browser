@@ -45,6 +45,8 @@ object XMLParser {
                                 "",
                                 "",
                                 "",
+                                "",
+                                "",
                                 ""
                             )
                         }
@@ -90,6 +92,12 @@ object XMLParser {
 
                         "pubDate" -> {
                             currentRssItem?.pubDate = text
+                        }
+                        "minVer" -> {
+                            currentRssItem?.minVer = text
+                        }
+                        "maxVer" -> {
+                            currentRssItem?.maxVer = text
                         }
                     }
                 }

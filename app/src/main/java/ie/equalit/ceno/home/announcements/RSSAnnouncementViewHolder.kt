@@ -121,7 +121,8 @@ class RSSAnnouncementViewHolder(
 
         binding.tvMessage.movementMethod = LinkMovementMethod.getInstance()
         binding.tvMessage.text = spannedString
-
+        binding.btnDismiss.setOnClickListener() {
+        }
     }
 
     interface RssAnnouncementSwipeListener {
