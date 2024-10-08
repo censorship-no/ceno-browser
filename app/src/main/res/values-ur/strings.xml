@@ -196,4 +196,5 @@
     <string name="share_link_recent_apps_subheader">حال ہی میں استعمال کی گئی</string>
     <string name="download_logs">ڈاؤن لوڈ کریں</string>
     <string name="website_button_link">https://censorship.no/ur/index.html</string>
+    <string name="privacy_policy_url">https://censorship.no/ur/privacy_policy.html</string>
 </resources>

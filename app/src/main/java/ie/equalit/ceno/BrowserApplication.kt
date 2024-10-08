@@ -4,13 +4,13 @@
 
 package ie.equalit.ceno
 
+import android.annotation.SuppressLint
 import android.app.Application
+import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.utils.sentry.SentryOptionsConfiguration
-import ie.equalit.ouinet.Config
-import ie.equalit.ouinet.NotificationConfig
 import io.sentry.android.core.SentryAndroid
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -26,6 +26,7 @@ import mozilla.components.support.ktx.android.content.runOnlyInMainProcess
 import mozilla.components.support.rusthttp.RustHttpConfig
 import mozilla.components.support.rustlog.RustLog
 import mozilla.components.support.webextensions.WebExtensionSupport
+import org.cleaninsights.sdk.CleanInsights
 import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
 
@@ -34,6 +35,8 @@ open class BrowserApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        context = this
 
         /* CENO: Read default preferences and set the default theme immediately at startup */
         PreferenceManager.setDefaultValues(this, R.xml.default_preferences, false)
@@ -117,10 +120,20 @@ open class BrowserApplication : Application() {
         GlobalScope.launch(Dispatchers.IO) {
             components.core.fileUploadsDirCleaner.cleanUploadsDirectory()
         }
+
+        components.metrics.initCampaign001(cleanInsights)
+
+        Settings.incrementLaunchCount(this)
     }
 
     override fun onTrimMemory(level: Int) {
         super.onTrimMemory(level)
+
+        // Since there's no good callback before the app gets killed, we work around this problem
+        // by persisting, when the OS gets annoyed about memory consumption, which is an indicator,
+        // that we're soon going to get killed.
+        cleanInsights.persist()
+
         runOnlyInMainProcess {
             components.core.store.dispatch(SystemAction.LowMemoryAction(level))
             components.core.icons.onTrimMemory(level)
@@ -142,10 +155,33 @@ open class BrowserApplication : Application() {
             .whenSessionsChange()
     }
 
+    override fun onLowMemory() {
+        super.onLowMemory()
+
+        // Since there's no good callback before the app gets killed, we work around this problem
+        // by persisting, when the OS gets annoyed about memory consumption, which is an indicator,
+        // that we're soon going to get killed.
+        cleanInsights.persist()
+    }
+
+    override fun onTerminate() {
+        super.onTerminate()
+
+        // This only works in emulators, but nevertheless, for completeness sakes.
+        cleanInsights.persist()
+    }
+
+
     companion object {
-        var mOuinetConfig: Config? = null
-        var mNotificationConfig: NotificationConfig? = null
-        const val NON_FATAL_CRASH_BROADCAST = "ie.equalit.ceno"
+        @SuppressLint("StaticFieldLeak")
+        private var context: Context? = null
+
+        @JvmStatic
+        val cleanInsights: CleanInsights by lazy {
+            CleanInsights(
+                context!!.assets.open("cleaninsights.json").reader().readText(),
+                context!!.filesDir)
+        }
     }
 }
 

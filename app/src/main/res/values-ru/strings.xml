@@ -370,4 +370,5 @@
     <string name="tooltip_toolbar_description">Введите адрес сайта</string>
     <string name="start_tooltip_description">Экскурсия по браузеру — расскажем о ключевых функциях и предложим выдать два разрешения, чтобы Ceno мог работать в фоне и обеспечивать связь для вас и для других пользователей.</string>
     <string name="tooltip_permission_text">Чтобы обеспечить постоянный обмен веб-сайтами в сети Ceno, — даже в фоновом режиме, — мы предложим разрешить Ceno отправлять уведомления и отключить оптимизацию батареи. Вы всегда можете отозвать эти разрешения в настройках.</string>
+    <string name="privacy_policy_url">https://ceno.network/ru/privacy_policy.html</string>
 </resources>

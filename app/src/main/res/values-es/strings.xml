@@ -367,4 +367,5 @@
     <string name="tooltip_sources_description">Vea fácilmente de dónde se obtiene el contenido de la página: directamente de la página web, a través de la red de Ceno, o de la caché de Ceno</string>
     <string name="tooltip_permission_text">Para seguir compartiendo páginas web sin problemas incluso cuando la aplicación está en segundo plano, permite que Ceno envíe notificaciones y desactiva las optimizaciones de batería. Siempre puedes ajustar estos permisos más tarde en la configuración de tu teléfono</string>
     <string name="standby_tip_announcements">Consulte las actualizaciones en la sección de anuncios</string>
+    <string name="privacy_policy_url">https://censorship.no/es/privacy_policy.html</string>
 </resources>

@@ -1,0 +1,17 @@
+{
+  "server": "https://matomo.ouinet.work/ci/cleaninsights.php",
+  "siteId": 4,
+  "timeout": 5,
+  "debug": true,
+  "campaigns": {
+    "ouinet-startup-time": {
+      "start": "2024-10-01T00:00:00Z",
+      "end": "2024-11-31T23:59:59Z",
+      "aggregationPeriodLength": 1,
+      "numberOfPeriods": 90,
+      "onlyRecordOnce": false,
+      "eventAggregationRule": "avg",
+      "strengthenAnonymity": false
+    }
+  }
+}

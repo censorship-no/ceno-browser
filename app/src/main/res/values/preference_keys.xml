@@ -20,10 +20,14 @@
     <string name="pref_key_toolbar_hide" translatable="false">pref_key_toolbar_hide</string>
     <string name="pref_key_show_onboarding" translatable="false">pref_key_show_onboarding</string>
     <string name="pref_key_allow_crash_reporting" translatable="false">pref_key_allow_crash_reporting</string>
+    <string name="pref_key_clean_insights_enabled" translatable="false">pref_key_clean_insights_enabled</string>
+    <string name="pref_key_clean_insights_include_device_type" translatable="false">pref_key_clean_insights_include_device_type</string>
+    <string name="pref_key_clean_insights_include_device_locale" translatable="false">pref_key_clean_insights_include_device_locale</string>
     <string name="pref_key_show_crash_reporting_permission" translatable="false">pref_key_show_crash_reporting_permission</string>
     <string name="pref_key_crash_happened">pref_key_crash_happened</string>
     <string name="pref_key_crash_was_logged">pref_key_crash_was_logged</string>
     <string name="pref_key_allow_notifications" translatable="false">pref_key_allow_notifications</string>
+    <string name="pref_key_app_launch_count" translatable="false">pref_key_app_launch_count</string>
     <string name="pref_key_disable_battery_opt" translatable="false">pref_key_disable_battery_opt</string>
     <string name="pref_key_customization" translatable="false">pref_key_customization</string>
     <string name="pref_key_clear_in_toolbar" translatable="false">pref_key_clear_in_toolbar</string>

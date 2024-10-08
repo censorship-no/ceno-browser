@@ -79,6 +79,12 @@
             android:title="@string/preferences_allow_crash_reporting"
             app:iconSpaceReserved="false" />
 
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="@string/pref_key_clean_insights_enabled"
+            android:title="@string/preferences_allow_clean_insights_tracking"
+            app:iconSpaceReserved="false" />
+
         <androidx.preference.Preference
             app:iconSpaceReserved="false"
             android:key="@string/pref_key_delete_browsing_data"

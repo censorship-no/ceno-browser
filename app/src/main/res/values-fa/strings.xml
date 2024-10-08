@@ -364,4 +364,5 @@
     <string name="standby_tip_bridge">تبدیل به پل شوید و دسترسی دیگران به وب‌سایت‌ها را آسان کنید</string>
     <string name="standby_tip_announcements">برای آگاهی از به‌روزرسانی‌ها بخش اعلان‌ها را چک کنید</string>
     <string name="standby_tip_pdf">وب‌سایت‌ها را به‌شکل فایل PDF به اشتراک بگذارید</string>
+    <string name="privacy_policy_url">https://censorship.no/fa/privacy_policy.html</string>
 </resources>

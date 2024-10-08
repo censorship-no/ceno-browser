@@ -215,6 +215,64 @@ object Settings {
             .apply()
     }
 
+    fun getLaunchCount(context: Context) : Long {
+        return PreferenceManager.getDefaultSharedPreferences(context).getLong(
+            context.getString(R.string.pref_key_app_launch_count), 0
+        )
+    }
+
+    fun incrementLaunchCount(context: Context) {
+        val key = context.getString(R.string.pref_key_app_launch_count)
+        var currentValue = getLaunchCount(context)
+        if (currentValue == Long.MAX_VALUE) currentValue = 0
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit()
+            .putLong(key, currentValue + 1)
+            .apply()
+    }
+
+    fun setCleanInsightsEnabled(context: Context, value: Boolean) {
+        val key = context.getString(R.string.pref_key_clean_insights_enabled)
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit()
+            .putBoolean(key, value)
+            .apply()
+    }
+
+    fun isCleanInsightsEnabled(context: Context) : Boolean {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+            context.getString(R.string.pref_key_clean_insights_enabled), false
+        )
+    }
+
+    fun setCleanInsightsDeviceType(context: Context, value: Boolean) {
+        val key = context.getString(R.string.pref_key_clean_insights_include_device_type)
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit()
+            .putBoolean(key, value)
+            .apply()
+    }
+
+    fun isCleanInsightsDeviceTypeIncluded(context: Context) : Boolean {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+            context.getString(R.string.pref_key_clean_insights_include_device_type), false
+        )
+    }
+
+    fun setCleanInsightsDeviceLocale(context: Context, value: Boolean) {
+        val key = context.getString(R.string.pref_key_clean_insights_include_device_locale)
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit()
+            .putBoolean(key, value)
+            .apply()
+    }
+
+    fun isCleanInsightsDeviceLocaleIncluded(context: Context) : Boolean {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+            context.getString(R.string.pref_key_clean_insights_include_device_locale), false
+        )
+    }
+
     fun setCrashHappened(context: Context, value: Boolean) {
         val key = context.getString(R.string.pref_key_crash_happened)
         PreferenceManager.getDefaultSharedPreferences(context)

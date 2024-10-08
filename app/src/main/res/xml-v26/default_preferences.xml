@@ -36,4 +36,10 @@
     <androidx.preference.SwitchPreferenceCompat
         android:key="@string/pref_key_ceno_enable_log"
         android:defaultValue="false" />
+    <androidx.preference.SwitchPreferenceCompat
+        android:key="@string/pref_key_clean_insights_include_device_type"
+        android:defaultValue="true" />
+    <androidx.preference.SwitchPreferenceCompat
+        android:key="@string/pref_key_clean_insights_include_device_locale"
+        android:defaultValue="true" />
 </PreferenceScreen>

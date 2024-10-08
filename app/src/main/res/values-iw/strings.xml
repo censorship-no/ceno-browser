@@ -72,4 +72,5 @@
     <string name="customize_addon_collection_user_hint">בעל האוסף (זיהוי משתמש)</string>
     <string name="customize_extra_bittorrent_bootstrap">רצועות אתחול נוספות של BitTorrent</string>
     <string name="website_button_link">https://censorship.no/en/index.html</string>
+    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
 </resources>

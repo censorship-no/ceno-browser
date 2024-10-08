@@ -342,4 +342,5 @@
     <string name="eq_values_button_text">价值观</string>
     <string name="about_content_para_2">Ceno 浏览器是 eQualitie 的一个项目。eQualitie 是加拿大的一个非营利组织，致力于创建去中心化的互联网服务来支持更加平等和公平的网络。每天，它们都在为数百万人的网络结社自由提供支持。</string>
     <string name="eq_news_button_text">新闻</string>
+    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
 </resources>

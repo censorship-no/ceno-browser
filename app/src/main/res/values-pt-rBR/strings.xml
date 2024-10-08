@@ -360,4 +360,5 @@
     <string name="start_tooltip_description">Desbloqueie todo o potencial do Ceno - Faça um tour guiado para descobrir os principais recursos e conceda permissões para ajudar a compartilhar a web mesmo quando o aplicativo estiver em segundo plano.</string>
     <string name="tooltip_sources_description">Veja facilmente de onde o conteúdo do site é obtido - diretamente do site, através da rede Ceno ou do cache Ceno</string>
     <string name="tooltip_permission_text">Para continuar compartilhando sites sem problemas, mesmo quando o aplicativo está em segundo plano, permita que o Ceno envie notificações e desative as otimizações da bateria. Você sempre pode ajustar essas permissões posteriormente nas configurações do seu telefone</string>
+    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
 </resources>

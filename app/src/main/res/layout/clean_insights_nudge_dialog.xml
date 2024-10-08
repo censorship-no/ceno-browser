@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?><!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:gravity="start"
+        android:importantForAutofill="no"
+        android:text="@string/clean_insights_header"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="start"
+        android:importantForAutofill="no"
+        android:text="@string/clean_insights_sub_header"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@null"
+        android:src="@drawable/dot"
+        app:layout_constraintBottom_toBottomOf="@+id/bullet1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bullet1"
+        app:tint="?attr/textPrimary" />
+
+    <TextView
+        android:id="@+id/bullet1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="8dp"
+        android:gravity="start"
+        android:importantForAutofill="no"
+        android:text="@string/freq_app_usage"
+        android:textSize="16sp"
+        app:drawableTint="@color/photonBlack"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@null"
+        android:src="@drawable/dot"
+        app:layout_constraintBottom_toBottomOf="@+id/bullet2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bullet2"
+        app:tint="?attr/textPrimary" />
+
+    <TextView
+        android:id="@+id/bullet2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="8dp"
+        android:gravity="start"
+        android:importantForAutofill="no"
+        android:text="@string/load_times"
+        android:textSize="16sp"
+        app:drawableTint="@color/photonBlack"
+        app:layout_constraintTop_toBottomOf="@+id/bullet1" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@null"
+        android:src="@drawable/dot"
+        app:layout_constraintBottom_toBottomOf="@+id/bullet5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bullet5"
+        app:tint="?attr/textPrimary" />
+
+    <TextView
+        android:id="@+id/bullet5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="8dp"
+        android:gravity="start"
+        android:importantForAutofill="no"
+        android:text="@string/optional_metrics"
+        android:textSize="16sp"
+        app:drawableTint="@color/photonBlack"
+        app:layout_constraintTop_toBottomOf="@+id/bullet2" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        style="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bullet3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bullet3" />
+
+    <TextView
+        android:id="@+id/bullet3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="8dp"
+        android:gravity="start"
+        android:importantForAutofill="no"
+        android:text="@string/device_type"
+        android:textSize="16sp"
+        app:drawableTint="@color/photonBlack"
+        app:layout_constraintTop_toBottomOf="@+id/bullet5" />
+
+    <CheckBox
+        android:id="@+id/checkbox2"
+        style="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bullet4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bullet4" />
+
+    <TextView
+        android:id="@+id/bullet4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="8dp"
+        android:gravity="start"
+        android:importantForAutofill="no"
+        android:text="@string/device_locale"
+        android:textSize="16sp"
+        app:drawableTint="@color/photonBlack"
+        app:layout_constraintTop_toBottomOf="@+id/bullet3" />
+
+    <TextView
+        android:id="@+id/explainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="8dp"
+        android:gravity="start"
+        android:importantForAutofill="no"
+        android:text="@string/clean_insights_explainer"
+        android:textSize="16sp"
+        app:drawableTint="@color/photonBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bullet4" />
+
+    <TextView
+        android:id="@+id/learn_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="start"
+        android:importantForAutofill="no"
+        android:text="@string/learn_more_title"
+        android:textSize="16sp"
+        android:textColor="@color/accent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/explainer" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

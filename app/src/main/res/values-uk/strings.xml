@@ -369,4 +369,5 @@
     <string name="start_tooltip_description">Відкрийте для себе весь потенціал Ceno – перегляньте підказки, щоб дізнатися про ключові функції та дозволи, які допоможуть надавати спільний доступ до інтернету, навіть коли застосунок працює у фоновому режимі.</string>
     <string name="btn_next">Далі</string>
     <string name="tooltip_shortcuts_description">Збережіть улюблені сайти як ярлики для швидкого доступу до них з домашньої сторінки.</string>
+    <string name="privacy_policy_url">https://ceno.network/uk/privacy_policy.html</string>
 </resources>

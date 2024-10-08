@@ -59,6 +59,11 @@ allprojects {
             url "https://maven.mozilla.org/maven2"
         }
 
+        maven {
+            url "https://jitpack.io"
+        }
+
+
         if (project.hasProperty("centralRepo")) {
             maven {
                 name "MavenCentral"

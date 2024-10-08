@@ -336,4 +336,5 @@
     <string name="error_page_header">Ups! Nie udało się wczytać strony internetowej.</string>
     <string name="error_page_sub_header">To oznacza, że Ceno próbowało wszystkich możliwych mechanizmów aby uzyskać dostęp do treści, ale żaden nie zadziałał:</string>
     <string name="thank_you_bridge_mode_enabled">Dziękujemy za pozostanie mostem i powiększenie sieci Ceno!</string>
+    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
 </resources>
