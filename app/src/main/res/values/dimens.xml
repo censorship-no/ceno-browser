@@ -25,6 +25,9 @@
     <dimen name="panel_horizontal_margin">16dp</dimen>
     <dimen name="panel_vertical_margin">16dp</dimen>
 
+    <dimen name="standby_btn_top_margin">12dp</dimen>
+    <dimen name="standby_btn_padding">6dp</dimen>
+
     <!-- CENO: COPIED FROM FENIX in bulk for convenience,
         many of the values below may be unused and should be removed -->
     <dimen name="library_item_icon_margin_horizontal">16dp</dimen>

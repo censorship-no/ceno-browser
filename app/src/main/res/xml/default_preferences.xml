@@ -36,4 +36,7 @@
     <androidx.preference.SwitchPreferenceCompat
         android:key="@string/pref_key_ceno_enable_log"
         android:defaultValue="false" />
+    <androidx.preference.SwitchPreferenceCompat
+        android:key="@string/pref_key_show_standby_warning"
+        android:defaultValue="true" />
 </PreferenceScreen>

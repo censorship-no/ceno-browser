@@ -405,4 +405,8 @@
     <string name="standby_tip_announcements">Check for updates in the announcements section</string>
 
     <string name="select_language">Select Language:</string>
+    <string name="standby_take_me_anyway">Take me to Ceno anyway</string>
+    <string name="standby_dont_show">Don\'t show warning again</string>
+    <string name="startup_category">Startup</string>
+    <string name="preferences_show_standby_warning">Show warning on startup timeout</string>
 </resources>

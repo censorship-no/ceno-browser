@@ -582,18 +582,15 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler, Activit
             if (ouinetStatus != it.ouinetStatus) {
                 ouinetStatus = it.ouinetStatus
                 activity?.applicationContext?.let { ctx ->
-                    val message = when (ouinetStatus) {
-                        Ouinet.RunningState.Started -> {
-                            ctx.getString(R.string.ceno_ouinet_connected)
-                        }
-                        Ouinet.RunningState.Stopped -> {
-                            ctx.getString(R.string.ceno_ouinet_disconnected)
-                        }
-                        else -> {
-                            ctx.getString(R.string.ceno_ouinet_connecting)
-                        }
+                    val message : String? = when(ouinetStatus) {
+                        Ouinet.RunningState.Starting -> getString(R.string.ceno_ouinet_connecting)
+                        Ouinet.RunningState.Started -> getString(R.string.ceno_ouinet_connected)
+                        Ouinet.RunningState.Stopped -> getString(R.string.ceno_ouinet_disconnected)
+                        else -> null
                     }
-                    Toast.makeText(ctx, message, Toast.LENGTH_LONG).show()
+                    message?.let { msg ->
+                        Toast.makeText(ctx, msg, Toast.LENGTH_LONG).show()
+                    }
                 }
             }
         }

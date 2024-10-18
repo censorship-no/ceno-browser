@@ -258,14 +258,15 @@ class HomeFragment : BaseHomeFragment() {
 
     private fun updateOuinetStatus(context: Context, status: RunningState) {
         ouinetStatus = status
-        val message = if (ouinetStatus == RunningState.Started) {
-            getString(R.string.ceno_ouinet_connected)
-        } else if (ouinetStatus == RunningState.Stopped) {
-            getString(R.string.ceno_ouinet_disconnected)
-        } else {
-            getString(R.string.ceno_ouinet_connecting)
+        val message : String? = when(ouinetStatus) {
+            RunningState.Starting -> getString(R.string.ceno_ouinet_connecting)
+            RunningState.Started -> getString(R.string.ceno_ouinet_connected)
+            RunningState.Stopped -> getString(R.string.ceno_ouinet_disconnected)
+            else -> null
         }
-        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+        message?.let {
+            Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun updateUI(mode: BrowsingMode) {

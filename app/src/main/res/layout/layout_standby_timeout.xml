@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,6 +11,8 @@
         android:id="@+id/tv_title_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:text="@string/ouinet_taking_too_long_title"
         android:textSize="24sp" />
 
@@ -16,6 +20,8 @@
         android:id="@+id/tv_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_dialog"
+        app:layout_constraintStart_toStartOf="parent"
         android:paddingTop="16dp"
         android:paddingBottom="24dp"
         android:text="@string/ouinet_timeout_dialog_text" />
@@ -24,18 +30,59 @@
         android:id="@+id/btn_network_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description"
+        app:layout_constraintStart_toStartOf="parent"
         android:text="@string/network_settings" />
 
     <Button
         android:id="@+id/btn_extra_bt_bootstraps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_network_settings"
+        app:layout_constraintStart_toStartOf="parent"
         android:text="@string/change_bt_bootstrap_server" />
 
     <Button
         android:id="@+id/btn_export_logs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_extra_bt_bootstraps"
+        app:layout_constraintStart_toStartOf="parent"
         android:text="@string/preferences_ceno_export_android_logs" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btn_try_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standby_btn_top_margin"
+        app:layout_constraintTop_toBottomOf="@+id/btn_export_logs"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="@dimen/standby_btn_padding"
+        android:background="@android:color/transparent"
+        android:text="@string/standby_try_again" />
+
+    <Button
+        android:id="@+id/btn_take_me_anyway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standby_btn_top_margin"
+        app:layout_constraintTop_toBottomOf="@+id/btn_try_again"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="@dimen/standby_btn_padding"
+        android:background="@drawable/recent_apps_background"
+        android:backgroundTint="@color/ceno_blue_100"
+        android:textColor="@color/ceno_blue_900"
+        android:text="@string/standby_take_me_anyway" />
+
+    <CheckBox
+        android:id="@+id/chk_dont_show_again"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_take_me_anyway"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/standby_dont_show"
+        android:checkMarkTint="@color/accent"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

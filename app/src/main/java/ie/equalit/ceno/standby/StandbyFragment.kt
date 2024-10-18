@@ -2,6 +2,7 @@ package ie.equalit.ceno.standby
 
 import android.app.AlertDialog
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.Network
@@ -16,6 +17,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
@@ -28,6 +30,7 @@ import ie.equalit.ceno.databinding.FragmentStandbyBinding
 import ie.equalit.ceno.ext.requireComponents
 import ie.equalit.ceno.settings.dialogs.ExtraBTBootstrapsDialog
 import ie.equalit.ceno.settings.ExportAndroidLogsDialog
+import ie.equalit.ceno.settings.Settings
 import ie.equalit.ouinet.Ouinet.RunningState
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
@@ -143,7 +146,9 @@ class StandbyFragment : Fragment() {
                 if (getView() == null)
                     return@consumeFrom
                 currentStatus = it.ouinetStatus
-                updateDisplayText(infoIndex)
+                context?.let { ctx ->
+                    updateDisplayText(ctx, infoIndex)
+                }
                 if (currentStatus == RunningState.Stopped) {
                     if(isCenoStopping == false) {
                         tryAgain()
@@ -153,17 +158,13 @@ class StandbyFragment : Fragment() {
         }
     }
 
-    private fun displayTimeoutDialog() {
+    private fun displayTimeoutDialog(ctx: Context) {
         binding.progressBar.visibility = View.INVISIBLE
         val timeoutDialogBuilder = AlertDialog.Builder(requireContext())
         val timeoutDialogView = View.inflate(requireContext(), R.layout.layout_standby_timeout, null)
 
         timeoutDialogBuilder.apply {
             setView(timeoutDialogView)
-            setPositiveButton(getString(R.string.standby_try_again)) { _, _ ->
-                isAnyDialogVisible = false
-                tryAgain()
-            }
         }
 
         timeoutDialogBuilder.setOnCancelListener{
@@ -173,6 +174,12 @@ class StandbyFragment : Fragment() {
 
         dialog = timeoutDialogBuilder.create()
 
+        val btnTryAgain = timeoutDialogView.findViewById<Button>(R.id.btn_try_again)
+        btnTryAgain?.setOnClickListener {
+            dialog?.dismiss()
+            isAnyDialogVisible = false
+            tryAgain()
+        }
         val btnNetwork = timeoutDialogView.findViewById<Button>(R.id.btn_network_settings)
         btnNetwork?.setOnClickListener {
             dialog?.dismiss()
@@ -210,6 +217,14 @@ class StandbyFragment : Fragment() {
             exportLogsDialog.show()
             isAnyDialogVisible = true
         }
+        val btnTakeMeAnyway = timeoutDialogView.findViewById<Button>(R.id.btn_take_me_anyway)
+        btnTakeMeAnyway?.setOnClickListener {
+            navigateToBrowser()
+        }
+        val dontShowAgain = timeoutDialogView.findViewById<CheckBox>(R.id.chk_dont_show_again)
+        dontShowAgain.setOnCheckedChangeListener { _, isChecked ->
+            Settings.setShowStandbyWarning(ctx, !isChecked)
+        }
         dialog?.show()
         isAnyDialogVisible = true
     }
@@ -219,13 +234,26 @@ class StandbyFragment : Fragment() {
         view?.let {
             binding.progressBar.visibility = View.VISIBLE
             index = 0
-            updateDisplayText((System.currentTimeMillis() % 2).toInt())
+            context?.let { ctx ->
+                updateDisplayText(ctx, (System.currentTimeMillis() % 2).toInt())
+            }
         }
     }
 
-    private fun updateDisplayText(infoIndex:Int) {
+    private fun navigateToBrowser() {
+        dialog?.dismiss()
+        findNavController().popBackStack(R.id.standbyFragment, true)
+        // go to home or browser
+        if (requireComponents.core.store.state.selectedTab == null)
+            findNavController().navigate(R.id.action_global_home)
+        else
+            findNavController().navigate((R.id.action_global_browser))
+    }
+
+    private fun updateDisplayText(ctx: Context, infoIndex:Int) {
         viewLifecycleOwner.lifecycleScope.launch{
-            while (currentStatus == RunningState.Starting) {
+            Log.d("StandbyFragment", "Update display text")
+            while (currentStatus == RunningState.Starting || currentStatus == RunningState.Degraded) {
                 if(!isAnyDialogVisible) {
                     if (isNetworkAvailable()) {
                         binding.ivExtraInfo.setImageDrawable(ContextCompat
@@ -245,21 +273,21 @@ class StandbyFragment : Fragment() {
                         binding.tvStatus.text = getString(displayText[index])
                         index += 1
                     } else {
-                        displayTimeoutDialog()
+                        if (Settings.shouldShowStandbyWarning(ctx)) {
+                            displayTimeoutDialog(ctx)
+                        }
+                        else {
+                            navigateToBrowser()
+                        }
                         break
                     }
                 }
                 delay(refreshIntervalMS)
             }
+            Log.d("StandbyFragment", "Current setting of standby warning: ${Settings.shouldShowStandbyWarning(ctx)}")
             if (currentStatus == RunningState.Started) {
                 //Navigate away
-                //go to home or browser
-                dialog?.dismiss()
-                findNavController().popBackStack(R.id.standbyFragment, true)
-                if (requireComponents.core.store.state.selectedTab == null)
-                    findNavController().navigate(R.id.action_global_home)
-                else
-                    findNavController().navigate((R.id.action_global_browser))
+                navigateToBrowser()
             }
             if (currentStatus == RunningState.Stopping) {
                 if (isCenoStopping == true) {
