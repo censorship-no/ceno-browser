@@ -458,4 +458,7 @@
     </plurals>
     <string name="developer_tools_enabled">Developer tools enabled</string>
     <string name="developer_tools_disabled">Developer tools disabled</string>
+    <string name="ceno_network_status_title">ceno network</string>
+    <string name="ceno_network_status_connected">connected</string>
+    <string name="ceno_network_status_disconnected">disconnected</string>
 </resources>

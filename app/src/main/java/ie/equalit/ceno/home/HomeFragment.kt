@@ -261,6 +261,15 @@ class HomeFragment : BaseHomeFragment() {
         message?.let {
             Toast.makeText(context, it, Toast.LENGTH_LONG).show()
         }
+        if (ouinetStatus == RunningState.Started) {
+            //set connected icon
+            binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_connected_icon))
+            binding.cenoNetworkStatusText.text = getString(R.string.ceno_network_status_connected)
+        } else {
+            //set disconnected icon
+            binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_disconnected_icon))
+            binding.cenoNetworkStatusText.text = getString(R.string.ceno_network_status_disconnected)
+        }
     }
 
     private fun updateUI(mode: BrowsingMode) {

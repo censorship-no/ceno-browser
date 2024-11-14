@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:viewportHeight="26" android:viewportWidth="26" android:width="24dp">
+      
+    <path android:fillColor="@color/fx_mobile_text_color_warning" android:fillType="evenOdd" android:pathData="M8.208,17.792L2,24H10.997C10.997,24 11.201,20.778 8.441,18.017C8.364,17.94 8.286,17.865 8.208,17.792ZM5.846,16.154L2,20V15C2,15 3.811,15.126 5.846,16.154Z"/>
+      
+    <path android:fillColor="@color/fx_mobile_text_color_warning" android:fillType="evenOdd" android:pathData="M8.712,13.288C5.514,11.5 2,11.5 2,11.5V7.5C2,7.5 6.802,7.5 11.325,10.675L8.712,13.288ZM11,15C14.5,18.5 14.5,24 14.5,24H18.5C18.5,24 18.5,17.5 13.5,12.5L11,15Z"/>
+      
+    <path android:fillColor="@color/fx_mobile_text_color_warning" android:fillType="evenOdd" android:pathData="M13.078,8.922C7.444,4.444 2,4.833 2,4.833V1C2,1 9.352,1 15.905,6.095L13.078,8.922ZM15.175,10.825C21.167,16.997 21.167,24 21.167,24H25C25,24 25,14.939 18.03,7.97L15.175,10.825Z"/>
+      
+    <path android:fillColor="#00000000" android:pathData="M2,24L24,2" android:strokeColor="@color/fx_mobile_text_color_warning" android:strokeWidth="3"/>
+    
+</vector>
