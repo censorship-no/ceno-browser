@@ -265,7 +265,11 @@ class HomeFragment : BaseHomeFragment() {
             //set connected icon
             binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_connected_icon))
             binding.cenoNetworkStatusText.text = getString(R.string.ceno_network_status_connected)
-        } else {
+        } else if (ouinetStatus == RunningState.Degraded) {
+            binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_degraded_icon))
+            binding.cenoNetworkStatusText.text = getString(R.string.ceno_network_status_degraded)
+        }
+        else {
             //set disconnected icon
             binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_disconnected_icon))
             binding.cenoNetworkStatusText.text = getString(R.string.ceno_network_status_disconnected)

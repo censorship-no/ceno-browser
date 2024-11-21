@@ -51,6 +51,10 @@
     <color name="tooltip_text_color">@color/ceno_blue_100</color>
     <color name="tooltip_title_color">@color/photonWhite</color>
 
+    <color name="ceno_network_icon_connected">@color/green_300</color>
+    <color name="ceno_network_icon_degraded">@color/ceno_orange_300</color>
+    <color name="ceno_network_icon_disconnected">@color/red_300</color>
+
 
     <color name="ceno_blue_50">#F0F9FF</color>
     <color name="ceno_blue_100">#E0F2FE</color>
@@ -92,6 +96,11 @@
     <color name="ceno_orange_800">#9A3412</color>
     <color name="ceno_orange_900">#7C2D12</color>
 
+    <color name="green_300">#A7DE99</color>
+    <color name="green_500">#4FBC34</color>
+
+    <color name="red_300">#F16B7B</color>
+    <color name="red_600">#D40922</color>
 
     <!-- CENO: COPIED FROM FENIX in bulk for convenience,
         many of the values below may be unused and should be removed -->

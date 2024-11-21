@@ -37,6 +37,10 @@
     <color name="logo_icon_color">@color/ceno_blue_500</color>
     <color name="logo_accent">@color/ceno_orange_600</color>
 
+    <color name="ceno_network_icon_connected">@color/green_500</color>
+    <color name="ceno_network_icon_degraded">@color/ceno_orange_400</color>
+    <color name="ceno_network_icon_disconnected">@color/red_600</color>
+
     <!-- CENO: COPIED FROM FENIX in bulk for convenience,
         many of the values below may be unused and should be removed -->
     <!-- Design system color variables -->

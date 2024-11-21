@@ -461,4 +461,5 @@
     <string name="ceno_network_status_title">ceno network</string>
     <string name="ceno_network_status_connected">connected</string>
     <string name="ceno_network_status_disconnected">disconnected</string>
+    <string name="ceno_network_status_degraded">degraded</string>
 </resources>
