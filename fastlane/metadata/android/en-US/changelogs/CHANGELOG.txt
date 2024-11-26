@@ -4,6 +4,7 @@ This release:
 - Adds a hidden developer tools sub-menu
 - Adds en locale strings
 - Supports monochrome launcher icons
+- Adds a Ceno network connection status indicator on homepage
 
 # v2.3.3
 This release:
