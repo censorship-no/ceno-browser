@@ -60,53 +60,16 @@
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier=".1"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ImageView
+                android:id="@+id/ceno_network_status_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:clickable="false"
+                android:contentDescription="@string/ceno_network_status_title"
+                android:focusable="false"
                 android:layout_gravity="end|center_vertical"
-                app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier=".1">
-
-                <TextView
-                    android:id="@+id/ceno_network_status_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:textAlignment="textEnd"
-                    android:text="@string/ceno_network_status_title"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/ceno_network_status_icon"
-                    app:layout_constraintBottom_toTopOf="@id/ceno_network_status_text"
-                    android:layout_marginEnd="8dp"/>
-
-                <TextView
-                    android:id="@+id/ceno_network_status_text"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:textAlignment="textEnd"
-                    android:text="@string/ceno_network_status_connected"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@id/ceno_network_status_title"
-                    app:layout_constraintTop_toBottomOf="@id/ceno_network_status_title" />
-
-                <ImageView
-                    android:id="@+id/ceno_network_status_icon"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:contentDescription="@string/ceno_network_status_title"
-                    android:focusable="false"
-                    app:srcCompat="@drawable/ceno_connected_icon"
-                    app:layout_constraintDimensionRatio="1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/ceno_network_status_title"
-                    app:layout_constraintBottom_toBottomOf="@id/ceno_network_status_text"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginEnd="16dp"
+                app:srcCompat="@drawable/ceno_connected_icon" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 

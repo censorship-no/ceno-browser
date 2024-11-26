@@ -11,6 +11,7 @@ import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.preference.PreferenceManager
 import ie.equalit.ceno.BrowserActivity
@@ -74,6 +75,8 @@ class HomeFragment : BaseHomeFragment() {
     private val scope = MainScope()
 
     private var ouinetStatus = RunningState.Started
+
+    private var isNetworkStatusDialogVisible:Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -252,27 +255,25 @@ class HomeFragment : BaseHomeFragment() {
 
     private fun updateOuinetStatus(context: Context, status: RunningState) {
         ouinetStatus = status
-        val message : String? = when(ouinetStatus) {
-            RunningState.Starting -> getString(R.string.ceno_ouinet_connecting)
-            RunningState.Started -> getString(R.string.ceno_ouinet_connected)
-            RunningState.Stopped -> getString(R.string.ceno_ouinet_disconnected)
-            else -> null
+        var message:String?
+        when(ouinetStatus) {
+            RunningState.Started -> {
+                message = getString(R.string.ceno_ouinet_connected)
+                //set connected icon
+                binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_connected_icon))
+            }
+            RunningState.Degraded -> {
+                message = getString(R.string.ceno_ouinet_connecting)
+                binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_degraded_icon))
+            }
+            else -> {
+                message = getString(R.string.ceno_ouinet_disconnected)
+                //set disconnected icon
+                binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_disconnected_icon))
+            }
         }
-        message?.let {
+        message.let {
             Toast.makeText(context, it, Toast.LENGTH_LONG).show()
-        }
-        if (ouinetStatus == RunningState.Started) {
-            //set connected icon
-            binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_connected_icon))
-            binding.cenoNetworkStatusText.text = getString(R.string.ceno_network_status_connected)
-        } else if (ouinetStatus == RunningState.Degraded) {
-            binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_degraded_icon))
-            binding.cenoNetworkStatusText.text = getString(R.string.ceno_network_status_degraded)
-        }
-        else {
-            //set disconnected icon
-            binding.cenoNetworkStatusIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ceno_disconnected_icon))
-            binding.cenoNetworkStatusText.text = getString(R.string.ceno_network_status_disconnected)
         }
     }
 
@@ -308,6 +309,22 @@ class HomeFragment : BaseHomeFragment() {
         binding.sessionControlRecyclerView.visibility = View.VISIBLE
 
         binding.sessionControlRecyclerView.itemAnimator = null
+
+        binding.cenoNetworkStatusIcon.setOnClickListener {
+//            if(binding.cenoNetworkStatusTitle.isVisible) {
+//                binding.cenoNetworkStatusTitle.visibility = View.INVISIBLE
+//                binding.cenoNetworkStatusText.visibility = View.INVISIBLE
+//            } else {
+//                binding.cenoNetworkStatusTitle.visibility = View.VISIBLE
+//                binding.cenoNetworkStatusText.visibility = View.VISIBLE
+//            }
+            if(!isNetworkStatusDialogVisible) {
+                CenoNetworkStatusDialog(requireContext(), ouinetStatus) {
+                    isNetworkStatusDialogVisible = false
+                }.getDialog().show()
+                isNetworkStatusDialogVisible = true
+            }
+        }
     }
 
     override fun onStart() {
