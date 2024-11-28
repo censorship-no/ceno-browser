@@ -13,10 +13,21 @@ class CenoNetworkStatusDialog(
 ){
     private val builder: AlertDialog.Builder = AlertDialog.Builder(context)
     init {
-        val message:Int = when(status) {
-            RunningState.Started -> R.string.ceno_network_status_connected
-            RunningState.Degraded -> R.string.ceno_network_status_degraded
-            else -> R.string.ceno_network_status_disconnected
+        val message:Int
+        val icon:Int
+        when(status) {
+            RunningState.Started -> {
+                message = R.string.ceno_network_status_connected
+                icon = R.drawable.ceno_connected_icon
+            }
+            RunningState.Degraded -> {
+                message = R.string.ceno_network_status_degraded
+                icon = R.drawable.ceno_degraded_icon
+            }
+            else -> {
+                message = R.string.ceno_network_status_disconnected
+                icon = R.drawable.ceno_disconnected_icon
+            }
         }
         builder.apply {
             setTitle(R.string.ceno_network_status_title)
@@ -24,6 +35,7 @@ class CenoNetworkStatusDialog(
             setPositiveButton(R.string.dialog_btn_positive_ok) { dialog, _ ->
                 dialog.cancel()
             }
+            setIcon(icon)
             setOnDismissListener(onDismissListener)
         }
     }

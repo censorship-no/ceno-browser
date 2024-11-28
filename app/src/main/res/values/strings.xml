@@ -458,8 +458,8 @@
     </plurals>
     <string name="developer_tools_enabled">Developer tools enabled</string>
     <string name="developer_tools_disabled">Developer tools disabled</string>
-    <string name="ceno_network_status_title">Ceno network</string>
-    <string name="ceno_network_status_connected">Connected. All websites are available</string>
-    <string name="ceno_network_status_disconnected">Disconnected</string>
-    <string name="ceno_network_status_degraded">Connecting to Ceno peer-to-peer network. Some websites may be unavailable</string>
+    <string name="ceno_network_status_title">Ceno Network Status</string>
+    <string name="ceno_network_status_connected">Connected. All websites are available.</string>
+    <string name="ceno_network_status_disconnected">Disconnected. Check your network settings or contact support.</string>
+    <string name="ceno_network_status_degraded">Connecting to the Ceno network. Some websites may be unavailable.</string>
 </resources>
