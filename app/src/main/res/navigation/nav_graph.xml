@@ -25,14 +25,6 @@
         app:destination="@id/settingsFragment" />
 
     <action
-        android:id="@+id/action_global_addons"
-        app:destination="@id/addonsFragment"
-        app:enterAnim="@anim/fade_in"
-        app:exitAnim="@anim/fade_out"
-        app:popEnterAnim="@anim/fade_in"
-        app:popExitAnim="@anim/fade_out" />
-
-    <action
         android:id="@+id/action_global_tabsTray"
         app:destination="@id/tabsTrayFragment" />
 
@@ -159,30 +151,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/addonsFragment"
-        android:name="ie.equalit.ceno.addons.AddonsFragment"
-        android:label="@string/preferences_add_ons"
-        tools:layout="@layout/fragment_add_ons">
-
-        <action
-            android:id="@+id/action_addonsFragment_to_addonDetailsFragment"
-            app:destination="@id/addonDetailsFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popEnterAnim="@anim/slide_back_in"
-            app:popExitAnim="@anim/slide_back_out" />
-
-        <action
-            android:id="@+id/action_addonsFragment_to_installedAddonDetailsFragment"
-            app:destination="@id/installedAddonDetailsFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popEnterAnim="@anim/slide_back_in"
-            app:popExitAnim="@anim/slide_back_out" />
-
-    </fragment>
-
-    <fragment
         android:id="@+id/tabsTrayFragment"
         android:name="ie.equalit.ceno.tabs.TabsTrayFragment"
         tools:layout="@layout/fragment_tabstray" />
@@ -190,27 +158,6 @@
     <fragment
         android:id="@+id/externalAppBrowserFragment"
         android:name="ie.equalit.ceno.browser.ExternalAppBrowserFragment" />
-
-    <fragment
-        android:id="@+id/addonDetailsFragment"
-        android:name="ie.equalit.ceno.addons.AddonDetailsFragment"
-        android:label="@string/mozac_feature_addons_details"
-        tools:layout="@layout/fragment_addon_details" />
-
-    <fragment
-        android:id="@+id/installedAddonDetailsFragment"
-        android:name="ie.equalit.ceno.addons.InstalledAddOnDetailsFragment"
-        android:label="@string/mozac_feature_addons_details"
-        tools:layout="@layout/fragment_installed_add_on_details">
-
-        <action
-            android:id="@+id/action_installedAddonDetailsFragment_to_addonDetailsFragment"
-            app:destination="@id/addonDetailsFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popEnterAnim="@anim/slide_back_in"
-            app:popExitAnim="@anim/slide_back_out" />
-    </fragment>
 
     <fragment
         android:id="@+id/privacySettingsFragment"

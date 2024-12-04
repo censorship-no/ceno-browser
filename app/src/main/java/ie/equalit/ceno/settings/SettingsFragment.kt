@@ -49,7 +49,6 @@ import ie.equalit.ceno.R.string.pref_key_about_ceno
 import ie.equalit.ceno.R.string.pref_key_about_geckoview
 import ie.equalit.ceno.R.string.pref_key_about_ouinet
 import ie.equalit.ceno.R.string.pref_key_about_page
-import ie.equalit.ceno.R.string.pref_key_add_ons
 import ie.equalit.ceno.R.string.pref_key_additional_developer_tools
 import ie.equalit.ceno.R.string.pref_key_allow_crash_reporting
 import ie.equalit.ceno.R.string.pref_key_allow_notifications
@@ -268,7 +267,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
         getPreference(pref_key_search_engine)?.onPreferenceClickListener =
             getClickListenerForSearch()
         getSwitchPreferenceCompat(pref_key_clean_insights_enabled)?.onPreferenceChangeListener = getChangeListenerForCleanInsights()
-        getPreference(pref_key_add_ons)?.onPreferenceClickListener = getClickListenerForAddOns()
         findPreference<Preference>(requireContext().getPreferenceKey(pref_key_change_language))?.onPreferenceClickListener = getClickListenerForLanguageChange()
         findPreference<Preference>(requireContext().getPreferenceKey(pref_key_change_language))?.summary = getCurrentLocale().displayLanguage
         getPreference(pref_key_ceno_website_sources)?.onPreferenceClickListener =
@@ -480,13 +478,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 R.id.action_settingsFragment_to_deleteBrowsingDataFragment
             )
             getActionBar().setTitle(preferences_delete_browsing_data)
-            true
-        }
-    }
-
-    private fun getClickListenerForAddOns(): OnPreferenceClickListener {
-        return OnPreferenceClickListener {
-            findNavController().navigate(R.id.action_global_addons)
             true
         }
     }

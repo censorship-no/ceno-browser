@@ -281,7 +281,7 @@
     <string name="clear_cache_fail">Cache clear failed, try again soon</string>
     <string name="ouinet_client_fetch_success">Ceno setting updated</string>
     <string name="ouinet_client_fetch_fail">Failed to change Ceno setting</string>
-    <string name="addon_placeholder">No Add-ons Available</string>
+    <string name="addon_placeholder" tools:ignore="UnusedResources">No Add-ons Available</string>
     <string name="website_button_text">Website</string>
     <string name="website_button_link">https://censorship.no/en/index.html</string>
     <string name="source_code_button_text">Source Code</string>
