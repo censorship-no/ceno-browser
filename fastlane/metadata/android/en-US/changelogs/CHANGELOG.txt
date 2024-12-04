@@ -3,6 +3,7 @@ This release:
 - Implements initial Clean Insights metrics campaign
 - Adds a hidden developer tools sub-menu
 - Adds en locale strings
+- Updates Android-Components to v133.0
 
 # v2.3.3
 This release:
