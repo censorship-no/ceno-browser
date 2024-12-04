@@ -76,5 +76,5 @@ class Components(private val context: Context) {
 
     val webExtensionPort by lazy { WebExtensionPort(context) }
 
-    val metrics by lazy { Metrics() }
+    val metrics by lazy { Metrics(context) }
 }

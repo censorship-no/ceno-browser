@@ -29,4 +29,11 @@
         android:title="@string/preferences_announcement_expire_disable"
         app:iconSpaceReserved="false" />
 
+    <androidx.preference.SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="@string/pref_key_clean_insights_backdate"
+        android:title="@string/preferences_clean_insights_backdate"
+        app:isPreferenceVisible="false"
+        app:iconSpaceReserved="false" />
+
 </androidx.preference.PreferenceScreen>

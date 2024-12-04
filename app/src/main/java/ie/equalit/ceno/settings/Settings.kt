@@ -44,6 +44,11 @@ object Settings {
             context.getString(R.string.pref_key_show_developer_tools), false
         )
 
+    fun shouldBackdateCleanInsights(context: Context): Boolean =
+        PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+            context.getString(R.string.pref_key_clean_insights_backdate), false
+        )
+
     fun setUpdateSearchEngines(context: Context, value: Boolean) {
         val key = context.getString(R.string.pref_key_update_search_engines)
         PreferenceManager.getDefaultSharedPreferences(context)
@@ -77,6 +82,14 @@ object Settings {
 
     fun setShowDeveloperTools(context: Context, value: Boolean) {
         val key = context.getString(R.string.pref_key_show_developer_tools)
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit()
+            .putBoolean(key, value)
+            .apply()
+    }
+
+    fun setBackdateCleanInsights(context: Context, value: Boolean) {
+        val key = context.getString(R.string.pref_key_clean_insights_backdate)
         PreferenceManager.getDefaultSharedPreferences(context)
             .edit()
             .putBoolean(key, value)

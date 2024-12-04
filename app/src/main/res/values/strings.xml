@@ -458,4 +458,5 @@
     </plurals>
     <string name="developer_tools_enabled">Developer tools enabled</string>
     <string name="developer_tools_disabled">Developer tools disabled</string>
+    <string name="preferences_clean_insights_backdate">Enable metrics backdating</string>
 </resources>
