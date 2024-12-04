@@ -2,7 +2,7 @@
   "server": "https://matomo.ouinet.work/ci/cleaninsights.php",
   "siteId": 3,
   "timeout": 5,
-  "debug": true,
+  "debug": false,
   "campaigns": {
     "ouinet-startup-time": {
       "start": "2024-11-01T00:00:00Z",
