@@ -13,7 +13,7 @@ androidx_swiperefreshlayout = "1.1.0"
 androidx_work = "2.9.1"
 
 # Android Components
-android_components = "132.0.2"
+android_components = "133.0"
 
 # Google
 google_composecompiler = "1.5.14"
