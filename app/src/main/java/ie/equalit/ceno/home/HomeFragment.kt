@@ -319,7 +319,7 @@ class HomeFragment : BaseHomeFragment() {
 //                binding.cenoNetworkStatusText.visibility = View.VISIBLE
 //            }
             if(!isNetworkStatusDialogVisible) {
-                CenoNetworkStatusDialog(requireContext(), ouinetStatus) {
+                CenoNetworkStatusDialog(requireContext(), this, ouinetStatus) {
                     isNetworkStatusDialogVisible = false
                 }.getDialog().show()
                 isNetworkStatusDialogVisible = true

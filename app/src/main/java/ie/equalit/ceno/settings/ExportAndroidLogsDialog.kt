@@ -21,6 +21,7 @@ import ie.equalit.ceno.NavGraphDirections
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.getSizeInMB
 import ie.equalit.ceno.ext.requireComponents
+import ie.equalit.ceno.home.HomeFragment
 import ie.equalit.ceno.settings.SettingsFragment.Companion.LOGS_LAST_10_MINUTES
 import ie.equalit.ceno.settings.SettingsFragment.Companion.LOGS_LAST_5_MINUTES
 import ie.equalit.ceno.settings.SettingsFragment.Companion.TAG
@@ -48,7 +49,7 @@ class ExportAndroidLogsDialog (
         val radio10Button = logTimeFilterDialogView.findViewById<RadioButton>(R.id.radio_10_minutes)
         val checkboxDebugLogs = logTimeFilterDialogView.findViewById<CheckBox>(R.id.checkBox_debug_logs)
 
-        if(fragment is StandbyFragment) {
+        if(fragment is StandbyFragment || fragment is HomeFragment) {
             checkboxDebugLogs.visibility = View.VISIBLE
         } else {
             checkboxDebugLogs.visibility = View.GONE
