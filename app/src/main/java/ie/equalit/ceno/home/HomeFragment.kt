@@ -11,7 +11,6 @@ import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.preference.PreferenceManager
 import ie.equalit.ceno.BrowserActivity
@@ -311,13 +310,6 @@ class HomeFragment : BaseHomeFragment() {
         binding.sessionControlRecyclerView.itemAnimator = null
 
         binding.cenoNetworkStatusIcon.setOnClickListener {
-//            if(binding.cenoNetworkStatusTitle.isVisible) {
-//                binding.cenoNetworkStatusTitle.visibility = View.INVISIBLE
-//                binding.cenoNetworkStatusText.visibility = View.INVISIBLE
-//            } else {
-//                binding.cenoNetworkStatusTitle.visibility = View.VISIBLE
-//                binding.cenoNetworkStatusText.visibility = View.VISIBLE
-//            }
             if(!isNetworkStatusDialogVisible) {
                 CenoNetworkStatusDialog(requireContext(), this, ouinetStatus) {
                     isNetworkStatusDialogVisible = false

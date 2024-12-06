@@ -7,8 +7,6 @@
 package ie.equalit.ceno.settings
 
 import android.annotation.SuppressLint
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -21,12 +19,9 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.pm.PackageInfoCompat
-import androidx.core.text.HtmlCompat
-import androidx.core.text.HtmlCompat.FROM_HTML_SEPARATOR_LINE_BREAK_LIST_ITEM
 import androidx.fragment.app.Fragment
 import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.R
@@ -74,30 +69,30 @@ class AboutFragment : Fragment() {
             Build.applicationServicesVersion,
         )
 
-        setLinkTextView(binding.btnWebsite, resources.getString(R.string.website_button_text))
+        setLinkTextView(requireContext(), binding.btnWebsite, resources.getString(R.string.website_button_text))
         binding.btnWebsite.setOnClickListener(
             getOnClickListenerForLink(resources.getString(R.string.website_button_link))
         )
 
-        setLinkTextView(binding.btnSourcecode, resources.getString(R.string.source_code_button_text))
+        setLinkTextView(requireContext(), binding.btnSourcecode, resources.getString(R.string.source_code_button_text))
         binding.btnSourcecode.setOnClickListener(
             getOnClickListenerForLink(resources.getString(R.string.source_code_button_link))
         )
-        setLinkTextView(binding.btnSupport, resources.getString(R.string.support_button_text))
+        setLinkTextView(requireContext(), binding.btnSupport, resources.getString(R.string.support_button_text))
         binding.btnSupport.setOnClickListener(
             getOnClickListenerForLink(resources.getString(R.string.support_button_link))
         )
 
-        setLinkTextView(binding.btnWebsiteEq, resources.getString(R.string.website_button_text))
+        setLinkTextView(requireContext(), binding.btnWebsiteEq, resources.getString(R.string.website_button_text))
         binding.btnWebsiteEq.setOnClickListener(
             getOnClickListenerForLink(resources.getString(R.string.website_eq_button_link))
         )
-        setLinkTextView(binding.btnNews, resources.getString(R.string.eq_news_button_text))
+        setLinkTextView(requireContext(), binding.btnNews, resources.getString(R.string.eq_news_button_text))
         binding.btnNews.setOnClickListener(
             getOnClickListenerForLink(resources.getString(R.string.eq_news_button_link))
         )
 
-        setLinkTextView(binding.btnValues, resources.getString(R.string.eq_values_button_text))
+        setLinkTextView(requireContext(), binding.btnValues, resources.getString(R.string.eq_values_button_text))
         binding.btnValues.setOnClickListener(
             getOnClickListenerForLink(resources.getString(R.string.eq_values_button_link))
         )
@@ -105,34 +100,36 @@ class AboutFragment : Fragment() {
         binding.versionInfo.text = versionInfo
     }
 
-    @SuppressLint("ClickableViewAccessibility")
-    private fun setLinkTextView (textView : TextView, text : String) {
-        val notClickedString = SpannableString(text)
-        notClickedString.setSpan(
-            URLSpan(""),
-            0,
-            notClickedString.length,
-            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-        )
-        textView.setText(notClickedString, TextView.BufferType.SPANNABLE)
-        val clickedString = SpannableString(notClickedString)
-        clickedString.setSpan(
-            BackgroundColorSpan(ContextCompat.getColor(requireContext(), R.color.fx_mobile_text_color_secondary)), 0, notClickedString.length,
-            Spanned.SPAN_INCLUSIVE_EXCLUSIVE
-        )
-        textView.setOnTouchListener { v, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> textView.text = clickedString
-                MotionEvent.ACTION_UP -> {
-                    textView.setText(notClickedString, TextView.BufferType.SPANNABLE)
-                    v.performClick()
+    companion object {
+        @SuppressLint("ClickableViewAccessibility")
+        fun setLinkTextView (context: Context, textView : TextView, text : String) {
+            val notClickedString = SpannableString(text)
+            notClickedString.setSpan(
+                URLSpan(""),
+                0,
+                notClickedString.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            textView.setText(notClickedString, TextView.BufferType.SPANNABLE)
+            val clickedString = SpannableString(notClickedString)
+            clickedString.setSpan(
+                BackgroundColorSpan(ContextCompat.getColor(context, R.color.fx_mobile_text_color_secondary)), 0, notClickedString.length,
+                Spanned.SPAN_INCLUSIVE_EXCLUSIVE
+            )
+            textView.setOnTouchListener { v, event ->
+                when (event.action) {
+                    MotionEvent.ACTION_DOWN -> textView.text = clickedString
+                    MotionEvent.ACTION_UP -> {
+                        textView.setText(notClickedString, TextView.BufferType.SPANNABLE)
+                        v.performClick()
+                    }
+                    MotionEvent.ACTION_CANCEL -> textView.setText(
+                        notClickedString,
+                        TextView.BufferType.SPANNABLE
+                    )
                 }
-                MotionEvent.ACTION_CANCEL -> textView.setText(
-                    notClickedString,
-                    TextView.BufferType.SPANNABLE
-                )
+                true
             }
-            true
         }
     }
 
