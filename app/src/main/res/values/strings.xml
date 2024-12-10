@@ -243,7 +243,7 @@
     <string name="preferences_theme_option_1">Dark</string>
     <string name="preferences_theme_option_2">Light</string>
     <string name="preferences_theme_option_3">Set by Battery Saver</string>
-    <string name="ceno_sources_category">Sources</string>
+    <string name="ceno_sources_category" tools:ignore="UnusedResources">Sources</string>
     <string name="ceno_sources_header">Content sources</string>
     <string name="preferences_ceno_sources_origin">Website</string>
     <string name="preferences_ceno_sources_origin_summary">Load content directly from website</string>
