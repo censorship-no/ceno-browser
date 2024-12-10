@@ -88,6 +88,9 @@ class SettingsViewTest {
             verifyCrashReportingButton()
 
             clickDownRecyclerView(1)
+            verifyMetricsButton()
+
+            clickDownRecyclerView(1)
             verifyDeleteBrowsingData()
 
             clickDownRecyclerView(1)
@@ -390,5 +393,29 @@ class SettingsViewTest {
         mDevice.executeShellCommand("svc wifi enable")
         Thread.sleep(15000)
         assert(LogHelper.findInLogs("[INFO] Log level set to: INFO", 20000))
+    }
+
+    @Test
+    fun metricsSettingsItemsTest() {
+        navigationToolbar {
+        }.openThreeDotMenu {
+            verifyOpenSettingsExists()
+        }.openSettings {
+            Thread.sleep(5000)
+            clickDownRecyclerView(11)
+            Thread.sleep(2000)
+            verifyMetricsButton()
+        }.openSettingsViewMetrics {
+            Thread.sleep(1000)
+            verifyMetricsHeading()
+            verifyMetricsSubHeading()
+            verifyMetricsOptionalMetrics()
+            verifyMetricsToggle1()
+            verifyMetricsToggle2()
+            verifyMetricsExplainer()
+            verifyMetricsLearnMore()
+            verifyMetricsNegativeButton()
+            verifyMetricsPositiveButton()
+        }
     }
 }

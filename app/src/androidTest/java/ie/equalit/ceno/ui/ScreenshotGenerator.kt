@@ -200,6 +200,15 @@ class ScreenshotGenerator {
             }.goBack {
             }.openThreeDotMenu {
             }.openSettings {
+                clickDownRecyclerView(11)
+                Thread.sleep(1000)
+            }.openSettingsViewMetrics {
+                Thread.sleep(1000)
+                Screengrab.screenshot("027_metrics_preferences")
+            }.clickNegative {
+            }.goBack {
+            }.openThreeDotMenu {
+            }.openSettings {
                 clickDownRecyclerView(25)
                 Thread.sleep(1000)
                 // Disable developer tools before finishing test
