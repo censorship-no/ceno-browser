@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.os.bundleOf
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.preference.PreferenceManager
@@ -32,6 +33,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.launch
+import mozilla.appservices.places.BookmarkRoot
 import mozilla.components.browser.domains.autocomplete.ShippedDomainsProvider
 import mozilla.components.browser.menu2.BrowserMenuController
 import mozilla.components.browser.state.selector.findTab
@@ -77,7 +79,8 @@ class ToolbarIntegration(
     private val tabsUseCases: TabsUseCases,
     private val webAppUseCases: WebAppUseCases,
     sessionId: String? = null,
-    private val readerViewIntegration: ReaderViewIntegration? = null
+    private val readerViewIntegration: ReaderViewIntegration? = null,
+    private val bookmarkTapped: ((String, String) -> Unit)? = null
 ) : LifecycleAwareFeature, UserInteractionHandler {
     private val shippedDomainsProvider = ShippedDomainsProvider().also {
         it.initialize(context)
@@ -157,6 +160,16 @@ class ToolbarIntegration(
                 sessionUseCases.reload.invoke()
             }
         }
+        rowMenuItems += SmallMenuCandidate(
+            contentDescription = "Bookmark",
+            icon = DrawableMenuIcon(
+                context,
+                R.drawable.ic_star_outline
+            ),
+            onClick = {
+                bookmarkTapped?.invoke(session.content.url, session.content.title)
+            }
+        )
 
         return RowMenuCandidate(rowMenuItems)
     }
@@ -292,6 +305,12 @@ class ToolbarIntegration(
                 }
             }
             menuItemsList += shortcutMenuItem(sessionState)
+            menuItemsList += TextMenuCandidate(
+                text = "Bookmark",
+                onClick = {
+                    navHost.navController.navigate(R.id.action_global_bookmarks, bundleOf("currentRoot" to BookmarkRoot.Mobile.id))
+                }
+            )
 
             menuItemsList += TextMenuCandidate(
                 text = context.getString(R.string.browser_menu_find_in_page)
