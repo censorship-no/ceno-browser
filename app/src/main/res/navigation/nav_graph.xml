@@ -101,6 +101,14 @@
             app:popExitAnim="@anim/slide_back_out" />
 
         <action
+            android:id="@+id/action_settingsFragment_to_metricsCampaignFragment"
+            app:destination="@id/metricsCampaignFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_back_in"
+            app:popExitAnim="@anim/slide_back_out" />
+
+        <action
             android:id="@+id/action_settingsFragment_to_aboutFragment"
             app:destination="@id/aboutFragment"
             app:enterAnim="@anim/slide_in"
@@ -181,6 +189,12 @@
         android:name="ie.equalit.ceno.settings.deletebrowsingdata.DeleteBrowsingDataFragment"
         android:label="@string/preferences_delete_browsing_data"
         tools:layout="@layout/fragment_delete_browsing_data" />
+
+    <fragment
+        android:id="@+id/metricsCampaignFragment"
+        android:name="ie.equalit.ceno.settings.metrics.MetricsCampaignFragment"
+        android:label="@string/preferences_metrics_campaign"
+        tools:layout="@layout/fragment_metrics_campaign" />
 
     <fragment
         android:id="@+id/aboutFragment"
