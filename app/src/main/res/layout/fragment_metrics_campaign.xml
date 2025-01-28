@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:translationY="-3dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <ScrollView
+        android:id="@+id/delete_browsing_data_wrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ie.equalit.ceno.settings.metrics.MetricsCampaignItem
+                android:id="@+id/campaignCrashReporting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                app:metricsCampaignItemTitle="@string/preferences_allow_crash_reporting"
+                app:metricsCampaignItemSubtitle="@string/preferences_allow_crash_reporting_description"
+                app:metricsCampaignItemMoreInfo="@string/metrics_campaign_more_info" />
+            <ie.equalit.ceno.settings.metrics.MetricsCampaignItem
+                android:id="@+id/campaignAutoTracker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                app:metricsCampaignItemTitle="@string/metrics_campaign_autotracker_title"
+                app:metricsCampaignItemSubtitle="@string/metrics_campaign_autotracker_description"
+                app:metricsCampaignItemMoreInfo="@string/metrics_campaign_more_info" />
+            <ie.equalit.ceno.settings.metrics.MetricsCampaignItem
+                android:id="@+id/campaignOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                app:metricsCampaignItemTitle="@string/metrics_campaign_one_title"
+                app:metricsCampaignItemSubtitle="@string/metrics_campaign_one_description"
+                app:metricsCampaignItemMoreInfo="@string/metrics_campaign_more_info" />
+
+            <Button
+                android:id="@+id/delete_data"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/metrics_campaign_view_privacy_policy"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
