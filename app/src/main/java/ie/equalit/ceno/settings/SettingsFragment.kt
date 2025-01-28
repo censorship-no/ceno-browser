@@ -36,7 +36,6 @@ import ie.equalit.ceno.R.plurals.developer_tools_disable_alert
 import ie.equalit.ceno.R.plurals.developer_tools_enable_alert
 import ie.equalit.ceno.R.string.bridge_mode_ip_warning_text
 import ie.equalit.ceno.R.string.ceno_clear_dialog_cancel
-import ie.equalit.ceno.R.string.clean_insights_successful_opt_out
 import ie.equalit.ceno.R.string.confirm_clear_cached_content
 import ie.equalit.ceno.R.string.confirm_clear_cached_content_desc
 import ie.equalit.ceno.R.string.developer_tools_disabled
@@ -51,8 +50,8 @@ import ie.equalit.ceno.R.string.pref_key_about_geckoview
 import ie.equalit.ceno.R.string.pref_key_about_ouinet
 import ie.equalit.ceno.R.string.pref_key_about_page
 import ie.equalit.ceno.R.string.pref_key_additional_developer_tools
-import ie.equalit.ceno.R.string.pref_key_allow_crash_reporting
 import ie.equalit.ceno.R.string.pref_key_allow_notifications
+import ie.equalit.ceno.R.string.pref_key_background_metrics
 import ie.equalit.ceno.R.string.pref_key_bridge_announcement
 import ie.equalit.ceno.R.string.pref_key_ceno_cache_size
 import ie.equalit.ceno.R.string.pref_key_ceno_download_android_log
@@ -76,6 +75,7 @@ import ie.equalit.ceno.R.string.pref_key_shared_prefs_update
 import ie.equalit.ceno.R.string.preference_choose_search_engine
 import ie.equalit.ceno.R.string.preferences_about_page
 import ie.equalit.ceno.R.string.preferences_delete_browsing_data
+import ie.equalit.ceno.R.string.preferences_metrics_campaign
 import ie.equalit.ceno.R.string.setting_item_selected
 import ie.equalit.ceno.R.string.settings
 import ie.equalit.ceno.R.string.status_disabled
@@ -90,12 +90,10 @@ import ie.equalit.ceno.ext.getPreferenceCategory
 import ie.equalit.ceno.ext.getPreferenceKey
 import ie.equalit.ceno.ext.getSwitchPreferenceCompat
 import ie.equalit.ceno.ext.requireComponents
-import ie.equalit.ceno.settings.Settings.isCleanInsightsEnabled
-import ie.equalit.ceno.settings.Settings.setCleanInsightsEnabled
-import ie.equalit.ceno.settings.Settings.setShowDeveloperTools
-import ie.equalit.ceno.settings.Settings.shouldShowDeveloperTools
 import ie.equalit.ceno.settings.dialogs.LanguageChangeDialog
 import ie.equalit.ceno.settings.dialogs.UpdateBridgeAnnouncementDialog
+import ie.equalit.ceno.settings.Settings.setShowDeveloperTools
+import ie.equalit.ceno.settings.Settings.shouldShowDeveloperTools
 import ie.equalit.ceno.utils.CenoPreferences
 import ie.equalit.ceno.utils.sentry.SentryOptionsConfiguration
 import ie.equalit.ouinet.Config
@@ -267,11 +265,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
             getClickListenerForCustomization()
         getPreference(pref_key_delete_browsing_data)?.onPreferenceClickListener =
             getClickListenerForDeleteBrowsingData()
-        getSwitchPreferenceCompat(pref_key_allow_crash_reporting)?.onPreferenceChangeListener =
-            getClickListenerForCrashReporting()
         getPreference(pref_key_search_engine)?.onPreferenceClickListener =
             getClickListenerForSearch()
-        getSwitchPreferenceCompat(pref_key_clean_insights_enabled)?.onPreferenceChangeListener = getChangeListenerForCleanInsights()
+        getPreference(pref_key_background_metrics)?.onPreferenceClickListener = getClickListenerForCleanInsights()
         findPreference<Preference>(requireContext().getPreferenceKey(pref_key_change_language))?.onPreferenceClickListener = getClickListenerForLanguageChange()
         findPreference<Preference>(requireContext().getPreferenceKey(pref_key_change_language))?.summary = getCurrentLocale().displayLanguage
         getPreference(pref_key_ceno_website_sources)?.onPreferenceClickListener =
@@ -512,23 +508,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
-    private fun getChangeListenerForCleanInsights(): OnPreferenceChangeListener {
-        return OnPreferenceChangeListener { _, newValue ->
-            if (newValue == true) {
-                requireComponents.metrics.campaign001.launchCampaign(requireContext())
-                { _ -> requireComponents.cenoPreferences.sharedPrefsUpdate = true
-                }
-            } else {
-                requireComponents.metrics.campaign001.disableCampaign {
-                    setCleanInsightsEnabled(requireContext(), false)
-                    Toast.makeText(
-                        requireContext(),
-                        getString(clean_insights_successful_opt_out),
-                        Toast.LENGTH_LONG,
-                    ).show()
-                    requireComponents.cenoPreferences.sharedPrefsUpdate = true
-                }
-            }
+    private fun getClickListenerForCleanInsights(): OnPreferenceClickListener {
+        return OnPreferenceClickListener {
+            findNavController().navigate(
+                R.id.action_settingsFragment_to_metricsCampaignFragment
+            )
+            getActionBar().setTitle(preferences_metrics_campaign)
             true
         }
     }

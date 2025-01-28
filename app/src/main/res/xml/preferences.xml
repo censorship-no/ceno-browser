@@ -54,17 +54,10 @@
             android:title="@string/preferences_show_onboarding"
             app:iconSpaceReserved="false" />
 
-        <androidx.preference.SwitchPreferenceCompat
+        <androidx.preference.Preference
             android:defaultValue="false"
-            android:key="@string/pref_key_allow_crash_reporting"
-            android:title="@string/preferences_allow_crash_reporting"
-            app:iconSpaceReserved="false" />
-
-        <androidx.preference.SwitchPreferenceCompat
-            android:defaultValue="false"
-            android:key="@string/pref_key_clean_insights_enabled"
-            android:title="@string/preferences_allow_clean_insights_tracking"
-            app:isPreferenceVisible="false"
+            android:key="@string/pref_key_background_metrics"
+            android:title="@string/preferences_metrics_campaign"
             app:iconSpaceReserved="false" />
 
         <androidx.preference.Preference

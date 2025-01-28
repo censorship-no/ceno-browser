@@ -115,6 +115,12 @@
         <attr name="deleteBrowsingDataItemIcon" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="MetricsCampaignItem">
+        <attr name="metricsCampaignItemTitle" format="reference" />
+        <attr name="metricsCampaignItemSubtitle" format="reference" />
+        <attr name="metricsCampaignItemMoreInfo" format="reference" />
+    </declare-styleable>
+
 
     <declare-styleable name="OnboardingRadioButton">
             <attr name="onboardingKey" format="reference" />

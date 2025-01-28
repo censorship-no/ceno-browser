@@ -205,6 +205,7 @@
     <string name="preferences_show_onboarding">Show tooltips on next launch</string>
     <string name="preferences_allow_clean_insights_tracking">Allow background analytics</string>
     <string name="preferences_allow_crash_reporting">Crash reporting</string>
+    <string name="preferences_allow_crash_reporting_description">Send reports to developers after crashes occur.</string>
     <string name="preferences_allow_notifications">Notifications</string>
     <string name="preferences_disable_battery_opt">Battery Optimizations</string>
     <string name="ceno_permissions_category">Permissions</string>
@@ -465,6 +466,13 @@
     <string name="ceno_network_status_degraded">Connecting to the Ceno network. Some websites may be unavailable. Check your network settings or export logs for additional information.</string>
     <string name="contact_support">Contact Support</string>
     <string name="ceno_support_ticket_subject">Ceno Support Ticket</string>
+    <string name="preferences_metrics_campaign">Background metrics</string>
+    <string name="metrics_campaign_more_info">More info</string>
+    <string name="metrics_campaign_autotracker_title">Auto-tracker</string>
+    <string name="metrics_campaign_autotracker_description">Tracks general usage of application</string>
+    <string name="metrics_campaign_one_title">Application startup time</string>
+    <string name="metrics_campaign_one_description">Records average startup time of application. Submits metrics daily.\nEnds January 31, 2025.</string>
+    <string name="metrics_campaign_view_privacy_policy">View Ceno privacy policy</string>
     <string name="ceno_notification_confirm_description">Do you want to clear all your data from Ceno?</string>
 
     <string name="bookmarks_empty_message">No bookmarks here</string>
