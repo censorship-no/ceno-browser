@@ -26,6 +26,7 @@ import androidx.fragment.app.Fragment
 import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.R
 import ie.equalit.ceno.databinding.FragmentAboutBinding
+import ie.equalit.ceno.ext.components
 import mozilla.components.Build
 import org.mozilla.geckoview.BuildConfig.MOZ_APP_BUILDID
 import org.mozilla.geckoview.BuildConfig.MOZ_APP_VERSION
@@ -37,6 +38,7 @@ class AboutFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        requireContext().components.metrics.autoTracker.measureVisit(listOf(TAG))
         _binding = FragmentAboutBinding.inflate(inflater, container,false)
         return binding.root
     }
@@ -101,6 +103,8 @@ class AboutFragment : Fragment() {
     }
 
     companion object {
+        private const val TAG = "AboutFragment"
+
         @SuppressLint("ClickableViewAccessibility")
         fun setLinkTextView (context: Context, textView : TextView, text : String) {
             val notClickedString = SpannableString(text)

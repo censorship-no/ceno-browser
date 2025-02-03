@@ -55,6 +55,9 @@
         android:key="@string/pref_key_ci_campaign001_survey_completed"
         android:defaultValue="false" />
     <androidx.preference.SwitchPreferenceCompat
+        android:key="@string/pref_key_metrics_autotracker_prompt_completed"
+        android:defaultValue="false" />
+    <androidx.preference.SwitchPreferenceCompat
         android:key="@string/pref_key_show_developer_tools"
         android:defaultValue="false" />
 </PreferenceScreen>

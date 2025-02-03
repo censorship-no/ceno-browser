@@ -303,8 +303,8 @@ class HomeFragment : BaseHomeFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
 
-//        updateUI(themeManager.currentMode)
         binding.sessionControlRecyclerView.visibility = View.VISIBLE
 
         binding.sessionControlRecyclerView.itemAnimator = null
@@ -465,6 +465,6 @@ class HomeFragment : BaseHomeFragment() {
         const val TOOLBAR_TOOLTIP = 4
         const val BEGIN_TOUR_TOOLTIP = 1
 
-        const val TAG = "HOMEPAGE"
+        private const val TAG = "HomeFragment"
     }
 }

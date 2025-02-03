@@ -24,7 +24,6 @@
     <string name="pref_key_crash_happened">pref_key_crash_happened</string>
     <string name="pref_key_crash_was_logged">pref_key_crash_was_logged</string>
     <string name="pref_key_allow_notifications" translatable="false">pref_key_allow_notifications</string>
-    <string name="pref_key_app_launch_count" translatable="false">pref_key_app_launch_count</string>
     <string name="pref_key_disable_battery_opt" translatable="false">pref_key_disable_battery_opt</string>
     <string name="pref_key_customization" translatable="false">pref_key_customization</string>
     <string name="pref_key_clear_in_toolbar" translatable="false">pref_key_clear_in_toolbar</string>
@@ -91,6 +90,9 @@
     <string name="pref_key_rss_announcement_expire_disable" translatable="false">pref_key_rss_announcement_expire_disable</string>
     <string name="pref_key_clean_insights_backdate" translatable="false">pref_key_clean_insights_backdate</string>
     <string name="pref_key_background_metrics" translatable="false">pref_key_background_metrics</string>
+    <string name="pref_key_metrics_autotracker" translatable="false">pref_key_metrics_autotracker</string>
+    <string name="pref_key_metrics_autotracker_launch_count" translatable="false">pref_key_metrics_autotracker_launch_count</string>
+    <string name="pref_key_metrics_autotracker_prompt_completed" translatable="false">pref_key_metrics_autotracker_prompt_completed</string>
 
     <string name="pref_last_known_browsing_mode_personal" translatable="false">pref_last_known_browsing_mode_personal</string>
     <string name="pref_permissions_category" translatable="false">pref_permissions_category</string>

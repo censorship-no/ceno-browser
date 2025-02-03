@@ -26,6 +26,7 @@ class WebViewPopupPanel(
         DialogWebViewPopupSheetBinding.inflate(layoutInflater, null, false)
 
     init {
+        context.components.metrics.autoTracker.measureVisit(listOf(TAG))
         initWindow()
         setContentView(binding.root)
         expand()
@@ -73,5 +74,8 @@ class WebViewPopupPanel(
                 this.dismiss()
             }
         }
+    }
+    companion object {
+        private const val TAG = "LanguageChangeDialog"
     }
 }

@@ -15,7 +15,7 @@ import io.sentry.android.core.SentryAndroid
 
 interface MetricsCampaignController {
     fun crashReporting(newValue: Boolean)
-    fun autoTracker()
+    fun autoTracker(newValue: Boolean, callback : (Boolean) -> Unit)
     fun campaignOne(newValue: Boolean, callback: (Boolean) -> Unit)
     fun campaignTwo()
 }
@@ -46,7 +46,22 @@ class DefaultMetricsCampaignController(
         )
     }
 
-    override fun autoTracker() {
+    override fun autoTracker(newValue: Boolean, callback : (Boolean) -> Unit) {
+        if (newValue) {
+            components.metrics.autoTracker.launchCampaign(context, showLearnMore = false) { granted ->
+                callback(granted)
+            }
+        } else {
+            components.metrics.autoTracker.disableCampaign {
+                setCleanInsightsEnabled(context, false)
+                Toast.makeText(
+                    context,
+                    context.getString(clean_insights_successful_opt_out),
+                    Toast.LENGTH_LONG,
+                ).show()
+            }
+            callback(false)
+        }
     }
 
     override fun campaignOne(newValue: Boolean, callback : (Boolean) -> Unit) {

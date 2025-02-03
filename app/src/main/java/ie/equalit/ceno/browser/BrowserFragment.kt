@@ -15,7 +15,6 @@ import androidx.navigation.fragment.findNavController
 import ie.equalit.ceno.AppPermissionCodes
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.requireComponents
-import ie.equalit.ceno.home.HomeFragment.Companion.TAG
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.tooltip.CenoTooltip
 import ie.equalit.ceno.tooltip.CenoTourStartOverlay
@@ -47,6 +46,7 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
         val homeAction = BrowserToolbar.Button(
             imageDrawable = ResourcesCompat.getDrawable(
                 resources,
@@ -213,6 +213,7 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
     }
 
     companion object {
+        private const val TAG = "BrowserFragment"
         const val TOOLTIP_CENO_SOURCES = 5
         const val TOOLTIP_CLEAR_CENO = 6
         const val TOOLTIP_PERMISSION = 7
