@@ -12,10 +12,12 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.getPreference
+import ie.equalit.ceno.ext.requireComponents
 
 class WebsiteSourceSettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
         setPreferencesFromResource(R.xml.sources_preferences, rootKey)
     }
 
@@ -96,4 +98,7 @@ class WebsiteSourceSettingsFragment : PreferenceFragmentCompat() {
 
     private fun getActionBar() = (activity as AppCompatActivity).supportActionBar!!
 
+    companion object {
+        private const val TAG = "PrivacySettingsFragment"
+    }
 }

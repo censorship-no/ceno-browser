@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.databinding.FragmentChangeIconBinding
+import ie.equalit.ceno.ext.requireComponents
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.changeicon.appicons.*
 
@@ -27,6 +28,8 @@ class ChangeIconFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
+
         // Inflate the layout for this fragment
         _binding = FragmentChangeIconBinding.inflate(inflater, container, false);
         val activity = activity as BrowserActivity
@@ -58,5 +61,9 @@ class ChangeIconFragment : Fragment() {
 
     private fun updateChangeIconView() {
         appIconsView?.update(requireContext())
+    }
+
+    companion object {
+        private const val TAG = "ChangeIconFragment"
     }
 }

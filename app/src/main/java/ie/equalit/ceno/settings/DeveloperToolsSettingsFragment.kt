@@ -29,6 +29,7 @@ import mozilla.components.browser.state.state.createTab
 class DeveloperToolsSettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
         setPreferencesFromResource(R.xml.developer_tools_preferences, rootKey)
     }
 
@@ -87,4 +88,8 @@ class DeveloperToolsSettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun getActionBar() = (activity as AppCompatActivity).supportActionBar!!
+
+    companion object {
+        private const val TAG = "DeveloperToolsSettingsFragment"
+    }
 }

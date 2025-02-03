@@ -212,12 +212,12 @@ object Settings {
 
     fun getLaunchCount(context: Context) : Long {
         return PreferenceManager.getDefaultSharedPreferences(context).getLong(
-            context.getString(R.string.pref_key_app_launch_count), 0
+            context.getString(R.string.pref_key_metrics_autotracker_launch_count), 0
         )
     }
 
     fun incrementLaunchCount(context: Context) {
-        val key = context.getString(R.string.pref_key_app_launch_count)
+        val key = context.getString(R.string.pref_key_metrics_autotracker_launch_count)
         var currentValue = getLaunchCount(context)
         if (currentValue == Long.MAX_VALUE) currentValue = 0
         PreferenceManager.getDefaultSharedPreferences(context)
@@ -267,6 +267,21 @@ object Settings {
             context.getString(R.string.pref_key_clean_insights_include_device_locale), false
         )
     }
+
+    fun setMetricsAutoTrackerEnabled(context: Context, value: Boolean) {
+        val key = context.getString(R.string.pref_key_metrics_autotracker)
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit()
+            .putBoolean(key, value)
+            .apply()
+    }
+
+    fun isMetricsAutoTrackerEnabled(context: Context) : Boolean {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+            context.getString(R.string.pref_key_metrics_autotracker), false
+        )
+    }
+
 
     fun setCrashHappened(context: Context, value: Boolean) {
         val key = context.getString(R.string.pref_key_crash_happened)
