@@ -16,6 +16,7 @@ import ie.equalit.ceno.ext.requireComponents
 class PrivacySettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
         setPreferencesFromResource(R.xml.privacy_preferences, rootKey)
 
         val context = requireContext()
@@ -41,5 +42,9 @@ class PrivacySettingsFragment : PreferenceFragmentCompat() {
             requireComponents.useCases.settingsUseCases.updateTrackingProtection.invoke(policy)
             true
         }
+    }
+
+    companion object {
+        private const val TAG = "PrivacySettingsFragment"
     }
 }

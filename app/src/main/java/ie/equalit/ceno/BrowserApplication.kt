@@ -20,7 +20,6 @@ import mozilla.components.browser.state.action.SystemAction
 import mozilla.components.concept.engine.webextension.isUnsupported
 import mozilla.components.feature.addons.update.GlobalAddonDependencyProvider
 import mozilla.components.support.base.log.Log
-import mozilla.components.support.base.log.logger.Logger
 import mozilla.components.support.base.log.sink.AndroidLogSink
 import mozilla.components.support.ktx.android.content.isMainProcess
 import mozilla.components.support.ktx.android.content.runOnlyInMainProcess
@@ -28,11 +27,6 @@ import mozilla.components.support.rusthttp.RustHttpConfig
 import mozilla.components.support.rustlog.RustLog
 import mozilla.components.support.webextensions.WebExtensionSupport
 import org.cleaninsights.sdk.CleanInsights
-import java.io.File
-import java.io.FileOutputStream
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Locale
 import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
 
@@ -127,6 +121,7 @@ open class BrowserApplication : Application() {
             components.core.fileUploadsDirCleaner.cleanUploadsDirectory()
         }
 
+        components.metrics.initAutoTracker(cleanInsights)
         components.metrics.initCampaign001(cleanInsights)
 
         Settings.incrementLaunchCount(this)

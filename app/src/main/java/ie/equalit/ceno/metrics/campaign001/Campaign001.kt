@@ -21,8 +21,14 @@ class Campaign001(private val cleanInsights: CleanInsights) {
                 if (Settings.isCleanInsightsDeviceTypeIncluded(context)) {
                     cleanInsights.grant(Feature.Ua)
                 }
+                else {
+                    cleanInsights.deny(Feature.Ua)
+                }
                 if (Settings.isCleanInsightsDeviceLocaleIncluded(context)) {
                     cleanInsights.grant(Feature.Lang)
+                }
+                else {
+                    cleanInsights.deny(Feature.Lang)
                 }
             }
             else {

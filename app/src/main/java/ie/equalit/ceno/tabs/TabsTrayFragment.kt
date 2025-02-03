@@ -53,6 +53,7 @@ class TabsTrayFragment : Fragment(), UserInteractionHandler {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
 
         val trayAdapter = createAndSetupTabsTray(requireContext())
 
@@ -158,5 +159,9 @@ class TabsTrayFragment : Fragment(), UserInteractionHandler {
         }.attachToRecyclerView(tabsTray)
 
         return tabsAdapter
+    }
+
+    companion object {
+        private const val TAG = "TabsTrayFragment"
     }
 }

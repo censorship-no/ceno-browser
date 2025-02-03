@@ -67,6 +67,7 @@ tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
         android:padding="8dp"
         android:clickable="true"
         android:textColor="?attr/accent"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/checkbox"

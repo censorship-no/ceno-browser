@@ -22,6 +22,7 @@ import androidx.core.graphics.drawable.toDrawable
 class CustomizationSettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
         setPreferencesFromResource(R.xml.customization_preferences, rootKey)
     }
 
@@ -86,4 +87,8 @@ class CustomizationSettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun getActionBar() = (activity as AppCompatActivity).supportActionBar!!
+
+    companion object {
+        private const val TAG = "CustomizationSettingsFragment"
+    }
 }

@@ -1,26 +1,30 @@
-package ie.equalit.ceno.metrics.campaign001
+package ie.equalit.ceno.metrics.autotracker
 
 import android.app.AlertDialog
 import android.content.Context
 import android.view.View
 import android.widget.CheckBox
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.lifecycle.LifecycleOwner
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.dialogs.WebViewPopupPanel
 
-class ConsentRequestDialog(val context: Context) {
+class ConsentRequestDialog(val context: Context, private val showLearnMore: Boolean) {
 
     fun show(complete: (Boolean) -> Unit) {
 
         val privacyPolicyUrl = context.getString(R.string.privacy_policy_url)
 
-        val dialogView = View.inflate(context, R.layout.dialog_metrics_campaign001, null)
-        dialogView.findViewById<TextView>(R.id.learn_more).setOnClickListener {
-            val dialog = WebViewPopupPanel(context, context as LifecycleOwner, privacyPolicyUrl)
-            dialog.show()
+        val dialogView = View.inflate(context, R.layout.dialog_metrics_autotracker_consent, null)
+        if (showLearnMore) {
+            dialogView.findViewById<TextView>(R.id.learn_more).isVisible = true
+            dialogView.findViewById<TextView>(R.id.learn_more).setOnClickListener {
+                val dialog = WebViewPopupPanel(context, context as LifecycleOwner, privacyPolicyUrl)
+                dialog.show()
+            }
         }
 
         val deviceType = dialogView.findViewById<View>(R.id.checkbox) as CheckBox
@@ -42,12 +46,12 @@ class ConsentRequestDialog(val context: Context) {
             .setView(dialogView)
             .setNegativeButton(R.string.clean_insights_maybe_later) { _, _ ->
                 selectionMade = true
-                context.components.metrics.campaign001.setPromptCompleted(context, true)
+                context.components.metrics.autoTracker.setPromptCompleted(context, true)
                 complete(false)
             }
             .setPositiveButton(R.string.clean_insights_opt_in) { _, _ ->
                 selectionMade = true
-                context.components.metrics.campaign001.setPromptCompleted(context, true)
+                context.components.metrics.autoTracker.setPromptCompleted(context, true)
                 complete(true)
             }
             .setOnDismissListener {

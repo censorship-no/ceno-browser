@@ -94,6 +94,8 @@ import ie.equalit.ceno.settings.dialogs.LanguageChangeDialog
 import ie.equalit.ceno.settings.dialogs.UpdateBridgeAnnouncementDialog
 import ie.equalit.ceno.settings.Settings.setShowDeveloperTools
 import ie.equalit.ceno.settings.Settings.shouldShowDeveloperTools
+import ie.equalit.ceno.settings.Settings.isCleanInsightsEnabled
+import ie.equalit.ceno.settings.dialogs.UpdateBridgeAnnouncementDialog.Companion
 import ie.equalit.ceno.utils.CenoPreferences
 import ie.equalit.ceno.utils.sentry.SentryOptionsConfiguration
 import ie.equalit.ouinet.Config
@@ -180,6 +182,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
 
         (activity as BrowserActivity).themeManager.applyStatusBarThemeTabsTray()
         bridgeAnnouncementDialog = UpdateBridgeAnnouncementDialog(requireContext()).getDialog()
@@ -688,6 +691,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
                         hasOuinetStopped = true
                     }
                 }
+                requireComponents.metrics.autoTracker.measureVisit(listOf(
+                    UpdateBridgeAnnouncementDialog.TAG
+                ))
                 bridgeAnnouncementDialog.show()
             }
             true
@@ -837,7 +843,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     companion object {
-        const val TAG = "SettingsFragment"
+        private const val TAG = "SettingsFragment"
 
         const val LOG_FILE_SIZE_LIMIT_MB = 20.0
 

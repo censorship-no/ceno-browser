@@ -13,6 +13,7 @@ import androidx.preference.PreferenceFragmentCompat
 import ie.equalit.ceno.BuildConfig
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.getPreferenceKey
+import ie.equalit.ceno.ext.requireComponents
 import ie.equalit.ceno.settings.dialogs.ExtraBTBootstrapsDialog
 import mozilla.components.support.ktx.kotlin.ifNullOrEmpty
 import java.util.Locale
@@ -24,6 +25,7 @@ class NetworkSettingsFragment : PreferenceFragmentCompat() {
     private val btSourcesMap = mutableMapOf<String, String>()
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
         setPreferencesFromResource(R.xml.network_detail_preferences, rootKey)
     }
 
@@ -101,4 +103,7 @@ class NetworkSettingsFragment : PreferenceFragmentCompat() {
 
     private fun getActionBar() = (activity as AppCompatActivity).supportActionBar!!
 
+    companion object {
+        private const val TAG = "NetworkSettingsFragment"
+    }
 }

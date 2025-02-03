@@ -13,6 +13,7 @@ import kotlinx.coroutines.cancel
 import ie.equalit.ceno.R
 import ie.equalit.ceno.databinding.FragmentMetricsCampaignBinding
 import ie.equalit.ceno.ext.requireComponents
+import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.dialogs.WebViewPopupPanel
 
 class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
@@ -26,20 +27,38 @@ class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
+
         _binding = FragmentMetricsCampaignBinding.bind(view)
         controller = DefaultMetricsCampaignController(requireContext(), requireComponents)
+
+        binding.campaignCrashReporting.isChecked = Settings.isCrashReportingPermissionGranted(requireContext())
+        binding.campaignAutoTracker.isChecked = Settings.isMetricsAutoTrackerEnabled(requireContext())
 
         binding.campaignCrashReporting.onCheckListener = { newValue ->
             controller.crashReporting(newValue)
         }
-        binding.campaignOne.onCheckListener = { newValue ->
-            controller.campaignOne(newValue) { granted ->
-                binding.campaignOne.isChecked = granted
+        binding.campaignAutoTracker.onCheckListener = { newValue ->
+            controller.autoTracker(newValue) { granted ->
+                binding.campaignAutoTracker.isChecked = granted
+            }
+        }
+        val isExpired = requireComponents.metrics.campaign001.isExpired()
+        if (isExpired) {
+            binding.campaignOne.isEnabled = false
+            binding.campaignOne.isChecked = false
+        }
+        else {
+            binding.campaignOne.isChecked = Settings.isCleanInsightsEnabled(requireContext())
+            binding.campaignOne.onCheckListener = { newValue ->
+                controller.campaignOne(newValue) { granted ->
+                    binding.campaignOne.isChecked = granted
+                }
             }
         }
 
         val privacyPolicyUrl = requireContext().getString(R.string.privacy_policy_url)
-        binding.deleteData.setOnClickListener {
+        binding.privacyPolicy.setOnClickListener {
             val dialog = WebViewPopupPanel(requireContext(), context as LifecycleOwner, privacyPolicyUrl)
             dialog.show()
         }
@@ -77,7 +96,6 @@ class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
     }
 
     companion object {
-        private const val ENABLED_ALPHA = 1f
-        private const val DISABLED_ALPHA = 0.6f
+        private const val TAG = "MetricsCampaignFragment"
     }
 }

@@ -1,6 +1,7 @@
 package ie.equalit.ceno.components
 
 import android.content.Context
+import ie.equalit.ceno.metrics.autotracker.AutoTracker
 import ie.equalit.ceno.metrics.campaign001.Campaign001
 import ie.equalit.ceno.settings.Settings
 import mozilla.components.support.base.log.logger.Logger
@@ -12,6 +13,7 @@ import java.util.Calendar
 import java.util.Locale
 
 class Metrics (context: Context) {
+    lateinit var autoTracker: AutoTracker
     lateinit var campaign001 : Campaign001
 
     init {
@@ -42,6 +44,10 @@ class Metrics (context: Context) {
             }
             Settings.setBackdateCleanInsights(context, false)
         }
+    }
+
+    fun initAutoTracker(cleanInsights: CleanInsights) {
+        autoTracker = AutoTracker(cleanInsights)
     }
 
     fun initCampaign001(cleanInsights: CleanInsights) {
