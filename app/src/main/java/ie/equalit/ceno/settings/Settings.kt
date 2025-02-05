@@ -268,6 +268,34 @@ object Settings {
         )
     }
 
+    fun setMetricsDailyUsageEnabled(context: Context, value: Boolean) {
+        val key = context.getString(R.string.pref_key_metrics_dailyusage)
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit()
+            .putBoolean(key, value)
+            .apply()
+    }
+
+    fun isMetricsDailyUsageEnabled(context: Context) : Boolean {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+            context.getString(R.string.pref_key_metrics_dailyusage), false
+        )
+    }
+
+    fun setMetricsMonthlyUsageEnabled(context: Context, value: Boolean) {
+        val key = context.getString(R.string.pref_key_metrics_monthlyusage)
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit()
+            .putBoolean(key, value)
+            .apply()
+    }
+
+    fun isMetricsMonthlyUsageEnabled(context: Context) : Boolean {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+            context.getString(R.string.pref_key_metrics_monthlyusage), false
+        )
+    }
+
     fun setMetricsAutoTrackerEnabled(context: Context, value: Boolean) {
         val key = context.getString(R.string.pref_key_metrics_autotracker)
         PreferenceManager.getDefaultSharedPreferences(context)
@@ -281,7 +309,6 @@ object Settings {
             context.getString(R.string.pref_key_metrics_autotracker), false
         )
     }
-
 
     fun setCrashHappened(context: Context, value: Boolean) {
         val key = context.getString(R.string.pref_key_crash_happened)

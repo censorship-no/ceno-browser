@@ -60,4 +60,10 @@
     <androidx.preference.SwitchPreferenceCompat
         android:key="@string/pref_key_show_developer_tools"
         android:defaultValue="false" />
+    <androidx.preference.SwitchPreferenceCompat
+        android:key="@string/pref_key_metrics_dailyusage"
+        android:defaultValue="true" />
+    <androidx.preference.SwitchPreferenceCompat
+        android:key="@string/pref_key_metrics_monthlyusage"
+        android:defaultValue="true" />
 </PreferenceScreen>
