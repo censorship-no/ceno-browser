@@ -469,11 +469,17 @@
     <string name="ceno_support_ticket_subject">Ceno Support Ticket</string>
     <string name="preferences_metrics_campaign">Background metrics</string>
     <string name="metrics_campaign_more_info">More info</string>
+    <string name="metrics_campaign_dailyusage_title">Daily usage</string>
+    <string name="metrics_campaign_dailyusage_description">Anonymously submit a single metric each day that you open Ceno.</string>
+    <string name="metrics_campaign_monthlyusage_title">Monthly usage</string>
+    <string name="metrics_campaign_monthlyusage_description">Anonymously submit a single metric each month that you opened Ceno.</string>
     <string name="metrics_campaign_autotracker_title">Auto-tracker</string>
     <string name="metrics_campaign_autotracker_description">Record application starts and feature usage.</string>
     <string name="metrics_campaign_one_title">Application startup time</string>
     <string name="metrics_campaign_one_description">Records average startup time of application. Submits metrics daily.\nEnds January 31, 2025.</string>
     <string name="metrics_campaign_view_privacy_policy">Privacy policy</string>
+    <string name="daily_usage">Daily usage</string>
+    <string name="monthly_usage">Monthly usage</string>
     <string name="ceno_notification_confirm_description">Do you want to clear all your data from Ceno?</string>
 
     <string name="bookmarks_empty_message">No bookmarks here</string>

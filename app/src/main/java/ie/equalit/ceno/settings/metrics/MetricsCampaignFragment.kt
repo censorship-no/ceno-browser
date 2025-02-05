@@ -33,10 +33,22 @@ class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
         controller = DefaultMetricsCampaignController(requireContext(), requireComponents)
 
         binding.campaignCrashReporting.isChecked = Settings.isCrashReportingPermissionGranted(requireContext())
+        binding.campaignDailyUsage.isChecked = Settings.isMetricsDailyUsageEnabled(requireContext())
+        binding.campaignMonthlyUsage.isChecked = Settings.isMetricsMonthlyUsageEnabled(requireContext())
         binding.campaignAutoTracker.isChecked = Settings.isMetricsAutoTrackerEnabled(requireContext())
 
         binding.campaignCrashReporting.onCheckListener = { newValue ->
             controller.crashReporting(newValue)
+        }
+        binding.campaignDailyUsage.onCheckListener = { newValue ->
+            controller.dailyUsage(newValue) { granted ->
+                binding.campaignDailyUsage.isChecked = granted
+            }
+        }
+        binding.campaignMonthlyUsage.onCheckListener = { newValue ->
+            controller.monthlyUsage(newValue) { granted ->
+                binding.campaignMonthlyUsage.isChecked = granted
+            }
         }
         binding.campaignAutoTracker.onCheckListener = { newValue ->
             controller.autoTracker(newValue) { granted ->
@@ -90,6 +102,8 @@ class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
     private fun getCheckboxes(): List<MetricsCampaignItem> {
         return listOf(
             binding.campaignCrashReporting,
+            binding.campaignDailyUsage,
+            binding.campaignMonthlyUsage,
             binding.campaignAutoTracker,
             binding.campaignOne,
         )

@@ -48,6 +48,8 @@ import ie.equalit.ceno.ext.ceno.sort
 import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.home.HomeFragment.Companion.BEGIN_TOUR_TOOLTIP
+import ie.equalit.ceno.metrics.DailyUsage.Companion.ID as DAILY_USAGE_TAG
+import ie.equalit.ceno.metrics.MonthlyUsage.Companion.ID as MONTHLY_USAGE_TAG
 import ie.equalit.ceno.metrics.autotracker.AutoTracker.Companion.ASK_FOR_ANALYTICS_LIMIT
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.SettingsFragment
@@ -173,6 +175,16 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
                 }
             }
         }
+
+        if (Settings.isMetricsDailyUsageEnabled(this@BrowserActivity)) {
+            components.metrics.dailyUsage.enableCampaign()
+        }
+        components.metrics.dailyUsage.measureVisit(listOf(DAILY_USAGE_TAG))
+
+        if (Settings.isMetricsMonthlyUsageEnabled(this@BrowserActivity)) {
+            components.metrics.monthlyUsage.enableCampaign()
+        }
+        components.metrics.monthlyUsage.measureVisit(listOf(MONTHLY_USAGE_TAG))
 
         components.useCases.customLoadUrlUseCase.onNoSelectedTab = { url ->
             openToBrowser(url, newTab = true, private = themeManager.currentMode.isPersonal)

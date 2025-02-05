@@ -121,6 +121,8 @@ open class BrowserApplication : Application() {
             components.core.fileUploadsDirCleaner.cleanUploadsDirectory()
         }
 
+        components.metrics.initDailyUsage(cleanInsights)
+        components.metrics.initMonthlyUsage(cleanInsights)
         components.metrics.initAutoTracker(cleanInsights)
         components.metrics.initCampaign001(cleanInsights)
 

@@ -7,14 +7,19 @@ package ie.equalit.ceno.settings.metrics
 import android.content.Context
 import android.widget.Toast
 import ie.equalit.ceno.Components
+import ie.equalit.ceno.R.string.clean_insights_successful_opt_in
 import ie.equalit.ceno.R.string.clean_insights_successful_opt_out
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.Settings.setCleanInsightsEnabled
+import ie.equalit.ceno.settings.Settings.setMetricsDailyUsageEnabled
+import ie.equalit.ceno.settings.Settings.setMetricsMonthlyUsageEnabled
 import ie.equalit.ceno.utils.sentry.SentryOptionsConfiguration
 import io.sentry.android.core.SentryAndroid
 
 interface MetricsCampaignController {
     fun crashReporting(newValue: Boolean)
+    fun dailyUsage(newValue: Boolean, callback : (Boolean) -> Unit)
+    fun monthlyUsage(newValue: Boolean, callback : (Boolean) -> Unit)
     fun autoTracker(newValue: Boolean, callback : (Boolean) -> Unit)
     fun campaignOne(newValue: Boolean, callback: (Boolean) -> Unit)
     fun campaignTwo()
@@ -44,6 +49,46 @@ class DefaultMetricsCampaignController(
             context,
             true
         )
+    }
+
+    override fun dailyUsage(newValue: Boolean, callback : (Boolean) -> Unit) {
+        if (newValue) {
+            components.metrics.dailyUsage.enableCampaign()
+            Toast.makeText(
+                context,
+                context.getString(clean_insights_successful_opt_in),
+                Toast.LENGTH_LONG,
+            ).show()
+        } else {
+            components.metrics.dailyUsage.disableCampaign()
+            Toast.makeText(
+                context,
+                context.getString(clean_insights_successful_opt_out),
+                Toast.LENGTH_LONG,
+            ).show()
+        }
+        setMetricsDailyUsageEnabled(context, newValue)
+        callback(newValue)
+    }
+
+    override fun monthlyUsage(newValue: Boolean, callback : (Boolean) -> Unit) {
+        if (newValue) {
+            components.metrics.monthlyUsage.enableCampaign()
+            Toast.makeText(
+                context,
+                context.getString(clean_insights_successful_opt_in),
+                Toast.LENGTH_LONG,
+            ).show()
+        } else {
+            components.metrics.monthlyUsage.disableCampaign()
+            Toast.makeText(
+                context,
+                context.getString(clean_insights_successful_opt_out),
+                Toast.LENGTH_LONG,
+            ).show()
+        }
+        setMetricsMonthlyUsageEnabled(context, false)
+        callback(newValue)
     }
 
     override fun autoTracker(newValue: Boolean, callback : (Boolean) -> Unit) {

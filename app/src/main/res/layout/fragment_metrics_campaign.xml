@@ -42,6 +42,33 @@
                 app:metricsCampaignItemTitle="@string/preferences_allow_crash_reporting"
                 app:metricsCampaignItemSubtitle="@string/preferences_allow_crash_reporting_description"
                 app:metricsCampaignItemMoreInfo="@string/metrics_campaign_more_info" />
+
+            <ie.equalit.ceno.settings.metrics.MetricsCampaignItem
+                android:id="@+id/campaignDailyUsage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                app:metricsCampaignItemTitle="@string/metrics_campaign_dailyusage_title"
+                app:metricsCampaignItemSubtitle="@string/metrics_campaign_dailyusage_description"
+                app:metricsCampaignItemMoreInfo="@string/metrics_campaign_more_info" />
+
+            <ie.equalit.ceno.settings.metrics.MetricsCampaignItem
+                android:id="@+id/campaignMonthlyUsage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                app:metricsCampaignItemTitle="@string/metrics_campaign_monthlyusage_title"
+                app:metricsCampaignItemSubtitle="@string/metrics_campaign_monthlyusage_description"
+                app:metricsCampaignItemMoreInfo="@string/metrics_campaign_more_info" />
+
             <ie.equalit.ceno.settings.metrics.MetricsCampaignItem
                 android:id="@+id/campaignAutoTracker"
                 android:layout_width="match_parent"

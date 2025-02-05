@@ -3,6 +3,8 @@ package ie.equalit.ceno.components
 import android.content.Context
 import ie.equalit.ceno.metrics.autotracker.AutoTracker
 import ie.equalit.ceno.metrics.campaign001.Campaign001
+import ie.equalit.ceno.metrics.DailyUsage
+import ie.equalit.ceno.metrics.MonthlyUsage
 import ie.equalit.ceno.settings.Settings
 import mozilla.components.support.base.log.logger.Logger
 import org.cleaninsights.sdk.CleanInsights
@@ -13,6 +15,8 @@ import java.util.Calendar
 import java.util.Locale
 
 class Metrics (context: Context) {
+    lateinit var dailyUsage: DailyUsage
+    lateinit var monthlyUsage: MonthlyUsage
     lateinit var autoTracker: AutoTracker
     lateinit var campaign001 : Campaign001
 
@@ -44,6 +48,14 @@ class Metrics (context: Context) {
             }
             Settings.setBackdateCleanInsights(context, false)
         }
+    }
+
+    fun initDailyUsage(cleanInsights: CleanInsights) {
+        dailyUsage = DailyUsage(cleanInsights)
+    }
+
+    fun initMonthlyUsage(cleanInsights: CleanInsights) {
+        monthlyUsage = MonthlyUsage(cleanInsights)
     }
 
     fun initAutoTracker(cleanInsights: CleanInsights) {
