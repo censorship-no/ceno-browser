@@ -93,6 +93,8 @@
     <string name="pref_key_metrics_autotracker" translatable="false">pref_key_metrics_autotracker</string>
     <string name="pref_key_metrics_autotracker_launch_count" translatable="false">pref_key_metrics_autotracker_launch_count</string>
     <string name="pref_key_metrics_autotracker_prompt_completed" translatable="false">pref_key_metrics_autotracker_prompt_completed</string>
+    <string name="pref_key_metrics_dailyusage" translatable="false">pref_key_metrics_dailyusage</string>
+    <string name="pref_key_metrics_monthlyusage" translatable="false">pref_key_metrics_monthlyusage</string>
 
     <string name="pref_last_known_browsing_mode_personal" translatable="false">pref_last_known_browsing_mode_personal</string>
     <string name="pref_permissions_category" translatable="false">pref_permissions_category</string>
