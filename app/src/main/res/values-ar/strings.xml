@@ -161,7 +161,7 @@
     <string name="ceno_mode_manual_link">https://censorship.no/user-manual/ar/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;التصفح الشخصي&lt;/h1&gt; &lt;p&gt;لن يشارك سنو المحتوى في علامات التبويب الشخصية مع مستخدمين آخرين. يمكنك زيارة المواقع التي تتطلب تسجيل الدخول بأمان. ولكن، هناك حاجة إلى طريق إلى الإنترنت.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;هل تريد معرفة المزيد؟&lt;/p&gt;</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">إشعار المتصفح سنو</string>
-    <string name="ceno_notification_title">خدمة المتصفح سنو</string>
+    <string name="preferences_about_ceno_browser_service">خدمة المتصفح سنو</string>
     <string name="preferences_disable_battery_opt">تعطيل تحسين البطارية</string>
     <string name="ceno_clear_dialog_cancel">إلغاء</string>
     <string name="ceno_clear_dialog_clear_cache_only">مسح ذاكرة التخزين المؤقت لـ سنو فقط</string>

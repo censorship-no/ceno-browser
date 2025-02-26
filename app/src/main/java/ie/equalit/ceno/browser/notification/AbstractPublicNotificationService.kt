@@ -139,6 +139,9 @@ abstract class AbstractPublicNotificationService : Service() {
         if (intent.action == ACTION_CONFIRM) {
             refreshNotification(true)
         }
+        if (intent.action == ACTION_CANCEL) {
+            refreshNotification(false)
+        }
         return START_NOT_STICKY
     }
 
@@ -161,6 +164,7 @@ abstract class AbstractPublicNotificationService : Service() {
         const val ACTION_CLEAR = "ie.equalit.ceno.browser.notification.action.CLEAR"
         const val ACTION_TAP = "ie.equalit.ceno.browser.notification.action.TAP"
         const val ACTION_CONFIRM = "ie.equalit.ceno.browser.notification.action.CONFIRM"
+        const val ACTION_CANCEL = "ie.equalit.ceno.browser.notification.action.CANCEL"
 
         val NOTIFICATION_CHANNEL = ChannelData(
             id = "browsing-session",

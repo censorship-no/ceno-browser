@@ -1,3 +1,11 @@
+# v2.4.3
+This release:
+- Fixes status bar, toolbar, and content overlap on Android 15 devices
+
+# v2.4.2
+This release:
+- Updates AndroidManifest.xml
+
 # v2.4.1
 This release:
 - Fixes Ceno support email not being populated

@@ -130,6 +130,7 @@
     <string name="about_content_para_2">Ceno Browser is a project by eQualitie – a not-for-profit Canadian organization that creates decentralized internet services in support of a more equal and equitable network. eQualitie\'s solutions are open source, battle proven and developed in mind of our values. Everyday, they enable freedom of association for millions of people online.</string>
     <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;Personal Browsing&lt;/h1&gt; &lt;p&gt;Ceno will not share content from personal tabs with other users. You can safely visit sites that require login. A path to the Internet is needed, though.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Want to learn more?&lt;/p&gt;</string>
+    <string name="preferences_about_ceno_browser_service">Ceno Browser Service</string>
     <string name="ceno_notification_title">Sharing cached tabs</string>
     <string name="ceno_notification_description">Tap for more details</string>
     <string name="ceno_notification_home_description">Home</string>

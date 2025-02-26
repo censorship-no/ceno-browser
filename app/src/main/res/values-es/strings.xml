@@ -100,7 +100,7 @@
     <string name="preferences_about_page">Acerca de</string>
     <string name="ceno_mode_manual_link">https://censorship.no/user-manual/es/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;Navegación personal&lt;/h1&gt; &lt;p&gt;Ceno no compartirá el contenido de las pestañas personales con otros usuarios. Puedes visitar con seguridad los sitios que requieran inicio de sesión. Sin embargo, se necesita una ruta a Internet.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;¿Quieres saber más?&lt;/p&gt; &lt;p&gt;</string>
-    <string name="ceno_notification_title">Servicio del Navegador de Ceno</string>
+    <string name="preferences_about_ceno_browser_service">Servicio del Navegador de Ceno</string>
     <string name="ceno_notification_description">Toca para detener</string>
     <string name="ceno_notification_home_description">Inicio</string>
     <string name="ceno_notification_clear_description">Borrar⚠</string>

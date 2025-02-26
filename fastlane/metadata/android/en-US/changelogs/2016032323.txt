@@ -1,0 +1,7 @@
+This release:
+- Fixes Ceno support email not being populated
+- Updates Android-Components to v135.0
+- Updates Ouinet to v0.31.1
+- Disables Ceno Browser Service notification
+- Adds notification to be shown when browsing in public mode
+

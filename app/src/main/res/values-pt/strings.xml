@@ -99,7 +99,7 @@
     <string name="onboarding_warning_button">Ok</string>
     <string name="ceno_notification_description">Toque para interromper</string>
     <string name="ceno_notification_home_description">Início</string>
-    <string name="ceno_notification_title">Serviço do Navegador Ceno</string>
+    <string name="preferences_about_ceno_browser_service">Serviço do Navegador Ceno</string>
     <string name="preferences_toolbar_hide">Deslize para esconder</string>
     <string name="preferences_about_ceno">Ceno Navegador</string>
     <string name="preferences_about_geckoview">GeckoView</string>

@@ -73,10 +73,6 @@ class CustomizationSettingsFragment : PreferenceFragmentCompat() {
             if (AppCompatDelegate.getDefaultNightMode() != mode) {
                 AppCompatDelegate.setDefaultNightMode(mode)
                 activity?.recreate()
-                requireComponents.core.store.state.selectedTab?.let {
-                    requireComponents.useCases.tabsUseCases.selectTab(requireComponents.core.store.state.selectedTab!!.id)
-                    requireComponents.useCases.sessionUseCases.reload.invoke()
-                }
                 /* TODO: send colorScheme to gecko engine
                 with(requireComponents.core) {
                     engine.settings.preferredColorScheme = getPreferredColorScheme()

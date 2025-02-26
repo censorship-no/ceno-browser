@@ -96,7 +96,7 @@
     <string name="preferences_about_geckoview">GeckoView</string>
     <string name="preferences_about_ouinet">Ouinet</string>
     <string name="about_category">کے بارے میں</string>
-    <string name="ceno_notification_title">سنو براؤزر سروس</string>
+    <string name="preferences_about_ceno_browser_service">سنو براؤزر سروس</string>
     <string name="onboarding_battery_text">جلد ہی OS آپ سے بیٹری کی اصلاح کو غیر فعال کرنے کی اجازت طلب کرے گا۔
 \n
 \nایپ کے پس منظر میں ہونے کے دوران ویب سائٹس کا اشتراک جاری رکھنے کے لیے یہ ضروری ہے</string>

@@ -100,7 +100,7 @@
     <string name="ceno_on_mobile_data_dialog_stop_now">Ceno jetzt stoppen</string>
     <string name="onboarding_btn_get_started">Los geht\'s</string>
     <string name="preferences_about_page">Info</string>
-    <string name="ceno_notification_title">Ceno Browser-Dienst</string>
+    <string name="preferences_about_ceno_browser_service">Ceno Browser-Dienst</string>
     <string name="ceno_notification_clear_description">Löschen⚠</string>
     <string name="ceno_notification_clear_do_description">Ja</string>
     <string name="ceno_on_mobile_data_dialog_title">Ceno Browser-Hinweis</string>

@@ -100,6 +100,7 @@
     <string name="onboarding_battery_button">Continuar</string>
     <string name="onboarding_warning_title">Autorização negada</string>
     <string name="ceno_notification_title">Compartilhamento de guias em cache</string>
+    <string name="preferences_about_ceno_browser_service">Serviço do Navegador Ceno</string>
     <string name="ceno_on_mobile_data_dialog_stop_now" tools:ignore="UnusedResources">Interromper o Ceno agora</string>
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">Não mostrar novamente</string>
     <string name="onboarding_skip_button">Pular</string>

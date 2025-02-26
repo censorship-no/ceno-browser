@@ -104,6 +104,7 @@
     <string name="ceno_private_browsing_body">&lt;h1&gt;Приватний перегляд&lt;/h1&gt; &lt;p&gt;Ceno не ділиться вмістом приватних вкладок з іншими користувачами. Ви можете безпечно відвідувати сайти, де необхідно авторизуватися. Але при цьому Вам знадобиться доступ до Інтернету.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Хочете дізнатися більше?&lt;/p&gt;</string>
     <string name="ceno_notification_title">Спільний доступ до кешованих вкладок</string>
     <string name="ceno_notification_description">Торкніться, щоб дізнатися більше</string>
+    <string name="preferences_about_ceno_browser_service">Робота браузера Ceno</string>
     <string name="ceno_notification_home_description">Головна</string>
     <string name="ceno_notification_clear_description">Видалити⚠</string>
     <string name="ceno_notification_clear_do_description">Так</string>

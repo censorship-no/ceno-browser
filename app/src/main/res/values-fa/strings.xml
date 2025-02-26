@@ -100,6 +100,7 @@
     <string name="ceno_private_browsing_body">&lt;h1&gt;مرور شخصی&lt;/h1&gt; &lt;p&gt;«Ceno» محتوای زبانه‌های شخصی را با کاربران دیگر به اشتراک نمی‌گذارد. شما همچنین می‌توانید به‌طور امن سایت‌هایی را بازدید کنید که نیاز به اطلاعات ورود دارند. در هر حال راهی برای دسترسی به اینترنت نیاز خواهد بود.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;مایلید بیشتر بدانید؟&lt;/p&gt;</string>
     <string name="ceno_notification_title">اشتراک‌گذاری زبانه‌های کَش‌شده</string>
     <string name="ceno_notification_description">برای اطلاعات بیش‌تر ضربه بزنید</string>
+    <string name="preferences_about_ceno_browser_service">خدمات مرورگر سنو</string>
     <string name="ceno_notification_home_description">خانه</string>
     <string name="ceno_notification_clear_description">پاک کردن⚠</string>
     <string name="ceno_notification_clear_do_description">بله</string>

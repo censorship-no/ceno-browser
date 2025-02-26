@@ -36,18 +36,21 @@ class PublicNotificationService:AbstractPublicNotificationService() {
             R.color.ceno_blue_500,
         )
         setContentIntent(getTapIntent())
-        //Adds stop button. Stops Ceno on tap
-        addAction(R.drawable.ic_clear_ceno, "STOP", getStopIntent())
-        //Adds clear button. Shows the confirm button on tap
-        addAction(R.drawable.ic_clear_ceno, "CLEAR", getConfirmIntent())
+
         //Adds confirm button to be shown for 3 seconds when clear button is tapped
         //Clear app data and close Ceno if confirm is tapped
         if(showConfirmAction) {
-            addAction(R.drawable.ic_notification, "CONFIRM", getClearIntent())
+            addAction(R.drawable.ic_notification, getString(R.string.ceno_notification_clear_do_description).uppercase(), getClearIntent())
+            addAction(R.drawable.ic_notification, getString(R.string.dialog_cancel).uppercase(), getCancelIntent())
             handler.postDelayed(
                 showConfirmCallback,
                 5 * MILLISECOND
             )
+        } else {
+            //Adds stop button. Stops Ceno on tap
+            addAction(R.drawable.ic_notification, getString(R.string.browser_menu_stop).uppercase(), getStopIntent())
+            //Adds clear button. Shows the confirm button on tap
+            addAction(R.drawable.ic_clear_ceno, getString(R.string.ceno_clear_action_description).uppercase(), getConfirmIntent())
         }
     }
 
@@ -91,6 +94,13 @@ class PublicNotificationService:AbstractPublicNotificationService() {
 
     private fun getConfirmIntent() :PendingIntent{
         return Intent(ACTION_CONFIRM).let {
+            it.setClass(this, this::class.java)
+            PendingIntent.getService(this, 0, it, PendingIntentUtils.defaultFlags or FLAG_ONE_SHOT)
+        }
+    }
+
+    private fun getCancelIntent() :PendingIntent{
+        return Intent(ACTION_CANCEL).let {
             it.setClass(this, this::class.java)
             PendingIntent.getService(this, 0, it, PendingIntentUtils.defaultFlags or FLAG_ONE_SHOT)
         }

@@ -86,7 +86,7 @@
     <string name="ceno_notification_clear_do_description">Ναί</string>
     <string name="ceno_notification_home_description">Αρχική</string>
     <string name="ceno_notification_channel_name">Υπηρεσία Ceno</string>
-    <string name="ceno_notification_title">Υπηρεσία φυλλομετρητή Ceno</string>
+    <string name="preferences_about_ceno_browser_service">Υπηρεσία φυλλομετρητή Ceno</string>
     <string name="ceno_notification_clear_description">Διαγραφή⚠</string>
     <string name="ceno_on_mobile_data_dialog_stop_now">Διακοπή Ceno τώρα</string>
     <string name="ceno_on_mobile_data_dialog_stop_showing">Να μην εμφανιστεί ξανά</string>

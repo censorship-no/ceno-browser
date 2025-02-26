@@ -135,7 +135,7 @@
     <string name="confirm_clear_cached_content">தற்காலிக சேமிப்பு உள்ளடக்கத்தை அழிக்கவா?</string>
     <string name="confirm_clear_cached_content_desc">உங்கள் தற்காலிக சேமிப்பு உள்ளடக்கம் உடனடியாக அகற்றப்படும்</string>
     <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
-    <string name="ceno_notification_title">Ceno உலாவி பணி</string>
+    <string name="preferences_about_ceno_browser_service">Ceno உலாவி பணி</string>
     <string name="ceno_notification_description">நிறுத்த தட்டவும்</string>
     <string name="ceno_notification_home_description">வீடு</string>
     <string name="ceno_notification_clear_do_description">ஆம்</string>

@@ -96,7 +96,7 @@
     <string name="about_category">Om</string>
     <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;Privat surfning&lt;/h1&gt; &lt;p&gt;Ceno kommer inte att dela innehåll från privata flikar med andra användare. Du kan säkert besöka webbplatser som kräver inloggning. En väg till Internet behövs dock.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Vill du lära dig mer?&lt;/p&gt;</string>
-    <string name="ceno_notification_title">Ceno Webbläsartjänst</string>
+    <string name="preferences_about_ceno_browser_service">Ceno Webbläsartjänst</string>
     <string name="ceno_notification_channel_name">Ceno Tjänst</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Det är rekommenderat att använda Ceno när du har en WiFi-anslutning eftersom att den kan använda mer data än vad du förväntar dig. Du kanske vill stoppa Ceno när du använder mobildata.</string>
     <string name="ceno_clear_dialog_title">Rensa Ceno</string>

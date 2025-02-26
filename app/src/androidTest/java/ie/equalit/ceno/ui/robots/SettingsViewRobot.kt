@@ -260,7 +260,7 @@ private fun websiteSourcesButton() = onView(withText(R.string.preferences_ceno_w
 private fun websiteSourcesSummary() = onView(withText(R.string.preferences_website_sources_summary))
 
 private fun aboutHeading() = onView(allOf(withText(R.string.about_category), withParent(withId(R.id.recycler_view))))
-private fun cenoBrowserServiceDisplay() = onView(withText(R.string.ceno_notification_title))
+private fun cenoBrowserServiceDisplay() = onView(withText(R.string.preferences_about_ceno_browser_service))
 private fun cenoVersionDisplay() = onView(withText(R.string.preferences_about_ceno))
 private fun geckoviewVersionDisplay() = onView(withText(R.string.preferences_about_geckoview))
 private fun ouinetVersionDisplay() = onView(withText(R.string.preferences_about_ouinet))

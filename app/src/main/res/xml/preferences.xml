@@ -185,7 +185,7 @@
             android:defaultValue="false"
             android:enabled="true"
             android:key="@string/pref_key_ouinet_state"
-            android:title="@string/ceno_notification_title"
+            android:title="@string/preferences_about_ceno_browser_service"
             app:iconSpaceReserved="false" />
 
         <ie.equalit.ceno.settings.LongClickPreference

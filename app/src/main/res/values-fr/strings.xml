@@ -102,6 +102,7 @@
     <string name="ceno_private_browsing_body">&lt;h1&gt;Navigation Personnelle&lt;/h1&gt; &lt;p&gt;Ceno ne partagera pas le contenu d’onglets personnels avec d’autres utilisateurs. Vous pouvez visiter en toute sécurité des sites qui demandent une authentification. Une connexion vers Internet est cependant nécessaire.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;En apprendre davantage ?&lt;/p&gt;</string>
     <string name="ceno_notification_title">Partage des onglets en cache</string>
     <string name="ceno_notification_description">Toucher pour plus de détails</string>
+    <string name="preferences_about_ceno_browser_service">Service du Navigateur Ceno</string>
     <string name="ceno_notification_home_description">Accueil</string>
     <string name="ceno_notification_clear_description">Effacer⚠</string>
     <string name="ceno_notification_clear_do_description">Oui</string>

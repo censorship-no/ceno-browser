@@ -96,7 +96,7 @@
     <string name="preferences_about_page">关于</string>
     <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;隐私浏览&lt;/h1&gt; &lt;p&gt;Ceno 将不会与其他用户共享来自私人标签的内容。您可以安全地访问需要登录的站点。但您仍需连接互联网。&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;想了解更多信息？&lt;/p&gt;</string>
-    <string name="ceno_notification_title">Ceno浏览器服务</string>
+    <string name="preferences_about_ceno_browser_service">Ceno浏览器服务</string>
     <string name="ceno_notification_home_description">主页</string>
     <string name="default_top_site_1_title">Ceno指南</string>
     <string name="default_top_site_1_url" tools:ignore="Untranslatable">@string/suggestedsites_ceno_en_url</string>
