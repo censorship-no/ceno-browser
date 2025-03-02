@@ -243,7 +243,7 @@
     <string name="customize_bittorrent_bootstrap_add_custom_bootstraps">Tambahkan bootstraps kustom</string>
     <string name="top_sites_title">Pintasan</string>
     <string name="crash_report_non_fatal_message" tools:ignore="UnusedResources">Maaf. Terjadi kesalahan</string>
-    <string name="customize_custom_extra_bittorrent_bootstrap">Pisahkan IPs dengan koma</string>
+    <string name="customize_custom_extra_bittorrent_bootstrap">Pisahkan IP dengan koma</string>
     <string name="select_extra_bt_source">Pilih extra BItTorrent bootstrap</string>
     <string name="browser_menu_find_in_page">Cari dalam halaman</string>
     <string name="browser_menu_add_to_shortcuts">Tambahkan ke pintasan</string>
