@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="bookmark_menu_open_in_private_tab_button">Open in personal tab</string>
     <string name="mozac_feature_contextmenu_open_link_in_private_tab">Open link in personal tab</string>
     <string name="menu_action_close_tabs_private">Close Personal Tabs</string>
@@ -7,4 +7,51 @@
         <item quantity="one">%d tab</item>
         <item quantity="other">%d tabs</item>
     </plurals>
+    <string name="preferences_tracking_protection_normal">Enable in Public browsing mode</string>
+    <string name="shortcut_max_limit_content">Remove a shortcut to add a new one. Touch and hold the shortcut, then select \"Remove\".</string>
+    <string name="preferences_delete_browsing_data">Delete browsing data</string>
+    <string name="settings">Settings</string>
+    <string name="preferences_customization_summary">App Icon, Toolbar, Clear button</string>
+    <string name="preferences_delete_browsing_data_cached_files">Cached images and files</string>
+    <string name="toast_copied">Copied!</string>
+    <string name="toolbar_hint">Search or enter address</string>
+    <string name="menu_action_add_tab">Add New Tab</string>
+    <string name="menu_action_close_tabs">Close All Tabs</string>
+    <string name="preferences_remote_debugging">Remote debugging via USB</string>
+    <string name="preferences_tracking_protection_private">Enable in Personal browsing mode</string>
+    <string name="privacy" tools:ignore="UnusedResources">Privacy</string>
+    <string name="preferences_privacy_summary">Enable for Personal and Public Browsing</string>
+    <string name="customization_settings">Customisation</string>
+    <string name="crash_report_non_fatal_message" tools:ignore="UnusedResources">Sorry. We crashed</string>
+    <string name="private_browsing_title">Personal Browsing</string>
+    <string name="menu_share_with">Share with…</string>
+    <string name="customize_add_bootstrap_save">Save</string>
+    <string name="update">Update</string>
+    <string name="customize_extra_bittorrent_bootstrap">Extra BitTorrent bootstraps</string>
+    <string name="customize_bittorrent_bootstrap_add_custom_bootstraps">Add custom bootstraps</string>
+    <string name="customize_custom_extra_bittorrent_bootstrap">Separate IPs with commas</string>
+    <string name="select_extra_bt_source">Select extra BitTorrent bootstrap</string>
+    <string name="top_sites_rename_dialog_title">Name</string>
+    <string name="shortcut_name_hint">Shortcut name</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="top_sites_sponsored_label">Sponsored</string>
+    <string name="browser_menu_desktop_site">Request desktop site</string>
+    <string name="preferences_website_sources_summary">Select where you want to load website content from</string>
+    <string name="open_links_in_apps">Open links in apps</string>
+    <string name="toolbar_category">Toolbar Options</string>
+    <string name="udp_category">UDP</string>
+    <string name="clear_button_category">Clear Button</string>
+    <string name="rename_top_site">Rename</string>
+    <string name="remove_top_site">Remove</string>
+    <string name="delete_from_history">Delete from history</string>
+    <string name="shortcut_max_limit_title">Shortcut limit reached</string>
+    <string name="top_sites_max_limit_confirmation_button">OK, Got It</string>
+    <string name="top_sites_title">Shortcuts</string>
+    <string name="deleting_browsing_data_in_progress">Deleting browsing data…</string>
+    <string name="preferences_delete_browsing_data_cookies">Cookies</string>
+    <string name="preferences_delete_browsing_data_cookies_subtitle">You’ll be logged out of most sites</string>
+    <string name="preferences_delete_browsing_data_site_permissions">Site permissions</string>
+    <string name="preferences_delete_browsing_data_button">Delete browsing data</string>
+    <string name="preferences_delete_browsing_data_browsing_data_title">Browsing history and site data</string>
 </resources>
