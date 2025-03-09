@@ -2,6 +2,7 @@ Ceno (Censorship.No!) jest zdecentralizowaną przeglądarką mobilną. Wykorzyst
 
 Powiedz NIE cenzurze! Zainstaluj Ceno Browser już dziś i bądź gotowy na moment, gdy zostaniesz 🔌 odłączony.
 
+
 🚫🌴 Odporność.
 Ceno zostało zaprojektowane z myślą o sytuacjach wyłączenia internetu. Strony internetowe są udostępniane przez globalną sieć użytkowników i przechowywane w rozproszonym buforze, co zapewnia dostępność nawet wtedy, gdy tradycyjne sieci są blokowane lub przestają działać.
 
