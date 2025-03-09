@@ -1,0 +1,31 @@
+Ceno (Censorship.No!) jest zdecentralizowaną przeglądarką mobilną. Wykorzystuje technologię peer-to-peer do dostarczania stron internetowych na Twój telefon i buforuje popularne treści we współpracy z innymi użytkownikami. Ceno może być używane do omijania cenzury internetowej oraz pomagania innym w dostępie do zablokowanych stron.
+
+Powiedz NIE cenzurze! Zainstaluj Ceno Browser już dziś i bądź gotowy na moment, gdy zostaniesz 🔌 odłączony.
+
+🚫🌴 Odporność.
+Ceno zostało zaprojektowane z myślą o sytuacjach wyłączenia internetu. Strony internetowe są udostępniane przez globalną sieć użytkowników i przechowywane w rozproszonym buforze, co zapewnia dostępność nawet wtedy, gdy tradycyjne sieci są blokowane lub przestają działać.
+
+🔓👀 Odblokuj internet.
+Uzyskaj dostęp do dowolnej strony. Często wyszukiwane treści są przechowywane w sieci i nie mogą zostać usunięte siłą.
+
+💲🌐 Obniż koszty transmisji danych.
+Dzięki przekierowywaniu ruchu użytkowników przez sieci peer-to-peer, Ceno Browser zmniejsza koszty przesyłu danych, jednocześnie zapewniając możliwość omijania blokad.
+
+📖👐 Darmowe i open source.
+Ceno Browser działa na bazie Ouinet, biblioteki open-source, która umożliwia deweloperom integrację sieci Ceno w swoich aplikacjach, zapewniając łączność peer-to-peer.
+
+Ważne:
+
+Ceno działa w dwóch trybach – publicznym i prywatnym. Możesz łatwo przełączać się między nimi. Tryb publiczny oferuje najlepszą łączność, ale najmniejszą prywatność – odwiedzane i udostępniane przez Ciebie strony są rejestrowane w publicznie dostępnym rejestrze (BitTorrent). Tryb prywatny eliminuje ten zapis, ale może być wolniejszy i mniej skuteczny w pobieraniu treści. Zajrzyj do <a href="https://censorship.no/user-manual">Podręcznika użytkownika</a>, aby dowiedzieć się więcej o działaniu Ceno.
+
+O eQualit.ie
+
+eQualit.ie tworzy otwarte i wielokrotnego użytku systemy z naciskiem na prywatność, bezpieczeństwo online i zarządzanie informacją. Naszym celem jest rozwój dostępnej technologii oraz poprawa umiejętności potrzebnych do obrony praw człowieka i wolności w cyfrowej erze.
+
+Aby dowiedzieć się więcej o Ceno Browser i jego rozproszonej bibliotece Ouinet, odwiedź https://censorship.no.
+
+Masz pytania lub potrzebujesz wsparcia?
+
+Przeczytaj więcej w <a href="https://censorship.no/user-manual/en/">Podręczniku użytkownika Ceno</a> lub skontaktuj się z nami pod adresem support@censorship.no. Chętnie przyjmujemy opinie i stale ulepszamy Ceno dla jego użytkowników!
+
+Bądź w kontakcie i pomóż utrzymać internet otwarty i dostępny dla wszystkich!
