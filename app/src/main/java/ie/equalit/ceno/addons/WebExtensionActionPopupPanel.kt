@@ -100,9 +100,10 @@ class WebExtensionActionPopupPanel(
         val proxy = if (counts.has(BaseBrowserFragment.PROXY)) counts.getString(BaseBrowserFragment.PROXY).toFloat() else 0F
         val injector = if (counts.has(BaseBrowserFragment.INJECTOR)) counts.getString(BaseBrowserFragment.INJECTOR).toFloat() else 0F
         val origin = if (counts.has(BaseBrowserFragment.ORIGIN)) counts.getString(BaseBrowserFragment.ORIGIN).toFloat() else 0F
+        val localCache = if (counts.has(BaseBrowserFragment.LOCAL_CACHE)) counts.getString(BaseBrowserFragment.LOCAL_CACHE).toFloat() else 0F
 
         binding.tvViaCenoNetworkCount.text = String.format(Locale.getDefault(),"%d", proxy.plus(injector).toInt())
-        binding.tvViaCenoCacheCount.text = String.format(Locale.getDefault(),"%d", distCache.toInt())
+        binding.tvViaCenoCacheCount.text = String.format(Locale.getDefault(),"%d", distCache.plus(localCache).toInt())
         binding.tvDirectFromWebsiteCount.text = String.format(Locale.getDefault(),"%d", origin.toInt())
 
 
