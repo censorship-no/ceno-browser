@@ -80,9 +80,9 @@ class WebExtensionActionPopupPanel(
         //val nextIcon = AppCompatResources.getDrawable(context, R.drawable.mozac_ic_arrowhead_right)
 
         val securityIcon = if (isConnectionSecure) {
-            AppCompatResources.getDrawable(context, R.drawable.mozac_ic_lock)
+            AppCompatResources.getDrawable(context, R.drawable.mozac_ic_lock_24)
         } else {
-            AppCompatResources.getDrawable(context, R.drawable.mozac_ic_warning)
+            AppCompatResources.getDrawable(context, R.drawable.mozac_ic_lock_slash_24)
         }
 
         binding.securityInfo.putCompoundDrawablesRelativeWithIntrinsicBounds(
