@@ -350,4 +350,57 @@
     <string name="submit">Kirim</string>
     <string name="browser_menu_disable_reader_view">Sembunyikan tampilan baca</string>
     <string name="error_page_header">Oops! Gagal memuat halaman web.</string>
+    <string name="tooltip_permission_text">Untuk terus membagikan website dengan lancar, bahkan ketika aplikasi berjalan di latar belakang, tolong izinkan Ceno untuk mengirim notifikasi dan menonaktifkan optimisasi baterai. Anda selalu dapat mengatur perizinan ini pada pengaturan perangkat anda.</string>
+    <string name="developer_tools_disabled">Alat pengembang dinonaktifkan</string>
+    <string name="standby_tip_bridge">Jadi bagian dari bridge, bantu sesama mengakses website</string>
+    <string name="preferences_announcement_source">Sumber pemberitahuan</string>
+    <string name="preferences_show_standby_warning">Munculkan peringatan dalam timeout startup</string>
+    <plurals name="developer_tools_disable_alert">
+        <item quantity="other">Anda tinggal %d ketuk dari menonaktifkan alat pengembang</item>
+    </plurals>
+    <plurals name="developer_tools_enable_alert">
+        <item quantity="other">Anda tinggal %d ketuk dari mengaktifkan alat pengembang</item>
+    </plurals>
+    <string name="start_tooltip_description">Buka potensial penuh Ceno - Ambil tur panduan untuk menemukan fitur utama dan memberikan izin untuk membagikan web, bahkan jika aplikasi berada di latar belakang.</string>
+    <string name="standby_dont_show">Jangan munculkan peringatan lagi</string>
+    <string name="error_page_sub_header">Ceno telah mencoba segala mekanisme untuk mengakses konten ini, namun tidak ada yang berhasil:</string>
+    <string name="standby_tip_pdf">Bagikan halaman web sebagai PDF</string>
+    <string name="error_page_learn_more_1">Anda memiliki versi terbaru dari browser Ceno. Versi yang usang mungkin tidak dapat berkomunikasi dengan injektor baru atau klien lain. Cek &lt;/a&gt;halaman unduh &lt;a href=\"https://play.google.com/store/apps/details?id=ie.equalit.ceno\"&gt; untuk melihat versi terbarunya.</string>
+    <string name="skip_the_tour_button">Lewati tur</string>
+    <string name="btn_next">Selanjutnya</string>
+    <string name="btn_exit">Keluar</string>
+    <string name="tooltip_shortcuts_description">Simpan situs favorit anda sebagai shortcut agar mudah diakses dari halaman utama.</string>
+    <string name="tooltip_toolbar_title">Saatnya Berselancar!</string>
+    <string name="standby_tip_announcements">Cek pembaruan dalam bagian pemberitahuan</string>
+    <string name="ceno_network_status_title">Status Jaringan Ceno</string>
+    <string name="ceno_network_status_connected">Terkoneksi dalam jaringan Ceno. Website terblokir dapat diakses.</string>
+    <string name="contact_support">Hubungi Dukungan</string>
+    <string name="ceno_support_ticket_subject">Tiket Bantuan Ceno</string>
+    <string name="startup_category">Startup (Proses Awal)</string>
+    <string name="standby_take_me_anyway">Tetap bawa saya ke Ceno</string>
+    <string name="error_page_learn_more_3">Perangkat anda memerlukan koneksi kedalam jaringan, yaitu web browser anda dapat membuka beberapa website. Ceno dan Ouinet tidak dapat bekerja jika koneksi jaringan mati.</string>
+    <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">Unduh</string>
+    <string name="enable_debug_logs">Aktifkan log debug</string>
+    <string name="error_page_learn_more_2">Seluruh akses mekanisme dalam Pengaturan perlu diaktifkan. Jika tidak, Ceno mungkin saja tidak dapat mengakali beberapa isu konektivitias saat mengakses konten tersedia.</string>
+    <string name="select_language">Pilih Bahasa:</string>
+    <string name="error_page_learn_more_header">Anda perlu memastikan bahwa persyaratan berikut telah terpenuhi agar Ceno dapat bekerja</string>
+    <string name="tooltip_sources_description">Lihat dengan mudah asal dari konten situs diambil - langsung dari website, melalui jaringan Ceno, atau dari cache Ceno</string>
+    <string name="standby_tip_icon">Ganti ikon aplikasi untuk menyembunyikan Ceno</string>
+    <string name="error_page_learn_more">Pelajari lebih lanjut</string>
+    <string name="tooltip_toolbar_description">Masukkan alamat website untuk memulai browsing</string>
+    <string name="tooltip_sources_title">Sumber Ceno</string>
+    <string name="standby_tip_title">Tip</string>
+    <string name="status_enabled">Diaktfikan</string>
+    <string name="status_disabled">Dinonaktfikan</string>
+    <string name="ceno_base_url">https://censorship.no</string>
+    <string name="preferences_additional_developer_tools">Alat pengembang tambahan</string>
+    <string name="preferences_announcement_source_summary">Atur sumber dari pemberitahuan halaman utama</string>
+    <string name="preferences_announcement_source_default">1</string>
+    <string name="preferences_announcement_source_option_1"></string>
+    <string name="preferences_announcement_expire_disable">Nonaktifkan pemberitahuan kadaluwarsa</string>
+    <string name="developer_tools_enabled">Alat pengembang diaktifkan</string>
+    <string name="preferences_clean_insights_backdate">Aktifkan penetapan tanggal mundur metrik</string>
+    <string name="ceno_network_status_disconnected">Jaringan terputus. Cek pengaturan jaringan atau ekspor log untuk informasi tambahan.</string>
+    <string name="ceno_network_status_degraded">Menghubungkan dalam jaringan Ceno. Beberapa website mungkin tidak tersedia. Cek pengaturan jaringan atau ekspor log untuk informasi tambahan.</string>
+    <string name="ceno_notification_confirm_description">Apakah anda ingin membersihkan semua data dari Ceno?</string>
 </resources>
