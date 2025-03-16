@@ -396,7 +396,6 @@
     <string name="preferences_additional_developer_tools">Alat pengembang tambahan</string>
     <string name="preferences_announcement_source_summary">Atur sumber dari pemberitahuan halaman utama</string>
     <string name="preferences_announcement_source_default">1</string>
-    <string name="preferences_announcement_source_option_1"></string>
     <string name="preferences_announcement_expire_disable">Nonaktifkan pemberitahuan kadaluwarsa</string>
     <string name="developer_tools_enabled">Alat pengembang diaktifkan</string>
     <string name="preferences_clean_insights_backdate">Aktifkan penetapan tanggal mundur metrik</string>
