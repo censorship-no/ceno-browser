@@ -4,12 +4,12 @@
     <string name="private_browsing_title">Navegação Pessoal</string>
     <string name="toast_copied">Copiado!</string>
     <string name="browser_menu_forward">Pŕoxima</string>
-    <string name="preferences_tracking_protection_normal">Ativar no Modo de Navegação Normal</string>
+    <string name="preferences_tracking_protection_normal">Ativar no modo de navegação Pública</string>
     <string name="preferences_customization_summary">Ícone do App, Barra de Ferramentas, botão Limpar</string>
     <string name="open_links_in_apps">Abrir ligações em apps</string>
     <string name="developer_tools_category">Ferramentas de desenvolvimento</string>
     <string name="preferences_remote_debugging">Depuração remota via USB</string>
-    <string name="preferences_tracking_protection_private">Ativar o Modo de Navegação Pessoal</string>
+    <string name="preferences_tracking_protection_private">Ativar o modo de navegação Pessoal</string>
     <string name="privacy">Privacidade</string>
     <string name="browser_menu_back">Anterior</string>
     <string name="browser_menu_stop">Interromper</string>
@@ -326,4 +326,6 @@
     <string name="about_content_title">Compartilhe a Web!</string>
     <string name="top_sites_title">Atalhos</string>
     <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
+    <string name="update">Atualizar</string>
+    <string name="change_language">Mudar Idioma</string>
 </resources>
