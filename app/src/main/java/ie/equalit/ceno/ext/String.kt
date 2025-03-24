@@ -110,7 +110,7 @@ fun String.isDatePast(): Boolean {
 
     try {
         val date: Date = dateFormat.parse(this) ?: return false
-        return Date() < date
+        return Date() > date
     } catch (e: Exception) {
         e.printStackTrace()
         return false

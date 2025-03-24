@@ -21,6 +21,10 @@
         <!--
         <item name="android:progressBarStyleHorizontal">@style/progressBarStyleHorizontal</item>
         -->
+        <!-- Opt out of edge to edge display on Android 15 (enabled by default).
+        Note: opt out will not be supported starting Android 16 -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowBackground">@color/fx_mobile_layer_color_1</item>
         <item name="android:colorEdgeEffect">@color/accent_normal_theme</item>

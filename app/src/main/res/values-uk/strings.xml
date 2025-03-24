@@ -5,7 +5,7 @@
     <string name="menu_action_close_tabs">Закрити всі вкладки</string>
     <string name="menu_action_close_tabs_private">Закрити персональні вкладки</string>
     <string name="preferences_remote_debugging">Віддалене знаходження та усунення дефектів через USB</string>
-    <string name="preferences_tracking_protection_private">Увімкнути в режимі особистого перегляду</string>
+    <string name="preferences_tracking_protection_private">Увімкнути в режимі Персонального перегляду</string>
     <string name="privacy">Приватність</string>
     <string name="open_links_in_apps">Відкривати посилання у застосунках</string>
     <string name="developer_tools_category">Інструменти розробника</string>
@@ -41,7 +41,7 @@
     <string name="menu_share_with">Поділитися з…</string>
     <string name="toast_copied">Скопійовано!</string>
     <string name="preferences_customization_summary">Налаштування панелі інструментів</string>
-    <string name="preferences_tracking_protection_normal">Увімкнути в загальнодоступному режимі перегляду</string>
+    <string name="preferences_tracking_protection_normal">Увімкнути в Публічному режимі перегляду</string>
     <string name="preferences_privacy_summary">Відстеження, файли cookie, вибір даних</string>
     <string name="preferences_delete_browsing_data">Видалити дані перегляду</string>
     <string name="preferences_delete_browsing_data_cookies">Cookies</string>
@@ -307,11 +307,11 @@
     </plurals>
     <string name="error_page_sub_header">Це означає, що Ceno спробувала всі доступні механізми доступу до контенту, але жоден з них не був успішним:</string>
     <string name="error_page_learn_more">Дізнайтесь більше</string>
-    <string name="error_page_learn_more_1">Ви використовуєте останню версію Ceno Browser. Застарілі версії можуть не взаємодіяти з новими інжекторами або іншими клієнтами. Перевірте <a href="https://play.google.com/store/apps/details?id=ie.equalit.ceno">Сторінку завантажень</a> аби отримати нову версію.</string>
+    <string name="error_page_learn_more_1">Ви використовуєте останню версію браузера Ceno. Застарілі версії можуть не взаємодіяти з новими інжекторами або іншими користувачами. Перевірте <a href="https://play.google.com/store/apps/details?id=ie.equalit.ceno">Сторінку завантажень</a> аби отримати нову версію.</string>
     <string name="error_page_learn_more_3">Ваш пристрій має робоче з\'єднання з мережею, тобто звичайний веб браузер може відкривати деякі вебсайти. Ceno та Ouinet не можуть працювати, якщо всі підключення до мережі вимкнено.</string>
     <string name="content_description_close_button">Закрити</string>
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">Завантажити</string>
-    <string name="preferences_clear_behavior_option_1">Швидко</string>
+    <string name="preferences_clear_behavior_option_1">Негайно</string>
     <string name="preferences_clear_behavior_option_2">Очистити тільки кеш Ceno</string>
     <string name="preferences_clear_behavior_option_3">Очистити дані та кеш Ceno</string>
     <string name="preferences_theme_option_1">Темний</string>
