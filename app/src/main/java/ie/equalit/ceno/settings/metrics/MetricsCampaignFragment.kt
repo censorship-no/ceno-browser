@@ -33,13 +33,19 @@ class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
         controller = DefaultMetricsCampaignController(requireContext(), requireComponents)
 
         binding.campaignCrashReporting.isChecked = Settings.isCrashReportingPermissionGranted(requireContext())
+        binding.campaignOuinetMetrics.isChecked = Settings.isOuinetMetricsEnabled(requireContext())
+        /*
         binding.campaignDailyUsage.isChecked = Settings.isMetricsDailyUsageEnabled(requireContext())
         binding.campaignMonthlyUsage.isChecked = Settings.isMetricsMonthlyUsageEnabled(requireContext())
         binding.campaignAutoTracker.isChecked = Settings.isMetricsAutoTrackerEnabled(requireContext())
-
+        */
         binding.campaignCrashReporting.onCheckListener = { newValue ->
             controller.crashReporting(newValue)
         }
+        binding.campaignOuinetMetrics.onCheckListener = { newValue ->
+            controller.ouinetMetrics(newValue)
+        }
+        /*
         binding.campaignDailyUsage.onCheckListener = { newValue ->
             controller.dailyUsage(newValue) { granted ->
                 binding.campaignDailyUsage.isChecked = granted
@@ -67,7 +73,7 @@ class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
                     binding.campaignOne.isChecked = granted
                 }
             }
-        }
+        }*/
 
         val privacyPolicyUrl = requireContext().getString(R.string.privacy_policy_url)
         binding.privacyPolicy.setOnClickListener {
@@ -102,10 +108,10 @@ class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
     private fun getCheckboxes(): List<MetricsCampaignItem> {
         return listOf(
             binding.campaignCrashReporting,
-            binding.campaignDailyUsage,
-            binding.campaignMonthlyUsage,
-            binding.campaignAutoTracker,
-            binding.campaignOne,
+//            binding.campaignDailyUsage,
+//            binding.campaignMonthlyUsage,
+//            binding.campaignAutoTracker,
+//            binding.campaignOne,
         )
     }
 

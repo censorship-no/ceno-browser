@@ -53,8 +53,8 @@ object Settings {
     fun setUpdateSearchEngines(context: Context, value: Boolean) {
         val key = context.getString(R.string.pref_key_update_search_engines)
         PreferenceManager.getDefaultSharedPreferences(context)
-            .edit() {
-                putBoolean(key, value)
+                .edit() {
+                    putBoolean(key, value)
             }
     }
 
@@ -455,6 +455,19 @@ object Settings {
             "3" -> "${baseUrl}/${locale}/rss-announce-archive.xml"
             else -> "${baseUrl}/${locale}/rss-announce.xml"
         }
+    }
+
+    fun isOuinetMetricsEnabled(context: Context) : Boolean {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+            context.getString(R.string.pref_key_metrics_ouinet), false
+        )
+    }
+
+    fun setOuinetMetricsEnabled(context: Context, newValue:Boolean) {
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit() {
+                putBoolean(context.getString(R.string.pref_key_metrics_ouinet), newValue)
+            }
     }
 
 }

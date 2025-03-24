@@ -33,6 +33,7 @@ data class OuinetStatus(val auto_refresh : Boolean,
                         val local_udp_endpoints : Array<String>? = null,
                         val logfile : Boolean,
                         val max_cached_age : Int,
+                        val metrics_enabled: Boolean,
                         val origin_access : Boolean,
                         val ouinet_build_id : String,
                         val ouinet_protocol : Int,
@@ -53,13 +54,16 @@ enum class OuinetKey(val command : String) {
     GROUPS_TXT("groups.txt"),
     LOGFILE("?logfile"),
     EXTRA_BOOTSTRAPS("?bt_extra_bootstraps"),
-    LOG_LEVEL("log_level")
+    LOG_LEVEL("log_level"),
+    CENO_METRICS("?metrics")
 }
 
 enum class OuinetValue(val string: String) {
     DISABLED("disabled"),
     ENABLED("enabled"),
-    OTHER("other")
+    OTHER("other"),
+    ENABLE("enable"),
+    DISABLE("disable")
 }
 
 object CenoSettings {
@@ -464,6 +468,13 @@ object CenoSettings {
                         }
                         else
                             ouinetResponseListener?.onError()
+                    }
+                    OuinetKey.CENO_METRICS -> {
+                        if (response == null) {
+                            ouinetResponseListener?.onError()
+                        } else {
+                            ouinetResponseListener?.onSuccess(response)
+                        }
                     }
                 }
             }

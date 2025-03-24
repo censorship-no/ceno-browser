@@ -5,10 +5,15 @@
 package ie.equalit.ceno.settings.metrics
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import ie.equalit.ceno.Components
 import ie.equalit.ceno.R.string.clean_insights_successful_opt_in
 import ie.equalit.ceno.R.string.clean_insights_successful_opt_out
+import ie.equalit.ceno.settings.CenoSettings
+import ie.equalit.ceno.settings.OuinetKey
+import ie.equalit.ceno.settings.OuinetResponseListener
+import ie.equalit.ceno.settings.OuinetValue
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.Settings.setCleanInsightsEnabled
 import ie.equalit.ceno.settings.Settings.setMetricsDailyUsageEnabled
@@ -23,6 +28,7 @@ interface MetricsCampaignController {
     fun autoTracker(newValue: Boolean, callback : (Boolean) -> Unit)
     fun campaignOne(newValue: Boolean, callback: (Boolean) -> Unit)
     fun campaignTwo()
+    fun ouinetMetrics(newValue: Boolean)
 }
 
 @Suppress("LongParameterList")
@@ -128,5 +134,26 @@ class DefaultMetricsCampaignController(
     }
 
     override fun campaignTwo() {
+    }
+
+    override fun ouinetMetrics(newValue: Boolean) {
+        //web api call
+        CenoSettings.ouinetClientRequest(
+            context = context,
+            key = OuinetKey.CENO_METRICS,
+            newValue = if (newValue) OuinetValue.ENABLE else OuinetValue.DISABLE,
+            stringValue = null,
+            object : OuinetResponseListener {
+                override fun onSuccess(message: String, data: Any?) {
+                    Log.d("METRICS", "success")
+                    Settings.setOuinetMetricsEnabled(context, newValue)
+                }
+
+                override fun onError() {
+                    Log.e("TAG", "Failed to set log file to newValue: $newValue")
+                }
+            }
+        )
+        Log.d("METRICS", "shared preference ${Settings.isOuinetMetricsEnabled(context)}")
     }
 }
