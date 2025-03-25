@@ -389,7 +389,7 @@
     <string name="ouinet_startup_time_3">3</string>
     <string name="ouinet_startup_time_4">4</string>
     <string name="ouinet_startup_time_5">5</string>
-    <string name="thank_you_for_feedback">Thank you for your feedback!</string>
+    <string name="thank_you_for_feedback" tools:ignore="UnusedResources">Thank you for your feedback!</string>
     <string name="submit">Submit</string>
     <plurals name="preferences_ceno_groups_count_subtitle">
         <item quantity="one">%d site</item>
@@ -470,17 +470,17 @@
     <string name="ceno_notification_confirm_description">Do you want to clear all your data from Ceno?</string>
     <string name="preferences_metrics_campaign">Background metrics</string>
     <string name="metrics_campaign_more_info">More info</string>
-    <string name="metrics_campaign_dailyusage_title">Daily usage</string>
-    <string name="metrics_campaign_dailyusage_description">Anonymously submit a single metric each day that you open Ceno.</string>
-    <string name="metrics_campaign_monthlyusage_title">Monthly usage</string>
-    <string name="metrics_campaign_monthlyusage_description">Anonymously submit a single metric each month that you opened Ceno.</string>
-    <string name="metrics_campaign_autotracker_title">Auto-tracker</string>
-    <string name="metrics_campaign_autotracker_description">Record application starts and feature usage.</string>
-    <string name="metrics_campaign_one_title">Application startup time</string>
-    <string name="metrics_campaign_one_description">Records average startup time of application. Submits metrics daily.\nEnds January 31, 2025.</string>
-    <string name="metrics_campaign_view_privacy_policy">Privacy policy</string>
-    <string name="daily_usage">Daily usage</string>
-    <string name="monthly_usage">Monthly usage</string>
+    <string name="metrics_campaign_dailyusage_title" tools:ignore="UnusedResources">Daily usage</string>
+    <string name="metrics_campaign_dailyusage_description" tools:ignore="UnusedResources">Anonymously submit a single metric each day that you open Ceno.</string>
+    <string name="metrics_campaign_monthlyusage_title" tools:ignore="UnusedResources">Monthly usage</string>
+    <string name="metrics_campaign_monthlyusage_description" tools:ignore="UnusedResources">Anonymously submit a single metric each month that you opened Ceno.</string>
+    <string name="metrics_campaign_autotracker_title" tools:ignore="UnusedResources">Auto-tracker</string>
+    <string name="metrics_campaign_autotracker_description" tools:ignore="UnusedResources">Record application starts and feature usage.</string>
+    <string name="metrics_campaign_one_title" tools:ignore="UnusedResources">Application startup time</string>
+    <string name="metrics_campaign_one_description" tools:ignore="UnusedResources">Records average startup time of application. Submits metrics daily.\nEnds January 31, 2025.</string>
+    <string name="metrics_campaign_view_privacy_policy" tools:ignore="UnusedResources">Privacy policy</string>
+    <string name="daily_usage" tools:ignore="UnusedResources">Daily usage</string>
+    <string name="monthly_usage" tools:ignore="UnusedResources">Monthly usage</string>
     <string name="metrics_ouinet_title">Ouinet Metrics</string>
     <string name="metrics_ouinet_description">Ouinet Metrics</string>
 
