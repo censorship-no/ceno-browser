@@ -40,6 +40,7 @@ class Ouinet (
             .setMetricsServerToken("abcdefghijklmnopqrstuvwxyz")
             .setMetricsServerTlsCaCert(BuildConfig.METRICS_TLS_CA_CERT)
             .setMetricsEncryptionKey(BuildConfig.METRICS_PUB_KEY)
+            .setFrontEndAccessToken(CenoSettings.getRandomToken(context))
             .build()
     }
 
