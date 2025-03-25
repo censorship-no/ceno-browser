@@ -18,7 +18,9 @@ import java.util.Locale
 import kotlin.math.floor
 import kotlin.math.ln
 import kotlin.math.pow
+import kotlin.random.Random
 import androidx.core.content.edit
+import mozilla.components.concept.fetch.MutableHeaders
 
 
 @Serializable
@@ -70,6 +72,7 @@ object CenoSettings {
 
     const val SET_VALUE_ENDPOINT = "http://127.0.0.1:" + BuildConfig.FRONTEND_PORT
     const val LOGFILE_TXT = "logfile.txt"
+    const val TOKEN_LENGTH = 27
 
     private fun log2(n: Double): Double {
         return ln(n) / ln(2.0)
@@ -413,7 +416,8 @@ object CenoSettings {
             else
                 "${SET_VALUE_ENDPOINT}/${key.command}"
 
-            webClientRequest(context, Request(request)).let { response ->
+            val requestWithHeader = Request(request, headers = MutableHeaders(Pair("X-Ouinet-Front-End-Token", getRandomToken(context))))
+            webClientRequest(context, requestWithHeader).let { response ->
 
                 if(response == null) ouinetResponseListener?.onError()
 
@@ -480,5 +484,27 @@ object CenoSettings {
             }
             return@launch
         }
+    }
+
+    fun getRandomToken(context: Context) : String {
+        val savedToken = PreferenceManager.getDefaultSharedPreferences(context).getString(
+                context.getString(R.string.pref_key_metrics_ouinet_frontend_token), null)
+        return if(savedToken != null) savedToken else {
+            val token = generateRandomToken()
+            PreferenceManager.getDefaultSharedPreferences(context)
+                .edit() {
+                    putString(
+                        context.getString(R.string.pref_key_metrics_ouinet_frontend_token),
+                        token
+                    )
+                }
+            token
+        }
+    }
+    private fun generateRandomToken() : String{
+        val charPool: List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+        return (1..TOKEN_LENGTH)
+            .map { Random.nextInt(0, charPool.size).let { charPool[it] } }
+            .joinToString("")
     }
 }
