@@ -1,27 +1,26 @@
-Ceno (Censorship.No!) is a decentralized mobile web browser. It uses peer-to-peer technology to deliver websites to your phone and caches popular content with cooperating peers. Ceno can be used to bypass Internet censorship and help others retrieve blocked pages.
+A Mobile Web Browser for Bypassing Restrictions and Accessing the Internet — Even if It’s Slowed Down or Suddenly Shut Off in Your Region.
 
-Say NO to censorship! Install Ceno Browser today and be prepared for the next time you get 🔌 unplugged. 
+Ceno is a free browser that doesn’t require registration and is completely ad-free.
 
-🚫🌴 <strong>Resilient.</strong>
-Ceno is designed with internet shutdown scenarios in mind. Websites are shared by a global network of peers, and stored in a distributed cache for availability when traditional networks are blocked or go down.
+We collect only opt-in, anonymized data regarding app performance and do not share it with third parties.
 
-🔓👀 <strong>Unlock the web.</strong>
-Access any website. Frequently requested content is cached on the network  and cannot be forcibly removed. 
+Ceno operates on a peer-to-peer (P2P) network, allowing users to share information directly with each other.
 
-💲🌐 <strong>Reduce Data Costs.</strong>
-By routing user traffic through peer-to-peer networks, Ceno Browser incurs less data costs while still providing users with circumvention capability.
+🔓 👀 Access blocked media and other websites. Free and anonymous in Personal Mode.
 
-📖👐  <strong>Free and open source.</strong>
-Ceno Browser is powered by Ouinet, an open source library enabling third party developers to incorporate the Ceno network into their apps for peer-to-peer connectivity.
+🚫🌴 In case of a internet shutdown in your region, you will still be able to read news and stay connected.
 
-<strong>Important:</strong> Ceno has two modes of operation - public and personal. You can easily toggle between them. Public mode offers the best connectivity but the least privacy - websites that you visit or share are recorded in a publicly accessible registry (BitTorrent). Private mode eliminates this record but may be slower and less efficient at retrieving content. <strong>See the <a href="https://censorship.no/user-manual">User Manual</a> for more details on Ceno usage. </strong>
+📱🤝📱  Live in a country with free internet access? Help people in other countries bypass censorship and access independent information with just one tap. Learn more  <a href="https://ceno.network">on our website</a>.
 
-<strong>About eQualit.ie</strong>
-eQualit.ie develops open and reusable systems with a focus on privacy, online security, and information management. Our goal is to create accessible technology and improve the skill-set needed for defending human rights and freedoms in the digital age.
+📖👐 Ceno Browser is built on Ouinet, an open-source library. You can check the app’s code <a href="https://gitlab.com/censorship-no">on GitLab</a>,
 
-To learn more about Ceno Browser and its distributed library, Ouinet, please visit https://censorship.no
+🛠🦹🏻  Our product may experience instability due to the constant evolution of censorship technologies. We are continuously improving it to ensure you maintain access. If websites load slowly or don’t open, please don’t delete the app — try using it again in a few days or contact our support team: support@ceno.app
+
+Important: Ceno has two modes of operation - public and personal. You can easily toggle between them. Public mode offers the best connectivity but the least privacy - websites that you visit or share are recorded in a publicly accessible registry (BitTorrent). Private mode eliminates this record but may be slower and less efficient at retrieving content. See the <a href="https://ceno.network/support.html>FAQ</a> for more details on Ceno usage.
+
+Ceno is developed by <a href="https://equalitie.org">eQualitie</a>
 
 <strong>Questions / Need support?</strong>
-Read more in the <a href="https://censorship.no/user-manual/en/">Ceno User Manual</a>,  or contact us at support@censorship.no. We love receiving feedback and are continuously improving Ceno for its users!
+Read more in the <a href="https://ceno.network/user-manual/">Ceno User Manual</a>,  or contact us at support@ceno.app. We love receiving feedback and are continuously improving Ceno for its users!
 
 Stay connected, and help keep the web open and accessible to all!
