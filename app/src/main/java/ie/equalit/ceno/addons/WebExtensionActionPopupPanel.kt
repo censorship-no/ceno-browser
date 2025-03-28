@@ -103,8 +103,18 @@ class WebExtensionActionPopupPanel(
         val localCache = if (counts.has(BaseBrowserFragment.LOCAL_CACHE)) counts.getString(BaseBrowserFragment.LOCAL_CACHE).toFloat() else 0F
 
         binding.tvViaCenoNetworkCount.text = String.format(Locale.getDefault(),"%d", proxy.plus(injector).toInt())
-        binding.tvViaCenoCacheCount.text = String.format(Locale.getDefault(),"%d", distCache.plus(localCache).toInt())
+        binding.tvViaCenoCacheCount.text = String.format(Locale.getDefault(),"%d", distCache.toInt())
         binding.tvDirectFromWebsiteCount.text = String.format(Locale.getDefault(),"%d", origin.toInt())
+
+        if (localCache > 0F) {
+            //show local cache
+            binding.tvViaLocalCacheCount.visibility = View.VISIBLE
+            binding.tvViaLocalCache.visibility = View.VISIBLE
+            binding.tvViaLocalCacheCount.text = String.format(Locale.getDefault(),"%d", localCache.toInt())
+        } else {
+            binding.tvViaLocalCacheCount.visibility = View.GONE
+            binding.tvViaLocalCache.visibility = View.GONE
+        }
 
 
         val sum = distCache + origin + injector + proxy
