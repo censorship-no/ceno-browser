@@ -364,8 +364,8 @@
     <string name="download_site_content">Download site content</string>
     <string name="no_content_shared">Currently, you\'re not sharing any content</string>
     <string name="dismiss">Dismiss</string>
-    <string name="confirm_groups_file_download">Export list of shared content?</string>
-    <string name="confirm_groups_file_download_desc">A .txt file will be saved to your local storage.</string>
+    <string name="confirm_groups_file_download" tools:ignore="UnusedResources">Export list of shared content?</string>
+    <string name="confirm_groups_file_download_desc" tools:ignore="UnusedResources">A .txt file will be saved to your local storage.</string>
     <string name="confirm_clear_cached_content">Clear cached content?</string>
     <string name="confirm_clear_cached_content_desc">Your cached content will be removed immediately</string>
     <string name="clean_insights_header">Help make Ceno better!</string>
