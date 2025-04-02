@@ -73,7 +73,7 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
                     this
                 )
             )
-            binding.downloadButton.isGone = false
+            /*binding.downloadButton.isGone = false
             binding.downloadButton.setOnClickListener {
                 // confirmation nudge
                 AlertDialog.Builder(requireContext()).apply {
@@ -85,7 +85,7 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
                     }
                     create()
                 }.show()
-            }
+            }*/
         }
 
     }
