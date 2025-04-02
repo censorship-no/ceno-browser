@@ -106,7 +106,11 @@ class WebExtensionActionPopupPanel(
         binding.tvViaCenoCacheCount.text = String.format(Locale.getDefault(),"%d", distCache.toInt())
         binding.tvDirectFromWebsiteCount.text = String.format(Locale.getDefault(),"%d", origin.toInt())
 
-        if (localCache > 0F) {
+        if (localCache > 0F &&
+            origin == 0F &&
+            injector == 0F &&
+            proxy == 0F &&
+            distCache == 0F) {
             //show local cache
             binding.tvViaLocalCacheCount.visibility = View.VISIBLE
             binding.tvViaLocalCache.visibility = View.VISIBLE

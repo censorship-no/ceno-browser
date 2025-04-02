@@ -193,6 +193,7 @@
                 android:text="@string/preferences_clear_behavior_default"
                 android:textColor="@color/ceno_grey_300"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@+id/tv_via_ceno_cache_count"
                 app:layout_constraintTop_toBottomOf="@id/tv_via_ceno_cache_count" />
 
@@ -205,6 +206,7 @@
                 android:gravity="center_vertical"
                 android:text="@string/ceno_sources_shared_by_local_cache"
                 android:textColor="@color/ceno_grey_300"
+                android:visibility="gone"
                 app:drawableStartCompat="@drawable/shape_hexagon"
                 app:drawableTint="@color/ceno_grey_300"
                 app:layout_constraintBottom_toBottomOf="@id/tv_via_local_cache_count"
