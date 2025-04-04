@@ -97,7 +97,7 @@
     <string name="select_extra_bt_source">Selecione bootstrap extra do BitTorrent</string>
     <string name="bridge_mode_category">Anúncios de pontes</string>
     <string name="onboarding_warning_button">Ok</string>
-    <string name="ceno_notification_description">Toque para interromper</string>
+    <string name="ceno_notification_description">Pressione para mais informações</string>
     <string name="ceno_notification_home_description">Início</string>
     <string name="preferences_about_ceno_browser_service">Serviço do Navegador Ceno</string>
     <string name="preferences_toolbar_hide">Deslize para esconder</string>
@@ -329,4 +329,12 @@
     <string name="update">Atualizar</string>
     <string name="change_language">Mudar Idioma</string>
     <string name="about_content_para_1">Ceno (abreviação de censorship.no!) é o primeiro navegador móvel do mundo a contornar os métodos atuais de censura na Internet. Sua estrutura peer-to-peer permite que as pessoas acessem e compartilhem informações da web dentro e entre regiões onde a conectividade foi interrompida ou comprometida.</string>
+    <string name="ceno_network_status_disconnected">Desconectado. Verifique as configurações da sua rede ou exporte os logs para obter mais informações.</string>
+    <string name="ceno_network_status_connected">Totalmente conectado à rede Ceno. Alguns websites bloqueados devem ser acessíveis.</string>
+    <string name="ceno_network_status_degraded">Conectando-se à rede Ceno. Alguns sites podem estar indisponíveis. Verifique as configurações da sua rede ou exporte os logs para obter mais informações.</string>
+    <string name="contact_support">Entre em contato com o nosso suporte</string>
+    <string name="ceno_support_ticket_subject">Abra um ticket de suporte para Ceno</string>
+    <string name="about_content_para_2">Ceno Browser é um projeto da eQualitie – uma organização canadense sem fins lucrativos que cria serviços de internet descentralizados para apoiar uma rede mais igualitária e justa. As soluções da eQualitie são de código aberto, testadas em campo e desenvolvidas com os nossos valores em mente. Todos os dias, elas possibilitam a liberdade de associação para milhões de pessoas online.</string>
+    <string name="ceno_notification_title">Compartilhamento de abas em cache</string>
+    <string name="ceno_notification_confirm_description">Deseja excluir todos os seus dados conosco da Ceno?</string>
 </resources>
