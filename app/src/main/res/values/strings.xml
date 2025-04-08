@@ -324,6 +324,7 @@
     <string name="ceno_sources_direct_from_website">Direct from website</string>
     <string name="ceno_sources_via_ceno_network">Using Ceno network</string>
     <string name="ceno_sources_shared_by_ceno_cache">From Ceno cache</string>
+    <string name="ceno_sources_shared_by_local_cache">From browser cache</string>
     <string name="ceno_personal_browsing_description">Ceno will not share content from personal tabs with other users. You can visit sites that require login.</string>
     <string name="personal_home_learn_more">Want to learn more?</string>
     <string name="change_bt_bootstrap_server">Change BT Bootstrap Server</string>
@@ -363,8 +364,8 @@
     <string name="download_site_content">Download site content</string>
     <string name="no_content_shared">Currently, you\'re not sharing any content</string>
     <string name="dismiss">Dismiss</string>
-    <string name="confirm_groups_file_download">Export list of shared content?</string>
-    <string name="confirm_groups_file_download_desc">A .txt file will be saved to your local storage.</string>
+    <string name="confirm_groups_file_download" tools:ignore="UnusedResources">Export list of shared content?</string>
+    <string name="confirm_groups_file_download_desc" tools:ignore="UnusedResources">A .txt file will be saved to your local storage.</string>
     <string name="confirm_clear_cached_content">Clear cached content?</string>
     <string name="confirm_clear_cached_content_desc">Your cached content will be removed immediately</string>
     <string name="clean_insights_header">Help make Ceno better!</string>

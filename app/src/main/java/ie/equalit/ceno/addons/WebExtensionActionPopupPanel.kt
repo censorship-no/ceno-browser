@@ -80,9 +80,9 @@ class WebExtensionActionPopupPanel(
         //val nextIcon = AppCompatResources.getDrawable(context, R.drawable.mozac_ic_arrowhead_right)
 
         val securityIcon = if (isConnectionSecure) {
-            AppCompatResources.getDrawable(context, R.drawable.mozac_ic_lock)
+            AppCompatResources.getDrawable(context, R.drawable.mozac_ic_lock_24)
         } else {
-            AppCompatResources.getDrawable(context, R.drawable.mozac_ic_warning)
+            AppCompatResources.getDrawable(context, R.drawable.mozac_ic_lock_slash_24)
         }
 
         binding.securityInfo.putCompoundDrawablesRelativeWithIntrinsicBounds(
@@ -100,10 +100,25 @@ class WebExtensionActionPopupPanel(
         val proxy = if (counts.has(BaseBrowserFragment.PROXY)) counts.getString(BaseBrowserFragment.PROXY).toFloat() else 0F
         val injector = if (counts.has(BaseBrowserFragment.INJECTOR)) counts.getString(BaseBrowserFragment.INJECTOR).toFloat() else 0F
         val origin = if (counts.has(BaseBrowserFragment.ORIGIN)) counts.getString(BaseBrowserFragment.ORIGIN).toFloat() else 0F
+        val localCache = if (counts.has(BaseBrowserFragment.LOCAL_CACHE)) counts.getString(BaseBrowserFragment.LOCAL_CACHE).toFloat() else 0F
 
         binding.tvViaCenoNetworkCount.text = String.format(Locale.getDefault(),"%d", proxy.plus(injector).toInt())
         binding.tvViaCenoCacheCount.text = String.format(Locale.getDefault(),"%d", distCache.toInt())
         binding.tvDirectFromWebsiteCount.text = String.format(Locale.getDefault(),"%d", origin.toInt())
+
+        if (localCache > 0F &&
+            origin == 0F &&
+            injector == 0F &&
+            proxy == 0F &&
+            distCache == 0F) {
+            //show local cache
+            binding.tvViaLocalCacheCount.visibility = View.VISIBLE
+            binding.tvViaLocalCache.visibility = View.VISIBLE
+            binding.tvViaLocalCacheCount.text = String.format(Locale.getDefault(),"%d", localCache.toInt())
+        } else {
+            binding.tvViaLocalCacheCount.visibility = View.GONE
+            binding.tvViaLocalCache.visibility = View.GONE
+        }
 
 
         val sum = distCache + origin + injector + proxy

@@ -724,7 +724,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler {
         const val ORIGIN = "origin"
         const val INJECTOR = "injector"
         const val PROXY = "proxy"
-//        const val LOCAL_CACHE = "local-cache"
+        const val LOCAL_CACHE = "local-cache"
 
         const val URL = "url"
     }
