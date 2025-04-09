@@ -1,0 +1,19 @@
+Share the Web! Ceno is the world's first web browser that gets better with every installation. Offering a common Internet browsing experience, it relies on a peer-to-peer technology to deliver and share websites among all participants. Ceno can also be used to bypass network restrictions and browse content during a shutdown.
+
+Ceno is a completely free and open source browser that doesn’t require registration. It is completely ad-free.
+
+We collect only opt-in, anonymized data regarding app performance and do not share it with third parties.
+
+🔓 👀 Access blocked media and other websites. Free and anonymous in Personal Mode.
+
+🚫🌴 In case of a internet shutdown in your region, you will still be able to read news and stay connected.
+
+📱🤝📱  Live in a country with free internet access? Help people in other countries bypass censorship and access independent information with just one tap. Learn more <a href="https://ceno.network">on our website</a>.
+
+📖👐 Ceno Browser is built on Ouinet, an open-source library. You can check the app’s code <a href="https://gitlab.com/censorship-no">on GitLab</a>.
+
+🛠🦹🏻  Our product may experience instability due to the constant evolution of censorship technologies. We are continuously improving it to ensure you maintain access. If websites load slowly or don’t open, please don’t delete the app — try using it again in a few days or contact our support team: support@ceno.app
+
+See the <a href="https://ceno.network/user-manual/">User Manual</a> for more details on Ceno usage or contact us at support@ceno.app. We love receiving feedback and are continuously improving Ceno for its users!
+
+Ceno is developed by <a href="https://equalitie.org">eQualit.ie</a>
