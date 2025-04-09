@@ -186,7 +186,7 @@ platform :android do
       createReleaseNotes
   end
 
-  desc "Publish metadata to Play Store"
+  desc "Publish metadata and screenshots to Play Store"
   lane :publishMetadata do
     # Temporarily rename pt to pt-PT, only pt-PT is supported by play store
     sh "mv metadata/android/pt metadata/android/pt-PT"
@@ -196,7 +196,8 @@ platform :android do
       skip_upload_metadata: 'false',
       skip_upload_changelogs: 'true',
       skip_upload_images: 'true',
-      skip_upload_screenshots: 'true',
+      skip_upload_screenshots: 'false',
+      sync_image_upload: 'true'
     )
     sh "mv metadata/android/pt-PT metadata/android/pt"
   end

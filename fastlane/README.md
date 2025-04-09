@@ -109,7 +109,7 @@ Prepare release APKS, AAB, and release notes
 [bundle exec] fastlane android publishMetadata
 ```
 
-Publish metadata to Play Store
+Publish metadata and screenshots to Play Store
 
 ----
 
