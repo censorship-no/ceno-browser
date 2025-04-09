@@ -1,8 +1,0 @@
-Diese Version:
-- Aktualisiert Android-Komponenten auf v132.0
-- Aktualisiert UI-Tests
-- Repariert Tooltips für Geräte mit kleinem Bildschirm
-- Refaktorisiert Berechtigungen und fügt Option zum widerrufen hinzu
-- Aktualisiert Ouinet auf v0.30.1
-- Fügt "Bring mich trotzdem zu Ceno" Option zum Standby-Timeout Dialog hinzu
-- Behebt "scrollen um Symbolleiste zu verstecken" Fehler

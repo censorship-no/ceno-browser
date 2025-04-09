@@ -1,1 +1,0 @@
-O código-fonte do Upstream Ceno usa bibliotecas pré-construídas da Mozilla que não são totalmente gratuitas. Para o lançamento do Ceno Browser F-Droid, corrigimos as partes não livres e construímos essas bibliotecas do zero.

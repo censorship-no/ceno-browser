@@ -1,7 +1,0 @@
-Esta versión oficial:
-- Modifica la apariencia de la ventana emergente Ceno Sources
-- Actualiza la librería Android-Components a v109.2.0
-- Actualiza Ouinet a v0.21.6
-- Corrige la eliminación de entradas en la barra de direcciones mientras se escribe
-- Cambia el diseño y el comportamiento de los botones de navegación en el menú
-- Actualizaciones menores en las traducciones

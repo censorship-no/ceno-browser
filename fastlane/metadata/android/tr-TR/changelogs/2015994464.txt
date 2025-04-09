@@ -1,5 +1,0 @@
-Bu yama sürümünde:
-- Android Bileşenleri 128.0.3 sürümüne güncellendi
-- Araç çubuğu durum simgesiyle ilgili IllegalStateException çökmesi düzeltildi
-- Hata sayfası kullanıcı arayüzünde, yenilemek için kaydırma işlemi ile birlikte bazı küçük iyileştirmeler yapıldı
-- Özellikle Farsça olmak üzere bazı dillerin çevirilerini güncellendi

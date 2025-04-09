@@ -1,1 +1,0 @@
-Le code source de Ceno utilise en amont des bibliothèques préconstruites de Mozilla qui ne sont pas entièrement libres. Pour la version F-Droid du navigateur Ceno, nous avons corrigé les parties non libres et avons créé ces bibliothèques à partir de zéro.

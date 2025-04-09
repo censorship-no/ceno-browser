@@ -1,9 +1,0 @@
-Diese Version:
-- Fügt Option zum Export von Protokollen auf Standby-Seite hinzu
-- Entfernt Autofill-Service von Einstellungen
-- Behebt UI-Fehler mit Symbolleiste, die einen Teil der Webansicht verdeckt
-- Aktualisiert Android-Komponenten auf v130.0
-- Aktualisiert Ouinet auf v0.29.0
-- Erzwingt Symbolleiste-Position auf oben für Android 7.1 und älter
-- Behebt kleine Fehler bei Abstürzen
-- Aktualisiert die Übersetzungen von Lokalisierungen

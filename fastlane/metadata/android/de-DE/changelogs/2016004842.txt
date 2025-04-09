@@ -1,7 +1,0 @@
-Diese Version:
-- Fügt die Option in den Einstellungen hinzu, die Sprache der App zu ändern
-- Ersetzt Onboarding-Seiten mit Symbolleisten geführtem Onboarding
-- Aktualisiert die Standby-Seiten UI
-- Aktualisiert Android-Komponenten auf v130.0.1
-- Aktualisiert Ouinet auf v0.29.1
-- Aktualisiert die Übersetzungen von Lokalisierungen

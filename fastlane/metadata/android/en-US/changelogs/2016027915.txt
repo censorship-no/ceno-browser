@@ -1,4 +1,0 @@
-This release:
-- Fixes Ceno support email not being populated
-- Updates Android-Components to v134.0.1
-

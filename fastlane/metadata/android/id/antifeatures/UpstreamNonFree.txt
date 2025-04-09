@@ -1,1 +1,0 @@
-Kode sumber hulu Ceno menggunakan pustaka yang sudah dibuat sebelumnya dari Mozilla yang mana tidak gratis sepenuhnya. Untuk rilisan Peramban Ceno di F-Droid, kami tambal bagian yang tidak gratis ini dan membangun pustaka tersebut dari nol.

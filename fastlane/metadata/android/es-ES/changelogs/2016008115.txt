@@ -1,7 +1,0 @@
-Esta versión:
-- Corrige errores relacionados con el cambio de idioma de la aplicación desde la configuración
-- Actualizaciones de Android-Componentes a v131.0
-- Actualiza varias bibliotecas de Android
-- Corrige errores con permisos tooltip
-- Añade capacidad para seleccionar el idioma de la aplicación en el tooltip de bienvenida
-- Añade opción para guardar registros en el almacenamiento y mejora la interfaz de usuario de compartir registros

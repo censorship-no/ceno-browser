@@ -1,7 +1,0 @@
-Esta versión:
-- Añade la opción de configuración para cambiar el idioma de la aplicación
-- Sustitución de las pantallas de introducción por una introducción guiada por herramientas.
-- Actualiza la interfaz de usuario de la página de espera
-- Actualiza los componentes de Android a v130.0.1
-- Actualiza Ouinet a v0.29.1
-- Actualiza las traducciones a varios idiomas

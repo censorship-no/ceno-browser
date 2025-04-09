@@ -1,1 +1,0 @@
-Upstream Ceno Quellcode verwendet vorgefertigte Bibliotheken von Mozilla, die nicht vollständig frei sind. Für die F-Droid Version des Ceno Browsers ersetzen wir die nicht-freien Teile und erstellen die Bibliotheken von Grund auf.

@@ -1,7 +1,0 @@
-Cette version officielle :
-- Modifie l'apparence de la fenêtre pop-up Ceno Sources
-- Mise à jour de la bibliothèque Android-Composants vers la version 109.2.0
-- Mise à jour de Ouinet vers la version 0.21.6
-- Corrige la suppression des entrées dans la barre d'adresse pendant la frappe
-- Modifie la disposition et le comportement des boutons de navigation dans le menu
-- Mises à jour mineures des traductions

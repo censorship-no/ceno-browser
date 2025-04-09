@@ -1,7 +1,0 @@
-Bu resmi sürümde:
-- Ceno Kaynakları açılır penceresinin görünümünü değiştirildi
-- Android-Components kitaplığı v109.2.0 sürümüne güncellendi
-- Ouinet v0.21.6 sürümüne güncellendi
-- Yazarken adres çubuğundaki kayıtların silinmesi düzeltildi
-- Menüdeki gezinme düğmelerinin düzeni ve davranışı değiştirildi
-- Çevirilerde küçük güncellemeler yapıldı

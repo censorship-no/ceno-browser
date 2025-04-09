@@ -1,7 +1,0 @@
-Bu yama sürümünde:
-- Android bileşenleri 129.0.2 sürümüne güncellendi
-- Ouinet 0.28.0 sürümüne güncellendi
-- Kullanıcı arayüzü Hakkında sayfasına yeni bağlantılar eklenti ve logolar güncellendi
-- Android 7.1 ve öncesi için varsayılan araç çubuğu konumu üstte olarak ayarlandı
-- Dizge kaynakları yeniden düzenlendi
-- Çeşitli yerellerin çevirileri güncellendi

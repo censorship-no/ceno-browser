@@ -1,1 +1,0 @@
-Upstream Ceno source code uses pre-built libraries from Mozilla which are not entirely free. For the F-Droid release of Ceno Browser, we patch the non-free parts and build these libraries from scratch.

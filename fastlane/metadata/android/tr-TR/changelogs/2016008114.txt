@@ -1,7 +1,0 @@
-Bu sürümde:
-- Ayarlar bölümünde uygulama dilini değiştirmekle ilgili sorunlar düzeltildi
-- Android-Components 131.0 sürümüne güncellendi
-- Çeşitli Android kitaplıkları güncellendi
-- İzinler ipucundaki hatalar düzeltildi
-- Karşılama ipucuna uygulama dilini seçme özelliği eklendi
-- Günlükleri depolama alanına kaydetme seçeneği eklendi ve günlük paylaşım arayüzü geliştirildi

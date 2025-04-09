@@ -1,5 +1,0 @@
-Diese Version:
-- Aktualisiert Android-Komponenten auf 128.0.3
-- Behebt IllegalStateException Absturz in Verbindung mit Symbolleisten-Statussymbol
-- Kleinere Verbesserungen der Fehlerseiten UI, inkl. herunterwischen zum Aktualisieren
-- Aktualisiert Übersetzungen für bestimmte Lokalisierungen, insbesondere Persisch

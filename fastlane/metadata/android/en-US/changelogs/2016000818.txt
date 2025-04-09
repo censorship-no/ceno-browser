@@ -1,7 +1,0 @@
-This patch release:
-- Updates Android-Components to 129.0.2
-- Updates Ouinet to v0.28.0
-- Updates UI for about page with new links and updated logos
-- Sets default toolbar position to top for Android 7.1 and earlier
-- Refactors string resources
-- Updates translations for certain locales

@@ -1,7 +1,0 @@
-Cette version du correctif :
-- Mise à jour de Android- Composants vers 129.0.2
-- Mise à jour de Ouinet vers v0.28.0
-- Mise à jour de l'interface utilisateur pour la page À propos avec de nouveaux liens et des logos mis à jour
-- Définit la position de la barre d'outils par défaut en haut pour Android 7.1 et les versions antérieures
-- Refactorisation des ressources de type chaîne de caractères
-- Mise à jour des traductions pour certaines langues

@@ -1,7 +1,0 @@
-Cette version :
-- Ajout d'une option de paramétrage pour modifier la langue de l'application
-- Remplacement des écrans d'accueil par des écrans d'accueil guidés par des infobulles
-- Mise à jour de la page de veille sur l'interface utilisateur
-- Mise à jour de Android-Composants vers la v130.0.1
-- Mise à jour de Ouinet vers la v0.29.1
-- Mise à jour des traductions pour diverses localités

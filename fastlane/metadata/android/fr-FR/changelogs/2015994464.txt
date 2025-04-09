@@ -1,5 +1,0 @@
-Cette version du correctif :
-- Mise à jour de Android-Composants vers la version 128.0.3
-- Correction de l'erreur IllegalStateException liée à l'icône d'état de la barre d'outils.
-- Améliorations mineures de l'interface utilisateur de la page d'erreur, y compris l'action de rafraîchissement par balayage.
-- Mise à jour des traductions pour certaines langues, en particulier le persan

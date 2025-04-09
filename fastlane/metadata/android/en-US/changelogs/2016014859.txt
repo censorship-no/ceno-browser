@@ -1,4 +1,0 @@
-This release:
-- Updates Ceno extension to v1.8.1
-- Updates Android-Components to v132.0.2
-- Updates Ouinet to v0.31.0

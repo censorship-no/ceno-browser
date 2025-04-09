@@ -1,4 +1,0 @@
-Esta versión:
-- Actualiza la extensión Ceno a v1.8.1
-- Actualiza los componentes de Android a la versión v132.0.2
-- Actualiza Ouinet a v0.31.0

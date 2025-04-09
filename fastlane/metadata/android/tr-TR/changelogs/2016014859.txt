@@ -1,4 +1,0 @@
-Bu sürümde:
-- Ceno eklentileri v1.8.1 sürümüne güncellendi
-- Android-Components v132.0.2 sürümüne güncellendi
-- Ouinet v0.31.0 sürümüne güncellendi

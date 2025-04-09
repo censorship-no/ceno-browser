@@ -1,7 +1,0 @@
-This release:
-- Fixes bugs related to changing language of application from settings
-- Updates Android-Components to v131.0
-- Updates various Android libraries
-- Fixes bugs with permissions tooltip
-- Adds ability to select app language on the welcome tooltip
-- Adds option to save logs to storage ands improves share logs UI

@@ -1,9 +1,0 @@
-Bu yama sürümünde:
-- Bekleme sayfasında günlükleri dışa aktarma seçeneği eklendi
-- Otomatik doldurma hizmeti ayar seçeneklerinden kaldırıldı
-- Kullanıcı arayüzünde, site görünümünün bir bölümünü kaplayan araç çubuğu hatası düzeltildi
-- Android bileşenleri 130.0 sürümüne güncellendi
-- Ouinet 0.29.0 sürümüne güncellendi
-- Android 7.1 ve öncesi için araç çubuğunu üstte görüntülenmesi sağlandı
-- Çökmeler için küçük hata düzeltmeleri yapıldı
-- Çeşitli yerellerin çevirileri güncellendi

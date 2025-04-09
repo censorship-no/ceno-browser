@@ -1,9 +1,0 @@
-This patch release:
-- Adds option to export logs from standby page
-- Removes autofill service from setting options
-- Fixes UI bug with toolbar covering part of web view
-- Updates Android-Components to v130.0
-- Updates Ouinet to v0.29.0
-- Forces toolbar to top position for Android 7.1 and earlier
-- Minor bug fixes for crashes
-- Updates translations for various locales

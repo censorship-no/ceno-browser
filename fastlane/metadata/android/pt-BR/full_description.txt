@@ -1,31 +1,27 @@
-Ceno (Censorship.No!) É um navegador móvel descentralizado. Ele usa tecnologia ponto a ponto para entregar sites ao seu dispositivo móvel e armazena em cache conteúdo popular com pares cooperantes. O Ceno pode ser usado para contornar a censura da Internet e ajudar outras pessoas a recuperar páginas bloqueadas.
+Ceno (Censorship.No!) é um navegador descentralizado para dispositivos móveis. Ele usa tecnologia P2P para entregar websites para o seu telefone e armazena em cache conteúdos populares entre seus pares. Ceno pode ser usado para ultrapassar a censura na Internet e ajudar outros a recuperar páginas bloqueadas.
 
-Diga NÃO à censura!
-Instale o Ceno Browser hoje e esteja preparado para a próxima vez que você for desconectado.
+Diga NÃO à censura! Instale o Navegador Ceno hoje e prepare-se para a próxima vez que você sofrer com uma 🔌 desconexão.
 
-🚫🌴 <strong>Off-line primeiro.</strong> 
-O Ceno foi projetado tendo em mente cenários de desligamento da Internet. Os sites são compartilhados por uma rede global de pares e armazenados em um cache distribuído para disponibilidade quando as redes tradicionais são bloqueadas ou ficam inativas. 
+🚫🌴 <strong>Offline em primeiro lugar.</strong>
+Ceno é projetado com cenários de desligamento da internet em mente. Websites são compartilhados por uma rede global de pessoas e são armazenados em um cache distribuído para ficarem disponíveis quando as redes tradicionais estiverem bloqueadas ou caírem.
 
 🔓👀 <strong>Desbloqueie a web.</strong>
-Acesse qualquer site. O conteúdo solicitado com frequência é armazenado em cache na rede e não pode ser removido à força. 
+Acesse qualquer website. Conteúdos solicitados com frequência são armazenados em cache na rede e não podem ser removidos à força.
 
-💲🌐 <strong>Reduza os custos de dados.</strong>
-Ao rotear o tráfego do usuário através de redes peer-to-peer, o Ceno Browser incorre em menos custos de dados, ao mesmo tempo que fornece aos usuários capacidade de evasão.
+💲🌐 <strong>Reduzir custos com dados.</strong>
+Ao rotear o tráfego de usuário através de redes P2P, o Navegador Ceno gera menos custos com dados e, ao mesmo tempo, oferece aos usuários a capacidade de contornar bloqueios.
 
- 📖👐 <strong>Gratuito e de código aberto.</strong>
-O Ceno Browser é desenvolvido pela Ouinet, uma biblioteca de código aberto que permite que desenvolvedores terceirizados incorporem a rede Ceno em seus aplicativos para conectividade ponto a ponto.
+📖👐 <strong>Livre e de código aberto.</strong>
+O navegador Ceno é oferecido pela Ouinet, uma biblioteca de código aberto que permite a desenvolvedores externos incorporar a rede CENO em aplicativos para prover conectividade P2P.
 
-<strong>Observação:</strong> Ceno não é uma ferramenta de anonimato: informações sobre sua navegação podem ser vazadas para outros usuários do Ceno, bem como o fato de seu aplicativo estar fornecendo conteúdo específico da web para terceiros. O conteúdo acessado com o aplicativo pode permanecer armazenado em texto não criptografado por algum tempo, no entanto, você pode limpar todo o conteúdo armazenado a qualquer momento usando o recurso 'Limpar agora'. 
-
-<strong>Anti-recursos do F-Droid:</strong>
-O código-fonte do Upstream Ceno usa bibliotecas pré-construídas da Mozilla que não são totalmente gratuitas. Para o lançamento do Ceno Browser F-Droid, corrigimos as partes não livres e construímos essas bibliotecas do zero.
+<strong>Por favor, observe:</strong> o Ceno não é uma ferramenta de anonimato: informações sobre sua navegação podem ser vazadas para outros usuários Ceno, assim como o fato de sua aplicação estar disponibilizando determinado conteúdo web para outros. Conteúdo acessado com a aplicação pode ficar armazenado em texto explícito por algum tempo, mas você pode limpar todo o conteúdo armazenado a qualquer momento usando a funcionalidade "Limpar Agora."
 
 <strong>Sobre eQualit.ie</strong>
-A eQualit.ie desenvolve sistemas abertos e reutilizáveis com foco na privacidade, segurança online e gerenciamento de informações. O nosso objetivo é criar tecnologia acessível e melhorar o conjunto de competências necessárias para defender os direitos humanos e as liberdades na era digital.
+eQualit.ie desenvolve sistemas abertos e reutilizáveis com foco em privacidade, segurança online e gerenciamento de informação. Nosso objetivo é criar tecnologia acessível e melhorar o conjunto de habilidades necessário para defender direitos humanos e liberdade na era digital.
 
-Para saber mais sobre o Ceno Browser e sua biblioteca distribuída, Ouinet, visite https://censorship.no 
+Para saber mais sobre o Navegador Ceno e sua biblioteca distribuída, Ouinet, por favor visite https://censorship.no
 
-<strong>Dúvidas/Precisa de suporte?</strong>
-Leia mais no <a href="https://censorship.no/user-manual/en/">Manual do usuário Ceno</a> ou entre em contato conosco pelo e-mail support@censorship.no. Adoramos receber feedback e estamos melhorando continuamente o Ceno para seus usuários!
+<strong>Perguntas / Precisa de ajuda?</strong>
+Leia mais no <a href="https://censorship.no/user-manual/pt_BR/">Manual de usuário do Ceno</a>, ou fale conosco em support@cenosorship.no. Nós amamos receber feedback e estamos continuamente melhorando Ceno para seus usuários!
 
-Fique conectado e ajude a manter a web aberta e acessível a todos!
+Fique conectado, e ajude a manter a web aberta e acessível para todo mundo!

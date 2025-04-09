@@ -1,7 +1,0 @@
-Diese Version:
-- Ändert das Aussehen des Ceno Quellen-Pop-Up
-- Aktualisiert Android-Komponenten-Bibliothek auf v109.2.0
-- Aktualisiert Ouinet auf v0.21.6
-- Behebt Löschung von Einträgen in der Adressleiste beim eintippen
-- Ändert Layout und Verhalten von Navigationstasten im Menü
-- Kleine Aktualisierungen der Übersetzungen

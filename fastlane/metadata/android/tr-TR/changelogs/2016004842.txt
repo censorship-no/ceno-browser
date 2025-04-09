@@ -1,7 +1,0 @@
-Bu sürümde:
-- Uygulamanın dilini değiştirmek için ayar seçeneği eklendi
-- Başlangıç ekranları araç ipucu rehberli başlangıç ile değiştirildi
-- Bekleme sayfası kullanıcı arayüzünde güncellemeler yapıldı
-- Android bileşenleri 130.0.1 sürümüne güncellendi
-- Ouinet 0.29.1 sürümüne güncellendi
-- Çeşitli yerel ayarların çevirileri güncellendi

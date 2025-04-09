@@ -1,9 +1,0 @@
-Bu sürümde:
-- İlk "Temiz içgörüler" ölçüm kampanyası uygulandı
-- Gizli bir geliştirici araçları alt menüsü eklendi
-- İngilizce yerel ayar dizgeleri eklendi
-- Tek renkli başlatıcı simgeleri desteği eklendi
-- Android bileşenleri 133.0.3 sürümüne güncellendi
-- Giriş sayfasına bir Ceno ağ bağlantısı durumu göstergesi eklendi
-- cacert.pem paketi güncellendi
-- Çeşitli yerel ayarların çevirileri güncellendi

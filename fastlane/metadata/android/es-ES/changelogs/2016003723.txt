@@ -1,9 +1,0 @@
-Esta versión del parche:
-- Añade la opción de exportar registros desde la página de espera
-- Elimina el servicio de autorrelleno de las opciones de configuración
-- Corrige un error de interfaz de usuario con la barra de herramientas que cubre parte de la vista web
-- Actualiza Android-Components a v130.0
-- Actualiza Ouinet a v0.29.0
-- Fuerza la barra de herramientas a la posición superior para Android 7.1 y anteriores
-- Corrección de errores menores
-- Actualizada las traducciones a varios idiomas

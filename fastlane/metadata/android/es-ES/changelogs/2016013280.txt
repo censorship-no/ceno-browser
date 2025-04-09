@@ -1,8 +1,0 @@
-Esta versión:
-- Actualiza los componentes de Android a la versión v132.0
-- Actualiza las pruebas de UI
-- Corrige las descripciones emergentes para dispositivos de pantalla pequeña.
-- Refactoriza los permisos y agrega la opción de revocarlos a través de Configuración
-- Actualiza Ouinet a v0.30.1
-- Agrega la opción "Llévame a Ceno de todos modos" al cuadro de diálogo de tiempo de espera.
-- Corrige el error de desplazarse para ocultar la barra de herramientas

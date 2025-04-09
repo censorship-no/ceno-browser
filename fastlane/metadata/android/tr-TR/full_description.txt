@@ -1,27 +1,27 @@
-Ceno (Censorship.No!) merkezi olmayan bir mobil İnternet tarayıcısıdır. Eşler arası teknolojisini kullanarak siteleri mobil aygıtınıza getirir ve diğer eşlerin sık eriştiği içerikleri ön belleğine alır. Ceno İnternet sansürünü aşmak ve başkalarının engellenen sayfalara erişmesini sağlamak için kullanılabilir. 
+Ceno (Censorship.No!) merkezi olmayan bir mobil internet tarayıcısıdır. Uçtan uca teknolojisini kullanarak siteleri telefonunuza getirir ve diğer eşlerin sık eriştiği içerikleri ön belleğine alır. Ceno internet sansürünü aşmak ve başkalarının engellenen sayfalara erişmesini sağlamak için kullanılabilir. 
 
 Sansüre HAYIR deyin! Şimdi Ceno Browser kurun ve gelecekte 🔌 fişiniz çekildiğinde hazır olun. 
 
-🚫🌴 <strong>Önce çevrim dışı.</strong>
-Ceno İnternet erişiminin engellendiği durumlar göz önünde bulundurularak tasarlandı. Normal İnternet ağları engellendiğinde veya kapatıldığında kullanılabilmesi için siteler tüm dünyadaki eşlerden oluşan ağ tarafından paylaşılır ve dağıtılmış bir ön bellekte depolanır.
+🚫🌴 <strong>Önce çevrimdışı.</strong>
+Ceno internetin kapatıldığı durumlar göz önünde bulundurularak tasarlandı. Normal internet ağları engellendiğinde veya kapatıldığında kullanılabilmesi için siteler tüm dünyadaki eşlerden oluşan ağ tarafından paylaşılır ve dağıtılmış bir ön bellekte depolanır.
 
-🔓👀 <strong>İnternet kapısının kilidini açın.</strong>
+🔓👀 <strong>İnternet kilidini açın.</strong>
 İstediğiniz siteye erişin. Sık erişilen sayfalar ağda ön belleğe kaydedilir ve zorla silinemez. 
 
 💲🌐 <strong>Veri ücretlerini azaltın.</strong>
-Ceno Browser, kullanıcı trafiğini eşler arası ağlar üzerinden geçirerek hem daha az veri kullanır hem de kullanıcıların sansürü aşmasını sağlar.
+Kullanıcı trafiğini uçtan uca ağlar üzerinden geçirerek hem daha az veri kullanır hem de kullanıcıların sansürü aşmasını sağlar.
 
 📖👐  <strong>Özgür ve açık kaynaklı.</strong>
-Ceno Browser açık kaynaklı Ouinet kitaplığı ile çalışır. Bu kitaplık geliştiricilerin uygulamalarına eşler arası bağlanabilirlik eklemek için Ceno ağını kullanabilmesini sağlar.
+Ceno Browser açık kaynaklı Ouinet kitaplığı ile çalışır. Bu kitaplık geliştiricilerin uygulamalarına uçtan uca bağlanabilirlik eklemek için CENO ağını kullanabilmesini sağlar.
 
-<strong>Önemli:</strong> Ceno herkese açık ve kişisel olmak üzere iki farklı kipte çalışır. Bu kipler arasında kolayca geçiş yapabilirsiniz. Herkese açık kip en iyi bağlantıyı sunar ancak en az gizliliği sağlar. Ziyaret ettiğiniz veya paylaştığınız siteler herkese açık bir kayıt defterine (BitTorrent) kaydedilir. Kişisel kip bu kaydı ortadan kaldırır ancak içeriği almada daha yavaş ve daha az verimli olabilir. <strong>Ceno kullanımı hakkında ayrıntılı bilgi almak için <a href="https://censorship.no/user-manual">Kullanıcı rehberine</a> bakın.</strong>
+<strong>Unutmayın:</strong> Ceno bir anonimlik aracı değildir: İnternet gezinmeleriniz başka Ceno kullanıcılarına sızabilir. Aynı şekilde tarayıcınız bazı internet içeriklerini başkalarına sağlıyor olabilir. Uygulama ile erişilen içerik depolama alanında bir süre düz metin olarak tutulabilir. Bununla birlikte istediğiniz zaman depolanmış tüm içeriği 'Şimdi temizle' seçeneği ile kaldırabilirsiniz.
 
 <strong>eQualit.ie hakkında</strong>
-eQualit.ie gizlilik, çevrim içi güvenlik ve bilgi yönetimine odaklanmış özgür ve yeniden kullanılabilir teknolojiler geliştirir. Hedefimiz dijital çağda insan hak ve özgürlüklerini korumak için gerekli olan deneyimleri edinmek ve erişilebilir bir teknoloji oluşturmaktır.
+eQualit.ie gizlilik, çevrimiçi güvenlik ve bilgi yönetimine odaklanmış özgür ve yeniden kullanılabilir teknolojiler geliştirir. Hedefimiz dijital çağda insan hak ve özgürlüklerini korumak için gerekli olan deneyimleri edinmek ve erişilebilir bir teknoloji oluşturmaktır.
 
 Ceno Browser ve paylaşımlı kitaplığı Ouinet hakkında ayrıntılı bilgi almak için https://censorship.no adresine bakabilirsiniz
 
 <strong>Sorularınız mı var ya da destek mi gerekiyor?</strong>
 <a href="https://censorship.no/user-manual/en/">Ceno kullanıcı rehberi</a> içinde ayrıntılı bilgiler bulabilir veya support@censorship.no adresinden bize ulaşabilirsiniz. Ceno'yu kullanıcıları için sürekli geliştiriyoruz ve sizden bilgi almayı seviyoruz!
 
-Bağlantıda kalarak İnternet'in herkes için açık ve erişilebilir olmasına yardımcı olun!
+Bağlantıda kalarak internetin herkes için açık ve erişilebilir olmasına yardımcı olun!

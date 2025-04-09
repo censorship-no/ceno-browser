@@ -1,7 +1,0 @@
-En esta versión:
-- Actualiza Android-Components a 129.0.2
-- Actualiza Ouinet a v0.28.0
-- Actualiza la interfaz de usuario para la página Acerca de, con nuevos enlaces y logotipos actualizados
-- Establece la posición predeterminada de la barra de herramientas en la parte superior para Android 7.1 y versiones anteriores.
-- Refactoriza los recursos de cadena
-- Actualiza las traducciones para determinadas ubicaciones

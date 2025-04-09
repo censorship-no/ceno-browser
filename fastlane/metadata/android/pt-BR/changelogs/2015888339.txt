@@ -1,8 +1,0 @@
-Este lançamento:
-
-- Adiciona personalização de tema
-- Aplica pequenas mudanças de interface de usuário para as Configurações Gerais
-- Faz pequenas atualizações nas traduções de el e es
-- Conserta travamento ao limpar o cache do CENO antes de o navegador estar pronto
-- Conserta travamento ao abrir Extensões sem conexão de rede
-- Conserta erro de digitação na descrição de nova aba de navegação privativa

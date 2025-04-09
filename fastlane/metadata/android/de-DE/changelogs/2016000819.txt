@@ -1,7 +1,0 @@
-Diese Version:
-- Aktualisiert Android-Komponenten auf 129.0.2
-- Aktualisiert Ouinet auf v0.28.0
-- Aktualisiert UI für 'Info' Seite mit neuen Links und aktualisierten Logos
-- Setzt Standard Symbolleisten-Position auf oben für Android 7.1 und älter
-- Refaktorisiert String-Resourcen
-- Aktualisiert die Übersetzungen von Lokalisierungen

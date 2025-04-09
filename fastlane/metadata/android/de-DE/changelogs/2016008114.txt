@@ -1,7 +1,0 @@
-Diese Version:
-- Behebt Fehler bei Änderung der Sprache in den Einstellungen
-- Aktualisiert Android-Komponenten auf v131.0
-- Aktualisiert verschiedene Android-Bibliotheken
-- Behebt Fehler mit Berechtigungen-Tooltip
-- Fügt Option hinzu, die App-Sprache im Wilkommens-Tooltip auszuwählen
-- Fügt Option zum Speichern von Protokollen hinzu und verbessert "Protokolle teilen" UI

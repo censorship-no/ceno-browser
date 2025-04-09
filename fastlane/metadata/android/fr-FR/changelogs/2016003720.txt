@@ -1,9 +1,0 @@
-Version du correctif :
-- Ajout d'une option d'exportation des journaux de la page de veille
-- Supprime le remplissage automatique dans les options
-- Correction d'un bug d'interface de la barre d'outils couvrant une partie de la vue web
-- Mise à jour de Android-Composants vers la v130.0
-- Mise à jour de Ouinet vers la v0.29.0
-- Force la barre d'outils en position haute pour Android 7.1 et antérieur
-- Corrections de bugs mineurs de plantages
-- Mise à jour de différentes traductions de langues

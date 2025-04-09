@@ -1,8 +1,0 @@
-This release:
-
-- Adds theme customization
-- Applies minor UI changes to General Settings
-- Makes minor updates to el and es translations
-- Fixes crash when clearing Ceno cache before browser is ready
-- Fixes crash when opening Add-ons without network connection
-- Fixes typo in private browsing new tab description

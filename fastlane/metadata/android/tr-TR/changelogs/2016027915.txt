@@ -1,3 +1,0 @@
-Bu sürümde:
-- Ceno destek e-postasının doldurulmaması sorunu düzeltildi
-- Android bileşenleri 134.0.1 sürümüne güncellendi

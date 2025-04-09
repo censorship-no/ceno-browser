@@ -1,8 +1,0 @@
-This release:
-- Updates Android-Components to v132.0
-- Updates UI tests
-- Fixes tooltips for small screen devices
-- Refactors permissions and adds option to revoke them through Settings
-- Updates Ouinet to v0.30.1
-- Adds "Take me to Ceno anyway" option to standby timeout dialog
-- Fixes scroll to hide toolbar bug

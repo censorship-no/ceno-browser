@@ -1,6 +1,0 @@
-Rilisan tambalan ini:
-
--Memperbarui Komponen Android ke versi 128.0.3
-- Memperbaiki kerusakan IllegalStateExeption yang terkait dengan bilah alat ikon status
-- Peningkatan kecil pada UI halaman kesalahan, termasuk aksi geser-untuk-segarkan
-- Memperbarui terjemahan untuk bahasa tertentu, khususnya bahasa Persia

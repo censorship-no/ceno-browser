@@ -1,8 +1,0 @@
-Rilisan resmi ini:
-
-- Memodifikasi tampilan dari munculan Sumber Ceno
-- Memperbarui pustaka Komponen Android ke v109.2.0
-- Memperbarui Ouinet ke v0.21.6
-- Memperbaiki penghapusan entri di bilah alamat ketika mengetik
-- Mengubah tata letak dan perilaku tombol navigasi di dalam menu
-- Memperbarui terjemahan

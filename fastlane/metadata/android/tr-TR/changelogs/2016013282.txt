@@ -1,8 +1,0 @@
-Bu sürümde:
-- Android-Components 132.0 sürümüne güncellendi
-- Kullanıcı arayüzü sınamaları güncellendi
-- İpuçları küçük ekranlı aygıtlar için düzeltildi
-- İzinler yeniden düzenlendi ve Ayarlar üzerinden kaldırma seçeneği eklendi
-- Ouinet 0.30.1 sürümüne güncellendi
-- Zaman aşımı penceresine "Yine de Ceno uygulamasına git" seçeneği eklendi
-- Kaydırmada araç çubuğunun gizlenmesi sorunu düzeltildi
