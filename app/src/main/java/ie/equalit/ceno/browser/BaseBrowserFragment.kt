@@ -5,7 +5,6 @@
 package ie.equalit.ceno.browser
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -68,7 +67,7 @@ import mozilla.components.feature.awesomebar.AwesomeBarFeature
 import mozilla.components.feature.awesomebar.provider.SearchSuggestionProvider
 import mozilla.components.feature.downloads.DownloadsFeature
 import mozilla.components.feature.downloads.manager.FetchDownloadManager
-import mozilla.components.feature.downloads.temporary.ShareDownloadFeature
+import mozilla.components.feature.downloads.temporary.ShareResourceFeature
 import mozilla.components.feature.findinpage.view.FindInPageView
 import mozilla.components.feature.prompts.PromptFeature
 import mozilla.components.feature.readerview.view.ReaderViewControlsBar
@@ -80,11 +79,9 @@ import mozilla.components.feature.tabs.WindowFeature
 import mozilla.components.feature.webauthn.WebAuthnFeature
 import mozilla.components.lib.state.ext.consumeFlow
 import mozilla.components.lib.state.ext.consumeFrom
-import mozilla.components.support.base.feature.ActivityResultHandler
 import mozilla.components.support.base.feature.PermissionsFeature
 import mozilla.components.support.base.feature.UserInteractionHandler
 import mozilla.components.support.base.feature.ViewBoundFeatureWrapper
-import mozilla.components.support.base.log.logger.Logger
 import mozilla.components.support.ktx.android.content.res.resolveAttribute
 import mozilla.components.support.ktx.android.view.enterImmersiveMode
 import mozilla.components.support.ktx.android.view.exitImmersiveMode
@@ -107,7 +104,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler {
     private val toolbarIntegration = ViewBoundFeatureWrapper<ToolbarIntegration>()
     private val contextMenuIntegration = ViewBoundFeatureWrapper<ContextMenuIntegration>()
     private val downloadsFeature = ViewBoundFeatureWrapper<DownloadsFeature>()
-    private val shareDownloadsFeature = ViewBoundFeatureWrapper<ShareDownloadFeature>()
+    private val shareDownloadsFeature = ViewBoundFeatureWrapper<ShareResourceFeature>()
     private val appLinksFeature = ViewBoundFeatureWrapper<AppLinksFeature>()
     private val promptsFeature = ViewBoundFeatureWrapper<PromptFeature>()
     private val fullScreenFeature = ViewBoundFeatureWrapper<FullScreenFeature>()
@@ -241,7 +238,7 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler {
         )
 
         shareDownloadsFeature.set(
-            ShareDownloadFeature(
+            ShareResourceFeature(
                 context = requireContext().applicationContext,
                 httpClient = requireComponents.core.client,
                 store = requireComponents.core.store,
