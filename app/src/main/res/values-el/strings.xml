@@ -12,7 +12,7 @@
     <string name="dialog_ok">ΟΚ</string>
     <string name="dialog_cancel">Άκυρο</string>
     <string name="close_mode_item">Κλείσιμο ειδοποίησης</string>
-    <string name="preferences_tracking_protection_normal">Ενεργοποίηση σε κανονική λειτουργία περιήγησης</string>
+    <string name="preferences_tracking_protection_normal">Ενεργοποίηση σε λειτουργία δημόσιας περιήγησης</string>
     <string name="preferences_privacy_summary">Ενεργοποίηση για ιδιωτική και δημόσια περιήγηση</string>
     <string name="preferences_customization_summary">Εικονίδιο εφαρμογής, Γραμμή εργαλείων, Κουμπί εκκαθάρισης</string>
     <string name="developer_tools_category">Εργαλεία προγραμματισμού</string>
@@ -51,7 +51,7 @@
     <string name="delete_browsing_data_prompt_message_3">Ceno θα διαγράψει τα επιλεγμένα δεδομένα περιήγησης.</string>
     <string name="toolbar_hint">Αναζήτηση ή εισαγωγή διεύθυνσης</string>
     <string name="menu_action_close_tabs">Κλείσιμο όλων των καρτελών</string>
-    <string name="menu_action_close_tabs_private">Κλείσιμο των ιδιωτικών καρτελών</string>
+    <string name="menu_action_close_tabs_private">Κλείσιμο ιδιωτικών καρτελών</string>
     <string name="preferences_tracking_protection_private">Ενεργοποίηση σε λειτουργία ιδιωτικής περιήγησης</string>
     <string name="privacy">Απόρρητο</string>
     <string name="open_links_in_apps">Άνοιγμα συνδέσμων σε εφαρμογές</string>
