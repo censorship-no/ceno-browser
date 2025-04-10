@@ -1,0 +1,2 @@
+Цей випуск:
+— Оновлення AndroidManifest.xml
