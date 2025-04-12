@@ -1,2 +1,2 @@
-Цей випуск:
-— Оновлення AndroidManifest.xml
+У цьому релізі:
+- Оновлено AndroidManifest.xml
