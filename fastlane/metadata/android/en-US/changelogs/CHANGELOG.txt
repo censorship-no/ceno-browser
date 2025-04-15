@@ -5,6 +5,7 @@ This release:
 - Updates uBlock Origin extension to 1.63.2
 - Refactors cached groups list
 - Includes local cache count in ceno sources counts
+- Updates Ceno support email
 - Known Issue: Pre-installed extensions are not localized
 
 # v2.4.3

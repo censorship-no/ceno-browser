@@ -100,7 +100,7 @@
     <string name="bridge_mode_category">Объявления о мостах</string>
     <string name="preferences_make_default_browser">Сделайте Ceno своим браузером по умолчанию</string>
     <string name="preferences_about_page">Об eQualitie</string>
-    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/ru/concepts/public-private.html</string>
+    <string name="ceno_mode_manual_link">https://ceno.app/user-manual/ru/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;Приватный просмотр&lt;/h1&gt; &lt;p&gt;Ceno не будет распространять содержимое личных вкладок другим пользователям. Вы можете спокойно пользоваться сайтами, которые требуют входа. Для таких сайтов необходим прямой выход в интернет без цензуры.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Хотите узнать больше?&lt;/p&gt;</string>
     <string name="ceno_notification_title">Вы подключены к сети Ceno и делитесь контентом</string>
     <string name="ceno_notification_description">Подробнее</string>
@@ -143,7 +143,7 @@
     <string name="onboarding_permissions_title">Требуется разрешение</string>
     <string name="onboarding_thanks_text">Как пользователь Ceno, вы помогаете развивать сеть доступных мостов, обеспечивающих доступ к цензурированному контенту.</string>
     <string name="onboarding_thanks_title">Спасибо за рост сети!</string>
-    <string name="about_content"><p>%1$s - Делитесь Интернетом!</p> <p>Ceno (сокращение от censorship.no!) - это первый в мире мобильный браузер, который обходит существующие методы цензуры в Интернете. Его одноранговая магистраль позволяет людям получать доступ к веб-информации и обмениваться ею в регионах, где связь прервана или нарушена. </p> <p>%1$s - это проект eQualitie, канадской организации, чья миссия заключается в продвижении и защите основных свобод и прав человека, включая свободное распространение информации в Интернете. Наша цель - создание доступных технологий и совершенствование навыков, необходимых для защиты прав и свобод человека в цифровую эпоху.</p></string>
+    <string name="about_content"><p>%1$s - Делитесь Интернетом!</p> <p>Ceno - это первый в мире мобильный браузер, который обходит существующие методы цензуры в Интернете. Его одноранговая магистраль позволяет людям получать доступ к веб-информации и обмениваться ею в регионах, где связь прервана или нарушена. </p> <p>%1$s - это проект eQualitie, канадской организации, чья миссия заключается в продвижении и защите основных свобод и прав человека, включая свободное распространение информации в Интернете. Наша цель - создание доступных технологий и совершенствование навыков, необходимых для защиты прав и свобод человека в цифровую эпоху.</p></string>
     <string name="onboarding_battery_text">Вскоре ваша ОС попросит разрешение на
 \n
 \n• Отключение оптимизации батареи.
@@ -235,7 +235,7 @@
     <string name="preferences_allow_crash_reporting">Отчёты об ошибках</string>
     <string name="crash_reporting_opt_out">Вы отказались от отправки отчётов. Вы всегда можете снова начать отправлять отчёты перейдя в раздел Настройки &gt; Отчеты об ошибках.</string>
     <string name="crash_reporting_opt_in">Спасибо за отправку отчёта для улучшения Ceno! Вы всегда можете отключить отправку отчётов в Настройках.</string>
-    <string name="ceno_support_link_url">https://censorship.no/ru/support.html</string>
+    <string name="ceno_support_link_url">https://ceno.app/ru/support.html</string>
     <string name="personal_home_learn_more">Хотите узнать больше?</string>
     <string name="ouinet_client_fetch_success">Настройка Ceno обновлена</string>
     <string name="ceno_personal_browsing_description">Ceno не будет делиться контентом с личных вкладок с другими пользователями. Вы можете посещать сайты, требующие авторизации.</string>
@@ -292,7 +292,7 @@
     <string name="enable_bridge_card_text">Сделайте сеть Ceno устойчивее, став мостом. Вы можете включить режим моста зайдя в Настройки -&gt; Включить режим моста.</string>
     <string name="enable_bridge_card_title">Включить режим моста</string>
     <string name="ceno_sources_shared_by_ceno_cache">Из кэша Ceno</string>
-    <string name="bridge_mode_faq_url">https://censorship.no/ru/support.html#bridgemode</string>
+    <string name="bridge_mode_faq_url">https://ceno.app/ru/support.html#bridgemode</string>
     <string name="dialog_btn_positive_ok">OK</string>
     <string name="browser_menu_share">Поделиться</string>
     <string name="share_header_2">Поделиться</string>
@@ -344,7 +344,7 @@
     <string name="enable_debug_logs">Включить сохранение логов</string>
     <string name="about_content_title">Делитесь интернетом!</string>
     <string name="support_button_text">Поддержка</string>
-    <string name="about_content_para_1">Ceno (сокращение от censorship.no!) - первый в мире мобильный браузер, способный обходить цензуру. Он использует peer-to-peer технологии для доступа к заблокированным сайтам и будет работать даже в ситуации шатдауна.</string>
+    <string name="about_content_para_1">Ceno - первый в мире мобильный браузер, способный обходить цензуру. Он использует peer-to-peer технологии для доступа к заблокированным сайтам и будет работать даже в ситуации шатдауна.</string>
     <string name="about_content_para_2">Браузер Ceno разработан компанией eQualitie. Это канадская некоммерческая организация, которая создаёт и поддерживает децентрализованные интернет-сервисы и инфраструктуру для них. Мы верим в то, что доступ должен быть равным для всех. Наши сервисы имеют открытый исходный код и проверены в боях. Каждый день благодаря этим сервисам — Ceno, Ouisync, Deflect, — наши пользователи могут оставаться на связи и получать свежую информацию.</string>
     <string name="preferences_change_language">Изменить язык</string>
     <string name="change_language">Изменить язык</string>
@@ -406,7 +406,7 @@
     <string name="load_times">Скорость запуска приложения</string>
     <string name="clean_insights_successful_opt_in">Фоновая аналитика включена</string>
     <string name="submit">Отправить</string>
-    <string name="ceno_base_url">https://censorship.no</string>
+    <string name="ceno_base_url">https://ceno.app</string>
     <string name="preferences_additional_developer_tools">Дополнительные инструменты разработчика</string>
     <string name="preferences_announcement_source_summary">Выбрать источник</string>
     <string name="preferences_announcement_source_default">1</string>

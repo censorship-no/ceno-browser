@@ -683,7 +683,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private fun getChangeListenerForBridgeAnnouncement(): OnPreferenceChangeListener {
         return OnPreferenceChangeListener { _, _ ->
             /* Resetting the log settings is a workaround for ouinet logs disappearing after toggling bridge mode,
-            * https://gitlab.com/censorship-no/ceno-browser/-/merge_requests/127#note_1795759444
+            * https://gitlab.com/ceno-app/ceno-browser/-/merge_requests/127#note_1795759444
             * TODO: identify root cause of this behavior and remove workaround
             * */
             if (!bridgeModeChanged) {
