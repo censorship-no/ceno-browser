@@ -1,9 +1,11 @@
 # v2.4.4
 This release:
+- Updates Android-Components to v136.0
 - Updates Ceno extension to 1.9.0
 - Updates uBlock Origin extension to 1.63.2
 - Refactors cached groups list
 - Includes local cache count in ceno sources counts
+- Known Issue: Pre-installed extensions are not localized
 
 # v2.4.3
 This release:
