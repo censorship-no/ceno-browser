@@ -107,8 +107,8 @@
     <string name="ceno_notification_description">Dotknij, po więcej informacji</string>
     <string name="preferences_about_ceno_browser_service">Usługa Przeglądarki Ceno</string>
     <string name="ceno_notification_clear_do_description">Tak</string>
-    <string name="about_content">&lt;p&gt;%1$s - Dziel się Siecią!&lt;/p&gt;&lt;p&gt;Ceno (skrót od: \"censorship.no!\" (w bardzo luźnym tłumaczeniu: \"nie dla cenzury!\")) jest pierwszą na świecie mobilną przeglądarką internetową, która omija obecne metody cenzury stosowane w Internecie. Jej struktura oparta o topologię peer-to-peer pozwala użytkownikom na zdobywanie informacji w sieci i dzielenie się nimi w i pomiędzy regionami, w których dostęp do Internetu jest nieciągły lub zagrożony. &lt;/p&gt; &lt;p&gt;%1$s jest projektem &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt;, – kanadyjska organizacja non-profit, która tworzy zdecentralizowane usługi internetowe w celu wspierania bardziej równej i sprawiedliwej sieci. Rozwiązania eQualitie są rozwiązaniami typu open source, sprawdzonymi w boju i opracowanymi z myślą o naszych wartościach. Codziennie umożliwiają wolność zrzeszania się milionom ludzi w Internecie.&lt;/p&gt;</string>
-    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
+    <string name="about_content">&lt;p&gt;%1$s - Dziel się Siecią!&lt;/p&gt;&lt;p&gt;Ceno jest pierwszą na świecie mobilną przeglądarką internetową, która omija obecne metody cenzury stosowane w Internecie. Jej struktura oparta o topologię peer-to-peer pozwala użytkownikom na zdobywanie informacji w sieci i dzielenie się nimi w i pomiędzy regionami, w których dostęp do Internetu jest nieciągły lub zagrożony. &lt;/p&gt; &lt;p&gt;%1$s jest projektem &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt;, – kanadyjska organizacja non-profit, która tworzy zdecentralizowane usługi internetowe w celu wspierania bardziej równej i sprawiedliwej sieci. Rozwiązania eQualitie są rozwiązaniami typu open source, sprawdzonymi w boju i opracowanymi z myślą o naszych wartościach. Codziennie umożliwiają wolność zrzeszania się milionom ludzi w Internecie.&lt;/p&gt;</string>
+    <string name="ceno_mode_manual_link">https://ceno.app/user-manual/en/concepts/public-private.html</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Połączenie Wi-Fi jest zalecane do korzystania z Ceno - zużycie danych może być większe, niż się spodziewasz. W przypadku korzystania z danych mobilnych warto zatrzymać Ceno.</string>
     <string name="ceno_notification_home_description">Strona główna</string>
     <string name="ceno_clear_dialog_cancel">Anuluj</string>
@@ -255,7 +255,7 @@
     <string name="enable_bridge_card_text">Wzmocnij sieć Ceno, stając się mostem! Tryb mostu (Bridge) można włączyć, przechodząc do Ustawienia -&gt; Włącz tryb mostu.</string>
     <string name="learn_more_title">Dowiedz się więcej</string>
     <string name="standby_restarting_text">Restartowanie…</string>
-    <string name="ceno_support_link_url">https://censorship.no/pl/support.html</string>
+    <string name="ceno_support_link_url">https://ceno.app/pl/support.html</string>
     <string name="ceno_sources_header">Źródła treści</string>
     <string name="preferences_ceno_export_android_logs">Eksport pełnego rejestru aplikacji</string>
     <string name="preferences_ceno_bridge_announcement">Włącz tryb mostu</string>
@@ -285,7 +285,7 @@
     <string name="enable_bridge_card_title">Włącz tryb mostu</string>
     <string name="bridge_mode_ip_warning_text">Pamiętaj, że spowoduje to, że Twój publiczny adres IP będzie widoczny dla innych użytkowników Ceno.</string>
     <string name="ceno_sources_shared_by_ceno_cache">Z Ceno Pamięć podręczna</string>
-    <string name="bridge_mode_faq_url">https://censorship.no/en/support.html#bridgemode</string>
+    <string name="bridge_mode_faq_url">https://ceno.app/en/support.html#bridgemode</string>
     <string name="browser_menu_share">Udostępnij</string>
     <string name="share_header_2">Udostępnij</string>
     <string name="share_copy_link_to_clipboard">Kopiuj do schowka</string>
@@ -300,7 +300,7 @@
     <string name="dialog_btn_positive_ok">OK</string>
     <string name="shutdown_message_one">Czyszczenie danych aplikacji</string>
     <string name="shutdown_message_two">Wyłączanie Ceno</string>
-    <string name="website_button_link">https://censorship.no/en/index.html</string>
+    <string name="website_button_link">https://ceno.app/en/index.html</string>
     <string name="no_content_shared">Obecnie nie udostępniasz żadnych treści</string>
     <string name="about_content_title">Udostępniaj sieć!</string>
     <string name="preferences_clear_behavior_option_2">Wyczyść tylko pamięć podręczną Ceno</string>
@@ -308,7 +308,7 @@
     <string name="ceno_android_content_group_file_name">Udostępnione treści Ceno</string>
     <string name="confirm_groups_file_download">Wyeksportować listę udostępnionych treści?</string>
     <string name="content_description_close_button">Zamknij</string>
-    <string name="about_content_para_1">Ceno (skrót od censorship.no!) to pierwsza na świecie mobilna przeglądarka która omija obecne metody cenzury Internetu. Dzięki sieci peer-to-peer użytkownicy mogą uzyskiwać dostęp do informacji w sieci i udostępniać je w regionach, w których łączność została przerwana lub naruszona.</string>
+    <string name="about_content_para_1">Ceno to pierwsza na świecie mobilna przeglądarka która omija obecne metody cenzury Internetu. Dzięki sieci peer-to-peer użytkownicy mogą uzyskiwać dostęp do informacji w sieci i udostępniać je w regionach, w których łączność została przerwana lub naruszona.</string>
     <string name="eq_values_button_text">Wartości</string>
     <string name="preferences_clear_behavior_option_3">Wyczyść dane aplikacji i pamięć podręczną Ceno</string>
     <string name="preferences_theme_option_1">Ciemny</string>
@@ -356,7 +356,7 @@
     <string name="about_content_para_2">CENO Browser jest tworzona przez eQualitie - kanadyjską organizację non-profit, która tworzy zdecentralizowane usługi Internetowe by pomóc w wspieraniu równej sieci. Rozwiązania eQualitie są open source, zaprawione w boju i tworzone w duchu naszych zasad. Codziennie, umożliwiają zrzeszanie się milionom ludzi.</string>
     <string name="enable_debug_logs">Włącz logi debugowania</string>
     <string name="error_page_learn_more_3">Twoje urządzenie ma działające połączenie z siecią, tj. Twoja zwykła przeglądarka internetowa może otwierać niektóre witryny. Ceno i Ouinet nie mogą działać, gdy wszystkie połączenia sieciowe są wyłączone.</string>
-    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
+    <string name="privacy_policy_url">https://ceno.app/en/privacy_policy.html</string>
     <plurals name="developer_tools_enable_alert">
         <item quantity="one">Jesteś o %d kliknięcie od włączenia narzędzi dla dewelopera</item>
         <item quantity="few">Jesteś o %d kliknięcia od włączenia narzędzi dla dewelopera</item>
@@ -405,7 +405,7 @@
     <string name="startup_category">Uruchom</string>
     <string name="preferences_show_standby_warning">Pokaż ostrzeżenie w razie wygaśnięcia startupu</string>
     <string name="status_disabled">Wyłączone</string>
-    <string name="ceno_base_url">https://censorship.no</string>
+    <string name="ceno_base_url">https://ceno.app</string>
     <string name="preferences_announcement_source">Źródło ogłoszenia</string>
     <string name="preferences_announcement_source_summary">Ustanów źródło dla ogłoszeń na stronie głównej</string>
     <string name="preferences_announcement_source_default">1</string>

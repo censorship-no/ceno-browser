@@ -102,7 +102,7 @@
     <string name="share_link_all_apps_subheader">Všechny akce</string>
     <string name="share_link_recent_apps_subheader">Naposledy použité</string>
     <string name="share_save_to_pdf">Uložit jako PDF</string>
-    <string name="website_button_link">https://censorship.no/en/index.html</string>
+    <string name="website_button_link">https://ceno.app/en/index.html</string>
     <string name="preferences_theme_option_1">Temný</string>
     <string name="shutdown_message_one">Vymazání dat aplikace</string>
     <string name="shutdown_message_two">Vypínání Ceno</string>
@@ -111,7 +111,7 @@
     <string name="preferences_about_ceno">Prohlížeč Ceno</string>
     <string name="preferences_about_page">O nás</string>
     <string name="about_category">O nás</string>
-    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
+    <string name="ceno_mode_manual_link">https://ceno.app/user-manual/en/concepts/public-private.html</string>
     <string name="ceno_notification_home_description">Domů</string>
     <string name="ceno_notification_description">Dotykem zastavíte</string>
     <string name="ceno_notification_clear_description">Vymazat⚠</string>
@@ -157,7 +157,7 @@
     <string name="preferences_ceno_network_config">Podrobnosti o síti</string>
     <string name="ouinet_client_fetch_fail">Nepodařilo se změnit nastavení Ceno</string>
     <string name="about_content_title">Sdílejte web!</string>
-    <string name="about_content_para_1">Ceno (zkratka pro censorship.no!) je první mobilní prohlížeč na světě, který obchází současné metody cenzury internetu. Jeho peer-to-peer umožňuje lidem přistupovat k internetovým informacím a sdílet je v regionech, kde je připojení přerušeno nebo ohroženo.</string>
+    <string name="about_content_para_1">Ceno je první mobilní prohlížeč na světě, který obchází současné metody cenzury internetu. Jeho peer-to-peer umožňuje lidem přistupovat k internetovým informacím a sdílet je v regionech, kde je připojení přerušeno nebo ohroženo.</string>
     <string name="bt_sources_none">Žádné</string>
     <string name="addon_placeholder">Nejsou k dispozici žádné doplňky</string>
     <string name="website_button_text">Webová stránka</string>
@@ -205,7 +205,7 @@
 \n
 \nPřejděte do „Nastavení“ a dejte povolení později</string>
     <string name="preferences_about_ceno_browser_service">Služba Browser Ceno</string>
-    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
+    <string name="privacy_policy_url">https://ceno.app/en/privacy_policy.html</string>
     <string name="update">Aktualizovat</string>
     <string name="change_language">Změnit Jazyk</string>
     <string name="top_sites_title">Zkratky</string>
@@ -221,7 +221,7 @@
     <string name="standby_message_two">Inicializace mezipaměti</string>
     <string name="personal_home_learn_more">Chcete se dozvědět více?</string>
     <string name="change_bt_bootstrap_server">Změňte BT Bootstrap Server</string>
-    <string name="ceno_support_link_url">https://censorship.no/en/support.html</string>
+    <string name="ceno_support_link_url">https://ceno.app/en/support.html</string>
     <string name="browsing_mode_card_title">Režim prohlížení</string>
     <string name="ceno_android_content_group_file_name">Sdílený obsah Ceno</string>
     <string name="ouinet_log_file_prompt_desc">Uvědomte si, že tento protokol může obsahovat osobní údaje. Při sdílení buďte opatrní.</string>
@@ -279,7 +279,7 @@
     <string name="bridge_announcement_dialog_text">Počkejte prosím, než se služba prohlížeče Ceno restartuje, aby se změny projevily.</string>
     <string name="bridge_mode_ip_warning_text">Všimněte si, že to zviditelní vaši veřejnou IP adresu pro ostatní uživatele Ceno.</string>
     <string name="learn_more_title">Další informace</string>
-    <string name="bridge_mode_faq_url">https://censorship.no/en/support.html#bridgemode</string>
+    <string name="bridge_mode_faq_url">https://ceno.app/en/support.html#bridgemode</string>
     <string name="dismiss">Propustit</string>
     <string name="confirm_groups_file_download">Exportovat seznam sdíleného obsahu?</string>
     <string name="confirm_clear_cached_content_desc">Váš obsah v mezipaměti bude okamžitě odstraněn</string>
@@ -381,7 +381,7 @@
     <string name="tooltip_sources_description">Snadno uvidíte, odkud je obsah webu načten – přímo z webu, přes síť Ceno nebo z mezipaměti Ceno</string>
     <string name="select_language">Vyberte Jazyk:</string>
     <string name="status_disabled">Zakázáno</string>
-    <string name="ceno_base_url">https://censorship.no</string>
+    <string name="ceno_base_url">https://ceno.app</string>
     <string name="preferences_additional_developer_tools">Další vývojářské nástroje</string>
     <string name="preferences_announcement_source">Zdroj oznámení</string>
     <string name="preferences_announcement_source_summary">Nastavte zdroj oznámení na domovské stránce</string>
@@ -405,5 +405,5 @@
     <string name="developer_tools_enabled">Vývojářské nástroje povoleny</string>
     <string name="developer_tools_disabled">Vývojářské nástroje jsou zakázány</string>
     <string name="ceno_network_status_disconnected">Odpojeno. Zkontrolujte nastavení sítě nebo exportujte protokoly pro další informace.</string>
-    <string name="about_content" tools:ignore="UnusedResources">&lt;p&gt;%1$s – Sdílejte Web!&lt;/p&gt; &lt;p&gt;Ceno (zkratka pro censorship.no!) je první mobilní prohlížeč na světě, který obchází současné metody internetové cenzury. Jeho peer-to-peer páteř umožňuje lidem přístup a sdílení webových informací v regionech a mezi nimi, kde bylo připojení přerušeno nebo ohroženo. &lt;/p&gt; &lt;p&gt;%1$s je projekt &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt; – neziskové Kanadské organizace, která vytváří decentralizované internetové služby na podporu rovnější a spravedlivější sítě. Řešení eQualitie jsou open source, osvědčená a vyvinutá s ohledem na naše hodnoty. Každý den umožňují milionům lidí online svobodu sdružování.&lt;/p&gt;</string>
+    <string name="about_content" tools:ignore="UnusedResources">&lt;p&gt;%1$s – Sdílejte Web!&lt;/p&gt; &lt;p&gt;Ceno je první mobilní prohlížeč na světě, který obchází současné metody internetové cenzury. Jeho peer-to-peer páteř umožňuje lidem přístup a sdílení webových informací v regionech a mezi nimi, kde bylo připojení přerušeno nebo ohroženo. &lt;/p&gt; &lt;p&gt;%1$s je projekt &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt; – neziskové Kanadské organizace, která vytváří decentralizované internetové služby na podporu rovnější a spravedlivější sítě. Řešení eQualitie jsou open source, osvědčená a vyvinutá s ohledem na naše hodnoty. Každý den umožňují milionům lidí online svobodu sdružování.&lt;/p&gt;</string>
 </resources>
