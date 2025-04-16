@@ -147,7 +147,7 @@
     <string name="preferences_make_default_browser">سنو كو بنائیں آپ کا ڈیفالٹ براؤزر</string>
     <string name="ceno_clear_dialog_title">سنو صاف کریں</string>
     <string name="preference_show_search_suggestions_summary">آپ جو ایڈریس بار میں ٹائپ کرتے ہیں سنو وہ آپ کے سرچ انجن کو بھیجے گا</string>
-    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/ur/concepts/public-private.html</string>
+    <string name="ceno_mode_manual_link">https://ceno.app/user-manual/ur/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;ذاتی براؤزنگ&lt;/h1&gt; &lt;p&gt;سنو نجی ٹیبز سے مواد دوسرے صارفین کے ساتھ شیئر نہیں کرے گا۔ آپ محفوظ طریقے سے ان سائٹس پر جا سکتے ہیں جن کے لیے لاگ ان کی ضرورت ہوتی ہے۔ اگرچہ انٹرنیٹ کے راستے کی ضرورت ہے۔&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;مزید جاننا چاہتے ہیں؟&lt;/p&gt;</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">سنو براؤزر نوٹس</string>
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">دوبارہ مت دکھائیں</string>
@@ -163,7 +163,7 @@
     <string name="addon_placeholder">کوئی ایڈ آن دستیاب نہیں ہے</string>
     <string name="ceno_notification_description">روکنے کے لئے دبائیں</string>
     <string name="ceno_notification_clear_description">مٹائیں⚠</string>
-    <string name="about_content"><p>%1$s - ویب کا اشتراک کریں!</p> <p>سنو (!censorship.no کے لیے مختصر) دنیا کا پہلا موبائل براؤزر ہے جو انٹرنیٹ سنسرشپ کے موجودہ طریقوں کو سائیڈ اسٹیپ کرتا ہے۔ اس کی پیئر ٹو پیئر بیک بون لوگوں کو ان خطوں میں اور جہاں کنیکٹیوٹی میں خلل پڑا ہے یا سمجھوتہ کیا گیا ہے ویب معلومات تک رسائی اور ان کا اشتراک کرنے کی اجازت دیتا ہے۔ . </p> <p>%1$s eQualitie کا ایک پروجیکٹ ہے، ایک کینیڈا کی تنظیم جس کا مشن بنیادی آزادیوں اور انسانی حقوق کو فروغ دینا اور ان کا دفاع کرنا ہے، بشمول آن لائن معلومات کا آزادانہ بہاؤ۔ ہمارا مقصد قابل رسائی ٹیکنالوجی بنانا اور ڈیجیٹل دور میں انسانی حقوق اور آزادیوں کے دفاع کے لیے درکار مہارتوں کے سیٹ کو بہتر بنانا ہے۔</p></string>
+    <string name="about_content"><p>%1$s - ویب کا اشتراک کریں!</p> <p>سنو دنیا کا پہلا موبائل براؤزر ہے جو انٹرنیٹ سنسرشپ کے موجودہ طریقوں کو سائیڈ اسٹیپ کرتا ہے۔ اس کی پیئر ٹو پیئر بیک بون لوگوں کو ان خطوں میں اور جہاں کنیکٹیوٹی میں خلل پڑا ہے یا سمجھوتہ کیا گیا ہے ویب معلومات تک رسائی اور ان کا اشتراک کرنے کی اجازت دیتا ہے۔ . </p> <p>%1$s eQualitie کا ایک پروجیکٹ ہے، ایک کینیڈا کی تنظیم جس کا مشن بنیادی آزادیوں اور انسانی حقوق کو فروغ دینا اور ان کا دفاع کرنا ہے، بشمول آن لائن معلومات کا آزادانہ بہاؤ۔ ہمارا مقصد قابل رسائی ٹیکنالوجی بنانا اور ڈیجیٹل دور میں انسانی حقوق اور آزادیوں کے دفاع کے لیے درکار مہارتوں کے سیٹ کو بہتر بنانا ہے۔</p></string>
     <string name="ceno_clear_dialog_clear_entire_app">سنو کیش اور ایپ ڈیٹا صاف کریں</string>
     <string name="preferences_theme_default">2</string>
     <string name="ceno_clear_dialog_clear_cache_only">صرف سنو کیش کو صاف کریں</string>
@@ -182,13 +182,13 @@
     <string name="crash_reporting_dialog_description">معاف کریں، لگتا ہے کہ سنو کریش کر گیا ہے! سنو کو بہتر بنانے میں ہماری مدد کریں، کریش رپورٹ ہمیں بھیج دیں۔</string>
     <string name="crash_reporting_never_send">نہیں بھیجیں</string>
     <string name="crash_reporting_always_send">ہمیشہ بھیجیں</string>
-    <string name="ceno_support_link_url">https://censorship.no/ur/support.html</string>
-    <string name="bridge_mode_faq_url">https://censorship.no/ur/support.html#bridgemode</string>
+    <string name="ceno_support_link_url">https://ceno.app/ur/support.html</string>
+    <string name="bridge_mode_faq_url">https://ceno.app/ur/support.html#bridgemode</string>
     <string name="browser_menu_share">شیئر کریں</string>
     <string name="share_header_2">شیئر</string>
     <string name="share_link_all_apps_subheader">تمام اعمال</string>
     <string name="share_link_recent_apps_subheader">حال ہی میں استعمال کی گئی</string>
     <string name="download_logs">ڈاؤن لوڈ کریں</string>
-    <string name="website_button_link">https://censorship.no/ur/index.html</string>
-    <string name="privacy_policy_url">https://censorship.no/ur/privacy_policy.html</string>
+    <string name="website_button_link">https://ceno.app/ur/index.html</string>
+    <string name="privacy_policy_url">https://ceno.app/ur/privacy_policy.html</string>
 </resources>
