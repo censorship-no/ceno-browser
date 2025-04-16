@@ -65,6 +65,6 @@
     <string name="deleting_browsing_data_in_progress">מוחק נתוני גלישה…</string>
     <string name="customize_add_bootstrap_save">לשמור</string>
     <string name="customize_extra_bittorrent_bootstrap">רצועות אתחול נוספות של BitTorrent</string>
-    <string name="website_button_link">https://censorship.no/en/index.html</string>
-    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
+    <string name="website_button_link">https://ceno.app/en/index.html</string>
+    <string name="privacy_policy_url">https://ceno.app/en/privacy_policy.html</string>
 </resources>

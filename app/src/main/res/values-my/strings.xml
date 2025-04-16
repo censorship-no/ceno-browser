@@ -97,7 +97,7 @@
     <string name="bridge_mode_category">ပေါင်းကူး ကြေညာချက်များ</string>
     <string name="preferences_make_default_browser">သင့်အမြဲသုံးဘရောက်ဇာအဖြစ် Ceno ကို ပြုလုပ်ပါ</string>
     <string name="preferences_about_page">eQualitie</string>
-    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/my/concepts/public-private.html</string>
+    <string name="ceno_mode_manual_link">https://ceno.app/user-manual/my/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;တကိုယ်ရည်သုံးရှာဖွေခြင်း&lt;/h1&gt; &lt;p&gt;Ceno သည် တကိုယ်ရည်သုံးတပ်ဗ်များမှ အကြောင်းအရာများကို အခြားသူများနှင့် မမျှဝေပါ။ လော့ဂ်အင်ပြုလုပ်ရန် လိုအပ်သော ဆိုက်များသို့ သင့်အနေဖြင့် လုံခြုံစွာ ဝင်ရောက်နိုင်ပါသည်။ သို့သော် အင်တာနက်ကို အသုံးပြုဖို့ လိုအပ်ပါသည်။&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;ပိုမိုသိရှိလိုပါသလား။&lt;/p&gt;</string>
     <string name="preferences_about_ceno_browser_service">Ceno ဘရောက်ဇာ ဝန်ဆောင်မှု</string>
     <string name="ceno_notification_description">ရပ်ရန် နှိပ်ပါ</string>
@@ -171,7 +171,7 @@
     <string name="preferences_theme">အပ်ပ် ပုံစံကို သတ်မှတ်မည်</string>
     <string name="ceno_sources_category">ရင်းမြစ်များ</string>
     <string name="preferences_show_home_button">ပင်မစာမျက်နှာခလုတ်ကို ပြသမည်</string>
-    <string name="about_content"><p>%1$s - ဝဘ်ကို မျှဝေပါ</p> <p>censorship.no၏အတိုကောက် Ceno သည် အထူးသဖြင့် လက်ရှိ အင်တာနက် ဆင်ဆာဖြတ်တောက်မှုနည်းလမ်းများကို ရှောင်ရှားနိုင်ရန်အတွက် ပြုလုပ်ထားသည့် ကမ္ဘာ့ပထမဆုံး မိုဘိုင်းဘရောက်ဇာဖြစ်ပါသည်။ ၎င်းသည် လူများအား ဆက်သွယ်မှု ပြတ်တောက်ခြင်း သို့မဟုတ် အပေးအယူ ပြတ်တောက်သွားသည့် ဒေသများအတွင်း နှင့် အနှံ့အပြားတွင် သတင်းအချက်အလက်များကို ရယူမျှဝေနိုင်စေပါသည်။ </p> <p>%1$s CENO သည် ကနေဒါနိုင်ငံ အခြေစိုက် အဖွဲ့အစည်းဖြစ်သည့် eQualitie ၏ ပရောဂျက်တစ်ခုဖြစ်ပြီး အွန်လိုင်းပေါ်ရှိအခက်အလက်များ လွတ်လပ်စွာစီးဆင်းနိုင်ခွင့် အပါအဝင် အခြေခံလွတ်လပ်ခွင့်များနှင့် လူ့အခွင့်အရေးများကို ဖော်ထုတ်ရန်၊ ကာကွယ်ရန် ရည်ရွယ်ပါသည်။ ကျွန်ုပ်တို့၏ ပန်းတိုင်မှာ ဒီဂျစ်တယ်ခေတ်တွင် လူ့အခွင့်အရေးနှင့် လွတ်လပ်ခွင့်များကို ကာကွယ်ရန်အတွက် လိုအပ်သည့် အရည်အသွေးများကို မြှင့်တင်ရန်နှင့် လက်လှမ်းမီ ရယူနိုင်သည့် နည်းပညာများကို ဖန်တီးရန် ဖြစ်ပါသည်။</p></string>
+    <string name="about_content"><p>%1$s - ဝဘ်ကို မျှဝေပါ</p> <p>ceno.app၏အတိုကောက် Ceno သည် အထူးသဖြင့် လက်ရှိ အင်တာနက် ဆင်ဆာဖြတ်တောက်မှုနည်းလမ်းများကို ရှောင်ရှားနိုင်ရန်အတွက် ပြုလုပ်ထားသည့် ကမ္ဘာ့ပထမဆုံး မိုဘိုင်းဘရောက်ဇာဖြစ်ပါသည်။ ၎င်းသည် လူများအား ဆက်သွယ်မှု ပြတ်တောက်ခြင်း သို့မဟုတ် အပေးအယူ ပြတ်တောက်သွားသည့် ဒေသများအတွင်း နှင့် အနှံ့အပြားတွင် သတင်းအချက်အလက်များကို ရယူမျှဝေနိုင်စေပါသည်။ </p> <p>%1$s CENO သည် ကနေဒါနိုင်ငံ အခြေစိုက် အဖွဲ့အစည်းဖြစ်သည့် eQualitie ၏ ပရောဂျက်တစ်ခုဖြစ်ပြီး အွန်လိုင်းပေါ်ရှိအခက်အလက်များ လွတ်လပ်စွာစီးဆင်းနိုင်ခွင့် အပါအဝင် အခြေခံလွတ်လပ်ခွင့်များနှင့် လူ့အခွင့်အရေးများကို ဖော်ထုတ်ရန်၊ ကာကွယ်ရန် ရည်ရွယ်ပါသည်။ ကျွန်ုပ်တို့၏ ပန်းတိုင်မှာ ဒီဂျစ်တယ်ခေတ်တွင် လူ့အခွင့်အရေးနှင့် လွတ်လပ်ခွင့်များကို ကာကွယ်ရန်အတွက် လိုအပ်သည့် အရည်အသွေးများကို မြှင့်တင်ရန်နှင့် လက်လှမ်းမီ ရယူနိုင်သည့် နည်းပညာများကို ဖန်တီးရန် ဖြစ်ပါသည်။</p></string>
     <string name="preferences_ceno_sources_upnp">UPnP အခြေအနေ</string>
     <string name="preferences_ceno_network_config">ကွန်ရက် အသေးစိတ်များ</string>
     <string name="preferences_ceno_network_config_summary">Ouinet status, UDP endpoints, BitTorrent bootstraps</string>
@@ -202,7 +202,7 @@
     <string name="personal_home_learn_more">အခြားအကြောင်းအရာများကို လေ့လာချင်ပါသလား။</string>
     <string name="onboarding_public_or_personal_title">အများသုံး သို့မဟုတ် တကိုယ်ရည်သုံး</string>
     <string name="share_logs">မျှဝေ</string>
-    <string name="bridge_mode_faq_url">https://censorship.no/my/support.html#bridgemode</string>
+    <string name="bridge_mode_faq_url">https://ceno.app/my/support.html#bridgemode</string>
     <string name="browser_menu_share">မျှဝေ</string>
     <string name="share_header_2">မျှဝေ</string>
     <string name="share_link_all_apps_subheader">လုပ်ရပ်အားလုံး</string>
@@ -219,6 +219,6 @@
     <string name="share_save_to_pdf">PDF အဖြစ် သိမ်းမည်</string>
     <string name="preferences_clear_behavior">ပုံသေ အပြုအမူ</string>
     <string name="preferences_clear_in_toolbar">ကိရိယာဘား တွင် ပြပါ</string>
-    <string name="website_button_link">https://censorship.no/my/index.html</string>
-    <string name="privacy_policy_url">https://censorship.no/my/privacy_policy.html</string>
+    <string name="website_button_link">https://ceno.app/my/index.html</string>
+    <string name="privacy_policy_url">https://ceno.app/my/privacy_policy.html</string>
 </resources>

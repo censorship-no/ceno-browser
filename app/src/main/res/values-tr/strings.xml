@@ -139,7 +139,7 @@
     <string name="ceno_private_browsing_body">&lt;h1&gt;Kişisel gezinme&lt;/h1&gt; &lt;p&gt;Ceno, Kişisel sekmelerdeki içeriği diğer kullanıcılarla paylaşmaz. Oturum açılması gereken siteleri güvenle ziyaret edebilirsiniz. Yine de İnternet bağlantısı gereklidir.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Ayrıntılı bilgi almak ister misiniz?&lt;/p&gt;</string>
     <string name="preferences_about_page">Hakkında</string>
     <string name="preferences_make_default_browser">Ceno varsayılan tarayıcı olsun</string>
-    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/tr/concepts/public-private.html</string>
+    <string name="ceno_mode_manual_link">https://ceno.app/user-manual/tr/concepts/public-private.html</string>
     <string name="preferences_show_home_button">Giriş düğmesi görüntülensin</string>
     <string name="preferences_clear_behavior">Varsayılan davranış</string>
     <string name="preferences_clear_behavior_default">0</string>
@@ -171,7 +171,7 @@
     <string name="onboarding_battery_text">Birazdan, işletim sisteminiz sizden şu izinleri isteyecek: \n \n• Pil iyileştirmelerini kapatma. \n \nBu izin, uygulama arka planda çalışırken siteleri paylaşmayı sürdürmek için gereklidir.</string>
     <string name="preferences_clear_ceno_cache_summary">Yerel ön bellekteki İnternet içeriğini temizle</string>
     <string name="ouinet_client_fetch_fail">Ceno ayarı değiştirilemedi</string>
-    <string name="about_content">&lt;p&gt;%1$s - İnternet içeriklerini paylaşın!&lt;/p&gt; &lt;p&gt;Ceno (censorship.no!\'nun kısaltması), güncel İnternet sansür yöntemlerinin etrafından dolaşan dünyanın ilk mobil tarayıcısıdır. Eşler arası omurgası, insanların bağlantının kesildiği veya tehlikeye girdiği bölgelerde ve bölgeler arasında site bilgilerine erişmesini ve bunları paylaşmasını sağlar. &lt;/p&gt; &lt;p&gt;%1$s, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren kar amacı gütmeyen bir Kanada kuruluşu olan bir &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt; projesidir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.&lt;/p&gt;</string>
+    <string name="about_content">&lt;p&gt;%1$s - İnternet içeriklerini paylaşın!&lt;/p&gt; &lt;p&gt;Ceno, güncel İnternet sansür yöntemlerinin etrafından dolaşan dünyanın ilk mobil tarayıcısıdır. Eşler arası omurgası, insanların bağlantının kesildiği veya tehlikeye girdiği bölgelerde ve bölgeler arasında site bilgilerine erişmesini ve bunları paylaşmasını sağlar. &lt;/p&gt; &lt;p&gt;%1$s, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren kar amacı gütmeyen bir Kanada kuruluşu olan bir &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt; projesidir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.&lt;/p&gt;</string>
     <string name="onboarding_warning_text">Pil iyileştirmesi hala açık. \n \nİzni daha sonra \"Ayarlar &gt; Pil iyileştirmesini kapat\" bölümünden verebilirsiniz</string>
     <string name="preferences_ceno_sources_peers_summary">İçerik paylaşan diğer kullanıcılardan yüklenir</string>
     <string name="preferences_ceno_sources_peers">Paylaşılmış</string>
@@ -208,7 +208,7 @@
     <string name="crash_reporting_opt_in">Ceno uygulamasını geliştirmemize yardımcı olmak için çökme bildirimlerini paylaştığınız için teşekkür ederiz! Bu durumu istediğiniz zaman Ayarlar &gt; Çökme bildirimleri bölümünden değiştirebilirsiniz.</string>
     <string name="ouinet_client_fetch_success">Ceno ayarı güncellendi</string>
     <string name="crash_reporting_dialog_title">Ne yazık ki Ceno uygulaması çöktü!</string>
-    <string name="ceno_support_link_url">https://censorship.no/tr/support.html</string>
+    <string name="ceno_support_link_url">https://ceno.app/tr/support.html</string>
     <string name="personal_home_learn_more">Ayrıntılı bilgi almak ister misiniz?</string>
     <string name="ceno_personal_browsing_description">Ceno, Kişisel sekmelerdeki içeriği diğer kullanıcılarla paylaşmaz. Oturum açılması gereken siteleri ziyaret edebilirsiniz.</string>
     <string name="bt_invalid_ip_error">IP adresi geçersiz</string>
@@ -260,7 +260,7 @@
     <string name="learn_more_title">Ayrıntılı bilgi alın</string>
     <string name="standby_restarting_text">Yeniden başlatılıyor…</string>
     <string name="ceno_sources_shared_by_ceno_cache">Ceno ön belleğinden</string>
-    <string name="bridge_mode_faq_url">https://censorship.no/tr/support.html#bridgemode</string>
+    <string name="bridge_mode_faq_url">https://ceno.app/tr/support.html#bridgemode</string>
     <string name="shutdown_message_one">Uygulama verilerini temizle</string>
     <string name="shutdown_message_two">Ceno\'nun kapatılması</string>
     <string name="title_success">Başarılı</string>
@@ -304,9 +304,9 @@
     <string name="preferences_theme_option_2">Açık</string>
     <string name="preferences_theme_option_3">Pil Tasarrufu tarafından ayarlanır</string>
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">İndir</string>
-    <string name="website_button_link">https://censorship.no/tr/index.html</string>
+    <string name="website_button_link">https://ceno.app/tr/index.html</string>
     <string name="about_content_title">İnternet içeriklerini paylaşın!</string>
-    <string name="about_content_para_1">Ceno (censorship.no!\'nun kısaltması) dünyanın ilk güncel internet sansür yöntemlerine karşı koyan mobil tarayıcısı. Uçtan uca altyapısı, insanların bağlantının kesildiği veya tehlikeye girdiği bölgelerde internet üzerindeki bilgilere erişmesini ve bu bilgileri paylaşmasını sağlar.</string>
+    <string name="about_content_para_1">Ceno dünyanın ilk güncel internet sansür yöntemlerine karşı koyan mobil tarayıcısı. Uçtan uca altyapısı, insanların bağlantının kesildiği veya tehlikeye girdiği bölgelerde internet üzerindeki bilgilere erişmesini ve bu bilgileri paylaşmasını sağlar.</string>
     <string name="support_button_text">Destek</string>
     <string name="eq_news_button_text">Haberler</string>
     <string name="eq_values_button_text">Değerler</string>
@@ -332,7 +332,7 @@
     <string name="tooltip_sources_title">Ceno kaynakları</string>
     <string name="tooltip_permission_text">Uygulama arka planda olsa bile siteleri sorunsuz olarak paylaşmayı sürdürmek için lütfen Ceno uygulamasının bildirim göndermesine ve pil optimizasyonlarını devre dışı bırakmasına izin verin. Bu izinleri daha sonra istediğiniz zaman telefonunuzun ayarlarından değiştirebilirsiniz</string>
     <string name="select_language">Dili seçin:</string>
-    <string name="privacy_policy_url">https://censorship.no/tr/privacy_policy.html</string>
+    <string name="privacy_policy_url">https://ceno.app/tr/privacy_policy.html</string>
     <string name="standby_take_me_anyway">Yine de Ceno uygulamasına git</string>
     <string name="standby_dont_show">Uyarıyı yeniden gösterme</string>
     <string name="startup_category">Başlangıç</string>
@@ -356,7 +356,7 @@
     <string name="ouinet_startup_time_4">4</string>
     <string name="thank_you_for_feedback">Geri bildiriminiz için teşekkürler!</string>
     <string name="submit">Gönder</string>
-    <string name="ceno_base_url">https://censorship.no</string>
+    <string name="ceno_base_url">https://ceno.app</string>
     <string name="preferences_additional_developer_tools">Ek geliştirici araçları</string>
     <string name="preferences_announcement_source">Duyuru kaynağı</string>
     <string name="preferences_announcement_source_default">1</string>

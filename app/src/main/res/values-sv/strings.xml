@@ -94,14 +94,14 @@
     <string name="preferences_make_default_browser">Gör Ceno till din standard-webbläsare</string>
     <string name="preferences_about_page">Om eQualitie</string>
     <string name="about_category">Om</string>
-    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
+    <string name="ceno_mode_manual_link">https://ceno.app/user-manual/en/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;Privat surfning&lt;/h1&gt; &lt;p&gt;Ceno kommer inte att dela innehåll från privata flikar med andra användare. Du kan säkert besöka webbplatser som kräver inloggning. En väg till Internet behövs dock.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Vill du lära dig mer?&lt;/p&gt;</string>
     <string name="preferences_about_ceno_browser_service">Ceno Webbläsartjänst</string>
     <string name="ceno_notification_channel_name">Ceno Tjänst</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Det är rekommenderat att använda Ceno när du har en WiFi-anslutning eftersom att den kan använda mer data än vad du förväntar dig. Du kanske vill stoppa Ceno när du använder mobildata.</string>
     <string name="ceno_clear_dialog_title">Rensa Ceno</string>
     <string name="ceno_clear_dialog_clear_entire_app">Rensa Ceno cache och app-data</string>
-    <string name="about_content"><p>%1$s - Dela webben!</p> <p>Ceno (kort för censorship.no!) är världens första mobila webbläsare som kringgår nuvarande censurmetoder för Internet. Dess peer-to-peer backbone gör det möjligt för människor att få tillgång till och dela webbinformation i och över regioner där uppkopplingen har avbrutits eller äventyrats. </p> <p>%1$s är ett projekt av eQualitie, en kanadensisk organisation vars uppdrag är att främja och försvara grundläggande friheter och mänskliga rättigheter, inklusive det fria flödet av information online. Vårt mål är att skapa tillgänglig teknik och förbättra den kompetens som behövs för att försvara mänskliga rättigheter och friheter i den digitala tidsåldern.</p></string>
+    <string name="about_content"><p>%1$s - Dela webben!</p> <p>Ceno är världens första mobila webbläsare som kringgår nuvarande censurmetoder för Internet. Dess peer-to-peer backbone gör det möjligt för människor att få tillgång till och dela webbinformation i och över regioner där uppkopplingen har avbrutits eller äventyrats. </p> <p>%1$s är ett projekt av eQualitie, en kanadensisk organisation vars uppdrag är att främja och försvara grundläggande friheter och mänskliga rättigheter, inklusive det fria flödet av information online. Vårt mål är att skapa tillgänglig teknik och förbättra den kompetens som behövs för att försvara mänskliga rättigheter och friheter i den digitala tidsåldern.</p></string>
     <string name="crash_reporting_dialog_description">Hjälp oss att göra Ceno bättre genom att skicka kraschrapporter till oss.</string>
     <string name="ceno_clear_dialog_description">VARNING: Om du rensar cache och appdata återställs Ceno -applikationen som om den aldrig hade använts</string>
     <string name="ceno_clear_action_description">Klart</string>
@@ -116,13 +116,13 @@
     <string name="crash_reporting_always_send">Skicka alltid, förbättra Ceno</string>
     <string name="crash_reporting_never_send">Skicka aldrig</string>
     <string name="onboarding_info_title">Inte en vanlig webbläsare</string>
-    <string name="bridge_mode_faq_url">https://censorship.no/en/support.html#bridgemode</string>
+    <string name="bridge_mode_faq_url">https://ceno.app/en/support.html#bridgemode</string>
     <string name="browser_menu_share">Dela</string>
     <string name="share_header_2">Dela</string>
     <string name="share_copy_link_to_clipboard">Kopiera till urklipp</string>
     <string name="share_link_all_apps_subheader">Alla åtgärder</string>
     <string name="share_link_recent_apps_subheader">Nyligen använd</string>
     <string name="share_save_to_pdf">Spara som PDF</string>
-    <string name="website_button_link">https://censorship.no/en/index.html</string>
-    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
+    <string name="website_button_link">https://ceno.app/en/index.html</string>
+    <string name="privacy_policy_url">https://ceno.app/en/privacy_policy.html</string>
 </resources>
