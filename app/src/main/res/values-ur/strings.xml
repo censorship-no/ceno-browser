@@ -92,7 +92,7 @@
     <string name="onboarding_permissions_title">اجازت درکار ہے</string>
     <string name="changeIconDialogTitle">نیا آئیکن کا اطلاق کریں؟</string>
     <string name="changeIconDialogMessage">تبدیلیوں کا اطلاق کرنے کے لیے ایپ بند ہو سکتی ہے۔ اپنے خوبصورت نئے آئیکن کی تعریف کرنے کے بعد واپس آجائیں۔</string>
-    <string name="preferences_about_ceno">سنو براؤزر</string>
+    <string name="preferences_about_ceno">Ceno براؤزر</string>
     <string name="preferences_about_geckoview">GeckoView</string>
     <string name="preferences_about_ouinet">Ouinet</string>
     <string name="about_category">کے بارے میں</string>
