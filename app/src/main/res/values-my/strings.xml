@@ -81,8 +81,8 @@
     <string name="udp_category">UDP</string>
     <string name="bit_torrent_bootstraps_category">BitTorrent Bootstraps</string>
     <string name="mozac_feature_contextmenu_open_link_in_private_tab" tools:ignore="UnusedResources">လင့်ခ်ကို တကိုယ်ရည်သုံးတဗ်၌ ဖွင့်မည်</string>
-    <string name="customize_add_bootstrap_save">သိမ်းမည်</string>
-    <string name="customize_extra_bittorrent_bootstrap">Extra BitTorrent bootstraps</string>
+    <string name="customize_add_bootstrap_save">သိမ်းပါ</string>
+    <string name="customize_extra_bittorrent_bootstrap">အပို BitTorrent bootstrap များ</string>
     <plurals name="preferences_delete_browsing_data_browsing_data_subtitle">
         <item quantity="other">%d လိပ်စာများ</item>
     </plurals>
@@ -124,7 +124,7 @@
     <string name="preferences_clear_behavior_default">0</string>
     <string name="onboarding_warning_button">ဟုတ်ပြီ</string>
     <string name="preferences_about_ceno">Ceno ဘရောက်ဇာ</string>
-    <string name="about_category">အကြောင်းအရာ</string>
+    <string name="about_category">အကြောင်း</string>
     <string name="onboarding_info_title">သင်၏ သာမန် အသုံးပြုနေကျ ဘရောက်ဇာ မဟုတ်ပါ</string>
     <string name="onboarding_permissions_title">ခွင့်ပြုချက်များ လိုအပ်သည်</string>
     <string name="onboarding_battery_button">ဆက်သွားရန်</string>
@@ -175,17 +175,17 @@
     <string name="preferences_ceno_sources_upnp">UPnP အခြေအနေ</string>
     <string name="preferences_ceno_network_config">ကွန်ရက် အသေးစိတ်များ</string>
     <string name="preferences_ceno_network_config_summary">Ouinet status, UDP endpoints, BitTorrent bootstraps</string>
-    <string name="preferences_ceno_groups_count">သင် မျှဝေထားသည့် အကြောင်းအရာ</string>
-    <string name="preferences_ceno_sources_reachability">ရောက်ရှိနိုင်သည့် အခြေအနေ</string>
+    <string name="preferences_ceno_groups_count">သင်မျှဝေထားသော အကြောင်းအရာ</string>
+    <string name="preferences_ceno_sources_reachability">ရောက်ရှိနိုင်မှု အခြေအနေ</string>
     <string name="preferences_ceno_sources_local_udp">စက်တွင်း UDP အဆုံးမှတ်များ</string>
     <string name="preferences_clear_ceno_cache">ယာယီသိမ်းဆည်းထားသည့် အကြောင်းအရာကို ဖျက်မည်</string>
     <string name="preferences_clear_ceno_cache_summary">စက်တွင်း ယာယီသိမ်းဆည်းထားသည့် ဝဘ်အကြောင်းအရာကို ဖျက်မည်</string>
-    <string name="preferences_ceno_sources_external_udp">ပြင်ပ UDP ဆုံးမှတ်များ</string>
+    <string name="preferences_ceno_sources_external_udp">ပြင်ပ UDP အဆုံးမှတ်များ</string>
     <string name="preferences_ceno_cache_size">စက်တွင်း ယာယီသိမ်းဆည်းထားသည့် မှတ်ဉာဏ်</string>
     <string name="preferences_ceno_sources_public_udp">အများသုံး UDP အဆုံးမှတ်များ</string>
     <string name="onboarding_thanks_title">ကွန်ရက်ကို ကျယ်ပြန့်စေသည့်အတွက် ကျေးဇူးတင်ပါသည်။</string>
     <string name="preferences_ceno_sources_extra_bitTorrent_bootstraps">အပို BitTorrent Bootstraps</string>
-    <string name="preferences_ceno_enable_log">စာရင်းဖိုင် ဖွင့်မည်</string>
+    <string name="preferences_ceno_enable_log">စာရင်းဖိုင်ကို ဖွင့်ပါ</string>
     <string name="preferences_ceno_download_log">စာရင်းဖိုင်ကို ဒေါင်းလုတ်ရယူမည်</string>
     <string name="preferences_ceno_sources_private_summary">တစ်ကိုယ်ရည်သုံး Ceno ကွန်ရက်မှတဆင့် ဝဘ်အကြောင်းအရာများကို ရယူမည်</string>
     <string name="preferences_ceno_sources_peers_summary">အခြားအသုံးပြုသူများမှ မျှဝေထားသည့် ဝဘ်အကြောင်းအရာများကို ရယူမည်</string>
