@@ -9,8 +9,8 @@
     <string name="browser_menu_desktop_site">Αίτηση σελίδας για υπολογιστή</string>
     <string name="browser_menu_add_to_shortcuts">Προσθήκη στις συντομεύσεις</string>
     <string name="browser_menu_find_in_page">Αναζήτηση στη σελίδα</string>
-    <string name="dialog_ok">ΟΚ</string>
-    <string name="dialog_cancel">Άκυρο</string>
+    <string name="dialog_ok">Εντάξει</string>
+    <string name="dialog_cancel">Ακύρωση</string>
     <string name="close_mode_item">Κλείσιμο ειδοποίησης</string>
     <string name="preferences_tracking_protection_normal">Ενεργοποίηση σε λειτουργία δημόσιας περιήγησης</string>
     <string name="preferences_privacy_summary">Ενεργοποίηση για ιδιωτική και δημόσια περιήγηση</string>
@@ -30,9 +30,9 @@
     <string name="delete_from_history">Διαγραφή από το ιστορικό</string>
     <string name="shortcut_max_limit_title">Συμπληρώθηκε το όριο συντόμευσης</string>
     <string name="top_sites_sponsored_label">Χορηγός</string>
-    <string name="browser_menu_settings">Γενικές ρυθμίσεις</string>
+    <string name="browser_menu_settings">Σχετικά</string>
     <string name="browser_menu_library">Βιβλιοθήκη</string>
-    <string name="delete_browsing_data_prompt_cancel">Άκυρο</string>
+    <string name="delete_browsing_data_prompt_cancel">Ακύρωση</string>
     <string name="delete_browsing_data_prompt_allow">Διαγραφή</string>
     <string name="preferences_delete_browsing_data_snackbar">Τα δεδομένα περιήγησης διαγράφηκαν</string>
     <string name="deleting_browsing_data_in_progress">Διαγραφή δεδομένων περιήγησης‥</string>
@@ -53,10 +53,10 @@
     <string name="menu_action_close_tabs">Κλείσιμο όλων των καρτελών</string>
     <string name="menu_action_close_tabs_private">Κλείσιμο ιδιωτικών καρτελών</string>
     <string name="preferences_tracking_protection_private">Ενεργοποίηση σε λειτουργία ιδιωτικής περιήγησης</string>
-    <string name="privacy">Απόρρητο</string>
+    <string name="privacy">Ιδιωτικότητα</string>
     <string name="open_links_in_apps">Άνοιγμα συνδέσμων σε εφαρμογές</string>
     <string name="tracker_category">Προστασία παρακολούθησης</string>
-    <string name="settings">Ρυθμίσεις</string>
+    <string name="settings">Σχετικά</string>
     <string name="private_browsing_title">Ιδιωτική περιήγηση</string>
     <string name="menu_share_with">Κοινή χρήση με…</string>
     <string name="bookmark_menu_open_in_private_tab_button">Άνοιγμα σε ιδιωτική καρτέλα</string>
@@ -127,4 +127,5 @@
     <string name="support_button_text">Υποστήριξη</string>
     <string name="eq_values_button_text">Αξίες</string>
     <string name="learn_more_title">Μάθετε περισσότερα</string>
+    <string name="share_logs">Κοινή χρήση</string>
 </resources>
