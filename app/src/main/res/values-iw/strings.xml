@@ -67,4 +67,25 @@
     <string name="customize_extra_bittorrent_bootstrap">רצועות אתחול נוספות של BitTorrent</string>
     <string name="website_button_link">https://censorship.no/en/index.html</string>
     <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
+    <string name="ceno_clear_dialog_cancel">בטל</string>
+    <string name="ceno_sources_header">מקורות תוכן</string>
+    <string name="changeIconCtaCancel">בטל</string>
+    <string name="btn_next">הבא</string>
+    <string name="dialog_btn_positive_ok">אשר</string>
+    <string name="crash_reporting_dialog_description">עזור לנו לשפר את Ceno על ידי שליחת דיווחי קריסה.</string>
+    <string name="crash_reporting_dialog_title">אופס! נראה שה-Ceno קרס!</string>
+    <string name="crash_reporting_always_send">תמיד שלח, שפר את Ceno</string>
+    <string name="crash_reporting_never_send">לעולם אל תשלח</string>
+    <string name="crash_reporting_opt_out">בחרת שלא לשתף דיווחי קריסה. תמיד תוכל להפעיל מחדש בהגדרות &gt; דיווחי קריסה.</string>
+    <string name="standby_try_again">נסה שוב</string>
+    <string name="preferences_delete_browsing_data_cookies">עוגיות</string>
+    <string name="secure_connection">החיבור מאובטח</string>
+    <string name="crash_report_sent">דיווח קריסה נשלח!</string>
+    <string name="preferences_about_page">אודות</string>
+    <string name="about_category">אודות</string>
+    <string name="ceno_clear_dialog_title">נקה את Ceno</string>
+    <string name="about_content_para_2">Ceno Browser is a project by eQualitie – a not-for-profit Canadian organization that creates decentralized internet services in support of a more equal and equitable network. eQualitie\'s solutions are open source, battle proven and developed in mind of our values. Every day, they enable freedom of association for millions of people online.</string>
+    <string name="ceno_clear_dialog_description">אזהרה: ניקוי המטמון ונתוני האפליקציה יאפס את היישום כאילו מעולם לא השתמשו בו.</string>
+    <string name="not_applicable">N/A</string>
+    <string name="learn_more_title">למד עוד</string>
 </resources>
