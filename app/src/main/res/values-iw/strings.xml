@@ -17,7 +17,7 @@
     <string name="content_description_private_browsing_button">הפעל גלישה פרטית</string>
     <string name="bookmark_menu_open_in_private_tab_button">פתח בכרטיסיה פרטית</string>
     <string name="shortcut_max_limit_content">כדי להוסיף קיצור דרך חדש, הסר אחד קיים. גע והחזק את קיצור הדרך, ובחר הסר.</string>
-    <string name="browser_menu_settings">הגדרות כלליות</string>
+    <string name="browser_menu_settings">הגדרות</string>
     <string name="browser_menu_add_to_homescreen">הוספה למסך הבית</string>
     <string name="browser_menu_find_in_page">מצא בעמוד</string>
     <string name="browser_menu_add_to_shortcuts">הוסף לקיצורי דרך</string>
@@ -32,7 +32,7 @@
     <string name="developer_tools_category">כלים למפתחים</string>
     <string name="private_browsing_title">גלישה פרטית</string>
     <string name="remove_top_site">הסר</string>
-    <string name="dialog_cancel">ביטול</string>
+    <string name="dialog_cancel">בטל</string>
     <string name="top_sites_sponsored_label">ממומן</string>
     <string name="rename_top_site">שנה שם</string>
     <string name="toolbar_hint">חפש או הזן כתובת</string>
@@ -49,9 +49,9 @@
     <string name="browser_menu_library">ספריה</string>
     <string name="confirm_clear_cached_content_desc">התוכן השמור שלך יוסר באופן מיידי</string>
     <string name="preferences_privacy_summary">אפשר לגלישה אישית וציבורית</string>
-    <string name="dialog_ok">בסדר</string>
+    <string name="dialog_ok">אשר</string>
     <string name="crash_report_non_fatal_message" tools:ignore="UnusedResources">"מצטער.  התרסקנו"</string>
-    <string name="delete_browsing_data_prompt_cancel">לבטל</string>
+    <string name="delete_browsing_data_prompt_cancel">בטל</string>
     <string name="delete_browsing_data_prompt_allow">למחוק</string>
     <string name="preferences_delete_browsing_data_snackbar">נתוני הגלישה נמחקו</string>
     <string name="theme_category">נושא</string>
@@ -88,4 +88,6 @@
     <string name="ceno_clear_dialog_description">אזהרה: ניקוי המטמון ונתוני האפליקציה יאפס את היישום כאילו מעולם לא השתמשו בו.</string>
     <string name="not_applicable">N/A</string>
     <string name="learn_more_title">למד עוד</string>
+    <string name="preferences_customization">התאמה אישית</string>
+    <string name="share_logs">שיתוף</string>
 </resources>
