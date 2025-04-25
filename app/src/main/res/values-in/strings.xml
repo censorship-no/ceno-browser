@@ -2,17 +2,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="onboarding_welcome_title">Selamat datang di Ceno</string>
     <string name="ceno_on_mobile_data_dialog_continue" tools:ignore="UnusedResources">Lanjutkan</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">&amp;brandNameShortName; Pengaturan</string>
+    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Pengaturan Ceno</string>
     <string name="onboarding_warning_button">Oke</string>
-    <string name="preferences_about_ceno">&amp;brandNameShortName; Browser</string>
+    <string name="preferences_about_ceno">Browser Ceno</string>
     <string name="preferences_about_ouinet_protocol">Protokol Ouinet</string>
-    <string name="ceno_notification_description">Ketuk untuk berhenti</string>
+    <string name="ceno_notification_description">Ketuk untuk detil lebih lanjut</string>
     <string name="ceno_notification_home_description">Beranda</string>
     <string name="ceno_notification_clear_description">Hapus⚠</string>
     <string name="ceno_notification_clear_do_description">Ya</string>
     <string name="ceno_notification_channel_name">Layanan Ceno</string>
-    <string name="ceno_on_mobile_data_dialog_stop_now" tools:ignore="UnusedResources">Hentikan &amp;brandNameShortName; sekarang</string>
-    <string name="default_top_site_1_title">&amp;brandNameShortName; Panduan</string>
+    <string name="ceno_on_mobile_data_dialog_stop_now" tools:ignore="UnusedResources">Hentikan Ceno Sekarang</string>
+    <string name="default_top_site_1_title">Panduan Ceno</string>
     <string name="onboarding_skip_button">Lewati</string>
     <string name="onboarding_info_title">Bukan browser biasa</string>
     <string name="onboarding_battery_text">Tak lama kemudian, OS akan meminta izin kepada Anda untuk
@@ -23,14 +23,14 @@
     <string name="onboarding_battery_button">Lanjutkan</string>
     <string name="onboarding_warning_title">Izin ditolak</string>
     <string name="onboarding_thanks_title">Terima kasih karena telah mengembangkan jaringan Ceno!</string>
-    <string name="ceno_clear_dialog_description">PERINGATAN: Menghapus cache dan data aplikasi akan mengatur ulang aplikasi Ceno seolah-olah aplikasi tersebut tidak pernah digunakan.</string>
+    <string name="ceno_clear_dialog_description">PERINGATAN: Membersihkan cache dan data aplikasi akan mereset aplikasi Ceno seperti semula.</string>
     <string name="ceno_clear_action_description">Bersihkan</string>
-    <string name="ceno_clear_dialog_cancel">Batal</string>
+    <string name="ceno_clear_dialog_cancel">Batalkan</string>
     <string name="ceno_clear_dialog_clear_cache_only">Hapus Ceno hanya untuk cache</string>
     <string name="ceno_clear_dialog_title">Bersihkan Ceno</string>
-    <string name="preferences_make_default_browser">Jadikan Ceno sebagai browser default Anda</string>
+    <string name="preferences_make_default_browser">Jadikan Ceno sebagai browser default</string>
     <string name="ceno_mode_manual_link">https://ceno.app/user-manual/en/concepts/public-private.html</string>
-    <string name="preferences_about_ceno_browser_service">Ceno Layanan Browser</string>
+    <string name="preferences_about_ceno_browser_service">Layanan Browser Ceno</string>
     <string name="onboarding_btn_get_started">Memulai</string>
     <string name="onboarding_warning_text_v33_1">Notifikasi tidak diizinkan.
 \n
@@ -38,13 +38,13 @@
     <string name="onboarding_warning_text_v33_2">Notifikasi tidak diizinkan dan pengoptimalan baterai masih diaktifkan.
 \n
 \nBuka \"Pengaturan\" untuk memberikan izin nanti</string>
-    <string name="preferences_about_page">Tentang eQualitie</string>
+    <string name="preferences_about_page">Tentang</string>
     <string name="about_category">Tentang</string>
-    <string name="about_content">&lt;p&gt;%1$s - Share the Web!&lt;/p&gt; &lt;p&gt;Ceno adalah peramban seluler pertama di dunia yang melangkahi metode penyensoran Internet saat ini. Backbone peer-to-peer-nya memungkinkan orang untuk mengakses dan berbagi informasi web di dalam dan di seluruh wilayah di mana konektivitasnya terganggu atau terganggu. &lt;/p&gt; &lt;p&gt;%1$s adalah proyek dari eQualitie, sebuah organisasi Kanada yang memiliki misi untuk mempromosikan dan membela kebebasan fundamental dan hak asasi manusia, termasuk aliran informasi online yang bebas. Tujuan kami adalah menciptakan teknologi yang mudah diakses dan meningkatkan keahlian yang dibutuhkan untuk membela hak asasi manusia dan kebebasan di era digital.</string>
+    <string name="about_content">&lt;p&gt;%1$s - Share the Web!&lt;/p&gt; &lt;p&gt;Ceno adalah peramban seluler pertama di dunia yang melangkahi metode penyensoran Internet saat ini. Backbone peer-to-peer-nya memungkinkan orang untuk mengakses dan berbagi informasi web di dalam dan di seluruh wilayah di mana konektivitasnya terganggu atau terganggu. &lt;/p&gt; &lt;p&gt;%1$s adalah proyek dari &lt;a href=https://equalit.ie/&gt;eQualit.ie, sebuah organisasi non-profit dari Kanada yang bertujuan untuk menciptakan layanan internet terdesentralisasi demi mendukung jejaring yang lebih setara dan adil. eQualitie\'s terbuka, berpengalaman dan matang. Setiap hari, mereka membuka kebebasan dalam berasosiasi bagi jutaan orang.&lt;/p&gt;</string>
     <string name="ceno_private_browsing_body"><h1>Penjelajahan Pribadi</h1> <p>Ceno tidak akan membagikan konten dari tab pribadi dengan pengguna lain. Anda dapat dengan aman mengunjungi situs-situs yang memerlukan login. Namun, jalur ke Internet tetap diperlukan.</p> <p class="about-info">tentang-info</p> <p class="about-info"><a id="learnmore">Ingin belajar lebih lanjut?</a></p></string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Disarankan untuk menggunakan Ceno saat Anda memiliki koneksi Wi-Fi, karena mungkin menggunakan lebih banyak data daripada yang Anda perkirakan. Anda mungkin ingin menghentikan Ceno saat menggunakan data seluler.</string>
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">Jangan tampilkan lagi</string>
-    <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">&amp;brandNameShortName; Pemberitahuan browser</string>
+    <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Pemberitahuan Browser Ceno</string>
     <string name="ceno_clear_dialog_clear_entire_app">Hapus Ceno cache dan data aplikasi</string>
     <string name="onboarding_permissions_title">Izin diperlukan</string>
     <string name="onboarding_battery_text_v33">Sistem operasi akan meminta izin kepada Anda untuk
@@ -58,8 +58,8 @@
 \nBuka \"Pengaturan &gt; Nonaktifkan Pengoptimalan Baterai\" untuk memberikan izin nanti</string>
     <string name="preferences_customization">Kustomisasi</string>
     <string name="preferences_theme_default">2</string>
-    <string name="preferences_disable_battery_opt">Nonaktifkan Pengoptimalan Baterai</string>
-    <string name="preferences_ceno_sources_origin">Situs Web</string>
+    <string name="preferences_disable_battery_opt">Optimisasi Baterai</string>
+    <string name="preferences_ceno_sources_origin">Website</string>
     <string name="preferences_ceno_sources_private">Secara Privat</string>
     <string name="preferences_ceno_sources_private_summary">Muat konten melalui jaringan privat Ceno</string>
     <string name="preferences_ceno_sources_public">Secara Publik</string>
@@ -67,51 +67,49 @@
     <string name="preferences_ceno_sources_peers">Berbagi</string>
     <string name="preferences_ceno_sources_peers_summary">Muat konten yang dibagikan oleh pengguna lain</string>
     <string name="ceno_data_category">Data</string>
-    <string name="preferences_ceno_cache_size">Tembolok lokal</string>
+    <string name="preferences_ceno_cache_size">Cache lokal</string>
     <string name="preferences_ceno_groups_count">Konten yang dibagikan oleh Anda</string>
-    <string name="preferences_clear_ceno_cache">Bersihkan konten dalam tembolok</string>
-    <string name="changeIconCtaCancel">Batal</string>
+    <string name="preferences_clear_ceno_cache">Bersihkan konten cache</string>
+    <string name="changeIconCtaCancel">Batalkan</string>
     <string name="preferences_clear_behavior_summary">Atur perilaku saat mengetuk tombol hapus</string>
     <string name="preferences_change_app_icon">Ubah ikon aplikasi</string>
     <string name="preferences_clear_in_toolbar">Tampilkan di bilah alat</string>
     <string name="preferences_toolbar_position">Taruh di layar bagian atas</string>
     <string name="preferences_ceno_sources_origin_summary">Muat konten dari situs web secara langsung</string>
-    <string name="preferences_clear_ceno_cache_summary">Bersihkan konten web yang ada di tembolok lokal</string>
+    <string name="preferences_clear_ceno_cache_summary">Bersihkan cache lokal konten web</string>
     <string name="clear_cache_fail">Pembersihan tembolok gagal, cobalah kembali nanti</string>
     <string name="changeIconDialogTitle">Terapkan ikon baru?</string>
     <string name="changeIconDialogMessage">Aplikasi ini mungkin akan ditutup untuk menerapkan perubahan. Kembalilah setelah Anda mengagumi ikon baru yang memukau.</string>
     <string name="preference_show_search_suggestions_summary">Ceno akan mengirimkan apa yang Anda ketik di bilah alamat ke mesin pencari Anda</string>
     <string name="preferences_ceno_enable_log">Aktifkan berkas log</string>
-    <string name="website_button_text">Situs Web</string>
+    <string name="website_button_text">Website</string>
     <string name="onboarding_thanks_text">Sebagai pengguna Ceno, Anda sudah membantu untuk mengembangkan jaringan jembatan yang memungkinkan akses ke konten yang disensor.</string>
     <string name="preferences_toolbar_hide">Gulir untuk menyembunyikan</string>
     <string name="preferences_show_home_button">Tampilkan tombol beranda</string>
-    <string name="preferences_show_onboarding">Tampilkan panduan cepat pada peluncuran berikutnya</string>
-    <string name="preferences_allow_notifications">Izinkan Notifikasi</string>
+    <string name="preferences_show_onboarding">Tampilkan panduan pada peluncuran berikutnya</string>
+    <string name="preferences_allow_notifications">Notifikasi</string>
     <string name="preferences_clear_in_menu">Tampilkan di menu</string>
     <string name="preferences_clear_behavior">Perilaku bawaan</string>
     <string name="preferences_clear_behavior_default">0</string>
-    <string name="preferences_theme">Atur tema aplikasi</string>
+    <string name="preferences_theme">Tentukan tema aplikasi</string>
     <string name="preferences_theme_summary">Gelap, Terang, Hemat Baterai</string>
     <string name="ceno_sources_category">Sumber</string>
-    <string name="preferences_ceno_network_config">Rincian Jaringan Ceno</string>
-    <string name="preferences_ceno_network_config_summary">Status ouinet, titik akhir UDP, bootstrap BitTorrent</string>
+    <string name="preferences_ceno_network_config">Detil Jaringan</string>
+    <string name="preferences_ceno_network_config_summary">Status Ouinet, titik akhir UDP, bootstraps BitTorrent</string>
     <string name="preferences_ceno_download_log">Ekspor log Ouinet</string>
     <string name="changeIconCtaAccept">Terapkan</string>
     <string name="clear_cache_success">Tembolok berhasil dibersihkan</string>
     <string name="ouinet_client_fetch_fail">Gagal mengubah pengaturan Ceno</string>
     <string name="addon_placeholder">Tidak Ada Pengaya yang Tersedia</string>
-    <string name="source_code_button_text">Kode Sumber</string>
+    <string name="source_code_button_text">Kode Source</string>
     <string name="ceno_onboarding_start_title">Berbagi web,
 \nklien ke klien</string>
     <string name="ceno_onboarding_start_text">Tulang punggung klien ke klien Ceno memungkinkan orang untuk mengakses dan berbagi konten situs web di dalam dan di seluruh wilayah di mana konektivitas sedang terganggu atau disusupi.</string>
     <string name="onboarding_public_or_personal_title">Publik atau Privat?</string>
-    <string name="onboarding_public_personal_text">Gunakan tab Publik untuk membaca berita, menonton video, dan berselancar di web secara umum. Berbagi konten web dengan pengguna Ceno lainnya.
-\n
-\nTab pribadi lebih cocok untuk akun media sosial, belanja online, dan menjelajahi situs web yang tidak ingin Anda bagikan dengan orang lain.</string>
+    <string name="onboarding_public_personal_text">Gunakan tab Publik untuk membaca berita, menonton video, dan berselancar di web secara umum. Berbagi konten web dengan pengguna Ceno lainnya.Tab pribadi lebih cocok untuk akun media sosial, belanja online, dan menjelajahi situs web yang tidak ingin Anda bagikan dengan orang lain.</string>
     <string name="onboarding_cleanup_title">Bersihkan semuanya,
 \ndi mana pun, sekaligus</string>
-    <string name="onboarding_cleanup_text">Hapus riwayat peramban, kredensial, dan jejak apa pun yang Anda tinggalkan di Ceno dengan satu tombol.</string>
+    <string name="onboarding_cleanup_text">Hapus riwayat browser, kredensial, dan jejak apa pun yang tertinggal di Ceno dengan satu tombol.</string>
     <string name="preferences_ceno_sources_reachability">Status keterjangkauan</string>
     <string name="preferences_ceno_sources_upnp">Status UPnP</string>
     <string name="ceno_home_card_public_title">PUBLIK</string>
@@ -121,27 +119,27 @@
     <string name="ceno_home_card_personal_title">PRIBADI</string>
     <string name="preferences_ceno_sources_external_udp">Titik akhir UDP eksternal</string>
     <string name="preferences_ceno_sources_public_udp">Titik akhir UDP publik</string>
-    <string name="preferences_ceno_sources_extra_bitTorrent_bootstraps">Bootstrap ekstra BitTorrent</string>
+    <string name="preferences_ceno_sources_extra_bitTorrent_bootstraps">Bootstraps ekstra BitTorrent</string>
     <string name="ceno_home_card_personal_text">Konektivitas yang baik, privasi yang lebih baik. Untuk masuk ke akun, tidak meninggalkan jejak, tanpa berbagi</string>
-    <string name="crash_reporting_dialog_description">Bantu kami membuat Ceno lebih baik dengan mengirimkan laporan kerusakan kepada kami.</string>
-    <string name="crash_reporting_never_send">Jangan pernah mengirim</string>
-    <string name="crash_reporting_always_send">Selalu kirim, tingkatkan Ceno</string>
-    <string name="preferences_allow_crash_reporting">Pelaporan kerusakan</string>
-    <string name="crash_reporting_opt_out">Anda telah memilih untuk tidak membagikan laporan kerusakan. Anda selalu dapat memilih untuk ikut serta dengan membuka Pengaturan &gt; Pelaporan kerusakan.</string>
+    <string name="crash_reporting_dialog_description">Bantu kami untuk membentuk Ceno menjadi lebih baik dengan mengirimkan laporan kerusakan.</string>
+    <string name="crash_reporting_never_send">Jangan pernah kirim</string>
+    <string name="crash_reporting_always_send">Selalu mengirim dan mengembangkan Ceno</string>
+    <string name="preferences_allow_crash_reporting">Mengirim laporan kerusakan</string>
+    <string name="crash_reporting_opt_out">Anda telah keluar dari membagi laporan kerusakan. Anda tetap dapat masuk kembali melalui Pengaturan &gt; Pelaporan kerusakan.</string>
     <string name="crash_reporting_opt_in">Terima kasih telah membagikan laporan kerusakan untuk membantu meningkatkan Ceno! Anda selalu dapat menonaktifkannya dengan membuka Pengaturan &gt; Pelaporan kerusakan.</string>
-    <string name="personal_home_learn_more">Ingin mempelajari lebih lanjut?</string>
+    <string name="personal_home_learn_more">Ingin mengetahui lebih lanjut?</string>
     <string name="ouinet_client_fetch_success">Ceno pengaturan diperbarui</string>
     <string name="ceno_personal_browsing_description">Ceno tidak akan membagikan konten dari tab pribadi dengan pengguna lain. Anda dapat mengunjungi situs yang memerlukan login.</string>
-    <string name="crash_reporting_dialog_title">Maaf, sepertinya Ceno rusak!</string>
+    <string name="crash_reporting_dialog_title">Maaf, sepertinya Ceno mengalami kerusakan!</string>
     <string name="bt_invalid_ip_error">IP tidak valid</string>
-    <string name="preferences_ceno_website_sources">Sumber situs web</string>
+    <string name="preferences_ceno_website_sources">Sumber Website</string>
     <string name="ceno_support_link_url">https://ceno.app/id/support.html</string>
     <string name="bt_sources_none">Tidak ada</string>
     <string name="bridge_mode_faq_url">https://ceno.app/en/support.html#bridgemode</string>
     <string name="ceno_sources_via_ceno_network">Menggunakan Ceno Jaringan</string>
     <string name="ceno_sources_shared_by_ceno_cache">Dari Ceno cache</string>
     <string name="change_bt_bootstrap_server">Ubah BT Bootstrap Server</string>
-    <string name="browsing_mode_card_title">Mode Jelajah</string>
+    <string name="browsing_mode_card_title">Mode Browsing</string>
     <string name="public_browsing_mode_selected">Mode jelajah publik dipilih</string>
     <string name="public_mode_icon">Mode ikon publik</string>
     <string name="personal_browsing_mode_selected">Mode jelajah pribadi dipilih</string>
@@ -161,7 +159,7 @@
     <string name="enable_bridge_card_text">Buatlah Ceno jaringan lebih kuat dengan menjadi jembatan! Anda dapat mengaktifkan Mode Jembatan dengan membuka Pengaturan -&gt; Aktifkan Mode Jembatan.</string>
     <string name="home_go_to_settings">Pergi ke setelan</string>
     <string name="enable_bridge_card_title">Aktifkan mode jembatan</string>
-    <string name="learn_more_title">Pelajari lebih lanjut</string>
+    <string name="learn_more_title">Pelajari Lebih Lanjut</string>
     <string name="standby_restarting_text">Memulai ulang…</string>
     <string name="ceno_sources_header">Sumber konten</string>
     <string name="preferences_ceno_export_android_logs">Ekspor penuh log aplikasi</string>
@@ -176,16 +174,16 @@
     <string name="standby_message_one">Menghubungkan ke jaringan Ceno</string>
     <string name="standby_message_two">Menginisialisasi cache</string>
     <string name="standby_message_three">Mencari node bootstrap</string>
-    <string name="standby_try_again">Coba lagi</string>
+    <string name="standby_try_again">Coba Lagi</string>
     <string name="ceno_ouinet_connecting">Menghubungkan ke jaringan Ceno</string>
     <string name="ceno_ouinet_connected">Terhubung ke jaringan Ceno</string>
     <string name="ceno_ouinet_disconnected">Terputus dari jaringan Ceno</string>
     <string name="ceno_sources_direct_from_website">Langsung dari situs web</string>
-    <string name="ouinet_log_file_prompt_desc">Sadarilah, log ini mungkin berisi informasi identitas pribadi. Berhati-hatilah saat berbagi.</string>
-    <string name="view_logs">Melihat</string>
+    <string name="ouinet_log_file_prompt_desc">Ingat, log ini mungkin berisi informasi pribadi yang dapat diidentifikasi. Berhati-hati ketika berbagi.</string>
+    <string name="view_logs">Tampilan</string>
     <string name="download_logs">Unduh</string>
     <string name="empty_log_text">Sepertinya log anda kosong</string>
-    <string name="share_logs">Berbagi</string>
+    <string name="share_logs">Bagikan</string>
     <string name="bridge_mode_ip_warning_text">Perhatikan bahwa ini akan membuat alamat IP publik Anda terlihat oleh pengguna Ceno lainnya.</string>
     <string name="browser_menu_share">Bagikan</string>
     <string name="share_header_2">Bagikan</string>
@@ -198,12 +196,12 @@
     <string name="menu_action_close_tabs_private">Tutup Tab Pribadi</string>
     <string name="preferences_remote_debugging">Debug jarak jauh (remote) melalui USB</string>
     <string name="privacy" tools:ignore="UnusedResources">Privasi</string>
-    <string name="open_links_in_apps">Buka tautan di aplikasi</string>
+    <string name="open_links_in_apps">Buka link pada aplikasi</string>
     <string name="general_category">Umum</string>
     <string name="developer_tools_category">Alat pengembang</string>
     <string name="tracker_category">Perlindungan Pelacakan</string>
     <string name="theme_category">Tema</string>
-    <string name="clear_button_category">Tombol Hapus/Bersihkan</string>
+    <string name="clear_button_category">Tombol Bersihkan</string>
     <string name="settings">Pengaturan</string>
     <string name="customization_settings">Kustomisasi</string>
     <string name="menu_share_with">Bagikan dengan…</string>
@@ -212,17 +210,17 @@
     <string name="rename_top_site">Ganti Nama</string>
     <string name="remove_top_site">Hapus</string>
     <string name="delete_from_history">Hapus dari riwayat</string>
-    <string name="shortcut_max_limit_title">Pintasan (Shortcut) telah mencapai batas</string>
-    <string name="shortcut_max_limit_content">Untuk menambahkan pintasan baru, hapus satu pintasan. Sentuh dan tahan situs dan pilih hapus.</string>
+    <string name="shortcut_max_limit_title">Pintasan telah mencapai batas</string>
+    <string name="shortcut_max_limit_content">Untuk menambahkan pintasan baru, hapus sebuah pintasan. Sentuh dan tahan pintasan lama dan pilih hapus.</string>
     <string name="top_sites_max_limit_confirmation_button">Oke, Mengerti</string>
     <string name="top_sites_rename_dialog_title">Nama</string>
     <string name="shortcut_name_hint">Nama pintasan</string>
-    <string name="browser_menu_forward">Maju/Lanjut</string>
+    <string name="browser_menu_forward">Maju</string>
     <string name="browser_menu_refresh">Segarkan</string>
-    <string name="preferences_customization_summary">Ikon Aplikasi, Bilah Alat (Toolbar), Tombol Hapus</string>
-    <string name="toolbar_category">Pilihan toolbar</string>
-    <string name="dialog_ok">Oke</string>
-    <string name="dialog_cancel">Batal</string>
+    <string name="preferences_customization_summary">Ikon Aplikasi, Bilah Alat (Toolbar), Tombol Bersihkan</string>
+    <string name="toolbar_category">Pilihan Toolbar</string>
+    <string name="dialog_ok">OKE</string>
+    <string name="dialog_cancel">Batalkan</string>
     <string name="top_sites_sponsored_label">Disponsori</string>
     <string name="browser_menu_back">Kembali</string>
     <string name="browser_menu_stop">Berhenti</string>
@@ -231,23 +229,179 @@
     <string name="toolbar_hint">Cari atau masukkan alamat</string>
     <string name="preferences_tracking_protection_normal">Aktifkan dalam Mode Penjelajahan Normal</string>
     <string name="preferences_tracking_protection_private">Aktifkan dalam Mode Penjelajahan Privat</string>
-    <string name="bit_torrent_bootstraps_category">BitTorrent Bootstraps</string>
+    <string name="bit_torrent_bootstraps_category">Bootstraps BitTorrent</string>
     <string name="preferences_privacy_summary">Aktifkan untuk Penjelajahan Privat dan Publik</string>
-    <string name="preferences_website_sources_summary">Pilih dari mana Anda ingin memuat konten situs web</string>
+    <string name="preferences_website_sources_summary">Pilih tempat anda ingin memuat konten situs</string>
     <string name="privacy_policy_url">https://ceno.app/en/privacy_policy.html</string>
     <string name="change_language">Ubah Bahasa</string>
-    <string name="preferences_delete_browsing_data">Hapus data penjelajahan</string>
+    <string name="preferences_delete_browsing_data">Hapus data browsing</string>
     <string name="preference_category_search" tools:ignore="UnusedResources">Pencarian</string>
-    <string name="customize_extra_bittorrent_bootstrap">BitTorrent bootstraps ekstra</string>
+    <string name="customize_extra_bittorrent_bootstrap">Bootstrap BitTorrent ekstra</string>
     <string name="update">Perbarui</string>
     <string name="customize_bittorrent_bootstrap_add_custom_bootstraps">Tambahkan bootstraps kustom</string>
     <string name="top_sites_title">Pintasan</string>
     <string name="crash_report_non_fatal_message" tools:ignore="UnusedResources">Maaf. Terjadi kesalahan</string>
-    <string name="customize_custom_extra_bittorrent_bootstrap">Pisahkan IPs dengan koma</string>
+    <string name="customize_custom_extra_bittorrent_bootstrap">Pisahkan IP dengan simbol koma</string>
     <string name="select_extra_bt_source">Pilih extra BItTorrent bootstrap</string>
     <string name="browser_menu_find_in_page">Cari dalam halaman</string>
     <string name="browser_menu_add_to_shortcuts">Tambahkan ke pintasan</string>
     <string name="browser_menu_remove_from_shortcuts">Hapus dari pintasan</string>
     <string name="customize_add_bootstrap_save">Simpan</string>
     <string name="content_description_private_browsing_button" tools:ignore="UnusedResources">aktifkan penelusuran pribadi</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno akan menghapus data penelusuran yang dipilih.</string>
+    <string name="no_content_shared">Saat ini, kamu tidak membagian konten apapun</string>
+    <string name="browser_menu_desktop_site">Minta situs desktop</string>
+    <string name="delete_browsing_data_prompt_cancel">Batalkan</string>
+    <string name="preferences_delete_browsing_data_button">Hapus data browsing</string>
+    <string name="preferences_delete_browsing_data_tabs_title_2">Tab terbuka</string>
+    <string name="content_description_close_button">Tutup</string>
+    <string name="about_content_title">Bagikan Web!</string>
+    <string name="ceno_notification_title">Membagikan tab tersimpan</string>
+    <string name="preferences_change_language">Ganti Bahasa</string>
+    <string name="eq_values_button_text">Value</string>
+    <string name="preferences_clear_behavior_option_1">Perintah</string>
+    <string name="preferences_clear_behavior_option_2">Hanya menghapus cache Ceno</string>
+    <string name="preferences_clear_behavior_option_3">Hapus data aplikasi dan cache Ceno</string>
+    <string name="preferences_theme_option_1">Gelap</string>
+    <string name="preferences_theme_option_2">Terang</string>
+    <string name="private_browsing_title">Penjelajahan Pribadi</string>
+    <string name="browser_menu_add_to_homescreen">Tambahkan ke Layar beranda</string>
+    <string name="delete_browsing_data_prompt_allow">Hapus</string>
+    <string name="deleting_browsing_data_in_progress">Menghapus data penelusuran…</string>
+    <string name="preferences_delete_browsing_data_snackbar">Data penelusuran dihapus</string>
+    <string name="preferences_delete_browsing_data_browsing_data_title">Riwayat penelusuran dan data penelusuran</string>
+    <plurals name="preferences_delete_browsing_data_tabs_subtitle">
+        <item quantity="other">%d Tab</item>
+    </plurals>
+    <string name="preferences_delete_browsing_data_cookies">Cookie</string>
+    <plurals name="preferences_delete_browsing_data_browsing_data_subtitle">
+        <item quantity="other">alamat %d</item>
+    </plurals>
+    <string name="preferences_delete_browsing_data_cookies_subtitle">Kamu akan log-out dari banyak situs</string>
+    <string name="preferences_delete_browsing_data_cached_files">Gambar dan File yang tersimpan</string>
+    <string name="preferences_delete_browsing_data_cached_files_subtitle">Membebaskan ruang penyimpanan</string>
+    <string name="preferences_delete_browsing_data_site_permissions">Izin situs</string>
+    <string name="button_content_readerview">Tampilan Membaca</string>
+    <string name="close_mode_item" tools:ignore="UnusedResources">Tutup notifikasi</string>
+    <string name="set_default_search_engine">Tentukan mesin penelusuran default</string>
+    <string name="preference_search_summary">Atur default</string>
+    <string name="preference_choose_search_engine">Pilih mesin pencarian</string>
+    <string name="preference_select_preferred_engine">Pilih mesin pencarian yang diinginkan:</string>
+    <string name="preferences_add_ons">Add-on</string>
+    <string name="secure_connection">Koneksi telah aman</string>
+    <string name="insecure_connection">Koneksi tidak aman</string>
+    <string name="not_applicable">N/A</string>
+    <string name="browser_toolbar_home">Beranda</string>
+    <string name="crash_report_sent">Laporan kerusakan terkirim!</string>
+    <string name="mozac_feature_contextmenu_open_link_in_private_tab" tools:ignore="UnusedResources">Buka tautan di tab pribadi</string>
+    <string name="shutdown_message_one">Membersihkan data aplikasi</string>
+    <string name="bridge_mode_category">Pengumuman Bridge</string>
+    <string name="shutdown_message_two">Menutup Ceno</string>
+    <string name="title_success">Berhasil</string>
+    <string name="thank_you_bridge_mode_enabled">Terima kasih telah menjadi Bridge dan membantu jaringan Ceno berkembang!</string>
+    <string name="dialog_btn_positive_ok">OKE</string>
+    <string name="preferences_about_geckoview">GeckoView</string>
+    <string name="ceno_log_content_group_file_saved">Konten yang dibagian berhasil disimpan</string>
+    <string name="udp_category">UDP</string>
+    <string name="ceno_android_content_group_file_name">Konten terbagi Ceno</string>
+    <string name="canceled">Dibatalkan</string>
+    <string name="download_site_content">Unduh konten situs</string>
+    <string name="setting_item_selected">%s terpilih</string>
+    <string name="preference_show_search_suggestions">Dapatkan saran pencarian</string>
+    <string name="about_content_para_1">Ceno (singkatan dari censorship.no!) adalah browser mobile pertama yang menghindari metode sensor Internet saat ini. Metode peer-to-peer nya memungkinkan orang untuk mengakses dan membagian informasi web baik dalam dan antar wilayah di mana konektivitas telah terganggu atau terkompromi.</string>
+    <string name="about_content_para_2">Ceno Browser merupakan proyek dari eQualitie - organisasi Kanada non-profit yang menciptakan layanan internet terdesentralisasi untuk mendukung jaringan yang lebih setara dan adil. solusi eQualitie bersifat terbuka, teruji, dan dikembangankan dengan pertimbangan nilai-nilai kami. Setiap hari, mereka memungkinkan kebebasan berasosiasi bagi jutaan orang secara online.</string>
+    <string name="preferences_allow_clean_insights_tracking">Izinkan analitik latar belakang</string>
+    <string name="ceno_permissions_category">Izin</string>
+    <string name="preferences_theme_option_3">Ditetapkan oleh Penghemat Baterai</string>
+    <string name="support_button_text">Bantuan</string>
+    <string name="eq_news_button_text">Berita</string>
+    <string name="dismiss">Berhetikan</string>
+    <string name="ouinet_startup_time_header">Berapa lama waktu yang dibutuhkan untuk Ceno mulai?</string>
+    <plurals name="preferences_ceno_groups_count_subtitle">
+        <item quantity="other">situs %d</item>
+    </plurals>
+    <string name="browser_menu_enable_reader_view">Munculkan tampilan baca</string>
+    <string name="ouinet_startup_time_1">1</string>
+    <string name="device_locale">Lokasi perangkat (bahasa)</string>
+    <string name="clean_insights_opt_in">YA, MASUKKAN SAYA</string>
+    <string name="ouinet_startup_time_5">5</string>
+    <string name="clean_insights_maybe_later">TIDAK, NANTI SAJA</string>
+    <string name="error_page_title">Halaman Eror</string>
+    <string name="load_times">Waktu mulai aplikasi</string>
+    <string name="clean_insights_successful_opt_in">Aktifkan analitik latar belakang</string>
+    <string name="clean_insights_successful_opt_out">Nonaktifkan analitik latar belakang</string>
+    <string name="thank_you_for_feedback">Terima kasih atas masukan anda!</string>
+    <string name="ouinet_startup_time_too_long">Terlalu lama</string>
+    <string name="confirm_groups_file_download">Ekspor daftar konten yang dibagikan?</string>
+    <string name="confirm_groups_file_download_desc">Sebuah file .txt akan tersimpan dalam penyimpanan lokal.</string>
+    <string name="confirm_clear_cached_content">Bersihkan cache konten?</string>
+    <string name="confirm_clear_cached_content_desc">Cache konten mu akan segera dihapus</string>
+    <string name="clean_insights_header">Bantu Ceno menjadi lebih baik!</string>
+    <string name="clean_insights_sub_header">Kami ingin merekam metrik berikut hingga 31 Januari, 2025:</string>
+    <string name="clean_insights_explainer">Kontribusi anda akan bersifat anonim, dan anda dapat keluar kapan saja.</string>
+    <string name="optional_metrics">Metrik opsional:</string>
+    <string name="device_type">Tipe perangkat</string>
+    <string name="ouinet_startup_time_quick">Cepat</string>
+    <string name="ouinet_startup_time_2">2</string>
+    <string name="ouinet_startup_time_3">3</string>
+    <string name="ouinet_startup_time_4">4</string>
+    <string name="submit">Kirim</string>
+    <string name="browser_menu_disable_reader_view">Sembunyikan tampilan baca</string>
+    <string name="error_page_header">Oops! Gagal memuat halaman web.</string>
+    <string name="tooltip_permission_text">Untuk terus membagikan website dengan lancar, bahkan ketika aplikasi berjalan di latar belakang, tolong izinkan Ceno untuk mengirim notifikasi dan menonaktifkan optimisasi baterai. Anda selalu dapat mengatur perizinan ini pada pengaturan perangkat anda.</string>
+    <string name="developer_tools_disabled">Alat pengembang dinonaktifkan</string>
+    <string name="standby_tip_bridge">Jadi bagian dari bridge, bantu sesama mengakses website</string>
+    <string name="preferences_announcement_source">Sumber pemberitahuan</string>
+    <string name="preferences_show_standby_warning">Munculkan peringatan dalam timeout startup</string>
+    <plurals name="developer_tools_disable_alert">
+        <item quantity="other">Anda tinggal %d ketuk dari menonaktifkan alat pengembang</item>
+    </plurals>
+    <plurals name="developer_tools_enable_alert">
+        <item quantity="other">Anda tinggal %d ketuk dari mengaktifkan alat pengembang</item>
+    </plurals>
+    <string name="start_tooltip_description">Buka potensial penuh Ceno - Ambil tur panduan untuk menemukan fitur utama dan memberikan izin untuk membagikan web, bahkan jika aplikasi berada di latar belakang.</string>
+    <string name="standby_dont_show">Jangan munculkan peringatan lagi</string>
+    <string name="error_page_sub_header">Ceno telah mencoba segala mekanisme untuk mengakses konten ini, namun tidak ada yang berhasil:</string>
+    <string name="standby_tip_pdf">Bagikan halaman web sebagai PDF</string>
+    <string name="error_page_learn_more_1">Anda memiliki versi terbaru dari browser Ceno. Versi yang usang mungkin tidak dapat berkomunikasi dengan injektor baru atau klien lain. Cek &lt;/a&gt;halaman unduh &lt;a href=\"https://play.google.com/store/apps/details?id=ie.equalit.ceno\"&gt; untuk melihat versi terbarunya.</string>
+    <string name="skip_the_tour_button">Lewati tur</string>
+    <string name="btn_next">Berikutnya</string>
+    <string name="btn_exit">Keluar</string>
+    <string name="tooltip_shortcuts_description">Simpan situs favorit anda sebagai shortcut agar mudah diakses dari halaman utama.</string>
+    <string name="tooltip_toolbar_title">Saatnya Berselancar!</string>
+    <string name="standby_tip_announcements">Cek pembaruan dalam bagian pemberitahuan</string>
+    <string name="ceno_network_status_title">Status Jaringan Ceno</string>
+    <string name="ceno_network_status_connected">Terkoneksi dalam jaringan Ceno. Website terblokir dapat diakses.</string>
+    <string name="contact_support">Hubungi Dukungan</string>
+    <string name="ceno_support_ticket_subject">Tiket Bantuan Ceno</string>
+    <string name="startup_category">Startup (Proses Awal)</string>
+    <string name="standby_take_me_anyway">Tetap bawa saya ke Ceno</string>
+    <string name="error_page_learn_more_3">Perangkat anda memerlukan koneksi kedalam jaringan, yaitu web browser anda dapat membuka beberapa website. Ceno dan Ouinet tidak dapat bekerja jika koneksi jaringan mati.</string>
+    <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">Unduh</string>
+    <string name="enable_debug_logs">Aktifkan log debug</string>
+    <string name="error_page_learn_more_2">Seluruh akses mekanisme dalam Pengaturan perlu diaktifkan. Jika tidak, Ceno mungkin saja tidak dapat mengakali beberapa isu konektivitias saat mengakses konten tersedia.</string>
+    <string name="select_language">Pilih Bahasa:</string>
+    <string name="error_page_learn_more_header">Anda perlu memastikan bahwa persyaratan berikut telah terpenuhi agar Ceno dapat bekerja</string>
+    <string name="tooltip_sources_description">Lihat dengan mudah asal dari konten situs diambil - langsung dari website, melalui jaringan Ceno, atau dari cache Ceno</string>
+    <string name="standby_tip_icon">Ganti ikon aplikasi untuk menyembunyikan Ceno</string>
+    <string name="error_page_learn_more">Pelajari lebih lanjut</string>
+    <string name="tooltip_toolbar_description">Masukkan alamat website untuk memulai browsing</string>
+    <string name="tooltip_sources_title">Sumber Ceno</string>
+    <string name="standby_tip_title">Tip</string>
+    <string name="status_enabled">Diaktfikan</string>
+    <string name="status_disabled">Dinonaktifkan</string>
+    <string name="ceno_base_url">https://censorship.no</string>
+    <string name="preferences_additional_developer_tools">Alat pengembang tambahan</string>
+    <string name="preferences_announcement_source_summary">Atur sumber dari pemberitahuan halaman utama</string>
+    <string name="preferences_announcement_source_default">1</string>
+    <string name="preferences_announcement_expire_disable">Nonaktifkan pemberitahuan kadaluwarsa</string>
+    <string name="developer_tools_enabled">Alat pengembang diaktifkan</string>
+    <string name="preferences_clean_insights_backdate">Aktifkan penetapan tanggal mundur metrik</string>
+    <string name="ceno_network_status_disconnected">Jaringan terputus. Cek pengaturan jaringan atau ekspor log untuk informasi tambahan.</string>
+    <string name="ceno_network_status_degraded">Menghubungkan dalam jaringan Ceno. Beberapa website mungkin tidak tersedia. Cek pengaturan jaringan atau ekspor log untuk informasi tambahan.</string>
+    <string name="ceno_notification_confirm_description">Apakah anda ingin membersihkan semua data dari Ceno?</string>
+    <string name="preferences_announcement_source_option_1">Produksi</string>
+    <string name="browser_menu_library">Perpustakaan</string>
+    <string name="preferences_announcement_source_option_2">Rancangan</string>
+    <string name="preferences_announcement_source_option_3">Arsip</string>
 </resources>
