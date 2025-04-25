@@ -160,7 +160,7 @@
     <string name="clear_cache_success">O cache foi limpo com sucesso</string>
     <string name="clear_cache_fail">A limpeza do cache falhou, tente novamente em breve</string>
     <string name="about_category">Sobre</string>
-    <string name="about_content"><p>%1$s - Compartilhe a Web!</p> <p>Ceno (sigla para censorship.no!) é o primeiro navegador para aparelhos móveis do mundo que contorna os atuais métodos de censura da Internet. O backbone P2P dele permite às pessoas acessar e compartilhar informações da web dentro de e entre regiões nas quais a conectividade foi interrompida ou comprometida. </p> <p>%1$s é um projeto da eQualitie, uma organização canadiana cuja missão é promover e defender liberdades fundamentais e direitos humanos, incluindo o livre fluxo de informação online. Nosso objetivo é criar tecnologia acessível e melhorar o conjunto de habilidades necessário para defender direitos humanos e liberdades na era digital.</p></string>
+    <string name="about_content"><p>%1$s - Compartilhe a Web!</p> <p>Ceno (sigla para censorship.no!) é o primeiro navegador para aparelhos móveis do mundo que contorna os atuais métodos de censura da Internet. O backbone P2P dele permite às pessoas acessarem e compartilharem informações da web dentro e entre regiões nas quais a conectividade foi interrompida ou comprometida. </p> <p>%1$s é um projeto da eQualitie, uma organização canadense cuja missão é promover e defender liberdades fundamentais e direitos humanos, incluindo o livre fluxo de informação online. Nosso objetivo é criar tecnologia acessível e melhorar o conjunto de habilidades necessárias para defender direitos humanos e liberdade na era digital.</p></string>
     <string name="ceno_notification_clear_do_description">Sim</string>
     <string name="ceno_notification_channel_name">Serviço Ceno</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Aviso do Navegador Ceno</string>
@@ -171,7 +171,7 @@
 \n
 \nVá em \"Configurações &gt; Desativar Otimização de Pilha\" para dar autorização mais tarde</string>
     <string name="preferences_show_onboarding">Mostrar a integração no próximo lançamento</string>
-    <string name="preferences_disable_battery_opt">Desativar Otimização de Pilha</string>
+    <string name="preferences_disable_battery_opt">Otimizações de bateria</string>
     <string name="preferences_ceno_sources_private">De forma privada</string>
     <string name="preferences_ceno_sources_private_summary">Carregar conteúdo via rede privada Ceno</string>
     <string name="preferences_ceno_sources_public">Publicamente</string>
@@ -187,7 +187,7 @@
     <string name="addon_placeholder">Sem Extensões Disponíveis</string>
     <string name="website_button_text">Website</string>
     <string name="source_code_button_text">Código-fonte</string>
-    <string name="preferences_allow_notifications">Permitir Notificações</string>
+    <string name="preferences_allow_notifications">Notificações</string>
     <string name="onboarding_warning_text_v33_1">As notificações não são permitidas.
 \n
 \nVá para \"Configurações &gt; Permitir Notificações\" para conceder permissão posteriormente</string>
@@ -221,7 +221,7 @@
     <string name="ceno_home_card_public_title">PÚBLICO</string>
     <string name="onboarding_cleanup_title">Limpe tudo,
 \nem todos os lugares, de uma só vez</string>
-    <string name="onboarding_cleanup_text">Limpe o histórico do seu navegador, credenciais e qualquer rastro que você deixou no Ceno com um único botão.</string>
+    <string name="onboarding_cleanup_text">Limpe seu histórico de navegação, credenciais e qualquer rastro seu deixado no Ceno com um único botão.</string>
     <string name="ceno_home_card_personal_text">Boa conectividade, mais privacidade. Para fazer login em contas, sem deixar traços, sem compartilhamento</string>
     <string name="onboarding_finish_button">Terminar</string>
     <string name="onboarding_public_personal_text">Use Guias Públicas para ler notícias, assistir vídeos e navegar. Compartilhe o conteúdo com outros usuário Ceno.
@@ -307,21 +307,21 @@
     </plurals>
     <string name="browser_menu_enable_reader_view">Mostrar visualização do leitor</string>
     <string name="error_page_learn_more_1">Você está executando uma versão recente do Ceno Browser. Versões obsoletas podem não conseguir se comunicar com injetores mais recentes ou outros clientes. Verifique a <a href="https://play.google.com/store/apps/details?id=ie.equalit.ceno">página de download</a> para saber onde obter novas versões.</string>
-    <string name="error_page_learn_more_2">Todos os mecanismos de acesso nas Configurações estão habilitados. Caso contrário, o Ceno não conseguirá contornar alguns problemas de conectividade ao acessar o conteúdo.</string>
-    <string name="error_page_learn_more_3">Seu dispositivo tem uma conexão ativa com a rede, ou seja, seu navegador normal é capaz de abrir alguns sites. Ceno e Ouinet não funcionam quando toda a conectividade de rede é desligada.</string>
+    <string name="error_page_learn_more_2">Todos os mecanismos de acesso nas Configurações estão ativados. Caso contrário, Ceno não poderá prevenir alguns problemas de conexão ao acessar o conteúdo.</string>
+    <string name="error_page_learn_more_3">Seu dispositivo tem uma conexão ativa com a rede, ou seja, seu navegador normal é capaz de abrir alguns sites. Ceno e Ouinet não funcionam quando toda a conexão de rede é desligada.</string>
     <string name="content_description_close_button">Fechar</string>
     <string name="shutdown_message_one">Limpando dados do aplicativo</string>
     <string name="dialog_btn_positive_ok">OK</string>
     <string name="title_success">Sucesso</string>
     <string name="canceled">Cancelado</string>
     <string name="confirm_groups_file_download">Exportar lista de conteúdo compartilhado?</string>
-    <string name="confirm_groups_file_download_desc">Um arquivo txt será salvo em seu armazenamento local.</string>
+    <string name="confirm_groups_file_download_desc">Um arquivo .txt será salvo em seu armazenamento local.</string>
     <string name="browser_menu_disable_reader_view">Ocultar visualização do leitor</string>
     <string name="error_page_title">Página de erro</string>
     <string name="error_page_header">Ops! Falha ao carregar a página da web.</string>
-    <string name="error_page_sub_header">Isso significa que Ceno tentou todos os mecanismos disponíveis para acessar o conteúdo, mas nenhum deles teve sucesso:</string>
+    <string name="error_page_sub_header">Isso significa que Ceno tentou todos os mecanismos disponíveis para acessar o conteúdo, mas nenhum deles funcionou:</string>
     <string name="error_page_learn_more">Saber mais</string>
-    <string name="error_page_learn_more_header">Você deve certificar-se de que os seguintes requisitos sejam atendidos para que o Ceno funcione</string>
+    <string name="error_page_learn_more_header">Você precisa verificar se os seguintes requisitos foram atendidos para que o Ceno funcione</string>
     <string name="website_button_link">https://censorship.no/en/index.html</string>
     <string name="about_content_title">Compartilhe a Web!</string>
     <string name="top_sites_title">Atalhos</string>
@@ -337,4 +337,37 @@
     <string name="about_content_para_2">Ceno Browser é um projeto da eQualitie – uma organização canadense sem fins lucrativos que cria serviços de internet descentralizados para apoiar uma rede mais igualitária e justa. As soluções da eQualitie são de código aberto, testadas em campo e desenvolvidas com os nossos valores em mente. Todos os dias, elas possibilitam a liberdade de associação para milhões de pessoas online.</string>
     <string name="ceno_notification_title">Compartilhamento de abas em cache</string>
     <string name="ceno_notification_confirm_description">Deseja excluir todos os seus dados conosco da Ceno?</string>
+    <string name="preferences_clear_behavior_option_3">Limpar dados do aplicativo e cache de Ceno</string>
+    <string name="preferences_theme_option_1">Escuro</string>
+    <string name="preferences_theme_option_2">Claro</string>
+    <string name="preferences_theme_option_3">Ajustado pelo modo Economia de Bateria</string>
+    <string name="support_button_text">Suporte</string>
+    <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">Baixar</string>
+    <string name="ceno_permissions_category">Permissões</string>
+    <string name="preferences_allow_clean_insights_tracking">Permitir análise em segundo plano</string>
+    <string name="preferences_clear_behavior_option_2">Limpar o cache de Ceno apenas</string>
+    <string name="preferences_change_language">Mudar idioma</string>
+    <string name="eq_news_button_text">Notícias</string>
+    <string name="eq_values_button_text">Valores</string>
+    <string name="clean_insights_header">Ajude a melhorar o Ceno!</string>
+    <string name="clean_insights_sub_header">Gostaríamos de salvar as seguintes métricas até 31 de Janeiro de 2025:</string>
+    <string name="clean_insights_explainer">Sua contribuição é anônima, e poderá retirá-la quando quiser.</string>
+    <string name="optional_metrics">Métricas opcionais:</string>
+    <string name="device_type">Tipo de dispositivo</string>
+    <string name="load_times">Data inicial do aplicação</string>
+    <string name="device_locale">Local do dispositivo (idioma)</string>
+    <string name="clean_insights_opt_in">Sim, quero ajudar</string>
+    <string name="clean_insights_maybe_later">Não, talvez depois</string>
+    <string name="clean_insights_successful_opt_in">Análises permitidas em segundo plano</string>
+    <string name="clean_insights_successful_opt_out">Análises desativadas em segundo plano</string>
+    <string name="ouinet_startup_time_header">Na sua visão, quanto tempo leva para Ceno iniciar?</string>
+    <string name="ouinet_startup_time_too_long">Demora muito</string>
+    <string name="ouinet_startup_time_quick">Rápidamente</string>
+    <string name="ouinet_startup_time_1">1</string>
+    <string name="ouinet_startup_time_2">2</string>
+    <string name="ouinet_startup_time_3">3</string>
+    <string name="ouinet_startup_time_4">4</string>
+    <string name="ouinet_startup_time_5">5</string>
+    <string name="thank_you_for_feedback">Obrigado pela colaboração!</string>
+    <string name="submit">Enviar</string>
 </resources>

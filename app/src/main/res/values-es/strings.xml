@@ -22,7 +22,7 @@
     <string name="top_sites_max_limit_confirmation_button">Ok, Entendido</string>
     <string name="top_sites_rename_dialog_title">Nombre</string>
     <string name="shortcut_name_hint">Nombre de acceso directo</string>
-    <string name="dialog_ok">OK</string>
+    <string name="dialog_ok">De acuerdo</string>
     <string name="dialog_cancel">Cancelar</string>
     <string name="top_sites_sponsored_label">Patrocinado</string>
     <string name="browser_menu_forward">Avanzar</string>
@@ -65,7 +65,7 @@
     <string name="preferences_delete_browsing_data_cached_files">Imágenes y archivos en caché</string>
     <string name="preferences_delete_browsing_data_cached_files_subtitle">Libera espacio de almacenamiento</string>
     <string name="preferences_delete_browsing_data_site_permissions">Permisos de sitios</string>
-    <string name="preferences_delete_browsing_data_button">Eliminar los datos de navegación</string>
+    <string name="preferences_delete_browsing_data_button">Eliminar datos de navegación</string>
     <string name="preferences_delete_browsing_data_tabs_title_2">Abrir pestañas</string>
     <string name="clear_button_category">Botón de Borrar</string>
     <string name="delete_browsing_data_prompt_message_3">Ceno borrará los datos de navegación seleccionados.</string>
@@ -87,7 +87,7 @@
     <string name="customize_add_bootstrap_save">Guardar</string>
     <string name="udp_category">UDP</string>
     <string name="customize_extra_bittorrent_bootstrap">Arranque adicional de BitTorrent</string>
-    <string name="not_applicable">n/a</string>
+    <string name="not_applicable">N/A</string>
     <string name="crash_report_sent">¡Informe de errores enviado!</string>
     <string name="preferences_website_sources_summary">Seleccione de dónde desea cargar el contenido de la página web</string>
     <string name="customize_bittorrent_bootstrap_add_custom_bootstraps">Agregar programas de arranque personalizados</string>
@@ -250,7 +250,7 @@
 \nCompruebe sus conexiones de red e intente recargar Ceno.</string>
     <string name="standby_message_one">Conectando a la red Ceno</string>
     <string name="standby_message_two">Inicializar la caché</string>
-    <string name="standby_try_again">Inténtalo de nuevo</string>
+    <string name="standby_try_again">Intentar Nuevamente</string>
     <string name="standby_message_three">Encontrando nodos de arranque</string>
     <string name="ceno_ouinet_connecting">Conectando a la red Ceno</string>
     <string name="ceno_ouinet_connected">Conectado a la red Ceno</string>
