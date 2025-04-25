@@ -130,7 +130,7 @@
     <string name="ceno_notification_clear_do_description">Evet</string>
     <string name="ceno_notification_clear_description">Sil⚠</string>
     <string name="preferences_change_app_icon">Uygulama simgesini değiştir</string>
-    <string name="ceno_notification_description">Durdurmak için dokunun</string>
+    <string name="ceno_notification_description">Bilgi almak için dokunun</string>
     <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ceno ayarları</string>
     <string name="onboarding_warning_title">İzin verilmedi</string>
     <string name="onboarding_battery_button">İlerle</string>
@@ -388,4 +388,6 @@
     <string name="ceno_network_status_degraded">Ceno ağı ile bağlantı kuruluyor. Bazı sitelere erişilemeyebilir. Ek bilgi almak için ağ ayarlarınızı kontrol edin ya da günlükleri dışa aktarın.</string>
     <string name="ceno_network_status_connected">Ceno ağına tam olarak bağlı. Engelli sitelere erişilebiliyor olmalı.</string>
     <string name="preferences_clean_insights_backdate">Geriye dönük tarih ölçümlerini aç</string>
+    <string name="ceno_notification_confirm_description">Ceno üzerindeki tüm verilerinizi silmek ister misiniz?</string>
+    <string name="ceno_notification_title">Ön bellekteki sekmeleri paylaşmak</string>
 </resources>

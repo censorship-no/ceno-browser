@@ -13,8 +13,8 @@
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Ceno Böngésző megjegyzés</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Javasoljuk, hogy akkor használja a Ceno ha van Wi-Fi kapcsolata, mivel az a vártnál több adatforgalmat igényelhet. Érdemes lehet leállítani a Ceno mobil adatforgalom használatakor.</string>
     <string name="preferences_make_default_browser">Legyen Ceno az alapértelmezett böngésződ</string>
-    <string name="preferences_about_page">A eQualitie</string>
-    <string name="ceno_notification_description">Koppintson a leállításhoz</string>
+    <string name="preferences_about_page">Névjegy</string>
+    <string name="ceno_notification_description">Koppints a részletekért</string>
     <string name="ceno_notification_home_description">Otthon</string>
     <string name="ceno_on_mobile_data_dialog_continue" tools:ignore="UnusedResources">Folytatni</string>
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">Többet ne mutassa</string>
@@ -101,4 +101,24 @@
     <string name="preferences_ceno_groups_count">Az Ön által megosztott tartalom</string>
     <string name="tooltip_shortcuts_description">Mentse kedvenc webhelyeit parancsikonként, hogy könnyen elérhesse azokat a kezdőlapjáról.</string>
     <string name="tooltip_toolbar_title">Kezdjünk el böngészni!</string>
+    <string name="private_browsing_title">Privát Böngészés</string>
+    <string name="preferences_remote_debugging">Távoli hibakeresés USB-n keresztül</string>
+    <string name="preferences_tracking_protection_normal">Engedélyezés nyilvános böngészési módban</string>
+    <string name="preferences_tracking_protection_private">Engedélyezés Privát böngészési módban</string>
+    <string name="preferences_privacy_summary">Engedélyezés Privát és Nyilvános böngészéshez</string>
+    <string name="preferences_website_sources_summary">Válaszd ki, honnan szeretnéd betölteni a weboldal tartalmát</string>
+    <string name="preferences_customization_summary">Alkalmazás ikona, Eszköztár, Törlés</string>
+    <string name="general_category">Általános</string>
+    <string name="developer_tools_category">Fejlesztői eszközök</string>
+    <string name="tracker_category">Nyomkövetés Védelem</string>
+    <string name="theme_category">Téma</string>
+    <string name="toolbar_category">Eszköztár Beállítások</string>
+    <string name="udp_category">UDP</string>
+    <string name="crash_report_non_fatal_message" tools:ignore="UnusedResources">Bocsánat. Összeomlottunk.</string>
+    <string name="menu_share_with">Megosztás ezzel…</string>
+    <string name="toast_copied">Másolva!</string>
+    <string name="customize_add_bootstrap_save">Mentés</string>
+    <string name="bit_torrent_bootstraps_category">BitTorrent indítók</string>
+    <string name="privacy" tools:ignore="UnusedResources">Adatvédelem</string>
+    <string name="clear_button_category">Törlés Gomb</string>
 </resources>

@@ -421,4 +421,5 @@
     <string name="preferences_announcement_source_summary">Définir la source des annonces de la page d\'accueil</string>
     <string name="preferences_announcement_expire_disable">Désactiver l\'expiration de l\'annonce</string>
     <string name="ceno_notification_confirm_description">Voulez-vous effacer toutes vos données de Ceno ?</string>
+    <string name="preferences_clean_insights_backdate">Activer la rétrodatation des mesures</string>
 </resources>

@@ -1,0 +1,9 @@
+Diese Version:
+- Einführung der ersten „Clean Insights“-Metrik-Kampagne
+- Hinzufügen eines versteckten Untermenüs für Entwicklerwerkzeuge
+- Hinzufügen von Gebietsschema-Zeichenfolgen "en"
+- Unterstützt monochrome Launcher-Icons
+- Aktualisiert Android-Komponenten auf v133.0.3
+- Fügt einen Ceno Netzwerkverbindungsstatus-Indikator auf der Startseite hinzu
+- Aktualisierung der Zertifikate cacert.pem
+- Aktualisiert Übersetzungen für verschiedene Sprachumgebungen
