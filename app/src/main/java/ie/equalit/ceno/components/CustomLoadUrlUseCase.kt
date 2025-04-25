@@ -29,6 +29,7 @@ class CustomLoadUrlUseCase internal constructor(
         url: String,
         flags: LoadUrlFlags,
         additionalHeaders: Map<String, String>?,
+        originalInput: String?
     ) {
         val sessionId = store.state.selectedTabId
         if (store.state.selectedTab == null) {

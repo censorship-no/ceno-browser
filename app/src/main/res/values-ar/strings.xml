@@ -157,8 +157,8 @@
     <string name="ceno_notification_channel_name">خدمة سنو</string>
     <string name="preferences_about_ouinet_protocol">بروتوكول Ouinet</string>
     <string name="preferences_about_page">‬حول</string>
-    <string name="about_content"><p>%1$s - شارك الويب!</p><p>سنو (اختصارا لـ censorship.no!) هو أول متصفح جوال في العالم يتخطى أساليب الرقابة الحالية على الإنترنت. اعتماده على بنية نظير لنظير يسمح للأشخاص بالوصول إلى معلومات الويب ومشاركتها في وعبر المناطق التي تم فيها قطع الاتصال أو العبث به.</p><p>%1$s مشروع تابع لـ eQualitie، وهي منظمة كندية تتمثل مهمتها في تعزيز الحريات الأساسية وحقوق الإنسان والدفاع عنها، بما في ذلك حق التدفق الحر للمعلومات عبر الإنترنت. هدفنا هو إنشاء تكنولوجيا سهلة الاستخدام، وتحسين المهارات اللازمة للدفاع عن حقوق الإنسان والحريات في العصر الرقمي.</p></string>
-    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/ar/concepts/public-private.html</string>
+    <string name="about_content"><p>%1$s - شارك الويب!</p><p>سنو هو أول متصفح جوال في العالم يتخطى أساليب الرقابة الحالية على الإنترنت. اعتماده على بنية نظير لنظير يسمح للأشخاص بالوصول إلى معلومات الويب ومشاركتها في وعبر المناطق التي تم فيها قطع الاتصال أو العبث به.</p><p>%1$s مشروع تابع لـ eQualitie، وهي منظمة كندية تتمثل مهمتها في تعزيز الحريات الأساسية وحقوق الإنسان والدفاع عنها، بما في ذلك حق التدفق الحر للمعلومات عبر الإنترنت. هدفنا هو إنشاء تكنولوجيا سهلة الاستخدام، وتحسين المهارات اللازمة للدفاع عن حقوق الإنسان والحريات في العصر الرقمي.</p></string>
+    <string name="ceno_mode_manual_link">https://ceno.app/user-manual/ar/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;التصفح الشخصي&lt;/h1&gt; &lt;p&gt;لن يشارك سنو المحتوى في علامات التبويب الشخصية مع مستخدمين آخرين. يمكنك زيارة المواقع التي تتطلب تسجيل الدخول بأمان. ولكن، هناك حاجة إلى طريق إلى الإنترنت.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;هل تريد معرفة المزيد؟&lt;/p&gt;</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">إشعار المتصفح سنو</string>
     <string name="preferences_about_ceno_browser_service">خدمة المتصفح سنو</string>
@@ -230,7 +230,7 @@
     <string name="preferences_ceno_sources_local_udp">نقاط نهاية UDP محلية</string>
     <string name="preferences_ceno_sources_external_udp">نقاط نهاية UDP خارجية</string>
     <string name="preferences_ceno_sources_public_udp">نقاط نهاية UDP عامة</string>
-    <string name="ceno_support_link_url">https://censorship.no/ar/support.html</string>
+    <string name="ceno_support_link_url">https://ceno.app/ar/support.html</string>
     <string name="crash_reporting_dialog_title">عذراً, يبدو أنَّ سنو قد حدث فيه عطلٌ تسبب في اغلاقه</string>
     <string name="personal_home_learn_more">تريدُ معرفة المزيد؟</string>
     <string name="ouinet_client_fetch_success">تم تحديث الإعدادات</string>
@@ -242,7 +242,7 @@
     <string name="ceno_sources_header">مصادر المحتوى</string>
     <string name="preferences_ceno_bridge_announcement">تفعيل وضع bridge</string>
     <string name="ouinet_taking_too_long_title">يأخذ كثيراً من الوقت؟</string>
-    <string name="bridge_mode_faq_url">https://censorship.no/ar/support.html#bridgemode</string>
+    <string name="bridge_mode_faq_url">https://ceno.app/ar/support.html#bridgemode</string>
     <string name="ceno_android_content_group_file_name">سنو المحتوى المشترك</string>
     <string name="ceno_log_file_saved">ملف لوج انقذ بنجاح</string>
     <string name="ceno_log_file_saved_desc">من أجل إعطاء الأولوية لخصوصيتك، كل المعلومات التي يمكن التعرف عليها شخصيا تم إزالتها بعناية من هذا السجل.</string>
@@ -298,7 +298,7 @@
     <string name="confirm_groups_file_download_desc">سيتم حفظ ملف txt على وحدة التخزين المحلية لديك.</string>
     <string name="confirm_clear_cached_content_desc">ستتم إزالة المحتوى المخزن مؤقتًا على الفور</string>
     <string name="confirm_clear_cached_content">هل تريد مسح المحتوى المخزن مؤقتًا؟</string>
-    <string name="website_button_link">https://censorship.no/ar/index.html</string>
+    <string name="website_button_link">https://ceno.app/ar/index.html</string>
     <string name="preferences_about_geckoview">GeckoView</string>
     <string name="about_content_title">شارك الويب!</string>
     <string name="update">تحديث</string>
@@ -307,7 +307,7 @@
     <string name="content_description_close_button">إغلاق</string>
     <string name="share_copy_link_to_clipboard">نسخ إلى الحافظة</string>
     <string name="share_save_to_pdf">حفظ كـ PDF</string>
-    <string name="privacy_policy_url">https:///censorship.no/ar/privacy_policy.html</string>
+    <string name="privacy_policy_url">https:///ceno.app/ar/privacy_policy.html</string>
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">تنزيل</string>
     <string name="support_button_text">دعم</string>
     <string name="eq_news_button_text">أخبار</string>

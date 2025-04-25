@@ -143,7 +143,7 @@
     <string name="preferences_clear_behavior_default">0</string>
     <string name="preferences_make_default_browser">Faça o Ceno o seu navegador padrão</string>
     <string name="preferences_about_page">Sobre e qualidade</string>
-    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/pt_BR/concepts/public-private.html</string>
+    <string name="ceno_mode_manual_link">https://ceno.app/user-manual/pt_BR/concepts/public-private.html</string>
     <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Configurações Ceno</string>
     <string name="default_top_site_1_title">Manual Ceno</string>
     <string name="onboarding_btn_get_started">Começar</string>
@@ -160,7 +160,7 @@
     <string name="clear_cache_success">O cache foi limpo com sucesso</string>
     <string name="clear_cache_fail">A limpeza do cache falhou, tente novamente em breve</string>
     <string name="about_category">Sobre</string>
-    <string name="about_content"><p>%1$s - Compartilhe a Web!</p> <p>Ceno (sigla para censorship.no!) é o primeiro navegador para aparelhos móveis do mundo que contorna os atuais métodos de censura da Internet. O backbone P2P dele permite às pessoas acessarem e compartilharem informações da web dentro e entre regiões nas quais a conectividade foi interrompida ou comprometida. </p> <p>%1$s é um projeto da eQualitie, uma organização canadense cuja missão é promover e defender liberdades fundamentais e direitos humanos, incluindo o livre fluxo de informação online. Nosso objetivo é criar tecnologia acessível e melhorar o conjunto de habilidades necessárias para defender direitos humanos e liberdade na era digital.</p></string>
+    <string name="about_content"><p>%1$s - Compartilhe a Web!</p> <p>Ceno é o primeiro navegador para aparelhos móveis do mundo que contorna os atuais métodos de censura da Internet. O backbone P2P dele permite às pessoas acessarem e compartilharem informações da web dentro e entre regiões nas quais a conectividade foi interrompida ou comprometida. </p> <p>%1$s é um projeto da eQualitie, uma organização canadense cuja missão é promover e defender liberdades fundamentais e direitos humanos, incluindo o livre fluxo de informação online. Nosso objetivo é criar tecnologia acessível e melhorar o conjunto de habilidades necessárias para defender direitos humanos e liberdade na era digital.</p></string>
     <string name="ceno_notification_clear_do_description">Sim</string>
     <string name="ceno_notification_channel_name">Serviço Ceno</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Aviso do Navegador Ceno</string>
@@ -233,7 +233,7 @@
     <string name="crash_reporting_dialog_title">Desculpe, parece que o Ceno falhou!</string>
     <string name="bt_invalid_ip_error">IP inválido</string>
     <string name="preferences_ceno_website_sources">Fontes de sites</string>
-    <string name="ceno_support_link_url">https://censorship.no/pt_BR/support.html</string>
+    <string name="ceno_support_link_url">https://ceno.app/pt_BR/support.html</string>
     <string name="bt_sources_none">Nenhum</string>
     <string name="learn_more_title">Saiba mais</string>
     <string name="standby_restarting_text">Reiniciar…</string>
@@ -284,7 +284,7 @@
     <string name="home_go_to_settings">Ir para Definições</string>
     <string name="enable_bridge_card_title">Ativar o modo Bridge</string>
     <string name="ceno_sources_shared_by_ceno_cache">De Ceno cache</string>
-    <string name="bridge_mode_faq_url">https://censorship.no/en/support.html#bridgemode</string>
+    <string name="bridge_mode_faq_url">https://ceno.app/en/support.html#bridgemode</string>
     <string name="browser_menu_share">Partilhar</string>
     <string name="share_header_2">Partilhar</string>
     <string name="share_copy_link_to_clipboard">Copiar para a área de transferência</string>
@@ -322,10 +322,10 @@
     <string name="error_page_sub_header">Isso significa que Ceno tentou todos os mecanismos disponíveis para acessar o conteúdo, mas nenhum deles funcionou:</string>
     <string name="error_page_learn_more">Saber mais</string>
     <string name="error_page_learn_more_header">Você precisa verificar se os seguintes requisitos foram atendidos para que o Ceno funcione</string>
-    <string name="website_button_link">https://censorship.no/en/index.html</string>
+    <string name="website_button_link">https://ceno.app/en/index.html</string>
     <string name="about_content_title">Compartilhe a Web!</string>
     <string name="top_sites_title">Atalhos</string>
-    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
+    <string name="privacy_policy_url">https://ceno.app/en/privacy_policy.html</string>
     <string name="update">Atualizar</string>
     <string name="change_language">Mudar Idioma</string>
     <string name="about_content_para_1">Ceno (abreviação de censorship.no!) é o primeiro navegador móvel do mundo a contornar os métodos atuais de censura na Internet. Sua estrutura peer-to-peer permite que as pessoas acessem e compartilhem informações da web dentro e entre regiões onde a conectividade foi interrompida ou comprometida.</string>

@@ -176,7 +176,7 @@
     <string name="preferences_ceno_sources_public">Publicamente</string>
     <string name="preferences_ceno_sources_peers">Compartilhado</string>
     <string name="preferences_clear_ceno_cache">Limpar conteúdo em cache</string>
-    <string name="about_content">&lt;p&gt;%1$s - Compartilhe a Web!&lt;/p&gt; &lt;p&gt;Ceno (abreviação para censorship.no!) é o primeiro navegador para dispositivos móveis do mundo que contorna os atuais métodos de censura da Internet. Seu backbone P2P permite às pessoas acessar e compartilhar informações da web dentro de e entre regiões nas quais a conectividade foi interrompida ou comprometida. &lt;/p&gt; &lt;p&gt;%1$s é um projeto da &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt;, – uma organização canadense sem fins lucrativos que cria serviços descentralizados de Internet em apoio a uma rede mais igualitária e equitativa. As soluções da eQualitie são de código aberto, comprovadas em batalha e desenvolvidas tendo em mente nossos valores. Todos os dias, permitem a liberdade de associação a milhões de pessoas online.&lt;/p&gt;</string>
+    <string name="about_content">&lt;p&gt;%1$s - Compartilhe a Web!&lt;/p&gt; &lt;p&gt;Ceno é o primeiro navegador para dispositivos móveis do mundo que contorna os atuais métodos de censura da Internet. Seu backbone P2P permite às pessoas acessar e compartilhar informações da web dentro de e entre regiões nas quais a conectividade foi interrompida ou comprometida. &lt;/p&gt; &lt;p&gt;%1$s é um projeto da &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt;, – uma organização canadense sem fins lucrativos que cria serviços descentralizados de Internet em apoio a uma rede mais igualitária e equitativa. As soluções da eQualitie são de código aberto, comprovadas em batalha e desenvolvidas tendo em mente nossos valores. Todos os dias, permitem a liberdade de associação a milhões de pessoas online.&lt;/p&gt;</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;Navegação Pessoal&lt;/h1&gt; &lt;p&gt;Ceno não compartilhará conteúdo de abas privadas com outros usuários. Você pode seguramente visitar websites que exijam login. No entanto, é necessário acesso à Internet.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Quer saber mais?&lt;/p&gt;</string>
     <string name="preferences_ceno_cache_size">Cache local</string>
     <string name="ceno_data_category">Dados</string>
@@ -187,7 +187,7 @@
     <string name="ceno_clear_dialog_title">Limpar o Ceno</string>
     <string name="ceno_clear_dialog_clear_cache_only">Limpar somente o cache do Ceno</string>
     <string name="preferences_ceno_network_config_summary">Estado da Ouinet, endpoints UDP, bootstraps do BitTorrent</string>
-    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/pt_BR/concepts/public-private.html</string>
+    <string name="ceno_mode_manual_link">https://ceno.app/user-manual/pt_BR/concepts/public-private.html</string>
     <string name="onboarding_battery_text_v33">Em breve, o S.O.(Sistema Operacional) irá pedir a você permissão para
 \n
 \n• Permitir notificações
@@ -225,7 +225,7 @@
     <string name="ceno_onboarding_start_text">O backbone ponto a ponto do Ceno permite que as pessoas acessem e compartilhem o conteúdo do site em regiões onde a conectividade foi interrompida ou comprometida.</string>
     <string name="crash_reporting_opt_in">Obrigado por compartilhar relatórios de falhas para ajudar a melhorar o Ceno! Você sempre pode desativar essa opção em Configurações &gt; Relatórios de falhas.</string>
     <string name="ceno_home_card_personal_text">Boa conectividade, mais privacidade. Para fazer login em contas, não deixar rastros, não compartilhar</string>
-    <string name="ceno_support_link_url">https://censorship.no/pt_BR/support.html</string>
+    <string name="ceno_support_link_url">https://ceno.app/pt_BR/support.html</string>
     <string name="personal_home_learn_more">Quer aprender mais?</string>
     <string name="ouinet_client_fetch_success">Configuração do Ceno atualizada</string>
     <string name="crash_reporting_dialog_title">Desculpe, parece que o Ceno travou!</string>
@@ -283,7 +283,7 @@
     <string name="learn_more_title">Saber mais</string>
     <string name="standby_restarting_text">Reiniciando…</string>
     <string name="ceno_sources_shared_by_ceno_cache">A partir do cache armazenado no Ceno</string>
-    <string name="bridge_mode_faq_url">https://censorship.no/en/support.html#bridgemode</string>
+    <string name="bridge_mode_faq_url">https://ceno.app/en/support.html#bridgemode</string>
     <string name="shutdown_message_one">Limpando dados do aplicativo</string>
     <string name="title_success">Sucesso</string>
     <string name="thank_you_bridge_mode_enabled">Obrigado por se tornar uma ponte e aumentar a rede Ceno!</string>
@@ -328,9 +328,9 @@
     <string name="preferences_theme_option_3">Definido pela economia de bateria</string>
     <string name="preferences_clear_behavior_option_1">Prompt</string>
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">Download</string>
-    <string name="website_button_link">https://censorship.no/pt_BR/index.html</string>
+    <string name="website_button_link">https://ceno.app/pt_BR/index.html</string>
     <string name="about_content_title">Compartilhe a Web!</string>
-    <string name="about_content_para_1">Ceno (abreviação de censorship.no!) é o primeiro navegador móvel do mundo que contorna os métodos atuais de censura da Internet. Seu backbone de ponto a ponto permite que as pessoas acessem e compartilhem informações da Web em regiões onde a conectividade foi interrompida ou comprometida.</string>
+    <string name="about_content_para_1">Ceno é o primeiro navegador móvel do mundo que contorna os métodos atuais de censura da Internet. Seu backbone de ponto a ponto permite que as pessoas acessem e compartilhem informações da Web em regiões onde a conectividade foi interrompida ou comprometida.</string>
     <string name="eq_values_button_text">Princípios</string>
     <string name="support_button_text">Apoio</string>
     <string name="eq_news_button_text">Novidades</string>
@@ -363,7 +363,7 @@
     <string name="status_disabled">Desabilitado</string>
     <string name="startup_category">Inicialização</string>
     <string name="ceno_permissions_category">Permissões</string>
-    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
+    <string name="privacy_policy_url">https://ceno.app/en/privacy_policy.html</string>
     <string name="preferences_allow_clean_insights_tracking">Permitir analytics em segundo plano</string>
     <string name="device_type">Tipo de dispositivo</string>
     <string name="clean_insights_header">Ajude a melhorar o Ceno!</string>
@@ -385,7 +385,7 @@
     <string name="ouinet_startup_time_5">5</string>
     <string name="thank_you_for_feedback">Obrigado pela sua avaliação!</string>
     <string name="submit">Enviar</string>
-    <string name="ceno_base_url">https://censorship.no</string>
+    <string name="ceno_base_url">https://ceno.app</string>
     <string name="preferences_additional_developer_tools">Ferramentas adicionais para desenvolvedores</string>
     <string name="clean_insights_successful_opt_in">Ativar análise em segundo plano</string>
     <plurals name="developer_tools_enable_alert">
