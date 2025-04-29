@@ -12,7 +12,7 @@ import mozilla.components.support.ktx.android.content.getColorFromAttr
 
 class BookmarkItemMenu (
     private val context: Context,
-    private val onItemTapped: (Item) -> Unit
+    var onItemTapped: ((Item) -> Unit)? = null
 ) {
     enum class Item {
         Edit,
@@ -33,7 +33,7 @@ class BookmarkItemMenu (
                 TextMenuCandidate(
                     text = context.getString(R.string.bookmark_menu_edit_button),
                 ) {
-                    onItemTapped.invoke(Item.Edit)
+                    onItemTapped?.invoke(Item.Edit)
                 }
             } else {
                 null
@@ -42,7 +42,7 @@ class BookmarkItemMenu (
                 TextMenuCandidate(
                     text = context.getString(R.string.bookmark_menu_copy_button),
                 ) {
-                    onItemTapped.invoke(Item.Copy)
+                    onItemTapped?.invoke(Item.Copy)
                 }
             } else {
                 null
@@ -51,7 +51,7 @@ class BookmarkItemMenu (
                 TextMenuCandidate(
                     text = context.getString(R.string.bookmark_menu_share_button),
                 ) {
-                    onItemTapped.invoke(Item.Share)
+                    onItemTapped?.invoke(Item.Share)
                 }
             } else {
                 null
@@ -60,7 +60,7 @@ class BookmarkItemMenu (
                 TextMenuCandidate(
                     text = context.getString(R.string.bookmark_menu_open_in_new_tab_button),
                 ) {
-                    onItemTapped.invoke(Item.OpenInNewTab)
+                    onItemTapped?.invoke(Item.OpenInNewTab)
                 }
             } else {
                 null
@@ -69,7 +69,7 @@ class BookmarkItemMenu (
                 TextMenuCandidate(
                     text = context.getString(R.string.bookmark_menu_open_in_private_tab_button),
                 ) {
-                    onItemTapped.invoke(Item.OpenInPersonalTab)
+                    onItemTapped?.invoke(Item.OpenInPersonalTab)
                 }
             } else {
                 null
@@ -78,7 +78,7 @@ class BookmarkItemMenu (
                 text = context.getString(R.string.bookmark_menu_delete_button),
                 textStyle = TextStyle(color = context.getColorFromAttr(R.attr.textWarning)),
             ) {
-                onItemTapped.invoke(Item.Delete)
+                onItemTapped?.invoke(Item.Delete)
             },
         )
     }

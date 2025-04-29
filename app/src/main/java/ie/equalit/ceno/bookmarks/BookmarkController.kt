@@ -3,11 +3,13 @@ package ie.equalit.ceno.bookmarks
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.NavGraphDirections
 import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BrowsingMode
+import ie.equalit.ceno.standby.StandbyFragment
 import kotlinx.coroutines.CoroutineScope
 import mozilla.components.concept.engine.prompt.ShareData
 import mozilla.components.concept.storage.BookmarkNode
@@ -75,7 +77,10 @@ class DefaultBookmarkController(
     }
 
     override fun handleBookmarkEdit(node: BookmarkNode) {
-        navController.navigate(R.id.action_bookmarkFragment_to_editBookmarkFragment)
+        navController.navigate(
+            R.id.action_bookmarkFragment_to_editBookmarkFragment,
+            bundleOf(BookmarkFragment.BOOKMARK_GUID to node.guid)
+        )
     }
 
     override fun handleBookmarkSelected(node: BookmarkNode) {

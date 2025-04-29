@@ -3,9 +3,12 @@ package ie.equalit.ceno.bookmarks
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.text.SpannableString
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -228,5 +231,34 @@ class BookmarkFragment : Fragment() {
                 val rootNode = node - pendingBookmarksToDelete
                 bookmarkInteractor.onBookmarksChanged(rootNode)
             }
+    }
+
+    fun onCreateMenu(menu: Menu, inflater: MenuInflater) {
+        when (val mode = bookmarkStore.state.mode) {
+            is BookmarkFragmentState.Mode.Normal -> {
+                if (mode.showMenu) {
+                    inflater.inflate(R.menu.bookmarks_menu, menu)
+                }
+            }
+//            is BookmarkFragmentState.Mode.Selecting -> {
+//                if (mode.selectedItems.any { it.type != BookmarkNodeType.ITEM }) {
+//                    inflater.inflate(R.menu.bookmarks_select_multi_not_item, menu)
+//                } else {
+//                    inflater.inflate(R.menu.bookmarks_select_multi, menu)
+//
+//                    menu.findItem(R.id.delete_bookmarks_multi_select).title =
+//                        SpannableString(getString(R.string.bookmark_menu_delete_button)).apply {
+//                            setTextColor(requireContext(), R.attr.textCritical)
+//                        }
+//                }
+//            }
+            else -> {
+                // no-op
+            }
+        }
+    }
+
+    companion object {
+        const val BOOKMARK_GUID = "guidToEdit"
     }
 }

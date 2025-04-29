@@ -1,33 +1,34 @@
 package ie.equalit.ceno.bookmarks
 
-import android.util.Log
+import android.annotation.SuppressLint
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import ie.equalit.ceno.R
-import ie.equalit.ceno.databinding.BookmarkListItemBinding
 import ie.equalit.ceno.ext.ceno.loadIntoView
 import ie.equalit.ceno.ext.components
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import mozilla.components.concept.menu.Orientation
 import mozilla.components.concept.storage.BookmarkNode
 import mozilla.components.concept.storage.BookmarkNodeType
 
 class BookmarkNodeViewHolder(
-    private val  itemView: View,
+    private val  view: WebsiteListItemView,
     private val interactor: BookmarkViewInteractor
-): RecyclerView.ViewHolder(itemView) {
+): RecyclerView.ViewHolder(view)  {
     var item: BookmarkNode? = null
 
-    private val binding = BookmarkListItemBinding.bind(itemView)
+    private val menu: BookmarkItemMenu = BookmarkItemMenu(view.context)
 
-    private val menu: BookmarkItemMenu
+    fun bind(
+        item: BookmarkNode,
+        mode: BookmarkFragmentState.Mode,
+        payload: BookmarkPayload,
+    ) {
+        this.item = item
 
-    init {
-        menu = BookmarkItemMenu(itemView.context) { menuItem ->
-            val item = this.item ?: return@BookmarkItemMenu
+        menu.onItemTapped = { menuItem ->
             when (menuItem) {
                 BookmarkItemMenu.Item.Edit -> interactor.onEditPressed(item)
                 BookmarkItemMenu.Item.Copy -> interactor.onCopyPressed(item)
@@ -37,61 +38,45 @@ class BookmarkNodeViewHolder(
                 BookmarkItemMenu.Item.Delete -> interactor.onDelete(setOf(item))
             }
         }
+        view.attachMenu(menu.menuController)
+        view.urlView.isVisible = item.type == BookmarkNodeType.ITEM
+//        view.setSelectionInteractor(item, mode, interactor)
 
-//        itemView.attachMenu(menu.menuController)
-    }
-
-    fun bind(
-        item: BookmarkNode,
-        mode: BookmarkFragmentState.Mode,
-        payload: BookmarkPayload,
-    ) {
-        this.item = item
-
-        binding.title.text = item.title
-        binding.url.text = item.url
-        binding.url.isVisible = item.type == BookmarkNodeType.ITEM
-        binding.overflowMenu.setOnClickListener {
-            Log.d("BOOKMARK", "Bookmark Menu")
-            menu.menuController.show(
-                anchor = it,
-                orientation = Orientation.DOWN
-            )
+        CoroutineScope(Dispatchers.Default).launch {
+            menu.updateMenu(item.type, item.guid)
         }
 
         CoroutineScope(Dispatchers.Default).launch {
             menu.updateMenu(item.type, item.guid)
         }
-//        containerView.setSelectionInteractor(item, mode, interactor)
-
-//        CoroutineScope(Dispatchers.Default).launch {
-//            menu.updateMenu(item.type, item.guid)
-//        }
 
         // Hide menu button if this item is a root folder or is selected
-//        if (item.type == BookmarkNodeType.FOLDER && item.inRoots()) {
-//            containerView.overflowView.removeAndDisable()
-//        } else if (payload.modeChanged) {
-//            if (mode is BookmarkFragmentState.Mode.Selecting) {
-//                containerView.overflowView.hideAndDisable()
-//            } else {
-//                containerView.overflowView.showAndEnable()
-//            }
-//        }
+        if (item.type == BookmarkNodeType.FOLDER && item.inRoots()) {
+            view.overflowView.visibility = View.GONE
+            view.overflowView.isEnabled = false
+        } else if (payload.modeChanged) {
+            if (mode is BookmarkFragmentState.Mode.Selecting) {
+                view.overflowView.visibility = View.INVISIBLE
+                view.overflowView.isEnabled = false
+            } else {
+                view.overflowView.visibility = View.VISIBLE
+                view.overflowView.isEnabled = true
+            }
+        }
 
 //        if (payload.selectedChanged) {
 //            containerView.changeSelected(item in mode.selectedItems)
 //        }
-//        val useTitleFallback = item.type == BookmarkNodeType.ITEM && item.title.isNullOrBlank()
-//        if (payload.titleChanged) {
-//            containerView.titleView.text = if (useTitleFallback) item.url else item.title
-//        } else if (payload.urlChanged && useTitleFallback) {
-//            containerView.titleView.text = item.url
-//        }
+        val useTitleFallback = item.type == BookmarkNodeType.ITEM && item.title.isNullOrBlank()
+        if (payload.titleChanged) {
+            view.titleView.text = if (useTitleFallback) item.url else item.title
+        } else if (payload.urlChanged && useTitleFallback) {
+            view.titleView.text = item.url
+        }
 //
-//        if (payload.urlChanged) {
-//            containerView.urlView.text = item.url
-//        }
+        if (payload.urlChanged) {
+            view.urlView.text = item.url
+        }
 
         if (payload.iconChanged) {
             updateIcon(item)
@@ -99,8 +84,8 @@ class BookmarkNodeViewHolder(
     }
 
     private fun updateIcon(item: BookmarkNode) {
-        val context = itemView.context
-        val iconView = binding.favicon
+        val context = view.context
+        val iconView = view.iconView
         val url = item.url
 
         when {
@@ -116,6 +101,7 @@ class BookmarkNodeViewHolder(
     }
 
     companion object {
+        @SuppressLint("NonConstantResourceId")
         const val LAYOUT_ID = R.layout.bookmark_list_item
     }
 }

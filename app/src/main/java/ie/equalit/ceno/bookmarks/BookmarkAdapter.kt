@@ -93,7 +93,7 @@ RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         return when (viewType) {
             BookmarkNodeViewHolder.LAYOUT_ID ->
-                BookmarkNodeViewHolder(view, interactor)
+                BookmarkNodeViewHolder(view as WebsiteListItemView, interactor)
             BookmarkSeparatorViewHolder.LAYOUT_ID ->
                 BookmarkSeparatorViewHolder(view)
             else -> throw IllegalStateException("ViewType $viewType does not match to a ViewHolder")

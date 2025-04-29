@@ -161,7 +161,7 @@ class ToolbarIntegration(
             }
         }
         rowMenuItems += SmallMenuCandidate(
-            contentDescription = "Bookmark",
+            contentDescription = "add or remove Bookmark",
             icon = DrawableMenuIcon(
                 context,
                 R.drawable.ic_star_outline
@@ -305,12 +305,7 @@ class ToolbarIntegration(
                 }
             }
             menuItemsList += shortcutMenuItem(sessionState)
-            menuItemsList += TextMenuCandidate(
-                text = "Bookmark",
-                onClick = {
-                    navHost.navController.navigate(R.id.action_global_bookmarks, bundleOf("currentRoot" to BookmarkRoot.Mobile.id))
-                }
-            )
+
 
             menuItemsList += TextMenuCandidate(
                 text = context.getString(R.string.browser_menu_find_in_page)
@@ -333,6 +328,13 @@ class ToolbarIntegration(
                 )
             }
         }
+
+        menuItemsList += TextMenuCandidate(
+            text = "Bookmarks",
+            onClick = {
+                navHost.navController.navigate(R.id.action_global_bookmarks, bundleOf("currentRoot" to BookmarkRoot.Mobile.id))
+            }
+        )
 
         menuItemsList += TextMenuCandidate(text = context.getString(R.string.browser_menu_settings)) {
             CenoSettings.setStatusUpdateRequired(context, true)

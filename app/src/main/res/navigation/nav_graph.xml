@@ -283,5 +283,29 @@
         android:id="@+id/editBookmarkFragment"
         android:name="ie.equalit.ceno.bookmarks.edit.EditBookmarkFragment"
         android:label="fragment_edit_bookmark"
-        tools:layout="@layout/fragment_edit_bookmark" />
+        tools:layout="@layout/fragment_edit_bookmark">
+        <argument
+            android:name="guidToEdit"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_editBookmarkFragment_to_bookmarkSelectFolderFragment"
+            app:destination="@id/bookmarkSelectFolderFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookmarkSelectFolderFragment"
+        android:name="ie.equalit.ceno.bookmarks.edit.SelectBookmarkFolderFragment"
+        android:label="fragment_select_bookmark_folder"
+        tools:layout="@layout/fragment_select_bookmark_folder">
+        <argument
+            android:name="allowCreatingNewFolder"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="hideFolderGuid"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="string" />
+    </fragment>
 </navigation>
