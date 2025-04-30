@@ -31,7 +31,8 @@
         android:inputType="textAutoComplete"
         android:requiresFadingEdge="horizontal"
         android:textColor="?attr/textSecondary"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        tools:ignore="Autofill" />
 
     <TextView
         android:id="@+id/bookmarkUrlLabel"
@@ -55,6 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="8dp"
+            android:autofillHints="bookmark_url_label"
             android:drawablePadding="8dp"
             android:ellipsize="none"
             android:fadingEdgeLength="8dp"
@@ -73,7 +75,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:labelFor="@id/bookmarkParentFolderSelector"
-        android:text="Folder"
+        android:text="@string/bookmark_folder_label"
         android:textAllCaps="true"
         android:textColor="?attr/textPrimary"
         android:textSize="12sp" />
