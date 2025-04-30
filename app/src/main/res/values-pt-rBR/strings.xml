@@ -415,4 +415,5 @@
     </plurals>
     <string name="ceno_support_ticket_subject">Ticket de Suporte Ceno</string>
     <string name="ceno_notification_confirm_description">Você deseja limpar todos os seus dados do Ceno?</string>
+    <string name="ceno_sources_shared_by_local_cache">A partir do cache do navegador</string>
 </resources>
