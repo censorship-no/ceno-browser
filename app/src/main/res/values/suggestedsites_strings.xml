@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- CENO default suggested site urls -->
-    <string name="suggestedsites_ceno_en_url" translatable="false">https://censorship.no/user-manual/</string>
+    <string name="suggestedsites_ceno_en_url" translatable="false">https://ceno.app/user-manual/</string>
     <string name="suggestedsites_wikipedia_url" translatable="false">"https://www.wikipedia.org/</string>
     <string name="suggestedsites_apnews_url" translatable="false">https://apnews.com/</string>
     <string name="suggestedsites_reuters_url" translatable="false">https://www.reuters.com/</string>
 
-    <string name="suggestedsites_ceno_es_url" translatable="false">https://censorship.no/user-manual/es/</string>
+    <string name="suggestedsites_ceno_es_url" translatable="false">https://ceno.app/user-manual/es/</string>
     <string name="suggestedsites_elpais_url" translatable="false">https://elpais.com/internacional/</string>
     <string name="suggestedsites_infobae_url" translatable="false">https://www.infobae.com/america/</string>
 
-    <string name="suggestedsites_ceno_fa_url" translatable="false">https://censorship.no/user-manual/fa/</string>
+    <string name="suggestedsites_ceno_fa_url" translatable="false">https://ceno.app/user-manual/fa/</string>
     <string name="suggestedsites_paskooceh_url" translatable="false">http://paskoocheh.com/</string>
     <string name="suggestedsites_factnameh_url" translatable="false">https://factnameh.com/fa</string>
 
     <string name="suggestedsites_courier_url" translatable="false">https://www.courrierinternational.com/</string>
     <string name="suggestedsites_lapresse_url" translatable="false">https://www.lapresse.ca/</string>
 
-    <string name="suggestedsites_ceno_my_url" translatable="false">https://censorship.no/user-manual/my/</string>
+    <string name="suggestedsites_ceno_my_url" translatable="false">https://ceno.app/user-manual/my/</string>
     <string name="suggestedsites_mynow_url" translatable="false">https://myanmar-now.org/mm</string>
     <string name="suggestedsites_justicemy_url" translatable="false">https://justiceformyanmar.org/</string>
 
-    <string name="suggestedsites_ceno_ru_url" translatable="false">https://censorship.no/user-manual/ru/</string>
+    <string name="suggestedsites_ceno_ru_url" translatable="false">https://ceno.app/user-manual/ru/</string>
     <string name="suggestedsites_meduza_url" translatable="false">https://meduza.io/</string>
     <string name="suggestedsites_moscowtimes_url" translatable="false">https://www.moscowtimes.ru/</string>
     <string name="suggestedsites_truestory_url" translatable="false">https://thetruestory.news/ru/russia</string>
 
-    <string name="suggestedsites_ceno_uk_url" translatable="false">https://censorship.no/user-manual/uk/</string>
+    <string name="suggestedsites_ceno_uk_url" translatable="false">https://ceno.app/user-manual/uk/</string>
     <string name="suggestedsites_pravda_url" translatable="false">https://www.pravda.com.ua/</string>
     <string name="suggestedsites_hromadske_url" translatable="false">https://hromadske.ua/</string>
 

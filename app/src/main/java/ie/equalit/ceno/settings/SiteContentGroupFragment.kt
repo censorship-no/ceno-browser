@@ -73,7 +73,7 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
                     this
                 )
             )
-            binding.downloadButton.isGone = false
+            /*binding.downloadButton.isGone = false
             binding.downloadButton.setOnClickListener {
                 // confirmation nudge
                 AlertDialog.Builder(requireContext()).apply {
@@ -85,7 +85,7 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
                     }
                     create()
                 }.show()
-            }
+            }*/
         }
 
     }
@@ -99,11 +99,15 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
         for (url in urls) {
             val parts = url.split("/")
             val baseUrl = parts.first()
-            val subUrls = mutableListOf<String>()
-            parts.drop(1).forEach { subUrls.add("$baseUrl/$it") }
-            if (subUrls.isEmpty()) subUrls.add(baseUrl)
+            val subUrl = "$baseUrl/" + parts.drop(1).joinToString("/")
 
-            map[baseUrl] = if (map[baseUrl].isNullOrEmpty()) subUrls else map[baseUrl].apply { this!!.addAll(subUrls) }!!
+            map[baseUrl] = if (map[baseUrl].isNullOrEmpty()){
+                mutableListOf<String>().apply {
+                    add(subUrl)
+                }
+            } else {
+                map[baseUrl].apply { this!!.add(subUrl) }!!
+            }
         }
 
         val result = mutableListOf<CachedGroupAdapter.GroupItem>()

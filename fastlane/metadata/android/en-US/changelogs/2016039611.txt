@@ -1,0 +1,5 @@
+This release:
+- Fixes status bar, toolbar, and content overlap on Android 15 devices
+- Updates Android-Components to v136.0
+- Minor bug fixes
+

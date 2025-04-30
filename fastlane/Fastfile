@@ -52,6 +52,14 @@ platform :android do
     )
   end
 
+  desc "Set version name based on latest version listed in CHANGELOG.txt"
+  lane :setVersionName do
+    ENV["VERSION_NAME"] = sh "head -1 metadata/android/en-US/changelogs/CHANGELOG.txt \
+                                    | cut -d 'v' -f2 \
+                                    | tr -d '\n'"
+    sh "sed -ie \"s/versionName=.*/versionName=${VERSION_NAME}/g\" ../local.properties"
+  end
+
   desc "Clean build directory and re-build nightly apks and bundle"
   lane :cleanAssembleNightly do
     gradle(
@@ -144,6 +152,7 @@ platform :android do
     sh "git pull origin develop"
     current_commit = last_git_commit[:commit_hash]
     if current_commit != previous_commit then
+      setVersionName
       cleanAssembleDebugTest
       lint
       # Uploads debug apk to BrowserStack and starts tests
@@ -156,7 +165,7 @@ platform :android do
       sh "mv metadata/android/pt metadata/android/pt-PT"
       upload_to_play_store(
         track: 'internal',
-        release_status: 'draft',
+        release_status: 'completed',
         skip_upload_apk: 'true',
         skip_upload_metadata: 'true',
         skip_upload_changelogs: 'false',

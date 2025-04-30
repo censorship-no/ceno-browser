@@ -39,6 +39,14 @@ Build debug and test apks
 
 Run gradle lintDebug
 
+### android setVersionName
+
+```sh
+[bundle exec] fastlane android setVersionName
+```
+
+Set version name based on latest version listed in CHANGELOG.txt
+
 ### android cleanAssembleNightly
 
 ```sh
