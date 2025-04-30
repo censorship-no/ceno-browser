@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/bookmark_search"
-        android:icon="@drawable/mozac_ic_search_24"
-        android:title="@string/bookmark_search"
-        app:iconTint="?attr/textPrimary"
-        app:showAsAction="ifRoom" />
+<!--    <item-->
+<!--        android:id="@+id/bookmark_search"-->
+<!--        android:icon="@drawable/mozac_ic_search_24"-->
+<!--        android:title="@string/bookmark_search"-->
+<!--        app:iconTint="?attr/textPrimary"-->
+<!--        app:showAsAction="ifRoom" />-->
 
     <item
         android:id="@+id/add_bookmark_folder"
-        android:icon="@drawable/ic_folder_icon"
+        android:icon="@drawable/new_folder_24"
         app:iconTint="?attr/textPrimary"
         android:title="@string/bookmark_add_folder"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:id="@+id/close_bookmarks"
-        android:icon="@drawable/mozac_ic_close"
-        app:iconTint="?attr/textPrimary"
-        android:title="@string/content_description_close_button"
-        app:showAsAction="ifRoom" />
+<!--    <item-->
+<!--        android:id="@+id/close_bookmarks"-->
+<!--        android:icon="@drawable/mozac_ic_close"-->
+<!--        app:iconTint="?attr/textPrimary"-->
+<!--        android:title="@string/content_description_close_button"-->
+<!--        app:showAsAction="ifRoom" />-->
 </menu>

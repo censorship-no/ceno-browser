@@ -13,6 +13,7 @@ import ie.equalit.ceno.ext.components
 import mozilla.components.browser.icons.IconRequest
 import mozilla.components.concept.menu.MenuController
 import mozilla.components.concept.menu.Orientation
+import mozilla.components.concept.storage.BookmarkNode
 
 class WebsiteListItemView @JvmOverloads constructor(
     context: Context,
@@ -62,16 +63,11 @@ class WebsiteListItemView @JvmOverloads constructor(
         }
     }
 
-//    fun <T> setSelectionInteractor(item: T, holder: SelectionHolder<T>, interactor: SelectionInteractor<T>) {
-//        setOnClickListener {
-//            val selected = holder.selectedItems
-//            when {
-//                selected.isEmpty() -> interactor.open(item)
-//                item in selected -> interactor.deselect(item)
-//                else -> interactor.select(item)
-//            }
-//        }
-//
+    fun setSelectionInteractor(item: BookmarkNode, interactor: BookmarkViewInteractor) {
+        setOnClickListener {
+            interactor.open(item)
+        }
+
 //        setOnLongClickListener {
 //            if (holder.selectedItems.isEmpty()) {
 //                interactor.select(item)
@@ -88,7 +84,7 @@ class WebsiteListItemView @JvmOverloads constructor(
 //                interactor.select(item)
 //            }
 //        }
-//    }
+    }
 
     enum class ItemType {
         SITE, FOLDER

@@ -11,6 +11,7 @@ import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.standby.StandbyFragment
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import mozilla.components.concept.engine.prompt.ShareData
 import mozilla.components.concept.storage.BookmarkNode
 import mozilla.components.feature.tabs.TabsUseCases
@@ -56,7 +57,7 @@ class DefaultBookmarkController(
     private val loadBookmarkNode: suspend (String, Boolean) -> BookmarkNode?,
 //    private val showSnackbar: (String) -> Unit,
     private val deleteBookmarkNodes: (Set<BookmarkNode>, BookmarkRemoveType) -> Unit,
-//    private val deleteBookmarkFolder: (Set<BookmarkNode>) -> Unit,
+    private val deleteBookmarkFolder: (Set<BookmarkNode>) -> Unit,
 //    private val showTabTray: () -> Unit,
 ) : BookmarkController {
     override fun handleBookmarkChanged(item: BookmarkNode) {
@@ -65,11 +66,15 @@ class DefaultBookmarkController(
     }
 
     override fun handleBookmarkTapped(item: BookmarkNode) {
-        TODO("Not yet implemented")
+        activity.openToBrowser(url = item.url, true, false)
     }
 
     override fun handleBookmarkExpand(folder: BookmarkNode) {
-        TODO("Not yet implemented")
+        scope.launch {
+            val node = loadBookmarkNode.invoke(folder.guid, false) ?: return@launch
+            sharedViewModel.selectedFolder = node
+            store.dispatch(BookmarkFragmentAction.Change(node))
+        }
     }
 
     override fun handleSelectionModeSwitch() {
@@ -98,6 +103,7 @@ class DefaultBookmarkController(
     override fun handleCopyUrl(item: BookmarkNode) {
         val urlClipData = ClipData.newPlainText(item.url, item.url)
         clipboardManager?.setPrimaryClip(urlClipData)
+        Toast.makeText(activity, "Bookmark Copied!", Toast.LENGTH_SHORT).show()
     }
 
     override fun handleBookmarkSharing(item: BookmarkNode) {
@@ -125,7 +131,7 @@ class DefaultBookmarkController(
     }
 
     override fun handleBookmarkFolderDeletion(nodes: Set<BookmarkNode>) {
-        TODO("Not yet implemented")
+        deleteBookmarkFolder(nodes)
     }
 
     override fun handleBackPressed() {

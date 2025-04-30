@@ -40,7 +40,7 @@ class BookmarkNodeViewHolder(
         }
         view.attachMenu(menu.menuController)
         view.urlView.isVisible = item.type == BookmarkNodeType.ITEM
-//        view.setSelectionInteractor(item, mode, interactor)
+        view.setSelectionInteractor(item, interactor)
 
         CoroutineScope(Dispatchers.Default).launch {
             menu.updateMenu(item.type, item.guid)

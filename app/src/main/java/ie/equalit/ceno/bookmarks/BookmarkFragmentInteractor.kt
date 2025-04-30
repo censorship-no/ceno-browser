@@ -78,7 +78,13 @@ class BookmarkFragmentInteractor(
     }
 
     override fun open(item: BookmarkNode) {
-        TODO("Not yet implemented")
+        when (item.type) {
+            BookmarkNodeType.ITEM -> {
+                bookmarksController.handleBookmarkTapped(item)
+            }
+            BookmarkNodeType.FOLDER -> bookmarksController.handleBookmarkExpand(item)
+            BookmarkNodeType.SEPARATOR -> throw IllegalStateException("Cannot open separators")
+        }
     }
 
     override fun select(item: BookmarkNode) {

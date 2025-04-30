@@ -3,7 +3,6 @@ package ie.equalit.ceno.bookmarks.edit
 import android.content.DialogInterface
 import android.content.res.ColorStateList
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -12,17 +11,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.view.MenuProvider
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.R
 import ie.equalit.ceno.bookmarks.BookmarkFragment
 import ie.equalit.ceno.bookmarks.BookmarksSharedViewModel
@@ -30,17 +26,16 @@ import ie.equalit.ceno.bookmarks.friendlyRootTitle
 import ie.equalit.ceno.databinding.FragmentEditBookmarkBinding
 import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.ext.requireComponents
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import mozilla.appservices.places.uniffi.PlacesApiException
 import mozilla.components.concept.storage.BookmarkInfo
 import mozilla.components.concept.storage.BookmarkNode
 import mozilla.components.concept.storage.BookmarkNodeType
-import mozilla.components.support.ktx.android.content.getColorFromAttr
 import mozilla.components.support.ktx.android.view.hideKeyboard
-import mozilla.components.support.ktx.kotlin.toShortUrl
-import mozilla.components.ui.widgets.withCenterAlignedButtons
 
 class EditBookmarkFragment : Fragment(R.layout.fragment_edit_bookmark), MenuProvider {
 
@@ -128,11 +123,9 @@ class EditBookmarkFragment : Fragment(R.layout.fragment_edit_bookmark), MenuProv
                 )
             }
 
-//            binding.bookmarkNameEdit.apply {
-//                requestFocus()
-//                placeCursorAtEnd()
-//                showKeyboard()
-//            }
+            binding.bookmarkNameEdit.apply {
+                requestFocus()
+            }
         }
     }
 

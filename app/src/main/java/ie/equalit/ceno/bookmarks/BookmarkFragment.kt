@@ -9,13 +9,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -41,13 +44,14 @@ import mozilla.components.concept.storage.BookmarkNodeType
 import mozilla.components.lib.state.ext.consumeFrom
 import mozilla.components.support.ktx.android.content.getColorFromAttr
 import mozilla.components.support.ktx.kotlin.toShortUrl
+import androidx.core.graphics.drawable.toDrawable
 
 /**
  * A simple [Fragment] subclass.
  * Use the [BookmarkFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BookmarkFragment : Fragment() {
+class BookmarkFragment : Fragment(), MenuProvider {
 
     private lateinit var bookmarkStore: BookmarkFragmentStore
 
@@ -89,7 +93,7 @@ class BookmarkFragment : Fragment() {
                 loadBookmarkNode = ::loadBookmarkNode,
 //                showSnackbar = ::showSnackBarWithText,
                 deleteBookmarkNodes = ::deleteMulti,
-//                deleteBookmarkFolder = ::showRemoveFolderDialog,
+                deleteBookmarkFolder = ::showRemoveFolderDialog,
 //                showTabTray = ::showTabTray,
             ),
         )
@@ -103,6 +107,7 @@ class BookmarkFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
         consumeFrom(bookmarkStore) {
             update(it)
         }
@@ -138,7 +143,8 @@ class BookmarkFragment : Fragment() {
             show()
             title = "Bookmarks"
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ContextCompat.getColor(requireContext(), R.color.ceno_action_bar).toDrawable())
         }
     }
 
@@ -233,7 +239,7 @@ class BookmarkFragment : Fragment() {
             }
     }
 
-    fun onCreateMenu(menu: Menu, inflater: MenuInflater) {
+    override fun onCreateMenu(menu: Menu, inflater: MenuInflater) {
         when (val mode = bookmarkStore.state.mode) {
             is BookmarkFragmentState.Mode.Normal -> {
                 if (mode.showMenu) {
@@ -255,6 +261,17 @@ class BookmarkFragment : Fragment() {
             else -> {
                 // no-op
             }
+        }
+    }
+
+    override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+        return when(menuItem.itemId) {
+            R.id.add_bookmark_folder -> {
+                //navigate to add folder fragment
+                findNavController().navigate(R.id.action_bookmarkFragment_to_bookmarkAddFolderFragment)
+                true
+            }
+            else -> false
         }
     }
 

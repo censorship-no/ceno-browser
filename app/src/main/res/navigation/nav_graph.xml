@@ -277,6 +277,9 @@
         <action
             android:id="@+id/action_bookmarkFragment_to_editBookmarkFragment"
             app:destination="@id/editBookmarkFragment" />
+        <action
+            android:id="@+id/action_bookmarkFragment_to_bookmarkAddFolderFragment"
+            app:destination="@id/bookmarkAddFolderFragment" />
     </fragment>
 
     <fragment
@@ -307,5 +310,15 @@
             android:defaultValue="@null"
             app:nullable="true"
             app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookmarkAddFolderFragment"
+        android:name="ie.equalit.ceno.bookmarks.AddBookmarkFolderFragment"
+        android:label="@string/bookmark_add_folder_fragment_label"
+        tools:layout="@layout/fragment_edit_bookmark">
+        <action
+            android:id="@+id/action_bookmarkAddFolderFragment_to_bookmarkSelectFolderFragment"
+            app:destination="@id/bookmarkSelectFolderFragment" />
     </fragment>
 </navigation>

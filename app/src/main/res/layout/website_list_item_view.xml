@@ -74,9 +74,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/bookmark_item_menu_button"
         app:srcCompat="@drawable/ic_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="16dp"/>
+        android:layout_marginEnd="16dp"
+        app:tint="@color/fx_mobile_icon_color_primary" />
 </androidx.constraintlayout.widget.ConstraintLayout>
