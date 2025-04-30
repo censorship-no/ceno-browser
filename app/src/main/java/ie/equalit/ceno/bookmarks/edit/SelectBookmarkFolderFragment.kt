@@ -12,9 +12,11 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import ie.equalit.ceno.R
 import ie.equalit.ceno.bookmarks.BookmarksSharedViewModel
+import ie.equalit.ceno.bookmarks.friendlyRootTitle
 import ie.equalit.ceno.databinding.FragmentSelectBookmarkFolderBinding
 import ie.equalit.ceno.ext.requireComponents
 import kotlinx.coroutines.Dispatchers.IO
@@ -64,8 +66,11 @@ class SelectBookmarkFolderFragment : Fragment(), MenuProvider {
 
         viewLifecycleOwner.lifecycleScope.launch(Main) {
             bookmarkNode = withContext(IO) {
-                requireComponents.core.bookmarksStorage
+                var node = requireComponents.core.bookmarksStorage
                     .getTree(BookmarkRoot.Mobile.id, recursive = true)
+                node?.copy(
+                    title = friendlyRootTitle(requireContext(), node)
+                )
             }
             val adapter = SelectBookmarkFolderAdapter(sharedViewModel)
             binding.recylerViewBookmarkFolders.adapter = adapter
@@ -84,11 +89,7 @@ class SelectBookmarkFolderFragment : Fragment(), MenuProvider {
         return when (menuItem.itemId) {
             R.id.add_folder_button -> {
                 viewLifecycleOwner.lifecycleScope.launch(Main) {
-//                    nav(
-//                        R.id.bookmarkSelectFolderFragment,
-//                        SelectBookmarkFolderFragmentDirections
-//                            .actionBookmarkSelectFolderFragmentToBookmarkAddFolderFragment(),
-//                    )
+                    findNavController().navigate(R.id.action_bookmarkSelectFolderFragment_to_bookmarkAddFolderFragment)
                 }
                 true
             }

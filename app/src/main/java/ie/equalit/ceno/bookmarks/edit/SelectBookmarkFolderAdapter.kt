@@ -1,9 +1,8 @@
 package ie.equalit.ceno.bookmarks.edit
 
-import android.content.Context
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.updatePaddingRelative
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -20,7 +19,6 @@ class SelectBookmarkFolderAdapter(private val sharedViewModel: BookmarksSharedVi
     fun updateData(tree: BookmarkNode?, hideFolderGuid: String?) {
         val updatedData = tree
             ?.flatNodeList(hideFolderGuid)
-            ?.drop(1)
             .orEmpty()
 
         submitList(updatedData)
@@ -67,9 +65,9 @@ class SelectBookmarkFolderAdapter(private val sharedViewModel: BookmarksSharedVi
             view.setOnClickListener {
                 onSelect(folder.node)
             }
-//            val pxToIndent = view.resources.getDimensionPixelSize(R.dimen.bookmark_select_folder_indent)
-//            val padding = pxToIndent * minOf(MAX_DEPTH, folder.depth)
-//            view.updatePaddingRelative(start = padding)
+            val pxToIndent = view.resources.getDimensionPixelSize(R.dimen.bookmark_select_folder_indent)
+            val padding = pxToIndent * minOf(MAX_DEPTH, folder.depth)
+            view.updatePaddingRelative(start = padding)
         }
 
         companion object {

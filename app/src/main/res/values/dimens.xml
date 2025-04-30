@@ -101,4 +101,5 @@
     <!-- REMOVED IN FIREFOX 131, COPIED HERE -->
     <dimen name="mozac_browser_toolbar_page_action_separator_width">4dp</dimen>
 
+    <dimen name="bookmark_select_folder_indent">10dp</dimen>
 </resources>

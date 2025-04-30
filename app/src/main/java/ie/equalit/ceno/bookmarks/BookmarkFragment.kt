@@ -141,7 +141,7 @@ class BookmarkFragment : Fragment(), MenuProvider {
         loadInitialBookmarkFolder(currentGuid)
         getActionBar().apply {
             show()
-            title = "Bookmarks"
+            title = getString(R.string.library_bookmarks)
             setDisplayHomeAsUpEnabled(true)
             setBackgroundDrawable(
                 ContextCompat.getColor(requireContext(), R.color.ceno_action_bar).toDrawable())

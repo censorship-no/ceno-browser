@@ -11,7 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.os.bundleOf
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -46,6 +48,7 @@ class EditBookmarkFragment : Fragment(R.layout.fragment_edit_bookmark), MenuProv
     private var bookmarkParent: BookmarkNode? = null
     private var initialParentGuid: String? = null
     private val sharedViewModel: BookmarksSharedViewModel by activityViewModels()
+    lateinit var actionbarTitle:String
 
     val guidToEdit: String?
         get() = arguments?.getString(BookmarkFragment.BOOKMARK_GUID)
@@ -89,13 +92,13 @@ class EditBookmarkFragment : Fragment(R.layout.fragment_edit_bookmark), MenuProv
 
             when (bookmarkNode?.type) {
                 BookmarkNodeType.FOLDER -> {
-                    activity?.title = getString(R.string.edit_bookmark_folder_fragment_title)
+                    actionbarTitle= getString(R.string.edit_bookmark_folder_fragment_title)
                     binding.inputLayoutBookmarkUrl.visibility = View.GONE
                     binding.bookmarkUrlEdit.visibility = View.GONE
                     binding.bookmarkUrlLabel.visibility = View.GONE
                 }
                 BookmarkNodeType.ITEM -> {
-                    activity?.title = getString(R.string.edit_bookmark_fragment_title)
+                    actionbarTitle = getString(R.string.edit_bookmark_fragment_title)
                 }
                 else -> throw IllegalArgumentException()
             }
@@ -126,7 +129,19 @@ class EditBookmarkFragment : Fragment(R.layout.fragment_edit_bookmark), MenuProv
             binding.bookmarkNameEdit.apply {
                 requestFocus()
             }
+            (activity as AppCompatActivity).supportActionBar!!.apply {
+                show()
+                title = actionbarTitle
+                setDisplayHomeAsUpEnabled(true)
+                setBackgroundDrawable(
+                    ContextCompat.getColor(requireContext(), R.color.ceno_action_bar).toDrawable())
+            }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
     }
 
     override fun onPause() {

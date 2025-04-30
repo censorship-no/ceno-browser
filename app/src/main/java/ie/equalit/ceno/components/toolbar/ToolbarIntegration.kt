@@ -9,6 +9,7 @@ import android.content.Context
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getString
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.os.bundleOf
 import androidx.fragment.app.FragmentActivity
@@ -333,7 +334,7 @@ class ToolbarIntegration(
         }
 
         menuItemsList += TextMenuCandidate(
-            text = "Bookmarks",
+            text = getString(context, R.string.library_bookmarks),
             onClick = {
                 navHost.navController.navigate(R.id.action_global_bookmarks, bundleOf("currentRoot" to BookmarkRoot.Mobile.id))
             }
