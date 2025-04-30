@@ -1,5 +1,6 @@
 package ie.equalit.ceno.bookmarks
 
+import android.annotation.SuppressLint
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import ie.equalit.ceno.R

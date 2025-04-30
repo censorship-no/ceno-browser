@@ -92,6 +92,7 @@ class ToolbarIntegration(
     private val cenoToolbarFeature = WebExtensionToolbarFeature(context, toolbar)
 
     private var isCurrentUrlPinned = false
+    private var isCurrentUrlBookmarked = false
 
     private val navHost by lazy {
         activity.supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -164,10 +165,12 @@ class ToolbarIntegration(
             contentDescription = "add or remove Bookmark",
             icon = DrawableMenuIcon(
                 context,
-                R.drawable.ic_star_outline
+                if (isCurrentUrlBookmarked) R.drawable.ic_star_filled else R.drawable.ic_star_outline
             ),
             onClick = {
+                if (!isCurrentUrlBookmarked) isCurrentUrlBookmarked = true
                 bookmarkTapped?.invoke(session.content.url, session.content.title)
+                menuController.submitList(menuItems(context.components.core.store.state.selectedTab))
             }
         )
 
@@ -402,6 +405,11 @@ class ToolbarIntegration(
                     isCurrentUrlPinned = context.components.core.cenoTopSitesStorage
                         .getTopSites(context.components.cenoPreferences.topSitesMaxLimit)
                         .find { it.url == newUrl } != null
+                    isCurrentUrlBookmarked = newUrl?.let { url->
+                        context.components.core.bookmarksStorage
+                            .getBookmarksWithUrl(url)
+                            .any {it.url == url}
+                    } == true
                 }
         }
 

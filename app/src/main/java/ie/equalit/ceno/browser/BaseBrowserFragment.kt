@@ -16,9 +16,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.SnackbarDuration
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -33,6 +33,7 @@ import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.BuildConfig
 import ie.equalit.ceno.R
 import ie.equalit.ceno.addons.WebExtensionActionPopupPanel
+import ie.equalit.ceno.bookmarks.BookmarkFragment
 import ie.equalit.ceno.components.ceno.ClearButtonFeature
 import ie.equalit.ceno.components.ceno.ClearToolbarAction
 import ie.equalit.ceno.components.ceno.appstate.AppAction
@@ -936,7 +937,10 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler {
         val existing =
             bookmarksStorage.getBookmarksWithUrl(sessionUrl).firstOrNull { it.url == sessionUrl }
         if (existing != null) {
-            // Bookmark exists, remove bookmark
+            // Bookmark exists, go to edit bookmark
+            withContext(Main) {
+                findNavController().navigate(R.id.action_global_edit_bookmark, bundleOf(BookmarkFragment.BOOKMARK_GUID to existing.guid))
+            }
         } else {
             // Save bookmark
             try {

@@ -19,6 +19,10 @@
         app:destination="@id/bookmarkFragment"
         app:popUpToInclusive="false" />
     <action
+        android:id="@+id/action_global_edit_bookmark"
+        app:destination="@id/editBookmarkFragment"
+        app:popUpToInclusive="false" />
+    <action
         android:id="@+id/action_global_browser"
         app:destination="@id/browserFragment"
         app:popUpTo="@id/browserFragment"
