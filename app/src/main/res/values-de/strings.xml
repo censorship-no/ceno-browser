@@ -206,7 +206,7 @@
     <string name="preferences_ceno_sources_public">Öffentlich</string>
     <string name="addon_placeholder">Keine Add-ons verfügbar</string>
     <string name="onboarding_finish_button">Fertigstellen</string>
-    <string name="preferences_ceno_sources_external_udp">Externe UDP Endpunkte</string>
+    <string name="preferences_ceno_sources_external_udp">Externe UDP-Endpunkte</string>
     <string name="onboarding_public_personal_text">Verwenden Sie öffentliche Registerkarten, um Nachrichten zu lesen, Videos anzusehen und allgemein im Internet zu surfen. Teilen Sie Webinhalte mit anderen Ceno-Nutzern. Persönliche Registerkarten eignen sich besser für Social-Media-Konten, Online-Shopping und das Surfen auf Websites, die Sie nicht mit anderen teilen möchten.</string>
     <string name="preferences_show_home_button">Home Button anzeigen</string>
     <string name="preferences_ceno_sources_public_udp">Öffentliche UDP-Endpunkte</string>
