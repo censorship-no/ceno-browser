@@ -427,4 +427,5 @@
         <item quantity="other">Осталось %d клика до выключения \"инструментов разработчика\"</item>
     </plurals>
     <string name="ceno_notification_confirm_description">Хотите очистить кеш браузера?</string>
+    <string name="ceno_sources_shared_by_local_cache">Из кеша браузера</string>
 </resources>
