@@ -332,7 +332,7 @@
     <string name="ceno_network_status_disconnected">Desconectado. Verifique as configurações da sua rede ou exporte os logs para obter mais informações.</string>
     <string name="ceno_network_status_connected">Totalmente conectado à rede Ceno. Alguns websites bloqueados devem ser acessíveis.</string>
     <string name="ceno_network_status_degraded">Conectando-se à rede Ceno. Alguns sites podem estar indisponíveis. Verifique as configurações da sua rede ou exporte os logs para obter mais informações.</string>
-    <string name="contact_support">Entre em contato com o nosso suporte</string>
+    <string name="contact_support">Contate o suporte</string>
     <string name="ceno_support_ticket_subject">Abra um ticket de suporte para Ceno</string>
     <string name="about_content_para_2">Ceno Browser é um projeto da eQualitie – uma organização canadense sem fins lucrativos que cria serviços de internet descentralizados para apoiar uma rede mais igualitária e justa. As soluções da eQualitie são de código aberto, testadas em campo e desenvolvidas com os nossos valores em mente. Todos os dias, elas possibilitam a liberdade de associação para milhões de pessoas online.</string>
     <string name="ceno_notification_title">Compartilhamento de abas em cache</string>
@@ -370,4 +370,14 @@
     <string name="ouinet_startup_time_5">5</string>
     <string name="thank_you_for_feedback">Obrigado pela colaboração!</string>
     <string name="submit">Enviar</string>
+    <string name="standby_tip_pdf">Compartilhe páginas web como PDFs</string>
+    <string name="select_language">Selecione a língua:</string>
+    <string name="status_disabled">Desativado</string>
+    <string name="tooltip_shortcuts_description">Salve seus sites favoritos como atalhos para fácil acesso na sua página principal.</string>
+    <string name="standby_tip_icon">Mude o ícone do app para ocultar o Ceno</string>
+    <string name="btn_exit">Sair</string>
+    <string name="tooltip_toolbar_title">Vamos navegar!</string>
+    <string name="tooltip_toolbar_description">Coloque o endereço de um site para começar a navegar</string>
+    <string name="standby_tip_title">Dica</string>
+    <string name="status_enabled">Ativado</string>
 </resources>
