@@ -20,9 +20,9 @@
     <string name="shortcut_max_limit_title">Досягнуто обмеження кількості ярликів</string>
     <string name="shortcut_max_limit_content">Видаліть ярлик, щоб додати новий. Натисніть і утримуйте ярлик, а потім виберіть «Видалити».</string>
     <string name="top_sites_max_limit_confirmation_button">Гаразд, зрозуміло</string>
-    <string name="top_sites_rename_dialog_title">Ім\'я</string>
+    <string name="top_sites_rename_dialog_title">Назва</string>
     <string name="shortcut_name_hint">Назва ярлика</string>
-    <string name="dialog_ok">Добре</string>
+    <string name="dialog_ok">Гаразд</string>
     <string name="dialog_cancel">Скасувати</string>
     <string name="top_sites_sponsored_label">Спонсоровано</string>
     <string name="browser_menu_forward">Вперед</string>
@@ -279,7 +279,7 @@
     <string name="share_save_to_pdf">Зберегти як PDF</string>
     <string name="shutdown_message_one">Видалення даних застосунку</string>
     <string name="thank_you_bridge_mode_enabled">Дякуємо, що стали мостом і розвиваєте мережу Ceno!</string>
-    <string name="dialog_btn_positive_ok">Добре</string>
+    <string name="dialog_btn_positive_ok">Гаразд</string>
     <string name="shutdown_message_two">Закриття Ceno</string>
     <string name="title_success">Успішно</string>
     <string name="ceno_log_content_group_file_saved">Контент спільного доступу збережено успішно</string>
