@@ -420,4 +420,5 @@
     <string name="ouinet_startup_time_header">Jak myślisz, ile czasu zajmuje start Ceno?</string>
     <string name="preferences_clean_insights_backdate">Włącz wstępne datowanie metryk</string>
     <string name="ceno_notification_confirm_description">Czy chcesz usunąć wszystkie swoje dane z Ceno?</string>
+    <string name="ceno_sources_shared_by_local_cache">Z cache przeglądarki</string>
 </resources>
