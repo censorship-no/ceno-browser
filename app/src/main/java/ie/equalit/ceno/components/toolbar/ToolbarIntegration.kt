@@ -163,7 +163,7 @@ class ToolbarIntegration(
             }
         }
         rowMenuItems += SmallMenuCandidate(
-            contentDescription = "add or remove Bookmark",
+            contentDescription = context.getString(R.string.add_or_remove_bookmark),
             icon = DrawableMenuIcon(
                 context,
                 if (isCurrentUrlBookmarked) R.drawable.ic_star_filled else R.drawable.ic_star_outline
