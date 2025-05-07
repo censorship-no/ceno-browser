@@ -35,4 +35,28 @@ object MockBrowserDataHelper {
                 )
         }
     }
+
+    /**
+     * Adds a new bookmark folder, visible in the Bookmarks folder.
+     *
+     * @param parentGuid The parent guid of the bookmark folder to add.
+     * BookmarkRoot.Mobile.id is the root id for mobile bookmarks.
+     * @param title The title of the bookmark folder to add.
+     * @param position Example for the position param: null, 1u, 2u, etc.
+     * @return The guid of the newly created bookmark folder.
+     */
+    fun generateBookmarkFolder(
+        parentGuid: String = BookmarkRoot.Mobile.id,
+        title: String,
+        position: UInt?,
+    ): String {
+        return runBlocking {
+            PlacesBookmarksStorage(context)
+                .addFolder(
+                    parentGuid = parentGuid,
+                    title = title,
+                    position = position,
+                )
+        }
+    }
 }

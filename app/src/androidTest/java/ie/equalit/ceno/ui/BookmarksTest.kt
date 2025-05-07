@@ -5,6 +5,7 @@ import androidx.test.uiautomator.UiDevice
 import ie.equalit.ceno.helpers.AndroidAssetDispatcher
 import ie.equalit.ceno.helpers.BrowserActivityTestRule
 import ie.equalit.ceno.helpers.MockBrowserDataHelper.createBookmarkItem
+import ie.equalit.ceno.helpers.MockBrowserDataHelper.generateBookmarkFolder
 import ie.equalit.ceno.helpers.RetryTestRule
 import ie.equalit.ceno.helpers.TestAssetHelper
 import ie.equalit.ceno.ui.robots.navigationToolbar
@@ -278,34 +279,28 @@ class BookmarksTest {
         }
     }
 
-//    fun deleteBookmarkFoldersTest() {
-//        val website = TestAssetHelper.getGenericAsset(mockWebServer, 1)
-//
-//        val myFolder = generateBookmarkFolder(title = "My Folder", position = null)
-//        generateBookmarkFolder(myFolder, title = "My Folder 2", position = null)
-//        createBookmarkItem(website.url.toString(), website.title, null, myFolder)
-//
-//        navigationToolbar {
-//        }.openThreeDotMenu {
-//        }.openBookmarks {
-//        }.openThreeDotMenu("My Folder") {
-//        }.clickDelete {
-//            cancelFolderDeletion()
-//            verifyFolderTitle("My Folder")
-//        }.openThreeDotMenu("My Folder") {
-//        }.clickDelete {
-//            confirmDeletion()
-//            verifySnackBarText(expectedText = "Deleted")
-//            clickSnackbarButton(activityTestRule, "UNDO")
-//            verifyFolderTitle("My Folder")
-//        }.openThreeDotMenu("My Folder") {
-//        }.clickDelete {
-//            confirmDeletion()
-//            verifySnackBarText(expectedText = "Deleted")
-//            verifyBookmarkIsDeleted("My Folder")
-//            verifyBookmarkIsDeleted("My Folder 2")
-//            verifyBookmarkIsDeleted("Test_Page_1")
-//            navigateUp()
-//        }
-//    }
+    @Test
+    fun deleteBookmarkFoldersTest() {
+        val website = TestAssetHelper.getGenericAsset(mockWebServer, 1)
+
+        val myFolder = generateBookmarkFolder(title = "My Folder", position = null)
+        generateBookmarkFolder(myFolder, title = "My Folder 2", position = null)
+        createBookmarkItem(website.url.toString(), website.title, null, myFolder)
+
+        navigationToolbar {
+        }.openThreeDotMenu {
+        }.openBookmarks {
+        }.openThreeDotMenu("My Folder") {
+        }.clickDelete {
+            cancelFolderDeletion()
+            verifyFolderTitle("My Folder")
+        }.openThreeDotMenu("My Folder") {
+        }.clickDelete {
+            confirmFolderDeletion()
+            verifyBookmarkIsDeleted("My Folder")
+            verifyBookmarkIsDeleted("My Folder 2")
+            verifyBookmarkIsDeleted("Test_Page_1")
+            navigateUp()
+        }
+    }
 }

@@ -1,6 +1,7 @@
 package ie.equalit.ceno.bookmarks
 
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +10,8 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
@@ -39,6 +42,7 @@ import mozilla.components.concept.storage.BookmarkNode
 import mozilla.components.concept.storage.BookmarkNodeType
 import mozilla.components.lib.state.ext.consumeFrom
 import mozilla.components.support.base.feature.UserInteractionHandler
+import mozilla.components.ui.widgets.withCenterAlignedButtons
 
 /**
  * A simple [Fragment] subclass.
@@ -200,7 +204,20 @@ class BookmarkFragment : Fragment(), MenuProvider, UserInteractionHandler {
     }
 
     private fun showRemoveFolderDialog(selected: Set<BookmarkNode>) {
-
+        activity?.let { activity ->
+            AlertDialog.Builder(activity).apply {
+                setMessage(getString(R.string.bookmark_delete_folder_confirmation_dialog))
+                setNegativeButton(R.string.delete_browsing_data_prompt_cancel) { dialog: DialogInterface, _ ->
+                    dialog.cancel()
+                }
+                setPositiveButton(R.string.delete_browsing_data_prompt_allow) { dialog: DialogInterface, _ ->
+                    updatePendingBookmarksToDelete(selected)
+                    dialog.dismiss()
+                }
+                create().withCenterAlignedButtons()
+            }
+                .show()
+        }
     }
 
     private fun updatePendingBookmarksToDelete(selected: Set<BookmarkNode>) {

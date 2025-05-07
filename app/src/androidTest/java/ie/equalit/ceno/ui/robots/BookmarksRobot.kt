@@ -15,6 +15,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.espresso.action.ViewActions.clearText
 import androidx.test.espresso.action.ViewActions.replaceText
 import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.assertion.ViewAssertions.doesNotExist
+import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.uiautomator.By.res
 import androidx.test.uiautomator.UiSelector
 import androidx.test.uiautomator.Until
@@ -36,6 +38,11 @@ class BookmarksRobot {
     fun verifyBookmarkTitle(title:String) = assertBookmarkTitle(title)
     fun verifyBookmarkedURL(url : String) = assertBookmarkUrl(url)
     fun verifyBookmarkFavicon(url : Uri) = assertBookmarkFavicon(url.toString())
+
+    fun verifyFolderTitle(title: String) {
+        mDevice.findObject(UiSelector().text(title)).waitForExists(waitingTime)
+        onView(withText(title)).check(matches(isDisplayed()))
+    }
 
     private fun assertBookmarksView() {
         onView(withText(R.string.library_bookmarks)).check(matches(isDisplayed()))
@@ -94,7 +101,7 @@ class BookmarksRobot {
     }
 
     fun verifyBookmarkIsDeleted(expectedTitle: String) {
-        onView(withText(expectedTitle)).check(matches(not(isDisplayed())))
+        onView(withText(expectedTitle)).check(doesNotExist())
     }
 
     fun clickParentFolderSelector() {
@@ -138,6 +145,17 @@ class BookmarksRobot {
     fun confirmDeletion() {
         onView(withText(R.string.dialog_btn_positive_ok)).check(matches(isDisplayed()))
         onView(withText(R.string.dialog_btn_positive_ok)).click()
+    }
+
+    fun cancelFolderDeletion() {
+        onView(withText(R.string.delete_browsing_data_prompt_cancel))
+            .inRoot(RootMatchers.isDialog())
+            .check(matches(isDisplayed()))
+            .click()
+    }
+    fun confirmFolderDeletion() {
+        onView(withText(R.string.delete_browsing_data_prompt_allow)).check(matches(isDisplayed()))
+        onView(withText(R.string.delete_browsing_data_prompt_allow)).click()
     }
 
     class Transition {
