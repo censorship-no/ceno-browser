@@ -9,7 +9,7 @@ import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.NavGraphDirections
 import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BrowsingMode
-import ie.equalit.ceno.standby.StandbyFragment
+import ie.equalit.ceno.ext.components
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import mozilla.components.concept.engine.prompt.ShareData
@@ -123,7 +123,7 @@ class DefaultBookmarkController(
     }
 
     override fun handleOpeningFolderBookmarks(folder: BookmarkNode, mode: BrowsingMode) {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
     }
 
     override fun handleBookmarkDeletion(nodes: Set<BookmarkNode>, removeType: BookmarkRemoveType) {
@@ -135,11 +135,21 @@ class DefaultBookmarkController(
     }
 
     override fun handleBackPressed() {
-        TODO("Not yet implemented")
+        scope.launch {
+            val parentGuid = store.state.guidBackstack.findLast { guid ->
+                store.state.tree?.guid != guid && activity.components.core.bookmarksStorage.getBookmark(guid) != null
+            }
+            if (parentGuid == null) {
+                navController.popBackStack()
+            } else {
+                val parent = activity.components.core.bookmarksStorage.getBookmark(parentGuid)!!
+                handleBookmarkExpand(parent)
+            }
+        }
     }
 
     override fun handleSearch() {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
     }
 
 }

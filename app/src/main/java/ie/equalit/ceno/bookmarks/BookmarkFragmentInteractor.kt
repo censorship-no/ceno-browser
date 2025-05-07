@@ -12,7 +12,7 @@ class BookmarkFragmentInteractor(
     }
 
     override fun onSelectionModeSwitch(mode: BookmarkFragmentState.Mode) {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
     }
 
     override fun onEditPressed(node: BookmarkNode) {
@@ -20,7 +20,7 @@ class BookmarkFragmentInteractor(
     }
 
     override fun onAllBookmarksDeselected() {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
     }
 
     override fun onCopyPressed(item: BookmarkNode) {
@@ -70,11 +70,11 @@ class BookmarkFragmentInteractor(
     }
 
     override fun onBackPressed() {
-        TODO("Not yet implemented")
+        bookmarksController.handleBackPressed()
     }
 
     override fun onSearch() {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
     }
 
     override fun open(item: BookmarkNode) {
@@ -88,10 +88,10 @@ class BookmarkFragmentInteractor(
     }
 
     override fun select(item: BookmarkNode) {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
     }
 
     override fun deselect(item: BookmarkNode) {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
     }
 }

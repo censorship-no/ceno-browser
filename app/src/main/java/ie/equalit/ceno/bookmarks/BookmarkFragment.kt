@@ -1,11 +1,8 @@
 package ie.equalit.ceno.bookmarks
 
 import android.content.Context
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.text.SpannableString
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -13,10 +10,11 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.MenuProvider
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -26,13 +24,11 @@ import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.R
 import ie.equalit.ceno.components.StoreProvider
 import ie.equalit.ceno.databinding.FragmentBookmarkBinding
-import ie.equalit.ceno.databinding.FragmentStandbyBinding
 import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.ext.requireComponents
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.isActive
@@ -42,16 +38,14 @@ import mozilla.appservices.places.BookmarkRoot
 import mozilla.components.concept.storage.BookmarkNode
 import mozilla.components.concept.storage.BookmarkNodeType
 import mozilla.components.lib.state.ext.consumeFrom
-import mozilla.components.support.ktx.android.content.getColorFromAttr
-import mozilla.components.support.ktx.kotlin.toShortUrl
-import androidx.core.graphics.drawable.toDrawable
+import mozilla.components.support.base.feature.UserInteractionHandler
 
 /**
  * A simple [Fragment] subclass.
  * Use the [BookmarkFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BookmarkFragment : Fragment(), MenuProvider {
+class BookmarkFragment : Fragment(), MenuProvider, UserInteractionHandler {
 
     private lateinit var bookmarkStore: BookmarkFragmentStore
 
@@ -275,6 +269,14 @@ class BookmarkFragment : Fragment(), MenuProvider {
         }
     }
 
+    override fun onBackPressed(): Boolean {
+//        if (requireContext().settings().useNewBookmarks) {
+//            return false
+//        }
+        sharedViewModel.selectedFolder = null
+        bookmarkInteractor.onBackPressed()
+        return true
+    }
     companion object {
         const val BOOKMARK_GUID = "guidToEdit"
     }
