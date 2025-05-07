@@ -239,26 +239,26 @@ class BookmarksTest {
             verifyBookmarkedURL(defaultWebPage.url.toString())
         }
     }
-//    @Test
-//    fun navigateBookmarksFoldersTest() {
-//        navigationToolbar {
-//        }.openThreeDotMenu {
-//        }.openBookmarks {
-//            createFolder("1")
-//            waitForBookmarksFolderContentToExist("Bookmarks", "1")
-//            selectFolder("1")
-//            verifyCurrentFolderTitle("1")
-//            createFolder("2")
-//            waitForBookmarksFolderContentToExist("1", "2")
-//            selectFolder("2")
-//            verifyCurrentFolderTitle("2")
-//            navigateUp()
-//            waitForBookmarksFolderContentToExist("1", "2")
-//            verifyCurrentFolderTitle("1")
-//            mDevice.pressBack()
-//            verifyBookmarksMenuView()
-//        }
-//    }
+    @Test
+    fun navigateBookmarksFoldersTest() {
+        navigationToolbar {
+        }.openThreeDotMenu {
+        }.openBookmarks {
+            createFolder("1")
+            waitForBookmarksFolderContentToExist("Bookmarks", "1")
+            selectFolder("1")
+            verifyCurrentFolderTitle("1")
+            createFolder("2")
+            waitForBookmarksFolderContentToExist("1", "2")
+            selectFolder("2")
+            verifyCurrentFolderTitle("2")
+            navigateUp()
+            waitForBookmarksFolderContentToExist("1", "2")
+            verifyCurrentFolderTitle("1")
+            mDevice.pressBack()
+            verifyBookmarksView()
+        }
+    }
     @Test
     fun deleteBookmarkInEditModeTest() {
         val defaultWebPage = TestAssetHelper.getGenericAsset(mockWebServer, 1)

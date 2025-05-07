@@ -3,14 +3,12 @@ package ie.equalit.ceno.bookmarks
 import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -121,6 +119,7 @@ class BookmarkFragment : Fragment(), MenuProvider, UserInteractionHandler {
         }
 
         bookmarkAdapter.updateData(state.tree, mode)
+        getActionBar().title = tree?.let { if (it.inRoots()) friendlyRootTitle(requireContext(), it) else tree?.title }
 
 //        binding.bookmarksProgressBar.isVisible = state.isLoading
     }
@@ -181,23 +180,6 @@ class BookmarkFragment : Fragment(), MenuProvider, UserInteractionHandler {
         }
         updatePendingBookmarksToDelete(selected)
 
-        val message = when (eventType) {
-            BookmarkRemoveType.MULTIPLE -> {
-//                getRemoveBookmarksSnackBarMessage(selected, containsFolders = false)
-                Log.d("BOOKMARK", "Delete Multiple")
-            }
-            BookmarkRemoveType.FOLDER,
-            BookmarkRemoveType.SINGLE,
-                -> {
-//                val bookmarkNode = selected.first()
-//                getString(
-//                    R.string.bookmark_deletion_snackbar_message,
-//                    bookmarkNode.url?.toShortUrl(requireContext().components.publicSuffixList)
-//                        ?: bookmarkNode.title,
-//                )
-                Log.d("BOOKMARK", "Delete Multiple")
-            }
-        }
         viewLifecycleOwner.lifecycleScope.launch(Main) {
             getDeleteOperation(eventType).invoke(requireContext())
         }

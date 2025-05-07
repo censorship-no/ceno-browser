@@ -49,7 +49,7 @@ class BookmarksRobot {
     }
 
     private fun assertAddFolderButton() {
-        addFolderButton().check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)))
+        addBookmarksFolderButton().check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)))
     }
 
     private fun assertEmptyBookmarkView() {
@@ -121,7 +121,7 @@ class BookmarksRobot {
         onView(withText(folderName)).click()
     }
     fun createFolder(name:String, parent:String? = null) {
-        addFolderButton().click()
+        addBookmarksFolderButton().click()
         addNewFolderName(name)
         if (!parent.isNullOrBlank()) {
             setParentFolder(parent)
@@ -157,7 +157,23 @@ class BookmarksRobot {
         onView(withText(R.string.delete_browsing_data_prompt_allow)).check(matches(isDisplayed()))
         onView(withText(R.string.delete_browsing_data_prompt_allow)).click()
     }
+    fun waitForBookmarksFolderContentToExist(parentFolderName: String, childFolderName: String) {
+        mDevice.findObject(UiSelector().text(parentFolderName)).waitForExists(waitingTime)
+        mDevice.findObject(UiSelector().text(childFolderName)).waitForExists(waitingTime)
+    }
 
+    fun verifyCurrentFolderTitle(title: String) {
+        mDevice.findObject(
+            UiSelector().resourceId("$packageName:id/navigationToolbar")
+                .textContains(title),
+        ).waitForExists(waitingTimeShort)
+        onView(
+            allOf(
+                withText(title),
+                withParent(withId(R.id.action_bar)),
+            ),
+        ).check(matches(isDisplayed()))
+    }
     class Transition {
         fun openThreeDotMenu(bookmark: String, interact: ThreeDotMenuBookmarksRobot.() -> Unit): ThreeDotMenuBookmarksRobot.Transition {
             mDevice.wait(Until.findObject(res("$packageName:id/overflow_menu")), waitingTime)
@@ -188,7 +204,7 @@ private fun threeDotMenu(bookmark: String) = onView(
     ),
 )
 
-private fun addFolderButton() = onView(withId(R.id.add_bookmark_folder))
+private fun addBookmarksFolderButton() = onView(withId(R.id.add_bookmark_folder))
 private fun goBackButton() = onView(withContentDescription("Navigate up"))
 private fun bookmarkNameEditBox() = onView(withId(R.id.bookmarkNameEdit))
 private fun bookmarkUrlEditBox() = onView(withId(R.id.bookmarkUrlEdit))
@@ -198,3 +214,4 @@ private fun bookmarkFolderSelector() = onView(withId(R.id.bookmarkParentFolderSe
 
 private fun addFolderTitleField() = onView(withId(R.id.bookmarkNameEdit))
 private fun saveFolderButton() = onView(withId(R.id.confirm_add_folder_button))
+private fun addFolderButton() = onView(withId(R.id.add_folder_button))
