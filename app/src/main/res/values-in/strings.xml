@@ -59,7 +59,7 @@
     <string name="preferences_customization">Kustomisasi</string>
     <string name="preferences_theme_default">2</string>
     <string name="preferences_disable_battery_opt">Optimisasi Baterai</string>
-    <string name="preferences_ceno_sources_origin">Website</string>
+    <string name="preferences_ceno_sources_origin">Situs Web</string>
     <string name="preferences_ceno_sources_private">Secara Privat</string>
     <string name="preferences_ceno_sources_private_summary">Muat konten melalui jaringan privat Ceno</string>
     <string name="preferences_ceno_sources_public">Secara Publik</string>
@@ -82,7 +82,7 @@
     <string name="changeIconDialogMessage">Aplikasi ini mungkin akan ditutup untuk menerapkan perubahan. Kembalilah setelah Anda mengagumi ikon baru yang memukau.</string>
     <string name="preference_show_search_suggestions_summary">Ceno akan mengirimkan apa yang Anda ketik di bilah alamat ke mesin pencari Anda</string>
     <string name="preferences_ceno_enable_log">Aktifkan berkas log</string>
-    <string name="website_button_text">Website</string>
+    <string name="website_button_text">Situs Web</string>
     <string name="onboarding_thanks_text">Sebagai pengguna Ceno, Anda sudah membantu untuk mengembangkan jaringan jembatan yang memungkinkan akses ke konten yang disensor.</string>
     <string name="preferences_toolbar_hide">Gulir untuk menyembunyikan</string>
     <string name="preferences_show_home_button">Tampilkan tombol beranda</string>
@@ -273,7 +273,7 @@
     <plurals name="preferences_delete_browsing_data_tabs_subtitle">
         <item quantity="other">%d Tab</item>
     </plurals>
-    <string name="preferences_delete_browsing_data_cookies">Cookie</string>
+    <string name="preferences_delete_browsing_data_cookies">Cookies</string>
     <plurals name="preferences_delete_browsing_data_browsing_data_subtitle">
         <item quantity="other">alamat %d</item>
     </plurals>

@@ -352,7 +352,7 @@
     <string name="standby_dont_show">Не показувати попередження знову</string>
     <string name="preferences_show_standby_warning">Показувати попередження про таймаут запуску</string>
     <string name="startup_category">Запуск</string>
-    <string name="privacy_policy_url">https://ceno.network/uk/privacy_policy.html</string>
+    <string name="privacy_policy_url">https://ceno.app/en/privacy_policy.html</string>
     <string name="ceno_network_status_disconnected">Відключено. Перевірте налаштування мережі або експортуйте журнали, щоб отримати додаткову інформацію.</string>
     <string name="ceno_network_status_connected">Повністю підключено до мережі Ceno. Заблоковані веб-сайти повинні бути доступними.</string>
     <string name="contact_support">Зверніться до служби підтримки</string>
@@ -406,4 +406,5 @@
     <string name="developer_tools_enabled">Інструменти розробника ввімкнено</string>
     <string name="developer_tools_disabled">Інструменти розробника вимкнено</string>
     <string name="ceno_notification_confirm_description">Бажаєте очистити всі свої дані з Ceno?</string>
+    <string name="ceno_sources_shared_by_local_cache">З кешу браузера</string>
 </resources>
