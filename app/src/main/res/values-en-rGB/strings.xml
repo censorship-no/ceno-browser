@@ -1,10 +1,392 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="bookmark_menu_open_in_private_tab_button">Open in personal tab</string>
     <string name="mozac_feature_contextmenu_open_link_in_private_tab">Open link in personal tab</string>
     <string name="menu_action_close_tabs_private">Close Personal Tabs</string>
     <plurals name="preferences_delete_browsing_data_tabs_subtitle">
         <item quantity="one">%d tab</item>
         <item quantity="other">%d tabs</item>
+    </plurals>
+    <string name="preferences_tracking_protection_normal">Enable in Public browsing mode</string>
+    <string name="shortcut_max_limit_content">Remove a shortcut to add a new one. Touch and hold the shortcut, then select \"Remove\".</string>
+    <string name="preferences_delete_browsing_data">Delete browsing data</string>
+    <string name="settings">Settings</string>
+    <string name="preferences_customization_summary">App Icon, Toolbar, Clear button</string>
+    <string name="preferences_delete_browsing_data_cached_files">Cached images and files</string>
+    <string name="toast_copied">Copied!</string>
+    <string name="toolbar_hint">Search or enter address</string>
+    <string name="menu_action_add_tab">Add New Tab</string>
+    <string name="menu_action_close_tabs">Close All Tabs</string>
+    <string name="preferences_remote_debugging">Remote debugging via USB</string>
+    <string name="preferences_tracking_protection_private">Enable in Personal browsing mode</string>
+    <string name="privacy" tools:ignore="UnusedResources">Privacy</string>
+    <string name="preferences_privacy_summary">Enable for Personal and Public Browsing</string>
+    <string name="customization_settings">Customisation</string>
+    <string name="crash_report_non_fatal_message" tools:ignore="UnusedResources">Sorry. We crashed</string>
+    <string name="private_browsing_title">Personal Browsing</string>
+    <string name="menu_share_with">Share with…</string>
+    <string name="customize_add_bootstrap_save">Save</string>
+    <string name="update">Update</string>
+    <string name="customize_extra_bittorrent_bootstrap">Extra BitTorrent bootstraps</string>
+    <string name="customize_bittorrent_bootstrap_add_custom_bootstraps">Add custom bootstraps</string>
+    <string name="customize_custom_extra_bittorrent_bootstrap">Separate IPs with commas</string>
+    <string name="select_extra_bt_source">Select extra BitTorrent bootstrap</string>
+    <string name="top_sites_rename_dialog_title">Name</string>
+    <string name="shortcut_name_hint">Shortcut name</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="top_sites_sponsored_label">Sponsored</string>
+    <string name="browser_menu_desktop_site">Request desktop site</string>
+    <string name="preferences_website_sources_summary">Select where you want to load website content from</string>
+    <string name="open_links_in_apps">Open links in apps</string>
+    <string name="toolbar_category">Toolbar Options</string>
+    <string name="udp_category">UDP</string>
+    <string name="clear_button_category">Clear Button</string>
+    <string name="rename_top_site">Rename</string>
+    <string name="remove_top_site">Remove</string>
+    <string name="delete_from_history">Delete from history</string>
+    <string name="shortcut_max_limit_title">Shortcut limit reached</string>
+    <string name="top_sites_max_limit_confirmation_button">OK, Got It</string>
+    <string name="top_sites_title">Shortcuts</string>
+    <string name="deleting_browsing_data_in_progress">Deleting browsing data…</string>
+    <string name="preferences_delete_browsing_data_cookies">Cookies</string>
+    <string name="preferences_delete_browsing_data_cookies_subtitle">You’ll be logged out of most sites</string>
+    <string name="preferences_delete_browsing_data_site_permissions">Site permissions</string>
+    <string name="preferences_delete_browsing_data_button">Delete browsing data</string>
+    <string name="preferences_delete_browsing_data_browsing_data_title">Browsing history and site data</string>
+    <string name="confirm_groups_file_download_desc">A .txt file will be saved to your local storage.</string>
+    <string name="ceno_network_status_connected">Fully connected to the Ceno network. Blocked websites should be accessible.</string>
+    <string name="ceno_support_ticket_subject">Ceno Support Ticket</string>
+    <string name="preferences_clean_insights_backdate">Enable metrics backdating</string>
+    <string name="preferences_clear_behavior_option_2">Clear Ceno cache only</string>
+    <string name="ouinet_timeout_dialog_text">Ceno requires a connection to the internet to work. Please check your network settings.</string>
+    <string name="preferences_delete_browsing_data_snackbar">Browsing data deleted</string>
+    <string name="share_copy_link_to_clipboard">Copy to clipboard</string>
+    <string name="preferences_change_app_icon">Change app icon</string>
+    <string name="clear_cache_fail">Cache clear failed, try again soon</string>
+    <string name="preferences_delete_browsing_data_cached_files_subtitle">Frees up storage space</string>
+    <string name="ceno_notification_clear_description" tools:ignore="UnusedResources">Erase⚠</string>
+    <string name="preference_show_search_suggestions">Get search suggestions</string>
+    <string name="close_mode_item" tools:ignore="UnusedResources">Close notification</string>
+    <string name="preferences_announcement_source_option_1">Production</string>
+    <string name="preferences_ceno_sources_origin_summary">Load content directly from website</string>
+    <string name="website_button_link">https://censorship.no/en/index.html</string>
+    <string name="personal_browsing_mode_selected">personal browsing mode selected</string>
+    <string name="preferences_theme_option_3">Set by Battery Saver</string>
+    <string name="preferences_ceno_sources_peers_summary">Load content shared by other users</string>
+    <string name="onboarding_warning_text_v33_1" tools:ignore="UnusedResources">Notifications are not allowed. \n \nGo to \"Settings &gt; Allow Notifications\" to give permission later</string>
+    <string name="all_logs">All logs</string>
+    <string name="about_content_para_2">Ceno Browser is a project by eQualitie – a not-for-profit Canadian organisation that creates decentralised internet services in support of a more equal and equitable network. eQualitie\'s solutions are open source, battle proven and developed in mind of our values. Everyday, they enable freedom of association for millions of people online.</string>
+    <string name="progress_dialog_log_export_header">Please wait…</string>
+    <string name="standby_dont_show">Don\'t show warning again</string>
+    <string name="ceno_notification_description">Tap for more details</string>
+    <string name="share_link_all_apps_subheader">All actions</string>
+    <string name="progress_dialog_log_export_message">Computing your logs…</string>
+    <string name="privacy_policy_url">https://censorship.no/en/privacy_policy.html</string>
+    <string name="setting_item_selected">%s selected</string>
+    <string name="preference_category_search" tools:ignore="UnusedResources">Search</string>
+    <string name="preferences_ceno_sources_public">Publicly</string>
+    <string name="preferences_ceno_download_log">Export Ouinet log</string>
+    <string name="preferences_delete_browsing_data_tabs_title_2">Open tabs</string>
+    <string name="onboarding_skip_button" tools:ignore="UnusedResources">Skip</string>
+    <string name="standby_tip_bridge">Become a bridge, help others access websites</string>
+    <string name="preferences_announcement_source_summary">Set source of homepage announcements</string>
+    <string name="preference_choose_search_engine">Choose search engine</string>
+    <string name="preferences_ceno_network_config_summary">Ouinet status, UDP endpoints, BitTorrent bootstraps</string>
+    <string name="standby_tip_pdf">Share webpages as PDFs</string>
+    <string name="ceno_sources_category" tools:ignore="UnusedResources">Sources</string>
+    <string name="error_page_learn_more_1">You are running a recent version of Ceno Browser. Obsolete versions may not be able to communicate with newer injectors or other clients. Check the <a href="https://play.google.com/store/apps/details?id=ie.equalit.ceno">Download page</a> to find the latest version.</string>
+    <string name="preferences_ceno_cache_size">Local cache</string>
+    <string name="preferences_ceno_network_config">Network Details</string>
+    <string name="ouinet_client_fetch_success">Ceno setting updated</string>
+    <string name="source_code_button_text">Source Code</string>
+    <string name="support_button_text">Support</string>
+    <string name="ouinet_startup_time_2">2</string>
+    <string name="error_page_title">Error Page</string>
+    <string name="standby_tip_title">Tip</string>
+    <string name="standby_message_one">Connecting to Ceno network</string>
+    <string name="ceno_ouinet_connected">Connected to Ceno Network</string>
+    <string name="share_logs">Share</string>
+    <string name="personal_mode_icon">personal mode icon</string>
+    <string name="select_log_scope_header">Select your preferred scope</string>
+    <string name="ouinet_startup_time_quick">Quick</string>
+    <string name="error_page_learn_more_3">Your device has a working connection to the network, i.e. your normal Web browser is able to open some websites. Ceno and Ouinet cannot work when all network connectivity is shut down.</string>
+    <string name="ouinet_startup_time_header">How long do you feel it typically takes for Ceno to start?</string>
+    <string name="error_page_learn_more_2">All access mechanisms in the Settings are enabled. Otherwise Ceno will not be able to circumvent some connectivity issues when accessing content.</string>
+    <string name="select_language">Select Language:</string>
+    <string name="standby_take_me_anyway">Take me to Ceno anyway</string>
+    <string name="ceno_base_url">https://censorship.no</string>
+    <string name="preferences_additional_developer_tools">Additional developer tools</string>
+    <string name="preferences_announcement_source">Announcement source</string>
+    <string name="onboarding_battery_text_v33" tools:ignore="UnusedResources">Shortly the OS will ask you for permission to \n \n• Allow notifications \n• Disable battery optimisation \n \nThis is required to keep sharing websites while the app is in the background</string>
+    <string name="share_header_2">Share</string>
+    <string name="ouinet_log_file_prompt_desc">Be aware, this log may contain personally identifiable information. Exercise caution when sharing.</string>
+    <string name="button_content_readerview">Reader view</string>
+    <string name="onboarding_welcome_title">Welcome to Ceno</string>
+    <string name="content_description_close_button">Close</string>
+    <string name="ceno_notification_title">Sharing cached tabs</string>
+    <string name="onboarding_battery_button">Continue</string>
+    <string name="share_link_recent_apps_subheader">Recently used</string>
+    <string name="ceno_notification_home_description">Home</string>
+    <string name="onboarding_warning_title" tools:ignore="UnusedResources">Permission denied</string>
+    <string name="standby_message_three">Finding bootstrap nodes</string>
+    <string name="share_save_to_pdf">Save as PDF</string>
+    <string name="ceno_notification_clear_do_description" tools:ignore="UnusedResources">Yes</string>
+    <string name="crash_reporting_never_send">Never send</string>
+    <string name="set_default_search_engine">Set default search engine</string>
+    <string name="ceno_notification_channel_name" tools:ignore="UnusedResources">Ceno Service</string>
+    <string name="onboarding_info_title" tools:ignore="UnusedResources">Not your average browser</string>
+    <string name="crash_reporting_always_send">Always send, improve Ceno</string>
+    <string name="preferences_ceno_sources_peers">Shared</string>
+    <string name="preference_search_summary">Set default</string>
+    <string name="about_content_para_1">Ceno (short for censorship.no!) is the world’s first mobile browser that side-steps current Internet censorship methods. Its peer-to-peer backbone allows people to access and share web information in and across regions where connectivity has been interrupted or compromised.</string>
+    <string name="eq_news_button_text">News</string>
+    <string name="preferences_ceno_sources_origin">Website</string>
+    <string name="preferences_ceno_sources_private_summary">Load content via the private Ceno network</string>
+    <string name="ceno_data_category">Data</string>
+    <string name="ceno_ouinet_connecting">Connecting to Ceno Network</string>
+    <string name="ceno_personal_browsing_description">Ceno will not share content from personal tabs with other users. You can visit sites that require login.</string>
+    <string name="browsing_mode_card_title">Browsing Mode</string>
+    <string name="onboarding_btn_get_started">Get Started</string>
+    <string name="crash_reporting_opt_in">Thanks for sharing crash reports to help improve Ceno! You can always disable this by going to Settings &gt; Crash reporting.</string>
+    <string name="onboarding_permissions_title">Permission needed</string>
+    <string name="preferences_clear_behavior_option_3">Clear app data and Ceno cache</string>
+    <string name="error_page_sub_header">This means that Ceno tried all available mechanisms to access the content, but none of them succeeded:</string>
+    <string name="ceno_sources_header">Content sources</string>
+    <string name="preferences_ceno_sources_private">Privately</string>
+    <string name="preferences_clear_ceno_cache_summary">Clear locally cached web content</string>
+    <string name="preferences_ceno_sources_public_summary">Load content via the public Ceno network</string>
+    <string name="standby_tip_icon">Change the app icon to hide Ceno</string>
+    <string name="standby_tip_announcements">Check for updates in the announcements section</string>
+    <string name="preferences_ceno_groups_count">Content shared by you</string>
+    <string name="preferences_change_language">Change language</string>
+    <string name="ceno_log_file_saved">Log file saved successfully</string>
+    <string name="preferences_clear_ceno_cache">Clear cached content</string>
+    <string name="preferences_announcement_source_default">1</string>
+    <string name="preferences_ceno_sources_reachability">Reachability status</string>
+    <string name="preferences_ceno_export_android_logs">Export full application log</string>
+    <string name="preferences_ceno_website_sources">Website sources</string>
+    <string name="ouinet_client_fetch_fail">Failed to change Ceno setting</string>
+    <string name="addon_placeholder" tools:ignore="UnusedResources">No Add-ons Available</string>
+    <string name="ceno_sources_via_ceno_network">Using Ceno network</string>
+    <string name="last_5_minutes">Last 5 minutes</string>
+    <string name="ouinet_startup_time_1">1</string>
+    <string name="error_page_header">Oops! Failed to load webpage.</string>
+    <string name="website_button_text">Website</string>
+    <string name="eq_values_button_text">Values</string>
+    <string name="empty_log_text">Looks like your log is empty</string>
+    <string name="ouinet_startup_time_3">3</string>
+    <string name="ouinet_startup_time_4">4</string>
+    <string name="ceno_onboarding_start_title">Share the web, \npeer-to-peer</string>
+    <string name="onboarding_cleanup_text">Clear your browsing history, credentials and any trace you left on Ceno with one single button.</string>
+    <string name="change_bt_bootstrap_server">Change BT Bootstrap Server</string>
+    <string name="standby_message_two">Initialising cache</string>
+    <string name="onboarding_cleanup_title">Clear everything, \neverywhere, all at once</string>
+    <string name="standby_no_internet_text">No internet connection. \n \nPerformance of Ceno may be limited. \nPlease check your network connections and try reloading Ceno.</string>
+    <string name="standby_try_again">Try Again</string>
+    <string name="enable_debug_logs">Enable debug logs</string>
+    <string name="tooltip_permission_text">To keep sharing websites seamlessly even when the app is in the background, please allow Ceno to send notifications and disable battery optimisations. You can always adjust these permissions later in your phone\'s settings</string>
+    <string name="ceno_ouinet_disconnected">Disconnected from Ceno Network</string>
+    <string name="ceno_sources_direct_from_website">Direct from website</string>
+    <string name="ceno_sources_shared_by_ceno_cache">From Ceno cache</string>
+    <string name="startup_category">Startup</string>
+    <string name="preferences_announcement_source_option_2">Draft</string>
+    <string name="preferences_announcement_source_option_3">Archive</string>
+    <string name="public_browsing_mode_selected">public browsing mode selected</string>
+    <string name="start_tooltip_description">Unlock Ceno\'s full potential – Take a guided tour to discover key features, and allow permissions to help share the web even when the app is in the background.</string>
+    <string name="public_mode_icon">public mode icon</string>
+    <string name="last_10_minutes">Last 10 minutes</string>
+    <string name="clean_insights_successful_opt_out">Disabled background analytics</string>
+    <string name="ouinet_startup_time_too_long">Too long</string>
+    <string name="ouinet_startup_time_5">5</string>
+    <string name="onboarding_battery_text" tools:ignore="UnusedResources">Shortly the OS will ask you for permission to \n \n• Disable battery optimisation. \n \nThis is required to keep sharing websites while the app is in the background</string>
+    <string name="ceno_network_status_disconnected">Disconnected. Check your network settings or export logs for additional information.</string>
+    <string name="onboarding_warning_text" tools:ignore="UnusedResources">Battery optimisation is still enabled. \n \nGo to \"Settings &gt; Disable Battery Optimisation\" to give permission later</string>
+    <string name="onboarding_warning_text_v33_2" tools:ignore="UnusedResources">Notifications are not allowed and battery optimisation is still enabled. \n \nGo to \"Settings\" to give permission later</string>
+    <plurals name="developer_tools_disable_alert">
+        <item quantity="one">You are %d tap away from disabling developer tools</item>
+        <item quantity="other">You are %d taps away from disabling developer tools</item>
+    </plurals>
+    <string name="ceno_notification_confirm_description">Do you want to clear all your data from Ceno?</string>
+    <string name="general_category">General</string>
+    <string name="bit_torrent_bootstraps_category">BitTorrent Bootstraps</string>
+    <string name="developer_tools_category">Developer tools</string>
+    <string name="tracker_category">Tracking Protection</string>
+    <string name="theme_category">Theme</string>
+    <string name="change_language">Change Language</string>
+    <string name="content_description_private_browsing_button" tools:ignore="UnusedResources">Enable Personal browsing</string>
+    <string name="browser_menu_back">Back</string>
+    <string name="browser_menu_forward">Forward</string>
+    <string name="browser_menu_refresh">Refresh</string>
+    <string name="browser_menu_stop">Stop</string>
+    <string name="browser_menu_settings">Settings</string>
+    <string name="browser_menu_add_to_homescreen">Add to Home screen</string>
+    <string name="browser_menu_find_in_page">Find in page</string>
+    <string name="browser_menu_share">Share</string>
+    <string name="browser_menu_add_to_shortcuts">Add to shortcuts</string>
+    <string name="browser_menu_remove_from_shortcuts">Remove from shortcuts</string>
+    <string name="browser_menu_library">Library</string>
+    <string name="delete_browsing_data_prompt_cancel">Cancel</string>
+    <string name="delete_browsing_data_prompt_allow">Delete</string>
+    <string name="delete_browsing_data_prompt_message_3">Ceno will delete the selected browsing data.</string>
+    <string name="preference_select_preferred_engine">Select your preferred engine:</string>
+    <string name="preferences_add_ons">Add-ons</string>
+    <string name="secure_connection">Connection is secure</string>
+    <string name="insecure_connection">Connection is not secure</string>
+    <string name="not_applicable">N/A</string>
+    <string name="browser_toolbar_home">Home</string>
+    <string name="crash_report_sent">Crash report sent!</string>
+    <string name="bridge_mode_category">Bridge Announcements</string>
+    <string name="shutdown_message_one">Clearing app data</string>
+    <string name="shutdown_message_two">Shutting down Ceno</string>
+    <string name="title_success">Success</string>
+    <string name="thank_you_bridge_mode_enabled">Thank you for becoming a bridge and growing the Ceno network!</string>
+    <string name="dialog_btn_positive_ok">OK</string>
+    <string name="preferences_make_default_browser">Make Ceno your default browser</string>
+    <string name="preferences_about_ceno">Ceno Browser</string>
+    <string name="preferences_about_geckoview">GeckoView</string>
+    <string name="preferences_about_ouinet_protocol">Ouinet Protocol</string>
+    <string name="preferences_about_page">About</string>
+    <string name="about_category">About</string>
+    <string name="about_content_title">Share the Web!</string>
+    <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
+    <string name="ceno_private_browsing_body">&lt;h1&gt;Personal Browsing&lt;/h1&gt; &lt;p&gt;Ceno will not share content from personal tabs with other users. You can safely visit sites that require login. A path to the Internet is needed, though.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Want to learn more?&lt;/p&gt;</string>
+    <string name="about_content" tools:ignore="UnusedResources">&lt;p&gt;%1$s - Share the Web!&lt;/p&gt; &lt;p&gt;Ceno (short for censorship.no!) is the world’s first mobile browser that side-steps current Internet censorship methods. Its peer-to-peer backbone allows people to access and share web information in and across regions where connectivity has been interrupted or compromised. &lt;/p&gt; &lt;p&gt;%1$s is a project of &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt;, – a not-for-profit Canadian organisation that creates decentralised internet services in support of a more equal and equitable network. eQualitie\'s solutions are open source, battle proven and developed in mind of our values. Everyday, they enable freedom of association for millions of people online.&lt;/p&gt;</string>
+    <string name="ceno_clear_action_description">Clear</string>
+    <string name="preferences_allow_crash_reporting">Crash reporting</string>
+    <string name="preferences_allow_notifications">Notifications</string>
+    <string name="ceno_permissions_category">Permissions</string>
+    <string name="preferences_clear_in_toolbar">Show on toolbar</string>
+    <string name="preferences_clear_in_menu">Show in menu</string>
+    <string name="preferences_clear_behavior_default">0</string>
+    <string name="preferences_disable_battery_opt">Battery Optimisations</string>
+    <string name="preferences_customization">Customisation</string>
+    <string name="preferences_clear_behavior">Default Behaviour</string>
+    <string name="preferences_clear_behavior_summary">Set behaviour on tapping clear button</string>
+    <string name="changeIconCtaAccept">Apply</string>
+    <string name="download_logs">Download</string>
+    <string name="preferences_about_ceno_browser_service">Ceno Browser Service</string>
+    <plurals name="preferences_delete_browsing_data_browsing_data_subtitle">
+        <item quantity="one">%d address</item>
+        <item quantity="other">%d addresses</item>
+    </plurals>
+    <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Ceno Browser notice</string>
+    <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">It is recommended to use Ceno when you have a Wi-Fi connection, as it may use more data than you expect. You may want to stop Ceno when using mobile data.</string>
+    <string name="ceno_on_mobile_data_dialog_stop_now" tools:ignore="UnusedResources">Stop Ceno now</string>
+    <string name="ceno_on_mobile_data_dialog_continue" tools:ignore="UnusedResources">Continue</string>
+    <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">Do not show again</string>
+    <string name="ceno_clear_dialog_clear_entire_app">Clear Ceno cache and app data</string>
+    <string name="ceno_clear_dialog_cancel">Cancel</string>
+    <string name="ceno_clear_dialog_clear_cache_only">Clear Ceno cache only</string>
+    <string name="ceno_clear_dialog_title">Clear Ceno</string>
+    <string name="ceno_clear_dialog_description">WARNING: Clearing cache and app data will reset the Ceno application as if it was never used.</string>
+    <string name="crash_reporting_dialog_title">Sorry, looks like Ceno crashed!</string>
+    <string name="crash_reporting_dialog_description">Help us make Ceno better by sending us crash reports.</string>
+    <string name="crash_reporting_opt_out">You\'ve opted out of sharing crash reports. You can always opt in by going to Settings &gt; Crash reporting.</string>
+    <string name="bt_sources_none">None</string>
+    <string name="bt_invalid_ip_error">Invalid IP</string>
+    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ceno Settings</string>
+    <string name="default_top_site_1_title">Ceno Manual</string>
+    <string name="onboarding_warning_button">Okay</string>
+    <string name="onboarding_thanks_title" tools:ignore="UnusedResources">Thanks for growing the network!</string>
+    <string name="onboarding_thanks_text" tools:ignore="UnusedResources">As a Ceno user, you\'re helping to grow the network of available bridges enabling access to censored content.</string>
+    <string name="preferences_toolbar_position">Place at top of screen</string>
+    <string name="preferences_toolbar_hide">Scroll to hide</string>
+    <string name="preferences_show_home_button">Show home button</string>
+    <string name="preferences_show_onboarding">Show tooltips on next launch</string>
+    <string name="preferences_allow_clean_insights_tracking">Allow background analytics</string>
+    <string name="preferences_clear_behavior_option_1">Prompt</string>
+    <string name="preferences_theme">Set app theme</string>
+    <string name="preferences_theme_summary">Dark, Light, Battery Saving</string>
+    <string name="preferences_theme_default">2</string>
+    <string name="preferences_theme_option_1">Dark</string>
+    <string name="preferences_theme_option_2">Light</string>
+    <string name="preferences_ceno_sources_upnp">UPnP status</string>
+    <string name="preferences_ceno_sources_local_udp">Local UDP endpoints</string>
+    <string name="preferences_ceno_sources_external_udp">External UDP endpoints</string>
+    <string name="preferences_ceno_sources_public_udp">Public UDP endpoints</string>
+    <string name="preferences_ceno_sources_extra_bitTorrent_bootstraps">Extra BitTorrent Bootstraps</string>
+    <string name="preferences_ceno_enable_log">Enable log file</string>
+    <string name="preferences_ceno_bridge_announcement">Enable bridge mode</string>
+    <string name="changeIconCtaCancel">Cancel</string>
+    <string name="changeIconDialogTitle">Apply new icon?</string>
+    <string name="changeIconDialogMessage">The app may close to apply changes. Come on back after you\'ve admired your handsome new icon.</string>
+    <string name="preference_show_search_suggestions_summary">Ceno will send what you type in the address bar to your search engine</string>
+    <string name="clear_cache_success">Cache cleared successfully</string>
+    <string name="ceno_onboarding_start_text" tools:ignore="UnusedResources">Ceno’s peer-to-peer backbone allows people to access and share website content in and across regions where connectivity has been interrupted or compromised.</string>
+    <string name="onboarding_public_or_personal_title">Public or Personal?</string>
+    <string name="onboarding_public_personal_text">Use Public tabs for reading news, watching videos, and general web-surfing. In Public mode, you can also share web content with other Ceno users. Personal tabs are better suited for social media accounts, online shopping, and browsing websites you don\'t want to share with others.</string>
+    <string name="ceno_home_card_public_title">PUBLIC</string>
+    <string name="ceno_home_card_public_text">Best connectivity, less privacy. For reading news, watching videos, and sharing with others</string>
+    <string name="ceno_home_card_personal_title">PERSONAL</string>
+    <string name="ceno_home_card_personal_text">Good connectivity, more privacy. For logging into accounts, not leaving traces, no sharing</string>
+    <string name="onboarding_finish_button">Finish</string>
+    <string name="ouinet_taking_too_long_title">Taking too long?</string>
+    <string name="network_settings">Network Settings</string>
+    <string name="personal_home_learn_more">Want to learn more?</string>
+    <string name="ceno_support_link_url">https://censorship.no/en/support.html</string>
+    <string name="ceno_android_logs_file_name">Ceno Logs</string>
+    <string name="ceno_log_content_group_file_saved">Shared content saved successfully</string>
+    <string name="ceno_android_content_group_file_name">Ceno shared content</string>
+    <string name="view_logs">View</string>
+    <string name="select_log_scope_message">Selecting longer time slots may mean a longer wait</string>
+    <string name="bridge_announcement_dialog_text">Please wait while the Ceno browser service is restarted for your changes to take effect.</string>
+    <string name="bridge_announcement_dialog_title">Updating Bridge Mode settings…</string>
+    <string name="enable_bridge_card_text">Make the Ceno network stronger by becoming a bridge! You can enable Bridge Mode by going to Settings -&gt; Enable Bridge Mode.</string>
+    <string name="home_go_to_settings">Go to Settings</string>
+    <string name="enable_bridge_card_title">Enable Bridge Mode</string>
+    <string name="bridge_mode_ip_warning_text">Note that this will make your public IP address visible to other Ceno users.</string>
+    <string name="learn_more_title">Learn More</string>
+    <string name="bridge_mode_faq_url">https://censorship.no/en/support.html#bridgemode</string>
+    <string name="ceno_log_file_saved_desc">To prioritise your privacy, all personally identifiable information has been carefully removed from this log.</string>
+    <string name="canceled">Cancelled</string>
+    <string name="standby_restarting_text">Restarting…</string>
+    <string name="download_site_content">Download site content</string>
+    <string name="no_content_shared">Currently, you\'re not sharing any content</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="confirm_groups_file_download">Export list of shared content?</string>
+    <string name="confirm_clear_cached_content">Clear cached content?</string>
+    <string name="confirm_clear_cached_content_desc">Your cached content will be removed immediately</string>
+    <string name="clean_insights_header">Help make Ceno better!</string>
+    <string name="clean_insights_sub_header">We would like to record the following metrics until 31 January 2025:</string>
+    <string name="clean_insights_explainer">Your contribution will be anonymous, and you can opt out at any time.</string>
+    <string name="optional_metrics">Optional metrics:</string>
+    <string name="device_type">Device type</string>
+    <string name="load_times">App startup time</string>
+    <string name="device_locale">Device locale (language)</string>
+    <string name="clean_insights_opt_in">YES, OPT ME IN</string>
+    <string name="clean_insights_maybe_later">NO, MAYBE LATER</string>
+    <string name="clean_insights_successful_opt_in">Enabled background analytics</string>
+    <string name="thank_you_for_feedback">Thank you for your feedback!</string>
+    <string name="submit">Submit</string>
+    <string name="browser_menu_enable_reader_view">Show Reader View</string>
+    <string name="browser_menu_disable_reader_view">Hide Reader View</string>
+    <string name="error_page_learn_more">Learn more</string>
+    <plurals name="preferences_ceno_groups_count_subtitle">
+        <item quantity="one">%d site</item>
+        <item quantity="other">%d sites</item>
+    </plurals>
+    <string name="error_page_learn_more_header">You should make sure that the following requirements are fulfilled for Ceno to work</string>
+    <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">Download</string>
+    <string name="btn_exit">Exit</string>
+    <string name="skip_the_tour_button">Skip the tour</string>
+    <string name="btn_next">Next</string>
+    <string name="tooltip_toolbar_title">Let\'s get browsing!</string>
+    <string name="tooltip_toolbar_description">Type in a website address to start browsing</string>
+    <string name="tooltip_sources_title">Ceno Sources</string>
+    <string name="tooltip_sources_description">Easily see where the site\'s content is fetched from - directly from the website, via the Ceno network, or from the Ceno cache</string>
+    <string name="preferences_show_standby_warning">Show warning on startup timeout</string>
+    <string name="status_enabled">Enabled</string>
+    <string name="status_disabled">Disabled</string>
+    <string name="tooltip_shortcuts_description">Save your favourite sites as shortcuts for easy access from your homepage.</string>
+    <string name="developer_tools_enabled">Developer tools enabled</string>
+    <string name="developer_tools_disabled">Developer tools disabled</string>
+    <string name="ceno_network_status_title">Ceno Network Status</string>
+    <string name="ceno_network_status_degraded">Connecting to the Ceno network. Some websites may be unavailable. Check your network settings or export logs for additional information.</string>
+    <string name="contact_support">Contact Support</string>
+    <string name="preferences_announcement_expire_disable">Disable announcement expiry</string>
+    <plurals name="developer_tools_enable_alert">
+        <item quantity="one">You are %d tap away from enabling developer tools</item>
+        <item quantity="other">You are %d taps away from enabling developer tools</item>
     </plurals>
 </resources>

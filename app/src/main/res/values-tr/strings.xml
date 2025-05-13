@@ -32,7 +32,7 @@
     <string name="preferences_delete_browsing_data_cached_files">Ön bellekteki görsel ve dosyalar</string>
     <string name="preferences_delete_browsing_data_button">Gezinme verilerini sil</string>
     <string name="preferences_privacy_summary">Kişisel ve herkese açık gezinme kiplerinde aç</string>
-    <string name="preferences_tracking_protection_normal">Genel gezinme kipinde etkinleştir</string>
+    <string name="preferences_tracking_protection_normal">Herkese açık gezinme kipinde etkinleştir</string>
     <string name="browser_menu_refresh">Yenile</string>
     <string name="browser_menu_back">Geri</string>
     <string name="browser_menu_stop">Durdur</string>
@@ -75,7 +75,7 @@
         <item quantity="one">%d sekme</item>
         <item quantity="other">%d sekme</item>
     </plurals>
-    <string name="preferences_delete_browsing_data_cookies">Çerezler</string>
+    <string name="preferences_delete_browsing_data_cookies">Tanımlama bilgileri</string>
     <string name="preferences_delete_browsing_data_cookies_subtitle">Çoğu sitedeki oturumlarınız kapatılacak</string>
     <string name="preferences_delete_browsing_data_tabs_title_2">Açık sekmeler</string>
     <string name="browser_menu_find_in_page">Sayfada bul</string>
@@ -83,7 +83,7 @@
     <string name="mozac_feature_contextmenu_open_link_in_private_tab" tools:ignore="UnusedResources">Bağlantıyı kişisel sekmede aç</string>
     <string name="customize_add_bootstrap_save">Kaydet</string>
     <string name="bit_torrent_bootstraps_category">BitTorrent ön yüklemeleri</string>
-    <string name="customize_extra_bittorrent_bootstrap">Ek BitTorrent ön yüklemeleri</string>
+    <string name="customize_extra_bittorrent_bootstrap">Ek BitTorrent ön yükleyicileri</string>
     <string name="not_applicable">Kullanılamaz</string>
     <string name="udp_category">UDP</string>
     <string name="crash_report_sent">Çökme bildirimi gönderildi!</string>
@@ -115,9 +115,9 @@
     <string name="onboarding_thanks_title">Ağın büyümesine yardımcı olduğunuz için teşekkürler!</string>
     <string name="preferences_toolbar_position">Ekranın en üstüne yerleştir</string>
     <string name="preferences_clear_in_toolbar">Araç çubuğunda görüntülensin</string>
-    <string name="preferences_theme">Uygulama temasını değiştir</string>
+    <string name="preferences_theme">Uygulama temasını ayarla</string>
     <string name="preferences_theme_default">2</string>
-    <string name="preferences_ceno_network_config">Ceno ağ bilgileri</string>
+    <string name="preferences_ceno_network_config">Ağ bilgileri</string>
     <string name="preferences_ceno_enable_log">Günlük tutulsun</string>
     <string name="preferences_ceno_download_log">Ouinet günlüğünü dışa aktar</string>
     <string name="changeIconDialogTitle">Yeni simge uygulansın mı?</string>
@@ -130,13 +130,13 @@
     <string name="ceno_notification_clear_do_description">Evet</string>
     <string name="ceno_notification_clear_description">Sil⚠</string>
     <string name="preferences_change_app_icon">Uygulama simgesini değiştir</string>
-    <string name="ceno_notification_description">Durdurmak için dokunun</string>
+    <string name="ceno_notification_description">Bilgi almak için dokunun</string>
     <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ceno ayarları</string>
     <string name="onboarding_warning_title">İzin verilmedi</string>
     <string name="onboarding_battery_button">İlerle</string>
     <string name="preferences_show_onboarding">Bir sonraki açılışta ipuçları görüntülensin</string>
     <string name="preferences_customization">Özelleştirme</string>
-    <string name="ceno_private_browsing_body">&lt;h1&gt;Kişisel gezinme&lt;/h1&gt; &lt;p&gt;Ceno, Kişisel sekmelerdeki içeriği diğer kullanıcılarla paylaşmaz. Oturum açılması gereken siteleri güvenle ziyaret edebilirsiniz. Yine de İnternet bağlantısı gereklidir.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Ayrıntılı bilgi almak ister misiniz?&lt;/p&gt;</string>
+    <string name="ceno_private_browsing_body">&lt;h1&gt;Kişisel gezinme&lt;/h1&gt; &lt;p&gt;Ceno, Kişisel sekmelerdeki içeriği diğer kullanıcılarla paylaşmaz. Oturum açılması gereken siteleri güvenle ziyaret edebilirsiniz. Yine de internet bağlantısı gereklidir.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Ayrıntılı bilgi almak ister misiniz?&lt;/p&gt;</string>
     <string name="preferences_about_page">Hakkında</string>
     <string name="preferences_make_default_browser">Ceno varsayılan tarayıcı olsun</string>
     <string name="ceno_mode_manual_link">https://ceno.app/user-manual/tr/concepts/public-private.html</string>
@@ -169,9 +169,9 @@
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Ceno Browser bildirimi</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Beklediğinizden daha fazla veri kullanabileceği için Ceno ile kablosuz ağ bağlantısını kullanmanız önerilir. Mobil veri kullanırken Ceno uygulamasını kapatmak isteyebilirsiniz.</string>
     <string name="onboarding_battery_text">Birazdan, işletim sisteminiz sizden şu izinleri isteyecek: \n \n• Pil iyileştirmelerini kapatma. \n \nBu izin, uygulama arka planda çalışırken siteleri paylaşmayı sürdürmek için gereklidir.</string>
-    <string name="preferences_clear_ceno_cache_summary">Yerel ön bellekteki İnternet içeriğini temizle</string>
+    <string name="preferences_clear_ceno_cache_summary">Yerel ön bellekteki internet içeriğini temizle</string>
     <string name="ouinet_client_fetch_fail">Ceno ayarı değiştirilemedi</string>
-    <string name="about_content">&lt;p&gt;%1$s - İnternet içeriklerini paylaşın!&lt;/p&gt; &lt;p&gt;Ceno, güncel İnternet sansür yöntemlerinin etrafından dolaşan dünyanın ilk mobil tarayıcısıdır. Eşler arası omurgası, insanların bağlantının kesildiği veya tehlikeye girdiği bölgelerde ve bölgeler arasında site bilgilerine erişmesini ve bunları paylaşmasını sağlar. &lt;/p&gt; &lt;p&gt;%1$s, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren kar amacı gütmeyen bir Kanada kuruluşu olan bir &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt; projesidir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.&lt;/p&gt;</string>
+    <string name="about_content">&lt;p&gt;%1$s - İnternet içeriklerini paylaşın!&lt;/p&gt; &lt;p&gt;Ceno, güncel internet sansür yöntemlerinin etrafından dolaşan dünyanın ilk mobil tarayıcısıdır. Eşler arası omurgası, insanların bağlantının kesildiği veya tehlikeye girdiği bölgelerde ve bölgeler arasında site bilgilerine erişmesini ve bunları paylaşmasını sağlar. &lt;/p&gt; &lt;p&gt;%1$s, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren kar amacı gütmeyen bir Kanada kuruluşu olan bir &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt; projesidir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.&lt;/p&gt;</string>
     <string name="onboarding_warning_text">Pil iyileştirmesi hala açık. \n \nİzni daha sonra \"Ayarlar &gt; Pil iyileştirmesini kapat\" bölümünden verebilirsiniz</string>
     <string name="preferences_ceno_sources_peers_summary">İçerik paylaşan diğer kullanıcılardan yüklenir</string>
     <string name="preferences_ceno_sources_peers">Paylaşılmış</string>
@@ -183,7 +183,7 @@
     <string name="onboarding_warning_text_v33_1">Bildirimlere izin verilmiyor. \n \nDaha sonra izin vermek için \"Ayarlar &gt; Bildirimlere izin ver\" bölümüne gidin</string>
     <string name="onboarding_warning_text_v33_2">Bildirimlere izin verilmiyor ve hala pil iyileştirmesi uygulanıyor. \n \nDaha sonra izin vermek için \"Ayarlar \" bölümüne gidin</string>
     <string name="preferences_allow_notifications">Bildirimler</string>
-    <string name="onboarding_public_personal_text">Herkese açık sekmeleri haberleri okumak, videolar seyretmek ya da genel İnternet gezinmesi için kullanın. Herkese açık kipte İnternet içeriğini diğer Ceno kullanıcıları ile paylaşın. Kişisel sekmeler, sosyal ağ hesapları, çevrim içi alışveriş ve başkalarıyla paylaşmak istemediğiniz siteler için daha uygundur.</string>
+    <string name="onboarding_public_personal_text">Herkese açık sekmeleri haberleri okumak, videolar seyretmek ya da genel internet gezinmesi için kullanın. Herkese açık kipte internet içeriğini diğer Ceno kullanıcıları ile paylaşın. Kişisel sekmeler, sosyal ağ hesapları, çevrim içi alışveriş ve başkalarıyla paylaşmak istemediğiniz siteler için daha uygundur.</string>
     <string name="onboarding_cleanup_text">Gezinme geçmişinizi, kimlik doğrulama bilgilerinizi ve Ceno üzerinde bıraktığınız izleri tek bir düğme ile temizleyin.</string>
     <string name="onboarding_public_or_personal_title">Herkese açık ya da Kişisel?</string>
     <string name="ceno_onboarding_start_title">İnternet içeriklerini paylaşın, \neşler arasında</string>
@@ -217,7 +217,7 @@
     <string name="preferences_ceno_export_android_logs">Uygulama günlüğünün tümünü dışa aktar</string>
     <string name="preferences_ceno_bridge_announcement">Köprü kipini etkinleştir</string>
     <string name="ouinet_taking_too_long_title">Çok uzun mu sürüyor?</string>
-    <string name="ouinet_timeout_dialog_text">Ceno uygulamasının çalışması için İnternet bağlantısı gerekir. Lütfen ağ ayarlarınızı denetleyin.</string>
+    <string name="ouinet_timeout_dialog_text">Ceno uygulamasının çalışması için internet bağlantısı gerekir. Lütfen ağ ayarlarınızı denetleyin.</string>
     <string name="network_settings">Ağ ayarları</string>
     <string name="standby_no_internet_text">İnternet bağlantısı yok. \n \nCeno başarımı sınırlı olabilir. \nLütfen ağ bağlantılarınızı denetleyip Ceno uygulamasını yeniden yüklemeyi deneyin.</string>
     <string name="standby_message_one">Ceno ağı ile bağlantı kuruluyor</string>
@@ -310,9 +310,9 @@
     <string name="support_button_text">Destek</string>
     <string name="eq_news_button_text">Haberler</string>
     <string name="eq_values_button_text">Değerler</string>
-    <string name="about_content_para_2">Ceno Browser, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren kar amacı gütmeyen bir Kanada kuruluşu olan bir eQualitie projesidir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.</string>
+    <string name="about_content_para_2">Ceno Browser, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren kar amacı gütmeyen bir Kanada kuruluşu olan eQualitie tarafından geliştirilmiş bir projedir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.</string>
     <string name="skip_the_tour_button">Turu atla</string>
-    <string name="btn_next">İleri</string>
+    <string name="btn_next">Sonraki</string>
     <string name="btn_exit">Çık</string>
     <string name="tooltip_shortcuts_description">Sık kullandığınız sitelere giriş sayfanızdan kolayca erişmek için kısayollar olarak kaydedin.</string>
     <string name="tooltip_sources_description">Site içeriğinin nereden alındığını kolayca görün - Doğrudan siteden, Ceno ağı üzerinden ya da Ceno ön belleğinden</string>
@@ -388,4 +388,7 @@
     <string name="ceno_network_status_degraded">Ceno ağı ile bağlantı kuruluyor. Bazı sitelere erişilemeyebilir. Ek bilgi almak için ağ ayarlarınızı kontrol edin ya da günlükleri dışa aktarın.</string>
     <string name="ceno_network_status_connected">Ceno ağına tam olarak bağlı. Engelli sitelere erişilebiliyor olmalı.</string>
     <string name="preferences_clean_insights_backdate">Geriye dönük tarih ölçümlerini aç</string>
+    <string name="ceno_notification_confirm_description">Ceno üzerindeki tüm verilerinizi silmek ister misiniz?</string>
+    <string name="ceno_notification_title">Ön bellekteki sekmeleri paylaşmak</string>
+    <string name="ceno_sources_shared_by_local_cache">Tarayıcı ön belleğinden</string>
 </resources>

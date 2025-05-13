@@ -1,0 +1,6 @@
+Bu sürümde:
+- Ceno destek e-postalarının gönderilmemesi sorunu giderildi
+- Android-Components v135.0 sürümüne güncellendi
+- Ouinet v0.31.1 sürümüne güncellendi
+- Ceno Browser hizmeti bildirimi kapatıldı
+- Herkese açık kipte gezinme bildirimi eklendi

@@ -1,0 +1,2 @@
+Bu sürümde:
+- AndroidManifest.xml dosyası güncellendi

@@ -1,0 +1,3 @@
+Bu sürümde:
+- Ceno destek e-postalarının gönderilmemesi sorunu giderildi
+- Android-Components v134.0.1 sürümüne güncellendi

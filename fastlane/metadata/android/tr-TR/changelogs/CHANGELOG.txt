@@ -1,7 +1,30 @@
+# v2.4.4
+Bu sürümde:
+- Android-Components137.0 sürümüne güncellendi
+- Ceno eklentisi 1.9.0 sürümüne güncellendi
+- uBlock Origin eklentisi 1.63.2 sürümüne güncellendi
+- Ön belleğe alınmış grup listeleri kodu yeniden yazıldı
+- Ceno kaynakları sayımlarında yerel ön bellek sayısı eklendi
+- Ceno destek e-posta adresi güncellendi
+- Bilinen sorun: Önceden kurulmuş eklentilerin dil çevirisi eksik 
+
+# v2.4.3
+Bu sürümde:
+- Android 15 aygıtlarındaki durum çubuğu ve araç çubuğunun içerikle örtüşmesi sorunu düzeltildi
+- Android-Components 136.0 sürümüne yükseltildi
+- Küçük hata düzeltmeleri yapıldı
+
 # v2.4.2
 Bu sürümde:
-- Ceno destek e-postasının doldurulmaması sorunu düzeltildi
-- Android bileşenleri 134.0.1 sürümüne güncellendi
+- AndroidManifest.xml dosyası güncellendi
+
+# v2.4.1
+Bu sürümde:
+- Ceno destek e-postalarının gönderilmemesi sorunu giderildi
+- Android-Components to 135.0 sürümüne güncellendi
+- Ouinet 0.31.1 sürümüne güncellendi
+- Ceno Browser hizmeti bildirimi kapatıldı
+- Herkese açık kipte gezinme bildirimi eklendi
 
 # v2.4.0
 Bu sürümde:
@@ -9,7 +32,7 @@ Bu sürümde:
 - Gizli bir geliştirici araçları alt menüsü eklendi
 - İngilizce yerel ayar dizgeleri eklendi
 - Tek renkli başlatıcı simgeleri desteği eklendi
-- Android bileşenleri 133.0.3 sürümüne güncellendi
+- Android-Components 133.0.3 sürümüne güncellendi
 - Giriş sayfasına bir Ceno ağ bağlantısı durumu göstergesi eklendi
 - cacert.pem paketi güncellendi
 - Çeşitli yerel ayarların çevirileri güncellendi
@@ -22,7 +45,7 @@ Bu sürümde:
 
 # v2.3.2
 Bu sürümde:
-- Android bileşenleri 132.0 sürümüne güncelendi
+- Android-Components 132.0 sürümüne güncelendi
 - Arayüz testleri güncellendi
 - Küçük ekranlı cihazlar için ipuçları düzeltildi
 - İzinler yeniden düzenlendi ve Ayarlar bölümünden kaldırma seçeneği eklendi
@@ -44,7 +67,7 @@ Bu sürümde:
 - Uygulamanın dilini değiştirmek için ayar seçeneği eklendi
 - Başlangıç ekranları araç ipucu rehberli başlangıç ile değiştirildi
 - Bekleme sayfası kullanıcı arayüzünde güncellemeler yapıldı
-- Android bileşenleri 130.0.1 sürümüne güncellendi
+- Android-Components 130.0.1 sürümüne güncellendi
 - Ouinet 0.29.1 sürümüne güncellendi
 - Çeşitli yerel ayarların çevirileri güncellendi
 
@@ -53,7 +76,7 @@ Bu yama sürümünde:
 - Bekleme sayfasında günlükleri dışa aktarma seçeneği eklendi
 - Otomatik doldurma hizmeti ayar seçeneklerinden kaldırıldı
 - Kullanıcı arayüzünde, site görünümünün bir bölümünü kaplayan araç çubuğu hatası düzeltildi
-- Android bileşenleri 130.0 sürümüne güncellendi
+- Android-Components 130.0 sürümüne güncellendi
 - Ouinet 0.29.0 sürümüne güncellendi
 - Android 7.1 ve öncesi için araç çubuğunu üstte görüntülenmesi sağlandı
 - Çökmeler için küçük hata düzeltmeleri yapıldı
@@ -61,7 +84,7 @@ Bu yama sürümünde:
 
 # v2.2.2
 Bu yama sürümünde:
-- Android bileşenleri 129.0.2 sürümüne güncellendi
+- Android-Components 129.0.2 sürümüne güncellendi
 - Ouinet 0.28.0 sürümüne güncellendi
 - Kullanıcı arayüzü Hakkında sayfasına yeni bağlantılar eklenti ve logolar güncellendi
 - Android 7.1 ve öncesi için varsayılan araç çubuğu konumu üstte olarak ayarlandı
