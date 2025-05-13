@@ -22,7 +22,7 @@
     <string name="top_sites_max_limit_confirmation_button">D’accord, j’ai compris</string>
     <string name="top_sites_rename_dialog_title">Nom</string>
     <string name="shortcut_name_hint">Nom du raccourci</string>
-    <string name="dialog_ok">D’accord</string>
+    <string name="dialog_ok">Valider</string>
     <string name="dialog_cancel">Annuler</string>
     <string name="top_sites_sponsored_label">Commandité</string>
     <string name="browser_menu_forward">Suivant</string>
@@ -135,7 +135,7 @@
 \n
 \nAccédez à « Paramètres &gt; Désactiver l’optimisation de la batterie » pour donner l’autorisation ultérieurement</string>
     <string name="about_content">&lt;p&gt;%1$s - Partagez le Web.&lt;/p&gt; &lt;p&gt;Ceno est le premier navigateur mobile au monde qui contourne les méthodes actuelles de censure d’internet. Sa technologie en pair à pair permet aux utilisateurs et aux utilisatrices d’accéder et de partager des informations Web dans des régions où la connectivité a été interrompue ou compromise. &lt;/p&gt; &lt;p&gt;%1$s est un projet d\'&lt;a href=\"https://equalit.ie\"&gt;eQualitie&lt;/a&gt; – une organisation canadienne à but non lucratif qui crée des services Internet décentralisés en soutien d\'un réseau plus égal et équitable. Les solutions d\'eQualitie sont open source, éprouvées et développées dans le respect de nos valeurs. Chaque jour, elles permettent la liberté d\'association pour des millions de personnes en ligne./p&gt;</string>
-    <string name="ceno_clear_dialog_description">AVERTISSEMENT : Effacer le cache et les données de l’appli réinitialisera l’appli Ceno comme si elle n’avait jamais été utilisée.</string>
+    <string name="ceno_clear_dialog_description">AVERTISSEMENT : Effacer le cache et les données de l’appli réinitialisera l’appli Ceno comme si elle n’avait jamais été utilisée.</string>
     <string name="browser_menu_ceno_ext">Paramètres de Ceno</string>
     <string name="onboarding_skip_button">Ignorer</string>
     <string name="onboarding_battery_text">Sous peu, le système d’exploitation vous demandera la permission de
@@ -173,7 +173,7 @@
     <string name="ceno_sources_category">Sources</string>
     <string name="preferences_ceno_sources_origin_summary">Charger le contenu directement du site Web</string>
     <string name="preferences_ceno_sources_public">De façon publique</string>
-    <string name="preferences_theme">Définir le thème de l’appli</string>
+    <string name="preferences_theme">Définir le thème de l\'application</string>
     <string name="changeIconDialogMessage">L’appli pourrait se fermer pour appliquer les changements. Revenez quand vous aurez admirer votre nouvelle belle icône.</string>
     <string name="website_button_text">Site Web</string>
     <string name="changeIconCtaAccept">Appliquer</string>
@@ -192,7 +192,7 @@
     <string name="preferences_ceno_groups_count">Contenu partagé par vous</string>
     <string name="preferences_clear_ceno_cache">Effacer le contenu mis en cache</string>
     <string name="addon_placeholder">Aucun module complémentaire n’est proposé</string>
-    <string name="preferences_clear_ceno_cache_summary">Effacer le contenu Web mis dans le cache local</string>
+    <string name="preferences_clear_ceno_cache_summary">ffacer le contenu Web mis dans le cache local</string>
     <string name="clear_cache_success">Le cache a été effacé</string>
     <string name="clear_cache_fail">Échec d’effacement du cache. Réessayez bientôt</string>
     <string name="preferences_allow_notifications">Notifications</string>
@@ -292,7 +292,7 @@
     <string name="shutdown_message_two">Fermez Ceno</string>
     <string name="title_success">Succès</string>
     <string name="thank_you_bridge_mode_enabled">Merci d\'être devenu un pont et de développer le réseau Ceno !</string>
-    <string name="dialog_btn_positive_ok">OK</string>
+    <string name="dialog_btn_positive_ok">Valider</string>
     <string name="canceled">Annulé</string>
     <string name="confirm_groups_file_download">Exporter la liste des contenus partagés ?</string>
     <string name="confirm_groups_file_download_desc">Un fichier .txt sera sauvegardé dans votre stockage local.</string>
@@ -322,7 +322,7 @@
     <string name="preferences_clear_behavior_option_1">Invite</string>
     <string name="preferences_clear_behavior_option_2">Effacer uniquement le cache Ceno</string>
     <string name="preferences_clear_behavior_option_3">Effacer les données de l\'appli et le cache Ceno</string>
-    <string name="preferences_theme_option_1">Sombre</string>
+    <string name="preferences_theme_option_1">Foncé</string>
     <string name="preferences_theme_option_2">Clair</string>
     <string name="preferences_theme_option_3">Défini par l\'économiseur de batterie</string>
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">Télécharger</string>
@@ -337,7 +337,7 @@
     <string name="error_page_learn_more_3">Votre appareil est connecté au réseau et votre navigateur Web standard peut ouvrir des sites Web. Ceno et Ouinet ne peuvent pas fonctionner sans connectivité réseau.</string>
     <string name="website_button_link">https://ceno.app/fr/index.html</string>
     <string name="about_content_para_2">Ceno Browser est un projet d\'eQualitie – une organisation canadienne à but non lucratif qui crée des services Internet décentralisés en soutien d\'un réseau plus égal et équitable. Les solutions d\'eQualitie sont open source, éprouvées et développées dans le respect de nos valeurs. Chaque jour, elles permettent la liberté d\'association pour des millions de personnes en ligne.</string>
-    <string name="about_content_title">Partagez le Web !</string>
+    <string name="about_content_title">Partager le web!</string>
     <string name="about_content_para_1">Ceno est le premier navigateur mobile au monde à contourner les méthodes actuelles de censure sur Internet. Sa dorsale pair à pair permet à tous d’accéder aux informations du Web et de les partager dans les régions où la connectivité a été interrompue ou compromise.</string>
     <string name="support_button_text">Assistance technique</string>
     <string name="eq_news_button_text">Actualités</string>
@@ -421,4 +421,6 @@
     <string name="preferences_announcement_source_summary">Définir la source des annonces de la page d\'accueil</string>
     <string name="preferences_announcement_expire_disable">Désactiver l\'expiration de l\'annonce</string>
     <string name="ceno_notification_confirm_description">Voulez-vous effacer toutes vos données de Ceno ?</string>
+    <string name="preferences_clean_insights_backdate">Activer la rétrodatation des mesures</string>
+    <string name="ceno_sources_shared_by_local_cache">Depuis le cache du navigateur</string>
 </resources>

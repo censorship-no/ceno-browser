@@ -1,0 +1,2 @@
+У цьому релізі:
+- Оновлено AndroidManifest.xml

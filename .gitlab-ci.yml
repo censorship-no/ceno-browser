@@ -75,6 +75,8 @@ workflow:
 # Basic android and gradle stuff
 # Check linting
 lintDebug:
+  tags:
+      - docker
   interruptible: true
   stage: build
   script:
@@ -87,6 +89,8 @@ lintDebug:
 
 # Make Project
 assembleDebug:
+  tags:
+      - docker
   interruptible: true
   stage: build
   script:
@@ -97,6 +101,8 @@ assembleDebug:
 
 # Run all tests, if any fails, interrupt the pipeline(fail it)
 debugTests:
+  tags:
+      - docker
   needs: [lintDebug, assembleDebug]
   interruptible: true
   stage: test

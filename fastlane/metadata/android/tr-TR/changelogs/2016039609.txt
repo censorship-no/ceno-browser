@@ -1,0 +1,4 @@
+Bu sürümde:
+- Android 15 aygıtlarındaki durum çubuğu ve araç çubuğunun içerikle örtüşmesi sorunu düzeltildi
+- Android-Components 136.0 sürümüne yükseltildi
+- Küçük hata düzeltmeleri yapıldı

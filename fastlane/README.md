@@ -111,6 +111,14 @@ Run tasks if new commits have been made to develop
 
 Prepare release APKS, AAB, and release notes
 
+### android publishMetadata
+
+```sh
+[bundle exec] fastlane android publishMetadata
+```
+
+Publish metadata and screenshots to Play Store
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
