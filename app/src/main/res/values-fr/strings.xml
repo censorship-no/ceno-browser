@@ -422,4 +422,5 @@
     <string name="preferences_announcement_expire_disable">Désactiver l\'expiration de l\'annonce</string>
     <string name="ceno_notification_confirm_description">Voulez-vous effacer toutes vos données de Ceno ?</string>
     <string name="preferences_clean_insights_backdate">Activer la rétrodatation des mesures</string>
+    <string name="ceno_sources_shared_by_local_cache">Depuis le cache du navigateur</string>
 </resources>

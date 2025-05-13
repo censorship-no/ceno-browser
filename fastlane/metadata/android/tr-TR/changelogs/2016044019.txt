@@ -1,0 +1,8 @@
+Bu sürümde:
+- Android-Components137.0 sürümüne güncellendi
+- Ceno eklentisi 1.9.0 sürümüne güncellendi
+- uBlock Origin eklentisi 1.63.2 sürümüne güncellendi
+- Ön belleğe alınmış grup listeleri kodu yeniden yazıldı
+- Ceno kaynakları sayımlarında yerel ön bellek sayısı eklendi
+- Ceno destek e-posta adresi güncellendi
+- Bilinen sorun: Önceden kurulmuş eklentilerin dil çevirisi eksik
