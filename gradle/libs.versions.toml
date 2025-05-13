@@ -47,7 +47,7 @@ clean_insights = "2.8.0"
 matomo = "4.2"
 
 # CENO: Versions for additional dependencies */
-ouinet_version = "1.0.0"
+ouinet_version = "1.1.1"
 relinker_version = "1.4.4"
 snakeyaml_version = "2.2"
 
