@@ -9,7 +9,6 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -22,6 +21,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.os.LocaleListCompat
 import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
@@ -61,8 +61,8 @@ import ie.equalit.ceno.R.string.pref_key_ceno_enable_log
 import ie.equalit.ceno.R.string.pref_key_ceno_groups_count
 import ie.equalit.ceno.R.string.pref_key_ceno_network_config
 import ie.equalit.ceno.R.string.pref_key_ceno_website_sources
-import ie.equalit.ceno.R.string.pref_key_clean_insights_enabled
 import ie.equalit.ceno.R.string.pref_key_change_language
+import ie.equalit.ceno.R.string.pref_key_clean_insights_enabled
 import ie.equalit.ceno.R.string.pref_key_clear_ceno_cache
 import ie.equalit.ceno.R.string.pref_key_customization
 import ie.equalit.ceno.R.string.pref_key_delete_browsing_data
@@ -90,12 +90,12 @@ import ie.equalit.ceno.ext.getPreferenceCategory
 import ie.equalit.ceno.ext.getPreferenceKey
 import ie.equalit.ceno.ext.getSwitchPreferenceCompat
 import ie.equalit.ceno.ext.requireComponents
-import ie.equalit.ceno.settings.dialogs.LanguageChangeDialog
-import ie.equalit.ceno.settings.dialogs.UpdateBridgeAnnouncementDialog
+import ie.equalit.ceno.settings.Settings.isCleanInsightsEnabled
 import ie.equalit.ceno.settings.Settings.setCleanInsightsEnabled
 import ie.equalit.ceno.settings.Settings.setShowDeveloperTools
 import ie.equalit.ceno.settings.Settings.shouldShowDeveloperTools
-import ie.equalit.ceno.settings.Settings.isCleanInsightsEnabled
+import ie.equalit.ceno.settings.dialogs.LanguageChangeDialog
+import ie.equalit.ceno.settings.dialogs.UpdateBridgeAnnouncementDialog
 import ie.equalit.ceno.utils.CenoPreferences
 import ie.equalit.ceno.utils.sentry.SentryOptionsConfiguration
 import ie.equalit.ouinet.Config
@@ -242,12 +242,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
             setTitle(settings)
             setDisplayHomeAsUpEnabled(true)
             setBackgroundDrawable(
-                ColorDrawable(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.ceno_action_bar
-                    )
-                )
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.ceno_action_bar
+                ).toDrawable()
             )
         }
     }
@@ -561,7 +559,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     private fun getClickListenerForAllowNotifications(): OnPreferenceClickListener {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             OnPreferenceClickListener {

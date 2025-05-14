@@ -6,16 +6,14 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
-import ie.equalit.ceno.AppPermissionCodes
 import ie.equalit.ceno.BrowserActivity
-import ie.equalit.ceno.ext.requireComponents
 import mozilla.components.support.base.feature.ActivityResultHandler
 
 /* CENO: Handles checking which permissions have been granted,
@@ -84,35 +82,33 @@ class PermissionHandler(private val context: Context) : ActivityResultHandler {
 
     @SuppressLint("BatteryLife")
     fun requestBatteryOptimizationsOff(activity: Activity): Boolean {
-        var result = false
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+        return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
             // Before Android 12 (S) the battery optimization isn't needed for our use case -> Always "ignoring"
-            result = false
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            false
+        } else {
             val powerManager = (context.getSystemService(Context.POWER_SERVICE) as PowerManager)
             when {
                 powerManager.isIgnoringBatteryOptimizations(context.packageName) -> {
-                    result = false
+                    false
                 }
 
                 context.checkSelfPermission(Manifest.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS) == PackageManager.PERMISSION_DENIED -> {
-                    result = false
+                    false
                 }
 
                 else -> {
                     // Only return true if intent was sent to request permission
                     val intent = Intent()
                     intent.action = Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
-                    intent.data = Uri.parse("package:${context.packageName}")
+                    intent.data = "package:${context.packageName}".toUri()
                     activity.startActivityForResult(
                         intent,
                         PERMISSION_CODE_IGNORE_BATTERY_OPTIMIZATIONS
                     )
-                    result = true
+                    true
                 }
             }
         }
-        return result
     }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)

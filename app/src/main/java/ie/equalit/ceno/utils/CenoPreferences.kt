@@ -17,13 +17,14 @@ import ie.equalit.ceno.R
 import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.ext.getPreferenceKey
 import java.security.InvalidParameterException
+import androidx.core.content.edit
 
 /**
  * A simple wrapper for SharedPreferences that makes reading preference a little bit easier.
  * @param appContext Reference to application context.
  */
 @Suppress("LargeClass", "TooManyFunctions")
-class CenoPreferences(private val appContext: Context,) : PreferencesHolder {
+class CenoPreferences(private val appContext: Context) : PreferencesHolder {
 
     companion object {
         const val CENO_PREFERENCES = "ceno_preferences"
@@ -147,12 +148,12 @@ class CenoPreferences(private val appContext: Context,) : PreferencesHolder {
         set(value) {
             val lastKnownModeWasPersonal = (value == BrowsingMode.Personal)
 
-            preferences.edit()
-                .putBoolean(
+            preferences.edit() {
+                putBoolean(
                     appContext.getPreferenceKey(R.string.pref_last_known_browsing_mode_personal),
                     lastKnownModeWasPersonal,
                 )
-                .apply()
+            }
 
             field = value
         }

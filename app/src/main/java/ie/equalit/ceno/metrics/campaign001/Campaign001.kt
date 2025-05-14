@@ -7,6 +7,7 @@ import ie.equalit.ceno.ext.isDatePast
 import ie.equalit.ceno.settings.Settings
 import org.cleaninsights.sdk.CleanInsights
 import org.cleaninsights.sdk.Feature
+import androidx.core.content.edit
 
 class Campaign001(private val cleanInsights: CleanInsights) {
 
@@ -66,9 +67,9 @@ class Campaign001(private val cleanInsights: CleanInsights) {
     fun setPromptCompleted(context: Context, value: Boolean) {
         val key = context.getString(R.string.pref_key_ci_campaign001_prompt_completed)
         PreferenceManager.getDefaultSharedPreferences(context)
-            .edit()
-            .putBoolean(key, value)
-            .apply()
+            .edit() {
+                putBoolean(key, value)
+            }
     }
 
     fun isPromptCompleted(context: Context) : Boolean {
@@ -80,9 +81,9 @@ class Campaign001(private val cleanInsights: CleanInsights) {
     fun setSurveyCompleted(context: Context, value: Boolean) {
         val key = context.getString(R.string.pref_key_ci_campaign001_survey_completed)
         PreferenceManager.getDefaultSharedPreferences(context)
-            .edit()
-            .putBoolean(key, value)
-            .apply()
+            .edit() {
+                putBoolean(key, value)
+            }
     }
 
     fun isSurveyCompleted(context: Context) : Boolean {
