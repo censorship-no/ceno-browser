@@ -47,10 +47,17 @@ import ie.equalit.ceno.components.ceno.appstate.AppAction
 import ie.equalit.ceno.ext.ceno.sort
 import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.ext.components
+import ie.equalit.ceno.ext.isFirstInstall
+import ie.equalit.ceno.ext.isInstallFromUpdate
 import ie.equalit.ceno.home.HomeFragment.Companion.BEGIN_TOUR_TOOLTIP
 import ie.equalit.ceno.metrics.DailyUsage.Companion.ID as DAILY_USAGE_TAG
 import ie.equalit.ceno.metrics.MonthlyUsage.Companion.ID as MONTHLY_USAGE_TAG
 import ie.equalit.ceno.metrics.autotracker.AutoTracker.Companion.ASK_FOR_ANALYTICS_LIMIT
+import ie.equalit.ceno.metrics.campaign001.ConsentRequestDialog
+import ie.equalit.ceno.settings.CenoSettings
+import ie.equalit.ceno.settings.OuinetKey
+import ie.equalit.ceno.settings.OuinetResponseListener
+import ie.equalit.ceno.settings.OuinetValue
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.SettingsFragment
 import ie.equalit.ceno.standby.StandbyFragment
@@ -147,26 +154,24 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
             if(destination.id == R.id.homeFragment && !hasRanChecksAndPermissions) {
                 hasRanChecksAndPermissions = true
 
-                if( !Settings.isCleanInsightsEnabled(this@BrowserActivity) &&
-                    Settings.getLaunchCount(this@BrowserActivity).toInt() >= ASK_FOR_ANALYTICS_LIMIT &&
-                    !components.metrics.autoTracker.isPromptCompleted(this@BrowserActivity)
-                    ) {
-                    components.metrics.autoTracker.launchCampaign(this@BrowserActivity, showLearnMore = true) { granted ->
-                        if (granted) {
-                            // success toast message
-                            Toast.makeText(
-                                this,
-                                getString(clean_insights_successful_opt_in),
-                                Toast.LENGTH_LONG,
-                            ).show()
-
-                            // log Ouinet startup time if it already has a value
-                            if (ouinetStartupTime > 0.0) {
-                                components.metrics.autoTracker.measureEvent(
-                                    startupTime = ouinetStartupTime
-                                )
+                if( isInstallFromUpdate() && packageManager.getPackageInfo(packageName, 0).versionName == METRICS_LAUNCH_VERSION_NAME ) {
+                    val dialog = ConsentRequestDialog(this)
+                    dialog.show { granted ->
+                        //web api call
+                        CenoSettings.ouinetClientRequest(
+                            context = this,
+                            key = OuinetKey.CENO_METRICS,
+                            newValue = if (granted) OuinetValue.ENABLE else OuinetValue.DISABLE,
+                            stringValue = null,
+                            object : OuinetResponseListener {
+                                override fun onSuccess(message: String, data: Any?) {
+                                    Settings.setOuinetMetricsEnabled(this@BrowserActivity, granted)
+                                }
+                                override fun onError() {
+                                    Log.e(TAG, "Failed to set metrics to newValue: $granted")
+                                }
                             }
-                        }
+                        )
                     }
                 }
 
@@ -684,6 +689,7 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
     companion object {
         private const val TAG = "BrowserActivity"
         const val DELAY_TWO_SECONDS = 2000L
+        const val METRICS_LAUNCH_VERSION_NAME = "2.5.0"
     }
 
     override fun onStopTapped() {

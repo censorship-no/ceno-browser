@@ -483,6 +483,7 @@
     <string name="monthly_usage" tools:ignore="UnusedResources">Monthly usage</string>
     <string name="metrics_ouinet_title">Ouinet Metrics</string>
     <string name="metrics_ouinet_description">Ouinet Metrics</string>
+    <string name="metrics_consent_dialog_description">We\'re making some changes in this version of Ceno to help us improve performance and stability. This includes collecting data about device OS, location and failure rate for network requests. You can review the details of what we track and how we protect your information in our updated Privacy Policy.</string>
 
     <string name="bookmarks_empty_message">No bookmarks here</string>
     <string name="bookmark_menu_edit_button">Edit</string>

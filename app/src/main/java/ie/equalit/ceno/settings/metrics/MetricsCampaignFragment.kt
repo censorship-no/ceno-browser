@@ -8,8 +8,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.cancel
 import ie.equalit.ceno.R
 import ie.equalit.ceno.databinding.FragmentMetricsCampaignBinding
 import ie.equalit.ceno.ext.requireComponents
@@ -19,61 +17,23 @@ import ie.equalit.ceno.settings.dialogs.WebViewPopupPanel
 class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
 
     private lateinit var controller: MetricsCampaignController
-    private var scope: CoroutineScope? = null
-
     private var _binding: FragmentMetricsCampaignBinding? = null
     private val binding get() = _binding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
-
         _binding = FragmentMetricsCampaignBinding.bind(view)
         controller = DefaultMetricsCampaignController(requireContext(), requireComponents)
 
         binding.campaignCrashReporting.isChecked = Settings.isCrashReportingPermissionGranted(requireContext())
         binding.campaignOuinetMetrics.isChecked = Settings.isOuinetMetricsEnabled(requireContext())
-        /*
-        binding.campaignDailyUsage.isChecked = Settings.isMetricsDailyUsageEnabled(requireContext())
-        binding.campaignMonthlyUsage.isChecked = Settings.isMetricsMonthlyUsageEnabled(requireContext())
-        binding.campaignAutoTracker.isChecked = Settings.isMetricsAutoTrackerEnabled(requireContext())
-        */
         binding.campaignCrashReporting.onCheckListener = { newValue ->
             controller.crashReporting(newValue)
         }
         binding.campaignOuinetMetrics.onCheckListener = { newValue ->
             controller.ouinetMetrics(newValue)
         }
-        /*
-        binding.campaignDailyUsage.onCheckListener = { newValue ->
-            controller.dailyUsage(newValue) { granted ->
-                binding.campaignDailyUsage.isChecked = granted
-            }
-        }
-        binding.campaignMonthlyUsage.onCheckListener = { newValue ->
-            controller.monthlyUsage(newValue) { granted ->
-                binding.campaignMonthlyUsage.isChecked = granted
-            }
-        }
-        binding.campaignAutoTracker.onCheckListener = { newValue ->
-            controller.autoTracker(newValue) { granted ->
-                binding.campaignAutoTracker.isChecked = granted
-            }
-        }
-        val isExpired = requireComponents.metrics.campaign001.isExpired()
-        if (isExpired) {
-            binding.campaignOne.isEnabled = false
-            binding.campaignOne.isChecked = false
-        }
-        else {
-            binding.campaignOne.isChecked = Settings.isCleanInsightsEnabled(requireContext())
-            binding.campaignOne.onCheckListener = { newValue ->
-                controller.campaignOne(newValue) { granted ->
-                    binding.campaignOne.isChecked = granted
-                }
-            }
-        }*/
 
         val privacyPolicyUrl = requireContext().getString(R.string.privacy_policy_url)
         binding.privacyPolicy.setOnClickListener {
@@ -95,11 +55,6 @@ class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
         binding.progressBar.visibility = View.GONE
     }
 
-    override fun onStop() {
-        super.onStop()
-        scope?.cancel()
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -108,10 +63,6 @@ class MetricsCampaignFragment : Fragment(R.layout.fragment_metrics_campaign) {
     private fun getCheckboxes(): List<MetricsCampaignItem> {
         return listOf(
             binding.campaignCrashReporting,
-//            binding.campaignDailyUsage,
-//            binding.campaignMonthlyUsage,
-//            binding.campaignAutoTracker,
-//            binding.campaignOne,
         )
     }
 

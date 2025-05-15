@@ -13,6 +13,7 @@ import ie.equalit.ceno.ext.isDateMoreThanXDaysAway
 import ie.equalit.ceno.home.RssAnnouncementResponse
 import ie.equalit.ceno.settings.changeicon.appicons.AppIcon
 import androidx.core.content.edit
+import ie.equalit.ceno.ext.isFirstInstall
 
 object Settings {
     fun shouldShowOnboarding(context: Context): Boolean =
@@ -458,6 +459,11 @@ object Settings {
     }
 
     fun isOuinetMetricsEnabled(context: Context) : Boolean {
+        if (context.isFirstInstall()) {
+            return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+                context.getString(R.string.pref_key_metrics_ouinet), true
+            )
+        }
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
             context.getString(R.string.pref_key_metrics_ouinet), false
         )

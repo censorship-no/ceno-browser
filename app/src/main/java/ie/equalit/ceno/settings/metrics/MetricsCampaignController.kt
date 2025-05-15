@@ -23,11 +23,6 @@ import io.sentry.android.core.SentryAndroid
 
 interface MetricsCampaignController {
     fun crashReporting(newValue: Boolean)
-    fun dailyUsage(newValue: Boolean, callback : (Boolean) -> Unit)
-    fun monthlyUsage(newValue: Boolean, callback : (Boolean) -> Unit)
-    fun autoTracker(newValue: Boolean, callback : (Boolean) -> Unit)
-    fun campaignOne(newValue: Boolean, callback: (Boolean) -> Unit)
-    fun campaignTwo()
     fun ouinetMetrics(newValue: Boolean)
 }
 
@@ -57,85 +52,6 @@ class DefaultMetricsCampaignController(
         )
     }
 
-    override fun dailyUsage(newValue: Boolean, callback : (Boolean) -> Unit) {
-        if (newValue) {
-            components.metrics.dailyUsage.enableCampaign()
-            Toast.makeText(
-                context,
-                context.getString(clean_insights_successful_opt_in),
-                Toast.LENGTH_LONG,
-            ).show()
-        } else {
-            components.metrics.dailyUsage.disableCampaign()
-            Toast.makeText(
-                context,
-                context.getString(clean_insights_successful_opt_out),
-                Toast.LENGTH_LONG,
-            ).show()
-        }
-        setMetricsDailyUsageEnabled(context, newValue)
-        callback(newValue)
-    }
-
-    override fun monthlyUsage(newValue: Boolean, callback : (Boolean) -> Unit) {
-        if (newValue) {
-            components.metrics.monthlyUsage.enableCampaign()
-            Toast.makeText(
-                context,
-                context.getString(clean_insights_successful_opt_in),
-                Toast.LENGTH_LONG,
-            ).show()
-        } else {
-            components.metrics.monthlyUsage.disableCampaign()
-            Toast.makeText(
-                context,
-                context.getString(clean_insights_successful_opt_out),
-                Toast.LENGTH_LONG,
-            ).show()
-        }
-        setMetricsMonthlyUsageEnabled(context, false)
-        callback(newValue)
-    }
-
-    override fun autoTracker(newValue: Boolean, callback : (Boolean) -> Unit) {
-        if (newValue) {
-            components.metrics.autoTracker.launchCampaign(context, showLearnMore = false) { granted ->
-                callback(granted)
-            }
-        } else {
-            components.metrics.autoTracker.disableCampaign {
-                setCleanInsightsEnabled(context, false)
-                Toast.makeText(
-                    context,
-                    context.getString(clean_insights_successful_opt_out),
-                    Toast.LENGTH_LONG,
-                ).show()
-            }
-            callback(false)
-        }
-    }
-
-    override fun campaignOne(newValue: Boolean, callback : (Boolean) -> Unit) {
-        if (newValue) {
-            components.metrics.campaign001.launchCampaign(context) { granted ->
-               callback(granted)
-            }
-        } else {
-            components.metrics.campaign001.disableCampaign {
-                setCleanInsightsEnabled(context, false)
-                Toast.makeText(
-                    context,
-                    context.getString(clean_insights_successful_opt_out),
-                    Toast.LENGTH_LONG,
-                ).show()
-            }
-            callback(false)
-        }
-    }
-
-    override fun campaignTwo() {
-    }
-
     override fun ouinetMetrics(newValue: Boolean) {
         //web api call
         CenoSettings.ouinetClientRequest(
@@ -145,15 +61,13 @@ class DefaultMetricsCampaignController(
             stringValue = null,
             object : OuinetResponseListener {
                 override fun onSuccess(message: String, data: Any?) {
-                    Log.d("METRICS", "success")
                     Settings.setOuinetMetricsEnabled(context, newValue)
                 }
 
                 override fun onError() {
-                    Log.e("TAG", "Failed to set log file to newValue: $newValue")
+                    Log.e("Ouinet-Metrics", "Failed to set metrics to newValue: $newValue")
                 }
             }
         )
-        Log.d("METRICS", "shared preference ${Settings.isOuinetMetricsEnabled(context)}")
     }
 }
