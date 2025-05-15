@@ -11,6 +11,7 @@ import android.content.Intent.ACTION_SEND
 import android.content.Intent.EXTRA_SUBJECT
 import android.content.Intent.EXTRA_TEXT
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+import android.content.pm.PackageManager
 import android.view.View
 import android.widget.LinearLayout
 import androidx.annotation.ColorRes
@@ -79,4 +80,29 @@ fun Context.createSegment(percentage: Float, @ColorRes background: Int): View {
     segment.layoutParams = layoutParams
     segment.setBackgroundColor(ContextCompat.getColor(this, background))
     return segment
+}
+
+fun Context.isFirstInstall(): Boolean {
+    try {
+        val firstInstallTime: Long = packageManager
+            .getPackageInfo(packageName, 0).firstInstallTime
+        val lastUpdateTime: Long = packageManager
+            .getPackageInfo(packageName, 0).lastUpdateTime
+        return firstInstallTime == lastUpdateTime
+    } catch (e: PackageManager.NameNotFoundException) {
+        e.printStackTrace()
+        return true
+    }
+}
+fun Context.isInstallFromUpdate(): Boolean {
+    try {
+        val firstInstallTime: Long = packageManager
+            .getPackageInfo(packageName, 0).firstInstallTime
+        val lastUpdateTime: Long = packageManager
+            .getPackageInfo(packageName, 0).lastUpdateTime
+        return firstInstallTime != lastUpdateTime
+    } catch (e: PackageManager.NameNotFoundException) {
+        e.printStackTrace()
+        return false
+    }
 }

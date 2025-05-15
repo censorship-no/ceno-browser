@@ -23,31 +23,15 @@ class ConsentRequestDialog(val context: Context) {
             dialog.show()
         }
 
-        val deviceType = dialogView.findViewById<View>(R.id.checkbox) as CheckBox
-        deviceType.isChecked = Settings.isCleanInsightsDeviceTypeIncluded(context)
-        deviceType.setOnCheckedChangeListener { _, isChecked ->
-            // Save to shared preferences
-            Settings.setCleanInsightsDeviceType(context, isChecked)
-        }
-
-        val deviceLocale = dialogView.findViewById<View>(R.id.checkbox2) as CheckBox
-        deviceLocale.isChecked = Settings.isCleanInsightsDeviceLocaleIncluded(context)
-        deviceLocale.setOnCheckedChangeListener { _, isChecked ->
-            // Save to shared preferences
-            Settings.setCleanInsightsDeviceLocale(context, isChecked)
-        }
-
         var selectionMade = false
         AlertDialog.Builder(context)
             .setView(dialogView)
             .setNegativeButton(R.string.clean_insights_maybe_later) { _, _ ->
                 selectionMade = true
-                context.components.metrics.campaign001.setPromptCompleted(context, true)
                 complete(false)
             }
             .setPositiveButton(R.string.clean_insights_opt_in) { _, _ ->
                 selectionMade = true
-                context.components.metrics.campaign001.setPromptCompleted(context, true)
                 complete(true)
             }
             .setOnDismissListener {
