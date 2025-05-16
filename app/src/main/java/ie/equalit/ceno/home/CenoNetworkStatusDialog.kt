@@ -14,6 +14,7 @@ import ie.equalit.ceno.R
 import ie.equalit.ceno.settings.AboutFragment
 import ie.equalit.ceno.settings.ExportAndroidLogsDialog
 import ie.equalit.ouinet.Ouinet.RunningState
+import androidx.core.net.toUri
 
 class CenoNetworkStatusDialog(
     val context: Context,
@@ -69,8 +70,9 @@ class CenoNetworkStatusDialog(
             alertDialog.dismiss()
             //Add mailto link to support@censorship.no
             val intent = Intent(Intent.ACTION_SENDTO).apply {
-                setData(Uri.parse("mailto:support@ceno.app" +
-                        "?subject=" + Uri.encode(context.getString(R.string.ceno_support_ticket_subject))))
+                setData(
+                    ("mailto:support@ceno.app" +
+                            "?subject=" + Uri.encode(context.getString(R.string.ceno_support_ticket_subject))).toUri())
             }
             if (intent.resolveActivity(context.packageManager) != null) {
                 startActivity(context, intent, null)

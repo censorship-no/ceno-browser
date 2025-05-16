@@ -157,8 +157,8 @@ class DefaultThemeManager(
         toolbar.display.colors = toolbar.display.colors.copy(
             text = textPrimary,
             hint = textSecondary,
-            securityIconSecure = textPrimary,
-            securityIconInsecure = textPrimary,
+            siteInfoIconSecure = textPrimary,
+            siteInfoIconInsecure = textPrimary,
             menu = textPrimary,
 
         )

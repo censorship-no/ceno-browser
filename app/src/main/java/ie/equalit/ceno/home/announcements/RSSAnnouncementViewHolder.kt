@@ -31,7 +31,7 @@ class RSSAnnouncementViewHolder(
         }
 
     fun update() {
-        val listIsHidden = binding.rssAnnouncementsContent.visibility == View.GONE
+        val listIsHidden = binding.rssAnnouncementsContent.isGone
         val personalContext = ContextThemeWrapper(itemView.context, R.style.PersonalTheme)
         if (mode.isPersonal) {
             binding.rssTitle.setTextColor(ContextCompat.getColor(itemView.context, R.color.ceno_orange_200))
@@ -66,7 +66,7 @@ class RSSAnnouncementViewHolder(
 
         binding.rssTitle.setOnClickListener {
 
-            val listIsHidden = binding.rssAnnouncementsContent.visibility == View.GONE
+            val listIsHidden = binding.rssAnnouncementsContent.isGone
 
             binding.rssAnnouncementsContent.isGone = !listIsHidden
             if (mode.isPersonal) {
