@@ -28,6 +28,7 @@ import ie.equalit.ceno.R
 import ie.equalit.ceno.databinding.FragmentAndroidLogBinding
 import ie.equalit.ceno.settings.adapters.LogTextAdapter
 import mozilla.components.concept.engine.prompt.ShareData
+import androidx.core.graphics.drawable.toDrawable
 
 class AndroidLogFragment : Fragment(), MenuProvider {
 
@@ -116,7 +117,8 @@ class AndroidLogFragment : Fragment(), MenuProvider {
             show()
             title = getString(R.string.ceno_android_logs_file_name)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ContextCompat.getColor(requireContext(), R.color.ceno_action_bar).toDrawable())
         }
     }
 

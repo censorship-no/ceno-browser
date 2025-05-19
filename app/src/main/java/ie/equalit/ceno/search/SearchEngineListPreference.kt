@@ -24,6 +24,7 @@ import mozilla.components.browser.state.state.selectedOrDefaultSearchEngine
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.components
 import kotlin.coroutines.CoroutineContext
+import androidx.core.graphics.drawable.toDrawable
 
 abstract class SearchEngineListPreference @JvmOverloads constructor(
     context: Context,
@@ -105,7 +106,7 @@ abstract class SearchEngineListPreference @JvmOverloads constructor(
         val buttonItem = layoutInflater.inflate(itemResId, null) as CompoundButton
         buttonItem.text = engine.name
         val iconSize = res.getDimension(R.dimen.preference_icon_drawable_size).toInt()
-        val engineIcon = BitmapDrawable(res, engine.icon)
+        val engineIcon = engine.icon.toDrawable(res)
         engineIcon.setBounds(0, 0, iconSize, iconSize)
         val drawables = buttonItem.compoundDrawables
         buttonItem.setCompoundDrawablesRelative(engineIcon, null, drawables[2], null)

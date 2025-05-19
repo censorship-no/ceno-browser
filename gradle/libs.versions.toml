@@ -1,19 +1,19 @@
 [versions]
 
 # AndroidX
-androidx_activity_compose = "1.10.0"
+androidx_activity_compose = "1.10.1"
 androidx_appcompat = "1.7.0"
-androidx_compose = "1.7.6"
-androidx_constraintlayout = "2.2.0"
-androidx_core = "1.15.0"
-androidx_lifecycle = "2.8.7"
-androidx_navigation = "2.8.5"
+androidx_compose = "1.8.1"
+androidx_constraintlayout = "2.2.1"
+androidx_core = "1.16.0"
+androidx_lifecycle = "2.9.0"
+androidx_navigation = "2.9.0"
 androidx_preference = "1.2.1"
 androidx_swiperefreshlayout = "1.1.0"
-androidx_work = "2.10.0"
+androidx_work = "2.10.1"
 
 # Android Components
-android_components = "137.0.2"
+android_components = "138.0"
 
 # Google
 google_composecompiler = "1.5.14"
@@ -21,12 +21,13 @@ google_material = "1.12.0"
 
 # Gradle
 #noinspection AndroidGradlePluginVersion
-gradle_android_plugin = "8.6.1"
-gradle_kotlin_plugin = "1.9.24"
+gradle_android_plugin = "8.9.2"
+gradle_kotlin_plugin = "2.1.21"
 
 # Kotlin
-kotlin_coroutines = "1.8.1"
-kotlin_serialization = "1.6.3"
+kotlin_coroutines = "1.10.1"
+kotlin_serialization = "1.8.0"
+kotlin = "2.0.0"
 
 # Testing
 testing_androidx_core = "1.6.1"
@@ -172,3 +173,4 @@ fastlane-screengrab = { group = "tools.fastlane", name = "screengrab", version.r
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jvm" }
 serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

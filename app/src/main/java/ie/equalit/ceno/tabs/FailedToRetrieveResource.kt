@@ -13,6 +13,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import ie.equalit.ceno.R
 import java.util.Locale
+import androidx.core.text.layoutDirection
 
 object FailedToRetrieveResource {
     /**
@@ -57,7 +58,7 @@ object FailedToRetrieveResource {
     })
 
     private fun isRTL(locale: Locale): Boolean {
-        return TextUtils.getLayoutDirectionFromLocale(locale) == View.LAYOUT_DIRECTION_RTL
+        return locale.layoutDirection == View.LAYOUT_DIRECTION_RTL
     }
 
 }
