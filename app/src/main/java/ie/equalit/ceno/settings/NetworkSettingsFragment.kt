@@ -16,6 +16,7 @@ import ie.equalit.ceno.ext.getPreferenceKey
 import ie.equalit.ceno.settings.dialogs.ExtraBTBootstrapsDialog
 import mozilla.components.support.ktx.kotlin.ifNullOrEmpty
 import java.util.Locale
+import androidx.core.graphics.drawable.toDrawable
 
 class NetworkSettingsFragment : PreferenceFragmentCompat() {
 
@@ -33,7 +34,8 @@ class NetworkSettingsFragment : PreferenceFragmentCompat() {
             show()
             setTitle(R.string.preferences_ceno_network_config)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ContextCompat.getColor(requireContext(), R.color.ceno_action_bar).toDrawable())
         }
 
         for (entry in BuildConfig.BT_BOOTSTRAP_EXTRAS) btSourcesMap[Locale("", entry[0]).displayCountry] = entry[1]

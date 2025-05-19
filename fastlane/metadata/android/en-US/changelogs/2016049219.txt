@@ -1,0 +1,7 @@
+This release:
+- Updates Android-Components to v137.0.2
+- Fixes issue with pre-installed extensions not localizing
+- Updates Ouinet to v1.1.1
+- Update cacert.pem to bundle generate on Feb 25, 2025
+- Update translations for various locales
+- Fix known issue with localization of built-in extensions

@@ -7,6 +7,7 @@ package ie.equalit.ceno
 import android.net.Uri
 import mozilla.components.concept.engine.manifest.WebAppManifest
 import mozilla.components.feature.pwa.ext.getWebAppManifest
+import androidx.core.net.toUri
 
 /**
  * Activity that holds the BrowserFragment that is launched within an external app,
@@ -19,7 +20,7 @@ class ExternalAppBrowserActivity : BrowserActivity() {
             val scope = when (manifest?.display) {
                 WebAppManifest.DisplayMode.FULLSCREEN,
                 WebAppManifest.DisplayMode.STANDALONE,
-                -> Uri.parse(manifest.scope ?: manifest.startUrl)
+                -> (manifest.scope ?: manifest.startUrl).toUri()
 
                 WebAppManifest.DisplayMode.MINIMAL_UI,
                 WebAppManifest.DisplayMode.BROWSER,

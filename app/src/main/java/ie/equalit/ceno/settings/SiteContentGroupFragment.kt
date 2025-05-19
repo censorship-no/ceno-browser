@@ -34,6 +34,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
+import androidx.core.graphics.drawable.toDrawable
 
 class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListener {
 
@@ -56,7 +57,8 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
             show()
             setTitle(R.string.preferences_ceno_groups_count)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ContextCompat.getColor(requireContext(), R.color.ceno_action_bar).toDrawable())
         }
     }
 
