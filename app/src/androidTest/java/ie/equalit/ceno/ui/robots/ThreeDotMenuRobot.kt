@@ -64,6 +64,7 @@ class ThreeDotMenuRobot {
     fun verifyEnableReaderViewButton() = assertEnableReaderViewButton()
     fun verifyDisableReaderViewButton() = assertDisableReaderViewButton()
     fun verifyReaderViewButtonDoesntExist() = assertReaderViewButtonDoesntExist()
+    fun verifyAddBookmarksButtonExists() = assertAddBookmarksButtonExists()
 
     class Transition {
 
@@ -153,6 +154,19 @@ class ThreeDotMenuRobot {
             return SettingsViewRobot.Transition()
         }
 
+        fun openBookmarks(interact: BookmarksRobot.() -> Unit): BookmarksRobot.Transition {
+            bookmarksButton().click()
+            mDevice.waitForIdle()
+            BookmarksRobot().interact()
+            return BookmarksRobot.Transition()
+        }
+
+        fun bookmarkPage(interact: BrowserRobot.() -> Unit): BrowserRobot.Transition {
+            addOrRemoveBookmarksButton().click()
+
+            BrowserRobot().interact()
+            return BrowserRobot.Transition()
+        }
         /*
         fun openSyncedTabs(interact: SyncedTabsRobot.() -> Unit): SyncedTabsRobot.Transition {
             mDevice.findObject(UiSelector().text("Synced Tabs")).waitForExists(waitingTime)
@@ -237,6 +251,9 @@ private fun ublockOriginButton() = onView(withText("uBlock Origin"))
 private fun enableReaderViewButton() = onView(withText(R.string.browser_menu_enable_reader_view))
 private fun disableReaderViewButton() = onView(withText(R.string.browser_menu_disable_reader_view))
 
+private fun addOrRemoveBookmarksButton() = onView(withContentDescription(R.string.add_or_remove_bookmark))
+private fun bookmarksButton() = onView(withText(R.string.library_bookmarks))
+
 private fun assertShareButtonDoesntExist() = shareButton().check(ViewAssertions.doesNotExist())
 private fun assertRequestDesktopSiteToggleDoesntExist() =
     requestDesktopSiteToggle().check(ViewAssertions.doesNotExist())
@@ -297,4 +314,6 @@ private fun assertUblockOriginButton() = ublockOriginButton()
 private fun assertEnableReaderViewButton() = enableReaderViewButton()
     .check(matches(ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)))
 private fun assertDisableReaderViewButton() = disableReaderViewButton()
+    .check(matches(ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)))
+private fun assertAddBookmarksButtonExists() = addOrRemoveBookmarksButton()
     .check(matches(ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)))

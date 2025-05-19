@@ -9,7 +9,9 @@ import android.content.Context
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getString
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.os.bundleOf
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.preference.PreferenceManager
@@ -32,6 +34,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.launch
+import mozilla.appservices.places.BookmarkRoot
 import mozilla.components.browser.domains.autocomplete.ShippedDomainsProvider
 import mozilla.components.browser.menu2.BrowserMenuController
 import mozilla.components.browser.state.selector.findTab
@@ -77,7 +80,8 @@ class ToolbarIntegration(
     private val tabsUseCases: TabsUseCases,
     private val webAppUseCases: WebAppUseCases,
     sessionId: String? = null,
-    private val readerViewIntegration: ReaderViewIntegration? = null
+    private val readerViewIntegration: ReaderViewIntegration? = null,
+    private val bookmarkTapped: ((String, String) -> Unit)? = null
 ) : LifecycleAwareFeature, UserInteractionHandler {
     private val shippedDomainsProvider = ShippedDomainsProvider().also {
         it.initialize(context)
@@ -89,6 +93,7 @@ class ToolbarIntegration(
     private val cenoToolbarFeature = WebExtensionToolbarFeature(context, toolbar)
 
     private var isCurrentUrlPinned = false
+    private var isCurrentUrlBookmarked = false
 
     private val navHost by lazy {
         activity.supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -157,6 +162,18 @@ class ToolbarIntegration(
                 sessionUseCases.reload.invoke()
             }
         }
+        rowMenuItems += SmallMenuCandidate(
+            contentDescription = context.getString(R.string.add_or_remove_bookmark),
+            icon = DrawableMenuIcon(
+                context,
+                if (isCurrentUrlBookmarked) R.drawable.ic_star_filled else R.drawable.ic_star_outline
+            ),
+            onClick = {
+                if (!isCurrentUrlBookmarked) isCurrentUrlBookmarked = true
+                bookmarkTapped?.invoke(session.content.url, session.content.title)
+                menuController.submitList(menuItems(context.components.core.store.state.selectedTab))
+            }
+        )
 
         return RowMenuCandidate(rowMenuItems)
     }
@@ -293,6 +310,7 @@ class ToolbarIntegration(
             }
             menuItemsList += shortcutMenuItem(sessionState)
 
+
             menuItemsList += TextMenuCandidate(
                 text = context.getString(R.string.browser_menu_find_in_page)
             ) {
@@ -314,6 +332,13 @@ class ToolbarIntegration(
                 )
             }
         }
+
+        menuItemsList += TextMenuCandidate(
+            text = getString(context, R.string.library_bookmarks),
+            onClick = {
+                navHost.navController.navigate(R.id.action_global_bookmarks, bundleOf("currentRoot" to BookmarkRoot.Mobile.id))
+            }
+        )
 
         menuItemsList += TextMenuCandidate(text = context.getString(R.string.browser_menu_settings)) {
             CenoSettings.setStatusUpdateRequired(context, true)
@@ -381,6 +406,11 @@ class ToolbarIntegration(
                     isCurrentUrlPinned = context.components.core.cenoTopSitesStorage
                         .getTopSites(context.components.cenoPreferences.topSitesMaxLimit)
                         .find { it.url == newUrl } != null
+                    isCurrentUrlBookmarked = newUrl?.let { url->
+                        context.components.core.bookmarksStorage
+                            .getBookmarksWithUrl(url)
+                            .any {it.url == url}
+                    } == true
                 }
         }
 

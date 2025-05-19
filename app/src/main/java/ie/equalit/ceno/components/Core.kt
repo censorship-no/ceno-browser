@@ -55,6 +55,7 @@ import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.media.MediaSessionService
 import ie.equalit.ceno.share.SaveToPDFMiddleware
+import mozilla.components.browser.storage.sync.PlacesBookmarksStorage
 import java.util.concurrent.TimeUnit
 
 private const val DAY_IN_MINUTES = 24 * 60L
@@ -144,6 +145,9 @@ class Core(private val context: Context) {
      * A convenience accessor to the [PlacesHistoryStorage].
      */
     val historyStorage by lazy { lazyHistoryStorage.value }
+
+    val lazyBookmarksStorage = lazy { PlacesBookmarksStorage(context) }
+    val bookmarksStorage by lazy { lazyBookmarksStorage.value}
 
     /**
      * A storage component for persisting thumbnail images of tabs.

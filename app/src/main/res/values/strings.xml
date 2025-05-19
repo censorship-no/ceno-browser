@@ -59,7 +59,7 @@
     <string name="browser_menu_add_to_shortcuts">Add to shortcuts</string>
     <string name="browser_menu_remove_from_shortcuts">Remove from shortcuts</string>
     <string name="browser_menu_library">Library</string>
-    <string name="empty_string" translatable="false"/>
+    <string name="empty_string" translatable="false" />
     <string name="delete_browsing_data_prompt_cancel">Cancel</string>
     <string name="delete_browsing_data_prompt_allow">Delete</string>
     <string name="preferences_delete_browsing_data_snackbar">Browsing data deleted</string>
@@ -466,4 +466,27 @@
     <string name="contact_support">Contact Support</string>
     <string name="ceno_support_ticket_subject">Ceno Support Ticket</string>
     <string name="ceno_notification_confirm_description">Do you want to clear all your data from Ceno?</string>
+
+    <string name="bookmarks_empty_message">No bookmarks here</string>
+    <string name="bookmark_menu_edit_button">Edit</string>
+    <string name="bookmark_menu_copy_button">Copy</string>
+    <string name="bookmark_menu_share_button">Share</string>
+    <string name="bookmark_menu_open_in_new_tab_button">Open in new tab</string>
+    <string name="bookmark_menu_delete_button">Delete</string>
+    <string name="bookmark_name_label">Name</string>
+    <string name="bookmark_url_label">URL</string>
+    <string name="edit_bookmark_folder_fragment_title">Edit folder</string>
+    <string name="edit_bookmark_fragment_title">Edit bookmark</string>
+    <string name="bookmark_add_folder">Add folder</string>
+
+    <string name="library_bookmarks">Bookmarks</string>
+    <string name="library_desktop_bookmarks_unfiled">Other Bookmarks</string>
+    <string name="bookmark_menu_save_button">Save</string>
+    <string name="bookmark_invalid_url_error">Invalid URL</string>
+    <string name="bookmark_deletion_confirmation">Are you sure you want to delete this bookmark?</string>
+    <string name="bookmark_add_folder_fragment_label">Add folder</string>
+    <string name="bookmark_item_menu_button">bookmark item menu button</string>
+    <string name="bookmark_folder_label">FOLDER</string>
+    <string name="add_or_remove_bookmark">add or remove Bookmark</string>
+    <string name="bookmark_delete_folder_confirmation_dialog">Are you sure you want to delete this folder?</string>
 </resources>
