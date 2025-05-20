@@ -39,13 +39,21 @@ Build debug and test apks
 
 Run gradle lintDebug
 
+### android setVersionNameSample
+
+```sh
+[bundle exec] fastlane android setVersionNameSample
+```
+
+Set version name in local.properties.sample using latest version listed in CHANGELOG.txt
+
 ### android setVersionName
 
 ```sh
 [bundle exec] fastlane android setVersionName
 ```
 
-Set version name based on latest version listed in CHANGELOG.txt
+Set version name in local.properties using latest version listed in CHANGELOG.txt
 
 ### android cleanAssembleNightly
 
@@ -62,6 +70,14 @@ Clean build directory and re-build nightly apks and bundle
 ```
 
 Clean build directory and re-build nightly apks and bundle
+
+### android checksumRelease
+
+```sh
+[bundle exec] fastlane android checksumRelease
+```
+
+Create checksum of releases binaries
 
 ### android createNightlyNotes
 
@@ -110,6 +126,14 @@ Run tasks if new commits have been made to develop
 ```
 
 Prepare release APKS, AAB, and release notes
+
+### android buildRelease
+
+```sh
+[bundle exec] fastlane android buildRelease
+```
+
+Build release APKS and AAB
 
 ### android publishMetadata
 

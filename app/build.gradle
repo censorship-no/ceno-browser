@@ -606,5 +606,6 @@ clean {
   delete 'build', 'target', fileTree("$project.rootDir/output/") {
       include '**/*.aab'
       include '**/*.apk'
+      include '**/*.txt'
   }
 }

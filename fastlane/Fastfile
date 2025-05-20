@@ -52,12 +52,20 @@ platform :android do
     )
   end
 
-  desc "Set version name based on latest version listed in CHANGELOG.txt"
+  desc "Set version name in local.properties.sample using latest version listed in CHANGELOG.txt"
+  lane :setVersionNameSample do
+    ENV["VERSION_NAME"] = sh "head -1 metadata/android/en-US/changelogs/CHANGELOG.txt \
+                                    | cut -d 'v' -f2 \
+                                    | tr -d '\n'"
+    sh "sed -i \"s/versionName=.*/versionName=${VERSION_NAME}/g\" ../local.properties.sample"
+  end
+
+  desc "Set version name in local.properties using latest version listed in CHANGELOG.txt"
   lane :setVersionName do
     ENV["VERSION_NAME"] = sh "head -1 metadata/android/en-US/changelogs/CHANGELOG.txt \
                                     | cut -d 'v' -f2 \
                                     | tr -d '\n'"
-    sh "sed -ie \"s/versionName=.*/versionName=${VERSION_NAME}/g\" ../local.properties"
+    sh "sed -i \"s/versionName=.*/versionName=${VERSION_NAME}/g\" ../local.properties"
   end
 
   desc "Clean build directory and re-build nightly apks and bundle"
@@ -90,6 +98,11 @@ platform :android do
     )
   end
 
+  desc "Create checksum of releases binaries"
+  lane :checksumRelease do
+    sh "sha256sum ../output/release/* > ../output/release/sha256sums.txt"
+  end
+
   desc "Create release notes from CHANGELOG.txt to ${VERSION_CODE}.txt for nightly release"
   lane :createNightlyNotes do
     ENV["LOCAL_VERSION"] = sh " cat ../local.properties \
@@ -112,20 +125,25 @@ platform :android do
                                     | grep versionName \
                                     | cut -d '=' -f2"
     ENV["VERSION_NAME"] = sh "echo $([ -z $CENO_VERSION ] && echo $LOCAL_VERSION || echo $CENO_VERSION) | tr -d '\n'"
-    ENV["VERSION_CODE"]  = sh "java -jar /opt/bundletool-all-1.17.1.jar dump manifest \
-                                --bundle ../app/build/outputs/bundle/release/app-release.aab \
-                                --xpath /manifest/@android:versionCode \
-                                | tr -d '\n'"
+    ENV["MAJOR"] = sh "printf %02d $(echo $VERSION_NAME | cut -d . -f 1)"
+    ENV["MINOR"] = sh "printf %03d $(echo $VERSION_NAME | cut -d . -f 2)"
+    ENV["PATCH"] = sh "printf %02d $(echo $VERSION_NAME | cut -d . -f 3)"
+    # TODO: get revision number from local.properties if set
+    #ENV["LOCAL_REVISION"] = sh " cat ../local.properties \
+    #                                | grep revision \
+    #                                | cut -d '=' -f2"
+    ENV["REVISION"] = sh "echo '0' | tr -d '\n'"
+    ENV["VERSION_CODE_0"] = sh "echo 2${MAJOR}${MINOR}${PATCH}0${REVISION} | tr -d '\n'"
+    ENV["VERSION_CODE_1"] = sh "echo 2${MAJOR}${MINOR}${PATCH}1${REVISION} | tr -d '\n'"
+    ENV["VERSION_CODE_2"] = sh "echo 2${MAJOR}${MINOR}${PATCH}2${REVISION} | tr -d '\n'"
     sh "sed -n \"/${VERSION_NAME}/,/#/p\" metadata/android/en-US/changelogs/CHANGELOG.txt \
         | head -n -2 \
         | tail -n +2 \
-        > metadata/android/en-US/changelogs/${VERSION_CODE}.txt"
-    # 32-bit F-droid release version code
-    sh "cp metadata/android/en-US/changelogs/${VERSION_CODE}.txt metadata/android/en-US/changelogs/$((VERSION_CODE-1)).txt"
-    # 64-bit F-droid release version code
-    sh "cp metadata/android/en-US/changelogs/${VERSION_CODE}.txt metadata/android/en-US/changelogs/$((VERSION_CODE+1)).txt"
-    # 64-bit play store release version code
-    sh "cp metadata/android/en-US/changelogs/${VERSION_CODE}.txt metadata/android/en-US/changelogs/$((VERSION_CODE+2)).txt"
+        > metadata/android/en-US/changelogs/${VERSION_CODE_0}.txt"
+    # arm64-v8a version code
+    sh "cp metadata/android/en-US/changelogs/${VERSION_CODE_0}.txt metadata/android/en-US/changelogs/${VERSION_CODE_1}.txt"
+    # x86_64 version code
+    sh "cp metadata/android/en-US/changelogs/${VERSION_CODE_0}.txt metadata/android/en-US/changelogs/${VERSION_CODE_2}.txt"
   end
 
   desc "Clean up repo after changes required for play store upload"
@@ -190,9 +208,16 @@ platform :android do
 
   desc "Prepare release APKS, AAB, and release notes"
   lane :prepareRelease do
+      setVersionName
+      setVersionNameSample
+      createReleaseNotes
+  end
+
+  desc "Build release APKS, AAB, write checksum"
+  lane :buildRelease do
       lint
       cleanAssembleRelease
-      createReleaseNotes
+      checksumRelease
   end
 
   desc "Publish metadata and screenshots to Play Store"
