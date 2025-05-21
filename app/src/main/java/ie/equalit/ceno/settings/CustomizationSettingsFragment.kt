@@ -17,6 +17,7 @@ import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.getPreferenceKey
 import ie.equalit.ceno.ext.requireComponents
 import mozilla.components.browser.state.selector.selectedTab
+import androidx.core.graphics.drawable.toDrawable
 
 class CustomizationSettingsFragment : PreferenceFragmentCompat() {
 
@@ -31,7 +32,8 @@ class CustomizationSettingsFragment : PreferenceFragmentCompat() {
             show()
             setTitle(R.string.customization_settings)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ContextCompat.getColor(requireContext(), R.color.ceno_action_bar).toDrawable())
         }
     }
 

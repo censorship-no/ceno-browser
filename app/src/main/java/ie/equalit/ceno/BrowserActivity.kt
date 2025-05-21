@@ -8,7 +8,6 @@ import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -24,6 +23,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -191,7 +191,11 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
         supportActionBar!!.apply {
             hide()
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this@BrowserActivity, R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ContextCompat.getColor(
+                    this@BrowserActivity,
+                    R.color.ceno_action_bar
+                ).toDrawable())
         }
 
         publicNotificationObserver = PublicNotificationFeature(
@@ -405,7 +409,11 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
                 else -> hide()
             }
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this@BrowserActivity, R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ContextCompat.getColor(
+                    this@BrowserActivity,
+                    R.color.ceno_action_bar
+                ).toDrawable())
         }
     }
 
@@ -457,8 +465,8 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
 
                 // get logs from internal storage
                 this.openFileInput("${getString(R.string.ceno_android_logs_file_name)}.txt").bufferedReader().useLines { lines ->
-                    var fileContent = lines.toMutableList().joinToString("\n")
-                    var file = contentResolver.openOutputStream(uri)
+                    val fileContent = lines.toMutableList().joinToString("\n")
+                    val file = contentResolver.openOutputStream(uri)
                     file?.write(fileContent.toByteArray())
                     file?.close()
                 }

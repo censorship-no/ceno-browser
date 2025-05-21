@@ -25,6 +25,7 @@ import mozilla.components.browser.state.action.TabListAction
 import mozilla.components.browser.state.selector.selectedTab
 import mozilla.components.browser.state.state.content.DownloadState
 import mozilla.components.browser.state.state.createTab
+import androidx.core.graphics.drawable.toDrawable
 
 class DeveloperToolsSettingsFragment : PreferenceFragmentCompat() {
 
@@ -39,7 +40,8 @@ class DeveloperToolsSettingsFragment : PreferenceFragmentCompat() {
             show()
             setTitle(R.string.developer_tools_category)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ContextCompat.getColor(requireContext(), R.color.ceno_action_bar).toDrawable())
         }
     }
 

@@ -13,6 +13,7 @@ import mozilla.components.browser.toolbar.BrowserToolbar
 import mozilla.components.concept.engine.webextension.Action
 import mozilla.components.support.base.feature.LifecycleAwareFeature
 import ie.equalit.ceno.ext.components
+import androidx.core.graphics.drawable.toDrawable
 
 /**
  * CENO: This is a stripped-down version of the WebExtensionToolbarFeature android-component
@@ -94,12 +95,14 @@ class WebExtensionToolbarFeature(
                 /* loading icon is a suspend function and must be called in coroutine */
                 val loadIcon = pageAction.loadIcon?.invoke(32)
                 /* add the WebExtension to the toolbar as page action button */
-                addOrUpdateAction(
+                loadIcon?.toDrawable(context.resources)?.let {
+                    addOrUpdateAction(
                         extension = ext,
                         globalAction = pageAction,
-                        imageDraw = BitmapDrawable(context.resources, loadIcon),
+                        imageDraw = it,
                         contentDesc = ext.name!!
-                )
+                    )
+                }
             }
         }
     }

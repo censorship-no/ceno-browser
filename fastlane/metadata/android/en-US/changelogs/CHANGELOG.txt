@@ -1,3 +1,18 @@
+#v2.4.6
+This release:
+- Updates Android-Components to v138.0.3
+- Updates Gradle to 8.11.1 and Kotlin to 2.0.0
+- Updates Sentry to 8.11.1
+- Updates Gson to 2.11.0
+
+# v2.4.5
+This release:
+- Updates Android-Components to v137.0.2
+- Fixes issue with pre-installed extensions not localizing
+- Updates Ouinet to v1.1.1
+- Update cacert.pem to bundle generate on Feb 25, 2025
+- Update translations for various locales
+
 # v2.4.4
 This release:
 - Updates Android-Components to v137.0

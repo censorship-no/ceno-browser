@@ -12,6 +12,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.getPreference
+import androidx.core.graphics.drawable.toDrawable
 
 class WebsiteSourceSettingsFragment : PreferenceFragmentCompat() {
 
@@ -26,7 +27,8 @@ class WebsiteSourceSettingsFragment : PreferenceFragmentCompat() {
             show()
             setTitle(R.string.preferences_ceno_website_sources)
             setDisplayHomeAsUpEnabled(true)
-            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.ceno_action_bar)))
+            setBackgroundDrawable(
+                ContextCompat.getColor(requireContext(), R.color.ceno_action_bar).toDrawable())
         }
 
         setupSettings()
