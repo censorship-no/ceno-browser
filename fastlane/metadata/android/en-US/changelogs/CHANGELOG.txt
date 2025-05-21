@@ -1,4 +1,8 @@
-#v2.4.6
+# v2.4.7
+This release:
+- Updates Android-Components to v138.0.4
+
+# v2.4.6
 This release:
 - Updates Android-Components to v138.0.3
 - Updates Gradle to 8.11.1 and Kotlin to 2.0.0
