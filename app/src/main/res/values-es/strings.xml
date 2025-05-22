@@ -422,4 +422,5 @@
     <string name="preferences_clean_insights_backdate">Activar la retroactividad de los parámetros</string>
     <string name="ceno_notification_title">Compartir pestañas almacenadas en caché</string>
     <string name="ceno_notification_confirm_description">¿Quieres borrar todos tus datos de Ceno?</string>
+    <string name="ceno_sources_shared_by_local_cache">De la caché del navegador</string>
 </resources>

@@ -119,7 +119,7 @@
     <string name="preferences_make_default_browser">Ceno als Standardbrowser verwenden</string>
     <string name="onboarding_warning_button">Okay</string>
     <string name="about_content"><p>%1$s - Teile das Internet!</p> <p>Ceno ist der weltweit erste mobile Browser, der die aktuellen Methoden der Internet-Zensur umgeht. Sein Peer-to-Peer-Backbone ermöglicht es den Menschen in Regionen, in denen die Internetverbindung unterbrochen oder kompromittiert ist, trotzdem auf Internetseiten zuzugreifen und diese mit anderen zu teilen. </p> <p>%1$s ist ein Projekt von <a href="https://equalit.ie/">eQualit.ie</a> – einer gemeinnützigen kanadischen Organisation, die dezentrale Internet-Dienste zur Unterstützung eines gleichwertigen und gerechten Netzwerks schafft. Die Software von eQualitie ist quelloffen, kampferprobt und im Hinblick auf unsere Werte entwickelt. Sie ermöglicht jeden Tag Millionen von Menschen online die Vereinigungsfreiheit.</p></string>
-    <string name="ceno_notification_description">Tippen zum Anhalten</string>
+    <string name="ceno_notification_description">Für weitere Details tippen</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Es wird empfohlen, Ceno zu verwenden, wenn du eine Wi-Fi-Verbindung haben, da es mehr Daten verbrauchen kann, als Sie erwarten. Wenn du mobile Daten verwendest, solltest du Ceno deaktivieren.</string>
     <string name="crash_reporting_never_send">Niemals senden</string>
     <string name="crash_reporting_always_send">Immer senden, um Ceno zu verbessern</string>
@@ -403,4 +403,6 @@
     <string name="about_content_para_2">Der Ceno Browser ist ein Projekt von eQualitie – einer gemeinnützigen kanadischen Organisation, die dezentrale Internet-Dienste zur Unterstützung eines gleichwertigen und gerechten Netzwerks schafft. Die Software von eQualitie ist quelloffen, kampferprobt und im Hinblick auf unsere Werte entwickelt. Sie ermöglicht jeden Tag Millionen von Menschen online die Vereinigungsfreiheit.</string>
     <string name="error_page_learn_more_3">Ihr Gerät hat eine funktionierende Internetverbindung, d.h. Ihr normaler Webbrowser ist in der Lage einige Webseiten zu öffnen. Ceno und Ouinet können nicht funktionieren, wenn alle Internetverbindung unterbrochen ist.</string>
     <string name="ceno_notification_confirm_description">Wollen Sie dass Ceno alle ihre Dateien löscht?</string>
+    <string name="ceno_notification_title">Teilen zwischengespeicherter Tabs</string>
+    <string name="ceno_sources_shared_by_local_cache">Aus dem Browser-Cache</string>
 </resources>
