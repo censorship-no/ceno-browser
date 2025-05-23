@@ -162,7 +162,6 @@ class ExtraBTBootstrapsDialog(
     }
 
     fun getDialog(): AlertDialog {
-        context.components.metrics.autoTracker.measureVisit(listOf(TAG))
         return builder.create()
     }
 

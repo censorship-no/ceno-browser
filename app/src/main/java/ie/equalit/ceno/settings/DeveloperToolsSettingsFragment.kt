@@ -30,7 +30,6 @@ import androidx.core.graphics.drawable.toDrawable
 class DeveloperToolsSettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
         setPreferencesFromResource(R.xml.developer_tools_preferences, rootKey)
     }
 

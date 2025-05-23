@@ -28,7 +28,6 @@ class LanguageChangeDialog(
 
     init {
 
-        context.components.metrics.autoTracker.measureVisit(listOf(TAG))
         currentLocale = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             AppCompatDelegate.getApplicationLocales().get(0) ?: Locale.getDefault()
         } else {
@@ -99,7 +98,6 @@ class LanguageChangeDialog(
     }
 
     fun getDialog(): AlertDialog {
-        context.components.metrics.autoTracker.measureVisit(listOf(TAG))
         return builder.create()
     }
 

@@ -303,7 +303,6 @@ class HomeFragment : BaseHomeFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
 
         binding.sessionControlRecyclerView.visibility = View.VISIBLE
 

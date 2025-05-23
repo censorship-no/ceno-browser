@@ -38,7 +38,6 @@ class AboutFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        requireContext().components.metrics.autoTracker.measureVisit(listOf(TAG))
         _binding = FragmentAboutBinding.inflate(inflater, container,false)
         return binding.root
     }

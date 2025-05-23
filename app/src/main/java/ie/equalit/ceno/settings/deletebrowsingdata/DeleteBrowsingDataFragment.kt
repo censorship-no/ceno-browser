@@ -39,7 +39,6 @@ class DeleteBrowsingDataFragment : Fragment(R.layout.fragment_delete_browsing_da
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
 
         val tabsUseCases = requireComponents.useCases.tabsUseCases
         //val downloadUseCases = requireComponents.useCases.downloadUseCases

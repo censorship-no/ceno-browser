@@ -30,7 +30,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.NavHostFragment
-import ie.equalit.ceno.R.string.clean_insights_successful_opt_in
 import ie.equalit.ceno.addons.WebExtensionActionPopupActivity
 import ie.equalit.ceno.base.BaseActivity
 import ie.equalit.ceno.browser.BrowserFragment
@@ -47,13 +46,9 @@ import ie.equalit.ceno.components.ceno.appstate.AppAction
 import ie.equalit.ceno.ext.ceno.sort
 import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.ext.components
-import ie.equalit.ceno.ext.isFirstInstall
 import ie.equalit.ceno.ext.isInstallFromUpdate
 import ie.equalit.ceno.home.HomeFragment.Companion.BEGIN_TOUR_TOOLTIP
-import ie.equalit.ceno.metrics.DailyUsage.Companion.ID as DAILY_USAGE_TAG
-import ie.equalit.ceno.metrics.MonthlyUsage.Companion.ID as MONTHLY_USAGE_TAG
-import ie.equalit.ceno.metrics.autotracker.AutoTracker.Companion.ASK_FOR_ANALYTICS_LIMIT
-import ie.equalit.ceno.metrics.campaign001.ConsentRequestDialog
+import ie.equalit.ceno.metrics.ConsentRequestDialog
 import ie.equalit.ceno.settings.CenoSettings
 import ie.equalit.ceno.settings.OuinetKey
 import ie.equalit.ceno.settings.OuinetResponseListener
@@ -145,7 +140,6 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        components.metrics.autoTracker.measureVisit(listOf(TAG))
         setupThemeAndBrowsingMode(getModeFromIntentOrLastKnown(intent))
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -156,23 +150,28 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
 
                 if( isInstallFromUpdate() && packageManager.getPackageInfo(packageName, 0).versionName == METRICS_LAUNCH_VERSION_NAME ) {
                     val dialog = ConsentRequestDialog(this)
-                    dialog.show { granted ->
-                        //web api call
-                        CenoSettings.ouinetClientRequest(
-                            context = this,
-                            key = OuinetKey.CENO_METRICS,
-                            newValue = if (granted) OuinetValue.ENABLE else OuinetValue.DISABLE,
-                            stringValue = null,
-                            object : OuinetResponseListener {
-                                override fun onSuccess(message: String, data: Any?) {
-                                    Settings.setOuinetMetricsEnabled(this@BrowserActivity, granted)
+                    dialog.show (
+                        complete = { granted ->
+                            //web api call
+                            CenoSettings.ouinetClientRequest(
+                                context = this,
+                                key = OuinetKey.CENO_METRICS,
+                                newValue = if (granted) OuinetValue.ENABLE else OuinetValue.DISABLE,
+                                stringValue = null,
+                                object : OuinetResponseListener {
+                                    override fun onSuccess(message: String, data: Any?) {
+                                        Settings.setOuinetMetricsEnabled(this@BrowserActivity, granted)
+                                    }
+                                    override fun onError() {
+                                        Log.e(TAG, "Failed to set metrics to newValue: $granted")
+                                    }
                                 }
-                                override fun onError() {
-                                    Log.e(TAG, "Failed to set metrics to newValue: $granted")
-                                }
-                            }
-                        )
-                    }
+                            )
+                        },
+                        openMetricsSettings = {
+                            navHost.navController.navigate(R.id.action_global_metricsCampaignFragment)
+                        }
+                    )
                 }
 
                 if (Settings.showCrashReportingPermissionNudge(this)) {
@@ -180,16 +179,6 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
                 }
             }
         }
-
-        if (Settings.isMetricsDailyUsageEnabled(this@BrowserActivity)) {
-            components.metrics.dailyUsage.enableCampaign()
-        }
-        components.metrics.dailyUsage.measureVisit(listOf(DAILY_USAGE_TAG))
-
-        if (Settings.isMetricsMonthlyUsageEnabled(this@BrowserActivity)) {
-            components.metrics.monthlyUsage.enableCampaign()
-        }
-        components.metrics.monthlyUsage.measureVisit(listOf(MONTHLY_USAGE_TAG))
 
         components.useCases.customLoadUrlUseCase.onNoSelectedTab = { url ->
             openToBrowser(url, newTab = true, private = themeManager.currentMode.isPersonal)
@@ -345,11 +334,6 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
                         components.appStore.dispatch(AppAction.OuinetStatusChange(status))
                         if(!hasOuinetStarted && status == RunningState.Started) {
                             ouinetStartupTime = (System.currentTimeMillis() - screenStartTime) / 1000.0
-                            if(Settings.isCleanInsightsEnabled(this@BrowserActivity)) {
-                                components.metrics.autoTracker.measureEvent(
-                                    startupTime = ouinetStartupTime
-                                )
-                            }
                             hasOuinetStarted = true
                         }
 
@@ -610,7 +594,6 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
             callback,
             stalledDuration
         )
-        BrowserApplication.cleanInsights.persist()
         components.ouinet.background.shutdown(doClear) {
             handler.removeCallbacks(callback)
             callback.run()

@@ -46,7 +46,6 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
         val homeAction = BrowserToolbar.Button(
             imageDrawable = ResourcesCompat.getDrawable(
                 resources,

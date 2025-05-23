@@ -18,7 +18,6 @@ import ie.equalit.ceno.ext.requireComponents
 class WebsiteSourceSettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
         setPreferencesFromResource(R.xml.sources_preferences, rootKey)
     }
 

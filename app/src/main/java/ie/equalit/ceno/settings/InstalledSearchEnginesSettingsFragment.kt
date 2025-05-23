@@ -22,7 +22,6 @@ import kotlin.collections.forEach as withEach
 
 class InstalledSearchEnginesSettingsFragment : PreferenceFragmentCompat() {
     override fun onCreatePreferences(p0: Bundle?, p1: String?) {
-        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
     }
 
     companion object {

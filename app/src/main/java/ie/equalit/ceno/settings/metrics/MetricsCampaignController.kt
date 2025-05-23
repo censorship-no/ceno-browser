@@ -15,9 +15,6 @@ import ie.equalit.ceno.settings.OuinetKey
 import ie.equalit.ceno.settings.OuinetResponseListener
 import ie.equalit.ceno.settings.OuinetValue
 import ie.equalit.ceno.settings.Settings
-import ie.equalit.ceno.settings.Settings.setCleanInsightsEnabled
-import ie.equalit.ceno.settings.Settings.setMetricsDailyUsageEnabled
-import ie.equalit.ceno.settings.Settings.setMetricsMonthlyUsageEnabled
 import ie.equalit.ceno.utils.sentry.SentryOptionsConfiguration
 import io.sentry.android.core.SentryAndroid
 

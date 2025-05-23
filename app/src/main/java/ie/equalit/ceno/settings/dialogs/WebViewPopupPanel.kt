@@ -26,7 +26,6 @@ class WebViewPopupPanel(
         DialogWebViewPopupSheetBinding.inflate(layoutInflater, null, false)
 
     init {
-        context.components.metrics.autoTracker.measureVisit(listOf(TAG))
         initWindow()
         setContentView(binding.root)
         expand()

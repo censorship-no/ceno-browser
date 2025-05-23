@@ -61,7 +61,6 @@ import ie.equalit.ceno.R.string.pref_key_ceno_groups_count
 import ie.equalit.ceno.R.string.pref_key_ceno_network_config
 import ie.equalit.ceno.R.string.pref_key_ceno_website_sources
 import ie.equalit.ceno.R.string.pref_key_change_language
-import ie.equalit.ceno.R.string.pref_key_clean_insights_enabled
 import ie.equalit.ceno.R.string.pref_key_clear_ceno_cache
 import ie.equalit.ceno.R.string.pref_key_customization
 import ie.equalit.ceno.R.string.pref_key_delete_browsing_data
@@ -88,19 +87,14 @@ import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.ext.getPreference
 import ie.equalit.ceno.ext.getPreferenceCategory
 import ie.equalit.ceno.ext.getPreferenceKey
-import ie.equalit.ceno.ext.getSwitchPreferenceCompat
 import ie.equalit.ceno.ext.requireComponents
-import ie.equalit.ceno.settings.dialogs.LanguageChangeDialog
-import ie.equalit.ceno.settings.dialogs.UpdateBridgeAnnouncementDialog
 import ie.equalit.ceno.settings.Settings.setShowDeveloperTools
 import ie.equalit.ceno.settings.Settings.shouldShowDeveloperTools
-import ie.equalit.ceno.settings.Settings.isCleanInsightsEnabled
-import ie.equalit.ceno.settings.dialogs.UpdateBridgeAnnouncementDialog.Companion
+import ie.equalit.ceno.settings.dialogs.LanguageChangeDialog
+import ie.equalit.ceno.settings.dialogs.UpdateBridgeAnnouncementDialog
 import ie.equalit.ceno.utils.CenoPreferences
-import ie.equalit.ceno.utils.sentry.SentryOptionsConfiguration
 import ie.equalit.ouinet.Config
 import ie.equalit.ouinet.Ouinet
-import io.sentry.android.core.SentryAndroid
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import mozilla.components.browser.state.state.selectedOrDefaultSearchEngine
@@ -164,11 +158,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
                         it.isEnabled = !(it.isEnabled)
                         it.isEnabled = !(it.isEnabled)
                     }
-                    getSwitchPreferenceCompat(pref_key_clean_insights_enabled)?.let {
-                        it.isChecked = isCleanInsightsEnabled(requireContext())
-                        it.isEnabled = !(it.isEnabled)
-                        it.isEnabled = !(it.isEnabled)
-                    }
                     cenoPrefs.sharedPrefsUpdate = false
                 }
             }
@@ -182,7 +171,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
 
         (activity as BrowserActivity).themeManager.applyStatusBarThemeTabsTray()
         bridgeAnnouncementDialog = UpdateBridgeAnnouncementDialog(requireContext()).getDialog()
@@ -493,24 +481,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
-    private fun getClickListenerForCrashReporting(): OnPreferenceChangeListener {
-        return OnPreferenceChangeListener { _, _ ->
-            // Re-initialize Sentry-Android
-            SentryAndroid.init(
-                requireContext(),
-                SentryOptionsConfiguration.getConfig(requireContext())
-            )
-
-//            Re-allow post-crash permissions nudge
-//            This should ALWAYS be turned on when this permission state is toggled
-            ie.equalit.ceno.settings.Settings.toggleCrashReportingPermissionNudge(
-                requireContext(),
-                true
-            )
-            true
-        }
-    }
-
     private fun getClickListenerForCleanInsights(): OnPreferenceClickListener {
         return OnPreferenceClickListener {
             findNavController().navigate(
@@ -691,9 +661,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
                         hasOuinetStopped = true
                     }
                 }
-                requireComponents.metrics.autoTracker.measureVisit(listOf(
-                    UpdateBridgeAnnouncementDialog.TAG
-                ))
                 bridgeAnnouncementDialog.show()
             }
             true

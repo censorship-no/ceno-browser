@@ -371,7 +371,7 @@
     <string name="confirm_clear_cached_content_desc">Your cached content will be removed immediately</string>
     <string name="clean_insights_header">Help make Ceno better!</string>
     <string name="clean_insights_sub_header">We would like to record the following metrics:</string>
-    <string name="clean_insights_explainer">Your contribution will be anonymous, and you can opt out at any time.</string>
+    <string name="clean_insights_explainer">Your contribution will be anonymous, and you can opt out at any time via Settings > Background metrics.</string>
     <string name="optional_metrics">Optional metrics:</string>
     <string name="device_type">Device type</string>
     <string name="load_times">App startup time</string>
@@ -483,7 +483,9 @@
     <string name="monthly_usage" tools:ignore="UnusedResources">Monthly usage</string>
     <string name="metrics_ouinet_title">Ouinet Metrics</string>
     <string name="metrics_ouinet_description">Ouinet Metrics</string>
-    <string name="metrics_consent_dialog_description">We\'re making some changes in this version of Ceno to help us improve performance and stability. This includes collecting data about device OS, location and failure rate for network requests. You can review the details of what we track and how we protect your information in our updated Privacy Policy.</string>
+    <string name="metrics_consent_dialog_description">We\'re making some changes in the latest version of Ceno to help us improve performance and stability. This includes collecting data about your device, application usage, and failure rates of network requests. You can review the details of what we track and how we protect your information in our updated Privacy Policy.</string>
+    <string name="metrics_consent_accept">I Accept</string>
+    <string name="consent_dialog_modify_privacy_settings">Modify Privacy Settings</string>
 
     <string name="bookmarks_empty_message">No bookmarks here</string>
     <string name="bookmark_menu_edit_button">Edit</string>

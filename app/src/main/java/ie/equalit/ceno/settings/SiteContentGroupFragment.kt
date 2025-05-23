@@ -65,7 +65,6 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
 
         arguments?.getString("groups")?.let { groups ->
             binding.groupListing.setAdapter(

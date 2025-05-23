@@ -44,8 +44,6 @@ sentry = "8.11.1"
 gson = "2.11.0"
 tooltips = "3.3.2"
 fastlane_version = "2.1.1"
-clean_insights = "2.8.0"
-matomo = "4.2"
 
 # CENO: Versions for additional dependencies */
 ouinet_version = "1.1.1"
@@ -127,7 +125,6 @@ mozilla-libpublicsuffixlist = { group = "org.mozilla.components", name = "lib-pu
 thirdparty_sentry = { group = "io.sentry", name = "sentry-android", version.ref = "sentry" }
 thirdparty_gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 thirdparty_tooltips = { group = "uk.co.samuelwall", name = "material-tap-target-prompt", version.ref = "tooltips" }
-thirdparty_cleaninsights = { group = "org.cleaninsights.sdk", name = "clean-insights-sdk", version.ref = "clean_insights" }
 
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx_appcompat" }
 androidx-corektx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx_core" }

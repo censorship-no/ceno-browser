@@ -25,7 +25,6 @@ class NetworkSettingsFragment : PreferenceFragmentCompat() {
     private val btSourcesMap = mutableMapOf<String, String>()
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        requireComponents.metrics.autoTracker.measureVisit(listOf(TAG))
         setPreferencesFromResource(R.xml.network_detail_preferences, rootKey)
     }
 
