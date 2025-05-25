@@ -25,7 +25,7 @@
     <string name="menu_action_add_tab">Yeni sekme ekle</string>
     <string name="menu_action_close_tabs">Tüm sekmeleri kapat</string>
     <string name="preferences_customization_summary">Uygulama simgesi, araç çubuğu, temizle düğmesi</string>
-    <string name="open_links_in_apps">Bağlantılar uygulamalarında açılsın</string>
+    <string name="open_links_in_apps">Uygulamalardaki bağlantılar açılsın</string>
     <string name="preferences_delete_browsing_data_site_permissions">Site izinleri</string>
     <string name="browser_menu_desktop_site">Masaüstü siteye geç</string>
     <string name="deleting_browsing_data_in_progress">Gezinme verileri siliniyor…</string>
@@ -200,7 +200,7 @@
     <string name="ceno_home_card_personal_text">İyi bağlanabilirlik, daha fazla gizlilik. Hesaplarda oturum açmak, iz bırakmamak ve bilgi paylaşmamak için</string>
     <string name="preferences_ceno_sources_upnp">UPnP durumu</string>
     <string name="onboarding_finish_button">Bitti</string>
-    <string name="crash_reporting_dialog_description">Çökme bildirimlerini göndererek Ceno geliştirilmesine katkıda bulunun.</string>
+    <string name="crash_reporting_dialog_description">Çökme bildirimlerini göndererek Ceno uygulamasının geliştirilmesine katkıda bulunun.</string>
     <string name="crash_reporting_never_send">Hiçbir zaman gönderilmesin</string>
     <string name="crash_reporting_always_send">Her zaman gönderilsin, Ceno için katkı</string>
     <string name="preferences_allow_crash_reporting">Çökme bildirimleri</string>
