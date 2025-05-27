@@ -1,3 +1,8 @@
+# v2.5.0
+This release:
+- Updates Ouinet to v1.2.0
+- Introduces privacy-preserving metrics collection
+
 # v2.4.7
 This release:
 - Updates Android-Components to v138.0.4

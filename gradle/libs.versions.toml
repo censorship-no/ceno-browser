@@ -46,7 +46,7 @@ tooltips = "3.3.2"
 fastlane_version = "2.1.1"
 
 # CENO: Versions for additional dependencies */
-ouinet_version = "1.1.1"
+ouinet_version = "1.2.0"
 relinker_version = "1.4.4"
 snakeyaml_version = "2.2"
 
