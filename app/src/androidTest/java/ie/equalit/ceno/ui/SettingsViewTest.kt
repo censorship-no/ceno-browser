@@ -84,10 +84,7 @@ class SettingsViewTest {
             verifyShowOnboarding()
 
             clickDownRecyclerView(1)
-            verifyCrashReportingButton()
-
-            clickDownRecyclerView(1)
-            verifyMetricsButton()
+            verifyBackgroundMetricsButton()
 
             clickDownRecyclerView(1)
             verifyDeleteBrowsingData()
@@ -425,18 +422,11 @@ class SettingsViewTest {
             Thread.sleep(5000)
             clickDownRecyclerView(11)
             Thread.sleep(2000)
-            verifyMetricsButton()
+            verifyBackgroundMetricsButton()
         }.openSettingsViewMetrics {
             Thread.sleep(1000)
-            verifyMetricsHeading()
-            verifyMetricsSubHeading()
-            verifyMetricsOptionalMetrics()
-            verifyMetricsToggle1()
-            verifyMetricsToggle2()
-            verifyMetricsExplainer()
-            verifyMetricsLearnMore()
-            verifyMetricsNegativeButton()
-            verifyMetricsPositiveButton()
+            verifyCrashReportingButton()
+            verifyMetricsButton()
         }
     }
 }
