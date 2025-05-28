@@ -343,17 +343,9 @@
     <string name="clean_insights_sub_header">31 Ocak 2025 tarihine kadar şu ölçümleri kaydetmek istiyoruz:</string>
     <string name="optional_metrics">İsteğe bağlı ölçümler:</string>
     <string name="device_type">Aygıt türü</string>
-    <string name="load_times">Uygulama başlangıç zamanı</string>
     <string name="device_locale">Aygıt yerel ayarı (dil)</string>
     <string name="clean_insights_opt_in">EVET, KATILAYIM</string>
     <string name="clean_insights_maybe_later">HAYIR, BELKİ SONRA</string>
-    <string name="clean_insights_successful_opt_in">Arka planda istatistik toplama açık</string>
-    <string name="clean_insights_successful_opt_out">Arka planda istatistik toplama kapalı</string>
-    <string name="ouinet_startup_time_too_long">Çok uzun</string>
-    <string name="ouinet_startup_time_quick">Hızlı</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
     <string name="thank_you_for_feedback">Geri bildiriminiz için teşekkürler!</string>
     <string name="submit">Gönder</string>
     <string name="ceno_base_url">https://ceno.app</string>
@@ -370,12 +362,8 @@
     </plurals>
     <string name="developer_tools_enabled">Geliştirici araçları açık</string>
     <string name="developer_tools_disabled">Geliştirici araçları kapalı</string>
-    <string name="preferences_allow_clean_insights_tracking">Arka planda istatistikler toplansın</string>
     <string name="clean_insights_header">Ceno uygulamasının daha iyi olmasına yardım edin!</string>
     <string name="clean_insights_explainer">Katkınız anonim olur ve istediğiniz zaman vazgeçebilirsiniz.</string>
-    <string name="ouinet_startup_time_header">Ceno uygulamasının başlaması sizce ne kadar sürüyor?</string>
-    <string name="ouinet_startup_time_1">1</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="preferences_announcement_source_summary">Giriş sayfası duyurularının kaynağını ayarla</string>
     <plurals name="developer_tools_enable_alert">
         <item quantity="one">Geliştirici seçeneklerini açmaya %d dokunuş kaldı</item>

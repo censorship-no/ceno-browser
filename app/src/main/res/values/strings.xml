@@ -203,7 +203,6 @@
     <string name="preferences_toolbar_hide">Scroll to hide</string>
     <string name="preferences_show_home_button">Show home button</string>
     <string name="preferences_show_onboarding">Show tooltips on next launch</string>
-    <string name="preferences_allow_clean_insights_tracking">Allow background analytics</string>
     <string name="preferences_allow_crash_reporting">Crash reporting</string>
     <string name="preferences_allow_crash_reporting_description">Send reports to developers after crashes occur.</string>
     <string name="preferences_allow_notifications">Notifications</string>
@@ -374,23 +373,11 @@
     <string name="clean_insights_explainer">Your contribution will be anonymous, and you can opt out at any time via Settings > Background metrics.</string>
     <string name="optional_metrics">Optional metrics:</string>
     <string name="device_type">Device type</string>
-    <string name="load_times">App startup time</string>
-    <string name="feature_usage">Feature usage</string>
     <string name="device_locale">Device locale (language)</string>
     <string name="clean_insights_opt_in">YES, OPT ME IN</string>
     <string name="clean_insights_maybe_later">NO, MAYBE LATER</string>
-    <string name="clean_insights_successful_opt_in">Enabled background analytics</string>
-    <string name="clean_insights_successful_opt_out">Disabled background analytics</string>
-    <string name="ouinet_startup_time_header">How long do you feel it typically takes for Ceno to start?</string>
-    <string name="ouinet_startup_time_too_long">Too long</string>
-    <string name="ouinet_startup_time_quick">Quick</string>
-    <string name="ouinet_startup_time_1">1</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="thank_you_for_feedback" tools:ignore="UnusedResources">Thank you for your feedback!</string>
-    <string name="submit">Submit</string>
+    <string name="submit" tools:ignore="UnusedResources">Submit</string>
     <plurals name="preferences_ceno_groups_count_subtitle">
         <item quantity="one">%d site</item>
         <item quantity="other">%d sites</item>

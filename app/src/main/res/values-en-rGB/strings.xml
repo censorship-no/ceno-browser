@@ -101,7 +101,6 @@
     <string name="ouinet_client_fetch_success">Ceno setting updated</string>
     <string name="source_code_button_text">Source Code</string>
     <string name="support_button_text">Support</string>
-    <string name="ouinet_startup_time_2">2</string>
     <string name="error_page_title">Error Page</string>
     <string name="standby_tip_title">Tip</string>
     <string name="standby_message_one">Connecting to Ceno network</string>
@@ -109,9 +108,7 @@
     <string name="share_logs">Share</string>
     <string name="personal_mode_icon">personal mode icon</string>
     <string name="select_log_scope_header">Select your preferred scope</string>
-    <string name="ouinet_startup_time_quick">Quick</string>
     <string name="error_page_learn_more_3">Your device has a working connection to the network, i.e. your normal Web browser is able to open some websites. Ceno and Ouinet cannot work when all network connectivity is shut down.</string>
-    <string name="ouinet_startup_time_header">How long do you feel it typically takes for Ceno to start?</string>
     <string name="error_page_learn_more_2">All access mechanisms in the Settings are enabled. Otherwise Ceno will not be able to circumvent some connectivity issues when accessing content.</string>
     <string name="select_language">Select Language:</string>
     <string name="standby_take_me_anyway">Take me to Ceno anyway</string>
@@ -170,13 +167,10 @@
     <string name="addon_placeholder" tools:ignore="UnusedResources">No Add-ons Available</string>
     <string name="ceno_sources_via_ceno_network">Using Ceno network</string>
     <string name="last_5_minutes">Last 5 minutes</string>
-    <string name="ouinet_startup_time_1">1</string>
     <string name="error_page_header">Oops! Failed to load webpage.</string>
     <string name="website_button_text">Website</string>
     <string name="eq_values_button_text">Values</string>
     <string name="empty_log_text">Looks like your log is empty</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
     <string name="ceno_onboarding_start_title">Share the web, \npeer-to-peer</string>
     <string name="onboarding_cleanup_text">Clear your browsing history, credentials and any trace you left on Ceno with one single button.</string>
     <string name="change_bt_bootstrap_server">Change BT Bootstrap Server</string>
@@ -196,9 +190,6 @@
     <string name="start_tooltip_description">Unlock Ceno\'s full potential – Take a guided tour to discover key features, and allow permissions to help share the web even when the app is in the background.</string>
     <string name="public_mode_icon">public mode icon</string>
     <string name="last_10_minutes">Last 10 minutes</string>
-    <string name="clean_insights_successful_opt_out">Disabled background analytics</string>
-    <string name="ouinet_startup_time_too_long">Too long</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="onboarding_battery_text" tools:ignore="UnusedResources">Shortly the OS will ask you for permission to \n \n• Disable battery optimisation. \n \nThis is required to keep sharing websites while the app is in the background</string>
     <string name="ceno_network_status_disconnected">Disconnected. Check your network settings or export logs for additional information.</string>
     <string name="onboarding_warning_text" tools:ignore="UnusedResources">Battery optimisation is still enabled. \n \nGo to \"Settings &gt; Disable Battery Optimisation\" to give permission later</string>
@@ -294,7 +285,6 @@
     <string name="preferences_toolbar_hide">Scroll to hide</string>
     <string name="preferences_show_home_button">Show home button</string>
     <string name="preferences_show_onboarding">Show tooltips on next launch</string>
-    <string name="preferences_allow_clean_insights_tracking">Allow background analytics</string>
     <string name="preferences_clear_behavior_option_1">Prompt</string>
     <string name="preferences_theme">Set app theme</string>
     <string name="preferences_theme_summary">Dark, Light, Battery Saving</string>
@@ -352,11 +342,9 @@
     <string name="clean_insights_explainer">Your contribution will be anonymous, and you can opt out at any time.</string>
     <string name="optional_metrics">Optional metrics:</string>
     <string name="device_type">Device type</string>
-    <string name="load_times">App startup time</string>
     <string name="device_locale">Device locale (language)</string>
     <string name="clean_insights_opt_in">YES, OPT ME IN</string>
     <string name="clean_insights_maybe_later">NO, MAYBE LATER</string>
-    <string name="clean_insights_successful_opt_in">Enabled background analytics</string>
     <string name="thank_you_for_feedback">Thank you for your feedback!</string>
     <string name="submit">Submit</string>
     <string name="browser_menu_enable_reader_view">Show Reader View</string>

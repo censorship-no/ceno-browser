@@ -6,10 +6,7 @@ package ie.equalit.ceno.settings.metrics
 
 import android.content.Context
 import android.util.Log
-import android.widget.Toast
 import ie.equalit.ceno.Components
-import ie.equalit.ceno.R.string.clean_insights_successful_opt_in
-import ie.equalit.ceno.R.string.clean_insights_successful_opt_out
 import ie.equalit.ceno.settings.CenoSettings
 import ie.equalit.ceno.settings.OuinetKey
 import ie.equalit.ceno.settings.OuinetResponseListener

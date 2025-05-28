@@ -344,7 +344,6 @@
     <string name="support_button_text">Suporte</string>
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">Baixar</string>
     <string name="ceno_permissions_category">Permissões</string>
-    <string name="preferences_allow_clean_insights_tracking">Permitir análise em segundo plano</string>
     <string name="preferences_clear_behavior_option_2">Limpar o cache de Ceno apenas</string>
     <string name="preferences_change_language">Mudar idioma</string>
     <string name="eq_news_button_text">Notícias</string>
@@ -354,20 +353,9 @@
     <string name="clean_insights_explainer">Sua contribuição é anônima, e poderá retirá-la quando quiser.</string>
     <string name="optional_metrics">Métricas opcionais:</string>
     <string name="device_type">Tipo de dispositivo</string>
-    <string name="load_times">Data inicial do aplicação</string>
     <string name="device_locale">Local do dispositivo (idioma)</string>
     <string name="clean_insights_opt_in">Sim, quero ajudar</string>
     <string name="clean_insights_maybe_later">Não, talvez depois</string>
-    <string name="clean_insights_successful_opt_in">Análises permitidas em segundo plano</string>
-    <string name="clean_insights_successful_opt_out">Análises desativadas em segundo plano</string>
-    <string name="ouinet_startup_time_header">Na sua visão, quanto tempo leva para Ceno iniciar?</string>
-    <string name="ouinet_startup_time_too_long">Demora muito</string>
-    <string name="ouinet_startup_time_quick">Rápidamente</string>
-    <string name="ouinet_startup_time_1">1</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="thank_you_for_feedback">Obrigado pela colaboração!</string>
     <string name="submit">Enviar</string>
     <string name="standby_tip_pdf">Compartilhe páginas web como PDFs</string>
