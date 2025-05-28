@@ -283,7 +283,10 @@
             app:argType="string"
             app:nullable="true" />
     </dialog>
-    <action android:id="@+id/action_global_androidLogFragment" app:destination="@id/androidLogFragment" /><action android:id="@+id/action_global_metricsCampaignFragment" app:destination="@id/metricsCampaignFragment"/>
+    <action android:id="@+id/action_global_androidLogFragment" app:destination="@id/androidLogFragment" />
+    <action
+        android:id="@+id/action_global_metricsCampaignFragment"
+        app:destination="@id/metricsCampaignFragment" />
     <fragment
         android:id="@+id/bookmarkFragment"
         android:name="ie.equalit.ceno.bookmarks.BookmarkFragment"

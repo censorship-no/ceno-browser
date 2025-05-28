@@ -128,6 +128,11 @@ class CenoPreferences(private val appContext: Context) : PreferencesHolder {
         default = 1
     )
 
+    var showMetricsConsentDialog by booleanPreference(
+        appContext.getPreferenceKey(R.string.pref_show_metrics_consent_dialog),
+        default = true
+    )
+
     /**
      * Save browsing mode in preferences
      * From Fenix

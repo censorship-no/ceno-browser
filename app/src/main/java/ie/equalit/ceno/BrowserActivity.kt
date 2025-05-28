@@ -82,6 +82,7 @@ import mozilla.components.support.base.feature.UserInteractionHandler
 import mozilla.components.support.base.log.logger.Logger
 import mozilla.components.support.utils.SafeIntent
 import mozilla.components.support.webextensions.WebExtensionPopupObserver
+import java.util.regex.Pattern
 import kotlin.system.exitProcess
 
 /**
@@ -145,10 +146,10 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
         setContentView(R.layout.activity_main)
 
         navHost.navController.addOnDestinationChangedListener { _, destination, _ ->
-            if(destination.id == R.id.homeFragment && !hasRanChecksAndPermissions) {
+            if((destination.id == R.id.homeFragment || destination.id == R.id.browserFragment) && !hasRanChecksAndPermissions) {
                 hasRanChecksAndPermissions = true
 
-                if( isInstallFromUpdate() && packageManager.getPackageInfo(packageName, 0).versionName == METRICS_LAUNCH_VERSION_NAME ) {
+                if( isInstallFromUpdate() && isVersionForConsent(this) && cenoPreferences().showMetricsConsentDialog) {
                     val dialog = ConsentRequestDialog(this)
                     dialog.show (
                         complete = { granted ->
@@ -167,6 +168,7 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
                                     }
                                 }
                             )
+                            cenoPreferences().showMetricsConsentDialog = false
                         },
                         openMetricsSettings = {
                             navHost.navController.navigate(R.id.action_global_metricsCampaignFragment)
@@ -672,7 +674,11 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
     companion object {
         private const val TAG = "BrowserActivity"
         const val DELAY_TWO_SECONDS = 2000L
-        const val METRICS_LAUNCH_VERSION_NAME = "2.5.0"
+        fun isVersionForConsent(context: Context) : Boolean {
+            return Pattern.compile("\\A2\\.5\\.\\d\\z").matcher(
+                context.packageManager.getPackageInfo(context.packageName, 0).versionName.toString()
+            ).matches()
+        }
     }
 
     override fun onStopTapped() {

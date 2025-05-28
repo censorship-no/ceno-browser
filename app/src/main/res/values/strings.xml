@@ -481,9 +481,9 @@
     <string name="metrics_campaign_view_privacy_policy" tools:ignore="UnusedResources">Privacy policy</string>
     <string name="daily_usage" tools:ignore="UnusedResources">Daily usage</string>
     <string name="monthly_usage" tools:ignore="UnusedResources">Monthly usage</string>
-    <string name="metrics_ouinet_title">Ouinet Metrics</string>
-    <string name="metrics_ouinet_description">Ouinet Metrics</string>
-    <string name="metrics_consent_dialog_description">We\'re making some changes in the latest version of Ceno to help us improve performance and stability. This includes collecting data about your device, application usage, and failure rates of network requests. You can review the details of what we track and how we protect your information in our updated Privacy Policy.</string>
+    <string name="metrics_ouinet_title">Ceno Metrics</string>
+    <string name="metrics_ouinet_description">Anonymous metrics about your device, application, and network usage</string>
+    <string name="metrics_consent_dialog_description">We\'re launching a privacy respecting metrics system to help us better understand Ceno users\' needs. You can review the details of what we\'ll collect and how we handle your data in our Privacy Policy. You can also opt out at any time via Settings > Background metrics.</string>
     <string name="metrics_consent_accept">I Accept</string>
     <string name="consent_dialog_modify_privacy_settings">Modify Privacy Settings</string>
 

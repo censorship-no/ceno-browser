@@ -46,6 +46,11 @@ object Settings {
             context.getString(R.string.pref_key_show_developer_tools), false
         )
 
+    fun shouldShowConsentDialog(context: Context): Boolean =
+        PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+            context.getString(R.string.pref_show_metrics_consent_dialog), false
+        )
+
     fun shouldBackdateCleanInsights(context: Context): Boolean =
         PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
             context.getString(R.string.pref_key_clean_insights_backdate), false
