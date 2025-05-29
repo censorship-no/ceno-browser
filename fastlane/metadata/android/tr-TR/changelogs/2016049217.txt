@@ -1,0 +1,7 @@
+Bu sürümde:
+- Android-Components 137.0.2 sürümüne güncellendi
+- Önceden kurulmuş eklentilerin çevrilmemesi sorunu düzeltildi
+- Ouinet 1.1.1 sürümüne güncellendi
+- cacert.pem 25 Şubat 2025 tarihinde oluşturulmuş sürüme güncellendi
+- Çeşitli dillerin çevirileri güncellendi
+- Hazır eklentilerin çevrilmesi ile ilgili bilinen sorunlar düzeltildi
