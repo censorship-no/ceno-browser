@@ -18,7 +18,9 @@ import java.util.Locale
 import kotlin.math.floor
 import kotlin.math.ln
 import kotlin.math.pow
+import kotlin.random.Random
 import androidx.core.content.edit
+import mozilla.components.concept.fetch.MutableHeaders
 
 
 @Serializable
@@ -33,6 +35,7 @@ data class OuinetStatus(val auto_refresh : Boolean,
                         val local_udp_endpoints : Array<String>? = null,
                         val logfile : Boolean,
                         val max_cached_age : Int,
+                        val metrics_enabled: Boolean,
                         val origin_access : Boolean,
                         val ouinet_build_id : String,
                         val ouinet_protocol : Int,
@@ -53,19 +56,23 @@ enum class OuinetKey(val command : String) {
     GROUPS_TXT("groups.txt"),
     LOGFILE("?logfile"),
     EXTRA_BOOTSTRAPS("?bt_extra_bootstraps"),
-    LOG_LEVEL("log_level")
+    LOG_LEVEL("log_level"),
+    CENO_METRICS("?metrics")
 }
 
 enum class OuinetValue(val string: String) {
     DISABLED("disabled"),
     ENABLED("enabled"),
-    OTHER("other")
+    OTHER("other"),
+    ENABLE("enable"),
+    DISABLE("disable")
 }
 
 object CenoSettings {
 
     const val SET_VALUE_ENDPOINT = "http://127.0.0.1:" + BuildConfig.FRONTEND_PORT
     const val LOGFILE_TXT = "logfile.txt"
+    private const val TOKEN_LENGTH = 27
 
     private fun log2(n: Double): Double {
         return ln(n) / ln(2.0)
@@ -108,7 +115,7 @@ object CenoSettings {
     fun setOuinetState(context: Context, text : String) {
         val key = context.getString(R.string.pref_key_ouinet_state)
         PreferenceManager.getDefaultSharedPreferences(context)
-            .edit() {
+            .edit {
                 putString(key, text)
             }
     }
@@ -153,7 +160,7 @@ object CenoSettings {
     fun setCenoCacheSize(context: Context, text : String) {
         val key = context.getString(R.string.pref_key_ceno_cache_size)
         PreferenceManager.getDefaultSharedPreferences(context)
-            .edit() {
+            .edit {
                 putString(key, text)
             }
     }
@@ -166,7 +173,7 @@ object CenoSettings {
     private fun setReachabilityStatus(context: Context, text : String?) {
         val key = context.getString(R.string.pref_key_ouinet_reachability_status)
         PreferenceManager.getDefaultSharedPreferences(context)
-            .edit() {
+            .edit {
                 putString(key, text)
             }
     }
@@ -179,7 +186,7 @@ object CenoSettings {
     private fun setUpnpStatus(context: Context, text : String?) {
         val key = context.getString(R.string.pref_key_ouinet_upnp_status)
         PreferenceManager.getDefaultSharedPreferences(context)
-            .edit() {
+            .edit {
                 putString(key, text)
             }
     }
@@ -213,7 +220,7 @@ object CenoSettings {
         texts?.forEach { formattedText += "${it.trim()} " }
 
         PreferenceManager.getDefaultSharedPreferences(context)
-            .edit() {
+            .edit {
                 putString(key, formattedText.ifEmpty { null })
             }
     }
@@ -409,7 +416,8 @@ object CenoSettings {
             else
                 "${SET_VALUE_ENDPOINT}/${key.command}"
 
-            webClientRequest(context, Request(request)).let { response ->
+            val requestWithHeader = Request(request, headers = MutableHeaders(Pair("X-Ouinet-Front-End-Token", context.components.ouinet.METRICS_FRONTEND_TOKEN)))
+            webClientRequest(context, requestWithHeader).let { response ->
 
                 if(response == null) ouinetResponseListener?.onError()
 
@@ -465,9 +473,22 @@ object CenoSettings {
                         else
                             ouinetResponseListener?.onError()
                     }
+                    OuinetKey.CENO_METRICS -> {
+                        if (response == null) {
+                            ouinetResponseListener?.onError()
+                        } else {
+                            ouinetResponseListener?.onSuccess(response)
+                        }
+                    }
                 }
             }
             return@launch
         }
+    }
+    fun generateRandomToken() : String{
+        val charPool: List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+        return (1..TOKEN_LENGTH)
+            .map { Random.nextInt(0, charPool.size).let { charPool[it] } }
+            .joinToString("")
     }
 }

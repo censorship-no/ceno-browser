@@ -360,7 +360,6 @@
     <string name="preferences_clean_insights_backdate">Увімкнути метрики заднім числом</string>
     <string name="ceno_network_status_title">Стан мережі Ceno</string>
     <string name="clean_insights_sub_header">Ми хочемо записати такі показники до 31 січня 2025 року:</string>
-    <string name="preferences_allow_clean_insights_tracking">Дозволити фонову аналітику</string>
     <string name="clean_insights_header">Допоможіть зробити Ceno кращим!</string>
     <plurals name="developer_tools_enable_alert">
         <item quantity="one">Щоб увімкнути інструменти розробника, вам залишилося %d натискання</item>
@@ -370,7 +369,6 @@
     </plurals>
     <string name="clean_insights_explainer">Ваш внесок буде анонімним, і ви можете будь-коли відмовитися.</string>
     <string name="preferences_announcement_source_summary">Установити джерело оголошень на домашній сторінці</string>
-    <string name="ouinet_startup_time_1">1</string>
     <string name="preferences_announcement_source_default">1</string>
     <plurals name="developer_tools_disable_alert">
         <item quantity="one">До вимкнення інструментів розробника залишилося %d натискання</item>
@@ -381,19 +379,9 @@
     <string name="ceno_network_status_degraded">У процесі підключення до мережі Ceno. Деякі веб-сайти можуть бути недоступні. Перевірте налаштування мережі або експортуйте журнали, щоб отримати додаткову інформацію.</string>
     <string name="optional_metrics">Додаткові показники:</string>
     <string name="device_type">Тип пристрою</string>
-    <string name="load_times">Час запуску застосунку</string>
     <string name="device_locale">Локалізація пристрою (мова)</string>
     <string name="clean_insights_opt_in">ТАК, ДОПУСТИТИ МЕНЕ</string>
     <string name="clean_insights_maybe_later">НІ, МОЖЛИВО ПІЗНІШЕ</string>
-    <string name="clean_insights_successful_opt_in">Увімкнено фонову аналітику</string>
-    <string name="clean_insights_successful_opt_out">Вимкнено фонову аналітику</string>
-    <string name="ouinet_startup_time_header">Скільки, на вашу думку, зазвичай потрібно, щоб Ceno почав працювати?</string>
-    <string name="ouinet_startup_time_too_long">Занадто довго</string>
-    <string name="ouinet_startup_time_quick">Швидко</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="thank_you_for_feedback">Дякуємо за ваш відгук!</string>
     <string name="submit">Надіслати</string>
     <string name="ceno_base_url">https://ceno.app</string>

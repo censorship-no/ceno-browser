@@ -27,6 +27,7 @@ import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.BuildConfig
 import ie.equalit.ceno.R
 import ie.equalit.ceno.databinding.FragmentSiteContentGroupBinding
+import ie.equalit.ceno.ext.requireComponents
 import ie.equalit.ceno.settings.adapters.CachedGroupAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -187,4 +188,7 @@ class SiteContentGroupFragment : Fragment(), CachedGroupAdapter.GroupClickListen
 
     private fun getActionBar() = (activity as AppCompatActivity).supportActionBar!!
 
+    companion object {
+        private const val TAG = "SiteContentGroupFragment"
+    }
 }

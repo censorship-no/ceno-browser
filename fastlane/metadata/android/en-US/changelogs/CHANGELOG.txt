@@ -1,4 +1,16 @@
-#v2.4.6
+# v2.5.0
+This release:
+- Updates Ouinet to v1.2.0
+- Introduces privacy-preserving metrics collection
+- Adds bookmarking feature
+
+# v2.4.7
+This release:
+- Updates Android-Components to v138.0.4
+- Update cacert.pem with bundle generated on Tue May 20 03:12:02 2025 GMT
+- Updates translations for various locales
+
+# v2.4.6
 This release:
 - Updates Android-Components to v138.0.3
 - Updates Gradle to 8.11.1 and Kotlin to 2.0.0

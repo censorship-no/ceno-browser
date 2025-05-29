@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat.getString
 import androidx.core.view.children
 import ie.equalit.ceno.R
+import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.utils.language.SupportedLanguageProvider
 import java.util.Locale
 
@@ -102,5 +103,9 @@ class LanguageChangeDialog(
 
     interface SetLanguageListener {
         fun onLanguageSelected(locale: Locale)
+    }
+
+    companion object {
+        private const val TAG = "LanguageChangeDialog"
     }
 }

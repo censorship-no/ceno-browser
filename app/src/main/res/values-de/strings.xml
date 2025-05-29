@@ -314,7 +314,6 @@
     <string name="select_extra_bt_source">Weiteren BitTorrent Bootstrap auswählen</string>
     <string name="bridge_mode_category">Bridge Ankündigungen</string>
     <string name="confirm_groups_file_download_desc">Eine .txt-Datei wird lokal gespeichert.</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="clean_insights_sub_header">Wir möchten die folgenden Daten bis zum 31. Januar 2025 erheben:</string>
     <string name="optional_metrics">Optionale Daten:</string>
     <string name="device_type">Gerätetyp</string>
@@ -337,29 +336,18 @@
     <string name="support_button_text">Hilfe</string>
     <string name="clean_insights_header">Hilf Ceno besser zu machen!</string>
     <string name="clean_insights_explainer">Ihr Beitrag ist anonym, und Sie können sich jederzeit abmelden.</string>
-    <string name="load_times">Startzeit der App</string>
     <string name="device_locale">Gerätelokalisierung (Sprache)</string>
     <string name="clean_insights_opt_in">JA, NEHME TEIL</string>
     <string name="clean_insights_maybe_later">NEIN, VIELEICHT SPÄTER</string>
-    <string name="ouinet_startup_time_header">Wie lange dauert es üblicherweise bis Ceno gestartet ist?</string>
-    <string name="ouinet_startup_time_too_long">Zu lang</string>
-    <string name="ouinet_startup_time_quick">Schnell</string>
-    <string name="ouinet_startup_time_1">1</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
     <string name="thank_you_for_feedback">Vielen Dank für Ihr Feedback!</string>
     <string name="submit">Absenden</string>
     <string name="error_page_sub_header">Das bedeutet dass Ceno alle verfügbaren Methoden ausprobiert hat um auf den Inhalt zuzugreifen, aber keine davon erfolgreich war:</string>
     <string name="error_page_learn_more_header">Sie sollten sicherstellen, dass die folgenden Anforderungen erfüllt sind, damit Ceno funktioniert</string>
     <string name="tooltip_toolbar_title">Los geht\'s!</string>
     <string name="tooltip_sources_description">Sehen Sie leicht, woher der Inhalt der Seite geladen wird – direkt von der Webseite, über das Ceno-Netzwerk oder aus dem Ceno-Cache</string>
-    <string name="preferences_allow_clean_insights_tracking">Nutzungsdaten-Analyse zulassen</string>
     <string name="standby_take_me_anyway">Bring mich trotzdem zu Ceno</string>
     <string name="confirm_clear_cached_content">Cache leeren?</string>
     <string name="confirm_clear_cached_content_desc">Ihr Cache-Inhalt wird unverzüglich gelöscht</string>
-    <string name="clean_insights_successful_opt_in">Hintergrundanalyse aktiviert</string>
-    <string name="clean_insights_successful_opt_out">Hintergrundanalyse deaktiviert</string>
     <string name="error_page_learn_more_1">Sie benutzen eine aktuelle Version vom Ceno Browser. Veraltete Versionen können nicht mit neueren Injektoren oder anderen Clients kommunizieren. Besuchen Sie die <a href="https://play.google.com/store/apps/details?id=ie.equalit.ceno">Download-Seite</a> um die neueste Version zu finden.</string>
     <string name="preferences_announcement_source_summary">Wähle die Quelle für Startseiten-Announcements</string>
     <string name="developer_tools_disabled">Entwicklerwerkzeuge deaktiviert</string>
