@@ -30,7 +30,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.NavHostFragment
-import ie.equalit.ceno.R.string.clean_insights_successful_opt_in
 import ie.equalit.ceno.addons.WebExtensionActionPopupActivity
 import ie.equalit.ceno.base.BaseActivity
 import ie.equalit.ceno.browser.BrowserFragment
@@ -47,9 +46,13 @@ import ie.equalit.ceno.components.ceno.appstate.AppAction
 import ie.equalit.ceno.ext.ceno.sort
 import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.ext.components
+import ie.equalit.ceno.ext.isInstallFromUpdate
 import ie.equalit.ceno.home.HomeFragment.Companion.BEGIN_TOUR_TOOLTIP
-import ie.equalit.ceno.metrics.campaign001.Campaign001.Companion.ASK_FOR_ANALYTICS_LIMIT
-import ie.equalit.ceno.metrics.campaign001.Campaign001.Companion.ASK_FOR_SURVEY_LIMIT
+import ie.equalit.ceno.metrics.ConsentRequestDialog
+import ie.equalit.ceno.settings.CenoSettings
+import ie.equalit.ceno.settings.OuinetKey
+import ie.equalit.ceno.settings.OuinetResponseListener
+import ie.equalit.ceno.settings.OuinetValue
 import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.settings.SettingsFragment
 import ie.equalit.ceno.standby.StandbyFragment
@@ -79,6 +82,7 @@ import mozilla.components.support.base.feature.UserInteractionHandler
 import mozilla.components.support.base.log.logger.Logger
 import mozilla.components.support.utils.SafeIntent
 import mozilla.components.support.webextensions.WebExtensionPopupObserver
+import java.util.regex.Pattern
 import kotlin.system.exitProcess
 
 /**
@@ -142,31 +146,34 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
         setContentView(R.layout.activity_main)
 
         navHost.navController.addOnDestinationChangedListener { _, destination, _ ->
-            if(destination.id == R.id.homeFragment && !hasRanChecksAndPermissions) {
+            if((destination.id == R.id.homeFragment || destination.id == R.id.browserFragment) && !hasRanChecksAndPermissions) {
                 hasRanChecksAndPermissions = true
 
-                if( !Settings.isCleanInsightsEnabled(this@BrowserActivity) &&
-                    Settings.getLaunchCount(this@BrowserActivity).toInt() >= ASK_FOR_ANALYTICS_LIMIT &&
-                    !components.metrics.campaign001.isPromptCompleted(this@BrowserActivity) &&
-                    !components.metrics.campaign001.isExpired()
-                    ) {
-                    components.metrics.campaign001.launchCampaign(this@BrowserActivity) { granted ->
-                        if (granted) {
-                            // success toast message
-                            Toast.makeText(
-                                this,
-                                getString(clean_insights_successful_opt_in),
-                                Toast.LENGTH_LONG,
-                            ).show()
-
-                            // log Ouinet startup time if it already has a value
-                            if (ouinetStartupTime > 0.0) {
-                                components.metrics.campaign001.measureEvent(
-                                    startupTime = ouinetStartupTime
-                                )
-                            }
+                if( isInstallFromUpdate() && isVersionForConsent(this) && cenoPreferences().showMetricsConsentDialog) {
+                    val dialog = ConsentRequestDialog(this)
+                    dialog.show (
+                        complete = { granted ->
+                            //web api call
+                            CenoSettings.ouinetClientRequest(
+                                context = this,
+                                key = OuinetKey.CENO_METRICS,
+                                newValue = if (granted) OuinetValue.ENABLE else OuinetValue.DISABLE,
+                                stringValue = null,
+                                object : OuinetResponseListener {
+                                    override fun onSuccess(message: String, data: Any?) {
+                                        Settings.setOuinetMetricsEnabled(this@BrowserActivity, granted)
+                                    }
+                                    override fun onError() {
+                                        Log.e(TAG, "Failed to set metrics to newValue: $granted")
+                                    }
+                                }
+                            )
+                            cenoPreferences().showMetricsConsentDialog = false
+                        },
+                        openMetricsSettings = {
+                            navHost.navController.navigate(R.id.action_global_metricsCampaignFragment)
                         }
-                    }
+                    )
                 }
 
                 if (Settings.showCrashReportingPermissionNudge(this)) {
@@ -329,23 +336,6 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
                         components.appStore.dispatch(AppAction.OuinetStatusChange(status))
                         if(!hasOuinetStarted && status == RunningState.Started) {
                             ouinetStartupTime = (System.currentTimeMillis() - screenStartTime) / 1000.0
-                            if(Settings.isCleanInsightsEnabled(this@BrowserActivity)) {
-                                components.metrics.campaign001.measureEvent(
-                                    startupTime = ouinetStartupTime
-                                )
-                                // check if this is the (n % 20 == 0)th launch and show the Ouinet prompt if true
-                                if(Settings.getLaunchCount(this@BrowserActivity).toInt() >= ASK_FOR_SURVEY_LIMIT &&
-                                    !components.metrics.campaign001.isSurveyCompleted(this@BrowserActivity)
-                                    ) {
-                                    components.metrics.campaign001.promptSurvey(this@BrowserActivity) {
-                                        Toast.makeText(
-                                            this@BrowserActivity,
-                                            getString(R.string.thank_you_for_feedback),
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    }
-                                }
-                            }
                             hasOuinetStarted = true
                         }
 
@@ -606,7 +596,6 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
             callback,
             stalledDuration
         )
-        BrowserApplication.cleanInsights.persist()
         components.ouinet.background.shutdown(doClear) {
             handler.removeCallbacks(callback)
             callback.run()
@@ -683,7 +672,13 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
     }
 
     companion object {
+        private const val TAG = "BrowserActivity"
         const val DELAY_TWO_SECONDS = 2000L
+        fun isVersionForConsent(context: Context) : Boolean {
+            return Pattern.compile("\\A2\\.5\\.\\d\\z").matcher(
+                context.packageManager.getPackageInfo(context.packageName, 0).versionName.toString()
+            ).matches()
+        }
     }
 
     override fun onStopTapped() {

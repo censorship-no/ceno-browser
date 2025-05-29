@@ -159,4 +159,8 @@ class TabsTrayFragment : Fragment(), UserInteractionHandler {
 
         return tabsAdapter
     }
+
+    companion object {
+        private const val TAG = "TabsTrayFragment"
+    }
 }

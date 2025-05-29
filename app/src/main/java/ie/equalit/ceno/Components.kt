@@ -8,7 +8,6 @@ import android.content.Context
 import androidx.core.app.NotificationManagerCompat
 import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.components.Core
-import ie.equalit.ceno.components.Metrics
 import ie.equalit.ceno.components.Ouinet
 import ie.equalit.ceno.components.PermissionHandler
 import ie.equalit.ceno.components.Services
@@ -20,7 +19,6 @@ import ie.equalit.ceno.components.ceno.appstate.AppState
 import ie.equalit.ceno.ext.ceno.sort
 import ie.equalit.ceno.utils.CenoPreferences
 import mozilla.components.support.base.android.NotificationsDelegate
-import org.cleaninsights.sdk.CleanInsights
 
 /**
  * Provides access to all components.
@@ -75,6 +73,4 @@ class Components(private val context: Context) {
     val permissionHandler by lazy { PermissionHandler(context) }
 
     val webExtensionPort by lazy { WebExtensionPort(context) }
-
-    val metrics by lazy { Metrics(context) }
 }
