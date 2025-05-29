@@ -2,6 +2,7 @@
 This release:
 - Updates Ouinet to v1.2.0
 - Introduces privacy-preserving metrics collection
+- Adds bookmarking feature
 
 # v2.4.7
 This release:
