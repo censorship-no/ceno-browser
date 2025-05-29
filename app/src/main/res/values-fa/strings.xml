@@ -385,4 +385,9 @@
     <string name="preferences_announcement_source_option_1">تولید (Production)</string>
     <string name="preferences_clean_insights_backdate">فعال‌سازی ثبت معیارها به‌صورت گذشته‌نگر</string>
     <string name="ceno_notification_confirm_description">می‌خواهید تمام داده‌های خود را از سنو پاک کنید؟</string>
+    <string name="bookmark_menu_share_button">اشتراک‌گذاری</string>
+    <string name="bookmark_menu_delete_button">حذف</string>
+    <string name="bookmark_name_label">نام</string>
+    <string name="library_bookmarks">بوکمارک‌ها</string>
+    <string name="bookmark_menu_save_button">ذخیره</string>
 </resources>
