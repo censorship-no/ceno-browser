@@ -377,4 +377,5 @@
         <item quantity="one">You are %d tap away from enabling developer tools</item>
         <item quantity="other">You are %d taps away from enabling developer tools</item>
     </plurals>
+    <string name="bookmark_menu_delete_button">Delete</string>
 </resources>
