@@ -323,4 +323,6 @@
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">பதிவிறக்கம்</string>
     <string name="support_button_text">உதவி</string>
     <string name="eq_news_button_text">செய்தி</string>
+    <string name="bookmark_menu_delete_button">அழி</string>
+    <string name="bookmark_menu_save_button">சேமி</string>
 </resources>
