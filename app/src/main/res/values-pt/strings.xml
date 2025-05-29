@@ -269,7 +269,7 @@
     <string name="ouinet_log_file_prompt_desc">Tenha em atenção que este registo pode conter informações de identificação pessoal. Tenha cuidado ao partilhar.</string>
     <string name="view_logs">Ver</string>
     <string name="share_logs">Partilhar</string>
-    <string name="download_logs">Descarregar</string>
+    <string name="download_logs">Baixar</string>
     <string name="empty_log_text">Parece que o seu registo está vazio</string>
     <string name="progress_dialog_log_export_header">Por favor, aguarde…</string>
     <string name="progress_dialog_log_export_message">Computar os seus registos…</string>
@@ -368,4 +368,6 @@
     <string name="tooltip_toolbar_description">Coloque o endereço de um site para começar a navegar</string>
     <string name="standby_tip_title">Dica</string>
     <string name="status_enabled">Ativado</string>
+    <string name="bookmark_menu_save_button">Gravar</string>
+    <string name="tooltip_sources_title">Fontes do Ceno</string>
 </resources>
