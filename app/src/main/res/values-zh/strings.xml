@@ -402,4 +402,9 @@
     <string name="ceno_notification_title">分享已缓存的标签页</string>
     <string name="ceno_sources_shared_by_local_cache">从浏览器缓存</string>
     <string name="ceno_notification_confirm_description">你想要从 Ceno 服务器清除所有数据吗？</string>
+    <string name="bookmark_menu_share_button">分享</string>
+    <string name="bookmark_menu_delete_button">删除</string>
+    <string name="bookmark_name_label">名称</string>
+    <string name="library_bookmarks">书签</string>
+    <string name="bookmark_menu_save_button">保存</string>
 </resources>
