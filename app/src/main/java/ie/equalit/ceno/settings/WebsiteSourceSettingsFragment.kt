@@ -13,6 +13,7 @@ import androidx.preference.PreferenceFragmentCompat
 import ie.equalit.ceno.R
 import ie.equalit.ceno.ext.getPreference
 import androidx.core.graphics.drawable.toDrawable
+import ie.equalit.ceno.ext.requireComponents
 
 class WebsiteSourceSettingsFragment : PreferenceFragmentCompat() {
 
@@ -98,4 +99,7 @@ class WebsiteSourceSettingsFragment : PreferenceFragmentCompat() {
 
     private fun getActionBar() = (activity as AppCompatActivity).supportActionBar!!
 
+    companion object {
+        private const val TAG = "PrivacySettingsFragment"
+    }
 }

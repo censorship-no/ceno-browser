@@ -39,6 +39,7 @@ class DeleteBrowsingDataFragment : Fragment(R.layout.fragment_delete_browsing_da
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val tabsUseCases = requireComponents.useCases.tabsUseCases
         //val downloadUseCases = requireComponents.useCases.downloadUseCases
 
@@ -259,6 +260,7 @@ class DeleteBrowsingDataFragment : Fragment(R.layout.fragment_delete_browsing_da
     }
 
     companion object {
+        private const val TAG = "DeleteBrowsingDataFragment"
         private const val ENABLED_ALPHA = 1f
         private const val DISABLED_ALPHA = 0.6f
 

@@ -15,6 +15,14 @@
         app:popUpToInclusive="true" />
 
     <action
+        android:id="@+id/action_global_bookmarks"
+        app:destination="@id/bookmarkFragment"
+        app:popUpToInclusive="false" />
+    <action
+        android:id="@+id/action_global_edit_bookmark"
+        app:destination="@id/editBookmarkFragment"
+        app:popUpToInclusive="false" />
+    <action
         android:id="@+id/action_global_browser"
         app:destination="@id/browserFragment"
         app:popUpTo="@id/browserFragment"
@@ -95,6 +103,14 @@
         <action
             android:id="@+id/action_settingsFragment_to_deleteBrowsingDataFragment"
             app:destination="@id/deleteBrowsingDataFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_back_in"
+            app:popExitAnim="@anim/slide_back_out" />
+
+        <action
+            android:id="@+id/action_settingsFragment_to_metricsCampaignFragment"
+            app:destination="@id/metricsCampaignFragment"
             app:enterAnim="@anim/slide_in"
             app:exitAnim="@anim/slide_out"
             app:popEnterAnim="@anim/slide_back_in"
@@ -183,6 +199,12 @@
         tools:layout="@layout/fragment_delete_browsing_data" />
 
     <fragment
+        android:id="@+id/metricsCampaignFragment"
+        android:name="ie.equalit.ceno.settings.metrics.MetricsCampaignFragment"
+        android:label="@string/preferences_metrics_campaign"
+        tools:layout="@layout/fragment_metrics_campaign" />
+
+    <fragment
         android:id="@+id/aboutFragment"
         android:name="ie.equalit.ceno.settings.AboutFragment"
         android:label="@string/preferences_about_page"
@@ -262,5 +284,65 @@
             app:nullable="true" />
     </dialog>
     <action android:id="@+id/action_global_androidLogFragment" app:destination="@id/androidLogFragment" />
+    <action
+        android:id="@+id/action_global_metricsCampaignFragment"
+        app:destination="@id/metricsCampaignFragment" />
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="ie.equalit.ceno.bookmarks.BookmarkFragment"
+        android:label="fragment_bookmark"
+        tools:layout="@layout/fragment_bookmark" >
+        <argument
+            android:name="currentRoot"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_bookmarkFragment_to_editBookmarkFragment"
+            app:destination="@id/editBookmarkFragment" />
+        <action
+            android:id="@+id/action_bookmarkFragment_to_bookmarkAddFolderFragment"
+            app:destination="@id/bookmarkAddFolderFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/editBookmarkFragment"
+        android:name="ie.equalit.ceno.bookmarks.edit.EditBookmarkFragment"
+        android:label="fragment_edit_bookmark"
+        tools:layout="@layout/fragment_edit_bookmark">
+        <argument
+            android:name="guidToEdit"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_editBookmarkFragment_to_bookmarkSelectFolderFragment"
+            app:destination="@id/bookmarkSelectFolderFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookmarkSelectFolderFragment"
+        android:name="ie.equalit.ceno.bookmarks.edit.SelectBookmarkFolderFragment"
+        android:label="fragment_select_bookmark_folder"
+        tools:layout="@layout/fragment_select_bookmark_folder">
+        <argument
+            android:name="allowCreatingNewFolder"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="hideFolderGuid"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_bookmarkSelectFolderFragment_to_bookmarkAddFolderFragment"
+            app:destination="@id/bookmarkAddFolderFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookmarkAddFolderFragment"
+        android:name="ie.equalit.ceno.bookmarks.AddBookmarkFolderFragment"
+        android:label="@string/bookmark_add_folder_fragment_label"
+        tools:layout="@layout/fragment_edit_bookmark">
+        <action
+            android:id="@+id/action_bookmarkAddFolderFragment_to_bookmarkSelectFolderFragment"
+            app:destination="@id/bookmarkSelectFolderFragment" />
+    </fragment>
 </navigation>

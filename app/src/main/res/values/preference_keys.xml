@@ -15,16 +15,10 @@
     <string name="pref_key_toolbar_hide" translatable="false">pref_key_toolbar_hide</string>
     <string name="pref_key_show_onboarding" translatable="false">pref_key_show_onboarding</string>
     <string name="pref_key_allow_crash_reporting" translatable="false">pref_key_allow_crash_reporting</string>
-    <string name="pref_key_clean_insights_enabled" translatable="false">pref_key_clean_insights_enabled</string>
-    <string name="pref_key_clean_insights_include_device_type" translatable="false">pref_key_clean_insights_include_device_type</string>
-    <string name="pref_key_clean_insights_include_device_locale" translatable="false">pref_key_clean_insights_include_device_locale</string>
-    <string name="pref_key_ci_campaign001_prompt_completed" translatable="false">pref_key_ci_campaign001_prompt_completed</string>
-    <string name="pref_key_ci_campaign001_survey_completed" translatable="false">pref_key_ci_campaign001_survey_completed</string>
     <string name="pref_key_show_crash_reporting_permission" translatable="false">pref_key_show_crash_reporting_permission</string>
     <string name="pref_key_crash_happened">pref_key_crash_happened</string>
     <string name="pref_key_crash_was_logged">pref_key_crash_was_logged</string>
     <string name="pref_key_allow_notifications" translatable="false">pref_key_allow_notifications</string>
-    <string name="pref_key_app_launch_count" translatable="false">pref_key_app_launch_count</string>
     <string name="pref_key_disable_battery_opt" translatable="false">pref_key_disable_battery_opt</string>
     <string name="pref_key_customization" translatable="false">pref_key_customization</string>
     <string name="pref_key_clear_in_toolbar" translatable="false">pref_key_clear_in_toolbar</string>
@@ -90,10 +84,13 @@
     <string name="pref_key_rss_announcement_source" translatable="false">pref_key_rss_announcement_source</string>
     <string name="pref_key_rss_announcement_expire_disable" translatable="false">pref_key_rss_announcement_expire_disable</string>
     <string name="pref_key_clean_insights_backdate" translatable="false">pref_key_clean_insights_backdate</string>
+    <string name="pref_key_background_metrics" translatable="false">pref_key_background_metrics</string>
+    <string name="pref_key_metrics_ouinet" translatable="false">pref_key_metrics_ouinet</string>
 
     <string name="pref_last_known_browsing_mode_personal" translatable="false">pref_last_known_browsing_mode_personal</string>
     <string name="pref_permissions_category" translatable="false">pref_permissions_category</string>
     <string name="pref_data_category" translatable="false">pref_data_category</string>
+    <string name="pref_show_metrics_consent_dialog" translatable="false">pref_show_metrics_consent_dialog</string>
 
     <!-- CENO: COPIED FROM FENIX -->
     <!-- Top Sites -->

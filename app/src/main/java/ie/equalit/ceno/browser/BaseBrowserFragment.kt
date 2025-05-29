@@ -18,6 +18,7 @@ import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -32,6 +33,7 @@ import ie.equalit.ceno.BrowserActivity
 import ie.equalit.ceno.BuildConfig
 import ie.equalit.ceno.R
 import ie.equalit.ceno.addons.WebExtensionActionPopupPanel
+import ie.equalit.ceno.bookmarks.BookmarkFragment
 import ie.equalit.ceno.components.ceno.ClearButtonFeature
 import ie.equalit.ceno.components.ceno.ClearToolbarAction
 import ie.equalit.ceno.components.ceno.appstate.AppAction
@@ -52,9 +54,13 @@ import ie.equalit.ceno.tabs.TabCounterView
 import ie.equalit.ceno.ui.theme.ThemeManager
 import ie.equalit.ouinet.Ouinet
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import mozilla.appservices.places.BookmarkRoot
+import mozilla.appservices.places.uniffi.PlacesApiException
 import mozilla.components.browser.state.selector.selectedTab
 import mozilla.components.browser.state.state.TabSessionState
 import mozilla.components.browser.state.store.BrowserStore
@@ -216,7 +222,12 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler {
                 requireComponents.useCases.tabsUseCases,
                 requireComponents.useCases.webAppUseCases,
                 sessionId,
-                readerViewIntegration
+                readerViewIntegration,
+                bookmarkTapped = { url: String, title: String ->
+                    viewLifecycleOwner.lifecycleScope.launch {
+                        bookmarkTapped(url, title)
+                    }
+                }
             ),
             owner = this,
             view = view,
@@ -919,5 +930,45 @@ abstract class BaseBrowserFragment : Fragment(), UserInteractionHandler {
         super.onStop()
         handler.removeCallbacks(runnable)
         handler.removeCallbacks(progressBarTrackerRunnable)
+    }
+
+    private suspend fun bookmarkTapped(sessionUrl: String, sessionTitle: String) = withContext(IO) {
+        val bookmarksStorage = requireComponents.core.bookmarksStorage
+        val existing =
+            bookmarksStorage.getBookmarksWithUrl(sessionUrl).firstOrNull { it.url == sessionUrl }
+        if (existing != null) {
+            // Bookmark exists, go to edit bookmark
+            withContext(Main) {
+                findNavController().navigate(R.id.action_global_edit_bookmark, bundleOf(BookmarkFragment.BOOKMARK_GUID to existing.guid))
+            }
+        } else {
+            // Save bookmark
+            try {
+                val parentNode = Result.runCatching {
+                    val parentGuid = bookmarksStorage
+                        .getRecentBookmarks(1)
+                        .firstOrNull()
+                        ?.parentGuid
+                        ?: BookmarkRoot.Mobile.id
+
+                    bookmarksStorage.getBookmark(parentGuid)!!
+                }.getOrElse {
+                    throw PlacesApiException.UrlParseFailed(reason = "no parent node")
+                }
+
+                val guid = bookmarksStorage.addItem(
+                    parentNode.guid,
+                    url = sessionUrl,
+                    title = sessionTitle,
+                    position = null,
+                )
+            } catch (e: PlacesApiException.UrlParseFailed) {
+                withContext(Main) {
+                    view?.let {
+                        Toast.makeText(requireContext(), "Invalid URL", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
     }
 }
