@@ -404,4 +404,9 @@
     <string name="ceno_support_ticket_subject">Ticket de Suporte Ceno</string>
     <string name="ceno_notification_confirm_description">Você deseja limpar todos os seus dados do Ceno?</string>
     <string name="ceno_sources_shared_by_local_cache">A partir do cache do navegador</string>
+    <string name="bookmark_menu_share_button">Compartilhar</string>
+    <string name="bookmark_menu_delete_button">Apagar</string>
+    <string name="bookmark_name_label">Nome</string>
+    <string name="library_bookmarks">Marcadores</string>
+    <string name="bookmark_menu_save_button">Salvar</string>
 </resources>
