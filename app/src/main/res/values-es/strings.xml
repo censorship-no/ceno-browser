@@ -141,9 +141,7 @@
     <string name="preferences_show_onboarding">Mostrar información sobre herramientas en el próximo lanzamiento</string>
     <string name="preferences_disable_battery_opt">Optimizaciones de batería</string>
     <string name="preferences_customization">Personalización</string>
-    <string name="about_content">&lt;p&gt;%1$s - ¡Comparte la Web!&lt;/p&gt; &lt;p&gt;Ceno es el primer navegador móvil del mundo que elude los métodos actuales de censura en Internet. Su red troncal peer-to-peer permite a las personas acceder y compartir información web en y entre regiones donde la conectividad se ha interrumpido o se ha visto comprometida. &lt;/p&gt; &lt;p&gt;%1$s es un proyecto de &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt;, una organización canadiense sin fines de lucro que crea servicios de Internet descentralizados en apoyo de una red más igualitaria y equitativa. Las soluciones de eQualitie son de código abierto, probadas en batalla y desarrolladas teniendo en cuenta nuestros valores. Todos los días, permiten la libertad de asociación para millones de personas en línea.&lt;/p&gt;</string>
     <string name="onboarding_thanks_text">Como usuari@ de Ceno, ayudas a hacer crecer la red de puentes disponibles que permiten acceder a contenidos censurados.</string>
-    <string name="browser_menu_ceno_ext">Ajustes de Ceno</string>
     <string name="ceno_clear_dialog_cancel">Cancelar</string>
     <string name="ceno_clear_dialog_clear_cache_only">Borrar sólo caché de Ceno</string>
     <string name="ceno_clear_dialog_title">Limpiar Ceno</string>
@@ -373,19 +371,9 @@
     <string name="clean_insights_sub_header">Nos gustaría registrar las siguientes métricas hasta el 31 de enero de 2025:</string>
     <string name="optional_metrics">Métricas opcionales:</string>
     <string name="device_type">Tipo de dispositivo</string>
-    <string name="load_times">Inicio de la aplicación</string>
     <string name="device_locale">Configuración regional del dispositivo (idioma)</string>
     <string name="clean_insights_opt_in">SÍ, APÚNTAME</string>
     <string name="clean_insights_maybe_later">NO, QUIZÁS MÁS TARDE</string>
-    <string name="clean_insights_successful_opt_in">Análisis en segundo plano habilitado</string>
-    <string name="ouinet_startup_time_header">¿Cuánto tiempo crees que suele tardar Ceno en iniciarse?</string>
-    <string name="ouinet_startup_time_too_long">Demasiado tiempo</string>
-    <string name="ouinet_startup_time_quick">Rápido</string>
-    <string name="ouinet_startup_time_1">1</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="thank_you_for_feedback">¡Gracias por sus comentarios!</string>
     <string name="submit">Enviar</string>
     <string name="preferences_additional_developer_tools">Herramientas adicionales para desarrolladores</string>
@@ -404,9 +392,7 @@
     <string name="developer_tools_disabled">Herramientas para desarrolladores deshabilitadas</string>
     <string name="ceno_base_url">https://ceno.app</string>
     <string name="clean_insights_header">¡Ayuda a mejorar Ceno!</string>
-    <string name="clean_insights_successful_opt_out">Análisis en segundo plano deshabilitado</string>
     <string name="clean_insights_explainer">Tu contribución será anónima y podrás darte de baja en cualquier momento.</string>
-    <string name="preferences_allow_clean_insights_tracking">Permitir análisis en segundo plano</string>
     <string name="preferences_announcement_source_summary">Establecer la fuente de los anuncios de la página de inicio</string>
     <plurals name="developer_tools_enable_alert">
         <item quantity="one">Estás a %d toque de habilitar las herramientas de desarrollador</item>
@@ -422,4 +408,5 @@
     <string name="preferences_clean_insights_backdate">Activar la retroactividad de los parámetros</string>
     <string name="ceno_notification_title">Compartir pestañas almacenadas en caché</string>
     <string name="ceno_notification_confirm_description">¿Quieres borrar todos tus datos de Ceno?</string>
+    <string name="ceno_sources_shared_by_local_cache">De la caché del navegador</string>
 </resources>

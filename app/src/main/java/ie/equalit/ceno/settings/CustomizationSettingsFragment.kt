@@ -86,4 +86,8 @@ class CustomizationSettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun getActionBar() = (activity as AppCompatActivity).supportActionBar!!
+
+    companion object {
+        private const val TAG = "CustomizationSettingsFragment"
+    }
 }

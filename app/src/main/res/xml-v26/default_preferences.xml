@@ -40,21 +40,6 @@
         android:key="@string/pref_key_show_standby_warning"
         android:defaultValue="true" />
     <androidx.preference.SwitchPreferenceCompat
-        android:key="@string/pref_key_clean_insights_enabled"
-        android:defaultValue="false" />
-    <androidx.preference.SwitchPreferenceCompat
-        android:key="@string/pref_key_clean_insights_include_device_type"
-        android:defaultValue="true" />
-    <androidx.preference.SwitchPreferenceCompat
-        android:key="@string/pref_key_clean_insights_include_device_locale"
-        android:defaultValue="true" />
-    <androidx.preference.SwitchPreferenceCompat
-        android:key="@string/pref_key_ci_campaign001_prompt_completed"
-        android:defaultValue="false" />
-    <androidx.preference.SwitchPreferenceCompat
-        android:key="@string/pref_key_ci_campaign001_survey_completed"
-        android:defaultValue="false" />
-    <androidx.preference.SwitchPreferenceCompat
         android:key="@string/pref_key_show_developer_tools"
         android:defaultValue="false" />
 </PreferenceScreen>

@@ -1,0 +1,5 @@
+This release:
+- Updates Android-Components to v138.0.4
+- Update cacert.pem with bundle generated on Tue May 20 03:12:02 2025 GMT
+- Updates translations for various locales
+

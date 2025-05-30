@@ -52,6 +52,8 @@ android {
         buildConfigField "String[][]", "BT_BOOTSTRAP_EXTRAS",  localProperties['BT_BOOTSTRAP_EXTRAS'] ?: '{{"",""}}'
         buildConfigField "String", "PROXY_PORT", localProperties['PROXY_PORT'] ?: "8077"
         buildConfigField "String", "FRONTEND_PORT", localProperties['FRONTEND_PORT'] ?: "8078"
+        buildConfigField "String", "METRICS_TLS_CA_CERT", localProperties['METRICS_TLS_CA_CERT']
+        buildConfigField "String", "METRICS_PUB_KEY", localProperties['METRICS_PUB_KEY']
 
         buildConfigField "java.util.Map<String, String>", "CONFIG_MAP", getConfigMap(scenarioYaml)
         buildConfigField "java.util.List<java.util.Map<String, String>>", "SCENARIO_LIST", getScenarioList(scenarioYaml)
@@ -448,8 +450,6 @@ dependencies {
     implementation libs.androidx.navigationui
 
     implementation libs.google.material
-
-    implementation libs.thirdparty.cleaninsights
 
     /* CENO: Begin implement additional dependencies */
     implementation libs.mozilla.featuretopsites

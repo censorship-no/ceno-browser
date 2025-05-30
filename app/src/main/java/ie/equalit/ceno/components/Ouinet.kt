@@ -6,6 +6,7 @@ import ie.equalit.ceno.R
 import ie.equalit.ceno.components.ceno.CenoLocationUtils
 import ie.equalit.ceno.ext.application
 import ie.equalit.ceno.settings.CenoSettings
+import ie.equalit.ceno.settings.Settings
 import ie.equalit.ceno.tabs.FailedToRetrieveResource
 import ie.equalit.ouinet.Config
 import ie.equalit.ouinet.OuinetBackground
@@ -20,6 +21,8 @@ class Ouinet (
     ) {
 
     lateinit var config: Config
+    val METRICS_FRONTEND_TOKEN = CenoSettings.generateRandomToken()
+    val METRICS_SERVER_TOKEN = "CcmPTtdB5unF8q74AlGf1XMHYuo9opst"
 
     fun setConfig() {
 
@@ -34,6 +37,12 @@ class Ouinet (
             .setFrontEndEp(context.resources.getString(R.string.loopback_ip) + ":" + BuildConfig.FRONTEND_PORT)
             .setErrorPagePath(getErrorPagePath())
             .setDisableBridgeAnnouncement(!CenoSettings.isBridgeAnnouncementEnabled(context))
+            .setMetricsEnableOnStart(Settings.isOuinetMetricsEnabled(context))
+            .setMetricsServerUrl("https://endpoint-dev.ouinet.work/.well-known/endpoint")
+            .setMetricsServerToken(METRICS_SERVER_TOKEN)
+            .setMetricsServerTlsCaCert(BuildConfig.METRICS_TLS_CA_CERT)
+            .setMetricsEncryptionKey(BuildConfig.METRICS_PUB_KEY)
+            .setFrontEndAccessToken(METRICS_FRONTEND_TOKEN)
             .build()
     }
 

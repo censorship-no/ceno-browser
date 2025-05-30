@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getString
 import androidx.core.view.iterator
 import ie.equalit.ceno.R
+import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.settings.CenoSettings
 import ie.equalit.ceno.settings.OuinetKey
 import ie.equalit.ceno.settings.OuinetResponseListener
@@ -162,5 +163,9 @@ class ExtraBTBootstrapsDialog(
 
     fun getDialog(): AlertDialog {
         return builder.create()
+    }
+
+    companion object {
+        private const val TAG = "ExtraBTBootstrapDialog"
     }
 }

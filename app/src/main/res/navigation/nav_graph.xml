@@ -109,6 +109,14 @@
             app:popExitAnim="@anim/slide_back_out" />
 
         <action
+            android:id="@+id/action_settingsFragment_to_metricsCampaignFragment"
+            app:destination="@id/metricsCampaignFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_back_in"
+            app:popExitAnim="@anim/slide_back_out" />
+
+        <action
             android:id="@+id/action_settingsFragment_to_aboutFragment"
             app:destination="@id/aboutFragment"
             app:enterAnim="@anim/slide_in"
@@ -191,6 +199,12 @@
         tools:layout="@layout/fragment_delete_browsing_data" />
 
     <fragment
+        android:id="@+id/metricsCampaignFragment"
+        android:name="ie.equalit.ceno.settings.metrics.MetricsCampaignFragment"
+        android:label="@string/preferences_metrics_campaign"
+        tools:layout="@layout/fragment_metrics_campaign" />
+
+    <fragment
         android:id="@+id/aboutFragment"
         android:name="ie.equalit.ceno.settings.AboutFragment"
         android:label="@string/preferences_about_page"
@@ -270,6 +284,9 @@
             app:nullable="true" />
     </dialog>
     <action android:id="@+id/action_global_androidLogFragment" app:destination="@id/androidLogFragment" />
+    <action
+        android:id="@+id/action_global_metricsCampaignFragment"
+        app:destination="@id/metricsCampaignFragment" />
     <fragment
         android:id="@+id/bookmarkFragment"
         android:name="ie.equalit.ceno.bookmarks.BookmarkFragment"

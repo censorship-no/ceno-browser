@@ -106,7 +106,6 @@
     <string name="ceno_on_mobile_data_dialog_title">Ceno Browser-Hinweis</string>
     <string name="ceno_on_mobile_data_dialog_continue">Fortsetzen</string>
     <string name="ceno_clear_dialog_cancel">Abbrechen</string>
-    <string name="browser_menu_ceno_ext">Ceno Einstellungen</string>
     <string name="onboarding_thanks_title">Danke für die Erweiterung des Netzwerks!</string>
     <string name="preferences_change_app_icon">App-Symbol ändern</string>
     <string name="onboarding_battery_button">Fortsetzen</string>
@@ -118,8 +117,7 @@
     <string name="ceno_mode_manual_link">https://ceno.app/user-manual/de/concepts/public-private.html</string>
     <string name="preferences_make_default_browser">Ceno als Standardbrowser verwenden</string>
     <string name="onboarding_warning_button">Okay</string>
-    <string name="about_content"><p>%1$s - Teile das Internet!</p> <p>Ceno ist der weltweit erste mobile Browser, der die aktuellen Methoden der Internet-Zensur umgeht. Sein Peer-to-Peer-Backbone ermöglicht es den Menschen in Regionen, in denen die Internetverbindung unterbrochen oder kompromittiert ist, trotzdem auf Internetseiten zuzugreifen und diese mit anderen zu teilen. </p> <p>%1$s ist ein Projekt von <a href="https://equalit.ie/">eQualit.ie</a> – einer gemeinnützigen kanadischen Organisation, die dezentrale Internet-Dienste zur Unterstützung eines gleichwertigen und gerechten Netzwerks schafft. Die Software von eQualitie ist quelloffen, kampferprobt und im Hinblick auf unsere Werte entwickelt. Sie ermöglicht jeden Tag Millionen von Menschen online die Vereinigungsfreiheit.</p></string>
-    <string name="ceno_notification_description">Tippen zum Anhalten</string>
+    <string name="ceno_notification_description">Für weitere Details tippen</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Es wird empfohlen, Ceno zu verwenden, wenn du eine Wi-Fi-Verbindung haben, da es mehr Daten verbrauchen kann, als Sie erwarten. Wenn du mobile Daten verwendest, solltest du Ceno deaktivieren.</string>
     <string name="crash_reporting_never_send">Niemals senden</string>
     <string name="crash_reporting_always_send">Immer senden, um Ceno zu verbessern</string>
@@ -314,7 +312,6 @@
     <string name="select_extra_bt_source">Weiteren BitTorrent Bootstrap auswählen</string>
     <string name="bridge_mode_category">Bridge Ankündigungen</string>
     <string name="confirm_groups_file_download_desc">Eine .txt-Datei wird lokal gespeichert.</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="clean_insights_sub_header">Wir möchten die folgenden Daten bis zum 31. Januar 2025 erheben:</string>
     <string name="optional_metrics">Optionale Daten:</string>
     <string name="device_type">Gerätetyp</string>
@@ -337,29 +334,18 @@
     <string name="support_button_text">Hilfe</string>
     <string name="clean_insights_header">Hilf Ceno besser zu machen!</string>
     <string name="clean_insights_explainer">Ihr Beitrag ist anonym, und Sie können sich jederzeit abmelden.</string>
-    <string name="load_times">Startzeit der App</string>
     <string name="device_locale">Gerätelokalisierung (Sprache)</string>
     <string name="clean_insights_opt_in">JA, NEHME TEIL</string>
     <string name="clean_insights_maybe_later">NEIN, VIELEICHT SPÄTER</string>
-    <string name="ouinet_startup_time_header">Wie lange dauert es üblicherweise bis Ceno gestartet ist?</string>
-    <string name="ouinet_startup_time_too_long">Zu lang</string>
-    <string name="ouinet_startup_time_quick">Schnell</string>
-    <string name="ouinet_startup_time_1">1</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
     <string name="thank_you_for_feedback">Vielen Dank für Ihr Feedback!</string>
     <string name="submit">Absenden</string>
     <string name="error_page_sub_header">Das bedeutet dass Ceno alle verfügbaren Methoden ausprobiert hat um auf den Inhalt zuzugreifen, aber keine davon erfolgreich war:</string>
     <string name="error_page_learn_more_header">Sie sollten sicherstellen, dass die folgenden Anforderungen erfüllt sind, damit Ceno funktioniert</string>
     <string name="tooltip_toolbar_title">Los geht\'s!</string>
     <string name="tooltip_sources_description">Sehen Sie leicht, woher der Inhalt der Seite geladen wird – direkt von der Webseite, über das Ceno-Netzwerk oder aus dem Ceno-Cache</string>
-    <string name="preferences_allow_clean_insights_tracking">Nutzungsdaten-Analyse zulassen</string>
     <string name="standby_take_me_anyway">Bring mich trotzdem zu Ceno</string>
     <string name="confirm_clear_cached_content">Cache leeren?</string>
     <string name="confirm_clear_cached_content_desc">Ihr Cache-Inhalt wird unverzüglich gelöscht</string>
-    <string name="clean_insights_successful_opt_in">Hintergrundanalyse aktiviert</string>
-    <string name="clean_insights_successful_opt_out">Hintergrundanalyse deaktiviert</string>
     <string name="error_page_learn_more_1">Sie benutzen eine aktuelle Version vom Ceno Browser. Veraltete Versionen können nicht mit neueren Injektoren oder anderen Clients kommunizieren. Besuchen Sie die <a href="https://play.google.com/store/apps/details?id=ie.equalit.ceno">Download-Seite</a> um die neueste Version zu finden.</string>
     <string name="preferences_announcement_source_summary">Wähle die Quelle für Startseiten-Announcements</string>
     <string name="developer_tools_disabled">Entwicklerwerkzeuge deaktiviert</string>
@@ -403,4 +389,6 @@
     <string name="about_content_para_2">Der Ceno Browser ist ein Projekt von eQualitie – einer gemeinnützigen kanadischen Organisation, die dezentrale Internet-Dienste zur Unterstützung eines gleichwertigen und gerechten Netzwerks schafft. Die Software von eQualitie ist quelloffen, kampferprobt und im Hinblick auf unsere Werte entwickelt. Sie ermöglicht jeden Tag Millionen von Menschen online die Vereinigungsfreiheit.</string>
     <string name="error_page_learn_more_3">Ihr Gerät hat eine funktionierende Internetverbindung, d.h. Ihr normaler Webbrowser ist in der Lage einige Webseiten zu öffnen. Ceno und Ouinet können nicht funktionieren, wenn alle Internetverbindung unterbrochen ist.</string>
     <string name="ceno_notification_confirm_description">Wollen Sie dass Ceno alle ihre Dateien löscht?</string>
+    <string name="ceno_notification_title">Teilen zwischengespeicherter Tabs</string>
+    <string name="ceno_sources_shared_by_local_cache">Aus dem Browser-Cache</string>
 </resources>

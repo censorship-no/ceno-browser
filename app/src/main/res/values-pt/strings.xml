@@ -144,7 +144,6 @@
     <string name="preferences_make_default_browser">Faça o Ceno o seu navegador padrão</string>
     <string name="preferences_about_page">Sobre e qualidade</string>
     <string name="ceno_mode_manual_link">https://ceno.app/user-manual/pt_BR/concepts/public-private.html</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Configurações Ceno</string>
     <string name="default_top_site_1_title">Manual Ceno</string>
     <string name="onboarding_btn_get_started">Começar</string>
     <string name="preferences_toolbar_position">Pôr no topo do ecrã</string>
@@ -160,7 +159,6 @@
     <string name="clear_cache_success">O cache foi limpo com sucesso</string>
     <string name="clear_cache_fail">A limpeza do cache falhou, tente novamente em breve</string>
     <string name="about_category">Sobre</string>
-    <string name="about_content"><p>%1$s - Compartilhe a Web!</p> <p>Ceno é o primeiro navegador para aparelhos móveis do mundo que contorna os atuais métodos de censura da Internet. O backbone P2P dele permite às pessoas acessarem e compartilharem informações da web dentro e entre regiões nas quais a conectividade foi interrompida ou comprometida. </p> <p>%1$s é um projeto da eQualitie, uma organização canadense cuja missão é promover e defender liberdades fundamentais e direitos humanos, incluindo o livre fluxo de informação online. Nosso objetivo é criar tecnologia acessível e melhorar o conjunto de habilidades necessárias para defender direitos humanos e liberdade na era digital.</p></string>
     <string name="ceno_notification_clear_do_description">Sim</string>
     <string name="ceno_notification_channel_name">Serviço Ceno</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Aviso do Navegador Ceno</string>
@@ -344,7 +342,6 @@
     <string name="support_button_text">Suporte</string>
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">Baixar</string>
     <string name="ceno_permissions_category">Permissões</string>
-    <string name="preferences_allow_clean_insights_tracking">Permitir análise em segundo plano</string>
     <string name="preferences_clear_behavior_option_2">Limpar o cache de Ceno apenas</string>
     <string name="preferences_change_language">Mudar idioma</string>
     <string name="eq_news_button_text">Notícias</string>
@@ -354,20 +351,9 @@
     <string name="clean_insights_explainer">Sua contribuição é anônima, e poderá retirá-la quando quiser.</string>
     <string name="optional_metrics">Métricas opcionais:</string>
     <string name="device_type">Tipo de dispositivo</string>
-    <string name="load_times">Data inicial do aplicação</string>
     <string name="device_locale">Local do dispositivo (idioma)</string>
     <string name="clean_insights_opt_in">Sim, quero ajudar</string>
     <string name="clean_insights_maybe_later">Não, talvez depois</string>
-    <string name="clean_insights_successful_opt_in">Análises permitidas em segundo plano</string>
-    <string name="clean_insights_successful_opt_out">Análises desativadas em segundo plano</string>
-    <string name="ouinet_startup_time_header">Na sua visão, quanto tempo leva para Ceno iniciar?</string>
-    <string name="ouinet_startup_time_too_long">Demora muito</string>
-    <string name="ouinet_startup_time_quick">Rápidamente</string>
-    <string name="ouinet_startup_time_1">1</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="thank_you_for_feedback">Obrigado pela colaboração!</string>
     <string name="submit">Enviar</string>
     <string name="standby_tip_pdf">Compartilhe páginas web como PDFs</string>

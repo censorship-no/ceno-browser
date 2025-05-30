@@ -112,10 +112,9 @@
     <string name="ceno_notification_clear_description">擦除⚠</string>
     <string name="ceno_notification_channel_name">Ceno服务</string>
     <string name="ceno_clear_dialog_cancel">取消</string>
-    <string name="about_content">&lt;p&gt;%1$s - 分享网络！&lt;/p&gt; &lt;p&gt;Ceno 是世界上首个能够避开当前互联网审查方法的移动浏览器。它的点对点骨干网允许人们在连接中断或受到影响的地区访问和共享网络信息。&lt;/p&gt; &lt;p&gt;%1$s 是 &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt; 的一个项目，eQualit.ie 是一家非营利性加拿大组织，致力于创建去中心化的互联网服务来支持更加平等和公平的网络。eQualitie 的方案是开源的，经过实际考验并依照我们的价值观开发。 每天，它们都在为数百万人的网络结社自由提供支持。&lt;/p&gt;</string>
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">不再显示</string>
     <string name="ceno_clear_dialog_clear_cache_only">只清除Ceno的缓存</string>
-    <string name="ceno_notification_description">点击此处停止</string>
+    <string name="ceno_notification_description">轻点以了解更多信息</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Ceno浏览器提醒</string>
     <string name="ceno_clear_dialog_title">清除Ceno</string>
     <string name="ceno_clear_dialog_clear_entire_app">清除Ceno缓存和应用程序数据</string>
@@ -159,7 +158,6 @@
     <string name="onboarding_warning_title">权限不足</string>
     <string name="bt_sources_none">无</string>
     <string name="bt_invalid_ip_error">无效 IP</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ceno设置</string>
     <string name="onboarding_permissions_title">需要许可</string>
     <string name="onboarding_battery_button">继续</string>
     <string name="preferences_toolbar_hide">滚动以隐藏</string>
@@ -372,28 +370,16 @@
     <string name="ceno_network_status_title">Ceno网络状态</string>
     <string name="ceno_network_status_connected">已完全连接到Ceno网络。被拦截的网站应该可以访问。</string>
     <string name="ceno_network_status_disconnected">已断开连接。检查你的网络设置或者导出日志以查看更多信息。</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="preferences_allow_clean_insights_tracking">允许后台分析</string>
-    <string name="ouinet_startup_time_4">4</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="clean_insights_header">帮助Ceno变得更好！</string>
     <string name="clean_insights_sub_header">我们会记录以下数据指标直到2025年1月31号：</string>
     <string name="clean_insights_explainer">你的贡献会是匿名的，你可以随时选择退出。</string>
     <string name="optional_metrics">可选的数据指标：</string>
     <string name="device_type">设备类型</string>
-    <string name="load_times">应用启动时间</string>
     <string name="device_locale">设备本地化（语言）</string>
     <string name="clean_insights_opt_in">是的，我选择加入</string>
     <string name="clean_insights_maybe_later">不，也许以后</string>
-    <string name="clean_insights_successful_opt_in">启用后台分析</string>
-    <string name="clean_insights_successful_opt_out">禁用后台分析</string>
-    <string name="ouinet_startup_time_header">你通常感觉Cene需要多久启动？</string>
     <string name="thank_you_for_feedback">感谢你的反馈！</string>
     <string name="submit">提交</string>
-    <string name="ouinet_startup_time_1">1</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_quick">快速</string>
-    <string name="ouinet_startup_time_too_long">过于缓慢</string>
     <string name="preferences_additional_developer_tools">更多的开发者工具</string>
     <string name="preferences_announcement_source">公告源</string>
     <string name="preferences_announcement_source_summary">设定主页公告源</string>
@@ -411,4 +397,7 @@
     <string name="developer_tools_disabled">开发者工具以禁用</string>
     <string name="ceno_base_url">https://ceno.app</string>
     <string name="preferences_announcement_source_default">1</string>
+    <string name="ceno_notification_title">分享已缓存的标签页</string>
+    <string name="ceno_sources_shared_by_local_cache">从浏览器缓存</string>
+    <string name="ceno_notification_confirm_description">你想要从 Ceno 服务器清除所有数据吗？</string>
 </resources>

@@ -134,9 +134,7 @@
     <string name="onboarding_warning_text">L’optimisation de la batterie est encore activée.
 \n
 \nAccédez à « Paramètres &gt; Désactiver l’optimisation de la batterie » pour donner l’autorisation ultérieurement</string>
-    <string name="about_content">&lt;p&gt;%1$s - Partagez le Web.&lt;/p&gt; &lt;p&gt;Ceno est le premier navigateur mobile au monde qui contourne les méthodes actuelles de censure d’internet. Sa technologie en pair à pair permet aux utilisateurs et aux utilisatrices d’accéder et de partager des informations Web dans des régions où la connectivité a été interrompue ou compromise. &lt;/p&gt; &lt;p&gt;%1$s est un projet d\'&lt;a href=\"https://equalit.ie\"&gt;eQualitie&lt;/a&gt; – une organisation canadienne à but non lucratif qui crée des services Internet décentralisés en soutien d\'un réseau plus égal et équitable. Les solutions d\'eQualitie sont open source, éprouvées et développées dans le respect de nos valeurs. Chaque jour, elles permettent la liberté d\'association pour des millions de personnes en ligne./p&gt;</string>
     <string name="ceno_clear_dialog_description">AVERTISSEMENT : Effacer le cache et les données de l’appli réinitialisera l’appli Ceno comme si elle n’avait jamais été utilisée.</string>
-    <string name="browser_menu_ceno_ext">Paramètres de Ceno</string>
     <string name="onboarding_skip_button">Ignorer</string>
     <string name="onboarding_battery_text">Sous peu, le système d’exploitation vous demandera la permission de
 \n
@@ -370,23 +368,11 @@
     <string name="optional_metrics">Métriques facultatives :</string>
     <string name="device_type">Type d\'appareil</string>
     <string name="device_locale">Local de l\'appareil (langue)</string>
-    <string name="preferences_allow_clean_insights_tracking">Autoriser les analyses en arrière-plan</string>
     <string name="clean_insights_explainer">Votre contribution sera anonyme et vous pourrez vous désinscrire à tout moment.</string>
-    <string name="load_times">Heure de démarrage de l\'application</string>
     <string name="clean_insights_opt_in">Oui, inscrivez-moi</string>
     <string name="clean_insights_maybe_later">non, peut être plus tard</string>
-    <string name="clean_insights_successful_opt_in">Activer les analyses en arrière-plan</string>
-    <string name="clean_insights_successful_opt_out">désactiver les analyses en arrière-plan</string>
     <string name="standby_dont_show">Ne plus afficher cet avertissement</string>
     <string name="startup_category">Démarrage</string>
-    <string name="ouinet_startup_time_header">Combien de temps pensez-vous qu\'il faut généralement pour que Ceno démarre ?</string>
-    <string name="ouinet_startup_time_too_long">Trop long</string>
-    <string name="ouinet_startup_time_quick">Rapide</string>
-    <string name="ouinet_startup_time_1">1</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="thank_you_for_feedback">Merci pour votre retour !</string>
     <string name="submit">Envoyer</string>
     <string name="standby_take_me_anyway">Emmènes moi à Ceno quand même</string>
