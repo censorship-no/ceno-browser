@@ -127,7 +127,6 @@
     <string name="onboarding_skip_button">Пропустити</string>
     <string name="onboarding_battery_button">Продовжити</string>
     <string name="onboarding_warning_title">У дозволі відмовлено</string>
-    <string name="browser_menu_ceno_ext">Ceno Налаштування</string>
     <string name="onboarding_btn_get_started">Почати роботу</string>
     <string name="onboarding_info_title">Не ваш звичайний браузер</string>
     <string name="onboarding_permissions_title">Необхідний дозвіл</string>
@@ -145,7 +144,6 @@
     <string name="onboarding_warning_text">Оптимізація акумулятора все ще увімкнена. \n \nПерейдіть до «Hалаштування &gt; Вимкнути оптимізацію акумулятора», щоб надати дозвіл пізніше</string>
     <string name="onboarding_thanks_text">Як користувач Ceno, ви допомагаєте розширити мережу доступних мостів, що забезпечують доступ до цензурованого контенту.</string>
     <string name="preferences_disable_battery_opt">Оптимізація батареї</string>
-    <string name="about_content"><p>%1$s - Поділіться інтернетом!</p> <p>Ceno - перший у світі мобільний браузер, який обходить наявні методи цензури в інтернеті. Його пірингова основа дозволяє людям отримувати доступ до інформації в мережі та обмінюватися нею у місцевості, де зв\'язок був перерваний або скомпрометований. </p> <p>%1$s є проектом eQualitie, неприбуткової канадської організації, яка створює децентралізовані інтернет-сервіси для підтримки більш рівноправної та справедливої мережі. Рішення eQualitie мають відкритий вихідний код, перевірені на практиці та розроблені з урахуванням наших цінностей. Щодня вони забезпечують свободу об\'єднання для мільйонів людей в інтернеті.</p></string>
     <string name="ceno_clear_dialog_clear_entire_app">Очистити Ceno кеш і дані застосунку</string>
     <string name="preferences_clear_in_toolbar">Показати на панелі інструментів</string>
     <string name="preferences_clear_in_menu">Показати в меню</string>
