@@ -36,4 +36,11 @@
         app:isPreferenceVisible="false"
         app:iconSpaceReserved="false" />
 
+    <androidx.preference.SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="@string/pref_key_personal_mode_only"
+        android:title="@string/preferences_personal_mode_only"
+        android:summary="@string/preferences_personal_mode_only_summary"
+        app:iconSpaceReserved="false" />
+
 </androidx.preference.PreferenceScreen>

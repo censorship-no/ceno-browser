@@ -50,6 +50,14 @@ class DeveloperToolsSettingsFragment : PreferenceFragmentCompat() {
             onPreferenceChangeListener = getChangeListenerForRemoteDebugging()
         getPreference(R.string.pref_key_ceno_download_log)?.
             onPreferenceClickListener = getClickListenerForOuinetLogExport()
+        getPreference(R.string.pref_key_personal_mode_only)?.onPreferenceChangeListener = getChangeListenerForPersonalModeOnly()
+    }
+
+    private fun getChangeListenerForPersonalModeOnly(): OnPreferenceChangeListener? {
+        return OnPreferenceChangeListener { _, newValue ->
+            Settings.enablePersonalModeOnly(requireContext(), newValue as Boolean)
+            true
+        }
     }
 
     private fun getChangeListenerForRemoteDebugging(): OnPreferenceChangeListener {
