@@ -421,4 +421,11 @@ object Settings {
         )
     }
 
+    fun enablePersonalModeOnly(context: Context, newValue: Boolean) {
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit {
+                putBoolean(context.getString(R.string.pref_key_personal_mode_only), newValue)
+            }
+    }
+
 }
