@@ -137,4 +137,8 @@
     <string name="preferences_customization">Testreszabás</string>
     <string name="preferences_delete_browsing_data_button">Böngészési adatok törlése</string>
     <string name="share_logs">Megosztás</string>
+    <string name="bookmark_menu_share_button">Megosztás</string>
+    <string name="bookmark_menu_delete_button">Törlés</string>
+    <string name="bookmark_name_label">Név</string>
+    <string name="library_bookmarks">Könyvjelzők</string>
 </resources>

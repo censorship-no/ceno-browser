@@ -310,4 +310,10 @@
     <string name="support_button_text">دعم</string>
     <string name="eq_news_button_text">أخبار</string>
     <string name="btn_next">التالي</string>
+    <string name="library_bookmarks">الإشارات المرجعية</string>
+    <string name="bookmark_menu_save_button">حفظ</string>
+    <string name="bookmark_menu_share_button">المشاركة</string>
+    <string name="bookmark_menu_delete_button">حذف</string>
+    <string name="bookmark_name_label">الاسم</string>
+    <string name="tooltip_sources_title">مصادر Ceno</string>
 </resources>

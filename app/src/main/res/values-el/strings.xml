@@ -128,4 +128,11 @@
     <string name="eq_values_button_text">Αξίες</string>
     <string name="learn_more_title">Μάθετε περισσότερα</string>
     <string name="share_logs">Κοινή χρήση</string>
+    <string name="bookmark_menu_share_button">Κοινή χρήση</string>
+    <string name="bookmark_menu_delete_button">Διαγραφή</string>
+    <string name="bookmark_name_label">Όνομα</string>
+    <string name="library_bookmarks">Σελιδοδείκτες</string>
+    <string name="bookmark_menu_save_button">Αποθήκευση</string>
+    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ρυθμίσεις Ceno</string>
+    <string name="tooltip_sources_title">Πηγές Ceno</string>
 </resources>
