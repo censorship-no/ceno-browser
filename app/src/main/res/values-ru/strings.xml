@@ -125,7 +125,6 @@
     <string name="onboarding_welcome_title">Добро пожаловать в Ceno</string>
     <string name="onboarding_warning_button">Хорошо</string>
     <string name="ceno_clear_dialog_clear_entire_app">Очистить Ceno кэш и данные приложения</string>
-    <string name="browser_menu_ceno_ext">Ceno Настройки</string>
     <string name="preferences_toolbar_hide">Прокрутите, чтобы скрыть</string>
     <string name="preferences_toolbar_position">Разместите в верхней части экрана</string>
     <string name="ceno_clear_action_description">Очистить</string>
@@ -143,7 +142,6 @@
     <string name="onboarding_permissions_title">Требуется разрешение</string>
     <string name="onboarding_thanks_text">Как пользователь Ceno, вы помогаете развивать сеть доступных мостов, обеспечивающих доступ к цензурированному контенту.</string>
     <string name="onboarding_thanks_title">Спасибо за рост сети!</string>
-    <string name="about_content"><p>%1$s - Делитесь Интернетом!</p> <p>Ceno - это первый в мире мобильный браузер, который обходит существующие методы цензуры в Интернете. Его одноранговая магистраль позволяет людям получать доступ к веб-информации и обмениваться ею в регионах, где связь прервана или нарушена. </p> <p>%1$s - это проект eQualitie, канадской организации, чья миссия заключается в продвижении и защите основных свобод и прав человека, включая свободное распространение информации в Интернете. Наша цель - создание доступных технологий и совершенствование навыков, необходимых для защиты прав и свобод человека в цифровую эпоху.</p></string>
     <string name="onboarding_battery_text">Вскоре ваша ОС попросит разрешение на
 \n
 \n• Отключение оптимизации батареи.

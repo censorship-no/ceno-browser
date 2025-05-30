@@ -242,7 +242,6 @@
     <string name="about_content_title">Share the Web!</string>
     <string name="ceno_mode_manual_link">https://censorship.no/user-manual/en/concepts/public-private.html</string>
     <string name="ceno_private_browsing_body">&lt;h1&gt;Personal Browsing&lt;/h1&gt; &lt;p&gt;Ceno will not share content from personal tabs with other users. You can safely visit sites that require login. A path to the Internet is needed, though.&lt;/p&gt; &lt;p class=about-info&gt;&lt;a id=learnMore&gt;Want to learn more?&lt;/p&gt;</string>
-    <string name="about_content" tools:ignore="UnusedResources">&lt;p&gt;%1$s - Share the Web!&lt;/p&gt; &lt;p&gt;Ceno (short for censorship.no!) is the world’s first mobile browser that side-steps current Internet censorship methods. Its peer-to-peer backbone allows people to access and share web information in and across regions where connectivity has been interrupted or compromised. &lt;/p&gt; &lt;p&gt;%1$s is a project of &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt;, – a not-for-profit Canadian organisation that creates decentralised internet services in support of a more equal and equitable network. eQualitie\'s solutions are open source, battle proven and developed in mind of our values. Everyday, they enable freedom of association for millions of people online.&lt;/p&gt;</string>
     <string name="ceno_clear_action_description">Clear</string>
     <string name="preferences_allow_crash_reporting">Crash reporting</string>
     <string name="preferences_allow_notifications">Notifications</string>
@@ -276,7 +275,6 @@
     <string name="crash_reporting_opt_out">You\'ve opted out of sharing crash reports. You can always opt in by going to Settings &gt; Crash reporting.</string>
     <string name="bt_sources_none">None</string>
     <string name="bt_invalid_ip_error">Invalid IP</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ceno Settings</string>
     <string name="default_top_site_1_title">Ceno Manual</string>
     <string name="onboarding_warning_button">Okay</string>
     <string name="onboarding_thanks_title" tools:ignore="UnusedResources">Thanks for growing the network!</string>

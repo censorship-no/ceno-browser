@@ -128,7 +128,6 @@
     <string name="crash_reporting_dialog_description">Pomozte nám vylepšit Ceno tím, že nám budete posílat hlášení o pádech.</string>
     <string name="crash_reporting_always_send">Vždy posílat, zlepšit Ceno</string>
     <string name="crash_reporting_never_send">Nikdy posílat</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Nastavení Ceno</string>
     <string name="default_top_site_1_title">Příručka Ceno</string>
     <string name="onboarding_welcome_title">Vítejte v Ceno</string>
     <string name="onboarding_btn_get_started">Začít</string>

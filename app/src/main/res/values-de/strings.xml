@@ -106,7 +106,6 @@
     <string name="ceno_on_mobile_data_dialog_title">Ceno Browser-Hinweis</string>
     <string name="ceno_on_mobile_data_dialog_continue">Fortsetzen</string>
     <string name="ceno_clear_dialog_cancel">Abbrechen</string>
-    <string name="browser_menu_ceno_ext">Ceno Einstellungen</string>
     <string name="onboarding_thanks_title">Danke für die Erweiterung des Netzwerks!</string>
     <string name="preferences_change_app_icon">App-Symbol ändern</string>
     <string name="onboarding_battery_button">Fortsetzen</string>
@@ -118,7 +117,6 @@
     <string name="ceno_mode_manual_link">https://ceno.app/user-manual/de/concepts/public-private.html</string>
     <string name="preferences_make_default_browser">Ceno als Standardbrowser verwenden</string>
     <string name="onboarding_warning_button">Okay</string>
-    <string name="about_content"><p>%1$s - Teile das Internet!</p> <p>Ceno ist der weltweit erste mobile Browser, der die aktuellen Methoden der Internet-Zensur umgeht. Sein Peer-to-Peer-Backbone ermöglicht es den Menschen in Regionen, in denen die Internetverbindung unterbrochen oder kompromittiert ist, trotzdem auf Internetseiten zuzugreifen und diese mit anderen zu teilen. </p> <p>%1$s ist ein Projekt von <a href="https://equalit.ie/">eQualit.ie</a> – einer gemeinnützigen kanadischen Organisation, die dezentrale Internet-Dienste zur Unterstützung eines gleichwertigen und gerechten Netzwerks schafft. Die Software von eQualitie ist quelloffen, kampferprobt und im Hinblick auf unsere Werte entwickelt. Sie ermöglicht jeden Tag Millionen von Menschen online die Vereinigungsfreiheit.</p></string>
     <string name="ceno_notification_description">Für weitere Details tippen</string>
     <string name="ceno_on_mobile_data_dialog_description" tools:ignore="UnusedResources">Es wird empfohlen, Ceno zu verwenden, wenn du eine Wi-Fi-Verbindung haben, da es mehr Daten verbrauchen kann, als Sie erwarten. Wenn du mobile Daten verwendest, solltest du Ceno deaktivieren.</string>
     <string name="crash_reporting_never_send">Niemals senden</string>

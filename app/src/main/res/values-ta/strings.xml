@@ -146,7 +146,6 @@
     <string name="ceno_clear_dialog_clear_entire_app">தெளிவான Ceno கேச் மற்றும் பயன்பாட்டு தரவு</string>
     <string name="ceno_clear_dialog_cancel">ரத்துசெய்</string>
     <string name="ceno_clear_dialog_title">தெளிவான Ceno</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ceno அமைப்புகள்</string>
     <string name="default_top_site_1_title">Ceno கையேடு</string>
     <string name="onboarding_btn_get_started">தொடங்கவும்</string>
     <string name="onboarding_warning_text">பேட்டரி உகப்பாக்கம் இன்னும் இயக்கப்பட்டது.
@@ -257,7 +256,6 @@
     <string name="select_log_scope_header">உங்களுக்கு விருப்பமான நோக்கத்தைத் தேர்ந்தெடுக்கவும்</string>
     <string name="canceled">ரத்து செய்யப்பட்டது</string>
     <string name="bridge_announcement_dialog_title">பாலம் பயன்முறை அமைப்புகளைப் புதுப்பித்தல்…</string>
-    <string name="about_content"><p>%1$s - வலையைப் பகிரவும்!</p> <p>செனோ (தணிக்கை குறுகியதாக இருக்கிறது. அதன் பியர்-டு-பியர் முதுகெலும்பு இணைப்பு குறுக்கிடப்பட்ட அல்லது வேறுபாடின்மை செய்யப்பட்ட பிராந்தியங்களில் மற்றும் குறுக்கே வலை தகவல்களை அணுகவும் பகிர்ந்து கொள்ளவும் மக்களை அனுமதிக்கிறது. </p> <p>%1$s என்பது கனேடிய அமைப்பான ஈக்விட்டியின் திட்டமாகும், இதன் நோக்கம் ஆன்லைனில் இலவச தகவல்களை உள்ளடக்கிய அடிப்படை சுதந்திரங்களையும் மனித உரிமைகளையும் ஊக்குவிப்பதும் பாதுகாப்பதும் ஆகும். அணுகக்கூடிய தொழில்நுட்பத்தை உருவாக்குவதும், டிசிட்டல் யுகத்தில் மனித உரிமைகள் மற்றும் சுதந்திரங்களை பாதுகாப்பதற்குத் தேவையான திறன் தொகுப்பை மேம்படுத்துவதும் எங்கள் குறிக்கோள்.</p></string>
     <string name="ceno_private_browsing_body"><h1>தனிப்பட்ட உலாவல் </h1> <p>செனோ தனிப்பட்ட தாவல்களிலிருந்து உள்ளடக்கத்தை பிற பயனர்களுடன் பகிராது. உள்நுழைவு தேவைப்படும் தளங்களை நீங்கள் பாதுகாப்பாக பார்வையிடலாம். இருப்பினும், இணையத்திற்கான பாதை தேவைப்படுகிறது.</p></string>
     <string name="ceno_notification_clear_description">Erase⚠</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Ceno உலாவி அறிவிப்பு</string>

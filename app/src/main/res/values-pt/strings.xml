@@ -144,7 +144,6 @@
     <string name="preferences_make_default_browser">Faça o Ceno o seu navegador padrão</string>
     <string name="preferences_about_page">Sobre e qualidade</string>
     <string name="ceno_mode_manual_link">https://ceno.app/user-manual/pt_BR/concepts/public-private.html</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Configurações Ceno</string>
     <string name="default_top_site_1_title">Manual Ceno</string>
     <string name="onboarding_btn_get_started">Começar</string>
     <string name="preferences_toolbar_position">Pôr no topo do ecrã</string>
@@ -160,7 +159,6 @@
     <string name="clear_cache_success">O cache foi limpo com sucesso</string>
     <string name="clear_cache_fail">A limpeza do cache falhou, tente novamente em breve</string>
     <string name="about_category">Sobre</string>
-    <string name="about_content"><p>%1$s - Compartilhe a Web!</p> <p>Ceno é o primeiro navegador para aparelhos móveis do mundo que contorna os atuais métodos de censura da Internet. O backbone P2P dele permite às pessoas acessarem e compartilharem informações da web dentro e entre regiões nas quais a conectividade foi interrompida ou comprometida. </p> <p>%1$s é um projeto da eQualitie, uma organização canadense cuja missão é promover e defender liberdades fundamentais e direitos humanos, incluindo o livre fluxo de informação online. Nosso objetivo é criar tecnologia acessível e melhorar o conjunto de habilidades necessárias para defender direitos humanos e liberdade na era digital.</p></string>
     <string name="ceno_notification_clear_do_description">Sim</string>
     <string name="ceno_notification_channel_name">Serviço Ceno</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Aviso do Navegador Ceno</string>
