@@ -455,6 +455,7 @@
     <string name="ceno_notification_confirm_description">Do you want to clear all your data from Ceno?</string>
     <string name="preferences_metrics_campaign">Background metrics</string>
     <string name="metrics_campaign_more_info">More info</string>
+    <string name="metrics_campaign_view_privacy_policy">Privacy policy</string>
     <string name="metrics_ouinet_title">Ceno Metrics</string>
     <string name="metrics_ouinet_description">Submit anonymous, privacy respecting metrics to developers</string>
     <string name="metrics_consent_dialog_description">We\'re launching a privacy respecting metrics system to help us better understand Ceno users\' needs.\n\nYou can review the details of what we\'ll collect and how we handle your data in our Privacy Policy.\n\nYou can also opt out at any time via Settings > Background metrics.</string>

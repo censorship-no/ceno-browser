@@ -128,7 +128,6 @@
     <string name="crash_reporting_dialog_description">Pomozte nám vylepšit Ceno tím, že nám budete posílat hlášení o pádech.</string>
     <string name="crash_reporting_always_send">Vždy posílat, zlepšit Ceno</string>
     <string name="crash_reporting_never_send">Nikdy posílat</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Nastavení Ceno</string>
     <string name="default_top_site_1_title">Příručka Ceno</string>
     <string name="onboarding_welcome_title">Vítejte v Ceno</string>
     <string name="onboarding_btn_get_started">Začít</string>
@@ -393,5 +392,4 @@
     <string name="developer_tools_enabled">Vývojářské nástroje povoleny</string>
     <string name="developer_tools_disabled">Vývojářské nástroje jsou zakázány</string>
     <string name="ceno_network_status_disconnected">Odpojeno. Zkontrolujte nastavení sítě nebo exportujte protokoly pro další informace.</string>
-    <string name="about_content" tools:ignore="UnusedResources">&lt;p&gt;%1$s – Sdílejte Web!&lt;/p&gt; &lt;p&gt;Ceno je první mobilní prohlížeč na světě, který obchází současné metody internetové cenzury. Jeho peer-to-peer páteř umožňuje lidem přístup a sdílení webových informací v regionech a mezi nimi, kde bylo připojení přerušeno nebo ohroženo. &lt;/p&gt; &lt;p&gt;%1$s je projekt &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt; – neziskové Kanadské organizace, která vytváří decentralizované internetové služby na podporu rovnější a spravedlivější sítě. Řešení eQualitie jsou open source, osvědčená a vyvinutá s ohledem na naše hodnoty. Každý den umožňují milionům lidí online svobodu sdružování.&lt;/p&gt;</string>
 </resources>

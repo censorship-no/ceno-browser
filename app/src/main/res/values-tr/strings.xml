@@ -131,7 +131,6 @@
     <string name="ceno_notification_clear_description">Sil⚠</string>
     <string name="preferences_change_app_icon">Uygulama simgesini değiştir</string>
     <string name="ceno_notification_description">Bilgi almak için dokunun</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ceno ayarları</string>
     <string name="onboarding_warning_title">İzin verilmedi</string>
     <string name="onboarding_battery_button">İlerle</string>
     <string name="preferences_show_onboarding">Bir sonraki açılışta ipuçları görüntülensin</string>
@@ -171,7 +170,6 @@
     <string name="onboarding_battery_text">Birazdan, işletim sisteminiz sizden şu izinleri isteyecek: \n \n• Pil iyileştirmelerini kapatma. \n \nBu izin, uygulama arka planda çalışırken siteleri paylaşmayı sürdürmek için gereklidir.</string>
     <string name="preferences_clear_ceno_cache_summary">Yerel ön bellekteki internet içeriğini temizle</string>
     <string name="ouinet_client_fetch_fail">Ceno ayarı değiştirilemedi</string>
-    <string name="about_content">&lt;p&gt;%1$s - İnternet içeriklerini paylaşın!&lt;/p&gt; &lt;p&gt;Ceno, güncel internet sansür yöntemlerinin etrafından dolaşan dünyanın ilk mobil tarayıcısıdır. Eşler arası omurgası, insanların bağlantının kesildiği veya tehlikeye girdiği bölgelerde ve bölgeler arasında site bilgilerine erişmesini ve bunları paylaşmasını sağlar. &lt;/p&gt; &lt;p&gt;%1$s, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren kar amacı gütmeyen bir Kanada kuruluşu olan bir &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt; projesidir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.&lt;/p&gt;</string>
     <string name="onboarding_warning_text">Pil iyileştirmesi hala açık. \n \nİzni daha sonra \"Ayarlar &gt; Pil iyileştirmesini kapat\" bölümünden verebilirsiniz</string>
     <string name="preferences_ceno_sources_peers_summary">İçerik paylaşan diğer kullanıcılardan yüklenir</string>
     <string name="preferences_ceno_sources_peers">Paylaşılmış</string>
