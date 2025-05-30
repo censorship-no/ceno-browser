@@ -124,7 +124,6 @@
     <string name="preferences_about_ouinet_protocol">Ouinet Protocol</string>
     <string name="preferences_about_page">About</string>
     <string name="about_category">About</string>
-    <string name="about_content" tools:ignore="UnusedResources">&lt;p&gt;%1$s - Share the Web!&lt;/p&gt; &lt;p&gt;Ceno is the world’s first mobile browser that side-steps current Internet censorship methods. Its peer-to-peer backbone allows people to access and share web information in and across regions where connectivity has been interrupted or compromised. &lt;/p&gt; &lt;p&gt;%1$s is a project of &lt;a href="https://equalit.ie/"&gt;eQualit.ie&lt;/a&gt;, – a not-for-profit Canadian organization that creates decentralized internet services in support of a more equal and equitable network. eQualitie\'s solutions are open source, battle proven and developed in mind of our values. Everyday, they enable freedom of association for millions of people online.&lt;/p&gt;</string>
     <string name="about_content_title">Share the Web!</string>
     <string name="about_content_para_1">Ceno is the world’s first mobile browser that side-steps current Internet censorship methods. Its peer-to-peer backbone allows people to access and share web information in and across regions where connectivity has been interrupted or compromised.</string>
     <string name="about_content_para_2">Ceno Browser is a project by eQualitie – a not-for-profit Canadian organization that creates decentralized internet services in support of a more equal and equitable network. eQualitie\'s solutions are open source, battle proven and developed in mind of our values. Everyday, they enable freedom of association for millions of people online.</string>
@@ -158,7 +157,6 @@
     <string name="bt_invalid_ip_error">Invalid IP</string>
     <string name="browser_menu_https_by_default" translatable="false">HTTPS by default</string>
     <string name="browser_menu_ublock_origin" translatable="false">uBlock Origin</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ceno Settings</string>
     <string name="default_top_site_1_title">Ceno Manual</string>
     <string name="default_top_site_1_url" translatable="false">@string/suggestedsites_ceno_en_url</string>
     <string name="default_top_site_2_title" translatable="false">Wikipedia</string>
@@ -457,17 +455,6 @@
     <string name="ceno_notification_confirm_description">Do you want to clear all your data from Ceno?</string>
     <string name="preferences_metrics_campaign">Background metrics</string>
     <string name="metrics_campaign_more_info">More info</string>
-    <string name="metrics_campaign_dailyusage_title" tools:ignore="UnusedResources">Daily usage</string>
-    <string name="metrics_campaign_dailyusage_description" tools:ignore="UnusedResources">Anonymously submit a single metric each day that you open Ceno.</string>
-    <string name="metrics_campaign_monthlyusage_title" tools:ignore="UnusedResources">Monthly usage</string>
-    <string name="metrics_campaign_monthlyusage_description" tools:ignore="UnusedResources">Anonymously submit a single metric each month that you opened Ceno.</string>
-    <string name="metrics_campaign_autotracker_title" tools:ignore="UnusedResources">Auto-tracker</string>
-    <string name="metrics_campaign_autotracker_description" tools:ignore="UnusedResources">Record application starts and feature usage.</string>
-    <string name="metrics_campaign_one_title" tools:ignore="UnusedResources">Application startup time</string>
-    <string name="metrics_campaign_one_description" tools:ignore="UnusedResources">Records average startup time of application. Submits metrics daily.\nEnds January 31, 2025.</string>
-    <string name="metrics_campaign_view_privacy_policy" tools:ignore="UnusedResources">Privacy policy</string>
-    <string name="daily_usage" tools:ignore="UnusedResources">Daily usage</string>
-    <string name="monthly_usage" tools:ignore="UnusedResources">Monthly usage</string>
     <string name="metrics_ouinet_title">Ceno Metrics</string>
     <string name="metrics_ouinet_description">Submit anonymous, privacy respecting metrics to developers</string>
     <string name="metrics_consent_dialog_description">We\'re launching a privacy respecting metrics system to help us better understand Ceno users\' needs.\n\nYou can review the details of what we\'ll collect and how we handle your data in our Privacy Policy.\n\nYou can also opt out at any time via Settings > Background metrics.</string>
