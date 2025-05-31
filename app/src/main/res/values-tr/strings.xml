@@ -84,7 +84,7 @@
     <string name="customize_add_bootstrap_save">Kaydet</string>
     <string name="bit_torrent_bootstraps_category">BitTorrent ön yüklemeleri</string>
     <string name="customize_extra_bittorrent_bootstrap">Ek BitTorrent ön yükleyicileri</string>
-    <string name="not_applicable">Kullanılamaz</string>
+    <string name="not_applicable">Kullanılamıyor</string>
     <string name="udp_category">UDP</string>
     <string name="crash_report_sent">Çökme bildirimi gönderildi!</string>
     <string name="preferences_website_sources_summary">Site içeriğinin nereden yüklenmesini istediğinizi seçin</string>
@@ -308,7 +308,7 @@
     <string name="support_button_text">Destek</string>
     <string name="eq_news_button_text">Haberler</string>
     <string name="eq_values_button_text">Değerler</string>
-    <string name="about_content_para_2">Ceno Browser, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren kar amacı gütmeyen bir Kanada kuruluşu olan eQualitie tarafından geliştirilmiş bir projedir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.</string>
+    <string name="about_content_para_2">Ceno Browser, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren, kar amacı gütmeyen bir Kanada kuruluşu olan eQualitie tarafından geliştirilmiş bir projedir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.</string>
     <string name="skip_the_tour_button">Turu atla</string>
     <string name="btn_next">Sonraki</string>
     <string name="btn_exit">Çık</string>
@@ -338,7 +338,7 @@
     <string name="ceno_permissions_category">İzinler</string>
     <string name="status_enabled">Açık</string>
     <string name="status_disabled">Kapalı</string>
-    <string name="clean_insights_sub_header">31 Ocak 2025 tarihine kadar şu ölçümleri kaydetmek istiyoruz:</string>
+    <string name="clean_insights_sub_header">Şu ölçümleri kaydetmek istiyoruz:</string>
     <string name="optional_metrics">İsteğe bağlı ölçümler:</string>
     <string name="device_type">Aygıt türü</string>
     <string name="device_locale">Aygıt yerel ayarı (dil)</string>
@@ -360,8 +360,8 @@
     </plurals>
     <string name="developer_tools_enabled">Geliştirici araçları açık</string>
     <string name="developer_tools_disabled">Geliştirici araçları kapalı</string>
-    <string name="clean_insights_header">Ceno uygulamasının daha iyi olmasına yardım edin!</string>
-    <string name="clean_insights_explainer">Katkınız anonim olur ve istediğiniz zaman vazgeçebilirsiniz.</string>
+    <string name="clean_insights_header">Ceno uygulamasını geliştirmemize yardım edin!</string>
+    <string name="clean_insights_explainer">Katkınız anonim olur ve istediğiniz zaman Ayarlar &gt; Arka plan ölçümleri bölümünden vazgeçebilirsiniz.</string>
     <string name="preferences_announcement_source_summary">Giriş sayfası duyurularının kaynağını ayarla</string>
     <plurals name="developer_tools_enable_alert">
         <item quantity="one">Geliştirici seçeneklerini açmaya %d dokunuş kaldı</item>
@@ -384,4 +384,9 @@
     <string name="library_bookmarks">Yer imleri</string>
     <string name="bookmark_menu_save_button">Kaydet</string>
     <string name="bookmark_deletion_confirmation">Bu yer imini silmek istediğinize emin misiniz?</string>
+    <string name="metrics_ouinet_title">Ceno ölçümleri</string>
+    <string name="preferences_allow_crash_reporting_description">Uygulama çöktüğünde geliştiricilere bildirim gönderilsin</string>
+    <string name="preferences_metrics_campaign">Arka plan ölçümleri</string>
+    <string name="metrics_campaign_more_info">Diğer bilgiler</string>
+    <string name="metrics_campaign_view_privacy_policy">Gizlilik ilkesi</string>
 </resources>
