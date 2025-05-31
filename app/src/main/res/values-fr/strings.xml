@@ -362,8 +362,8 @@
     <string name="standby_tip_announcements">Vérifiez les mises à jour dans la section des annonces</string>
     <string name="select_language">Sélectionner la langue :</string>
     <string name="privacy_policy_url">https://ceno.app/fr/privacy_policy.html</string>
-    <string name="clean_insights_sub_header">Nous aimerions enregistrer les mesures suivantes jusqu\'au 31 janvier 2025 :</string>
-    <string name="clean_insights_header">Aidez-nous à améliorer Ceno !</string>
+    <string name="clean_insights_sub_header">Nous aimerions enregistrer les mesures suivantes jusqu\'au 31 janvier 2025 :</string>
+    <string name="clean_insights_header">Aidez-nous à améliorer Ceno !</string>
     <string name="ceno_permissions_category">Autorisations</string>
     <string name="optional_metrics">Métriques facultatives :</string>
     <string name="device_type">Type d\'appareil</string>
@@ -438,4 +438,5 @@
     <string name="bookmark_delete_folder_confirmation_dialog">Est-ce que vous êtes sûr de vouloir supprimer ce dossier?</string>
     <string name="edit_bookmark_folder_fragment_title">Modifier le dossier</string>
     <string name="metrics_consent_dialog_description">Nous lançons un système de mesure respectueux de la vie privée pour nous aider à mieux comprendre les besoins des utilisateurs de Ceno.\n\nVous pouvez passer en revue les détails de ce que nous allons collecter et comment nous traitons vos données dans notre politique de confidentialité.\n\nVous pouvez également vous désabonner à tout moment via Paramètres &gt; Mesures d\'arrière-plan.</string>
+    <string name="bookmark_item_menu_button">bouton de menu d\'élément de signet</string>
 </resources>
