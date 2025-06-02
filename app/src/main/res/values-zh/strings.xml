@@ -370,9 +370,9 @@
     <string name="ceno_network_status_title">Ceno网络状态</string>
     <string name="ceno_network_status_connected">已完全连接到Ceno网络。被拦截的网站应该可以访问。</string>
     <string name="ceno_network_status_disconnected">已断开连接。检查你的网络设置或者导出日志以查看更多信息。</string>
-    <string name="clean_insights_header">帮助Ceno变得更好！</string>
-    <string name="clean_insights_sub_header">我们会记录以下数据指标直到2025年1月31号：</string>
-    <string name="clean_insights_explainer">你的贡献会是匿名的，你可以随时选择退出。</string>
+    <string name="clean_insights_header">帮助我们改进Ceno！</string>
+    <string name="clean_insights_sub_header">我们会记录以下数据指标</string>
+    <string name="clean_insights_explainer">你的贡献会是匿名的，你可以随时在 设置-背景调查 选择退出。</string>
     <string name="optional_metrics">可选的数据指标：</string>
     <string name="device_type">设备类型</string>
     <string name="device_locale">设备本地化（语言）</string>
@@ -405,4 +405,5 @@
     <string name="bookmark_name_label">名称</string>
     <string name="library_bookmarks">书签</string>
     <string name="bookmark_menu_save_button">保存</string>
+    <string name="preferences_allow_crash_reporting_description">在程序崩溃后向开发者发送报告</string>
 </resources>
