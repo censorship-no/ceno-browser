@@ -1,0 +1,4 @@
+Bu sürümde:
+- Android-Components 138.0.4 sürümüne güncellendi
+- cacert.pem 20 Mayıs Salı 03:12:02 2025 GMT zamanında oluşturulmuş pakete güncellendi
+- Çeşitli dil çevirileri güncellendi

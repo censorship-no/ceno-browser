@@ -1,3 +1,15 @@
+# v2.5.0
+Bu sürümde:
+- Ouinet 1.2.0 sürümüne güncellendi
+- Gizliliğe saygı duyan ölçüm toplama özelliği sunuldu
+- Yer imleri özelliği eklendi
+
+# v2.4.7
+Bu sürümde:
+- Android-Components 138.0.4 sürümüne güncellendi
+- cacert.pem 20 Mayıs Salı 03:12:02 2025 GMT zamanında oluşturulmuş pakete güncellendi
+- Çeşitli dil çevirileri güncellendi
+
 #v2.4.6
 Bu sürümde:
 - Android-Components 138.0.3 sürümüne güncellendi
