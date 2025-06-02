@@ -386,9 +386,9 @@
     <string name="device_type">Тип устройства</string>
     <string name="thank_you_for_feedback">Спасибо вам!</string>
     <string name="device_locale">Язык</string>
-    <string name="clean_insights_header">Помогите сделать Ceno лучше!</string>
-    <string name="clean_insights_sub_header">Мы хотим фиксировать несколько показателей до 31 января 2025:</string>
-    <string name="clean_insights_explainer">Данные мы собираем в анонимном режиме. В любой момент можно отказаться.</string>
+    <string name="clean_insights_header">Помогите нам сделать Ceno лучше!</string>
+    <string name="clean_insights_sub_header">"Мы хотим собирать данные  нескольких показателей до 31 января 2025:"</string>
+    <string name="clean_insights_explainer">Мы собираем данные в анонимном режиме. В любой момент Вы можете отказаться.</string>
     <string name="clean_insights_opt_in">ДА, Я ХОЧУ УЧАСТВОВАТЬ</string>
     <string name="clean_insights_maybe_later">НЕТ, МОЖЕТ, В ДРУГОЙ РАЗ</string>
     <string name="submit">Отправить</string>
@@ -419,4 +419,20 @@
     <string name="bookmark_name_label">Имя</string>
     <string name="library_bookmarks">Закладки</string>
     <string name="bookmark_menu_save_button">Сохранить</string>
+    <string name="preferences_allow_crash_reporting_description">В случае возникновения ошибок, отправляйте отчеты разработчикам</string>
+    <string name="preferences_metrics_campaign">Фоновые данные</string>
+    <string name="metrics_campaign_more_info">Дополнительная информация</string>
+    <string name="metrics_ouinet_title">Данные Ceno</string>
+    <string name="bookmark_menu_open_in_new_tab_button">Откройте в новой вкладке</string>
+    <string name="bookmark_url_label">URL</string>
+    <string name="bookmark_folder_label">ПАПКА</string>
+    <string name="consent_dialog_modify_privacy_settings">Изменить настройки приватности</string>
+    <string name="bookmark_add_folder">Добавить папку</string>
+    <string name="bookmark_add_folder_fragment_label">Добавить папку</string>
+    <string name="bookmark_delete_folder_confirmation_dialog">Вы точно хотите удалить эту папку?</string>
+    <string name="metrics_campaign_view_privacy_policy">Политика конфиденциальности</string>
+    <string name="metrics_consent_accept">Я принимаю</string>
+    <string name="bookmark_invalid_url_error">Неправильный URL</string>
+    <string name="bookmark_menu_copy_button">Копировать</string>
+    <string name="bookmark_menu_edit_button">Изменить</string>
 </resources>
