@@ -406,4 +406,5 @@
     <string name="library_bookmarks">书签</string>
     <string name="bookmark_menu_save_button">保存</string>
     <string name="preferences_allow_crash_reporting_description">在程序崩溃后向开发者发送报告</string>
+    <string name="preferences_metrics_campaign">背景调查</string>
 </resources>
