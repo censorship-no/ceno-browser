@@ -249,23 +249,43 @@ if (project.hasProperty("telemetry") && project.property("telemetry") == "true")
              */
             def buildDateOverride = (localProperties['buildDate'] ?: baseBuildDate) as Long
 
-            /* CENO: Use mozilla's versionCode generator to be consistent with pre-v2 CENO 
-             * python script copied from here, https://hg.mozilla.org/releases/mozilla-release/file/tip/python/mozbuild/mozbuild/android_version_code.py
-             * We should periodically check if any changes are made to it.
-             */
-            def stdout = new ByteArrayOutputStream()
-            exec {
-                workingDir rootDir.toString() + '/python/'
-                commandLine 'python', 'android_version_code.py',
-                                '--with-android-cpu-arch', abi,
-                                '--with-android-min-sdk-version', Config.minSdkVersion,
-                                '--with-android-max-sdk-version', Config.targetSdkVersion,
-                                buildDateOverride
-                standardOutput = stdout
+            def versionCode
+            if (variant.buildType.name == "release" ) {
+                // Release version code, see this issue for format
+                // https://gitlab.com/censorship-no/ceno-browser/-/issues/124
+                def (m, n, p) = localProperties['versionName'].tokenize( '.' )
+                def mj = String.format("%02d", m as Integer)
+                def min = String.format("%03d", n as Integer)
+                def pt = String.format("%02d", p as Integer)
+                def a
+                switch(abi) {
+                    case 'armeabi-v7a': a = "0"; break
+                    case 'arm64-v8a': a = "1"; break
+                    case 'x86_64': a = "2"; break
+                    default: a = "3"; break
+                }
+                def r = (localProperties['revision'] ?: 0) as Integer
+                versionCode = "2$mj$min$pt$a$r"
+            }
+            else {
+                /* CENO: Use mozilla's versionCode generator to be consistent with pre-v2 CENO
+                 * python script copied from here, https://hg.mozilla.org/releases/mozilla-release/file/tip/python/mozbuild/mozbuild/android_version_code.py
+                 * We should periodically check if any changes are made to it.
+                 */
+                versionCode = new ByteArrayOutputStream()
+                exec {
+                    workingDir rootDir.toString() + '/python/'
+                    commandLine 'python', 'android_version_code.py',
+                            '--with-android-cpu-arch', abi,
+                            '--with-android-min-sdk-version', Config.minSdkVersion,
+                            '--with-android-max-sdk-version', Config.targetSdkVersion,
+                            buildDateOverride
+                    standardOutput = versionCode
+                }
             }
 
             /* CENO: For F-Droid allow generated buildId to be overridden with value included in local.properties */
-            def versionCodeOverride = (localProperties['buildId'] ?: stdout.toString()) as Long
+            def versionCodeOverride = (localProperties['buildId'] ?: versionCode.toString()) as Long
 
             println("versionCode for $abi = $versionCodeOverride")
 
@@ -586,5 +606,6 @@ clean {
   delete 'build', 'target', fileTree("$project.rootDir/output/") {
       include '**/*.aab'
       include '**/*.apk'
+      include '**/*.txt'
   }
 }
