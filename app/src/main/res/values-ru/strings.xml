@@ -419,7 +419,7 @@
     <string name="bookmark_name_label">Имя</string>
     <string name="library_bookmarks">Закладки</string>
     <string name="bookmark_menu_save_button">Сохранить</string>
-    <string name="preferences_allow_crash_reporting_description">В случае возникновения ошибок, отправляйте отчеты разработчикам</string>
+    <string name="preferences_allow_crash_reporting_description">Отправляйте отчеты разработчикам после возникновения сбоев</string>
     <string name="preferences_metrics_campaign">Фоновые данные</string>
     <string name="metrics_campaign_more_info">Дополнительная информация</string>
     <string name="metrics_ouinet_title">Данные Ceno</string>
@@ -435,4 +435,13 @@
     <string name="bookmark_invalid_url_error">Неправильный URL</string>
     <string name="bookmark_menu_copy_button">Копировать</string>
     <string name="bookmark_menu_edit_button">Изменить</string>
+    <string name="metrics_ouinet_description">Предоставляйте разработчикам анонимные метрики с соблюдением конфиденциальности</string>
+    <string name="edit_bookmark_folder_fragment_title">Редактировать папку</string>
+    <string name="edit_bookmark_fragment_title">Редакт. закладку</string>
+    <string name="bookmarks_empty_message">Здесь нет закладок</string>
+    <string name="bookmark_item_menu_button">кнопка меню пункта закладки</string>
+    <string name="add_or_remove_bookmark">добавить или удалить Закладку</string>
+    <string name="library_desktop_bookmarks_unfiled">Другие закладки</string>
+    <string name="metrics_consent_dialog_description">Мы запускаем систему показателей, уважающую конфиденциальность, чтобы лучше понять потребности пользователей Ceno.\n\nПодробную информацию о том, что мы собираем и как обрабатываем ваши данные, вы можете найти в нашей политике конфиденциальности..\n\nВы также можете в любой момент отказаться от этой функции через Настройки &gt; Фоновые метрики.</string>
+    <string name="bookmark_deletion_confirmation">Вы уверены, что хотите удалить эту закладку?</string>
 </resources>
