@@ -84,7 +84,7 @@
     <string name="customize_add_bootstrap_save">Kaydet</string>
     <string name="bit_torrent_bootstraps_category">BitTorrent ön yüklemeleri</string>
     <string name="customize_extra_bittorrent_bootstrap">Ek BitTorrent ön yükleyicileri</string>
-    <string name="not_applicable">Kullanılamıyor</string>
+    <string name="not_applicable">Kullanılamaz</string>
     <string name="udp_category">UDP</string>
     <string name="crash_report_sent">Çökme bildirimi gönderildi!</string>
     <string name="preferences_website_sources_summary">Site içeriğinin nereden yüklenmesini istediğinizi seçin</string>
@@ -308,7 +308,7 @@
     <string name="support_button_text">Destek</string>
     <string name="eq_news_button_text">Haberler</string>
     <string name="eq_values_button_text">Değerler</string>
-    <string name="about_content_para_2">Ceno Browser, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren, kar amacı gütmeyen bir Kanada kuruluşu olan eQualitie tarafından geliştirilmiş bir projedir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.</string>
+    <string name="about_content_para_2">Ceno Browser, daha eşit ve eşitlikçi bir ağ desteği için merkezi olmayan internet hizmetleri geliştiren kar amacı gütmeyen bir Kanada kuruluşu olan eQualitie tarafından geliştirilmiş bir projedir. eQualitie çözümleri açık kaynaklıdır, saha koşullarında denenmiştir ve değerlerimiz göz önünde bulundurularak geliştirilmiştir. Her gün, milyonlarca insana çevrim içi olarak bir araya gelme özgürlüğü sağlarlar.</string>
     <string name="skip_the_tour_button">Turu atla</string>
     <string name="btn_next">Sonraki</string>
     <string name="btn_exit">Çık</string>
