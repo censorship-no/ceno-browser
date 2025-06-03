@@ -103,7 +103,7 @@
     <string name="preferences_make_default_browser">Ustaw Ceno jako domyślną przeglądarkę</string>
     <string name="preferences_about_geckoview">GeckoView</string>
     <string name="preferences_about_ouinet_protocol">Protokół Ouinet</string>
-    <string name="ceno_notification_title">Usługa Przeglądarki Ceno</string>
+    <string name="ceno_notification_title">Udostępnianie zachowanych zakładek</string>
     <string name="ceno_notification_description">Dotknij, po więcej informacji</string>
     <string name="preferences_about_ceno_browser_service">Usługa Przeglądarki Ceno</string>
     <string name="ceno_notification_clear_do_description">Tak</string>
@@ -381,7 +381,7 @@
     <string name="preferences_clear_behavior_option_1">Podpowiedź</string>
     <string name="status_enabled">Włączone</string>
     <string name="confirm_clear_cached_content_desc">Twoja zawartość zostanie natychmiastowo usunięta</string>
-    <string name="clean_insights_sub_header">Chcielibyśmy rejestrować następujące metryki do 31 stycznia 2025 r.:</string>
+    <string name="clean_insights_sub_header">Chcielibyśmy rejestrować następujące metryki:</string>
     <string name="optional_metrics">Opcjonalne metryki:</string>
     <string name="device_type">Typ urządzenia</string>
     <string name="device_locale">Lokalizacja urządzenia (język)</string>
@@ -402,7 +402,7 @@
     <string name="developer_tools_enabled">Narzędzia dla dewelopera włączone</string>
     <string name="developer_tools_disabled">Narzędzia dla dewelopera wyłączone</string>
     <string name="clean_insights_header">Pomóż ulepszyć Ceno!</string>
-    <string name="clean_insights_explainer">Twój wkład będzie anonimowy i możesz z niego zrezygnować w dowolnym momencie.</string>
+    <string name="clean_insights_explainer">Twój wkład będzie anonimowy i możesz z niego zrezygnować w dowolnym momencie poprzez Ustawienia &gt; Metryki w tle.</string>
     <string name="clean_insights_opt_in">TAK, WPUŚĆ MNIE</string>
     <string name="preferences_clean_insights_backdate">Włącz wstępne datowanie metryk</string>
     <string name="ceno_notification_confirm_description">Czy chcesz usunąć wszystkie swoje dane z Ceno?</string>
@@ -414,4 +414,27 @@
     <string name="library_bookmarks">Zakładki</string>
     <string name="bookmark_menu_save_button">Zapisz</string>
     <string name="bookmark_deletion_confirmation">Jesteś pewien, że chcesz usunąć tę zakładkę?</string>
+    <string name="metrics_campaign_more_info">Więcej informacji</string>
+    <string name="preferences_metrics_campaign">Metryki w tle</string>
+    <string name="metrics_ouinet_title">Metryki Ceno</string>
+    <string name="metrics_ouinet_description">Wyślij deweloperom anonimowe, szanujące prywatność metryki</string>
+    <string name="metrics_consent_accept">Akceptuje</string>
+    <string name="consent_dialog_modify_privacy_settings">Dostosuj ustawienia prywatności</string>
+    <string name="bookmark_url_label">URL</string>
+    <string name="bookmark_add_folder">Dodaj folder</string>
+    <string name="library_desktop_bookmarks_unfiled">Inne zakładki</string>
+    <string name="bookmark_invalid_url_error">Niepoprawny URL</string>
+    <string name="bookmark_add_folder_fragment_label">Dodaj folder</string>
+    <string name="preferences_allow_crash_reporting_description">Wyślij raporty deweloperom po awarii</string>
+    <string name="bookmark_folder_label">FOLDER</string>
+    <string name="add_or_remove_bookmark">dodaj lub usuń Zakładkę</string>
+    <string name="bookmark_delete_folder_confirmation_dialog">Na pewno chcesz usunąć ten folder?</string>
+    <string name="metrics_campaign_view_privacy_policy">Polityka prywatności</string>
+    <string name="bookmarks_empty_message">Brak zakładek</string>
+    <string name="bookmark_menu_copy_button">Kopiuj</string>
+    <string name="bookmark_menu_open_in_new_tab_button">Otwórz w nowej zakładce</string>
+    <string name="edit_bookmark_folder_fragment_title">Edytuj folder</string>
+    <string name="edit_bookmark_fragment_title">Edytuj zakładkę</string>
+    <string name="bookmark_item_menu_button">przycisk dodania zakładki menu</string>
+    <string name="metrics_consent_dialog_description">Uruchamiamy system metryk szanujących prywatność, który pomoże nam lepiej zrozumieć potrzeby użytkowników Ceno\n\nMożesz przejrzeć szczegóły jakie dane zbieramy i jak ja przetwarzamy w naszej Polityce Prywatności\n\nMożesz także wystąpić z programy w dowolnym czasie poprzez Ustawienia &gt; Metryki w tle.</string>
 </resources>
