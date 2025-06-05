@@ -4,6 +4,7 @@ This release:
 - Introduces privacy-preserving metrics collection
 - Adds bookmarking feature
 - Uses new version code scheme for release builds
+- Updates Android-Components to v139.0.2
 
 # v2.4.7
 This release:
