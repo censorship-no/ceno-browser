@@ -407,4 +407,8 @@
     <string name="bookmark_menu_save_button">保存</string>
     <string name="preferences_allow_crash_reporting_description">在程序崩溃后向开发者发送报告</string>
     <string name="preferences_metrics_campaign">背景调查</string>
+    <string name="metrics_campaign_view_privacy_policy">隐私政策</string>
+    <string name="metrics_consent_accept">我同意</string>
+    <string name="bookmark_menu_edit_button">编辑</string>
+    <string name="bookmark_menu_copy_button">复制</string>
 </resources>
