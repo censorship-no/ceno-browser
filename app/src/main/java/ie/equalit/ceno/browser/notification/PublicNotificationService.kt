@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import ie.equalit.ceno.BrowserActivity
@@ -121,5 +122,10 @@ class PublicNotificationService:AbstractPublicNotificationService() {
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacks(showConfirmCallback)
+    }
+
+    override fun onTimeout(startId: Int, fgsType: Int) {
+        stopSelf()
+        super.onTimeout(startId, fgsType)
     }
 }
