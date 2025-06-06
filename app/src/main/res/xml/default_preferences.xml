@@ -59,5 +59,5 @@
         android:defaultValue="false" />
     <androidx.preference.SwitchPreferenceCompat
         android:key="@string/pref_key_personal_mode_only"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 </PreferenceScreen>
