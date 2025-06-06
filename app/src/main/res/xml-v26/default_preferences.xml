@@ -57,4 +57,7 @@
     <androidx.preference.SwitchPreferenceCompat
         android:key="@string/pref_key_show_developer_tools"
         android:defaultValue="false" />
+    <androidx.preference.SwitchPreferenceCompat
+        android:key="@string/pref_key_personal_mode_only"
+        android:defaultValue="false" />
 </PreferenceScreen>
