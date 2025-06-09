@@ -1,8 +1,8 @@
-Comunicado oficial:
+Este lançamento oficial:
 
-- Modifica a aparência do pop-up Ceno Sources
+- Modifica a aparência da janela de Ceno Sources
 - Atualiza a biblioteca Android-Components para a v109.2.0
-- Atualização da Ouinet para a v0.21.6
-- Corrige a eliminação de entradas na barra de endereços durante a digitação
+- Atualiza Ouinet para a v0.21.6
+- Corrige a eliminação das entradas na barra de endereço durante a digitação
 - Altera a disposição e o comportamento dos botões de navegação no menu
 - Pequenas atualizações nas traduções
