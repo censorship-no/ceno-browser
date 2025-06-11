@@ -45,7 +45,7 @@
     <string name="customization_settings">سفارشی‌سازی</string>
     <string name="browser_menu_library">کتابخانه</string>
     <string name="delete_browsing_data_prompt_cancel">لغو</string>
-    <string name="delete_browsing_data_prompt_allow">حذف‌</string>
+    <string name="delete_browsing_data_prompt_allow">حذف</string>
     <string name="preferences_delete_browsing_data_snackbar">داده‌های مرورگری حذف شد</string>
     <string name="deleting_browsing_data_in_progress">در حال حذف داده‌های مرورگری</string>
     <string name="preferences_delete_browsing_data">حذف داده‌های مرورگری</string>
@@ -85,7 +85,7 @@
     <string name="crash_report_sent">گزارش اشکال ارسال شد!</string>
     <string name="preferences_website_sources_summary">انتخاب کنید که می‌خواهید محتوای وب‌سایت را از کجا بارگذاری کنید</string>
     <string name="browser_menu_back">بازگشت</string>
-    <string name="general_category">عمومی‌</string>
+    <string name="general_category">عمومی</string>
     <string name="preference_choose_search_engine">انتخاب موتور جست‌وجو</string>
     <string name="customize_extra_bittorrent_bootstrap">بوت‌استرپ‌های اضافی بیت‌تورنت</string>
     <string name="customize_bittorrent_bootstrap_add_custom_bootstraps">افزودن بوت‌استرپ‌های سفارشی</string>
@@ -133,7 +133,7 @@
     <string name="onboarding_warning_title">مجوز رد شد</string>
     <string name="onboarding_warning_text">بهینه‌سازی باتری همچنان فعال است. \n \nبه «تنظیمات &gt; غیرفعال کردن بهینه‌سازی باتری» بروید تا بعدا این مجوز را بدهید</string>
     <string name="ceno_clear_dialog_cancel">لغو</string>
-    <string name="ceno_clear_dialog_description">هشدار: پاک کردن کش و داده‌های برنامه باعث تنظیم مجدد سنو خواهد شد طوری که انگار تا به حال استفاده نشده.</string>
+    <string name="ceno_clear_dialog_description">هشدار: پاک کردن کش و داده‌های برنامه باعث تنظیم مجدد سنو خواهد شد طوری که انگار هرگز استفاده نشده.</string>
     <string name="ceno_clear_dialog_title">پاک کردن سنو</string>
     <string name="ceno_clear_dialog_clear_cache_only">فقط پاک کردن کش سنو</string>
     <string name="ceno_clear_action_description">پاک کردن</string>
@@ -311,7 +311,7 @@
     <string name="preferences_theme_option_3">تنظیم با حالت صرفه‌جویی در باتری</string>
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">دانلود</string>
     <string name="website_button_link">https://ceno.app/fa/index.html</string>
-    <string name="about_content_title">وب را ‌دست‌به‌دست کن!</string>
+    <string name="about_content_title">!وب را ‌دست‌به‌دست کن</string>
     <string name="about_content_para_1">اولین مرورگر موبایل در جهان است که روش‌های فعلی سانسور اینترنت را بی‌اثر می‌کند. زیرساخت همتا‌به‌همتای آن به افراد اجازه می‌دهد تا به اطلاعات وب در مناطقی که اتصال اینترنتی قطع شده یا به خطر افتاده، دسترسی داشته باشند و آن را به اشتراک بگذارند.</string>
     <string name="about_content_para_2">مرورگر سنو پروژه‌ای از شرکت eQualit.ie است؛ یک سازمان غیرانتفاعی کانادایی که به منظور حمایت از شبکه‌ای برابر و عادلانه‌تر، مجموعه‌ای از خدمات اینترنتی غیرمتمرکز ارائه می‌دهد. راه‌حل‌های eQualitie متن‌باز هستند، امتحان خود را در عمل پس داده‌اند و هماهنگ با ارزش‌های ما شکل گرفته‌اند. این راه‌حل‌ها هر روز میلیون‌ها نفر را به صورت آنلاین از حق آزادی انجمن برخوردار می‌کنند.</string>
     <string name="support_button_text">پشتیبانی</string>
@@ -319,7 +319,7 @@
     <string name="eq_values_button_text">ارزش‌ها</string>
     <string name="enable_debug_logs">فعال‌سازی گزارش‌های اشکال‌زدایی</string>
     <string name="preferences_change_language">تغییر زبان‌</string>
-    <string name="btn_next">بعدی‌</string>
+    <string name="btn_next">بعدی</string>
     <string name="skip_the_tour_button">صرف‌نظر از تور</string>
     <string name="standby_tip_title">نکته</string>
     <string name="change_language">تغییر زبان</string>
@@ -384,9 +384,9 @@
     <string name="preferences_clean_insights_backdate">فعال‌سازی ثبت معیارها به‌صورت گذشته‌نگر</string>
     <string name="ceno_notification_confirm_description">می‌خواهید تمام داده‌های خود را از سنو پاک کنید؟</string>
     <string name="bookmark_menu_share_button">اشتراک‌گذاری</string>
-    <string name="bookmark_menu_delete_button">حذف‌</string>
-    <string name="bookmark_name_label">نام‌</string>
-    <string name="library_bookmarks">سایت‌های برتر‌</string>
+    <string name="bookmark_menu_delete_button">حذف</string>
+    <string name="bookmark_name_label">نام</string>
+    <string name="library_bookmarks">بوکمارک‌ها</string>
     <string name="bookmark_menu_save_button">ذخیره</string>
     <string name="preferences_allow_crash_reporting_description">ارسال گزارش به توسعه‌دهندگان پس از توقف ناگهانی برنامه</string>
     <string name="preferences_metrics_campaign">آمارهای پس‌زمینه</string>
