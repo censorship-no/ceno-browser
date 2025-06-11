@@ -37,7 +37,7 @@ class Ouinet (
             .setFrontEndEp(context.resources.getString(R.string.loopback_ip) + ":" + BuildConfig.FRONTEND_PORT)
             .setErrorPagePath(getErrorPagePath())
             .setDisableBridgeAnnouncement(!CenoSettings.isBridgeAnnouncementEnabled(context))
-            .setMetricsEnableOnStart(Settings.isOuinetMetricsEnabled(context))
+            .setMetricsEnableOnStart(false)
             .setMetricsServerUrl("https://endpoint-dev.ouinet.work/.well-known/endpoint")
             .setMetricsServerToken(METRICS_SERVER_TOKEN)
             .setMetricsServerTlsCaCert(BuildConfig.METRICS_TLS_CA_CERT)
