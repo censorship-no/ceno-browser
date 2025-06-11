@@ -133,6 +133,5 @@
     <string name="bookmark_name_label">Όνομα</string>
     <string name="library_bookmarks">Σελιδοδείκτες</string>
     <string name="bookmark_menu_save_button">Αποθήκευση</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ρυθμίσεις Ceno</string>
     <string name="tooltip_sources_title">Πηγές Ceno</string>
 </resources>
