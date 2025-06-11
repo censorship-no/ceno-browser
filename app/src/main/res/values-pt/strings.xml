@@ -158,7 +158,7 @@
     <string name="preferences_theme">Definir tema do app</string>
     <string name="clear_cache_success">O cache foi limpo com sucesso</string>
     <string name="clear_cache_fail">A limpeza do cache falhou, tente novamente em breve</string>
-    <string name="about_category">Sobre</string>
+    <string name="about_category">Sobre e qualidade</string>
     <string name="ceno_notification_clear_do_description">Sim</string>
     <string name="ceno_notification_channel_name">Serviço Ceno</string>
     <string name="ceno_on_mobile_data_dialog_title" tools:ignore="UnusedResources">Aviso do Navegador Ceno</string>
@@ -183,7 +183,7 @@
     <string name="preference_show_search_suggestions_summary">Ceno irá enviar o que digita na barra de endereços para o motor de procura</string>
     <string name="ouinet_client_fetch_fail">Falha em mudar a configuração Ceno</string>
     <string name="addon_placeholder">Sem Extensões Disponíveis</string>
-    <string name="website_button_text">Website</string>
+    <string name="website_button_text">Site</string>
     <string name="source_code_button_text">Código-fonte</string>
     <string name="preferences_allow_notifications">Notificações</string>
     <string name="onboarding_warning_text_v33_1">As notificações não são permitidas.
