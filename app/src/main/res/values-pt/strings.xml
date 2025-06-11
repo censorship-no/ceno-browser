@@ -222,9 +222,7 @@
     <string name="onboarding_cleanup_text">Limpe seu histórico de navegação, credenciais e qualquer rastro seu deixado no Ceno com um único botão.</string>
     <string name="ceno_home_card_personal_text">Boa conectividade, mais privacidade. Para fazer login em contas, sem deixar traços, sem compartilhamento</string>
     <string name="onboarding_finish_button">Terminar</string>
-    <string name="onboarding_public_personal_text">Use Guias Públicas para ler notícias, assistir vídeos e navegar. Compartilhe o conteúdo com outros usuário Ceno.
-\n
-\nGuias Pessoais são melhores para contas de mídia social, compras on-line e navegar em sites que você não quer compartilhar com outros.</string>
+    <string name="onboarding_public_personal_text">Use as guias Públicas para ler notícias, assistir a vídeos e navegar na web em geral. No modo Público, também pode partilhar conteúdo da web com outros utilizadores do Ceno. As guias Pessoais são mais adequadas para contas de redes sociais, compras online e navegação em sites que não deseja partilhar com outras pessoas.</string>
     <string name="personal_home_learn_more">Quer saber mais?</string>
     <string name="ouinet_client_fetch_success">Ceno configurações atualizadas</string>
     <string name="ceno_personal_browsing_description">Ceno não irá compartilhar conteúdo de guias personalizadas com outros usuários. Você pode visitar sites que exigem fazer login.</string>
@@ -346,9 +344,9 @@
     <string name="preferences_change_language">Mudar idioma</string>
     <string name="eq_news_button_text">Notícias</string>
     <string name="eq_values_button_text">Valores</string>
-    <string name="clean_insights_header">Ajude a melhorar o Ceno!</string>
-    <string name="clean_insights_sub_header">Gostaríamos de salvar as seguintes métricas até 31 de Janeiro de 2025:</string>
-    <string name="clean_insights_explainer">Sua contribuição é anônima, e poderá retirá-la quando quiser.</string>
+    <string name="clean_insights_header">Ajude-nos a melhorar o Ceno!</string>
+    <string name="clean_insights_sub_header">Gostaríamos de registar as seguintes métricas:</string>
+    <string name="clean_insights_explainer">A sua contribuição será anónima e poderá cancelá-la a qualquer momento em Definições &gt; Métricas de fundo.</string>
     <string name="optional_metrics">Métricas opcionais:</string>
     <string name="device_type">Tipo de dispositivo</string>
     <string name="device_locale">Local do dispositivo (idioma)</string>
@@ -431,7 +429,7 @@
     <string name="metrics_consent_dialog_description">Estamos a lançar um sistema de métricas que respeita a privacidade para nos ajudar a compreender melhor as necessidades dos utilizadores do Ceno.\n\nPode consultar os detalhes sobre o que iremos recolher e como iremos tratar os seus dados na nossa Política de Privacidade.\n\nTambém pode desativar esta funcionalidade a qualquer momento em Definições &gt; Métricas em segundo plano.</string>
     <plurals name="developer_tools_disable_alert">
         <item quantity="one">Está a %d clique de desativar as ferramentas de programador</item>
-        <item quantity="many">Está a %d clique de desativar as ferramentas de programador</item>
-        <item quantity="other">Está a %d clique de desativar as ferramentas de programador</item>
+        <item quantity="many">Está a %d cliques de desativar as ferramentas de programador</item>
+        <item quantity="other">Está a %d cliques de desativar as ferramentas de programador</item>
     </plurals>
 </resources>
