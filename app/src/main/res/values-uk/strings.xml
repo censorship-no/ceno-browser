@@ -422,4 +422,5 @@
     <string name="library_desktop_bookmarks_unfiled">Інші закладки</string>
     <string name="bookmark_item_menu_button">кнопка меню елемента закладки</string>
     <string name="metrics_consent_dialog_description">Ми запускаємо систему показників, що поважає конфіденційність, щоб краще зрозуміти потреби користувачів Ceno.\n\nВи можете ознайомитися з детальною інформацією про те, що ми збираємо та як ми обробляємо ваші дані, у нашій Політиці конфіденційності.\n\nВи також можете будь-коли відмовитися від цієї функції в розділі «Налаштування» &gt; «Фонові показники».</string>
+    <string name="metrics_campaign_view_privacy_policy">Політика конфіденційності</string>
 </resources>
