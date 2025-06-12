@@ -130,7 +130,7 @@ class CenoPreferences(private val appContext: Context) : PreferencesHolder {
 
     var showMetricsConsentDialog by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_show_metrics_consent_dialog),
-        default = true
+        default = false
     )
 
     /**
