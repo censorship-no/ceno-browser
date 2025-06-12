@@ -675,7 +675,7 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
         private const val TAG = "BrowserActivity"
         const val DELAY_TWO_SECONDS = 2000L
         fun isVersionForConsent(context: Context) : Boolean {
-            return Pattern.compile("\\A2\\.5\\.\\d\\z").matcher(
+            return Pattern.compile("\\A2\\.6\\.\\d\\z").matcher(
                 context.packageManager.getPackageInfo(context.packageName, 0).versionName.toString()
             ).matches()
         }
