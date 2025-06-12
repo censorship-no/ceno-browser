@@ -200,4 +200,6 @@
     <string name="eq_news_button_text">خبریں</string>
     <string name="preferences_ceno_sources_upnp">UPnP سٹيٹس</string>
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">ڈاؤن لوڈ کریں</string>
+    <string name="bookmark_menu_delete_button">حذف کریں</string>
+    <string name="bookmark_menu_save_button">محفوظ کریں</string>
 </resources>

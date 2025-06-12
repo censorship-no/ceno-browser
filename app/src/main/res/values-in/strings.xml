@@ -390,4 +390,11 @@
     <string name="browser_menu_library">Perpustakaan</string>
     <string name="preferences_announcement_source_option_2">Rancangan</string>
     <string name="preferences_announcement_source_option_3">Arsip</string>
+    <string name="bookmark_menu_edit_button">Mengubah</string>
+    <string name="bookmark_menu_share_button">Bagikan</string>
+    <string name="bookmark_menu_delete_button">Hapus</string>
+    <string name="bookmark_name_label">Nama</string>
+    <string name="library_bookmarks">Penanda</string>
+    <string name="bookmark_menu_save_button">Simpan</string>
+    <string name="bookmark_deletion_confirmation">Apakah anda yakin untuk menghapus bookmark ini?</string>
 </resources>

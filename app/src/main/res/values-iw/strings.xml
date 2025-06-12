@@ -90,4 +90,8 @@
     <string name="learn_more_title">למד עוד</string>
     <string name="preferences_customization">התאמה אישית</string>
     <string name="share_logs">שיתוף</string>
+    <string name="bookmark_menu_delete_button">למחוק</string>
+    <string name="bookmark_name_label">שם</string>
+    <string name="library_bookmarks">סימניות</string>
+    <string name="bookmark_menu_share_button">שיתוף</string>
 </resources>

@@ -1,0 +1,5 @@
+Bu sürümde:
+- Android-Components 138.0.3 sürümüne güncellendi
+- Gradle 8.11.1 sürümüne ve Kotlin 2.0.0 sürümüne güncellendi
+- Sentry 8.11.1 sürümüne güncellendi
+- Gson 2.11.0 sürümüne güncellendi

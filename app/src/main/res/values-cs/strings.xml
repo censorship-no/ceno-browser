@@ -392,4 +392,8 @@
     <string name="developer_tools_enabled">Vývojářské nástroje povoleny</string>
     <string name="developer_tools_disabled">Vývojářské nástroje jsou zakázány</string>
     <string name="ceno_network_status_disconnected">Odpojeno. Zkontrolujte nastavení sítě nebo exportujte protokoly pro další informace.</string>
+    <string name="bookmark_menu_share_button">Sdílet</string>
+    <string name="bookmark_menu_delete_button">Smazat</string>
+    <string name="bookmark_name_label">Jméno</string>
+    <string name="library_bookmarks">Záložky</string>
 </resources>
