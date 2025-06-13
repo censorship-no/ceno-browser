@@ -134,9 +134,7 @@
     <string name="onboarding_warning_text">L’optimisation de la batterie est encore activée.
 \n
 \nAccédez à « Paramètres &gt; Désactiver l’optimisation de la batterie » pour donner l’autorisation ultérieurement</string>
-    <string name="about_content">&lt;p&gt;%1$s - Partagez le Web.&lt;/p&gt; &lt;p&gt;Ceno est le premier navigateur mobile au monde qui contourne les méthodes actuelles de censure d’internet. Sa technologie en pair à pair permet aux utilisateurs et aux utilisatrices d’accéder et de partager des informations Web dans des régions où la connectivité a été interrompue ou compromise. &lt;/p&gt; &lt;p&gt;%1$s est un projet d\'&lt;a href=\"https://equalit.ie\"&gt;eQualitie&lt;/a&gt; – une organisation canadienne à but non lucratif qui crée des services Internet décentralisés en soutien d\'un réseau plus égal et équitable. Les solutions d\'eQualitie sont open source, éprouvées et développées dans le respect de nos valeurs. Chaque jour, elles permettent la liberté d\'association pour des millions de personnes en ligne./p&gt;</string>
     <string name="ceno_clear_dialog_description">AVERTISSEMENT : Effacer le cache et les données de l’appli réinitialisera l’appli Ceno comme si elle n’avait jamais été utilisée.</string>
-    <string name="browser_menu_ceno_ext">Paramètres de Ceno</string>
     <string name="onboarding_skip_button">Ignorer</string>
     <string name="onboarding_battery_text">Sous peu, le système d’exploitation vous demandera la permission de
 \n
@@ -364,29 +362,17 @@
     <string name="standby_tip_announcements">Vérifiez les mises à jour dans la section des annonces</string>
     <string name="select_language">Sélectionner la langue :</string>
     <string name="privacy_policy_url">https://ceno.app/fr/privacy_policy.html</string>
-    <string name="clean_insights_sub_header">Nous aimerions enregistrer les mesures suivantes jusqu\'au 31 janvier 2025 :</string>
+    <string name="clean_insights_sub_header">Nous aimerions enregistrer les mesures suivantes :</string>
     <string name="clean_insights_header">Aidez-nous à améliorer Ceno !</string>
     <string name="ceno_permissions_category">Autorisations</string>
     <string name="optional_metrics">Métriques facultatives :</string>
     <string name="device_type">Type d\'appareil</string>
     <string name="device_locale">Local de l\'appareil (langue)</string>
-    <string name="preferences_allow_clean_insights_tracking">Autoriser les analyses en arrière-plan</string>
-    <string name="clean_insights_explainer">Votre contribution sera anonyme et vous pourrez vous désinscrire à tout moment.</string>
-    <string name="load_times">Heure de démarrage de l\'application</string>
+    <string name="clean_insights_explainer">Votre contribution sera anonyme et vous pourrez vous désinscrire à tout moment via Paramètres &gt; Mesures d\'arrière-plan.</string>
     <string name="clean_insights_opt_in">Oui, inscrivez-moi</string>
     <string name="clean_insights_maybe_later">non, peut être plus tard</string>
-    <string name="clean_insights_successful_opt_in">Activer les analyses en arrière-plan</string>
-    <string name="clean_insights_successful_opt_out">désactiver les analyses en arrière-plan</string>
     <string name="standby_dont_show">Ne plus afficher cet avertissement</string>
     <string name="startup_category">Démarrage</string>
-    <string name="ouinet_startup_time_header">Combien de temps pensez-vous qu\'il faut généralement pour que Ceno démarre ?</string>
-    <string name="ouinet_startup_time_too_long">Trop long</string>
-    <string name="ouinet_startup_time_quick">Rapide</string>
-    <string name="ouinet_startup_time_1">1</string>
-    <string name="ouinet_startup_time_2">2</string>
-    <string name="ouinet_startup_time_3">3</string>
-    <string name="ouinet_startup_time_4">4</string>
-    <string name="ouinet_startup_time_5">5</string>
     <string name="thank_you_for_feedback">Merci pour votre retour !</string>
     <string name="submit">Envoyer</string>
     <string name="standby_take_me_anyway">Emmènes moi à Ceno quand même</string>
@@ -423,4 +409,34 @@
     <string name="ceno_notification_confirm_description">Voulez-vous effacer toutes vos données de Ceno ?</string>
     <string name="preferences_clean_insights_backdate">Activer la rétrodatation des mesures</string>
     <string name="ceno_sources_shared_by_local_cache">Depuis le cache du navigateur</string>
+    <string name="library_bookmarks">Marque-pages</string>
+    <string name="bookmark_menu_delete_button">Supprimer</string>
+    <string name="bookmark_name_label">Nom</string>
+    <string name="bookmark_menu_share_button">Partager</string>
+    <string name="bookmark_menu_save_button">Enregistrer</string>
+    <string name="metrics_ouinet_title">Mesures de Ceno</string>
+    <string name="bookmark_menu_copy_button">Copier</string>
+    <string name="bookmark_menu_open_in_new_tab_button">Ouvrir dans un nouvel onglet</string>
+    <string name="bookmark_url_label">URL</string>
+    <string name="edit_bookmark_fragment_title">Modifier le signet</string>
+    <string name="bookmark_add_folder">Ajouter un dossier</string>
+    <string name="bookmark_folder_label">DOSSIER</string>
+    <string name="preferences_allow_crash_reporting_description">Envoyer des rapports aux développeurs après des plantages</string>
+    <string name="metrics_campaign_more_info">Plus d\'informations</string>
+    <string name="preferences_metrics_campaign">Mesures d\'arrière-plan</string>
+    <string name="consent_dialog_modify_privacy_settings">Modifier les paramètres de confidentialité</string>
+    <string name="bookmarks_empty_message">Pas de signets ici</string>
+    <string name="metrics_consent_accept">J\'accepte</string>
+    <string name="metrics_campaign_view_privacy_policy">Politique de confidentialité</string>
+    <string name="metrics_ouinet_description">Soumettre des mesures anonymes et respectueuses de la vie privée aux développeurs</string>
+    <string name="bookmark_menu_edit_button">Modifier</string>
+    <string name="library_desktop_bookmarks_unfiled">Autres signets</string>
+    <string name="bookmark_invalid_url_error">URL invalide</string>
+    <string name="bookmark_deletion_confirmation">Est-ce que vous êtes sûr de vouloir supprimer ce signet?</string>
+    <string name="bookmark_add_folder_fragment_label">Ajouter un dossier</string>
+    <string name="add_or_remove_bookmark">ajouter ou supprimer le signet</string>
+    <string name="bookmark_delete_folder_confirmation_dialog">Est-ce que vous êtes sûr de vouloir supprimer ce dossier?</string>
+    <string name="edit_bookmark_folder_fragment_title">Modifier le dossier</string>
+    <string name="metrics_consent_dialog_description">Nous lançons un système de mesure respectueux de la vie privée pour nous aider à mieux comprendre les besoins des utilisateurs de Ceno.\n\nVous pouvez passer en revue les détails de ce que nous allons collecter et comment nous traitons vos données dans notre politique de confidentialité.\n\nVous pouvez également vous désabonner à tout moment via Paramètres &gt; Mesures d\'arrière-plan.</string>
+    <string name="bookmark_item_menu_button">bouton de menu d\'élément de signet</string>
 </resources>

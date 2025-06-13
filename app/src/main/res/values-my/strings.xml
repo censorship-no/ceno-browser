@@ -139,7 +139,6 @@
 \n
 \n၎င်းသည် အက်ပ်ကို နောက်ကွယ်မှ အလုပ်လုပ်စေနိုင်ပြီး ဝဘ်ဆိုက်များကို ဆက်တိုက် မျှဝေနိုင်ရန်အတွက် လိုအပ်သောကြောင့် ဖြစ်ပါသည်။</string>
     <string name="onboarding_welcome_title">Ceno မှ ကြိုဆိုပါတယ်</string>
-    <string name="browser_menu_ceno_ext" tools:ignore="UnusedResources">Ceno ဆက်တင်များ</string>
     <string name="onboarding_btn_get_started">စတင်ပါ</string>
     <string name="onboarding_skip_button">ကျော်မည်</string>
     <string name="ceno_clear_action_description">ရှင်းပါ/ ဖျက်ပါ</string>
@@ -171,7 +170,6 @@
     <string name="preferences_theme">အပ်ပ် ပုံစံကို သတ်မှတ်မည်</string>
     <string name="ceno_sources_category">ရင်းမြစ်များ</string>
     <string name="preferences_show_home_button">ပင်မစာမျက်နှာခလုတ်ကို ပြသမည်</string>
-    <string name="about_content">&lt;p&gt;%1$s - ဝဘ်ကို မျှဝေပါ!&lt;/p&gt; &lt;p&gt;Ceno သည် လက်ရှိအင်တာနက်ဆင်ဆာဖြတ်တောက်မှုနည်းလမ်းများကို ဘေးထွက်လုပ်ဆောင်ပေးသည့် ကမ္ဘာ့ပထမဆုံးမိုဘိုင်းဘရောက်ဆာဖြစ်သည်။ ၎င်း၏ peer-to-peer ကျောရိုးသည် လူများအား ချိတ်ဆက်မှု ပြတ်တောက်ခြင်း သို့မဟုတ် အပေးအယူခံရသည့် ဒေသများအတွင်းနှင့် ဝဘ်အချက်အလက်ကို ဝင်ရောက်မျှဝေနိုင်စေပါသည်။ &lt;/p&gt; &lt;p&gt;%1$s သည် &lt;a href=https://equalit.ie/&gt;eQualit.ie&lt;/a&gt; ၏ ပရောဂျက်တစ်ခုဖြစ်ပြီး၊ အမြတ်အစွန်းမယူသော ကနေဒါအဖွဲ့အစည်းသည် ပိုသာတူညီမျှနှင့် သာတူညီမျှသောကွန်ရက်ကိုပံ့ပိုးပေးသည့် ဗဟိုချုပ်ကိုင်မှုလျှော့ချထားသောအင်တာနက်ဝန်ဆောင်မှုများကိုဖန်တီးပေးသည်။ eQualitie ၏ ဖြေရှင်းချက်များသည် ပွင့်လင်းသောအရင်းအမြစ်ဖြစ်ပြီး ကျွန်ုပ်တို့၏တန်ဖိုးများကို စိတ်ထဲတွင် သက်သေပြပြီး တီထွင်ဖန်တီးထားသည်။ နေ့စဉ်နှင့်အမျှ ၎င်းတို့သည် အွန်လိုင်းတွင် သန်းပေါင်းများစွာသောလူများအတွက် လွတ်လပ်စွာ ပေါင်းသင်းခွင့်ကို ဖွင့်ပေးသည်။&lt;/p&gt;</string>
     <string name="preferences_ceno_sources_upnp">UPnP အခြေအနေ</string>
     <string name="preferences_ceno_network_config">ကွန်ရက် အသေးစိတ်များ</string>
     <string name="preferences_ceno_network_config_summary">Ouinet status, UDP endpoints, BitTorrent bootstraps</string>
@@ -238,7 +236,6 @@
     <string name="about_content_title">ဝဘ်ကို မျှဝေပါ!</string>
     <string name="about_content_para_1">Ceno (censorship.no! ၏အတိုကောက်) သည် လက်ရှိအင်တာနက်ဆင်ဆာဖြတ်တောက်မှုနည်းလမ်းများကို ဘေးထွက်လုပ်ဆောင်ပေးသည့် ကမ္ဘာ့ပထမဆုံးမိုဘိုင်းဘရောက်ဆာဖြစ်သည်။ ၎င်း၏ peer-to-peer ကျောရိုးသည် လူများအား ချိတ်ဆက်မှု ပြတ်တောက်ခြင်း သို့မဟုတ် အပေးအယူခံရသည့် ဒေသများအတွင်းနှင့် ဝဘ်အချက်အလက်ကို ဝင်ရောက်မျှဝေနိုင်စေပါသည်။</string>
     <string name="about_content_para_2">Ceno Browser သည် eQualitie မှ အကျိုးအမြတ်မယူသော ကနေဒါအဖွဲ့အစည်းတစ်ခုဖြစ်ပြီး ပိုမိုညီမျှပြီး သာတူညီမျှသောကွန်ရက်ကိုပံ့ပိုးပေးရန်အတွက် ဗဟိုချုပ်ကိုင်မှုလျှော့ချထားသောအင်တာနက်ဝန်ဆောင်မှုများကိုဖန်တီးပေးသည့်ပရောဂျက်တစ်ခုဖြစ်သည်။ eQualitie ၏ ဖြေရှင်းချက်များသည် ပွင့်လင်းသောအရင်းအမြစ်ဖြစ်ပြီး ကျွန်ုပ်တို့၏တန်ဖိုးများကို စိတ်ထဲတွင် သက်သေပြပြီး တီထွင်ဖန်တီးထားသည်။ နေ့စဉ်နှင့်အမျှ ၎င်းတို့သည် အွန်လိုင်းတွင် သန်းနှင့်ချီသောလူများအတွက် လွတ်လပ်စွာ သင်းပင်းဖွဲ့စည်းခွင့်ကို ဖွင့်ပေးသည်။</string>
-    <string name="preferences_allow_clean_insights_tracking">နောက်ခံပိုင်းခြားစိတ်ဖြာမှုကို ခွင့်ပြုပါ</string>
     <string name="ceno_permissions_category">ခွင့်ပြုချက်များ</string>
     <string name="preferences_clear_behavior_option_1">အချက်ပေး</string>
     <string name="preferences_clear_behavior_option_2">Ceno cache ကိုသာရှင်းလင်းပါ</string>
@@ -252,4 +249,7 @@
     <string name="eq_news_button_text">သတင်း</string>
     <string name="ceno_sources_direct_from_website">ဝက်ဘ်ဆိုက်မှ တိုက်ရိုက်</string>
     <string name="mozac_feature_downloads_dialog_download" tools:ignore="UnusedResources">‌ဒေါင်းလုပ်ဒ်</string>
+    <string name="tooltip_sources_title">Ceno အရင်းအမြစ်များ</string>
+    <string name="bookmark_menu_delete_button">ဖျက်မည်</string>
+    <string name="bookmark_menu_save_button">သိမ်းပါ</string>
 </resources>

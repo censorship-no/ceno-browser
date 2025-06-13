@@ -20,7 +20,6 @@
     <string name="ceno_on_mobile_data_dialog_stop_showing" tools:ignore="UnusedResources">Többet ne mutassa</string>
     <string name="ceno_on_mobile_data_dialog_stop_now" tools:ignore="UnusedResources">Állítsd le Ceno Most</string>
     <string name="ceno_notification_clear_description">Törlés⚠</string>
-    <string name="about_content"><p>%1$s – Oszd meg az internetet!</p> <p>A Ceno a világ első mobilböngészője, amely megkerüli a jelenlegi internetes cenzúra módszereit. Peer-to-peer gerinchálózata lehetővé teszi az emberek számára a webes információk elérését és megosztását olyan régiókban és régiók között, ahol a kapcsolat megszakadt vagy veszélybe került. </p> <p>A %1$s az eQualitie, egy kanadai szervezet projektje, amelynek küldetése az alapvető szabadságjogok és emberi jogok előmozdítása és védelme, beleértve az információ szabad online áramlását. Célunk, hogy hozzáférhető technológiát hozzunk létre, és fejlesszük az emberi jogok és szabadságjogok védelméhez szükséges készségeket a digitális korban.</p></string>
     <string name="bridge_mode_faq_url">https://ceno.app/en/support.html#bridgemode</string>
     <string name="browser_menu_share">Megosztás</string>
     <string name="share_header_2">Megosztás</string>
@@ -138,4 +137,8 @@
     <string name="preferences_customization">Testreszabás</string>
     <string name="preferences_delete_browsing_data_button">Böngészési adatok törlése</string>
     <string name="share_logs">Megosztás</string>
+    <string name="bookmark_menu_share_button">Megosztás</string>
+    <string name="bookmark_menu_delete_button">Törlés</string>
+    <string name="bookmark_name_label">Név</string>
+    <string name="library_bookmarks">Könyvjelzők</string>
 </resources>

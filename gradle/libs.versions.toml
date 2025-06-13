@@ -2,18 +2,18 @@
 
 # AndroidX
 androidx_activity_compose = "1.10.1"
-androidx_appcompat = "1.7.0"
-androidx_compose = "1.8.1"
+androidx_appcompat = "1.7.1"
+androidx_compose = "1.8.2"
 androidx_constraintlayout = "2.2.1"
 androidx_core = "1.16.0"
-androidx_lifecycle = "2.9.0"
+androidx_lifecycle = "2.9.1"
 androidx_navigation = "2.9.0"
 androidx_preference = "1.2.1"
 androidx_swiperefreshlayout = "1.1.0"
 androidx_work = "2.10.1"
 
 # Android Components
-android_components = "138.0.4"
+android_components = "139.0.4"
 
 # Google
 google_composecompiler = "1.5.14"
@@ -25,7 +25,7 @@ gradle_android_plugin = "8.9.2"
 gradle_kotlin_plugin = "2.1.21"
 
 # Kotlin
-kotlin_coroutines = "1.10.1"
+kotlin_coroutines = "1.10.2"
 kotlin_serialization = "1.8.1"
 kotlin = "2.0.0"
 
@@ -40,15 +40,13 @@ testing_jacoco = "0.8.10"
 testing_mockwebserver = "4.10.0"
 
 # Third Party
-sentry = "8.11.1"
+sentry = "8.13.2"
 gson = "2.11.0"
 tooltips = "3.3.2"
 fastlane_version = "2.1.1"
-clean_insights = "2.8.0"
-matomo = "4.2"
 
 # CENO: Versions for additional dependencies */
-ouinet_version = "1.1.1"
+ouinet_version = "1.2.0"
 relinker_version = "1.4.4"
 snakeyaml_version = "2.2"
 
@@ -127,7 +125,6 @@ mozilla-libpublicsuffixlist = { group = "org.mozilla.components", name = "lib-pu
 thirdparty_sentry = { group = "io.sentry", name = "sentry-android", version.ref = "sentry" }
 thirdparty_gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 thirdparty_tooltips = { group = "uk.co.samuelwall", name = "material-tap-target-prompt", version.ref = "tooltips" }
-thirdparty_cleaninsights = { group = "org.cleaninsights.sdk", name = "clean-insights-sdk", version.ref = "clean_insights" }
 
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx_appcompat" }
 androidx-corektx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx_core" }

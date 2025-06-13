@@ -42,4 +42,8 @@ class PrivacySettingsFragment : PreferenceFragmentCompat() {
             true
         }
     }
+
+    companion object {
+        private const val TAG = "PrivacySettingsFragment"
+    }
 }

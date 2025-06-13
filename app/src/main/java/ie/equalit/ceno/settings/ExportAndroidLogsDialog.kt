@@ -24,7 +24,6 @@ import ie.equalit.ceno.ext.requireComponents
 import ie.equalit.ceno.home.HomeFragment
 import ie.equalit.ceno.settings.SettingsFragment.Companion.LOGS_LAST_10_MINUTES
 import ie.equalit.ceno.settings.SettingsFragment.Companion.LOGS_LAST_5_MINUTES
-import ie.equalit.ceno.settings.SettingsFragment.Companion.TAG
 import ie.equalit.ceno.standby.StandbyFragment
 import ie.equalit.ceno.utils.LogReader
 import ie.equalit.ouinet.Config
@@ -222,5 +221,9 @@ class ExportAndroidLogsDialog (
 
     fun getDialog(): AlertDialog {
         return builder.create()
+    }
+
+    companion object {
+        private const val TAG = "ExportAndroidLogsDialog"
     }
 }

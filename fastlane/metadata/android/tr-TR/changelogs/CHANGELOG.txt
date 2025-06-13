@@ -1,6 +1,33 @@
+# v2.5.0
+Bu sürümde:
+- Ouinet 1.2.0 sürümüne güncellendi
+- Gizliliğe saygı duyan ölçüm toplama özelliği sunuldu
+- Yer imleri özelliği eklendi
+
+# v2.4.7
+Bu sürümde:
+- Android-Components 138.0.4 sürümüne güncellendi
+- cacert.pem 20 Mayıs Salı 03:12:02 2025 GMT zamanında oluşturulmuş pakete güncellendi
+- Çeşitli dil çevirileri güncellendi
+
+#v2.4.6
+Bu sürümde:
+- Android-Components 138.0.3 sürümüne güncellendi
+- Gradle 8.11.1 sürümüne ve Kotlin 2.0.0 sürümüne güncellendi
+- Sentry 8.11.1 sürümüne güncellendi
+- Gson 2.11.0 sürümüne güncellendi
+
+# v2.4.5
+Bu sürümde:
+- Android-Components 137.0.2 sürümüne güncellendi
+- Önceden kurulmuş eklentilerin çevrilmemesi sorunu düzeltildi
+- Ouinet 1.1.1 sürümüne güncellendi
+- cacert.pem 25 Şubat 2025 tarihinde oluşturulmuş sürüme güncellendi
+- Çeşitli dillerin çevirileri güncellendi
+
 # v2.4.4
 Bu sürümde:
-- Android-Components137.0 sürümüne güncellendi
+- Android-Components 137.0 sürümüne güncellendi
 - Ceno eklentisi 1.9.0 sürümüne güncellendi
 - uBlock Origin eklentisi 1.63.2 sürümüne güncellendi
 - Ön belleğe alınmış grup listeleri kodu yeniden yazıldı

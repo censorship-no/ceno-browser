@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import ie.equalit.ceno.R
+import ie.equalit.ceno.ext.components
 
 class UpdateBridgeAnnouncementDialog (
     context: Context
@@ -24,5 +25,9 @@ class UpdateBridgeAnnouncementDialog (
         return builder.create().apply {
             setCanceledOnTouchOutside(false)
         }
+    }
+
+    companion object {
+        const val TAG = "UpdateBridgeAnnouncementDialog"
     }
 }

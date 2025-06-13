@@ -1,14 +1,32 @@
 {
   "server": "https://matomo.ouinet.work/ci/cleaninsights.php",
-  "siteId": 3,
+  "siteId": 4,
   "timeout": 5,
   "debug": false,
   "campaigns": {
-    "ouinet-startup-time": {
-      "start": "2024-11-01T00:00:00Z",
-      "end": "2025-01-31T23:59:59Z",
+    "dailyUsage": {
+      "start": "2025-01-01T00:00:00Z",
+      "end": "2099-12-31T23:59:59Z",
       "aggregationPeriodLength": 1,
-      "numberOfPeriods": 90,
+      "numberOfPeriods": 50000,
+      "onlyRecordOnce": true,
+      "eventAggregationRule": "avg",
+      "strengthenAnonymity": true
+    },
+    "monthlyUsage": {
+      "start": "2025-01-01T00:00:00Z",
+      "end": "2099-12-31T23:59:59Z",
+      "aggregationPeriodLength": 30,
+      "numberOfPeriods": 50000,
+      "onlyRecordOnce": true,
+      "eventAggregationRule": "avg",
+      "strengthenAnonymity": false
+    },
+    "visits": {
+      "start": "2025-01-01T00:00:00Z",
+      "end": "2099-12-31T23:59:59Z",
+      "aggregationPeriodLength": 1,
+      "numberOfPeriods": 5000,
       "onlyRecordOnce": false,
       "eventAggregationRule": "avg",
       "strengthenAnonymity": false
