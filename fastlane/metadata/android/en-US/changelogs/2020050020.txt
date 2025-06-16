@@ -1,0 +1,7 @@
+This release:
+- Updates Ouinet to v1.2.0
+- Adds bookmarking feature
+- Uses new version code scheme for release builds
+- Updates Android-Components to v139.0.4
+- Updater Sentry to 8.13.2
+
