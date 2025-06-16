@@ -484,4 +484,7 @@
     <string name="bookmark_folder_label">FOLDER</string>
     <string name="add_or_remove_bookmark">add or remove Bookmark</string>
     <string name="bookmark_delete_folder_confirmation_dialog">Are you sure you want to delete this folder?</string>
+    <string name="foreground_notification_reminder_channel">Ceno</string>
+    <string name="reminder_notification_title">It has been a while</string>
+    <string name="reminder_notification_text">Re-open Ceno to keep your cache available to other users</string>
 </resources>
