@@ -361,8 +361,8 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
     override fun onPause() {
         super.onPause()
         isActivityResumed = false
-        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-            FOREGROUND_TIMEOUT_REMINDER_DURATION, reminderNotificationIntent)
+        alarmManager.set(AlarmManager.RTC_WAKEUP,
+            System.currentTimeMillis() + FOREGROUND_TIMEOUT_REMINDER_DURATION, reminderNotificationIntent)
     }
 
     override fun onStart() {
@@ -695,7 +695,7 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
             ).matches()
         }
         const val ACTION_FORGROUND_REMIND = "ie.equalit.ceno.browser.notification.action.REMIND"
-        const val FOREGROUND_TIMEOUT_REMINDER_DURATION: Long = 5 * 3600 * 1000
+        const val FOREGROUND_TIMEOUT_REMINDER_DURATION: Long = 18000000L
     }
 
     override fun onStopTapped() {
