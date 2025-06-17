@@ -287,11 +287,11 @@
     <string name="source_code_button_link" translatable="false">https://gitlab.com/ceno-app/</string>
     <string name="support_button_text">Support</string>
     <string name="support_button_link" translatable="false">@string/ceno_support_link_url</string>
-    <string name="website_eq_button_link" translatable="false">https://equalit.ie/</string>
+    <string name="website_eq_button_link" translatable="false">https://equalitie.org/</string>
     <string name="eq_news_button_text">News</string>
-    <string name="eq_news_button_link" translatable="false">https://equalit.ie/blog/</string>
+    <string name="eq_news_button_link" translatable="false">https://equalitie.org/en/news</string>
     <string name="eq_values_button_text">Values</string>
-    <string name="eq_values_button_link" translatable="false">https://equalit.ie/values/</string>
+    <string name="eq_values_button_link" translatable="false">https://equalitie.org/our-values/</string>
     <string name="ceno_onboarding_start_title">Share the web,
 \npeer-to-peer</string>
     <string name="ceno_onboarding_start_text" tools:ignore="UnusedResources">Ceno’s peer-to-peer backbone allows people to access and share website content in and across regions where connectivity has been interrupted or compromised.</string>

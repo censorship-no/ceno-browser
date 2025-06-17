@@ -116,8 +116,8 @@
     <string name="ceno_on_mobile_data_dialog_stop_showing">Не показывать снова</string>
     <string name="default_top_site_1_title">Ceno Мануал</string>
     <string name="default_top_site_1_url" tools:ignore="Untranslatable">@string/suggestedsites_ceno_ru_url</string>
-    <string name="default_top_site_2_title" tools:ignore="Untranslatable">The Moscow Times</string>
-    <string name="default_top_site_2_url" tools:ignore="Untranslatable">@string/suggestedsites_moscowtimes_url</string>
+    <string name="default_top_site_2_title" tools:ignore="Untranslatable">Кавказский Узел</string>
+    <string name="default_top_site_2_url" tools:ignore="Untranslatable">@string/suggestedsites_kavkazuzel_url</string>
     <string name="default_top_site_3_title" tools:ignore="Untranslatable">Медуза</string>
     <string name="default_top_site_3_url" tools:ignore="Untranslatable">@string/suggestedsites_meduza_url</string>
     <string name="default_top_site_4_title" tools:ignore="Untranslatable">The True Story</string>

@@ -23,7 +23,7 @@
 
     <string name="suggestedsites_ceno_ru_url" translatable="false">https://ceno.app/user-manual/ru/</string>
     <string name="suggestedsites_meduza_url" translatable="false">https://meduza.io/</string>
-    <string name="suggestedsites_moscowtimes_url" translatable="false">https://www.moscowtimes.ru/</string>
+    <string name="suggestedsites_kavkazuzel_url" translatable="false">https://www.kavkaz-uzel.eu/</string>
     <string name="suggestedsites_truestory_url" translatable="false">https://thetruestory.news/ru/russia</string>
 
     <string name="suggestedsites_ceno_uk_url" translatable="false">https://ceno.app/user-manual/uk/</string>
