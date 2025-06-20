@@ -61,7 +61,8 @@ class DefaultMetricsCampaignController(
                 override fun onError() {
                     Log.e("Ouinet-Metrics", "Failed to set metrics to newValue: $newValue")
                 }
-            }
+            },
+            forMetrics = true
         )
     }
 }
