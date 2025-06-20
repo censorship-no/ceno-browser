@@ -274,12 +274,16 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
             Settings.setCrashHappened(this@BrowserActivity, false) // reset the value of lastCrash
         }
 
-        alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+            alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
-        reminderNotificationIntent = Intent(ACTION_FORGROUND_REMIND).let {
-            it.setPackage(packageName)
-            PendingIntent.getBroadcast(applicationContext, 0, it,
-                PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+            reminderNotificationIntent = Intent(ACTION_FORGROUND_REMIND).let {
+                it.setPackage(packageName)
+                PendingIntent.getBroadcast(
+                    applicationContext, 0, it,
+                    PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+            }
         }
         updateOuinetStatus()
     }
@@ -361,7 +365,8 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
     override fun onPause() {
         super.onPause()
         isActivityResumed = false
-        alarmManager.set(AlarmManager.RTC_WAKEUP,
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM)
+            alarmManager.set(AlarmManager.RTC_WAKEUP,
             System.currentTimeMillis() + FOREGROUND_TIMEOUT_REMINDER_DURATION, reminderNotificationIntent)
     }
 
@@ -419,7 +424,8 @@ open class BrowserActivity : BaseActivity(), CenoNotificationBroadcastReceiver.N
                     R.color.ceno_action_bar
                 ).toDrawable())
         }
-        alarmManager.cancel(reminderNotificationIntent)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM)
+            alarmManager.cancel(reminderNotificationIntent)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {

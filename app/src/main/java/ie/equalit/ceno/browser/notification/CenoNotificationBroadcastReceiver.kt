@@ -38,6 +38,7 @@ class CenoNotificationBroadcastReceiver(listener: NotificationListener): Broadca
             BrowserActivity.ACTION_FORGROUND_REMIND -> {
                 val notification = NotificationCompat.Builder(context, getChannelId(context))
                     .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                    .setAutoCancel(true)
                     .setLocalOnly(true)
                     .setContentTitle(context.getString(R.string.reminder_notification_title))
                     .setContentText(context.getString(R.string.reminder_notification_text))
