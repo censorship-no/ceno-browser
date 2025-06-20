@@ -1,0 +1,4 @@
+This release:
+- Fixes foreground service timeout crash
+- Makes homepage announcements persistent
+- Updates Ouinet to v1.2.1
