@@ -133,7 +133,7 @@ Prepare release APKS, AAB, and release notes
 [bundle exec] fastlane android buildRelease
 ```
 
-Build release APKS and AAB
+Build release APKS, AAB, write checksum
 
 ### android publishMetadata
 
