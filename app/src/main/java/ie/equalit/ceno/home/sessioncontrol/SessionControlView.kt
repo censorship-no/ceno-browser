@@ -16,6 +16,7 @@ import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.home.CenoMessageCard
 import ie.equalit.ceno.home.HomeCardSwipeCallback
 import ie.equalit.ceno.home.RssItem
+import ie.equalit.ceno.home.ouicrawl.OuicrawledSite
 import ie.equalit.ceno.settings.CenoSettings
 import ie.equalit.ceno.utils.CenoPreferences
 
@@ -29,7 +30,8 @@ internal fun normalModeAdapterItems(
     messageCard: CenoMessageCard,
     mode: BrowsingMode,
     announcements: List<RssItem>?,
-    isBridgeAnnouncementEnabled: Boolean
+    isBridgeAnnouncementEnabled: Boolean,
+    ouicrawledSites : List<OuicrawledSite>?
 ): List<AdapterItem> {
     val items = mutableListOf<AdapterItem>()
 
@@ -48,6 +50,10 @@ internal fun normalModeAdapterItems(
 
     if (/*settings.showTopSitesFeature && */ topSites.isNotEmpty()) {
         items.add(AdapterItem.TopSitePager(topSites))
+    }
+    items.add(AdapterItem.SectionHeaderItem)
+    ouicrawledSites?.forEach {
+        items.add(AdapterItem.OuicrawledSiteItem(it))
     }
     return items
 }
@@ -68,7 +74,8 @@ private fun AppState.toAdapterList(
     prefs: CenoPreferences,
     messageCard: CenoMessageCard,
     announcement: List<RssItem>?,
-    isBridgeAnnouncementEnabled: Boolean
+    isBridgeAnnouncementEnabled: Boolean,
+    ouicrawledSites: List<OuicrawledSite>?
 ): List<AdapterItem> = when (mode) {
     BrowsingMode.Normal ->
         normalModeAdapterItems(
@@ -77,7 +84,8 @@ private fun AppState.toAdapterList(
             messageCard,
             mode,
             announcement,
-            isBridgeAnnouncementEnabled
+            isBridgeAnnouncementEnabled,
+            ouicrawledSites
         )
     BrowsingMode.Personal -> personalModeAdapterItems(mode, announcement)
 }
@@ -117,19 +125,21 @@ class SessionControlView(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun update(state: AppState, announcements: List<RssItem>?) {
-        /* TODO: add onboarding pages
-        if (state.shouldShowHomeOnboardingDialog(view.context.settings())) {
-            interactor.showOnboardingDialog()
-        }
-         */
-
+    fun update(state: AppState, announcements: List<RssItem>?, ouicrawledSites: List<OuicrawledSite>?) {
         val messageCard = CenoMessageCard(
             text = ContextCompat.getString(view.context,R.string.enable_bridge_card_text) + " " +
                     ContextCompat.getString(view.context,R.string.bridge_mode_ip_warning_text),
             title = ContextCompat.getString(view.context, R.string.enable_bridge_card_title)
         )
-        sessionControlAdapter.submitList(state.toAdapterList(view.context.cenoPreferences(), messageCard, announcements, CenoSettings.isBridgeAnnouncementEnabled(view.context)))
+        sessionControlAdapter.submitList(
+            state.toAdapterList(
+                view.context.cenoPreferences(),
+                messageCard,
+                announcements,
+                CenoSettings.isBridgeAnnouncementEnabled(view.context),
+                ouicrawledSites
+            )
+        )
         sessionControlAdapter.notifyDataSetChanged()
 
     }

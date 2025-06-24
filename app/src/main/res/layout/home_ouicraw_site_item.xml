@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ouicrawled_site"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/ceno_mode_margin"
+    android:layout_marginEnd="@dimen/ceno_mode_margin"
+    android:layout_marginBottom="@dimen/ceno_mode_margin"
+    android:backgroundTint="@color/ceno_home_card_background_tint"
+    android:importantForAccessibility="noHideDescendants"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_favicon"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_website_url"
+            app:layout_constraintEnd_toStartOf="@+id/tv_website_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_website_name"
+            app:srcCompat="@drawable/default_favicon" />
+
+        <TextView
+            android:id="@+id/tv_website_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_website_url"
+            app:layout_constraintStart_toEndOf="@+id/iv_favicon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="The Insider" />
+
+        <TextView
+            android:id="@+id/tv_website_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_favicon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_website_name"
+            tools:text="https://theins-ru.ceno.life" />
+
+        <TextView
+            android:id="@+id/tv_last_updated_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="last mirror - 55 minutes ago" />
+
+        <!-- CENO: Add visual-affordance implying that
+                 top site items have long click option with ellipsis -->
+        <TextView
+            android:id="@+id/tv_ellipsis_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/horizontal_ellipsis"
+            android:textColor="@color/ceno_home_card_text_color"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

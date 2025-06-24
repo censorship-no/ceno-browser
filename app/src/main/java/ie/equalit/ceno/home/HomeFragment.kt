@@ -3,6 +3,7 @@ package ie.equalit.ceno.home
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,7 @@ import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.ext.getPreferenceKey
 import ie.equalit.ceno.ext.requireComponents
 import ie.equalit.ceno.home.announcements.RSSAnnouncementViewHolder
+import ie.equalit.ceno.home.ouicrawl.OuicrawledSitesListItem
 import ie.equalit.ceno.home.sessioncontrol.DefaultSessionControlController
 import ie.equalit.ceno.home.sessioncontrol.SessionControlAdapter
 import ie.equalit.ceno.home.sessioncontrol.SessionControlInteractor
@@ -42,6 +44,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.json.Json
 import mozilla.components.concept.fetch.Request
 import mozilla.components.concept.storage.FrecencyThresholdOption
 import mozilla.components.feature.top.sites.TopSitesConfig
@@ -199,7 +202,8 @@ class HomeFragment : BaseHomeFragment() {
             context?.let { context ->
                 sessionControlView?.update(
                     it,
-                    Settings.getAnnouncementData(context)?.items /* From local storage */
+                    Settings.getAnnouncementData(context)?.items /* From local storage */,
+                    null
                 )
                 updateUI(it.mode)
                 updateSearch(it.mode)
@@ -234,18 +238,30 @@ class HomeFragment : BaseHomeFragment() {
 
                         // perform null-check and save announcement data in local
                         rssResponse?.let { Settings.saveAnnouncementData(context, it) }
+                    }
 
-                        // check for null and refresh homepage adapter if necessary
-                        // Set announcement data from local since filtering happens there (i.e Settings.getAnnouncementData())
-                        if (Settings.getAnnouncementData(context) != null) {
-                            withContext(Dispatchers.Main) {
-                                val state = context.components.appStore.state
-                                sessionControlView?.update(
-                                    state,
-                                    Settings.getAnnouncementData(context)?.items
-                                )
-                            }
+                    var ouicrawlResponse = CenoSettings.webClientRequest(
+                        context,
+                        Request("https://schedule.ceno.app/schedule.json")
+                    )
+                    ouicrawlResponse?.let {
+                        Log.d("OUICRAWL", ouicrawlResponse)
+                        var responseObject = Json.decodeFromString<OuicrawledSitesListItem>(ouicrawlResponse)
+                        val ouicrawledSites = responseObject.Sites
+                        Log.d("OUICRAWL", "${ouicrawledSites.size}")
+
+                    // check for null and refresh homepage adapter if necessary
+                    // Set announcement data from local since filtering happens there (i.e Settings.getAnnouncementData())
+                    if (Settings.getAnnouncementData(context) != null) {
+                        withContext(Dispatchers.Main) {
+                            val state = context.components.appStore.state
+                            sessionControlView?.update(
+                                state,
+                                Settings.getAnnouncementData(context)?.items,
+                                ouicrawledSites.subList(0, 10)
+                            )
                         }
+                    }
                     }
                 }
             }
