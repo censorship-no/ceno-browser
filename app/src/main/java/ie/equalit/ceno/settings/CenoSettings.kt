@@ -428,11 +428,10 @@ object CenoSettings {
                     "${SET_VALUE_ENDPOINT}/${key.command}"
             }
 
-            webClientRequest ( context,
-                if (forMetrics)
-                    Request(request, headers = MutableHeaders(Pair("X-Ouinet-Front-End-Token",
-                        context.components.ouinet.METRICS_FRONTEND_TOKEN)))
-                else Request(request)
+            webClientRequest (
+                context,
+                Request(request, headers = MutableHeaders(Pair("X-Ouinet-Front-End-Token",
+                    context.components.ouinet.METRICS_FRONTEND_TOKEN)))
             ).let { response ->
 
                 if(response == null) ouinetResponseListener?.onError()
