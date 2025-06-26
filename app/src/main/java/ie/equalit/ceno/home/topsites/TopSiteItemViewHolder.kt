@@ -51,8 +51,6 @@ class TopSiteItemViewHolder(
                     is TopSiteItemMenu.Item.RemoveTopSite -> interactor.onRemoveTopSiteClicked(
                         topSite
                     )
-                    is TopSiteItemMenu.Item.Settings -> interactor.onSettingsClicked()
-                    is TopSiteItemMenu.Item.SponsorPrivacy -> interactor.onSponsorPrivacyClicked()
                 }
             }
             topSiteMenu.menuBuilder.build(view.context).show(anchor = it)

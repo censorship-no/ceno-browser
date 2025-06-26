@@ -5,6 +5,7 @@ package ie.equalit.ceno.home.sessioncontrol
 
 import ie.equalit.ceno.browser.BrowsingMode
 import ie.equalit.ceno.home.HomepageCardType
+import ie.equalit.ceno.home.ouicrawl.OuicrawlSite
 import mozilla.components.feature.top.sites.TopSite
 
 /**
@@ -115,21 +116,16 @@ interface TopSiteInteractor {
     fun onSelectTopSite(topSite: TopSite, position: Int)
 
     /**
-     * Navigates to the Homepage Settings. Called when an user clicks on the "Settings" top site
-     * menu item.
-     */
-    fun onSettingsClicked()
-
-    /**
-     * Opens the sponsor privacy support articles. Called when an user clicks on the
-     * "Our sponsors & your privacy" top site menu item.
-     */
-    fun onSponsorPrivacyClicked()
-
-    /**
      * Called when top site menu is opened.
      */
     fun onTopSiteMenuOpened()
+}
+
+interface OuicrawlSiteInteractor {
+    fun onOuicrawlSiteMenuOpened()
+    fun onOpenInPersonalTabClicked(ouicrawlSite: OuicrawlSite)
+    fun onShortcuts(ouicrawlSite: OuicrawlSite, isTopSite:Boolean)
+    fun onOuicrawlSiteClicked(siteURL: String)
 }
 
 /**
@@ -144,10 +140,11 @@ class SessionControlInteractor(
 ) :
     //OnboardingInteractor,
     TopSiteInteractor,
-    HomePageInteractor
+    HomePageInteractor,
+        OuicrawlSiteInteractor
     {
         override fun onOpenInPrivateTabClicked(topSite: TopSite) {
-            controller.handleOpenInPrivateTabClicked(topSite)
+            controller.handleOpenInPrivateTabClicked(topSite.url)
         }
 
         override fun onRenameTopSiteClicked(topSite: TopSite) {
@@ -156,14 +153,6 @@ class SessionControlInteractor(
 
         override fun onRemoveTopSiteClicked(topSite: TopSite) {
             controller.handleRemoveTopSiteClicked(topSite)
-        }
-
-        override fun onSettingsClicked() {
-            TODO("Not yet implemented")
-        }
-
-        override fun onSponsorPrivacyClicked() {
-            TODO("Not yet implemented")
         }
 
         override fun onSelectTopSite(topSite: TopSite, position: Int) {
@@ -196,5 +185,21 @@ class SessionControlInteractor(
 
         override fun onUrlClicked(homepageCardType: HomepageCardType, url: String) {
             controller.handleUrlClicked(homepageCardType, url)
+        }
+
+        override fun onOuicrawlSiteMenuOpened() {
+            controller.handleMenuOpened()
+        }
+
+        override fun onOpenInPersonalTabClicked(ouicrawlSite: OuicrawlSite) {
+            controller.handleOpenInPrivateTabClicked(ouicrawlSite.SiteURL)
+        }
+
+        override fun onShortcuts(ouicrawlSite: OuicrawlSite, isTopSite: Boolean) {
+            controller.handleAddToShortcuts(ouicrawlSite, isTopSite)
+        }
+
+        override fun onOuicrawlSiteClicked(siteURL: String) {
+            controller.handleUrlClicked(HomepageCardType.OUICRAWLED_SITE_CARD, siteURL)
         }
     }

@@ -26,8 +26,6 @@ class TopSiteItemMenu(
         object OpenInPrivateTab : Item()
         object RenameTopSite : Item()
         object RemoveTopSite : Item()
-        object Settings : Item()
-        object SponsorPrivacy : Item()
     }
 
     val menuBuilder by lazy { BrowserMenuBuilder(menuItems) }

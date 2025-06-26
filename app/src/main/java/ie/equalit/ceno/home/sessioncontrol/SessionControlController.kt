@@ -8,6 +8,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,6 +27,7 @@ import ie.equalit.ceno.components.ceno.appstate.AppAction
 import ie.equalit.ceno.ext.components
 import ie.equalit.ceno.home.HomepageCardType
 import ie.equalit.ceno.home.announcements.RSSAnnouncementViewHolder
+import ie.equalit.ceno.home.ouicrawl.OuicrawlSite
 import ie.equalit.ceno.utils.CenoPreferences
 
 /**
@@ -52,7 +54,7 @@ interface SessionControlController {
     /**
      * @see [TopSiteInteractor.onOpenInPrivateTabClicked]
      */
-    fun handleOpenInPrivateTabClicked(topSite: TopSite)
+    fun handleOpenInPrivateTabClicked(url: String)
 
     /**
      * @see [TopSiteInteractor.onSettingsClicked]
@@ -73,6 +75,8 @@ interface SessionControlController {
     fun handleRemoveAnnouncementCard(index: Int)
 
     fun handleUrlClicked(homepageCardType: HomepageCardType, url: String)
+
+    fun handleAddToShortcuts(ouicrawlSite: OuicrawlSite, isTopSite: Boolean)
 }
 
 @Suppress("TooManyFunctions", "LargeClass", "LongParameterList")
@@ -174,10 +178,10 @@ class DefaultSessionControlController(
         activity.openToBrowser(topSite.url, newTab = true)
     }
 
-    override fun handleOpenInPrivateTabClicked(topSite: TopSite) {
+    override fun handleOpenInPrivateTabClicked(url: String) {
         with(activity) {
             openToBrowser(
-                url = topSite.url,
+                url = url,
                 newTab = true,
                 private = true
             )
@@ -235,5 +239,40 @@ class DefaultSessionControlController(
 
     override fun handleUrlClicked(homepageCardType: HomepageCardType, url: String) {
         activity.openToBrowser(url, newTab = true)
+    }
+
+    override fun handleAddToShortcuts(ouicrawlSite: OuicrawlSite, isTopSite: Boolean) {
+        activity.lifecycleScope.launch {
+            if (isTopSite) {
+                val removedTopSite: TopSite? =
+                    activity.components.core.cenoPinnedSiteStorage
+                        .getPinnedSites()
+                        .find { it.url == ("https://${ouicrawlSite.SiteURL}/") }
+                if (removedTopSite != null) {
+                    with(activity.components.useCases.cenoTopSitesUseCase) {
+                        removeTopSites(removedTopSite)
+                    }
+                }
+            } else {
+                val numPinnedSites = activity.components.core.cenoTopSitesStorage.cachedTopSites
+                    .filter { it is TopSite.Default || it is TopSite.Pinned }.size
+
+                if (numPinnedSites >= activity.components.cenoPreferences.topSitesMaxLimit) {
+                    AlertDialog.Builder(activity).apply {
+                        setTitle(R.string.shortcut_max_limit_title)
+                        setMessage(R.string.shortcut_max_limit_content)
+                        setPositiveButton(R.string.top_sites_max_limit_confirmation_button) { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                        create()
+                    }.show()
+                } else {
+                    with(activity.components.useCases.cenoTopSitesUseCase) {
+                        addPinnedSites(ouicrawlSite.SiteName, "https://${ouicrawlSite.SiteURL}/")
+                    }
+                }
+            }
+        }
+
     }
 }

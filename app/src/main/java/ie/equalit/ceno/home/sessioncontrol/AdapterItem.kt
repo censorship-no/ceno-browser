@@ -10,7 +10,7 @@ import ie.equalit.ceno.home.RssItem
 import ie.equalit.ceno.home.SectionHeaderViewHolder
 import ie.equalit.ceno.home.TopPlaceholderViewHolder
 import ie.equalit.ceno.home.announcements.RSSAnnouncementViewHolder
-import ie.equalit.ceno.home.ouicrawl.OuicrawledSite
+import ie.equalit.ceno.home.ouicrawl.OuicrawlSite
 import ie.equalit.ceno.home.ouicrawl.OuicrawledSiteViewHolder
 import ie.equalit.ceno.home.personal.PersonalModeDescriptionViewHolder
 import ie.equalit.ceno.home.topsites.TopSitePagerViewHolder
@@ -42,7 +42,7 @@ sealed class AdapterItem(val type: HomepageCardType) {
         }
     }
 
-    data class OuicrawledSiteItem(val site:OuicrawledSite) :
+    data class OuicrawledSiteItem(val site:OuicrawlSite) :
             AdapterItem(OuicrawledSiteViewHolder.homepageCardType)
 
     object SectionHeaderItem:

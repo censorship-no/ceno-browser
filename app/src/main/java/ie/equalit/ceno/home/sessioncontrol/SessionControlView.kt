@@ -16,7 +16,7 @@ import ie.equalit.ceno.ext.cenoPreferences
 import ie.equalit.ceno.home.CenoMessageCard
 import ie.equalit.ceno.home.HomeCardSwipeCallback
 import ie.equalit.ceno.home.RssItem
-import ie.equalit.ceno.home.ouicrawl.OuicrawledSite
+import ie.equalit.ceno.home.ouicrawl.OuicrawlSite
 import ie.equalit.ceno.settings.CenoSettings
 import ie.equalit.ceno.utils.CenoPreferences
 
@@ -31,7 +31,7 @@ internal fun normalModeAdapterItems(
     mode: BrowsingMode,
     announcements: List<RssItem>?,
     isBridgeAnnouncementEnabled: Boolean,
-    ouicrawledSites : List<OuicrawledSite>?
+    ouicrawlSites : List<OuicrawlSite>?
 ): List<AdapterItem> {
     val items = mutableListOf<AdapterItem>()
 
@@ -52,7 +52,7 @@ internal fun normalModeAdapterItems(
         items.add(AdapterItem.TopSitePager(topSites))
     }
     items.add(AdapterItem.SectionHeaderItem)
-    ouicrawledSites?.forEach {
+    ouicrawlSites?.forEach {
         items.add(AdapterItem.OuicrawledSiteItem(it))
     }
     return items
@@ -75,7 +75,7 @@ private fun AppState.toAdapterList(
     messageCard: CenoMessageCard,
     announcement: List<RssItem>?,
     isBridgeAnnouncementEnabled: Boolean,
-    ouicrawledSites: List<OuicrawledSite>?
+    ouicrawlSites: List<OuicrawlSite>?
 ): List<AdapterItem> = when (mode) {
     BrowsingMode.Normal ->
         normalModeAdapterItems(
@@ -85,7 +85,7 @@ private fun AppState.toAdapterList(
             mode,
             announcement,
             isBridgeAnnouncementEnabled,
-            ouicrawledSites
+            ouicrawlSites
         )
     BrowsingMode.Personal -> personalModeAdapterItems(mode, announcement)
 }
@@ -125,7 +125,7 @@ class SessionControlView(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun update(state: AppState, announcements: List<RssItem>?, ouicrawledSites: List<OuicrawledSite>?) {
+    fun update(state: AppState, announcements: List<RssItem>?, ouicrawlSites: List<OuicrawlSite>?) {
         val messageCard = CenoMessageCard(
             text = ContextCompat.getString(view.context,R.string.enable_bridge_card_text) + " " +
                     ContextCompat.getString(view.context,R.string.bridge_mode_ip_warning_text),
@@ -137,7 +137,7 @@ class SessionControlView(
                 messageCard,
                 announcements,
                 CenoSettings.isBridgeAnnouncementEnabled(view.context),
-                ouicrawledSites
+                ouicrawlSites
             )
         )
         sessionControlAdapter.notifyDataSetChanged()

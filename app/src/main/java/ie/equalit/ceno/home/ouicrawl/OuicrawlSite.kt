@@ -3,7 +3,7 @@ package ie.equalit.ceno.home.ouicrawl
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class OuicrawledSite (
+data class OuicrawlSite (
     val Description:String,
     val NextCrawlDuration:String,
     val NextCrawlDurationTS:String,
@@ -26,6 +26,6 @@ data class OuicrawledSite (
 )
 @Serializable
 data class OuicrawledSitesListItem (
-    val Sites:List<OuicrawledSite>,
+    val Sites:List<OuicrawlSite>,
     val IsViaOuinet:Boolean
 )
