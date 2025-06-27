@@ -74,9 +74,9 @@ class WebsiteSourceSettingsFragment : PreferenceFragmentCompat() {
     private fun getChangeListenerForCenoSetting(key: OuinetKey): Preference.OnPreferenceChangeListener {
         return Preference.OnPreferenceChangeListener { _, newValue ->
             val value = if (newValue == true) {
-                OuinetValue.ENABLED
+                OuinetValue.ENABLE
             } else {
-                OuinetValue.DISABLED
+                OuinetValue.DISABLE
             }
             CenoSettings.ouinetClientRequest(requireContext(), key, value)
             true

@@ -64,8 +64,6 @@ enum class OuinetKey(val command : String) {
 }
 
 enum class OuinetValue(val string: String) {
-    DISABLED("disabled"),
-    ENABLED("enabled"),
     OTHER("other"),
     ENABLE("enable"),
     DISABLE("disable")

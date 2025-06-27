@@ -555,7 +555,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             CenoSettings.ouinetClientRequest(
                 context = requireContext(),
                 key = OuinetKey.LOGFILE,
-                newValue = if (newValue == true) OuinetValue.ENABLED else OuinetValue.DISABLED,
+                newValue = if (newValue == true) OuinetValue.ENABLE else OuinetValue.DISABLE,
                 stringValue = null,
                 object : OuinetResponseListener {
                     override fun onSuccess(message: String, data: Any?) {
@@ -739,7 +739,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         CenoSettings.ouinetClientRequest(
             context = requireContext(),
             key = OuinetKey.LOGFILE,
-            newValue = if (newValue) OuinetValue.ENABLED else OuinetValue.DISABLED,
+            newValue = if (newValue) OuinetValue.ENABLE else OuinetValue.DISABLE,
             null,
             object : OuinetResponseListener {
                 override fun onSuccess(message: String, data: Any?) {

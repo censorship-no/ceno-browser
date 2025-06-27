@@ -69,7 +69,7 @@ class ExportAndroidLogsDialog (
                         CenoSettings.ouinetClientRequest(
                             context = this@ExportAndroidLogsDialog.context,
                             key = OuinetKey.LOGFILE,
-                            newValue = if (checkboxDebugLogs.isChecked) OuinetValue.ENABLED else OuinetValue.DISABLED,
+                            newValue = if (checkboxDebugLogs.isChecked) OuinetValue.ENABLE else OuinetValue.DISABLE,
                             stringValue = null,
                             object : OuinetResponseListener {
                                 override fun onSuccess(message: String, data: Any?) {
