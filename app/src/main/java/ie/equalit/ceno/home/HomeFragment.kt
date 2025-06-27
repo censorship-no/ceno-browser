@@ -217,38 +217,8 @@ class HomeFragment : BaseHomeFragment() {
                 // Switch context to make network call
                 withContext(Dispatchers.IO) {
 
-                    // Get language code or fall back to 'en'
-                    val languageCode = Locale.getDefault().language.ifEmpty { "en" }
-
-                    var response = CenoSettings.webClientRequest(
-                        context,
-                        Request(Settings.getRSSAnnouncementUrl(context, languageCode))
-                    )
-
-                    // if the network call fails, try to load 'en' locale
-                    if (response == null) {
-                        response = CenoSettings.webClientRequest(
-                            context,
-                            Request(Settings.getRSSAnnouncementUrl(context, "en"))
-                        )
-                    }
-
-                    response?.let { result ->
-                        val rssResponse = XMLParser.parseRssXml(result)
-
-                        // perform null-check and save announcement data in local
-                        rssResponse?.let { Settings.saveAnnouncementData(context, it) }
-                    }
-
-                    var ouicrawlResponse = CenoSettings.webClientRequest(
-                        context,
-                        Request("https://schedule.ceno.app/schedule.json")
-                    )
-                    ouicrawlResponse?.let {
-                        Log.d("OUICRAWL", ouicrawlResponse)
-                        var responseObject = Json.decodeFromString<OuicrawledSitesListItem>(ouicrawlResponse)
-                        val ouicrawledSites = responseObject.Sites
-                        Log.d("OUICRAWL", "${ouicrawledSites.size}")
+                    getAnnouncements(context)
+                    getOuicrawlSites(context)
 
                     // check for null and refresh homepage adapter if necessary
                     // Set announcement data from local since filtering happens there (i.e Settings.getAnnouncementData())
@@ -258,10 +228,9 @@ class HomeFragment : BaseHomeFragment() {
                             sessionControlView?.update(
                                 state,
                                 Settings.getAnnouncementData(context)?.items,
-                                ouicrawledSites.subList(0, 10)
+                                Settings.getOuicrawlData(context)
                             )
                         }
-                    }
                     }
                 }
             }
@@ -462,6 +431,43 @@ class HomeFragment : BaseHomeFragment() {
             requireComponents.cenoPreferences.nextTooltip = -1
         }
         Settings.setShowOnboarding(requireContext(), false)
+    }
+
+    private suspend fun getAnnouncements(context: Context) {
+        // Get language code or fall back to 'en'
+        val languageCode = Locale.getDefault().language.ifEmpty { "en" }
+
+        var response = CenoSettings.webClientRequest(
+            context,
+            Request(Settings.getRSSAnnouncementUrl(context, languageCode))
+        )
+
+        // if the network call fails, try to load 'en' locale
+        if (response == null) {
+            response = CenoSettings.webClientRequest(
+                context,
+                Request(Settings.getRSSAnnouncementUrl(context, "en"))
+            )
+        }
+
+        response?.let { result ->
+            val rssResponse = XMLParser.parseRssXml(result)
+
+            // perform null-check and save announcement data in local
+            rssResponse?.let { Settings.saveAnnouncementData(context, it) }
+        }
+    }
+
+    private suspend fun getOuicrawlSites(context: Context) {
+        var ouicrawlResponse = CenoSettings.webClientRequest(
+            context,
+            Request("https://schedule.ceno.app/schedule.json")
+        )
+        ouicrawlResponse?.let {
+            Settings.saveOuicrawlData(requireContext(), ouicrawlResponse)
+//            var responseObject = Json.decodeFromString<OuicrawledSitesListItem>(ouicrawlResponse)
+//            val ouicrawledSites = responseObject.Sites
+        }
     }
 
     private fun askForPermissions() {

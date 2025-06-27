@@ -14,6 +14,9 @@ import ie.equalit.ceno.home.RssAnnouncementResponse
 import ie.equalit.ceno.settings.changeicon.appicons.AppIcon
 import androidx.core.content.edit
 import ie.equalit.ceno.ext.isFirstInstall
+import ie.equalit.ceno.home.ouicrawl.OuicrawlSite
+import ie.equalit.ceno.home.ouicrawl.OuicrawledSitesListItem
+import kotlinx.serialization.json.Json
 
 object Settings {
     fun shouldShowOnboarding(context: Context): Boolean =
@@ -384,4 +387,20 @@ object Settings {
             }
     }
 
+    fun saveOuicrawlData(context: Context, ouicrawlData: String) {
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit() {
+                putString(context.getString(R.string.pref_key_ouicrawl_data), ouicrawlData)
+            }
+    }
+
+    fun getOuicrawlData(context: Context) : List<OuicrawlSite>? {
+        val ouicrawlData = PreferenceManager.getDefaultSharedPreferences(context).getString(context.getString(R.string.pref_key_ouicrawl_data), null)
+        ouicrawlData?.let { response ->
+            var ouicrawlSites = Json.decodeFromString<OuicrawledSitesListItem>(response).Sites
+            //filter by
+            return ouicrawlSites
+        }
+        return null
+    }
 }

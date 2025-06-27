@@ -51,9 +51,11 @@ internal fun normalModeAdapterItems(
     if (/*settings.showTopSitesFeature && */ topSites.isNotEmpty()) {
         items.add(AdapterItem.TopSitePager(topSites))
     }
-    items.add(AdapterItem.SectionHeaderItem)
-    ouicrawlSites?.forEach {
-        items.add(AdapterItem.OuicrawledSiteItem(it))
+    if(ouicrawlSites != null) {
+        items.add(AdapterItem.SectionHeaderItem)
+        ouicrawlSites?.forEach {
+            items.add(AdapterItem.OuicrawledSiteItem(it))
+        }
     }
     return items
 }
