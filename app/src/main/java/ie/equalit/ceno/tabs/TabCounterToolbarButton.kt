@@ -15,7 +15,7 @@ import mozilla.components.browser.state.store.BrowserStore
 import mozilla.components.concept.toolbar.Toolbar
 import mozilla.components.lib.state.ext.flowScoped
 import mozilla.components.support.ktx.android.content.res.resolveAttribute
-import mozilla.components.ui.tabcounter.TabCounter
+import mozilla.components.ui.tabcounter.TabCounterView
 import mozilla.components.ui.tabcounter.TabCounterMenu
 import java.lang.ref.WeakReference
 
@@ -29,9 +29,9 @@ class TabCounterToolbarButton(
     private val themeManager: ThemeManager
 ): Toolbar.Action {
 
-    private var reference = WeakReference<TabCounter>(null)
+    private var reference = WeakReference<TabCounterView>(null)
 
-    private lateinit var tabCounter: TabCounter
+    private lateinit var tabCounter: TabCounterView
 
     override fun bind(view: View) = Unit
 
@@ -46,7 +46,7 @@ class TabCounterToolbarButton(
         }
 
 
-        tabCounter = TabCounter(themeManager.getContext()).apply {
+        tabCounter = TabCounterView(themeManager.getContext()).apply {
             reference = WeakReference(this)
             setOnClickListener {
                 showTabs.invoke()
