@@ -1,3 +1,7 @@
+# v2.6.0
+This release:
+- Updates Android-Components to 140.0
+
 # v2.5.1
 This release:
 - Fixes foreground service timeout crash

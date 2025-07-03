@@ -6,17 +6,17 @@
 # Read more about this script on this blog post https://about.gitlab.com/2018/10/24/setting-up-gitlab-ci-for-android-projects/, by Jason Lenny
 # If you are interested in using Android with FastLane for publishing take a look at the Android-Fastlane template.
 
-image: eclipse-temurin:17-jdk-jammy
+image: eclipse-temurin:17-jdk-noble
 
 variables:
 
   # ANDROID_COMPILE_SDK is the version of Android you're compiling with.
   # It should match compileSdkVersion.
-  ANDROID_COMPILE_SDK: "34"
+  ANDROID_COMPILE_SDK: "36"
 
   # ANDROID_BUILD_TOOLS is the version of the Android build tools you are using.
   # It should match buildToolsVersion.
-  ANDROID_BUILD_TOOLS: "34.0.0"
+  ANDROID_BUILD_TOOLS: "36.0.0"
 
   # It's what version of the command line tools we're going to download from the official site.
   # Official Site-> https://developer.android.com/studio/index.html
