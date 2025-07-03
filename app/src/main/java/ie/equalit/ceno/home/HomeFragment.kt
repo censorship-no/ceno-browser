@@ -222,7 +222,7 @@ class HomeFragment : BaseHomeFragment() {
 
                     // check for null and refresh homepage adapter if necessary
                     // Set announcement data from local since filtering happens there (i.e Settings.getAnnouncementData())
-                    if (Settings.getAnnouncementData(context) != null) {
+                    if (Settings.getAnnouncementData(context) != null && Settings.getOuicrawlData(context) != null) {
                         withContext(Dispatchers.Main) {
                             val state = context.components.appStore.state
                             sessionControlView?.update(
